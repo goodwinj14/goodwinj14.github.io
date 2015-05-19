@@ -3,9 +3,7 @@
 	// Put event listeners into place
 window.addEventListener("DOMContentLoaded", function() {
 	// Grab elements, create settings, etc.
-	var canvas = document.getElementById("canvas"),
-		context = canvas.getContext("2d"),
-		video = document.getElementById("video"),
+	var video = document.getElementById("video"),
 		videoObj = { "video": true },
 		errBack = function(error) {
 			console.log("Video capture error: ", error.code); 
@@ -31,8 +29,3 @@ window.addEventListener("DOMContentLoaded", function() {
 	}
 }, false);
 
-
-// Trigger photo take
-document.getElementById("snap").addEventListener("click", function() {
-	context.drawImage(video, 0, 0, 640, 480);
-});
