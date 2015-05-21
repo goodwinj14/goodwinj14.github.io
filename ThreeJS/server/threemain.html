@@ -1,0 +1,150 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		
+		<title>Scratch THREE.JS</title>
+		<style>
+			body { margin: 0; }
+			canvas { width: 100%; height: 100% }
+		</style>
+	</head>
+	<body>
+		<script src="three.js"></script>
+		<script src="CameraControls.js"></script>
+		<script src="SceneComponents.js"></script>
+		<script src="TrackballControls.js"></script>
+		<script src="SceneStyles.js"></script>
+		<script>
+		var RENDERER = null;
+		var SCENE = null;
+		var CAMERA = null;
+		var controls = null;
+		/*
+		*EVENT HANDELER BEGIN
+		*/
+		//The event handeler to deligate the message events
+		//To there proper corisponding function calles
+		var event;
+		window.addEventListener("message", eventHandeler, false);
+		
+		function eventHandeler(){
+			//Retrevies the command Key of the message denoting which function to call
+			var commandKey = event.data.split("_")[0];
+			//Retervies the paramiters of the message for the corasponding function call if message contains params
+			var paramsArray = null;
+			console.log("Event Called: ", commandKey);
+			if(event.data.split("_").length>1){
+			paramsArray = event.data.split("_")[1].split(",");
+			}
+			//INIT Commande is associated with the "New 3D World Block"
+			if(commandKey == "INIT"){
+				init_window(paramsArray);
+			}
+			//CAMERAROTATE command tag is associated with Rotate Camera Block
+			if(commandKey == "CAMERAROTATE"){
+				if(CAMERA!=null){
+				console.log("CAMERA ROTATE KEY CALLED");
+				CAMERACONTROLS.rotate(paramsArray[0], paramsArray[1], CAMERA);
+			}
+			}
+			//CAMERAORBIT command tag is associated with Orbit Camera Block
+			if(commandKey == "CAMERAORBIT"){
+				if(CAMERA!=null){
+				var orbitPoint = [3];
+				orbitPoint[0]= paramsArray[1];
+				orbitPoint[1]= paramsArray[2];
+				orbitPoint[2]= paramsArray[3];
+				CAMERACONTROLS.orbit(paramsArray[0], new THREE.Vector3(0,0,0), 1, CAMERA);
+			}
+			}
+			//CAMERAMOVE command tag is associated with Move Camera Block 
+			if(commandKey == "CAMERAMOVE"){
+				if(CAMERA!=null){
+					CAMERACONTROLS.move(paramsArray[0], parseFloat(paramsArray[1]),CAMERA);
+			}
+			}
+			//CREATESHAPE command tag is associated with the Move block
+			if(commandKey == "CREATESHAPE"){
+				if(SCENE!=null){
+					console.log("CREATESHAPE KEY CALLED");
+					SCENECOMPONENTS.addShape(paramsArray[0],paramsArray[1],paramsArray[2],paramsArray[3],paramsArray[4],paramsArray[5],paramsArray[6], 					paramsArray[7], SCENE);
+					
+					}
+				}
+			if(commandKey == "MOVESHAPE"){
+				if(SCENE!=null){
+					SCENECOMPONENTS.move(paramsArray[0],paramsArray[1], paramsArray[2]);
+				}
+			}
+		}
+		/*
+		*EVENT HANDELER END
+		*/
+		
+		
+		
+		/*
+		*THE MAIN INTI FUNCTIONS FOR PRE-SETUP OF THE RENDERER, SCENE AND CAMERA
+		*/
+		
+		function init_window(sceneStyle){
+			init_Render();
+			init_Scene(sceneStyle);
+			init_Camera(6,8,5.6);
+			
+			if(RENDERER==null || SCENE==null || CAMERA==null){
+				return false;
+			}else {firstRender(SCENE, CAMERA); animate(); console.log("RUNN CALLED"); return true;}
+			
+		}
+		
+		//INITIALIZES THE RENDERER OBJECT
+		function init_Render(){
+			RENDERER = new THREE.WebGLRenderer();
+			RENDERER.setSize(window.innerWidth, window.innerHeight);
+			document.body.appendChild(RENDERER.domElement);
+		}
+		//INITIALIZES THE CAMERA OBJECT
+		//@params Y postion, Z postion, X rotation 
+		function init_Camera(posY, posZ, rotaX){
+			CAMERA = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 1000);
+			CAMERA.position.y = posY; 
+			CAMERA.position.z = posZ;
+			CAMERA.rotation.x = rotaX;
+			//CAMERA.up.set(1,0,0);
+			//Adds the base camera controles
+			//controls = new THREE.TrackballControls(CAMERA);
+			//controls.addEventListener('change', render);
+		}
+		//INITIALIZES THE SCENE OBJECT
+
+		function init_Scene(sceneStyle){
+			
+			SCENE = new THREE.Scene();
+			if(sceneStyle[0]=="Grid"){
+			var plane = SCENESTYLES.GRID; 
+			SCENE.add(plane);
+			}
+			
+			
+			
+		}
+		
+		//RENDERS THE THE RENDER OBJECT FOR THE FIRST TIME ONCE THE WINDOW IS CREATED
+		function firstRender(scene, camera){
+			RENDERER.render(scene, camera);
+		} 
+		function render(){
+			RENDERER.render(SCENE, CAMERA);
+		} 
+		function animate(){
+			requestAnimationFrame(animate);
+			RENDERER.render(SCENE, CAMERA);
+			//controls.update();
+		}
+		/*
+		*
+		*/
+		</script>
+	</body>
+</html>
