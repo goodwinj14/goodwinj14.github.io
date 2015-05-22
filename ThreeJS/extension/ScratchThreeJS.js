@@ -42,7 +42,7 @@
 		var message = "CAMERAROTATE_"+direction + "," + degrees;
 		//Sends Message to the main.htlm event listener with the rotate tags along with user supplied params 
 		win.postMessage(message, liveURL);
-		//console.log("Direction: ", direction, "Degrees: ", degrees);
+		console.log("Direction: ", direction, "Degrees: ", degrees);
 		}
 	} 
 	
