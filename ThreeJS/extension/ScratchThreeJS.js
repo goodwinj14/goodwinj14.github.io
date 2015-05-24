@@ -22,7 +22,7 @@
 		//Opens the three.js window
 		//win = window.open (liveURL, "", "width=window.width, height=window.height");
 		//Test URLS
-		console.log(document);
+		console.log(document.body);
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
         setTimeout(function (){
 			var message = "INIT_"+scene;
