@@ -22,8 +22,8 @@
 		//Opens the three.js window
 		//win = window.open (liveURL, "", "width=window.width, height=window.height");
 		//Test URLS
-		var x = document.getElementById("scratch");
-		console.log("libs/base64ab.js");
+		var scriptList = document.scripts;
+		console.log(scriptList);
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
         setTimeout(function (){
 			var message = "INIT_"+scene;
