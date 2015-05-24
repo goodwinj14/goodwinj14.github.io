@@ -23,7 +23,7 @@
 		//win = window.open (liveURL, "", "width=window.width, height=window.height");
 		//Test URLS
 		var scriptList = document.scripts;
-		console.log(scriptList);
+		console.log(scriptList[0].text);
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
         setTimeout(function (){
 			var message = "INIT_"+scene;
