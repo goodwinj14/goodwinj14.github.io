@@ -23,7 +23,7 @@
 		//win = window.open (liveURL, "", "width=window.width, height=window.height");
 		//Test URLS
 		var x = document.getElementsByTagName("BODY")[0];
-		console.log(x);
+		console.log(x.innerHTML);
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
         setTimeout(function (){
 			var message = "INIT_"+scene;
