@@ -29,6 +29,7 @@
 			win.postMessage(message,liveURL);
 			callback(); //Calls back to Scaratch proggram to allow exicution flow to reStart once the page has been loaded
         }, 1000);
+        console.log(document);
 	};
 	
 
