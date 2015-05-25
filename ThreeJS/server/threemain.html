@@ -19,6 +19,7 @@
 		var SCENE = null;
 		var CAMERA = null;
 		var controls = null;
+		var origin = null;
 		/*
 		*EVENT HANDELER BEGIN
 		*/
@@ -27,8 +28,13 @@
 		var event;
 	
 		window.addEventListener("message", eventHandeler, false);
-		
+
 		function eventHandeler(){
+			//Gets the address from which the event came
+			if(origin==null){
+				origin = event.origin;
+				console.log(origin);
+			}
 			//Retrevies the command Key of the message denoting which function to call
 			var commandKey = event.data.split("_")[0];
 			//Retervies the paramiters of the message for the corasponding function call if message contains params
