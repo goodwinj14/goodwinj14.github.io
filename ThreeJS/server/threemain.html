@@ -25,6 +25,8 @@
 		//The event handeler to deligate the message events
 		//To there proper corisponding function calles
 		var event;
+
+		window.addEventListener("keydown", function(e){ console.log(e.key, e.char, e.keyCode) });	
 		window.addEventListener("message", eventHandeler, false);
 		
 		function eventHandeler(){

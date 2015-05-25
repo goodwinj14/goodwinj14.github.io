@@ -4,7 +4,8 @@
 	var ctx = null;
 	//var liveURL = "http://localhost:8888/main.html";
 	var shapes = [];
-	var liveURL = "http://033ae09.netsolhost.com//gsd2014team5/Localhost/main.html";
+	//var liveURL = "http://033ae09.netsolhost.com//gsd2014team5/Localhost/main.html";
+	var liveURL = "http://goodwinj14.github.io/ThreeJS/server/threemain.html"
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {};
 
@@ -33,8 +34,6 @@
 			win.postMessage(message,liveURL);
 			callback(); //Calls back to Scaratch proggram to allow exicution flow to reStart once the page has been loaded
         }, 1000);
-        win.document.addEventListener("keydown", function(e){ console.log(e.key, e.char, e.keyCode) });
-        console.log(win.document);
 	};
 	
 
