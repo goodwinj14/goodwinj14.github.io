@@ -26,10 +26,8 @@
 		document.getElementById("faq").innerHTML ='<div bgcolor="#E6E6FA" height="500" width="500"><h3>This is a heading in a div element</h3><p>This is some text in a div element.</p></div>';
 		
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
-		win.onload() = function()
-    {
-      alert( 'child window loaded!' );
-    }
+		win.onload() = function(){console.log( 'child window loaded!' );};
+		
 		win.window.addEventListener("keydown", function(e){ console.log(e.key, e.char, e.keyCode) });
         setTimeout(function (){
 			var message = "INIT_"+scene;
