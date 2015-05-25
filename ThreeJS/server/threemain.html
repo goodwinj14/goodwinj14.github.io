@@ -39,6 +39,7 @@
 				messageSource = event.source;
 				console.log(messageSource);
 			}
+			event.source.postMessage('..response message..', event.origin);
 			//Retrevies the command Key of the message denoting which function to call
 			var commandKey = event.data.split("_")[0];
 			//Retervies the paramiters of the message for the corasponding function call if message contains params
