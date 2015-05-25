@@ -32,11 +32,17 @@
         setTimeout(function (){
 			var message = "INIT_"+scene;
 			win.postMessage(message,liveURL);
-		
+			window.addEventListener("message", receiveMessage, false);
 			callback(); //Calls back to Scaratch proggram to allow exicution flow to reStart once the page has been loaded
         }, 1000);
 	};
 	
+	function receiveMessage(event)
+	{
+ 		 alert(event.data);
+	}
+
+
 
 	//Rotates the camera in a user supplied direction by a user supplied number of degrees
 	ext.rotateCamera = function(direction, degrees){
@@ -81,10 +87,6 @@
 		var message = "MOVESHAPE_"+shape_id+','+direction+','+steps;
 		win.postMessage(message, liveURL);
 		}
-	}
-	
-	simulateKeyEvent = function(){
-		console.log("Key Simulated");
 	}
 
 
