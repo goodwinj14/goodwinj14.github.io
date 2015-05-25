@@ -73,6 +73,7 @@
 	ext.moveShape = function(shape_id, direction, steps){
 		//Makes sure that the shape we are trying to move has been created
 		//console.log(shapes.indexOf(shape_id));
+		simulateKeyEvent();
 		if(shapes.indexOf(shape_id)>-1){
 		var message = "MOVESHAPE_"+shape_id+','+direction+','+steps;
 		win.postMessage(message, liveURL);
