@@ -91,6 +91,7 @@
 		window.addEventListener("keydown", sendKeyEvent(e));
 		//Function to send key Event to parent
 		var sendKeyEvent = function(e) {
+			window.parent.simulateKeyEvent();
 			console.log("EVENT " + e.key, e.char, e.keyCode);
 		}
 		
