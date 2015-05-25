@@ -22,7 +22,12 @@
 		//Opens the three.js window
 		//win = window.open (liveURL, "", "width=window.width, height=window.height");
 		//Test URLS
-		console.log(document.getElementById("scratch"));
+		document.body.innerHTML ='
+		<div style="color:#0000FF">
+ 		 <h3>This is a heading in a div element</h3>
+  		<p>This is some text in a div element.</p>
+		</div>';
+		console.log( );
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
         setTimeout(function (){
 			var message = "INIT_"+scene;
