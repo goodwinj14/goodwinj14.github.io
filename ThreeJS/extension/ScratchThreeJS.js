@@ -23,13 +23,14 @@
 		//Opens the three.js window
 		//win = window.open (liveURL, "", "width=window.width, height=window.height");
 		//Test URLS
-		win = window.open (liveURL, "", "width=window.width, height=window.height");
-		document.addEventListener("message", receiveMessage, false);
+		window.addEventListener("message", receiveMessage, false);
 
 		function receiveMessage()
 		{
  		 console.log("event.data");
 		}
+		win = window.open (liveURL, "", "width=window.width, height=window.height");
+		
         setTimeout(function (){
 			var message = "INIT_"+scene;
 			win.postMessage(message,liveURL);
