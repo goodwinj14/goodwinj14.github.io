@@ -27,7 +27,7 @@
 		
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
 		
-		win.window.addEventListener("keydown", function(e){ console.log(e.key, e.char, e.keyCode) });
+		win.document.addEventListener("keydown", function(e){ console.log(e.key, e.char, e.keyCode) });
         console.log(win.document);
         setTimeout(function (){
 			var message = "INIT_"+scene;
