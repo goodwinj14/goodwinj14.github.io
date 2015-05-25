@@ -27,7 +27,7 @@
 
 		function receiveMessage()
 		{
- 		 console.log("event.data");
+ 		 console.log(event.data);
 		}
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
 		
