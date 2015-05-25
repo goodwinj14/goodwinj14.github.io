@@ -87,13 +87,12 @@
 		*Detecs Key events in child window and passes them to the parent window to 
 		*Be proccesed by scratch.
 		*/
-		//Add key event listener to child window
-		window.addEventListener("keydown", sendKeyEvent(e));
-		//Function to send key Event to parent
-		var sendKeyEvent = function(e) {
+
+		window.addEventListener("keydown", function(e){
 			window.parent.simulateKeyEvent();
 			console.log("EVENT " + e.key, e.char, e.keyCode);
-		}
+		 });
+		
 		
 		/*
 		*THE MAIN INTI FUNCTIONS FOR PRE-SETUP OF THE RENDERER, SCENE AND CAMERA
