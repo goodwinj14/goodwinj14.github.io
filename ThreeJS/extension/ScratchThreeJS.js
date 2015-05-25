@@ -27,14 +27,14 @@
 		
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
 		
-		win.document.addEventListener("keydown", function(e){ console.log(e.key, e.char, e.keyCode) });
-        console.log(win.document);
+		
         setTimeout(function (){
 			var message = "INIT_"+scene;
 			win.postMessage(message,liveURL);
 			callback(); //Calls back to Scaratch proggram to allow exicution flow to reStart once the page has been loaded
         }, 1000);
-        
+        win.document.addEventListener("keydown", function(e){ console.log(e.key, e.char, e.keyCode) });
+        console.log(win.document);
 	};
 	
 
