@@ -79,6 +79,11 @@
 		}
 	}
 	
+	simulateKeyEvent = function(){
+		console.log("Key Simulated");
+	}
+
+
 	// Block and block menu descriptions
     var descriptor = {
         blocks: [
