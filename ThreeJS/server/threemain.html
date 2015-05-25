@@ -90,7 +90,8 @@
 
 		window.addEventListener("keydown", function(e){
 			window.parent.postMessage("This is a message",window.parent.location);
-			console.log("EVENT " + e.key, e.char, e.keyCode);
+			console.log("EVENT ", e.key, e.char, e.keyCode);
+			console.log(window.parent.location);
 		 });
 		
 		
