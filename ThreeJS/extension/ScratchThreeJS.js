@@ -27,19 +27,18 @@
 		document.getElementById("faq").innerHTML ='<div bgcolor="#E6E6FA" height="500" width="500"><h3>This is a heading in a div element</h3><p>This is some text in a div element.</p></div>';
 		
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
-		
+		window.addEventListener("message", receiveMessage, false);
 		
         setTimeout(function (){
 			var message = "INIT_"+scene;
 			win.postMessage(message,liveURL);
-			window.addEventListener("message", receiveMessage, false);
 			callback(); //Calls back to Scaratch proggram to allow exicution flow to reStart once the page has been loaded
         }, 1000);
 	};
-	
+
 	function receiveMessage(event)
 	{
- 		 alert(event.data);
+ 		 console.log(event.data);
 	}
 
 
