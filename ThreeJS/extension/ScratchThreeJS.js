@@ -25,10 +25,10 @@
 		//Test URLS
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
 		document.addEventListener("message", receiveMessage, false);
-		
+
 		function receiveMessage()
 		{
- 		 console.log(event.data);
+ 		 console.log("event.data");
 		}
         setTimeout(function (){
 			var message = "INIT_"+scene;

@@ -89,7 +89,7 @@
 		*/
 
 		window.addEventListener("keydown", function(e){
-			window.opener.postMessage("This is a message","http://scratchx.org/#scratch");
+			window.opener.postMessage("This is a message",window.opener);
 			console.log("EVENT ", e.key, e.char, e.keyCode);
 			console.log(window.opener);
 		 });
