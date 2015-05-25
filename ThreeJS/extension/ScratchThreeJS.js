@@ -5,7 +5,7 @@
 	//var liveURL = "http://localhost:8888/main.html";
 	var shapes = [];
 	//var liveURL = "http://033ae09.netsolhost.com//gsd2014team5/Localhost/main.html";
-	var liveURL = "http://goodwinj14.github.io/ThreeJS/server/threemain.html"
+	var liveURL = "http://goodwinj14.github.io/ThreeJS/server/threemain.html";
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {};
 
@@ -32,6 +32,7 @@
         setTimeout(function (){
 			var message = "INIT_"+scene;
 			win.postMessage(message,liveURL);
+		
 			callback(); //Calls back to Scaratch proggram to allow exicution flow to reStart once the page has been loaded
         }, 1000);
 	};
