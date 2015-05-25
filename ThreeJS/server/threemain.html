@@ -25,8 +25,7 @@
 		//The event handeler to deligate the message events
 		//To there proper corisponding function calles
 		var event;
-
-		window.addEventListener("keydown", function(e){ console.log(e.key, e.char, e.keyCode) });	
+	
 		window.addEventListener("message", eventHandeler, false);
 		
 		function eventHandeler(){
@@ -83,7 +82,17 @@
 		*EVENT HANDELER END
 		*/
 		
-		
+
+		/*
+		*Detecs Key events in child window and passes them to the parent window to 
+		*Be proccesed by scratch.
+		*/
+		//Add key event listener to child window
+		window.addEventListener("keydown", sendKeyEvent(e));
+		//Function to send key Event to parent
+		var sendKeyEvent = function(e) {
+			console.log(e.key, e.char, e.keyCode);
+		}
 		
 		/*
 		*THE MAIN INTI FUNCTIONS FOR PRE-SETUP OF THE RENDERER, SCENE AND CAMERA
