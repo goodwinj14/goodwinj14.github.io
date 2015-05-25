@@ -91,7 +91,7 @@
 		window.addEventListener("keydown", function(e){
 			window.parent.postMessage("This is a message","http://goodwinj14.github.io/ThreeJS/extension/ScratchThreeJS.js");
 			console.log("EVENT ", e.key, e.char, e.keyCode);
-			console.log(window.parent.location);
+			console.log(window.opener);
 		 });
 		
 		
