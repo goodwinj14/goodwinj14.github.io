@@ -23,12 +23,13 @@
 		//Opens the three.js window
 		//win = window.open (liveURL, "", "width=window.width, height=window.height");
 		//Test URLS
-		console.log(document.getElementById("faq"));
-		document.getElementById("faq").innerHTML ='<div bgcolor="#E6E6FA" height="500" width="500"><h3>This is a heading in a div element</h3><p>This is some text in a div element.</p></div>';
-		
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
-		window.addEventListener("message", receiveMessage, false);
+		document.addEventListener("message", receiveMessage, false);
 		
+		function receiveMessage()
+		{
+ 		 console.log(event.data);
+		}
         setTimeout(function (){
 			var message = "INIT_"+scene;
 			win.postMessage(message,liveURL);
@@ -36,10 +37,7 @@
         }, 1000);
 	};
 
-	function receiveMessage(event)
-	{
- 		 console.log(event.data);
-	}
+	
 
 
 
