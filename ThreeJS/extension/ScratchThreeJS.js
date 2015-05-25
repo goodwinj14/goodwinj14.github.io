@@ -22,12 +22,8 @@
 		//Opens the three.js window
 		//win = window.open (liveURL, "", "width=window.width, height=window.height");
 		//Test URLS
-		document.body.innerHTML ='
-		<div style="color:#0000FF">
- 		 <h3>This is a heading in a div element</h3>
-  		<p>This is some text in a div element.</p>
-		</div>';
-		console.log( );
+		document.body.innerHTML ='<div style="color:#0000FF"><h3>This is a heading in a div element</h3><p>This is some text in a div element.</p></div>';
+		
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
         setTimeout(function (){
 			var message = "INIT_"+scene;
