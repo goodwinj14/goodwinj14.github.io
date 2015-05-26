@@ -33,11 +33,7 @@
 		{
 			console.log(event.data);
 			var key = parseInt(event.data);
-			var evt = document.createEvent("KeyboardEvent");
-			var initMethod = typeof keyboardEvent.initKeyboardEvent !== 'undefined' ? "initKeyboardEvent" : "initKeyEvent";
-  			
-  			evt.[initMethod]("keydown", true, true, window, false, false, false, false, 38, 0);
-    		document.dispatchEvent(evt);
+			Podium.keydown(38);
     	}
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
 		
@@ -132,4 +128,36 @@ var idCounter = 0;
 function generatID(objectType){
 	idCounter++;
 	return objectType + idCounter;
+}
+
+
+Podium = {};
+Podium.keydown = function(k) {
+    var oEvent = document.createEvent('KeyboardEvent');
+
+    // Chromium Hack
+    Object.defineProperty(oEvent, 'keyCode', {
+                get : function() {
+                    return this.keyCodeVal;
+                }
+    });     
+    Object.defineProperty(oEvent, 'which', {
+                get : function() {
+                    return this.keyCodeVal;
+                }
+    });     
+
+    if (oEvent.initKeyboardEvent) {
+        oEvent.initKeyboardEvent("keydown", true, true, document.defaultView, false, false, false, false, k, k);
+    } else {
+        oEvent.initKeyEvent("keydown", true, true, document.defaultView, false, false, false, false, k, 0);
+    }
+
+    oEvent.keyCodeVal = k;
+
+    if (oEvent.keyCode !== k) {
+        alert("keyCode mismatch " + oEvent.keyCode + "(" + oEvent.which + ")");
+    }
+
+    document.dispatchEvent(oEvent);
 }
