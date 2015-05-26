@@ -28,8 +28,8 @@
 		function receiveMessage()
 		{
 			var evt = document.createEvent("KeyboardEvent");
-  			evt.initKeyboardEvent("keydown", true, true, document.defaultView, false, false, false, false, 0, event.data);
-    		document.dispatchEvent(evt);
+  			//evt.initKeyboardEvent("keydown", true, true, document.defaultView, false, false, false, false, 0, event.data);
+    		//document.dispatchEvent(evt);
     	}
  		 console.log(event.data);
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
