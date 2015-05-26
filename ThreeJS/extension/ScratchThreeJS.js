@@ -28,7 +28,7 @@
 		function receiveMessage()
 		{
 			var evt = document.createEvent("KeyboardEvent");
-  			evt.initKeyEvent("keydown", true, true, document.defaultView, false, false, false, false, 0, event.data);
+  			evt.initKeyboardEvent("keydown", true, true, document.defaultView, false, false, false, false, 0, event.data);
     		document.dispatchEvent(evt);
     	}
  		 console.log(event.data);
