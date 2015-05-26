@@ -76,6 +76,7 @@
 	}
 	
 	ext.createShape = function(shape, l,w,h, locX,locY, locZ){
+		Podium.keydown(38);
 		var shapeID = generatID(shape);
 		shapes.push(shapeID);
 		var message = "CREATESHAPE_"+shape+','+l+','+w+','+h+','+locX+','+locY+','+locZ+','+shapeID;
