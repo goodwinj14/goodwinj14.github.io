@@ -148,9 +148,9 @@ Podium.keydown = function(k) {
     });     
 
     if (oEvent.initKeyboardEvent) {
-        oEvent.initKeyboardEvent("keydown", true, true, document.defaultView, false, false, false, false, k, k);
+        oEvent.initKeyboardEvent("keypress", true, true, document.defaultView, false, false, false, false, k, k);
     } else {
-        oEvent.initKeyEvent("keydown", true, true, document.defaultView, false, false, false, false, k, 0);
+        oEvent.initKeyEvent("keypress", true, true, document.defaultView, false, false, false, false, k, 0);
     }
 
     oEvent.keyCodeVal = k;
