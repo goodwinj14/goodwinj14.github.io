@@ -28,9 +28,9 @@
 		function receiveMessage()
 		{
 			var evt = document.createEvent("KeyboardEvent");
-  			evt.initKeyEvent("keypress", true, true, null, 
-                    false, false, false, false, 
-                    event.data, 0); 
+  			evt.initKeyEvent("keydown", true, true, document.defaultView, false, false, false, false, 0, event.data);
+    		document.dispatchEvent(evt);
+    	}
  		 console.log(event.data);
 		}
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
