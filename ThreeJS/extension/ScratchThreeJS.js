@@ -25,7 +25,6 @@
 		//Test URLS
 		window.addEventListener("keydown", function(e){
     		console.log("called" + e.keyCode);
-    		}
 		});
 
 		window.addEventListener("message", receiveMessage, false);
