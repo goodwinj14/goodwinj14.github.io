@@ -23,14 +23,14 @@
 		//Opens the three.js window
 		//win = window.open (liveURL, "", "width=window.width, height=window.height");
 		//Test URLS
-		/*window.addEventListener("message", receiveMessage, false);
+		window.addEventListener("message", receiveMessage, false);
 		
 		function receiveMessage()
 		{
 			var evt = document.createEvent("KeyboardEvent");
-  			//evt.initKeyboardEvent("keydown", true, true, document.defaultView, false, false, false, false, 0, event.data);
-    		//document.dispatchEvent(evt);
-    	}*/
+  			evt.initKeyboardEvent("keydown", true, true, document.defaultView, false, false, false, false, 0, event.data);
+    		document.dispatchEvent(evt);
+    	}
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
 		
         setTimeout(function (){
