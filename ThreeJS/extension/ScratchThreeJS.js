@@ -24,10 +24,10 @@
 		//win = window.open (liveURL, "", "width=window.width, height=window.height");
 		//Test URLS
 		window.addEventListener("message", receiveMessage, false);
-		var evt = document.createEvent("KeyboardEvent");
+		
 		function receiveMessage()
 		{
-			
+			var evt = document.createEvent("KeyboardEvent");
   			evt.initKeyEvent("keypress", true, true, null, 
                     false, false, false, false, 
                     event.data, 0); 
