@@ -32,7 +32,6 @@
     		document.dispatchEvent(evt);
     	}
  		 console.log(event.data);
-		}
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
 		
         setTimeout(function (){
