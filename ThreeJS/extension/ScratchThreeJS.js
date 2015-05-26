@@ -159,5 +159,5 @@ Podium.keydown = function(k) {
         alert("keyCode mismatch " + oEvent.keyCode + "(" + oEvent.which + ")");
     }
 
-    document.dispatchEvent(oEvent);
+    document.body.dispatchEvent(oEvent);
 }
