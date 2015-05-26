@@ -23,7 +23,7 @@
 		//Opens the three.js window
 		//win = window.open (liveURL, "", "width=window.width, height=window.height");
 		//Test URLS
-		window.addEventListener("keydown", function(e){
+		window.addEventListener("keypress", function(e){
     		console.log("called" + e.keyCode);
 		});
 
