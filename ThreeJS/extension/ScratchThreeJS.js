@@ -34,7 +34,7 @@
 			console.log(event.data);
 			var key = parseInt(event.data);
 			var evt = document.createEvent("KeyboardEvent");
-  			evt.initKeyboardEvent("keydown", true, true, document.defaultView, false, false, false, false, 38, 0);
+  			evt.initKeyboardEvent("keydown", true, true, document.defaultView, false, false, false, false, 0, 38);
     		document.dispatchEvent(evt);
     	}
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
