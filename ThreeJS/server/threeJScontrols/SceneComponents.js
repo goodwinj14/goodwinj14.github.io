@@ -56,7 +56,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 	}
 
 //Adds a new Dodecahedron to our scene based off of the supplied params
-	if(shape=="Cylinder"){
+	if(shape=="Dodecahedron"){
 	var dodecahedron = null;
 
     dodecahedron = new THREE.Mesh( new THREE.DodecahedronGeometry(1, 0), new THREE.MeshNormalMaterial());
