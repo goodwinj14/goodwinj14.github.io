@@ -68,6 +68,19 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 		}
 	}
 
+	//Adds a new Icosahedron to our scene based off of the supplied params
+	if(shape=="Icosahedron"){
+	var icosahedron = null;
+		icosahedron = new THREE.Mesh( new THREE.IcosahedronGeometry(1, 0), new THREE.MeshNormalMaterial());
+		icosahedron.position.set(LocationX,LocationY,LocationZ);
+	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
+		if(icosahedron!=null){
+			Scene.add(icosahedron);
+			SHAPES[shapeID] = icosahedron;
+		}
+	}
+
+
 }
 
 SCENECOMPONENTS.move = function(shape_ID, direction, steps){
