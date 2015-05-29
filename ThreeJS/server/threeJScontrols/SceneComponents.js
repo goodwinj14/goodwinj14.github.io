@@ -96,7 +96,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 //Adds a new Ring to our scene based off of the supplied params
 	if(shape=="Ring"){
 		var ring = null;
-			ring = new THREE.Mesh( new THREE.RingGeometry( length, width, 32 ), new THREE.MeshNormalMaterial());
+			ring = new THREE.Mesh( new THREE.RingGeometry( 1, 1, 32 ), new THREE.MeshNormalMaterial());
 			ring.position.set(LocationX,LocationY,LocationZ);
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(ring!=null){
