@@ -4,6 +4,7 @@ var SHAPES = {};
 *Adds a new 
 */
 SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, LocationY, LocationZ, shapeID, Scene){
+	console.log("Called SCENECOMPONENTS.addShape", shape);
 	//Adds a new cube to our scene based off of the user supplied params
 	if(shape=="Cube"){
 	var cube = null;	
