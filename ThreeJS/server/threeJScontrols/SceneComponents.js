@@ -37,7 +37,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 	circle.position.set(LocationX,LocationY,LocationZ);
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(circle!=null){
-			scene.add(circle);
+			Scene.add(circle);
 			SHAPES[shapeID] = circle;
 		}
 	}		
