@@ -96,7 +96,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 //Adds a new Ring to our scene based off of the supplied params
 	if(shape=="Ring"){
 		var ring = null;
-			ring = new THREE.Mesh( new THREE.RingGeometry( 1, 2, 32 ), new THREE.MeshNormalMaterial());
+			ring = new THREE.Mesh( new THREE.RingGeometry( parseFloat(length), parseFloat(width)+1, 32 ), new THREE.MeshNormalMaterial());
 			ring.position.set(LocationX,LocationY,LocationZ);
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(ring!=null){
@@ -104,6 +104,19 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 			SHAPES[shapeID] = ring;
 		}
 	}
+
+//Adds a new Torus to our scene based off of the supplied params
+	if(shape=="Torus"){
+		var torus;
+ 		torus = new THREE.Mesh( new THREE.TorusGeometry( 2, 1, 32, 100 ), new THREE.MeshNormalMaterial() );
+		torus.position.set(LocationX,LocationY,LocationZ);
+	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
+		if(torus!=null){
+			Scene.add(torus);
+			SHAPES[shapeID] = torus;
+		}
+	}
+
 
 }
 
