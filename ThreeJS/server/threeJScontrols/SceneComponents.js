@@ -19,7 +19,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 
 	if(shape=="Sphere"){
 	var sphere = null;	
-	sphere = new THREE.Mesh(new THREE.SphereGeometry(length, width ,height), new THREE.MeshNormalMaterial());
+	sphere = new THREE.Mesh(new THREE.SphereGeometry(length, 32 ,32), new THREE.MeshNormalMaterial());
 	sphere.position.set(LocationX,LocationY,LocationZ);
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(sphere!=null){
