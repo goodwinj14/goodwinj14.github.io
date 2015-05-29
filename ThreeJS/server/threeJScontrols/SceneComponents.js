@@ -81,7 +81,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 	}
 
 
-//Adds a new Icosahedron to our scene based off of the supplied params
+//Adds a new Plane to our scene based off of the supplied params
 	if(shape=="Plane"){
 	var plane = null;
 	 plane = new THREE.Mesh( new THREE.PlaneGeometry( length, width, 32 ), new THREE.MeshNormalMaterial());
@@ -92,6 +92,19 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 			SHAPES[shapeID] = plane;
 		}
 	}
+
+//Adds a new Ring to our scene based off of the supplied params
+	if(shape=="Ring"){
+		var ring = null;
+			ring = new THREE.Mesh( new THREE.RingGeometry( length, width, 32 ), new THREE.MeshNormalMaterial());
+			ring.position.set(LocationX,LocationY,LocationZ);
+	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
+		if(ring!=null){
+			Scene.add(ring);
+			SHAPES[shapeID] = ring;
+		}
+	}
+
 }
 
 SCENECOMPONENTS.move = function(shape_ID, direction, steps){
