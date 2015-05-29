@@ -17,6 +17,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 		}
 	}
 
+	//Adds a new Shpere to our scene based off of the supplied params
 	if(shape=="Sphere"){
 	var sphere = null;	
 	sphere = new THREE.Mesh(new THREE.SphereGeometry(length, 50,50), new THREE.MeshNormalMaterial());
@@ -27,6 +28,21 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 			SHAPES[shapeID] = sphere;
 		}
 	}
+
+	//Adds a new Shpere to our scene based off of the supplied params
+	if(shape=="Circle"){
+	var circle = null;
+
+	circle = new THREE.Mesh( new THREE.CircleGeometry( length, 32), new THREE.MeshNormalMaterial());	
+	circle.position.set(LocationX,LocationY,LocationZ);
+	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
+		if(circle!=null){
+			scene.add(circle);
+			SHAPES[shapeID] = circle;
+		}
+	}		
+
+
 }
 
 SCENECOMPONENTS.move = function(shape_ID, direction, steps){

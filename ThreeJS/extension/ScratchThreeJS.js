@@ -116,7 +116,7 @@
 				CameraRotation: ['Left', 'Right', 'Up', 'Down', 'Roll Left', 'Roll Right'],
 				CameraOrbit: ['Orbit Left', 'Orbit Right', 'Orbit Up', 'Orbit Down'],
 				Move: ['Left', 'Right', 'Up', 'Down','Forward','Back'],
-				Shapes: ['Cube', 'Sphere'],
+				Shapes: ['Cube', 'Sphere', 'Circle'],
 		    }
     };
 
