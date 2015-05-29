@@ -108,7 +108,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 //Adds a new Torus to our scene based off of the supplied params
 	if(shape=="Torus"){
 		var torus;
- 		torus = new THREE.Mesh( new THREE.TorusGeometry( 2, 1, 32, 100 ), new THREE.MeshNormalMaterial() );
+ 		torus = new THREE.Mesh( new THREE.TorusGeometry( width, length, 32, 100 ), new THREE.MeshNormalMaterial() );
 		torus.position.set(LocationX,LocationY,LocationZ);
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(torus!=null){
