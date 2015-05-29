@@ -42,6 +42,19 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 		}
 	}		
 
+	//Adds a new Shpere to our scene based off of the supplied params
+	if(shape=="Cylinder"){
+	var cylinder = null;
+
+	cylinder = new THREE.Mesh( THREE.CylinderGeometry( length, width, height, 32 ), new THREE.MeshNormalMaterial());	
+	cylinder.position.set(LocationX,LocationY,LocationZ);
+	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
+		if(cylinder!=null){
+			Scene.add(cylinder);
+			SHAPES[shapeID] = cylinder;
+		}
+	}
+
 
 }
 
