@@ -103,7 +103,7 @@
        if (lastKeyEvent == key) {
            lastKeyEvent = null;
            console.log(key);
-           Podium.keydown(83);
+           Podium.keydown(65);
            return true;
        }
 
