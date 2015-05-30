@@ -151,7 +151,7 @@
 			['', " Move Camera  %m.Move  %n steeps ","moveCamera", "Direction", "1"],
 			['r', 'New Shape %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'createShape', 'Shape', '1','1','1','0','0','0'],
 			['', "Move %s %m.Move %n Steps" , 'moveShape', "Variable", "Left", 1],
-			['h', "When %m.Keys  Pressed" , 'key_Pressed', "Space"],
+			['h', "When %m.Keys  Pressed" , 'key_Pressed', "space"],
         ],
 		
 		menus: {
