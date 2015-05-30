@@ -96,7 +96,7 @@
 	ext.key_Pressed = function(key) {
        // Reset alarm_went_off if it is true, and return true
        // otherwise, return false.
-       console.log(key);
+       console.log(key.charCodeAt(0));
        if (lastKeyEvent == 65) {
            lastKeyEvent = null;
            return true;
