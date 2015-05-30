@@ -97,7 +97,9 @@
 	ext.key_Pressed = function(key) {
        // Reset alarm_went_off if it is true, and return true
        // otherwise, return false.
-       if (lastKeyEvent === key) {
+       console.log("Last Key: ",lastKeyEvent);
+       console.log("Key: ", key);
+       if (lastKeyEvent == key) {
            lastKeyEvent = null;
            console.log(key);
            return true;
@@ -129,7 +131,7 @@
 				CameraOrbit: ['Orbit Left', 'Orbit Right', 'Orbit Up', 'Orbit Down'],
 				Move: ['Left', 'Right', 'Up', 'Down','Forward','Back'],
 				Shapes: ['Cube', 'Sphere', 'Circle','Cylinder', 'Dodecahedron', 'Icosahedron', 'Plane', 'Ring', 'Torus'],
-		    	Keys: ['Space'], 
+		    	Keys: ['Space', 'S'], 
 		    }
     };
 
