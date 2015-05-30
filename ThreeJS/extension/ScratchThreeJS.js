@@ -3,6 +3,7 @@
 	var canvas = null;
 	var ctx = null;
 	var lastKeyEvent = null;
+	var exicuteKeys[];
 	//var liveURL = "http://localhost:8888/main.html";
 	var shapes = [];
 	//var liveURL = "http://033ae09.netsolhost.com//gsd2014team5/Localhost/main.html";
@@ -26,6 +27,7 @@
 		//Test URLS
 		window.addEventListener("keydown", function(e){
     		console.log("called" + e.keyCode);
+    		lastKeyEvent = String.fromCharCode(e.keyCode)
 		});
 
 		window.addEventListener("message", receiveMessage, false);
