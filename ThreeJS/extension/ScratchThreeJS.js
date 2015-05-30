@@ -96,12 +96,45 @@
 	ext.key_Pressed = function(key) {
        // Reset alarm_went_off if it is true, and return true
        // otherwise, return false.
-       console.log(key.charCodeAt(0));
+
+       //Checks to see if we are looking for a key command exp. "left arrow"
+       //If so we the check to see if that key has been pressed 
+       //If it has been pressed we then return true exectuing the code stack below the when pressed block
+       if(key=='up arrow'){
+       	if (lastKeyEvent == 38) {
+           lastKeyEvent = null;
+           return true;
+           }
+       }else if(key=="space"){
+       	if (lastKeyEvent == 32) {
+           lastKeyEvent = null;
+           return true;
+           }
+       }else if(key=='down arrow'){
+       	if (lastKeyEvent == 40) {
+           lastKeyEvent = null;
+           return true;
+           }
+       }else if(key=='right arrow'){
+       	if (lastKeyEvent == 39) {
+           lastKeyEvent = null;
+           return true;
+           }
+       }else if(key=='left arrow'){
+       	if (lastKeyEvent == 37) {
+           lastKeyEvent = null;
+           return true;
+           }
+       }
+       //If a letter was entered insted of a command key
+       else{
+       	console.log(key.charCodeAt(0));
        if (lastKeyEvent == 65) {
            lastKeyEvent = null;
            return true;
        }
-
+       }
+       
        return false;
     };
 
