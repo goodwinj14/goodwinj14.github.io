@@ -100,7 +100,7 @@
 		*/
 
 		window.addEventListener("keydown", function(e){
-			messageSource.postMessage(String.fromCharCode(e.keyCode),origin);
+			messageSource.postMessage(e.keyCode,origin);
 			console.log("EVENT ", e.key, e.char, e.keyCode);
 		 });
 		
