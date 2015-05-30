@@ -3,7 +3,6 @@
 	var canvas = null;
 	var ctx = null;
 	var lastKeyEvent = null;
-	var exicuteKeys[];
 	//var liveURL = "http://localhost:8888/main.html";
 	var shapes = [];
 	//var liveURL = "http://033ae09.netsolhost.com//gsd2014team5/Localhost/main.html";
