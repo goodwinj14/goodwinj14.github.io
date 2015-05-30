@@ -24,11 +24,6 @@
 		//Opens the three.js window
 		//win = window.open (liveURL, "", "width=window.width, height=window.height");
 		//Test URLS
-		window.addEventListener("keydown", function(e){
-    		console.log("called" + e.keyCode);
-    		lastKeyEvent = String.fromCharCode(e.keyCode);
-		});
-
 		window.addEventListener("message", receiveMessage, false);
 		
 		function receiveMessage()
@@ -128,7 +123,6 @@
        }
        //If a letter was entered insted of a command key
        else{
-       	console.log(key.charCodeAt(0));
        if (lastKeyEvent == 65) {
            lastKeyEvent = null;
            return true;
