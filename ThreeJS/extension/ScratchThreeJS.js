@@ -2,6 +2,7 @@
 	var win = null;
 	var canvas = null;
 	var ctx = null;
+	var lastKeyEvent = null;
 	//var liveURL = "http://localhost:8888/main.html";
 	var shapes = [];
 	//var liveURL = "http://033ae09.netsolhost.com//gsd2014team5/Localhost/main.html";
@@ -32,8 +33,7 @@
 		function receiveMessage()
 		{
 			console.log(event.data);
-			var key = parseInt(event.data);
-			Podium.keydown(38);
+			lastKeyEvent = event.data;
     	}
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
 		
@@ -94,6 +94,17 @@
 		}
 	}
 
+	ext.key_Pressed = function(key) {
+       // Reset alarm_went_off if it is true, and return true
+       // otherwise, return false.
+       if (lastKeyEvent === key) {
+           lastKeyEvent = null;
+           console.log(key);
+           return true;
+       }
+
+       return false;
+    };
 
 	// Block and block menu descriptions
     var descriptor = {
@@ -108,6 +119,7 @@
 			['', " Move Camera  %m.Move  %n steeps ","moveCamera", "Direction", "1"],
 			['r', 'New Shape %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'createShape', 'Shape', '1','1','1','0','0','0'],
 			['', "Move %s %m.Move %n Steps" , 'moveShape', "Variable", "Left", 1],
+			['h', "When %m.Keys  Pressed" , 'key_Pressed', "Space"],
         ],
 		
 		menus: {
@@ -117,6 +129,7 @@
 				CameraOrbit: ['Orbit Left', 'Orbit Right', 'Orbit Up', 'Orbit Down'],
 				Move: ['Left', 'Right', 'Up', 'Down','Forward','Back'],
 				Shapes: ['Cube', 'Sphere', 'Circle','Cylinder', 'Dodecahedron', 'Icosahedron', 'Plane', 'Ring', 'Torus'],
+		    	Keys: ['Space'], 
 		    }
     };
 
