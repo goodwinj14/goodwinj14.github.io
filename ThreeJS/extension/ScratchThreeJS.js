@@ -77,7 +77,6 @@
 	}
 	
 	ext.createShape = function(shape, l,w,h, locX,locY, locZ){
-		Podium.keydown(38);
 		var shapeID = generatID(shape);
 		shapes.push(shapeID);
 		var message = "CREATESHAPE_"+shape+','+l+','+w+','+h+','+locX+','+locY+','+locZ+','+shapeID;
@@ -88,7 +87,6 @@
 	ext.moveShape = function(shape_id, direction, steps){
 		//Makes sure that the shape we are trying to move has been created
 		//console.log(shapes.indexOf(shape_id));
-		simulateKeyEvent();
 		if(shapes.indexOf(shape_id)>-1){
 		var message = "MOVESHAPE_"+shape_id+','+direction+','+steps;
 		win.postMessage(message, liveURL);
@@ -98,12 +96,8 @@
 	ext.key_Pressed = function(key) {
        // Reset alarm_went_off if it is true, and return true
        // otherwise, return false.
-       console.log("Last Key: ",lastKeyEvent);
-       console.log("Key: ", key);
        if (lastKeyEvent == key) {
            lastKeyEvent = null;
-           console.log(key);
-           Podium.keydown(65);
            return true;
        }
 
