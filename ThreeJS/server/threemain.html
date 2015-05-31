@@ -35,9 +35,7 @@
 			//Gets the address from which the event came
 			if(origin==null || messageSource==null){
 				origin = event.origin;
-				console.log(origin);
 				messageSource = event.source;
-				console.log(messageSource);
 			}
 
 			//Retrevies the command Key of the message denoting which function to call
@@ -101,7 +99,6 @@
 
 		window.addEventListener("keydown", function(e){
 			messageSource.postMessage(e.keyCode,origin);
-			console.log("EVENT ", e.key, e.char, e.keyCode);
 		 });
 		
 		
