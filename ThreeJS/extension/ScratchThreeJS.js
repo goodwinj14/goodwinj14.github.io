@@ -92,7 +92,9 @@
 		
 	}
 
-
+	ext.camControlsRotate = function(up, down, left, right){
+		
+	}
 	ext.key_Pressed = function(key) {
        // Reset alarm_went_off if it is true, and return true
        // otherwise, return false.
@@ -143,6 +145,7 @@
             // Block type, block name, function name, param1 default value, param2 default value
             ['w', 'New 3D World %m.Scenes %m.Camera', 'initWorld', "Scene", "Camera Type", ext],
             ['', 'Set Camera Controls Move Up: %m.Keys Down: %m.Keys Left: %m.Keys Right: %m.Keys ', 'camControlsMove', 'w', 's','a','d'],
+            ['', 'Set Camera Controls Rotate Up: %m.Keys Down: %m.Keys Left: %m.Keys Right: %m.Keys ', 'camControlsMove', 'up arrow', 'down arrow','left arrow','right arrow'],
 			//The camera rotate block to allow users to rotate the view of the camra "Left", "Right", "Up" and "Down"
 			['', "Rotate Camera %m.CameraRotation %n Degrees" , 'rotateCamera', "Direction", "1"],
 			//The camera orbit block to allow users to orbit the camera around a given point
