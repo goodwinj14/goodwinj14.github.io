@@ -88,9 +88,9 @@
 		}
 	}
 
-	ext.camControlsMove = function(up, down, left, right){
+	/*ext.camControlsMove = function(up, down, left, right){
 		
-	}
+	}*/
 	ext.key_Pressed = function(key) {
        // Reset alarm_went_off if it is true, and return true
        // otherwise, return false.
