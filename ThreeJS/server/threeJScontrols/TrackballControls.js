@@ -399,7 +399,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 		//Key codes in camRotateCommandMap or camMoveCommandMap
 		//Then Calls the corisponding camera control function
 		if(event.keyCode === camMoveCommandMap.MOVEUP){
-			moveCamera('y', camMoveSteps);
+			moveCamera('y', this.camMoveSteps);
 		}else if(event.keyCode === camMoveCommandMap.MOVEDOWN){
 			console.log("MOVEDOWN Called");
 		}else if(event.keyCode === camMoveCommandMap.MOVELEFT){
