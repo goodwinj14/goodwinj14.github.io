@@ -94,7 +94,8 @@
 	}
 
 	ext.camControlsRotate = function(up, down, left, right){
-		
+		var message = "SETCAMERACONTROLS_"+up+','+down+','+left+','+right;
+		win.postMessage(message, liveURL);
 	}
 	ext.key_Pressed = function(key) {
        // Reset alarm_went_off if it is true, and return true
