@@ -28,7 +28,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 	this.zoomSpeed = 1.2;
 	this.panSpeed = 0.3;
 
-	this.camMoveSteps = 0.5;
+	
 	this.noRotate = false;
 	this.noZoom = false;
 	this.noPan = false;
@@ -48,7 +48,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 	this.target = new THREE.Vector3();
 
 	var EPS = 0.000001;
-
+	var camMoveSteps = 0.5;
 	var lastPosition = new THREE.Vector3();
 
 	var _state = STATE.NONE,
@@ -399,7 +399,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 		//Key codes in camRotateCommandMap or camMoveCommandMap
 		//Then Calls the corisponding camera control function
 		if(event.keyCode === camMoveCommandMap.MOVEUP){
-			moveCamera('y', this.camMoveSteps);
+			moveCamera('y', camMoveSteps);
 		}else if(event.keyCode === camMoveCommandMap.MOVEDOWN){
 			console.log("MOVEDOWN Called");
 		}else if(event.keyCode === camMoveCommandMap.MOVELEFT){
