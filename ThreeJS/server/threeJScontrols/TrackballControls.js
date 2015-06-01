@@ -403,8 +403,10 @@ THREE.TrackballControls = function ( object, domElement ) {
 		}else if(event.keyCode === camMoveCommandMap.MOVEDOWN){
 			moveCamera('y', ((-1)*camMoveSteps));
 		}else if(event.keyCode === camMoveCommandMap.MOVELEFT){
+			moveCamera('x', ((-1)*camMoveSteps));
 			console.log("MOVELEFT Called");
 		}else if(event.keyCode === camMoveCommandMap.MOVERIGHT){
+			moveCamera('x', camMoveSteps);
 			console.log("MOVERIGHT Called");
 		}else if(event.keyCode === camMoveCommandMap.MOVEFORWARD){
 			console.log("MOVEFORWARD Called");
@@ -683,11 +685,11 @@ THREE.TrackballControls = function ( object, domElement ) {
 		function moveCamera(axis_, steps){
 			console.log("moveCamera Called");
 			if(axis_ == 'x'){
-				
+				object.position.x = object.position.x + steps;
 			}if(axis_ == 'y'){
 				object.position.y = object.position.y + steps;
 			}if(axis_ == 'z'){
-				
+				//object.position.z = object.position.z + steps;
 			}
 		}
 	//*******************************************************************************//
