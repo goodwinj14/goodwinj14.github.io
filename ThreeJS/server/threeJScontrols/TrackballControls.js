@@ -8,6 +8,13 @@ THREE.TrackballControls = function ( object, domElement ) {
 	var _this = this;
 	var STATE = { NONE: -1, ROTATE: 0, ZOOM: 1, PAN: 2, TOUCH_ROTATE: 3, TOUCH_ZOOM_PAN: 4 };
 
+	//**Obeject to hold the mapping of keyEvents to camera controls 
+	//**The defualt comands can be changed by calling the assignKeyToCamMoveCtrl function
+	//** or the assignKeyToCamRotateCtrl and passing in the new keys you want mapped to a given control	
+	var camMoveCommandMap = {MOVEUP: 88/*X*/, MOVEDOWN: 90/*Z*/, MOVELEFT: 37/*LEFTARROW*/, MOVERIGHT: 39/*RIGHTARROW*/, MOVEFORWARD: 38/*UPARROW*/, MOVEBACK: 40/*DOWNARROW*/};
+	var camRotateCommandMap = {ROTATEUP: 87/*W*/, ROTATEDOWN: 83/*S*/, ROTATELEFT: 65/*A*/, ROTATERIGHT: 68/*D*/,};
+	//*******************************************************************//
+	//*******************************************************************//
 	this.object = object;
 	this.domElement = ( domElement !== undefined ) ? domElement : document;
 
@@ -32,6 +39,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 	this.minDistance = 0;
 	this.maxDistance = Infinity;
 
+	//this.keys = [65 /*A*/, 66 /*B*/, 67 /*C*/, 68 /*D*/, 69 /*E*/, 70 /*F*/, 71 /*G*/, 72 /*H*/, 73 /*I*/ ,74 /*J*/, 75 /*K*/, 76 /*L*/, 77 /*M*/, 78 /*N*/, 79 /*O*/, 80 /*P*/, 81 /*Q*/, 82 /*R*/, 83 /*S*/, 84 /*T*/, 85 /*U*/, 86 /*V*/, 87 /*P*/, 88 /*X*/, 89 /*P*/, 90 /*Z*/,];
 	this.keys = [ 65 /*A*/, 83 /*S*/, 68 /*D*/ ];
 
 	// internals
@@ -360,7 +368,8 @@ THREE.TrackballControls = function ( object, domElement ) {
 	// listeners
 
 	function keydown( event ) {
-
+console.log("called");
+			 assignKeyToCamMoveCtrl(20);
 		if ( _this.enabled === false ) return;
 
 		window.removeEventListener( 'keydown', keydown );
@@ -372,7 +381,6 @@ THREE.TrackballControls = function ( object, domElement ) {
 			return;
 
 		} else if ( event.keyCode === _this.keys[ STATE.ROTATE ] && !_this.noRotate ) {
-
 			_state = STATE.ROTATE;
 
 		} else if ( event.keyCode === _this.keys[ STATE.ZOOM ] && !_this.noZoom ) {
@@ -587,6 +595,27 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 	}
 
+	//Takes in a key and assigns it to a specific event to be exicuted 
+	//When that event is trigered.
+	function assignKeyToCamMoveCtrl(MOVEUP, MOVEDOWN, MOVELEFT, MOVERIGHT, MOVEFORWARD, MOVEBACK){
+			if(MOVEUP != null){
+				camMoveCommandMap.MOVEUP = MOVEUP;
+				console.log(camMoveCommandMap.MOVEUP);
+			}if(MOVEDOWN != null){
+
+			}if(MOVELEFT != null){
+
+			}if(MOVERIGHT != null){
+
+			}if(MOVEFORWARD != null){
+
+			}if(MOVEBACK != null){
+
+			}
+	}
+	function assignKeyToCamRotateCtrl(ROTATEUP, ROTATEDOWN, ROTATELEFT, ROTATERIGHT){
+
+	}
 	this.domElement.addEventListener( 'contextmenu', function ( event ) { event.preventDefault(); }, false );
 
 	this.domElement.addEventListener( 'mousedown', mousedown, false );

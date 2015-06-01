@@ -144,8 +144,8 @@
         blocks: [
             // Block type, block name, function name, param1 default value, param2 default value
             ['w', 'New 3D World %m.Scenes %m.Camera', 'initWorld', "Scene", "Camera Type", ext],
-            ['', 'Set Camera Controls Move Up: %m.Keys Down: %m.Keys Left: %m.Keys Right: %m.Keys ', 'camControlsMove', 'w', 's','a','d'],
-            ['', 'Set Camera Controls Rotate Up: %m.Keys Down: %m.Keys Left: %m.Keys Right: %m.Keys ', 'camControlsMove', 'up arrow', 'down arrow','left arrow','right arrow'],
+            //['', 'Set Camera Controls  Up: %m.Keys Down: %m.Keys Left: %m.Keys Right: %m.Keys ', 'camControlsMove', 'w', 's','a','d'],
+            ['', 'Set Camera Controls %m.CameraControls Up: %m.Keys Down: %m.Keys Left: %m.Keys Right: %m.Keys ', 'camControlsMove', 'up arrow', 'down arrow','left arrow','right arrow'],
 			//The camera rotate block to allow users to rotate the view of the camra "Left", "Right", "Up" and "Down"
 			['', "Rotate Camera %m.CameraRotation %n Degrees" , 'rotateCamera', "Direction", "1"],
 			//The camera orbit block to allow users to orbit the camera around a given point
@@ -162,6 +162,7 @@
 				Camera: ['Perspective'],
 				CameraRotation: ['Left', 'Right', 'Up', 'Down', 'Roll Left', 'Roll Right'],
 				CameraOrbit: ['Orbit Left', 'Orbit Right', 'Orbit Up', 'Orbit Down'],
+				CameraControls: ["Default", "Move", "Rotate"],
 				Move: ['Left', 'Right', 'Up', 'Down','Forward','Back'],
 				Shapes: ['Cube', 'Sphere', 'Circle','Cylinder', 'Dodecahedron', 'Icosahedron', 'Plane', 'Ring', 'Torus'],
 		    	Keys: ['space', 'up arrow', 'down arrow', 'right arrow', 'left arrow', 'a',  'b',  'c',  'd',  'e',  'f',  'g',  'h', 'i',  'j',  'k',  'l',  'm',  'n',  'o',  'p',  'q',  'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',], 
