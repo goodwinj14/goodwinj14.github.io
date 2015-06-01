@@ -400,7 +400,6 @@ THREE.TrackballControls = function ( object, domElement ) {
 		//Then Calls the corisponding camera control function
 		if(event.keyCode === camMoveCommandMap.MOVEUP){
 			moveCamera('y', camMoveSteps);
-			console.log("MOVEUP Called");
 		}else if(event.keyCode === camMoveCommandMap.MOVEDOWN){
 			console.log("MOVEDOWN Called");
 		}else if(event.keyCode === camMoveCommandMap.MOVELEFT){
@@ -683,9 +682,9 @@ THREE.TrackballControls = function ( object, domElement ) {
 	//*******************************************************************************//
 		function moveCamera(axis_, steps){
 			if(axis_ == 'x'){
-				object.position.y = object.position.y + steps;
-			}if(axis_ == 'y'){
 				
+			}if(axis_ == 'y'){
+				object.position.y = object.position.y + steps;
 			}if(axis_ == 'z'){
 				
 			}
