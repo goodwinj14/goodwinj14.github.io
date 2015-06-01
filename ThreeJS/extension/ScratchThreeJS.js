@@ -89,7 +89,7 @@
 	}
 
 	ext.camControls = function(up, down, left, right){
-		var message = "SETCAMERACONTROLS_"+'DEFUALT'+','+up+','+down+','+left+','+right;
+		var message = "SETCAMERACONTROLS_"+up+','+down+','+left+','+right;
 		win.postMessage(message, liveURL);
 	}
 
