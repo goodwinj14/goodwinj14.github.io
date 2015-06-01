@@ -93,8 +93,8 @@
 		win.postMessage(message, liveURL);
 	}
 
-	ext.camControlsRotate = function(up, down, left, right){
-		var message = "SETCAMERACONTROLS_"+up+','+down+','+left+','+right;
+	ext.camControlsRotate = function(up, down, forward, back, left, right){
+		var message = "SETCAMERACONTROLS_"+up+','+down+','+forward+','+back+','+left+','+right;
 		win.postMessage(message, liveURL);
 	}
 	ext.key_Pressed = function(key) {
