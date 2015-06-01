@@ -401,7 +401,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 		if(event.keyCode === camMoveCommandMap.MOVEUP){
 			moveCamera('y', camMoveSteps);
 		}else if(event.keyCode === camMoveCommandMap.MOVEDOWN){
-			console.log("MOVEDOWN Called");
+			moveCamera('y', ((-1)*camMoveSteps));
 		}else if(event.keyCode === camMoveCommandMap.MOVELEFT){
 			console.log("MOVELEFT Called");
 		}else if(event.keyCode === camMoveCommandMap.MOVERIGHT){
