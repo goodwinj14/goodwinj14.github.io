@@ -181,6 +181,22 @@ THREE.TrackballControls = function ( object, domElement ) {
 		};
 
 	}() );
+	
+	//**************************************************//
+	//function to rotate camera based on a given key event
+	this.keyRotateCamera = (function() {
+
+	var axis = new THREE.Vector3(),
+		quaternion = new THREE.Quaternion();
+
+		return function(){
+			var angle = Math.acos( _rotateStart.dot( _rotateEnd ) / _rotateStart.length() / _rotateEnd.length() );
+
+		}
+
+	}());
+	//**************************************************//
+	//**************************************************//
 
 	this.rotateCamera = (function(){
 
@@ -308,6 +324,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 	};
 
+	//Called When the code is first run
 	this.update = function () {
 
 		_eye.subVectors( _this.object.position, _this.target );
@@ -368,29 +385,53 @@ THREE.TrackballControls = function ( object, domElement ) {
 	// listeners
 
 	function keydown( event ) {
-console.log("called");
-			 assignKeyToCamMoveCtrl(20);
+
+		
+		console.log("rotate Start vectore: ", _rotateEnd );
 		if ( _this.enabled === false ) return;
 
 		window.removeEventListener( 'keydown', keydown );
 
 		_prevState = _state;
 
+		//Checks to see if the key event matches to any on the 
+		//Key codes in camRotateCommandMap or camMoveCommandMap
+		//Then Calls the corisponding camera control function
+		if(event.keyCode === camMoveCommandMap.MOVEUP){
+			console.log("MOVEUP Called");
+		}else if(event.keyCode === camMoveCommandMap.MOVEDOWN){
+			console.log("MOVEDOWN Called");
+		}else if(event.keyCode === camMoveCommandMap.MOVELEFT){
+			console.log("MOVELEFT Called");
+		}else if(event.keyCode === camMoveCommandMap.MOVERIGHT){
+			console.log("MOVERIGHT Called");
+		}else if(event.keyCode === camMoveCommandMap.MOVEFORWARD){
+			console.log("MOVEFORWARD Called");
+		}else if(event.keyCode === camMoveCommandMap.MOVEBACK){
+			console.log("MOVEBACK Called");
+		}else if(event.keyCode === camRotateCommandMap.ROTATEUP){
+			console.log("ROTATEUP Called");
+		}else if(event.keyCode === camRotateCommandMap.ROTATEDOWN){
+			console.log("ROTATEDOWN Called");
+		}else if(event.keyCode === camRotateCommandMap.ROTATELEFT){
+			console.log("ROTATELEFT Called");
+		}else if(event.keyCode === camRotateCommandMap.ROTATERIGHT){
+			console.log("ROTATERIGHT Called");
+		}
+		console.log("rotate Start vectore: ", _rotateStart );
+		//*****************************************************//
+		//         											   //
+		//*****************************************************//
 		if ( _state !== STATE.NONE ) {
 
 			return;
 
 		} else if ( event.keyCode === _this.keys[ STATE.ROTATE ] && !_this.noRotate ) {
 			_state = STATE.ROTATE;
-
 		} else if ( event.keyCode === _this.keys[ STATE.ZOOM ] && !_this.noZoom ) {
-
 			_state = STATE.ZOOM;
-
 		} else if ( event.keyCode === _this.keys[ STATE.PAN ] && !_this.noPan ) {
-
 			_state = STATE.PAN;
-
 		}
 
 	}
@@ -595,27 +636,45 @@ console.log("called");
 
 	}
 
-	//Takes in a key and assigns it to a specific event to be exicuted 
-	//When that event is trigered.
+
+	//*******************************************************************************//
+	//			Functions to set camera controls from scratch blocks.        	     //
+	//*******************************************************************************//
+
+	//Takes in a keyCode and assigns it to a specific CameraMove event to be exicuted 
+	//When that key event is trigered.
 	function assignKeyToCamMoveCtrl(MOVEUP, MOVEDOWN, MOVELEFT, MOVERIGHT, MOVEFORWARD, MOVEBACK){
 			if(MOVEUP != null){
 				camMoveCommandMap.MOVEUP = MOVEUP;
-				console.log(camMoveCommandMap.MOVEUP);
 			}if(MOVEDOWN != null){
-
+				camMoveCommandMap.MOVEDOWN = MOVEDOWN;
 			}if(MOVELEFT != null){
-
+				camMoveCommandMap.MOVELEFT = MOVELEFT;
 			}if(MOVERIGHT != null){
-
+				camMoveCommandMap.MOVERIGHT = MOVERIGHT;
 			}if(MOVEFORWARD != null){
-
+				camMoveCommandMap.MOVEFORWARD = MOVEFORWARD;
 			}if(MOVEBACK != null){
-
+				camMoveCommandMap.MOVEBACK = MOVEBACK;
 			}
 	}
+	//Takes in a keyCode and assigns it to a specific CameraRotate event to be exicuted 
+	//When that key event is trigered.
 	function assignKeyToCamRotateCtrl(ROTATEUP, ROTATEDOWN, ROTATELEFT, ROTATERIGHT){
-
+			if(ROTATEUP!=null){
+				camRotateCommandMap.ROTATEUP = ROTATEUP;
+			}if(ROTATEDOWN!=null){
+				camRotateCommandMap.ROTATEDOWN = ROTATEDOWN;
+			}if(ROTATELEFT!=null){
+				camRotateCommandMap.ROTATELEFT = ROTATELEFT;
+			}if(ROTATERIGHT!=null){
+				camRotateCommandMap.ROTATERIGHT = ROTATERIGHT;
+			}
 	}
+	//*******************************************************************************//
+	//*******************************************************************************//
+	//*******************************************************************************//
+
 	this.domElement.addEventListener( 'contextmenu', function ( event ) { event.preventDefault(); }, false );
 
 	this.domElement.addEventListener( 'mousedown', mousedown, false );
