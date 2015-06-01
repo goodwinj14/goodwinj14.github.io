@@ -681,6 +681,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 	//			Functions to Move the Camera controls from scratch blocks.        	     //
 	//*******************************************************************************//
 		function moveCamera(axis_, steps){
+			console.log("moveCamera Called");
 			if(axis_ == 'x'){
 				
 			}if(axis_ == 'y'){
