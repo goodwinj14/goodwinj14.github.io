@@ -101,7 +101,7 @@
 	ext.loadOBJ = function(URL){
 		var objID = generatID("OBJ");
 		shapes.push(objID);
-		var message = "LOADOBJ_"+URL+','+shapeID;
+		var message = "LOADOBJ_"+URL+','+objID;
 		win.postMessage(message, liveURL);
 		return objID;
 	}
