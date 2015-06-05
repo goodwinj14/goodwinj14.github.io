@@ -137,6 +137,7 @@ SCENECOMPONENTS.addOBJ = function(url, objID, Scene){
 
        	 });
        	console.log("LOADed Object: ", obj);
+       obj.scale(0.5,0.5,0.5);
        Scene.add(obj);
        SHAPES[objID] = obj;
        });
