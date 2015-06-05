@@ -398,7 +398,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 		//Checks to see if the key event matches to any on the 
 		//Key codes in camRotateCommandMap or camMoveCommandMap
 		//Then Calls the corisponding camera control function
-		if(event.keyCode === camMoveCommandMap.MOVEUP){
+		/*if(event.keyCode === camMoveCommandMap.MOVEUP){
 			moveCamera('y', camMoveSteps);
 		}else if(event.keyCode === camMoveCommandMap.MOVEDOWN){
 			moveCamera('y', ((-1)*camMoveSteps));
@@ -421,7 +421,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 		}else if(event.keyCode === camRotateCommandMap.ROTATERIGHT){
 			console.log("ROTATERIGHT Called");
 		}
-		console.log("rotate Start vectore: ", _rotateStart );
+		console.log("rotate Start vectore: ", _rotateStart );*/
 		//*****************************************************//
 		//         											   //
 		//*****************************************************//
