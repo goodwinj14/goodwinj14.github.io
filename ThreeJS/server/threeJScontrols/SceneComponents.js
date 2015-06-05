@@ -127,7 +127,7 @@ SCENECOMPONENTS.addOBJ = function(url, objID, Scene){
 
 			//Loads at .OBJ file from an outside url and adds it to the sceen
 			var objLoader = new THREE.OBJLoader();
-    		var material = new THREE.MeshBasicMaterial({color: 'yellow', side: THREE.DoubleSide});
+    		var material = new THREE.MeshBasicMaterial({color: 'grey', side: THREE.DoubleSide});
     		objLoader.load(url, function (obj) {
        		obj.traverse(function (child) {
 
