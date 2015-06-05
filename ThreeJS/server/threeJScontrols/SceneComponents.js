@@ -137,8 +137,9 @@ SCENECOMPONENTS.addOBJ = function(url, objID, Scene){
 
        	 });
        Scene.add(obj);
+       SHAPES[objID] = obj;
        });
-	   SHAPES[objID] = obj;
+	   
 }
 
 
