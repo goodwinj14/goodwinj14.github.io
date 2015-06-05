@@ -99,8 +99,11 @@
 	}
 
 	ext.loadOBJ = function(URL){
-		var message = "LOADOBJ_"+URL;
+		var objID = generatID("OBJ");
+		shapes.push(objID);
+		var message = "LOADOBJ_"+URL+','+shapeID;
 		win.postMessage(message, liveURL);
+		return objID;
 	}
 	ext.key_Pressed = function(key) {
        // Reset alarm_went_off if it is true, and return true
@@ -162,7 +165,7 @@
 			['r', 'New Shape %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'createShape', 'Shape', '1','1','1','0','0','0'],
 			['', "Move %s %m.Move %n Steps" , 'moveShape', "Variable", "Left", 1],
 			['h', "When %m.Keys  Pressed" , 'key_Pressed', "space"],
-			['', "Load Object URL: %s", "loadOBJ","Default URL HERE"],
+			['r', "Load Object URL: %s", "loadOBJ","http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/ship_triangle.obj"],
         ],
 		
 		menus: {

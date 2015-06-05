@@ -104,6 +104,13 @@
 					SCENECOMPONENTS.move(paramsArray[0],paramsArray[1], paramsArray[2]);
 				}
 			}
+			if(commandKey == "LOADOBJ"){
+				if(SCENE!=null){
+					SCENECOMPONENTS.(paramsArray[0], paramsArray[1], SCENE);
+					console.log("LOADOBJ KEY CALLED", paramsArray);
+					
+				}
+			}
 		}
 		/*
 		*EVENT HANDELER END

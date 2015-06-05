@@ -120,6 +120,27 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 
 }
 
+/*
+**Adds a new object to the scene loaded from an outside source
+*/
+SCENECOMPONENTS.addOBJ = function(url, objID, Scene){
+
+			//Loads at .OBJ file from an outside url and adds it to the sceen
+			var objLoader = new THREE.OBJLoader();
+    		var material = new THREE.MeshBasicMaterial({color: 'yellow', side: THREE.DoubleSide});
+    		objLoader.load(url, function (obj) {
+       		obj.traverse(function (child) {
+
+            if (child instanceof THREE.Mesh) {
+                child.material = material;
+            }
+
+       	 });
+       Scene.add(obj);
+	   SHAPES[shapeID] = objID;
+}
+
+
 SCENECOMPONENTS.move = function(shape_ID, direction, steps){
 	//var temp = shape_ID + ", " + direction + ", " + steps;
 	//We call parseFloat to help javascript tell the difference between the arithmatic + and string concatination +
