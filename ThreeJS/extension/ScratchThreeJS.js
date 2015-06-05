@@ -97,6 +97,11 @@
 		var message = "SETCAMERACONTROLS_"+up+','+down+','+forward+','+back+','+left+','+right;
 		win.postMessage(message, liveURL);
 	}
+
+	ext.loadOBJ = function(URL){
+		var message = "LOADOBJ_"+URL;
+		win.postMessage(message, liveURL);
+	}
 	ext.key_Pressed = function(key) {
        // Reset alarm_went_off if it is true, and return true
        // otherwise, return false.
@@ -157,6 +162,7 @@
 			['r', 'New Shape %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'createShape', 'Shape', '1','1','1','0','0','0'],
 			['', "Move %s %m.Move %n Steps" , 'moveShape', "Variable", "Left", 1],
 			['h', "When %m.Keys  Pressed" , 'key_Pressed', "space"],
+			['', "Load Object URL: %s", "loadOBJ","Default URL HERE"],
         ],
 		
 		menus: {
