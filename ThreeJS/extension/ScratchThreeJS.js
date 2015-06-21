@@ -20,7 +20,7 @@
 	//Opens the window and 
 	//A wait block is required for this function do to the fact that we must wait for the entire 
 	//three.js file to load befor we can countinue exicuting our program.
-	ext.initWorld = function(scene, width, height cameraType, callback) {
+	ext.initWorld = function(scene, width, height, cameraType, callback) {
 		//Opens the three.js window
 		//win = window.open (liveURL, "", "width=window.width, height=window.height");
 		//Test URLS
