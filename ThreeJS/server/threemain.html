@@ -211,7 +211,7 @@
 
 			var url		= canvas.toDataURL('image/png');
 			document.body.style.background	= 'url(' + url + ')';
-			
+
 			/////////////////////////////////////////////////////////////
 			////////////////////////Adds Ground//////////////////////////
 			/////////////////////////////////////////////////////////////
@@ -222,6 +222,8 @@
     		repeatY     : 10,    // the number of time the texture is repeated in Y, default to 1
 			});
 			console.log("Ground: ",groundMesh);
+			//Scales Mesh resulting in a smother grass look
+			groundMesh.scale.multiplyScalar(10);
 			SCENE.add(groundMesh);
 			}
 			
