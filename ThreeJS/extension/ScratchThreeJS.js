@@ -169,7 +169,7 @@
         ],
 		
 		menus: {
-		        Scenes: ['Grid', 'Blank'],
+		        Scenes: ['Grid','Grass','Blank'],
 				Camera: ['Perspective'],
 				CameraRotation: ['Left', 'Right', 'Up', 'Down', 'Roll Left', 'Roll Right'],
 				CameraOrbit: ['Orbit Left', 'Orbit Right', 'Orbit Up', 'Orbit Down'],
