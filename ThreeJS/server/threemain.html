@@ -172,11 +172,30 @@
 			var plane = SCENESTYLES.GRID; 
 			SCENE.add(plane);
 			}
+
+			////////////////////////////
 			//Creates a Flat grass scene
+			///////////////////////////
 			if(sceneStyle[0]=="Grass"){
 			console.log("Grass called");
 			//Straight from https://github.com/jeromeetienne/threex.grassground
 			//Thanks jeromeetienne for all the amazing game extentions!!!
+			/////////////////////////////////////////////////////////////
+			//////////////////////ADD Light//////////////////////////////
+			var light	= new THREE.AmbientLight( 0x020202 );
+			SCENE.add( light );
+			// add a light in front
+			var light	= new THREE.DirectionalLight('white', 1);
+			light.position.set(0.5, 0.5, 2);
+			SCENE.add( light );
+			// add a light behind
+			var light	= new THREE.DirectionalLight('white', 0.75);
+			light.position.set(-0.5, 2.5, -2);
+			SCENE.add( light );
+
+			/////////////////////////////////////////////////////////////
+			////////////////////////Adds Ground//////////////////////////
+			/////////////////////////////////////////////////////////////
 			var groundMesh  = new THREEx.GrassGround({
 			width       : 10,    // the width of the mesh, default to 1
     		height      : 10,    // the height of the mesh, default to 1
