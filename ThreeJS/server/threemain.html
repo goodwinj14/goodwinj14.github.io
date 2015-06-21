@@ -222,8 +222,8 @@
     		repeatY     : sceneStyle[2],    // the number of time the texture is repeated in Y, default to 1
 			});
 			console.log("Ground: ",groundMesh);
-			//Scales Mesh resulting in a smother grass look gets the average between width and height
-			groundMesh.scale.multiplyScalar(10);
+			//Scales Mesh resulting in a smother grass look gets the average between width and height (((parseInt(sceneStyle[1])+(parseInt(sceneStyle[1]))/2)
+			groundMesh.scale.multiplyScalar((parseInt(sceneStyle[1])+parseInt(sceneStyle[1]))/2);
 			SCENE.add(groundMesh);
 			}
 			
