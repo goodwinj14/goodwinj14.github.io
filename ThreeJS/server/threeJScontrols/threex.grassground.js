@@ -12,7 +12,7 @@ THREEx.GrassGround	= function(opts){
 	var anisotropy	= opts.anisotropy !== undefined ? opts.anisotropy : 16
 
 	// create the textureDiffuse	
-	var textureDiffuseUrl	= 'grasslight-small.jpg'
+	var textureDiffuseUrl	= 'sceneImages/grasslight-small.jpg'
 	var textureDiffuse	= THREE.ImageUtils.loadTexture(textureDiffuseUrl);
 	textureDiffuse.wrapS	= THREE.RepeatWrapping;
 	textureDiffuse.wrapT	= THREE.RepeatWrapping;
@@ -21,7 +21,7 @@ THREEx.GrassGround	= function(opts){
 	textureDiffuse.anisotropy = anisotropy;
 
 	// create the textureNormal	
-	var textureNormalUrl	='grasslight-small-nm.jpg'
+	var textureNormalUrl	='sceneImages/grasslight-small-nm.jpg'
 	var textureNormal	= THREE.ImageUtils.loadTexture(textureNormalUrl);
 	textureNormal.wrapS	= THREE.RepeatWrapping;
 	textureNormal.wrapT	= THREE.RepeatWrapping;
