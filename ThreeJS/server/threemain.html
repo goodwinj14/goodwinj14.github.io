@@ -223,7 +223,7 @@
 			});
 			console.log("Ground: ",groundMesh);
 			//Scales Mesh resulting in a smother grass look
-			groundMesh.scale.multiplyScalar(10);
+			groundMesh.scale.multiplyScalar((width+height)/2);
 			SCENE.add(groundMesh);
 			}
 			
