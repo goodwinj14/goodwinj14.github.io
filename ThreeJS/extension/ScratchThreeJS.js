@@ -20,7 +20,7 @@
 	//Opens the window and 
 	//A wait block is required for this function do to the fact that we must wait for the entire 
 	//three.js file to load befor we can countinue exicuting our program.
-	ext.initWorld = function(scene, cameraType, callback) {
+	ext.initWorld = function(scene, width, height cameraType, callback) {
 		//Opens the three.js window
 		//win = window.open (liveURL, "", "width=window.width, height=window.height");
 		//Test URLS
@@ -34,7 +34,7 @@
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
 		
         setTimeout(function (){
-			var message = "INIT_"+scene;
+			var message = "INIT_"+scene+","+width+","+height;
 			win.postMessage(message,liveURL);
 			callback(); //Calls back to Scaratch proggram to allow exicution flow to reStart once the page has been loaded
         }, 1000);
@@ -153,7 +153,7 @@
     var descriptor = {
         blocks: [
             // Block type, block name, function name, param1 default value, param2 default value
-            ['w', 'New 3D World %m.Scenes %m.Camera', 'initWorld', "Scene", "Camera Type", ext],
+            ['w', 'New 3D World %m.Scenes Width %n Height %n %m.Camera', 'initWorld', "Scene", 10, 10 , "Camera Type"ext],
             //['', 'Set Camera Controls  Up: %m.Keys Down: %m.Keys Left: %m.Keys Right: %m.Keys ', 'camControlsMove', 'w', 's','a','d'],
             ['', 'Set Camera Controls Move Up: %m.Keys Down: %m.Keys Forward: %m.Keys Back: %m.Keys Left: %m.Keys Right: %m.Keys ', 'camControlsRotate', 'z', 'x', 'up arrow', 'down arrow','left arrow','right arrow'],
 			//The camera rotate block to allow users to rotate the view of the camra "Left", "Right", "Up" and "Down"
