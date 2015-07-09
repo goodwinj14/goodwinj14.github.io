@@ -149,7 +149,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
 		console.log("SCENECOMPONENTS.addCharecter Called");
 		if(Charecter=="Marine"){
 		   var  blendMesh = new THREE.BlendCharacter();
-				blendMesh.load( 'sceneCharecters/marine_anims.js', function ( geometry, materials ) {
+				blendMesh.load( 'threeJScontrols/sceneCharecters/marine_anims.js', function ( geometry, materials ) {
 
 				blendMesh.rotation.y = Math.PI * -135 / 180;
 				blendMesh.scale.set( .04, .04, .04 );
