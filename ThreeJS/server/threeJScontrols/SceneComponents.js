@@ -146,6 +146,7 @@ SCENECOMPONENTS.addOBJ = function(url, objID, Scene){
 }
 
 SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, LocationZ, charecterID, Scene){
+		console.log("SCENECOMPONENTS.addCharecter Called");
 		if(Charecter=="Marine"){
 		   var  blendMesh = new THREE.BlendCharacter();
 				blendMesh.load( 'sceneCharecters/marine_anims.js', function ( geometry, materials ) {
@@ -166,7 +167,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
 				blendMesh.play('idle');
 				} );
 		}
-		console.log("SCENECOMPONENTS.addCharecter Called");
+		
 }
 
 SCENECOMPONENTS.move = function(shape_ID, direction, steps){
