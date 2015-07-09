@@ -93,6 +93,11 @@
 
 				controls.addEventListener( 'change', RENDERER );
 			}
+			//
+			if(commandKey == "ADDCHARECTER"){
+				SCENECOMPONENTS.addCharecter(1,1,1,1,1,SCENE);
+				console.log("ADDCHARECTER called");
+			}
 			//CREATESHAPE command tag is associated with the Move block
 			if(commandKey == "CREATESHAPE"){
 				if(SCENE!=null){

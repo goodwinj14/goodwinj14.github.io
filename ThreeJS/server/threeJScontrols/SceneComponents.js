@@ -144,6 +144,9 @@ SCENECOMPONENTS.addOBJ = function(url, objID, Scene){
 	   
 }
 
+SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, LocationZ, shapeID, Scene){
+		console.log("SCENECOMPONENTS.addCharecter Called");
+}
 
 SCENECOMPONENTS.move = function(shape_ID, direction, steps){
 	//var temp = shape_ID + ", " + direction + ", " + steps;
