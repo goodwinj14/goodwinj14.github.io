@@ -5,6 +5,7 @@
 	var lastKeyEvent = null;
 	//var liveURL = "http://localhost:8888/main.html";
 	var shapes = [];
+	var charecters = [];
 	//var liveURL = "http://033ae09.netsolhost.com//gsd2014team5/Localhost/main.html";
 	var liveURL = "http://goodwinj14.github.io/ThreeJS/server/threemain.html";
     // Cleanup function when the extension is unloaded
@@ -107,11 +108,11 @@
 	}
 
 	ext.add_Charecter = function(Charecter){
-		var objID = generatID(Charecter);
-		shapes.push(objID);
-		var message = "ADDCHARECTER_"+Charecter+','+Charecter;
+		var charecterID = generatID(Charecter);
+		charecters.push(charecterID);
+		var message = "ADDCHARECTER_"+Charecter+','+locX+','+locY+','+locZ+','+charecterID;
 		win.postMessage(message, liveURL);
-		return objID;
+		return charecterID;
 	}
 
 	ext.key_Pressed = function(key) {

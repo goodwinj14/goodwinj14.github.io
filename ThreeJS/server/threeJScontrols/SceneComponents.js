@@ -1,5 +1,6 @@
 var SCENECOMPONENTS = {};
 var SHAPES = {};
+var CHARECTERS = {};
 /*
 *Adds a new 
 */
@@ -144,7 +145,27 @@ SCENECOMPONENTS.addOBJ = function(url, objID, Scene){
 	   
 }
 
-SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, LocationZ, shapeID, Scene){
+SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, LocationZ, charecterID, Scene){
+		if(Charecter=="Marine"){
+		   var  blendMesh = new THREE.BlendCharacter();
+				blendMesh.load( 'sceneCharecters/marine_anims.js', function ( geometry, materials ) {
+
+				blendMesh.rotation.y = Math.PI * -135 / 180;
+				blendMesh.scale.set( .04, .04, .04 );
+				Scene.add( blendMesh );
+				CHARECTERS[charecterID] = blendMesh;
+				var aspect = window.innerWidth / window.innerHeight;
+				var radius = blendMesh.geometry.boundingSphere.radius;
+
+
+				// Set default weights
+
+				blendMesh.animations[ 'idle' ].weight = 1 / 3;
+				blendMesh.animations[ 'walk' ].weight = 1 / 3;
+				blendMesh.animations[ 'run' ].weight = 1 / 3;
+				blendMesh.play('idle');
+				} );
+		}
 		console.log("SCENECOMPONENTS.addCharecter Called");
 }
 
