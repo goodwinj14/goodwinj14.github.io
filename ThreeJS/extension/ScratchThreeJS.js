@@ -112,6 +112,7 @@
 		charecters.push(charecterID);
 		var message = "ADDCHARECTER_"+Charecter+','+locX+','+locY+','+locZ+','+charecterID;
 		win.postMessage(message, liveURL);
+		console.log("Charecter ID: ", charecterID);
 		return charecterID;
 	}
 
