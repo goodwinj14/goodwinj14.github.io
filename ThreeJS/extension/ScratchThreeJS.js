@@ -107,12 +107,12 @@
 		return objID;
 	}
 
-	ext.add_Charecter = function(Charecter){
+	ext.add_Charecter = function(Charecter, locX, locY, locZ){
 		console.log("ext.add_Charecter called ");
 		var charecterID = generatID("CHARECTER");
 		charecters.push(charecterID);
 		console.log("Charecter ID: ", charecterID);
-		var message = "ADDCHARECTER_"+Charecter+','+locX;
+		var message = "ADDCHARECTER_"+Charecter+','+locX+','+locY+','+locZ+','+charecterID;
 		console.log("Charecter Message: ", message);
 		win.postMessage(message, liveURL);
 		return charecterID;
