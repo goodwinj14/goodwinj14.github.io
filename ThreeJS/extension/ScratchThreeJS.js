@@ -175,7 +175,7 @@
 			['r', 'New Shape %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'createShape', 'Shape', '1','1','1','0','0','0'],
 			['', "Move %s %m.Move %n Steps" , 'moveShape', "Variable", "Left", 1],
 			['h', "When %m.Keys  Pressed" , 'key_Pressed', "space"],
-			['r', "Add %m.Charecters Location: X: %n Y: %n Z: %n" , 'add_Charecter', "Marine"],
+			['r', "Add %m.Charecters Location: X: %n Y: %n Z: %n" , 'add_Charecter', "Marine", '1','1','1'],
 			['r', "Load Object URL: %s", "loadOBJ","http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/shiptriangle.obj"],
         ],
 		
