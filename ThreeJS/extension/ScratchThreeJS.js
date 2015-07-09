@@ -110,9 +110,10 @@
 	ext.add_Charecter = function(Charecter){
 		console.log("ext.add_Charecter called ");
 		var charecterID = generatID("CHARECTER");
-		console.log("Charecter ID: ", charecterID);
 		charecters.push(charecterID);
+		console.log("Charecter ID: ", charecterID);
 		var message = "ADDCHARECTER_"+Charecter+','+locX+','+locY+','+locZ+','+charecterID;
+		console.log("Charecter Message: ", message);
 		win.postMessage(message, liveURL);
 		return charecterID;
 	}
