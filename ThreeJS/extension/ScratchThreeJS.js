@@ -112,7 +112,7 @@
 		var charecterID = generatID("CHARECTER");
 		charecters.push(charecterID);
 		console.log("Charecter ID: ", charecterID);
-		var message = "ADDCHARECTER_"+Charecter;
+		var message = "ADDCHARECTER_"+Charecter+','+locX;
 		console.log("Charecter Message: ", message);
 		win.postMessage(message, liveURL);
 		return charecterID;
