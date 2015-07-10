@@ -33,7 +33,7 @@
 			lastKeyEvent = event.data;
     	}
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
-		console.log(browserInfo());
+		//console.log(browserInfo());
         setTimeout(function (){
 			var message = "INIT_"+scene+","+width+","+height;
 			win.postMessage(message,liveURL);
