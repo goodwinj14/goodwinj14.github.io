@@ -41,7 +41,8 @@
 		if(win==null){
 			var browserData = navigator.userAgent;
 			console.log(browserData);
-			console.log("Includes: ",browserData.includes("Mozilla/5.0"));
+			console.log("Includes: ");
+			console.log(browserData.includes("Mozilla/5.0"));
 		}
 
 		
