@@ -42,7 +42,7 @@
 			var browserData = navigator.userAgent;
 			console.log(browserData);
 			console.log("Includes: ");
-			console.log(browserData.includes("Mozilla/5.0"));
+			console.log(browserData.indexOf("Mozilla/5.0"));
 		}
 
 		
