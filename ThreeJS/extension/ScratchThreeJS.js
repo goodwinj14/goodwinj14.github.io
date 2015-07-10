@@ -41,9 +41,7 @@
 		if(win==null){
 			var browserData = navigator.userAgent;
 			console.log(browserData);
-			if(browserData.includes("Mozilla/5.0")){
-				console.log("Using Safari");
-			}
+			console.log(browserData.includes("Mozilla/5.0"));
 		}
 
 		
