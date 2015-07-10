@@ -40,7 +40,8 @@
 		*/
 		if(win==null){
 			var browserData = navigator.userAgent;
-			if(s.includes("Safari")){
+			console.log(browserData);
+			if(browserData.includes("Safari")){
 				console.log("Using Safari");
 			}
 		}
