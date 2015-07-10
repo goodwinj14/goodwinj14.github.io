@@ -33,7 +33,7 @@
 			lastKeyEvent = event.data;
     	}
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
-		console.log("Name is ", navigator.appName, ". Code name is ", navigator.appCodeName;;
+		console.log("Name is ", navigator.appName, ". Code name is ", navigator.appCodeName);
         setTimeout(function (){
 			var message = "INIT_"+scene+","+width+","+height;
 			win.postMessage(message,liveURL);
