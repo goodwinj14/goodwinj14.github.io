@@ -33,7 +33,19 @@
 			lastKeyEvent = event.data;
     	}
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
-		console.log(navigator.userAgent);
+
+		/*
+		**Checks Browser Version in win returns null
+		**
+		*/
+		if(win==null){
+			var browserData = navigator.userAgent;
+			if(s.includes("Safari")){
+				console.log("Using Safari");
+			}
+		}
+
+		
         setTimeout(function (){
 			var message = "INIT_"+scene+","+width+","+height;
 			win.postMessage(message,liveURL);
