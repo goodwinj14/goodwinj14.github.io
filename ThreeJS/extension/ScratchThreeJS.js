@@ -26,7 +26,7 @@
 		//win = window.open (liveURL, "", "width=window.width, height=window.height");
 		//Test URLS
 		window.addEventListener("message", receiveMessage, false);
-		
+		console.log(window);
 		function receiveMessage()
 		{
 			console.log(event.data);
