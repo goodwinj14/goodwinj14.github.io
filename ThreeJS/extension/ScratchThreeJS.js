@@ -33,7 +33,7 @@
 			lastKeyEvent = event.data;
     	}
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
-		console.log(navigator.sayswho());
+		console.log(browserInfo());
         setTimeout(function (){
 			var message = "INIT_"+scene+","+width+","+height;
 			win.postMessage(message,liveURL);
@@ -212,7 +212,7 @@ function generatID(objectType){
 **Returns The Browser Type and Version 
 **
 */
-navigator.sayswho= (function(){
+function browserInfo(){
     var ua= navigator.userAgent, tem,
     M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
     if(/trident/i.test(M[1])){
@@ -226,7 +226,7 @@ navigator.sayswho= (function(){
     M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
     if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
     return M.join(' ');
-})();
+}
 
 
 Podium = {};
