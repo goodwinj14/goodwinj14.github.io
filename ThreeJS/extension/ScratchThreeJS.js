@@ -26,14 +26,14 @@
 		//win = window.open (liveURL, "", "width=window.width, height=window.height");
 		//Test URLS
 		window.addEventListener("message", receiveMessage, false);
-		console.log(window);
+		
 		function receiveMessage()
 		{
 			console.log(event.data);
 			lastKeyEvent = event.data;
     	}
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
-		
+		console.log(win);
         setTimeout(function (){
 			var message = "INIT_"+scene+","+width+","+height;
 			win.postMessage(message,liveURL);
