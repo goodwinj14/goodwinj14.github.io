@@ -40,9 +40,9 @@
 		*/
 		if(win==null){
 			var browserData = navigator.userAgent;
-			console.log(browserData);
-			console.log("Includes: ");
-			console.log(browserData.indexOf("Safari"));
+			if(browserData.indexOf("Safari")>-1){
+			alert("Allow PopUps From This Site");
+			}
 		}
 
 		
