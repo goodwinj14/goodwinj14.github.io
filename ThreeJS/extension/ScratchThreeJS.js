@@ -41,7 +41,7 @@
 		if(win==null){
 			var browserData = navigator.userAgent;
 			if(browserData.indexOf("Safari")>-1){
-			alert("This extension must open in a separate window. \rTo run please enable PopUps from this site. \rTo enable PopUps: \rClick Safari \rClick Preferences \rUncheck Block PopUps ");
+			alert("This extension must open in a separate window. \rTo run please enable PopUps from this site. \rTo enable PopUps: \rClick Safari, \rClick Preferences, \rClick security, \rUncheck Block pop-up windows. ");
 			}
 		}
 		//**//
