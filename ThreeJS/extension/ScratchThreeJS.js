@@ -106,8 +106,8 @@
 		win.postMessage(message, liveURL);
 	}
 
-	ext.camControlsRotate = function(up, down, forward, back, left, right){
-		var message = "SETCAMERACONTROLS_"+up+','+down+','+forward+','+back+','+left+','+right;
+	ext.camControlsRotate = function(){
+		var message = "SETCAMERACONTROLS_";
 		win.postMessage(message, liveURL);
 	}
 
@@ -180,7 +180,7 @@
             // Block type, block name, function name, param1 default value, param2 default value
             ['w', 'New 3D World %m.Scenes Width: %n Height: %n %m.Camera', 'initWorld', "Scene", 10, 10 , "Camera Type",ext],
             //['', 'Set Camera Controls  Up: %m.Keys Down: %m.Keys Left: %m.Keys Right: %m.Keys ', 'camControlsMove', 'w', 's','a','d'],
-            ['', 'Set Camera Controls Move Up: %m.Keys Down: %m.Keys Forward: %m.Keys Back: %m.Keys Left: %m.Keys Right: %m.Keys ', 'camControlsRotate', 'z', 'x', 'up arrow', 'down arrow','left arrow','right arrow'],
+            ['', 'Add Camera Mouse Controles', 'camControlsRotate'],
 			//The camera rotate block to allow users to rotate the view of the camra "Left", "Right", "Up" and "Down"
 			['', "Rotate Camera %m.CameraRotation %n Degrees" , 'rotateCamera', "Direction", "1"],
 			//The camera orbit block to allow users to orbit the camera around a given point
