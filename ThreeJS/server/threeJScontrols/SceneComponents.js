@@ -215,3 +215,6 @@ SCENECOMPONENTS.move = function(shape_ID, direction, steps){
 	}
 }
 
+SCENECOMPONENTS.getCharecter = function(charecterID){
+	return CHARECTERS[charecterID];
+}
