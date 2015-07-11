@@ -36,6 +36,7 @@
 
 		function eventHandeler(){
 			//Gets the address from which the event came
+			console.log(event);
 			if(origin==null || messageSource==null){
 				origin = event.origin;
 				messageSource = event.source;
