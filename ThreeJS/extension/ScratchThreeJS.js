@@ -41,7 +41,9 @@
 		if(win==null){
 			var browserData = navigator.userAgent;
 			if(browserData.indexOf("Safari")>-1){
-			alert("This extension must open in a separate window. /n Please enable popUps from this site.");
+			alert("This extension must open in a separate window. Please enable PopUps from this site. To enable PopUps: Click 'Safari'
+			Click Preferences
+			Uncheck 'Block PopUps' ");
 			}
 		}
 
