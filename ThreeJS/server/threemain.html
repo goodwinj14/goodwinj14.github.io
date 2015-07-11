@@ -95,6 +95,14 @@
 
 				controls.addEventListener( 'change', RENDERER );
 			}
+			//SETCAMERALOOKAT command tag is associated with the Look At Objecet block
+			if(commandKey == "SETCAMERALOOKAT"){
+				if(CAMERA!=null){
+					console.log("SETCAMERALOOKAT:" ,paramsArray[0]);
+					//CAMERACONTROLS.lookAt(paramsArray[0],CAMERA);
+			}
+			}
+
 			//
 			if(commandKey == "ADDCHARECTER"){
 				console.log("ADDCHARECTER called");

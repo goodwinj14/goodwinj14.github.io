@@ -113,8 +113,8 @@
 
 	ext.lookAt = function(object){
 		console.log("Look At: ", object);
-		//var message = "SETCAMERACONTROLS_";
-		//win.postMessage(message, liveURL);
+		var message = "SETCAMERALOOKAT_"+object;
+		win.postMessage(message, liveURL);
 	}
 
 	ext.loadOBJ = function(URL){

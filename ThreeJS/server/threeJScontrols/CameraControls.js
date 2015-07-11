@@ -69,3 +69,7 @@ CAMERACONTROLS.move = function(direction, steps, camera){
 	camera.position.z = (camera.position.z + steps);
 	}
 }
+
+CAMERACONTROLS.lookAt = function(object, camera){
+	//camera.lookAt(object);
+}
