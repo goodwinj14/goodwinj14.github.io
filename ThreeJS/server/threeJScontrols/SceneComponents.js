@@ -218,7 +218,7 @@ SCENECOMPONENTS.move = function(shape_ID, direction, steps){
 
 SCENECOMPONENTS.getCharecter = function(charecterID){
 	console.log(CHARECTERS);
-	var charecter = CHARECTERS["CHARECTER1"];
+	var charecter = CHARECTERS[charecterID];
 	console.log(charecterID, charecter);
 	return charecter;
 }
