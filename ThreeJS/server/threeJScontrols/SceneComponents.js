@@ -155,6 +155,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
 				blendMesh.scale.set( .04, .04, .04 );
 				Scene.add( blendMesh );
 				CHARECTERS[charecterID] = blendMesh;
+				console.log(CHARECTERS[charecterID]);
 				var aspect = window.innerWidth / window.innerHeight;
 				var radius = blendMesh.geometry.boundingSphere.radius;
 
