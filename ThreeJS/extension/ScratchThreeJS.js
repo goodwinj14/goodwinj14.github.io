@@ -41,10 +41,10 @@
 		if(win==null){
 			var browserData = navigator.userAgent;
 			if(browserData.indexOf("Safari")>-1){
-			alert("This extension must open in a separate window. \r Please enable PopUps from this site. \r To enable PopUps: \r Click Safari \r Click Preferences \r Uncheck Block PopUps ");
+			alert("This extension must open in a separate window. \rTo run please enable PopUps from this site. \rTo enable PopUps: \rClick Safari \rClick Preferences \rUncheck Block PopUps ");
 			}
 		}
-
+		//**//
 		
         setTimeout(function (){
 			var message = "INIT_"+scene+","+width+","+height;
