@@ -192,9 +192,9 @@
 			//The camera orbit block to allow users to orbit the camera around a given point
 			['', " Camera Orbit  %m.CameraOrbit ","orbitCamera", "Direction"],
 			//The camera move block allows a user to move the camera in both the positive and negative direction of the X,Y, and Z axis.
-			['', " Move Camera  %m.Move  %n steeps ","moveCamera", "Variable",
+			['', " Move Camera  %m.Move  %n steeps ","moveCamera", "Direction", "1"]
 			//The camera look at block allows a user to set the camera to allways be focused on a specific object
-			['', "Look at Object %s" , 'lookAt', "Variable", "Left", 1],
+			['', "Look at Object %s" , 'lookAt', "Variable"],
 			['r', 'New Shape %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'createShape', 'Shape', '1','1','1','0','0','0'],
 			['', "Move %s %m.Move %n Steps" , 'moveShape', "Variable", "Left", 1],
 			['h', "When %m.Keys  Pressed" , 'key_Pressed', "space"],
