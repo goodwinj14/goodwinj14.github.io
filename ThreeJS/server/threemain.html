@@ -168,7 +168,7 @@
 		//INITIALIZES THE RENDERER OBJECT
 		function init_Render(){
 			console.log("init_Render");
-			RENDERER = new THREE.WebGLRenderer({ alpha: true });
+			RENDERER = new THREE.WebGLRenderer({ alpha: alpha });
 			RENDERER.setSize(window.innerWidth, window.innerHeight);
 			document.body.appendChild(RENDERER.domElement);
 		}
