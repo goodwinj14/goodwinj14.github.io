@@ -176,9 +176,9 @@ SCENECOMPONENTS.move = function(shape_ID, direction, steps){
 	
 	//!!!!!!-----The -0 Helps javascript to recognize the following + opperator as an additon operator and not as a string concatination------!!!!!!  
 	if(direction=="Left"){
+		console.log("Move Charecter", shape_ID);
 		var shape = null;
 		shape = SHAPES[shape_ID];
-		console.log("Move Charecter", shape);
 		if(shape!=null){
 			shape.position.x = (shape.position.x - steps);
 		}
