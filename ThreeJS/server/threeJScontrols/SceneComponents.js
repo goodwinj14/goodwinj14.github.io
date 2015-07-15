@@ -155,7 +155,6 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
 				blendMesh.scale.set( .04, .04, .04 );
 				Scene.add( blendMesh );
 				SHAPES[charecterID] = blendMesh;
-				console.log("Charecter", SHAPES[charecterID]);
 				var aspect = window.innerWidth / window.innerHeight;
 				var radius = blendMesh.geometry.boundingSphere.radius;
 
@@ -179,6 +178,7 @@ SCENECOMPONENTS.move = function(shape_ID, direction, steps){
 	if(direction=="Left"){
 		var shape = null;
 		shape = SHAPES[shape_ID];
+		console.log("Move Charecter", shape);
 		if(shape!=null){
 			shape.position.x = (shape.position.x - steps);
 		}
