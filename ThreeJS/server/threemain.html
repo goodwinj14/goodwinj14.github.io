@@ -21,6 +21,7 @@
 		var RENDERER = null;
 		var SCENE = null;
 		var CAMERA = null;
+		var clock = new THREE.Clock();
 		var controls = null;
 		//Info needed to send data back to the parent window
 		var origin = null;
@@ -261,6 +262,8 @@
 			RENDERER.render(scene, camera);
 		} 
 		function render(){
+			var delta = 0.75 * clock.getDelta();
+			THREE.AnimationHandler.update( delta );
 			RENDERER.render(SCENE, CAMERA);
 		} 
 		function animate(){
