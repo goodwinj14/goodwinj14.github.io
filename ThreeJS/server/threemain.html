@@ -267,12 +267,13 @@
 			RENDERER.render(SCENE, CAMERA);
 		} 
 		function animate(){
+			var delta = 0.75 * clock.getDelta();
+			THREE.AnimationHandler.update( delta );
 			requestAnimationFrame(animate);
-			//RENDERER.render(SCENE, CAMERA);
+			RENDERER.render(SCENE, CAMERA);
 			if(controls!=null){
 			controls.update();
 			}
-			render();
 		}
 		/*
 		*
