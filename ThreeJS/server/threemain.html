@@ -263,14 +263,15 @@
 		} 
 		function render(){
 			var delta = 0.75 * clock.getDelta();
+			if(controls!=null){
+			controls.update();
+			}
 			THREE.AnimationHandler.update( delta );
 			RENDERER.render(SCENE, CAMERA);
 		} 
 		function animate(){
 			requestAnimationFrame(animate);
-			if(controls!=null){
-			controls.update();
-			}
+			
 			render();
 		}
 		/*
