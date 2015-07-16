@@ -175,7 +175,6 @@ SCENECOMPONENTS.move = function(shape_ID, direction, steps){
 	//We call parseFloat to help javascript tell the difference between the arithmatic + and string concatination +
 	
 	//!!!!!!-----The -0 Helps javascript to recognize the following + opperator as an additon operator and not as a string concatination------!!!!!!  
-	console.log("Move Charecter", shape_ID);
 	if(direction=="Left"){
 		var shape = null;
 		shape = SHAPES[shape_ID];
@@ -217,7 +216,7 @@ SCENECOMPONENTS.move = function(shape_ID, direction, steps){
 }
 
 SCENECOMPONENTS.getCharecter = function(charecterID){
-	console.log(CHARECTERS);
+	console.log("THIS SHOULDNT BE CALLED!!!!");
 	var charecter = CHARECTERS[charecterID];
 	console.log(charecterID, charecter);
 	return charecter;
