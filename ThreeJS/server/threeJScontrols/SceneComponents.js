@@ -205,7 +205,7 @@ SCENECOMPONENTS.move = function(shape_ID, direction, steps){
 		shape = SHAPES[shape_ID];
 		if(shape!=null){
 			shape.position.z = (shape.position.z - steps);
-			SHAPES[charecterID].play('walk');
+			SHAPES[shape_ID].play('walk');
 		}
 	}if(direction=="Back"){
 		var shape = null;
