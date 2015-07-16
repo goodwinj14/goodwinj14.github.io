@@ -205,6 +205,7 @@ SCENECOMPONENTS.move = function(shape_ID, direction, steps){
 		shape = SHAPES[shape_ID];
 		if(shape!=null){
 			shape.position.z = (shape.position.z - steps);
+			blendMesh.play('walk');
 		}
 	}if(direction=="Back"){
 		var shape = null;
@@ -216,7 +217,6 @@ SCENECOMPONENTS.move = function(shape_ID, direction, steps){
 }
 
 SCENECOMPONENTS.getCharecter = function(charecterID){
-	console.log("THIS SHOULDNT BE CALLED!!!!");
 	var charecter = CHARECTERS[charecterID];
 	console.log(charecterID, charecter);
 	return charecter;
