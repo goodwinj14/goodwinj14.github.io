@@ -94,9 +94,8 @@
 	
 	ext.moveShape = function(shape_id, direction, steps){
 		//Makes sure that the shape we are trying to move has been created
-		
-		if(shapes.indexOf(shape_id)>-1){
 		console.log("Passed if Statment");
+		if(shapes.indexOf(shape_id)>-1){
 		var message = "MOVESHAPE_"+shape_id+','+direction+','+steps;
 		win.postMessage(message, liveURL);
 		}
@@ -130,6 +129,7 @@
 		console.log("ext.add_Charecter called ");
 		var charecterID = generatID("CHARECTER");
 		charecters.push(charecterID);
+		shapes.push(charecterID);
 		console.log("Charecter ID: ", charecterID);
 		var message = "ADDCHARECTER_"+Charecter+','+locX+','+locY+','+locZ+','+charecterID;
 		console.log("Charecter Message: ", message);
