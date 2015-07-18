@@ -155,6 +155,7 @@ CHARECTERCONTROLS.moveLeft = function(blendMesh, steps){
 			tweenRotiaion = new TWEEN.Tween(rotation).to(targetRotation, ((radi*100)+500));
 			tweenRotiaion.onUpdate(function(){
     			blendMesh.rotation.y = rotation.y;
+    			console.log("tweening");
 				});
 			tweenRotiaion.onComplete(function(){
     			tweenPosition.start();
