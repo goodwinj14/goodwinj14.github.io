@@ -264,6 +264,7 @@
 		function render(){
 			var delta = 0.75 * clock.getDelta();
 			THREE.AnimationHandler.update( delta );
+			TWEEN.update();
 			RENDERER.render(SCENE, CAMERA);
 		} 
 		function animate(){
