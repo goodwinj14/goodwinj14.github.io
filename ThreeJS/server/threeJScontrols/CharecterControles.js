@@ -124,6 +124,7 @@ CHARECTERCONTROLS.moveBack = function(blendMesh, steps){
 
 			position =  { x: blendMesh.position.x, y: blendMesh.position.y, z: blendMesh.position.z};
 			targetPostion = { x: blendMesh.position.x +(steps), y: blendMesh.position.y, z: blendMesh.position.z};
+			console.log("Target postion right", targetPostion);
 			tweenPosition = new TWEEN.Tween(position).to(targetPostion, 2000);
 			tweenPosition.onUpdate(function(){
     			blendMesh.position.x = position.x;
