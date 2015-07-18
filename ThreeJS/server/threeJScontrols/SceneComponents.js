@@ -178,8 +178,13 @@ SCENECOMPONENTS.move = function(shape_ID, direction, steps){
 	if(direction=="Left"){
 		var shape = null;
 		shape = SHAPES[shape_ID];
+		console.log(shape_ID);
 		if(shape!=null){
+			if(shape_ID.substring("hello")!=0){
+
+			}else{
 			shape.position.x = (shape.position.x - steps);
+		}
 		}
 	}if(direction=="Right"){
 		var shape = null;
