@@ -178,7 +178,7 @@ SCENECOMPONENTS.move = function(shape_ID, direction, steps){
 	if(direction=="Left"){
 		var shape = null;
 		shape = SHAPES[shape_ID];
-		console.log("Is A charecter: ", shape_ID.indexOf("CHARECTER"));
+		
 		if(shape!=null){
 			if(shape_ID.indexOf("CHARECTER")>=0){
 
@@ -191,7 +191,12 @@ SCENECOMPONENTS.move = function(shape_ID, direction, steps){
 		var shape = null;
 		shape = SHAPES[shape_ID];
 		if(shape!=null){
+			if(shape_ID.indexOf("CHARECTER")>=0){
+
+				CHARECTERCONTROLS.moveRight(shape, steps);
+			}else{
 			shape.position.x = (shape.position.x-0) + (steps-0);
+			}
 		}
 	}if(direction=="Up"){
 		var shape = null;
@@ -210,14 +215,23 @@ SCENECOMPONENTS.move = function(shape_ID, direction, steps){
 		var shape = null;
 		shape = SHAPES[shape_ID];
 		if(shape!=null){
+			if(shape_ID.indexOf("CHARECTER")>=0){
+
+				CHARECTERCONTROLS.moveForward(shape, steps);
+			}else{
 			shape.position.z = (shape.position.z - steps);
-			shape.play('walk');
+			}
 		}
 	}if(direction=="Back"){
 		var shape = null;
 		shape = SHAPES[shape_ID];
 		if(shape!=null){
+			if(shape_ID.indexOf("CHARECTER")>=0){
+
+				CHARECTERCONTROLS.moveBack(shape, steps);
+			}else{
 			shape.position.z = (shape.position.z-0) + (steps-0);
+			}
 		}
 	}
 }
