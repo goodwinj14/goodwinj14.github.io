@@ -34,7 +34,7 @@ CHARECTERCONTROLS.moveForward = function(blendMesh, steps){
 			*/
 
 			position =  { x : blendMesh.position.x, y: blendMesh.position.y, z: blendMesh.position.z};
-			targetPostion = { x : blendMesh.position.x, y: blendMesh.position.y, z: blendMesh.position.z + (-steps)};
+			targetPostion = { x : blendMesh.position.x, y: blendMesh.position.y, z: blendMesh.position.z + parseFloat(-steps)};
 			tweenPosition = new TWEEN.Tween(position).to(targetPostion, 2000);
 			tweenPosition.onUpdate(function(){
     			blendMesh.position.z = position.z;
@@ -75,7 +75,7 @@ CHARECTERCONTROLS.moveBack = function(blendMesh, steps){
 			*/
 
 			position =  { x : blendMesh.position.x, y: blendMesh.position.y, z: blendMesh.position.z};
-			targetPostion = { x : blendMesh.position.x, y: blendMesh.position.y, z: blendMesh.position.z + (steps)};
+			targetPostion = { x : blendMesh.position.x, y: blendMesh.position.y, z: blendMesh.position.z + parseFloat(steps)};
 			tweenPosition = new TWEEN.Tween(position).to(targetPostion, 2000);
 			tweenPosition.onUpdate(function(){
     			blendMesh.position.z = position.z;
@@ -123,7 +123,7 @@ CHARECTERCONTROLS.moveBack = function(blendMesh, steps){
 			*/
 
 			position =  { x: blendMesh.position.x, y: blendMesh.position.y, z: blendMesh.position.z};
-			targetPostion = { x: blendMesh.position.x +(steps), y: blendMesh.position.y, z: blendMesh.position.z};
+			targetPostion = { x: blendMesh.position.x +parseFloat(steps), y: blendMesh.position.y, z: blendMesh.position.z};
 			console.log("Target postion right", targetPostion);
 			tweenPosition = new TWEEN.Tween(position).to(targetPostion, 2000);
 			tweenPosition.onUpdate(function(){
@@ -168,7 +168,7 @@ CHARECTERCONTROLS.moveLeft = function(blendMesh, steps){
 			*/
 
 			position =  { x: blendMesh.position.x, y: blendMesh.position.y, z: blendMesh.position.z};
-			targetPostion = { x: blendMesh.position.x +(-steps), y: blendMesh.position.y, z: blendMesh.position.z};
+			targetPostion = { x: blendMesh.position.x +(-parseFloat(steps)), y: blendMesh.position.y, z: blendMesh.position.z};
 			tweenPosition = new TWEEN.Tween(position).to(targetPostion, 2000);
 			tweenPosition.onUpdate(function(){
     			blendMesh.position.x = position.x;
