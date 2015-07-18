@@ -182,7 +182,7 @@ SCENECOMPONENTS.move = function(shape_ID, direction, steps){
 		if(shape!=null){
 			if(shape_ID.indexOf("CHARECTER")>=0){
 
-				CHARECTERCONTRLES.moveLeft(shape, steps);
+				CHARECTERCONTROLS.moveLeft(shape, steps);
 			}else{
 			shape.position.x = (shape.position.x - steps);
 		}
