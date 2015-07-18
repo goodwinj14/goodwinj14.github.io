@@ -178,9 +178,9 @@ SCENECOMPONENTS.move = function(shape_ID, direction, steps){
 	if(direction=="Left"){
 		var shape = null;
 		shape = SHAPES[shape_ID];
-		console.log("Is A charecter: ", shape_ID.substring("CHARECTER"));
+		console.log("Is A charecter: ", shape_ID.indexOf("CHARECTER"));
 		if(shape!=null){
-			if(shape_ID.substring("CHARECTER")>=0){
+			if(shape_ID.indexOf("CHARECTER")>=0){
 
 				CHARECTERCONTRLES.moveLeft(shape, steps);
 			}else{
