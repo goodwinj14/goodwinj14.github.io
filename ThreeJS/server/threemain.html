@@ -264,12 +264,12 @@
 		function render(){
 			var delta = 0.75 * clock.getDelta();
 			THREE.AnimationHandler.update( delta );
-			TWEEN.update();
 			RENDERER.render(SCENE, CAMERA);
 		} 
 		function animate(){
 			var delta = 0.75 * clock.getDelta();
 			THREE.AnimationHandler.update( delta );
+			TWEEN.update();
 			requestAnimationFrame(animate);
 			RENDERER.render(SCENE, CAMERA);
 			if(controls!=null){
