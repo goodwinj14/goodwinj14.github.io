@@ -196,7 +196,7 @@
 			['', " Move Camera  %m.Move  %n steeps ","moveCamera", "Direction", "1"],
 			//The camera look at block allows a user to set the camera to allways be focused on a specific object
 			['', "Look at Object %s" , 'lookAt', "Variable"],
-			['r', 'New Shape %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'createShape', 'Shape', '1','1','1','0','0','0'],
+			['r', 'New Shape %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'createShape', 'Cube', '1','1','1','0','0','0'],
 			['', "Move %s %m.Move %n Steps" , 'moveShape', "Variable", "Left", 1],
 			['h', "When %m.Keys  Pressed" , 'key_Pressed', "space"],
 			['r', "Add %m.Charecters Location: X: %n Y: %n Z: %n" , "add_Charecter", "Marine", '1','1','1'],
