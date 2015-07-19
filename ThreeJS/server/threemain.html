@@ -41,7 +41,7 @@
 	
 		window.addEventListener("message", eventHandeler, false);
 		window.addEventListener( 'resize', onWindowResize, false );
-		
+
 		function eventHandeler(){
 			//Gets the address from which the event came
 			console.log(event);
@@ -107,7 +107,7 @@
 			if(commandKey == "SETCAMERALOOKAT"){
 				if(CAMERA!=null){
 					console.log("SETCAMERALOOKAT:" ,SCENECOMPONENTS.getCharecter(paramsArray[0]));
-					//CAMERACONTROLS.lookAt(paramsArray[0],CAMERA); 
+					CAMERACONTROLS.lookAt(paramsArray[0],CAMERA); 
 			}
 			}
 
