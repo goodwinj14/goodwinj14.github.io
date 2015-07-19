@@ -40,7 +40,8 @@
 		var event;
 	
 		window.addEventListener("message", eventHandeler, false);
-
+		window.addEventListener( 'resize', onWindowResize, false );
+		
 		function eventHandeler(){
 			//Gets the address from which the event came
 			console.log(event);
