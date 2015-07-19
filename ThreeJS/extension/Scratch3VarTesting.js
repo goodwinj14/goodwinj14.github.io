@@ -1,6 +1,6 @@
-var items = ["one", "two", "three"];
-(function(ext) {
 
+(function(ext) {
+    var items = {};
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {};
 
