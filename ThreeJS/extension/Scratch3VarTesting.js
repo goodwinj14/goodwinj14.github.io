@@ -15,7 +15,7 @@
         //ext2 = {};
         console.log(ScratchExtensions);
         //ScratchExtensions.unregister('My first extension');
-        ScratchExtensions.register('My first extension', descriptor, ext);
+        ScratchExtensions.register('My first extension', descriptor2, ext);
 
     };
 
@@ -24,6 +24,17 @@
         blocks: [
             // Block type, block name, function name
             [' ', 'my first block %m.Scenes', 'my_first_block'],
+        ],
+        menus: {
+                Scenes: items, 
+            }
+    };
+
+    var descriptor2 = {
+        blocks: [
+            // Block type, block name, function name
+            [' ', 'my first block %m.Scenes', 'my_first_block'],
+            [' ', 'my Second block %m.Scenes', 'my_first_block'],
         ],
         menus: {
                 Scenes: items, 
