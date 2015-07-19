@@ -11,7 +11,7 @@
     };
 
     ext.my_first_block = function() {
-        console.log("Menus: ");
+        console.log(ScratchExtensions);
         ScratchExtensions.unregister('My first extension');
         ScratchExtensions.register('My second extension', descriptor, ext);
 
