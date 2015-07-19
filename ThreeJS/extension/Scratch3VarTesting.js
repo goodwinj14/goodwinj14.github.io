@@ -49,6 +49,9 @@
       db.addSpace();
       db.addBlock(' ', 'set %m.cookieVar to %s', 'setCookieVar');
       db.addBlock(' ', 'change %m.cookieVar by %n', 'changeCookieVar');
+      var testB = [' ', 'Block addedSucces', 'setCookieVar']
+      this.descriptor.blocks.push(testB);
+      
       var cookieVarMenu = [];
       db.addMenu('cookieVar', cookieVarMenu);
 
