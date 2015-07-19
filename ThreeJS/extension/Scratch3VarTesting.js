@@ -12,7 +12,7 @@
 
     ext.my_first_block = function() {
         console.log("Menus: ");
-         console.log(this.descriptor);
+         console.log(this);
 
     };
 
