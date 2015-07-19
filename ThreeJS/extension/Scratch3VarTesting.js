@@ -1,4 +1,5 @@
 (function(ext) {
+    var items = ["one", "two", "three"];
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {};
 
@@ -14,10 +15,7 @@
 
     // Block and block menu descriptions
     var descriptor = {
-        blocks: [
-            // Block type, block name, function name
-            [' ', 'my first block %m.Scenes', 'my_first_block'],
-        ],
+        blocks: items,
         menus: {
                 Scenes: ['Grid','Grass','Blank'], 
             }
