@@ -1,7 +1,5 @@
 (function() {
-  if (!localStorage.cookieVars) localStorage.cookieVars = '{}';
-  var projectID = Scratch.INIT_DATA ? Scratch.INIT_DATA.PROJECT.model.id : 0,
-    cookieVars = JSON.parse(localStorage.cookieVars)[projectID] || {};
+
 
   function DescriptorBuilder(descriptor) {
     this.descriptor = descriptor;
@@ -35,9 +33,6 @@
   var extBase = {};
 
   extBase._shutdown = function() {
-    var cookieVarBank = JSON.parse(localStorage.cookieVars);
-    cookieVarBank[projectID] = cookieVars;
-    localStorage.cookieVars = JSON.stringify(cookieVarBank);
   };
 
   extBase._getStatus = function() {
@@ -47,7 +42,6 @@
 
   function loadExtension() {
     var ext = Object.create(extBase),
-      varNames = Object.keys(cookieVars),
       descriptor = {};
     var db = new DescriptorBuilder(descriptor);
     db.addButton('Make a Cookie Variable', '');
