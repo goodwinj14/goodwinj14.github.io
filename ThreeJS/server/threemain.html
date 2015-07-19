@@ -256,6 +256,16 @@
 			}
 			
 		}
+
+		//-----------------------------------------------------------------------------
+		function onWindowResize() {
+
+	        CAMERA.aspect = window.innerWidth / window.innerHeight;
+	        CAMERA.updateProjectionMatrix();
+
+	        RENDERER.setSize( window.innerWidth, window.innerHeight );
+
+	      }
 		
 		//RENDERS THE THE RENDER OBJECT FOR THE FIRST TIME ONCE THE WINDOW IS CREATED
 		function firstRender(scene, camera){
