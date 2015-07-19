@@ -11,9 +11,11 @@
     };
 
     ext.my_first_block = function() {
+        //ext._shutdown();
+        //ext2 = {};
         console.log(ScratchExtensions);
-        ScratchExtensions.unregister('My first extension');
-        ScratchExtensions.register('My second extension', descriptor, ext);
+        //ScratchExtensions.unregister('My first extension');
+        ScratchExtensions.register('My first extension', descriptor, ext);
 
     };
 
