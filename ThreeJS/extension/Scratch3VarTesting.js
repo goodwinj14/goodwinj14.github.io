@@ -11,7 +11,7 @@
     };
 
     ext.my_first_block = function() {
-        console.log("Menus: ", this.descriptor.menus);
+        console.log("Menus: ");
     };
 
     // Block and block menu descriptions
