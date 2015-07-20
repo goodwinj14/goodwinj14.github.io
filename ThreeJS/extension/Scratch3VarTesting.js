@@ -59,7 +59,7 @@
   
   function reloadExtension() {
     ScratchExtensions.unregister('Cookie Variables');
-    loadExtension();
+    //loadExtension();
   }
 
   loadExtension();
