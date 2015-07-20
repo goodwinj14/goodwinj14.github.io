@@ -176,17 +176,20 @@ SCENECOMPONENTS.applyMaterial = function(material, shape_ID, imageURL){
 		shape = SHAPES[shape_ID];
 		var material;
 		if(material=="MeshBasicMaterial"){
-			material = new THREE.MeshBasicMaterial({color: 'red'});
+			material = new THREE.MeshBasicMaterial({color: Math.random() * 0xffffff});
 			shape.material = material;
 		}else if(material=="MeshNormalMaterial"){
 			material = new THREE.MeshNormalMaterial();
 			shape.material = material;
 		}else if(material=="MeshDepthMaterial"){
-			console.log("SCENECOMPONENTS: ", "MeshDepthMaterial");
+			material = new THREE.MeshDepthMaterial();
+			shape.material = material;
 		}else if(material=="MeshLambertMaterial"){
-			console.log("SCENECOMPONENTS: ", "MeshLambertMaterial");
+			material = new THREE.MeshLambertMaterial({color: Math.random() * 0xffffff});
+			shape.material = material;
 		}else if(material=="MeshPhongMaterial"){
-			console.log("SCENECOMPONENTS: ", "MeshPhongMaterial");
+			var material = new THREE.MeshPhongMaterial({color: Math.random() * 0xffffff});
+			shape.material = material;
 		}
 		console.log("SCENECOMPONENTS: ", shape);
 	}
