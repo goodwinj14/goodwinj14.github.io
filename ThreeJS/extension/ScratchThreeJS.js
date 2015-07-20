@@ -93,9 +93,9 @@
 	}
 	
 	//Applies a given material to a given mesh and map a inage if supplied
-	ext.applyMaterial = function(Material, mesh, imageURL){
-		
-		
+	ext.applyMaterial = function(Material, shape_id, imageURL){
+		var message = "APPLYMATERIAL_"+shape_id+','+direction+','+steps;
+		win.postMessage(message, liveURL);
 	}
 
 	ext.moveShape = function(shape_id, direction, steps){
