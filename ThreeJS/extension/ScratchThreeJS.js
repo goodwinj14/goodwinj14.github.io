@@ -92,6 +92,12 @@
 		return shapeID;
 	}
 	
+	//Applies a given material to a given mesh and map a inage if supplied
+	ext.applyMaterial = function(Material, mesh, imageURL){
+		
+		return "A String of data";
+	}
+
 	ext.moveShape = function(shape_id, direction, steps){
 		//Makes sure that the shape we are trying to move has been created
 		console.log("Passed if Statment");
@@ -198,6 +204,8 @@
 			['', "Look at Object %s" , 'lookAt', "Variable"],
 			['r', 'New Shape %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'createShape', 'Cube', '1','1','1','0','0','0'],
 			['', "Move %s %m.Move %n Steps" , 'moveShape', "Variable", "Left", 1],
+			//Creates a new material to be added to a given mesh
+			['r', "Apply Material %m.Materials to map Image %s " , 'applyMaterial', "MeshNormalMaterial", "var", "Image URL"],
 			['h', "When %m.Keys  Pressed" , 'key_Pressed', "space"],
 			['r', "Add %m.Charecters Location: X: %n Y: %n Z: %n" , "add_Charecter", "Marine", '1','1','1'],
 			['r', "Load Object URL: %s", "loadOBJ","http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/shiptriangle.obj"],
@@ -211,6 +219,7 @@
 				CameraControls: ["Default", "Move", "Rotate"],
 				Move: ['Left', 'Right', 'Up', 'Down','Forward','Back'],
 				Shapes: ['Cube', 'Sphere', 'Circle','Cylinder', 'Dodecahedron', 'Icosahedron', 'Plane', 'Ring', 'Torus'],
+		    	Materials:['MeshBasicMaterial', 'MeshNormalMaterial','MeshDepthMaterial', 'MeshLambertMaterial','MeshPhongMaterial'],
 		    	Keys: ['space', 'up arrow', 'down arrow', 'right arrow', 'left arrow', 'a',  'b',  'c',  'd',  'e',  'f',  'g',  'h', 'i',  'j',  'k',  'l',  'm',  'n',  'o',  'p',  'q',  'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',], 
 		    	Charecters: ['Marine'],
 		    }
