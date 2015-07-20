@@ -176,7 +176,7 @@ SCENECOMPONENTS.applyMaterial = function(material, shape_ID, imageURL){
 		shape = SHAPES[shape_ID];
 		var material;
 		if(material=="MeshBasicMaterial"){
-			material = new new THREE.MeshBasicMaterial({color: 'red'});
+			material = new THREE.MeshBasicMaterial({color: 'red'});
 			shape.material = material;
 		}else if(material=="MeshNormalMaterial"){
 			console.log("SCENECOMPONENTS: ", "MeshNormalMaterial");
