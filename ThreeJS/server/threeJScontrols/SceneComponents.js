@@ -170,25 +170,29 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
 		
 }
 
-SCENECOMPONENTS.applyMaterial = function(material, shape_ID, imageURL){
+SCENECOMPONENTS.applyMaterial = function(material, shape_ID, _color, imageURL){
 
 		var shape = null;
 		shape = SHAPES[shape_ID];
+		var color = _color;
+		if(color=="Random"){
+			color = Math.random() * 0xffffff;
+		}
 		var material;
 		if(material=="MeshBasicMaterial"){
-			material = new THREE.MeshBasicMaterial({color: Math.random() * 0xffffff});
+			material = new THREE.MeshBasicMaterial({color: color});
 			shape.material = material;
 		}else if(material=="MeshNormalMaterial"){
 			material = new THREE.MeshNormalMaterial();
 			shape.material = material;
 		}else if(material=="MeshDepthMaterial"){
-			material = new THREE.MeshDepthMaterial();
+			material = new THREE.MeshDepthMaterial({color: color});
 			shape.material = material;
 		}else if(material=="MeshLambertMaterial"){
-			material = new THREE.MeshLambertMaterial({color: Math.random() * 0xffffff});
+			material = new THREE.MeshLambertMaterial({color: color});
 			shape.material = material;
 		}else if(material=="MeshPhongMaterial"){
-			var material = new THREE.MeshPhongMaterial({color: Math.random() * 0xffffff});
+			var material = new THREE.MeshPhongMaterial({color: color});
 			shape.material = material;
 		}
 		console.log("SCENECOMPONENTS: ", shape);
