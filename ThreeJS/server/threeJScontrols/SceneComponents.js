@@ -171,7 +171,10 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
 }
 
 SCENECOMPONENTS.applyMaterial = function(material, shape_ID, imageURL){
-		console.log("SCENECOMPONENTS: ", material, shape_ID, imageURL);
+
+		var shape = null;
+		shape = SHAPES[shape_ID];	
+		console.log("SCENECOMPONENTS: ", shape);
 	}
 
 SCENECOMPONENTS.move = function(shape_ID, direction, steps){
