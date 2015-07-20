@@ -170,6 +170,10 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
 		
 }
 
+SCENECOMPONENTS.applyMaterial = function(material, shape_ID, imageURL){
+		console.log("SCENECOMPONENTS: ", material, shape_ID, imageURL);
+	}
+
 SCENECOMPONENTS.move = function(shape_ID, direction, steps){
 	//var temp = shape_ID + ", " + direction + ", " + steps;
 	//We call parseFloat to help javascript tell the difference between the arithmatic + and string concatination +
