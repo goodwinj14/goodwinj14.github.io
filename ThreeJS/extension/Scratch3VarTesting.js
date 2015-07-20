@@ -46,10 +46,10 @@
     var db = new DescriptorBuilder(descriptor);
     db.addButton('Make a Cookie Variable', '');
    
-      db.addSpace();
+      //db.addSpace();
       db.addBlock(' ', 'set %m.cookieVar to %s', 'reloadExtension');
       db.addBlock(' ', 'change %m.cookieVar by %n', 'changeCookieVar');
-      
+
       
       var cookieVarMenu = [];
       db.addMenu('cookieVar', cookieVarMenu);
