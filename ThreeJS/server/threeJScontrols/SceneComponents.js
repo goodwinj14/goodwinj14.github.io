@@ -128,7 +128,7 @@ SCENECOMPONENTS.addOBJ = function(url, objID, Scene){
 
 			//Loads at .OBJ file from an outside url and adds it to the sceen
 			var objLoader = new THREE.OBJLoader();
-    		var material = new THREE.MeshBasicMaterial({color: 'grey', side: THREE.DoubleSide});
+    		var material = new THREE.MeshNormalMaterial());
     		objLoader.load(url, function (obj) {
        		obj.traverse(function (child) {
 
@@ -179,7 +179,8 @@ SCENECOMPONENTS.applyMaterial = function(material, shape_ID, imageURL){
 			material = new THREE.MeshBasicMaterial({color: 'red'});
 			shape.material = material;
 		}else if(material=="MeshNormalMaterial"){
-			console.log("SCENECOMPONENTS: ", "MeshNormalMaterial");
+			material = new THREE.MeshNormalMaterial();
+			shape.material = material;
 		}else if(material=="MeshDepthMaterial"){
 			console.log("SCENECOMPONENTS: ", "MeshDepthMaterial");
 		}else if(material=="MeshLambertMaterial"){
