@@ -205,7 +205,7 @@
 			['r', 'New Shape %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'createShape', 'Cube', '1','1','1','0','0','0'],
 			['', "Move %s %m.Move %n Steps" , 'moveShape', "Variable", "Left", 1],
 			//Creates a new material to be added to a given mesh
-			['', "Apply Material %m.Materials to map Image %s " , 'applyMaterial', "MeshNormalMaterial", "var", "Image URL"],
+			['', "Apply Material %m.Materials to %s map Image %s " , 'applyMaterial', "MeshNormalMaterial", "var", "Image URL"],
 			['h', "When %m.Keys  Pressed" , 'key_Pressed', "space"],
 			['r', "Add %m.Charecters Location: X: %n Y: %n Z: %n" , "add_Charecter", "Marine", '1','1','1'],
 			['r', "Load Object URL: %s", "loadOBJ","http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/shiptriangle.obj"],
