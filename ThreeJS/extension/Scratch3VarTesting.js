@@ -39,14 +39,18 @@
     return {status: 2, msg: 'Ready'};
   };
 
+  extBase.reload = function(){
+    console.log("reload called");
+    reloadExtension();
+  };
 
   function loadExtension() {
     var ext = Object.create(extBase),
       descriptor = {};
     var db = new DescriptorBuilder(descriptor);
-    db.addButton('Make a Cookie Variable', '');
+    db.addButton('Make a Cookie Variable', 'reload');
    
-      //db.addSpace();
+      db.addSpace();
       db.addBlock(' ', 'set %m.cookieVar to %s', 'reloadExtension');
       db.addBlock(' ', 'change %m.cookieVar by %n', 'changeCookieVar');
 
@@ -59,7 +63,7 @@
   
   function reloadExtension() {
     ScratchExtensions.unregister('Cookie Variables');
-    //loadExtension();
+    loadExtension();
   }
 
   loadExtension();
