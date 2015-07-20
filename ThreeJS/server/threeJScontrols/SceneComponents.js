@@ -173,7 +173,19 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
 SCENECOMPONENTS.applyMaterial = function(material, shape_ID, imageURL){
 
 		var shape = null;
-		shape = SHAPES[shape_ID];	
+		shape = SHAPES[shape_ID];
+		var material;
+		if(material=="MeshBasicMaterial"){
+			console.log("SCENECOMPONENTS: ", "MeshBasicMaterial");
+		}else if(material=="MeshNormalMaterial"){
+			console.log("SCENECOMPONENTS: ", "MeshNormalMaterial");
+		}else if(material=="MeshDepthMaterial"){
+			console.log("SCENECOMPONENTS: ", "MeshDepthMaterial");
+		}else if(material=="MeshLambertMaterial"){
+			console.log("SCENECOMPONENTS: ", "MeshLambertMaterial");
+		}else if(material=="MeshPhongMaterial"){
+			console.log("SCENECOMPONENTS: ", "MeshPhongMaterial");
+		}
 		console.log("SCENECOMPONENTS: ", shape);
 	}
 
