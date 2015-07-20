@@ -175,8 +175,12 @@ SCENECOMPONENTS.applyMaterial = function(material, shape_ID, _color, imageURL){
 		var shape = null;
 		shape = SHAPES[shape_ID];
 		var color = _color;
+		var image;
 		if(color=="Random"){
 			color = Math.random() * 0xffffff;
+		}
+		if(imageURL!="Image URL"){
+			image = new THREE.ImageUtils.loadTexture(imageURL);
 		}
 		var material;
 		if(material=="MeshBasicMaterial"){
@@ -192,7 +196,7 @@ SCENECOMPONENTS.applyMaterial = function(material, shape_ID, _color, imageURL){
 			material = new THREE.MeshLambertMaterial({color: color});
 			shape.material = material;
 		}else if(material=="MeshPhongMaterial"){
-			var material = new THREE.MeshPhongMaterial({color: color});
+			var material = new THREE.MeshPhongMaterial({color: color, map: image});
 			shape.material = material;
 		}
 		console.log("SCENECOMPONENTS: ", shape);
