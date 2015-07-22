@@ -181,9 +181,6 @@ SCENECOMPONENTS.applyMaterial = function(material, shape_ID, _color, imageURL){
 		}else if(color.toUpperCase()=="NULL"){
 			color = null;
 		}
-		if(imageURL!="Image URL"){
-			image = new THREE.ImageUtils.loadTexture(imageURL);
-		}
 		var material;
 		if(material=="MeshBasicMaterial"){
 			material = new THREE.MeshBasicMaterial({color: color});
@@ -195,14 +192,15 @@ SCENECOMPONENTS.applyMaterial = function(material, shape_ID, _color, imageURL){
 			material = new THREE.MeshDepthMaterial({color: color});
 			shape.material = material;
 		}else if(material=="MeshLambertMaterial"){
-			material = new THREE.MeshLambertMaterial({color: color, map: image});
+			material = new THREE.MeshLambertMaterial({color: color});
 			shape.material = material;
 		}else if(material=="MeshPhongMaterial"){
-			var material = new THREE.MeshPhongMaterial({color: color, map: image});
+			material = new THREE.MeshPhongMaterial({color: color});
 			shape.material = material;
 		}
 		//Checks if there is a image and wraps it around the shape if so
 		if(imageURL!="Image URL"){
+			material.map = THREE.ImageUtils.loadTexture(imageURL);
 			material.wrapAround = true;
 		}
 		console.log("SCENECOMPONENTS: ", shape);
