@@ -105,7 +105,7 @@
 		materials.push(materialID);
 		var message = "CREATEMATERIAL_" + material;
 		win.postMessage(message, liveURL);
-		console.log(aterialID);
+		console.log("material id: ", materialID);
 		return materialID;
 	}
 
