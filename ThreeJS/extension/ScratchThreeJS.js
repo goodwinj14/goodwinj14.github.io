@@ -5,6 +5,7 @@
 	var lastKeyEvent = null;
 	//var liveURL = "http://localhost:8888/main.html";
 	var shapes = [];
+	var materials = [];
 	var charecters = [];
 	//var liveURL = "http://033ae09.netsolhost.com//gsd2014team5/Localhost/main.html";
 	var liveURL = "http://goodwinj14.github.io/ThreeJS/server/threemain.html";
@@ -96,6 +97,15 @@
 	ext.applyMaterial = function(Material, shape_id, color, imageURL){
 		var message = "APPLYMATERIAL_"+Material+','+shape_id +','+color+','+imageURL;
 		win.postMessage(message, liveURL);
+	}
+
+	//Creates a new Material Variable
+	ext.createMaterial = function(material){
+		var materialID = generatID(shape);
+		materials.push(shapeID);
+		var message = "CREATEMATERIAL_" + material;
+		win.postMessage(message, liveURL);
+		return materialID;
 	}
 
 	ext.moveShape = function(shape_id, direction, steps){
@@ -206,6 +216,8 @@
 			['', "Move %s %m.Move %n Steps" , 'moveShape', "Variable", "Left", 1],
 			//Creates a new material to be added to a given mesh
 			['', "Apply Material %m.Materials to %s Color: %s map Image %s " , 'applyMaterial', "MeshNormalMaterial", "var", "Random", "Image URL"],
+			//Creates a new empty matrial and returns its object ID
+			['r', 'New Material %m.Materials', 'createMaterial','MeshBasicMaterial'],
 			['h', "When %m.Keys  Pressed" , 'key_Pressed', "space"],
 			['r', "Add %m.Charecters Location: X: %n Y: %n Z: %n" , "add_Charecter", "Marine", '1','1','1'],
 			['r', "Load Object URL: %s", "loadOBJ","http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/shiptriangle.obj"],
