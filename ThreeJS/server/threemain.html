@@ -133,9 +133,10 @@
 				SCENECOMPONENTS.setMaterialTo(paramsArray[0], paramsArray[1]);
 			}
 			//SETMATERIALCOLOR command tag is associated with the Set Material Color
+			//paramsArray[0] = materialID, paramsArray[1] = color
 			if(commandKey == "SETMATERIALCOLOR"){
 				if(SCENE!=null){
-								
+						SCENECOMPONENTS.setMaterialColor(paramsArray[0], paramsArray[1]);		
 					}
 			}
 			//APPLYMATERIAL command tag is associated with the Apply Material block
