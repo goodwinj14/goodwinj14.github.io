@@ -130,7 +130,7 @@
 			//SETMATERIAL command tag is associated with the set materials block
 			//paramsArray[0] = materialID, paramsArray[1] = shapeID
 			if(commandKey == "SETMATERIAL"){
-				console.log(paramsArray[0], paramsArray[1])
+				SCENECOMPONENTS.setMaterialTo(paramsArray[0], paramsArray[1]);
 			}
 			//APPLYMATERIAL command tag is associated with the Apply Material block
 			if(commandKey == "APPLYMATERIAL"){
