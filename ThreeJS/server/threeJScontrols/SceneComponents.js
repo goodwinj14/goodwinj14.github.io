@@ -205,7 +205,7 @@ SCENECOMPONENTS.setMaterialColor = function(materialID, color){
 	console.log(".setMaterialColor: ", material);
 	if(material!=null){
 		if(color.toUpperCase()!="NULL" && color.toUpperCase()!="RANDOM"){
-			material.color = (Math.random() * 0xffffff);
+			material.color =  new THREE.Color(color);
 		}else if(color.toUpperCase()=="RANDOM"){
 			material.color =  new THREE.Color( (Math.random() * 0xffffff));
 			console.log(".setMaterialColor: ", material);
