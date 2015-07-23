@@ -200,6 +200,20 @@ SCENECOMPONENTS.setMaterialTo = function(materialID, objectID){
 	SHAPES[objectID] = object;
 }
 
+SCENECOMPONENTS.setMaterialColor = function(materialID, color){
+	var material = MATERIALS[materialID];
+
+	if(material!=null){
+		if(color.toUpperCase()!="NULL" && color.toUpperCase()!="RANDOM"){
+			material.color = color;
+		}else if(color.toUpperCase()=="RANDOM"){
+			material.color = color = Math.random() * 0xffffff;
+		}
+	}
+	
+	MATERIALS[materialID] = material;
+}
+
 SCENECOMPONENTS.applyMaterial = function(material, shape_ID, _color, imageURL){
 
 		var shape = null;
