@@ -1,6 +1,7 @@
 var SCENECOMPONENTS = {};
 var SHAPES = {};
 var CHARECTERS = {};
+var MATERIALS = {};
 /*
 *Adds a new 
 */
@@ -168,6 +169,25 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
 				} );
 		}
 		
+}
+
+SCENECOMPONENTS.newMaterial = function(material, materialID){
+	var materialOBJ;
+	if(material=="MeshBasicMaterial"){
+			materialOBJ = new THREE.MeshBasicMaterial({color: color});
+		}else if(material=="MeshNormalMaterial"){
+			materialOBJ = new THREE.MeshNormalMaterial();
+		}else if(material=="MeshDepthMaterial"){
+			materialOBJ = new THREE.MeshDepthMaterial({color: color});
+		}else if(material=="MeshLambertMaterial"){
+			materialOBJ = new THREE.MeshLambertMaterial({color: color});
+		}else if(material=="MeshPhongMaterial"){
+			materialOBJ = new THREE.MeshPhongMaterial({color: color});
+		}
+	if(materialOBJ!=null && materialID!=null){
+		MATERIALS[materialID] = materialOBJ;
+	}
+	console.log(materialID, materialOBJ);
 }
 
 SCENECOMPONENTS.applyMaterial = function(material, shape_ID, _color, imageURL){
