@@ -174,15 +174,15 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
 SCENECOMPONENTS.newMaterial = function(material, materialID){
 	var materialOBJ;
 	if(material=="MeshBasicMaterial"){
-			materialOBJ = new THREE.MeshBasicMaterial({color: color});
+			materialOBJ = new THREE.MeshBasicMaterial();
 		}else if(material=="MeshNormalMaterial"){
 			materialOBJ = new THREE.MeshNormalMaterial();
 		}else if(material=="MeshDepthMaterial"){
-			materialOBJ = new THREE.MeshDepthMaterial({color: color});
+			materialOBJ = new THREE.MeshDepthMaterial();
 		}else if(material=="MeshLambertMaterial"){
-			materialOBJ = new THREE.MeshLambertMaterial({color: color});
+			materialOBJ = new THREE.MeshLambertMaterial();
 		}else if(material=="MeshPhongMaterial"){
-			materialOBJ = new THREE.MeshPhongMaterial({color: color});
+			materialOBJ = new THREE.MeshPhongMaterial();
 		}
 	if(materialOBJ!=null && materialID!=null){
 		MATERIALS[materialID] = materialOBJ;
