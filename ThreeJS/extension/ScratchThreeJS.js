@@ -123,7 +123,7 @@
 	}
 
 	ext.setImage = function(materialID, url){
-		path = 'ThreeJS'+'server'+'images'+url+'.jpg';
+		path = '/ThreeJS'+'/server'+'/images/'+url+'.jpg';
 		if(materials.indexOf(materialID)>-1){
 		var message = "SETMATERIALIMAGE_"+materialID+','+path;
 		win.postMessage(message, liveURL);	
