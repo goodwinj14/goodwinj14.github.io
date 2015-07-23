@@ -240,8 +240,8 @@
 			//Creates a new empty matrial and returns its object ID
 			['r', 'New Material %m.Materials', 'createMaterial','MeshBasicMaterial'],
 			//Sets a given material to a given object
-			['', 'Set Material %s to %s', 'setObjectMaterial', 'Variable', 'Variable'],
-			['', 'Material %s Set Image %m.Images', 'setImage', 'Variable', 'url'],
+			['', 'Apply %s to %s', 'setObjectMaterial', 'Material', 'Shape'],
+			['', 'Set %s Image %m.Images', 'setImage', 'Material', 'url'],
 			['', 'Change Material %s to Color %s', 'materialColor', 'Variable','Random'],
 			['h', "When %m.Keys  Pressed" , 'key_Pressed', "space"],
 			['r', "Add %m.Charecters Location: X: %n Y: %n Z: %n" , "add_Charecter", "Marine", '1','1','1'],
