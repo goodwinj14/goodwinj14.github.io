@@ -108,6 +108,13 @@
 		return materialID;
 	}
 
+	ext.setObjectMaterial = function(materialID, ObjectID){
+		if(shapes.indexOf(ObjectID)>-1&& materials.indexOf(materialID)>-1){
+		var message = "SETMATERIAL_"+materialID+','+ObjectID;
+		win.postMessage(message, liveURL);
+		}
+	}
+
 	ext.moveShape = function(shape_id, direction, steps){
 		//Makes sure that the shape we are trying to move has been created
 		console.log("Passed if Statment");
@@ -218,6 +225,7 @@
 			['', "Apply Material %m.Materials to %s Color: %s map Image %s " , 'applyMaterial', "MeshNormalMaterial", "var", "Random", "Image URL"],
 			//Creates a new empty matrial and returns its object ID
 			['r', 'New Material %m.Materials', 'createMaterial','MeshBasicMaterial'],
+			['', 'Set Material %s to %s', 'setObjectMaterial', 'Variable', 'Variable'],
 			['h', "When %m.Keys  Pressed" , 'key_Pressed', "space"],
 			['r', "Add %m.Charecters Location: X: %n Y: %n Z: %n" , "add_Charecter", "Marine", '1','1','1'],
 			['r', "Load Object URL: %s", "loadOBJ","http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/shiptriangle.obj"],

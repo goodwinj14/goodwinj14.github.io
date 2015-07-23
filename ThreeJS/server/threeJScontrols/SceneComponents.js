@@ -187,7 +187,6 @@ SCENECOMPONENTS.newMaterial = function(material, materialID){
 	if(materialOBJ!=null && materialID!=null){
 		MATERIALS[materialID] = materialOBJ;
 	}
-	console.log(materialID, materialOBJ);
 }
 
 SCENECOMPONENTS.applyMaterial = function(material, shape_ID, _color, imageURL){
