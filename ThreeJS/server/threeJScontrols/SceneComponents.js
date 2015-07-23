@@ -208,6 +208,7 @@ SCENECOMPONENTS.setMaterialColor = function(materialID, color){
 			material.color = (Math.random() * 0xffffff);
 		}else if(color.toUpperCase()=="RANDOM"){
 			material.color = color = (Math.random() * 0xffffff);
+			console.log(".setMaterialColor: ", material);
 		}
 	}
 	
