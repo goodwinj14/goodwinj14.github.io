@@ -121,6 +121,12 @@
 					SCENECOMPONENTS.addShape(paramsArray[0],paramsArray[1],paramsArray[2],paramsArray[3],paramsArray[4],paramsArray[5],paramsArray[6], 					paramsArray[7], SCENE);					
 					}
 				}
+			//CREATEMATERIAL_ command tag is associated with the New Material
+			if(commandKey == "APPLYMATERIAL"){
+				if(SCENE!=null){
+						console.log("threemain: ", paramsArray[0]);		
+					}
+				}
 			//APPLYMATERIAL command tag is associated with the Apply Material block
 			if(commandKey == "APPLYMATERIAL"){
 				if(SCENE!=null){
