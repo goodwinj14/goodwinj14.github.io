@@ -104,8 +104,8 @@
 		var materialID = generatID(material);
 		console.log("material id: ", materialID);
 		//materials.push(materialID);
-		var message = "CREATEMATERIAL_" + material;
-		win.postMessage(message, liveURL);
+		//var message = "CREATEMATERIAL_" + material;
+		//win.postMessage(message, liveURL);
 		return materialID;
 	}
 
