@@ -233,8 +233,8 @@
 			//Creates a new empty matrial and returns its object ID
 			['r', 'New Material %m.Materials', 'createMaterial','MeshBasicMaterial'],
 			//Sets a given material to a given object
-			['', 'Set Material %s to %s', 'setObjectMaterial', 'Variable', 'Random'],
-			['', 'Change Material %s to Color %s', 'materialColor', 'Variable','Variable'],
+			['', 'Set Material %s to %s', 'setObjectMaterial', 'Variable', 'Variable'],
+			['', 'Change Material %s to Color %s', 'materialColor', 'Variable','Random'],
 			['h', "When %m.Keys  Pressed" , 'key_Pressed', "space"],
 			['r', "Add %m.Charecters Location: X: %n Y: %n Z: %n" , "add_Charecter", "Marine", '1','1','1'],
 			['r', "Load Object URL: %s", "loadOBJ","http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/shiptriangle.obj"],
