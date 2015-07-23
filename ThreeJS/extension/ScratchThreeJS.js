@@ -103,7 +103,7 @@
 	ext.createMaterial = function(material){
 		var materialID = generatID(material);
 		console.log("material id: ", materialID);
-		materials.push(materialID);
+		//materials.push(materialID);
 		var message = "CREATEMATERIAL_" + material;
 		win.postMessage(message, liveURL);
 		return materialID;
