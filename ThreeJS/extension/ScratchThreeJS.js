@@ -102,9 +102,10 @@
 	//Creates a new Material Variable
 	ext.createMaterial = function(material){
 		var materialID = generatID(material);
-		materials.push(shapeID);
+		materials.push(materialID);
 		var message = "CREATEMATERIAL_" + material;
 		win.postMessage(message, liveURL);
+		console.log(aterialID);
 		return materialID;
 	}
 
