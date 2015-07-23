@@ -139,6 +139,13 @@
 						SCENECOMPONENTS.setMaterialColor(paramsArray[0], paramsArray[1]);		
 					}
 			}
+			//SETMATERIALIMAGE command tag is associated with the Set Material Color
+			//paramsArray[0] = materialID, paramsArray[1] = image url path on server
+			if(commandKey == "SETMATERIALCOLOR"){
+				if(SCENE!=null){
+						SCENECOMPONENTS.setMaterialImage(paramsArray[0], paramsArray[1]);	
+					}
+			}
 			//APPLYMATERIAL command tag is associated with the Apply Material block
 			if(commandKey == "APPLYMATERIAL"){
 				if(SCENE!=null){

@@ -122,6 +122,13 @@
 		}
 	}
 
+	ext.setImage = function(materialID, url){
+		path = 'ThreeJS'+'server'+'images'+url+'.jpg';
+		if(materials.indexOf(materialID)>-1){
+		var message = "SETMATERIALIMAGE_"+materialID+','+path;
+		win.postMessage(message, liveURL);	
+		}
+	}
 	ext.moveShape = function(shape_id, direction, steps){
 		//Makes sure that the shape we are trying to move has been created
 		console.log("Passed if Statment");
@@ -234,6 +241,7 @@
 			['r', 'New Material %m.Materials', 'createMaterial','MeshBasicMaterial'],
 			//Sets a given material to a given object
 			['', 'Set Material %s to %s', 'setObjectMaterial', 'Variable', 'Variable'],
+			['', 'Material %s Set Image %m.Images', 'setImage', 'Variable', 'url'],
 			['', 'Change Material %s to Color %s', 'materialColor', 'Variable','Random'],
 			['h', "When %m.Keys  Pressed" , 'key_Pressed', "space"],
 			['r', "Add %m.Charecters Location: X: %n Y: %n Z: %n" , "add_Charecter", "Marine", '1','1','1'],
@@ -249,6 +257,7 @@
 				Move: ['Left', 'Right', 'Up', 'Down','Forward','Back'],
 				Shapes: ['Cube', 'Sphere', 'Circle','Cylinder', 'Dodecahedron', 'Icosahedron', 'Plane', 'Ring', 'Torus'],
 		    	Materials:['MeshBasicMaterial', 'MeshNormalMaterial','MeshDepthMaterial', 'MeshLambertMaterial','MeshPhongMaterial'],
+		    	Images:['Crate', 'Brick', 'Earth', 'Moon'],
 		    	Keys: ['space', 'up arrow', 'down arrow', 'right arrow', 'left arrow', 'a',  'b',  'c',  'd',  'e',  'f',  'g',  'h', 'i',  'j',  'k',  'l',  'm',  'n',  'o',  'p',  'q',  'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',], 
 		    	Charecters: ['Marine'],
 		    }

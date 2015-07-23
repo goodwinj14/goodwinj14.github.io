@@ -202,7 +202,6 @@ SCENECOMPONENTS.setMaterialTo = function(materialID, objectID){
 
 SCENECOMPONENTS.setMaterialColor = function(materialID, color){
 	var material = MATERIALS[materialID];
-	console.log(".setMaterialColor: ", material);
 	if(material!=null){
 		if(color.toUpperCase()!="NULL" && color.toUpperCase()!="RANDOM"){
 			material.color =  new THREE.Color(color);
@@ -212,6 +211,15 @@ SCENECOMPONENTS.setMaterialColor = function(materialID, color){
 		}
 	}
 	
+	MATERIALS[materialID] = material;
+}
+
+SCENECOMPONENTS.setMaterialImage = function(materialID, urlPath){
+var material = MATERIALS[materialID];
+	if(material!=null){
+			material.map = THREE.ImageUtils.loadTexture(urlPath);
+			material.wrapAround = true;
+		}
 	MATERIALS[materialID] = material;
 }
 
