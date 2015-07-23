@@ -191,13 +191,13 @@ SCENECOMPONENTS.newMaterial = function(material, materialID){
 
 SCENECOMPONENTS.setMaterialTo = function(materialID, objectID){
 	var material = MATERIALS[materialID];
-	var object = SHAPES[shape_ID];
+	var object = SHAPES[objectID];
 
 	if(material!=null && object!=null){
 		object.material = material;
 	}
 	MATERIALS[materialID] = material;
-	SHAPES[shape_ID] = object;
+	SHAPES[objectID] = object;
 }
 
 SCENECOMPONENTS.applyMaterial = function(material, shape_ID, _color, imageURL){
