@@ -19,6 +19,8 @@
 		<script src="http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/BlendCharacter.js"></script>
 		<script src="http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/CharecterControles.js"></script>
 		<script src="http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/tween.min.js"></script>
+		<script src="http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/FirstPersonControls.js"></script>
+		
 		<script>
 		var RENDERER = null;
 		var SCENE = null;
@@ -87,21 +89,25 @@
 			}
 			//SETCAMERACONTROLS
 			if(commandKey == "SETCAMERACONTROLS"){
-				console.log("paramsArray[0]: ", paramsArray[0]);
-				controls = new THREE.TrackballControls(CAMERA);
-				controls.rotateSpeed = 1.0;
-				controls.zoomSpeed = 1.2;
-				controls.panSpeed = 0.8;
+				if(controls==null){
+					if(paramsArray[0]=='Mouse/Trackball'){
+						controls = new THREE.TrackballControls(CAMERA);
+						controls.rotateSpeed = 1.0;
+						controls.zoomSpeed = 1.2;
+						controls.panSpeed = 0.8;
+						controls.noZoom = false;
+						controls.noPan = false;
+						controls.staticMoving = true;
+						controls.dynamicDampingFactor = 0.3;
+						controls.keys = [ 65, 83, 68 ];
 
-				controls.noZoom = false;
-				controls.noPan = false;
-
-				controls.staticMoving = true;
-				controls.dynamicDampingFactor = 0.3;
-
-				controls.keys = [ 65, 83, 68 ];
-
-				controls.addEventListener( 'change', RENDERER );
+						controls.addEventListener( 'change', RENDERER );
+					}else if(paramsArray[0]=='First Person'){
+						controls = new THREE.FirstPersonControls(CAMERA);
+						controls.movementSpeed = paramsArray[1];
+						controls.lookSpeed = paramsArray[2];
+					}
+				}
 			}
 			//SETCAMERALOOKAT command tag is associated with the Look At Objecet block
 			if(commandKey == "SETCAMERALOOKAT"){
