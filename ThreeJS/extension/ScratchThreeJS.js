@@ -224,7 +224,7 @@
             // Block type, block name, function name, param1 default value, param2 default value
             ['w', 'New 3D World %m.Scenes Width: %n Height: %n %m.Camera', 'initWorld', "Scene", 10, 10 , "Camera Type",ext],
             //['', 'Set Camera Controls  Up: %m.Keys Down: %m.Keys Left: %m.Keys Right: %m.Keys ', 'camControlsMove', 'w', 's','a','d'],
-            ['', 'Add Camera Controles %m.CameraControls', 'camControlsRotate','First Person'],
+            ['', 'Add Camera Controles %m.CameraControls Move Speed %n Look Speed %n', 'camControlsRotate','First Person', "50", "2"],
 			//The camera rotate block to allow users to rotate the view of the camra "Left", "Right", "Up" and "Down"
 			['', "Rotate Camera %m.CameraRotation %n Degrees" , 'rotateCamera', "Direction", "1"],
 			//The camera orbit block to allow users to orbit the camera around a given point
