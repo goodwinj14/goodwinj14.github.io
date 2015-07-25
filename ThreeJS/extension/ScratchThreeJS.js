@@ -149,11 +149,6 @@
 		win.postMessage(message, liveURL);
 	}
 
-	/*ext.cameraFollow = function(object){
-		var message = "CAMERAFOLLOW_"+object;
-		win.postMessage(message, liveURL);
-	}*/
-
 	ext.loadOBJ = function(URL){
 		var objID = generatID("OBJ");
 		shapes.push(objID);
@@ -231,8 +226,6 @@
 			['', " Camera Orbit  %m.CameraOrbit ","orbitCamera", "Direction"],
 			//The camera move block allows a user to move the camera in both the positive and negative direction of the X,Y, and Z axis.
 			['', " Move Camera  %m.Move  %n steeps ","moveCamera", "Direction", "1"],
-			//The camera follow block will focus the camera on a given object
-			//['', " Camera follow %s ","cameraFollow", "Variable"],
 			//The camera look at block allows a user to set the camera to allways be focused on a specific object
 			['', "Look at Object %s" , 'lookAt', "Variable"],
 			['r', 'New Shape %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'createShape', 'Cube', '1','1','1','0','0','0'],
