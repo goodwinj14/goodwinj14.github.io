@@ -330,3 +330,8 @@ SCENECOMPONENTS.getCharecter = function(charecterID){
 	console.log(charecterID, charecter);
 	return charecter;
 }
+
+SCENECOMPONENTS.getShape = function(shape_ID){
+	var shape = SHAPES[shape_ID];
+	return shape;
+}
