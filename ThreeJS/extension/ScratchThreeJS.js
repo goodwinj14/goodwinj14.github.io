@@ -138,8 +138,8 @@
 		}
 	}
 
-	ext.camControls = function(up, down, left, right){
-		var message = "SETCAMERACONTROLS_"+up+','+down+','+left+','+right;
+	ext.camControls = function(controls){
+		var message = "SETCAMERACONTROLS_"+controls;
 		win.postMessage(message, liveURL);
 	}
 
@@ -224,7 +224,7 @@
             // Block type, block name, function name, param1 default value, param2 default value
             ['w', 'New 3D World %m.Scenes Width: %n Height: %n %m.Camera', 'initWorld', "Scene", 10, 10 , "Camera Type",ext],
             //['', 'Set Camera Controls  Up: %m.Keys Down: %m.Keys Left: %m.Keys Right: %m.Keys ', 'camControlsMove', 'w', 's','a','d'],
-            ['', 'Add Camera Mouse Controles', 'camControlsRotate'],
+            ['', 'Add Camera Controles %m.CameraControls', 'camControlsRotate','First Person'],
 			//The camera rotate block to allow users to rotate the view of the camra "Left", "Right", "Up" and "Down"
 			['', "Rotate Camera %m.CameraRotation %n Degrees" , 'rotateCamera', "Direction", "1"],
 			//The camera orbit block to allow users to orbit the camera around a given point
@@ -241,6 +241,8 @@
 			['r', 'New Material %m.Materials', 'createMaterial','MeshBasicMaterial'],
 			//Sets a given material to a given object
 			['', 'Apply %s to %s', 'setObjectMaterial', 'Material', 'Shape'],
+			//Creats a clone of a given object
+			['', 'Create Clone of %s', 'createClone', 'Variable'],
 			['', 'Set %s Image %m.Images', 'setImage', 'Material', 'url'],
 			['', 'Change Material %s to Color %s', 'materialColor', 'Variable','Random'],
 			['h', "When %m.Keys  Pressed" , 'key_Pressed', "space"],
@@ -253,7 +255,7 @@
 				Camera: ['Perspective'],
 				CameraRotation: ['Left', 'Right', 'Up', 'Down', 'Roll Left', 'Roll Right'],
 				CameraOrbit: ['Orbit Left', 'Orbit Right', 'Orbit Up', 'Orbit Down'],
-				CameraControls: ["Default", "Move", "Rotate"],
+				CameraControls: ["First Person", "Orbit", "Mouse/Trackball"],
 				Move: ['Left', 'Right', 'Up', 'Down','Forward','Back'],
 				Shapes: ['Cube', 'Sphere', 'Circle','Cylinder', 'Dodecahedron', 'Icosahedron', 'Plane', 'Ring', 'Torus'],
 		    	Materials:['MeshBasicMaterial', 'MeshNormalMaterial','MeshDepthMaterial', 'MeshLambertMaterial','MeshPhongMaterial'],
