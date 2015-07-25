@@ -321,7 +321,7 @@
 			requestAnimationFrame(animate);
 			RENDERER.render(SCENE, CAMERA);
 			if(controls!=null){
-			controls.update();
+			controls.update(clock.getDelta());
 			}
 		}
 		/*
