@@ -134,6 +134,14 @@
 		win.postMessage(message, liveURL);	
 		}
 	}
+	ext.applyObjControls = function(shape_id, moveSpeed, lookSpeed){
+		//Makes sure that the shape we are trying to move has been created
+		console.log("Passed if Statment");
+		if(shapes.indexOf(shape_id)>-1){
+		var message = "APPLYOBJCONTRLS_"+shape_id+','+moveSpeed+','+lookSpeed;
+		win.postMessage(message, liveURL);
+		}
+	}
 	ext.moveShape = function(shape_id, direction, steps){
 		//Makes sure that the shape we are trying to move has been created
 		console.log("Passed if Statment");
@@ -238,6 +246,8 @@
 			['', "Look at Object %s" , 'lookAt', "Variable"],
 			['r', 'New Shape %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'createShape', 'Cube', '1','1','1','0','0','0'],
 			['', "Move %s %m.Move %n Steps" , 'moveShape', "Variable", "Left", 1],
+			//Adds a smothe movment control to any given object
+			['', "Appy FPV Controls to Object: %s Move Speed: %n Turn Speed: %n" , 'applyObjControls', "Variable", "20", "20"],
 			//Creates a new material to be added to a given mesh
 			['', "Apply Material %m.Materials to %s Color: %s map Image %s " , 'applyMaterial', "MeshNormalMaterial", "var", "Random", "Image URL"],
 			//Creates a new empty matrial and returns its object ID
