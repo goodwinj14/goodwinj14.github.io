@@ -2,6 +2,7 @@ var SCENECOMPONENTS = {};
 var SHAPES = {};
 var CHARECTERS = {};
 var MATERIALS = {};
+var objControls = null;
 /*
 *Adds a new 
 */

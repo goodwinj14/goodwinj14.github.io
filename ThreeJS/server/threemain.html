@@ -21,12 +21,14 @@
 		<script src="http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/tween.min.js"></script>
 		<script src="http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/FirstPersonControls.js"></script>
 		<script src="http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/lookAtControls.js"></script>
+		<script src="http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/fpvObjectControles.js"></script>
 		<script>
 		var RENDERER = null;
 		var SCENE = null;
 		var CAMERA = null;
 		var clock = new THREE.Clock();
 		var controls = null;
+		var objControls = null;
 		//Info needed to send data back to the parent window
 		var origin = null;
 		var messageSource = null;
@@ -166,6 +168,18 @@
 					SCENECOMPONENTS.applyMaterial(paramsArray[0],paramsArray[1],paramsArray[2],paramsArray[3]); 			
 					}
 				}
+			//APPLYOBJCONTRLS command tag is asociated with the Apply FPV object controls 
+			//paramsArray[] = objectID paramsArray[1] = MoveSpeed paramsArray[2] = Look Speed
+			if(commandKey == "APPLYOBJCONTRLS"){
+				if(SCENE!=null){
+					var obj = SCENECOMPONENTS.getShape(paramsArray[0]);
+					if(obj!=null){
+						objControls = new THREE.fpvObjectControles(obj);
+						charControles.moveSpeed = moveSpeed;
+ 						charControles.lookSpeed = lookSpeed;
+					}
+				}
+			}	
 			if(commandKey == "MOVESHAPE"){
 				if(SCENE!=null){
 					console.log("Move Charecter", paramsArray[0]);
@@ -328,8 +342,11 @@
 			TWEEN.update();
 			requestAnimationFrame(animate);
 			RENDERER.render(SCENE, CAMERA);
+			if(objControls!=null){
+				objControls.update(delta);
+			}
 			if(controls!=null){
-			controls.update(clock.getDelta());
+			controls.update(delta);
 			}
 		}
 		/*
