@@ -344,10 +344,10 @@
 			requestAnimationFrame(animate);
 			RENDERER.render(SCENE, CAMERA);
 			if(objControls!=null){
-				objControls.update(delta);
+				objControls.update(clock.getDelta());
 			}
 			if(controls!=null){
-			controls.update(delta);
+			controls.update(clock.getDelta());
 			}
 		}
 		/*
