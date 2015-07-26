@@ -115,7 +115,7 @@
 		//X,Y,Z movment Controles
 
 		var actualMoveSpeed = delta * this.moveSpeed;
-		console.log(this.object.postion.z);
+		console.log(this.object.position.z);
 		if ( this.moveForward ) {this.object.translateZ( -actualMoveSpeed);}
 		if ( this.moveBackward ){this.object.translateZ( actualMoveSpeed);}
 
