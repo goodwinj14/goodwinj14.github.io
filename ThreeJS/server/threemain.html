@@ -175,8 +175,9 @@
 					var obj = SCENECOMPONENTS.getShape(paramsArray[0]);
 					if(obj!=null){
 						objControls = new THREE.fpvObjectControles(obj);
-						objControls.moveSpeed = paramsArray[1];
- 						objControls.lookSpeed = paramsArray[2];
+						console.log("main Speed", paramsArray[1]);
+						objControls.moveSpeed = parsefloat(paramsArray[1]);
+ 						objControls.lookSpeed = parsefloat(paramsArray[2]);
 					}
 				}
 			}	
