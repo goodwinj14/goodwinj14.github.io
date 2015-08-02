@@ -21,6 +21,7 @@
 	</div>
 		<script src="three.js"></script>
 		<script src="download.js"></script>
+		<script src="NeuronBlock.js"></script>
 		<script src="TrackballControls.js"></script>
 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 		<script>
@@ -33,7 +34,7 @@
 		 
 		 var particles = (240*240*240);
 		 var positions = new Float32Array( particles*3 );
-		 var colors = new Float32Array( particles*3 );
+		 var colors = new Float32Array( particles*3);
 		 var particleSystem=null;
 
 		 //join two typed arrays
@@ -78,7 +79,7 @@
 		 	
 		 
     	
-			if(sliceBlockNum<239){
+			if(sliceBlockNum<2){
 				sliceBlockNum++;
 				getImage("jsonSlices/data"+sliceBlockNum+".json");
 				
@@ -178,6 +179,7 @@
 				function finish(){
 				 
 				 
+				/*This code adds the brain block to thr scene
 				var geometry = new THREE.BufferGeometry();
 
 				geometry.addAttribute( 'position', new THREE.BufferAttribute( positions, 3 ) );
@@ -187,17 +189,30 @@
 
 				//
 
+				
 				var material = new THREE.PointCloudMaterial( { size: 3, vertexColors: THREE.VertexColors } );
 
 				particleSystem = new THREE.PointCloud( geometry, material );
-				//particleSystem.name = "block";
-				//particleSystem.position.x = -120;
-				//particleSystem.position.y = 120;
+				
+				scene.add( particleSystem );*/
+
+				console.log(colors);
+				var ImageStack = new NEURONBLOCK.initImageStackVertices(240,240,colors);
+				var geometr = NEURONBLOCK.StackGeometry;
+
+				
+
+				//
+
+				
+				var material = new THREE.PointCloudMaterial( { size: 3, vertexColors: THREE.VertexColors } );
+
+				particleSystem = new THREE.PointCloud( geometr, material );
 				
 				scene.add( particleSystem );
-				//particleSystem.rotation.y = 90;
-				camera.position.z = 2000;
-				//camera.position.x = -100;
+
+				camera.position.z = 300;
+				
 
 
 			//var cube = new THREE.Mesh( geometry, material );
@@ -226,7 +241,9 @@
 
 			var scene = new THREE.Scene();
 			var camera = new THREE.PerspectiveCamera( 45, window.innerWidth/window.innerHeight/1.333, 1, 2500 );
-			var renderer = new THREE.WebGLRenderer();
+			var renderer = new THREE.WebGLRenderer({ alpha: true });
+			renderer.setClearColor( 0xffffff, 1);
+
 			renderer.setSize( window.innerWidth/1.333, window.innerHeight );
 			document.getElementById("three").appendChild( renderer.domElement );
 			//var pixelData = canvas.getContext('2d').getImageData(event.offsetX, event.offsetY, 1, 1).data;
@@ -257,16 +274,54 @@
 		} 
 		function animate(){
 			requestAnimationFrame(animate);
-			var time = Date.now() * 0.001;
+			//var time = Date.now() * 0.001;
 				if(particleSystem!=null){
-				particleSystem.rotation.x = time * 0.02;
-				particleSystem.rotation.y = time * 0.02;
+				//particleSystem.rotation.x = time * 0.02;
+				
 			}
 			render();
 			controls.update();
 		}
 			render();
 			animate();
+
+
+
+
+			document.onkeydown = function(event) {
+     if (!event)
+          event = window.event;
+     var code = event.keyCode;
+     if (event.charCode && code == 0)
+          code = event.charCode;
+     switch(code) {
+          case 37:
+              particleSystem.rotation.y = particleSystem.rotation.y + -Math.PI/180;
+              console.log(particleSystem.rotation.y);
+              break;
+          case 38:
+              particleSystem.rotation.x = particleSystem.rotation.x + Math.PI/180;
+              console.log(particleSystem.rotation.x);
+              break;
+          case 39:
+              particleSystem.rotation.y = particleSystem.rotation.y+ Math.PI/180;
+              console.log(particleSystem.rotation.y);
+              break;
+          case 40:
+              particleSystem.rotation.x = particleSystem.rotation.x + -Math.PI/180;
+              console.log(particleSystem.rotation.x);
+              break;
+          case 88:
+              particleSystem.rotation.z = particleSystem.rotation.z+ -Math.PI/180;
+              console.log(particleSystem.rotation.z);
+              break;
+          case 90:
+              particleSystem.rotation.z = particleSystem.rotation.z + Math.PI/180;
+              console.log(particleSystem.rotation.z);
+              break;
+     }
+     event.preventDefault();
+};
 		</script>
 
 	</body>
