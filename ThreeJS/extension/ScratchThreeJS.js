@@ -258,11 +258,11 @@
 			['', 'Apply %s to %s', 'setObjectMaterial', 'Material', 'Shape'],
 			//Creats a clone of a given object
 			['', 'Create Clone of %s', 'createClone', 'Variable'],
-			['#E60000', 'Set %s Image %m.Images', 'setImage', 'Material', 'url'],
-			["#E60000",'', 'Change Material %s to Color %s', 'materialColor', 'Variable','Random'],
-			['h', "#E60000", "When %m.Keys  Pressed" , 'key_Pressed', "space"],
-			['r %#E60000', "Add %m.Charecters Location: X: %n Y: %n Z: %n" , "add_Charecter", "Marine", '1','1','1'],
-			['r #E60000', "Load Object URL: %s", "loadOBJ","http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/shiptriangle.obj"],
+			['', 'Set %s Image %m.Images', 'setImage', 'Material', 'url'],
+			['', 'Change Material %s to Color %s', 'materialColor', 'Variable','Random'],
+			['h', "When %m.Keys  Pressed" , 'key_Pressed', "space"],
+			['r ', "Add %m.Charecters Location: X: %n Y: %n Z: %n" , "add_Charecter", "Marine", '1','1','1'],
+			['r', "Load Object URL: %s", "loadOBJ","http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/shiptriangle.obj"],
         ],
 		
 		menus: {
