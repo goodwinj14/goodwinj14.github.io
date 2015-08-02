@@ -91,6 +91,8 @@
 	}
 	
 	ext.createShape = function(shape, l,w,h, locX,locY, locZ){
+		console.log("desc", descriptor);
+		console.log("ext", ext);
 		var shapeID = generatID(shape);
 		shapes.push(shapeID);
 		var message = "CREATESHAPE_"+shape+','+l+','+w+','+h+','+locX+','+locY+','+locZ+','+shapeID;
