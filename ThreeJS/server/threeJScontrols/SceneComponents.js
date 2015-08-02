@@ -169,6 +169,19 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
 				blendMesh.play('idle');
 				} );
 		}
+		if(Charecter=="Cat"){
+		   var  blendMesh = new THREE.BlendCharacter();
+				blendMesh.load( 'threeJScontrols/sceneCharecters/Cat.js', function ( geometry, materials ) {
+
+				blendMesh.rotation.y = Math.PI * -135 / 180;
+				blendMesh.scale.set( .04, .04, .04 );
+				Scene.add( blendMesh );
+				SHAPES[charecterID] = blendMesh;
+				var aspect = window.innerWidth / window.innerHeight;
+				var radius = blendMesh.geometry.boundingSphere.radius;
+
+				} );
+		}
 		
 }
 
