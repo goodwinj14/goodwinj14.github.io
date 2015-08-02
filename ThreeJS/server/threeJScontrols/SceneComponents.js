@@ -170,17 +170,14 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
 				} );
 		}
 		if(Charecter=="Cat"){
-		   var  blendMesh = new THREE.BlendCharacter();
-				blendMesh.load( 'threeJScontrols/sceneCharecters/Cat.js', function ( geometry, materials ) {
 
-				blendMesh.rotation.y = Math.PI * -135 / 180;
-				blendMesh.scale.set( .04, .04, .04 );
+			var loader = new THREE.JSONLoader();
+    			loader.load('threeJScontrols/sceneCharecters/Cat.js', function modelLoadedCallback(geometry,materials) {
+ 				//material = new THREE.MeshBasicMaterial({color: 'blue'});
+        		blendMesh = new THREE.Mesh( geometry, materials[0] );
+        		blendMesh.position.y = 4.2;
 				Scene.add( blendMesh );
 				SHAPES[charecterID] = blendMesh;
-				var aspect = window.innerWidth / window.innerHeight;
-				var radius = blendMesh.geometry.boundingSphere.radius;
-
-				} );
 		}
 		
 }
