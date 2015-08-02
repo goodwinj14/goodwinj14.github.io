@@ -261,7 +261,7 @@
 			['', 'Set %s Image %m.Images', 'setImage', 'Material', 'url'],
 			['', 'Change Material %s to Color %s', 'materialColor', 'Variable','Random'],
 			['h', "When %m.Keys  Pressed" , 'key_Pressed', "space"],
-			['r ', "Add %m.Charecters Location: X: %n Y: %n Z: %n" , "add_Charecter", "Marine", '1','1','1'],
+			['r', "Add %m.Charecters Location: X: %n Y: %n Z: %n" , "add_Charecter", "Marine", '1','1','1'],
 			['r', "Load Object URL: %s", "loadOBJ","http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/shiptriangle.obj"],
         ],
 		
