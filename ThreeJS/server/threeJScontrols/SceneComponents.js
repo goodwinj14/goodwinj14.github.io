@@ -315,23 +315,29 @@ SCENECOMPONENTS.move = function(shape_ID, direction, steps){
 		shape = SHAPES[shape_ID];
 		
 		if(shape!=null){
+			/**REVERTBACK TO USING CHARECTERCONTROLS WHEN TESTING IS DONE
+			**!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			**
 			if(shape_ID.indexOf("CHARECTER")>=0){
 
 				CHARECTERCONTROLS.moveLeft(shape, steps);
-			}else{
+			}else{*/
 			shape.position.x = (shape.position.x - steps);
-		}
+		//}
 		}
 	}if(direction=="Right"){
 		var shape = null;
 		shape = SHAPES[shape_ID];
 		if(shape!=null){
+			/**REVERTBACK TO USING CHARECTERCONTROLS WHEN TESTING IS DONE
+			**!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			**
 			if(shape_ID.indexOf("CHARECTER")>=0){
 
 				CHARECTERCONTROLS.moveRight(shape, steps);
-			}else{
+			}else{*/
 			shape.position.x = (shape.position.x-0) + (steps-0);
-			}
+			//}
 		}
 	}if(direction=="Up"){
 		var shape = null;
@@ -350,23 +356,29 @@ SCENECOMPONENTS.move = function(shape_ID, direction, steps){
 		var shape = null;
 		shape = SHAPES[shape_ID];
 		if(shape!=null){
+			/**REVERTBACK TO USING CHARECTERCONTROLS WHEN TESTING IS DONE
+			**!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			**
 			if(shape_ID.indexOf("CHARECTER")>=0){
 
 				CHARECTERCONTROLS.moveForward(shape, steps);
-			}else{
+			}else{*/
 			shape.position.z = (shape.position.z - steps);
-			}
+			//}
 		}
 	}if(direction=="Back"){
 		var shape = null;
 		shape = SHAPES[shape_ID];
 		if(shape!=null){
+			/**REVERTBACK TO USING CHARECTERCONTROLS WHEN TESTING IS DONE
+			**!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			**
 			if(shape_ID.indexOf("CHARECTER")>=0){
 
 				CHARECTERCONTROLS.moveBack(shape, steps);
-			}else{
+			}else{*/
 			shape.position.z = (shape.position.z-0) + (steps-0);
-			}
+			//}
 		}
 	}
 }
