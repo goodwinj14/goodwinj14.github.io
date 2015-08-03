@@ -186,7 +186,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
     			loader.load('threeJScontrols/sceneCharecters/pirateShip.js', function modelLoadedCallback(geometry,materials) {
  				//material = new THREE.MeshBasicMaterial({color: 'blue'});
         		blendMesh = new THREE.Mesh( geometry, materials[0] );
-        		blendMesh.position.y = 4.2;
+        		blendMesh.position.y = 0;
 				Scene.add( blendMesh );
 				SHAPES[charecterID] = blendMesh;
 			});
