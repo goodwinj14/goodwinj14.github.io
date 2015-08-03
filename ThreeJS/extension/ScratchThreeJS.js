@@ -219,187 +219,27 @@
            }
        }
        //If a letter was entered insted of a command key
-       else{
+       else
        if (lastKeyEvent == 65) {
            lastKeyEvent = null;
            return true;
-       }
+       
        }
        /*B*/
-       else{
+       else
        if (lastKeyEvent == 66) {
            lastKeyEvent = null;
            return true;
-       }
+       
        }
        /*C*/
-       else{
+       else
        if (lastKeyEvent == 67) {
            lastKeyEvent = null;
            return true;
+       
        }
-       }
-       /*D*/
-       else{
-       if (lastKeyEvent == 68) {
-           lastKeyEvent = null;
-           return true;
-       }
-       }
-       /*E*/
-       else{
-       if (lastKeyEvent == 69) {
-           lastKeyEvent = null;
-           return true;
-       }
-       }
-       /*F*/
-       else{
-       if (lastKeyEvent == 70) {
-           lastKeyEvent = null;
-           return true;
-       }
-       }
-       /*G*/
-       else{
-       if (lastKeyEvent == 71) {
-           lastKeyEvent = null;
-           return true;
-       }
-       }
-       /*H*/
-       else{
-       if (lastKeyEvent == 72) {
-           lastKeyEvent = null;
-           return true;
-       }
-       }
-       /*I*/
-       else{
-       if (lastKeyEvent == 73) {
-           lastKeyEvent = null;
-           return true;
-       }
-       }
-       /*J*/
-       else{
-       if (lastKeyEvent == 74) {
-           lastKeyEvent = null;
-           return true;
-       }
-       }
-       /*K*/
-       else{
-       if (lastKeyEvent == 75) {
-           lastKeyEvent = null;
-           return true;
-       }
-       }
-       /*I*/
-       else{
-       if (lastKeyEvent == 76) {
-           lastKeyEvent = null;
-           return true;
-       }
-       }
-       /*M*/
-       else{
-       if (lastKeyEvent == 77) {
-           lastKeyEvent = null;
-           return true;
-       }
-       }
-       /*N*/
-       else{
-       if (lastKeyEvent == 78) {
-           lastKeyEvent = null;
-           return true;
-       }
-       }
-       /*O*/
-       else{
-       if (lastKeyEvent == 79) {
-           lastKeyEvent = null;
-           return true;
-       }
-       }
-       /*P*/
-       else{
-       if (lastKeyEvent == 80) {
-           lastKeyEvent = null;
-           return true;
-       }
-       }
-       /*Q*/
-       else{
-       if (lastKeyEvent == 81) {
-           lastKeyEvent = null;
-           return true;
-       }
-       }
-       /*R*/
-       else{
-       if (lastKeyEvent == 82) {
-           lastKeyEvent = null;
-           return true;
-       }
-       }
-       /*S*/
-       else{
-       if (lastKeyEvent == 83) {
-           lastKeyEvent = null;
-           return true;
-       }
-       }
-       /*T*/
-       else{
-       if (lastKeyEvent == 84) {
-           lastKeyEvent = null;
-           return true;
-       }
-       }
-       /*U*/
-       else{
-       if (lastKeyEvent == 85) {
-           lastKeyEvent = null;
-           return true;
-       }
-       }
-       /*V*/
-       else{
-       if (lastKeyEvent == 86) {
-           lastKeyEvent = null;
-           return true;
-       }
-       }
-       /*W*/
-       else{
-       if (lastKeyEvent == 87) {
-           lastKeyEvent = null;
-           return true;
-       }
-       }
-       /*X*/
-       else{
-       if (lastKeyEvent == 88) {
-           lastKeyEvent = null;
-           return true;
-       }
-       }
-       /*Y*/
-       else{
-       if (lastKeyEvent == 89) {
-           lastKeyEvent = null;
-           return true;
-       }
-       }
-       /*Z*/
-       else{
-       if (lastKeyEvent == 90) {
-           lastKeyEvent = null;
-           return true;
-       }
-       }
+      
        return false;
     };
 
