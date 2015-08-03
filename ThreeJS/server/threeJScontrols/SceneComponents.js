@@ -178,7 +178,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
         		blendMesh.position.y = 4.2;
 				Scene.add( blendMesh );
 				SHAPES[charecterID] = blendMesh;
-			}
+			});
 		}
 		if(Charecter=="Pirate Ship"){
 
@@ -189,7 +189,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
         		blendMesh.position.y = 4.2;
 				Scene.add( blendMesh );
 				SHAPES[charecterID] = blendMesh;
-			}
+			});
 		}
 		
 }
