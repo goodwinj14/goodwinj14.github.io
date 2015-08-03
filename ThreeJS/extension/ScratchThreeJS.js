@@ -219,27 +219,187 @@
            }
        }
        //If a letter was entered insted of a command key
-       else
+       else if(key=='a'){
        if (lastKeyEvent == 65) {
            lastKeyEvent = null;
            return true;
-       
+       }
        }
        /*B*/
-       else
+       else if(key=='b'){
        if (lastKeyEvent == 66) {
            lastKeyEvent = null;
            return true;
-       
+       }
        }
        /*C*/
-       else
+       else if(key=='c'){
        if (lastKeyEvent == 67) {
            lastKeyEvent = null;
            return true;
-       
        }
-      
+       }
+       /*D*/
+       else if(key=='d'){
+       if (lastKeyEvent == 68) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*E*/
+       else if(key=='e'){
+       if (lastKeyEvent == 69) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*F*/
+       else if(key=='f'){
+       if (lastKeyEvent == 70) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*G*/
+       else if(key=='g'){
+       if (lastKeyEvent == 71) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*H*/
+       else if(key=='h'){
+       if (lastKeyEvent == 72) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*I*/
+       else if(key=='i'){
+       if (lastKeyEvent == 73) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*J*/
+       else if(key=='j'){
+       if (lastKeyEvent == 74) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*K*/
+       else if(key=='k'){
+       if (lastKeyEvent == 75) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*l*/
+       else if(key=='l'){
+       if (lastKeyEvent == 76) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*M*/
+       else if(key=='m'){
+       if (lastKeyEvent == 77) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*N*/
+       else if(key=='n'){
+       if (lastKeyEvent == 78) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*O*/
+       else if(key=='o'){
+       if (lastKeyEvent == 79) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*P*/
+       else if(key=='p'){
+       if (lastKeyEvent == 80) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*Q*/
+       else if(key=='q'){
+       if (lastKeyEvent == 81) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*R*/
+       else if(key=='r'){
+       if (lastKeyEvent == 82) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*S*/
+       else if(key=='s'){
+       if (lastKeyEvent == 83) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*T*/
+       else if(key=='t'){
+       if (lastKeyEvent == 84) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*U*/
+       else if(key=='u'){
+       if (lastKeyEvent == 85) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*V*/
+       else if(key=='v'){
+       if (lastKeyEvent == 86) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*W*/
+       else if(key=='w'){
+       if (lastKeyEvent == 87) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*X*/
+       else if(key=='x'){
+       if (lastKeyEvent == 88) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*Y*/
+       else if(key=='y'){
+       if (lastKeyEvent == 89) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*Z*/
+       else if(key=='z'){
+       if (lastKeyEvent == 90) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
        return false;
     };
 
