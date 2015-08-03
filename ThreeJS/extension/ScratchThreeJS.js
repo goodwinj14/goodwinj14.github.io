@@ -400,6 +400,76 @@
            return true;
        }
        }
+       /*0*/
+       else if(key=='0'){
+       if (lastKeyEvent == 48) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*1*/
+       else if(key=='1'){
+       if (lastKeyEvent == 49) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*2*/
+       else if(key=='2'){
+       if (lastKeyEvent == 50) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*3*/
+       else if(key=='3'){
+       if (lastKeyEvent == 51) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*4*/
+       else if(key=='4'){
+       if (lastKeyEvent == 52) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*5*/
+       else if(key=='5'){
+       if (lastKeyEvent == 53) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*6*/
+       else if(key=='6'){
+       if (lastKeyEvent == 54) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*7*/
+       else if(key=='7'){
+       if (lastKeyEvent == 55) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*8*/
+       else if(key=='8'){
+       if (lastKeyEvent == 56) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
+       /*9*/
+       else if(key=='9'){
+       if (lastKeyEvent == 57) {
+           lastKeyEvent = null;
+           return true;
+       }
+       }
        return false;
     };
 
