@@ -202,6 +202,17 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
 				SHAPES[charecterID] = blendMesh;
 			});
 		}
+		if(Charecter=="Lego Vader"){
+
+			var loader = new THREE.JSONLoader();
+    			loader.load('threeJScontrols/sceneCharecters/LegoDarthVader.js', function modelLoadedCallback(geometry,materials) {
+ 				//material = new THREE.MeshBasicMaterial({color: 'blue'});
+        		blendMesh = new THREE.Mesh( geometry, materials[0] );
+        		blendMesh.position.y = 4;
+				Scene.add( blendMesh );
+				SHAPES[charecterID] = blendMesh;
+			});
+		}
 		
 }
 
