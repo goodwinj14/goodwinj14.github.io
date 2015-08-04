@@ -4,7 +4,8 @@ var SCENESTYLES = {};
 
 var geo = new THREE.Geometry();
 var material = new THREE.LineBasicMaterial({color: 'white'});
-var size = 200, step = 1;
+var size = 20;
+var step = 1;
 for(var i = -size; i<= size; i+=step){
 	geo.vertices.push(new THREE.Vector3(-size, -0.04, i));
 	geo.vertices.push(new THREE.Vector3(size, -0.04, i));
