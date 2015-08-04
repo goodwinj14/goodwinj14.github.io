@@ -67,19 +67,14 @@
 				for (var y = 0; y <k; y++) {
 
 				colors[i] = json.color[jsonArrayPosition];
-				colors[i+1] = json.color[jsonArrayPosition+1];
-				colors[i+2] = json.color[jsonArrayPosition+2];
-				positions[i] =  json.position[jsonArrayPosition];
-				positions[i+1] =  json.position[jsonArrayPosition+1];
-				positions[i+2] = json.position[jsonArrayPosition+2];
-				i+=3;
-				jsonArrayPosition+=3;
+				i++;
+				jsonArrayPosition++;
 				};
 			//}
 		 	
 		 
     	
-			if(sliceBlockNum<2){
+			if(sliceBlockNum<239){
 				sliceBlockNum++;
 				getImage("jsonSlices/data"+sliceBlockNum+".json");
 				
