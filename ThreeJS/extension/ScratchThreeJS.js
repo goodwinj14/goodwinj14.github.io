@@ -488,8 +488,7 @@
 			['', " Camera Orbit  %m.CameraOrbit ","orbitCamera", "Direction"],
 			//The camera move block allows a user to move the camera in both the positive and negative direction of the X,Y, and Z axis.
 			['', " Move Camera  %m.Move  %n steeps ","moveCamera", "Direction", "1"],
-			//The camera look at block allows a user to set the camera to allways be focused on a specific object
-			['', "Look at Object %s" , 'lookAt', "Variable"],
+
 			['r', 'New Shape %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'createShape', 'Cube', '1','1','1','0','0','0'],
 			['', "Move %s %m.Move %n Steps" , 'moveShape', "Variable", "Left", 1],
 			//Adds a smothe movment control to any given object
@@ -500,8 +499,7 @@
 			['r', 'New Material %m.Materials', 'createMaterial','MeshBasicMaterial'],
 			//Sets a given material to a given object
 			['', 'Apply %s to %s', 'setObjectMaterial', 'Material', 'Shape'],
-			//Creats a clone of a given object
-			['', 'Create Clone of %s', 'createClone', 'Variable'],
+			
 			['', 'Set %s Image %m.Images', 'setImage', 'Material', 'url'],
 			['', 'Change Material %s to Color %s', 'materialColor', 'Variable','Random'],
 			['h', "When %m.Keys  Pressed" , 'key_Pressed', "space"],
@@ -514,7 +512,7 @@
 				Camera: ['Perspective'],
 				CameraRotation: ['Left', 'Right', 'Up', 'Down', 'Roll Left', 'Roll Right'],
 				CameraOrbit: ['Orbit Left', 'Orbit Right', 'Orbit Up', 'Orbit Down'],
-				CameraControls: ["First Person", "Orbit", "Mouse/Trackball"],
+				CameraControls: ["First Person", "Mouse/Trackball"],
 				Move: ['Left', 'Right', 'Up', 'Down','Forward','Back'],
 				Shapes: ['Cube', 'Sphere', 'Circle','Cylinder', 'Dodecahedron', 'Icosahedron', 'Plane', 'Ring', 'Torus'],
 		    	Materials:['MeshBasicMaterial', 'MeshNormalMaterial','MeshDepthMaterial', 'MeshLambertMaterial','MeshPhongMaterial'],
