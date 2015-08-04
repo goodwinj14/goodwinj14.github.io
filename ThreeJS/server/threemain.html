@@ -92,12 +92,12 @@
 			//CAMERAFOLLOW command tag is associated with Move Camera Block 
 			if(commandKey == "CAMERAFOLLOW"){
 				if(CAMERA!=null){
-					if(paramsArray[1]=="Front"){
-						THREE.LookAtControls.lookAtFront = true;
-					}else if(paramsArray[1]=="Back"){
-						THREE.LookAtControls.lookAtBack = false;
-					}
 					controls = new THREE.LookAtControls(CAMERA, SCENECOMPONENTS.getShape(paramsArray[0]));
+					if(paramsArray[1]=="Front"){
+						controls.lookAtFront = true;
+					}else if(paramsArray[1]=="Back"){
+						controls.lookAtBack = true;
+					}
 			}
 			}
 			//SETCAMERACONTROLS
