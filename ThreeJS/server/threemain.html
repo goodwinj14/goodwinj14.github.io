@@ -257,7 +257,7 @@
 			if(sceneStyle[0]=="Grid"){
 			var light	= new THREE.AmbientLight( 0x020202 );
 			SCENE.add( light );
-			SCENESTYLES.size = parseInt(sceneStyle[1])*parseInt(sceneStyle[2]);
+			SCENESTYLES.gridSize = parseInt(sceneStyle[1])*parseInt(sceneStyle[2]);
 			var plane = SCENESTYLES.GRID;
 			console.log("GridValue:", plane); 
 			SCENE.add(plane);
