@@ -85,8 +85,8 @@
 		console.log("Move Camera Called", message);
 	}
 
-	ext.cameraFallow = function(objectID){
-		var message = "CAMERAFOLLOW_"+objectID;
+	ext.cameraFallow = function(objectID, direction){
+		var message = "CAMERAFOLLOW_"+objectID+","+direction;
 		win.postMessage(message, liveURL);
 	}
 	
@@ -481,7 +481,7 @@
             //['', 'Set Camera Controls  Up: %m.Keys Down: %m.Keys Left: %m.Keys Right: %m.Keys ', 'camControlsMove', 'w', 's','a','d'],
             ['', 'Add Camera Controles %m.CameraControls Move Speed: %n Look Speed: %n ', 'camControls','First Person', '200', '50'],
 			//The camera orbit block to allow users to orbit the camera around a given point
-			['', " Camera Follow: %s ","cameraFallow", "Variable"],
+			['', " Camera Look At: %s  %m.Sides","cameraFallow", "Variable", "Front"],
 			//The camera rotate block to allow users to rotate the view of the camra "Left", "Right", "Up" and "Down"
 			['', "Rotate Camera %m.CameraRotation %n Degrees" , 'rotateCamera', "Direction", "1"],
 			//The camera orbit block to allow users to orbit the camera around a given point
@@ -512,6 +512,7 @@
 				CameraRotation: ['Left', 'Right', 'Up', 'Down', 'Roll Left', 'Roll Right'],
 				CameraOrbit: ['Orbit Left', 'Orbit Right', 'Orbit Up', 'Orbit Down'],
 				CameraControls: ["First Person", "Mouse/Trackball"],
+        Sides: ["Front", "back"],
 				Move: ['Left', 'Right', 'Up', 'Down','Forward','Back'],
 				Shapes: ['Cube', 'Sphere', 'Circle','Cylinder', 'Dodecahedron', 'Icosahedron', 'Plane', 'Ring', 'Torus'],
 		    	Materials:['MeshBasicMaterial', 'MeshNormalMaterial','MeshDepthMaterial', 'MeshLambertMaterial','MeshPhongMaterial'],
