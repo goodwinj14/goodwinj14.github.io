@@ -8,7 +8,7 @@ THREE.LookAtControls = function ( camera, lookAtObj ) {
 	this.lookAtObj = lookAtObj 
 	this.targetPosition = new THREE.Vector3( 0, 0, 0 );
 
-	this.lookAtBack = false;
+	this.lookAtBack = true;
 	this.lookAtFront = false;
 	this.lookAtLeft = false;
 	this.lookAtRight = false;
