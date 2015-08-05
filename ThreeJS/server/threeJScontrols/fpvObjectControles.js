@@ -127,8 +127,8 @@
 		//Rotation and look Direction
 		var actualLookSpeed = this.lookSpeed*delta;
 		lon = THREE.Math.degToRad( actualLookSpeed );
-		if ( this.rotateLeft ) this.object.rotation.y = this.object.rotation.y - (lon);
-		if ( this.rotateRight ) this.object.rotation.y = this.object.rotation.y + (lon);
+		if ( this.rotateLeft ) this.object.rotation.y = this.object.rotation.y + (lon);
+		if ( this.rotateRight ) this.object.rotation.y = this.object.rotation.y - (lon);
 	}
 
 
