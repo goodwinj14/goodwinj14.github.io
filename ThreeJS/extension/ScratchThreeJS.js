@@ -153,6 +153,9 @@
 		}
 	}
 
+  ext.addPlanet = function(){
+    
+  }
 
 	ext.camControls = function(controlType, moveSpeed, lookSpeed){
 		var message = "SETCAMERACONTROLS_"+controlType+','+moveSpeed+','+lookSpeed;
@@ -490,7 +493,7 @@
 			['', " Move Camera  %m.Move  %n steeps ","moveCamera", "Direction", "1"],
 
 			['r', 'New Shape %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'createShape', 'Cube', '1','1','1','0','0','0'],
-      ['', 'New Planet %m.Planets','addPlanet','Earth'],
+      ['r', 'New Planet %m.Planets','addPlanet','Earth'],
 			['', "Move %s %m.Move %n Steps" , 'moveShape', "Variable", "Left", 1],
 			//Adds a smothe movment control to any given object
 			['', "Appy FPV Controls to Object: %s Move Speed: %n Turn Speed: %n" , 'applyObjControls', "Variable", "20", "20"],

@@ -135,9 +135,47 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 
 				this.StackGeometry.computeBoundingSphere();
 
+
 	//Changes the postion and colors of the X-Axis Vertices to display 
 	//the Face Four data.
-	this.drawF3 = function(){
+	this.drawF1 = function(){
+		var end = ((area*3)-1)+(area*3);
+		
+		var moveOneRow = this.width*3;
+		var F3Start = 0;
+		var F4ColorStart = 0;
+		var it = (area*3);
+		
+		colorsIteration =0;
+		for (var j = 0; j < 240; j++) {
+			var colorsIteration = 0;
+			for (var i = 0; i < 240*3; i+=3) {
+				//this.StackGeometry.attributes.position.array[i] = (0);
+				//this.StackGeometry.attributes.position.array[(area*3)+i] = (-centerY)-2;
+				//this.StackGeometry.attributes.color.array[(area*3)+ i] = 255;
+				//this.StackGeometry.attributes.color.array[(area*3)+i+1] = 0;
+				//this.StackGeometry.attributes.color.array[(area*3)+i+2] = 0;
+				
+				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)] = colors[(F4ColorStart+(i/3)+(240*j))];
+				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+1] = colors[(F4ColorStart+(i/3)+(240*j))];
+				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+2] = colors[(F4ColorStart+(i/3)+(240*j))];
+				this.StackGeometry.attributes.position.array[i+(j*moveOneRow)+2] = centerY;
+				colorsIteration++;
+				
+				
+			
+			//colorsIteration = colorsIteration;
+			};
+			//colorsIteration = 0;
+		};
+		this.StackGeometry.addAttribute( 'color', new THREE.BufferAttribute( this.VisiableColors, 3 ) );
+		this.StackGeometry.attributes.position.needsUpdate = true;
+
+	};
+
+	//Changes the postion and colors of the X-Axis Vertices to display 
+	//the Face Four data.
+	this.drawF2 = function(){
 		var end = ((area*3)-1)+(area*3);
 		
 		var moveOneRow = this.width*3;
@@ -159,6 +197,42 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+1] = colors[(240-1)+(area*(i/3))+(240*j)];
 				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+2] = colors[(240-1)+(area*(i/3))+(240*j)];
 				this.StackGeometry.attributes.position.array[F3Start+i+(j*moveOneRow)] = centerY;
+				colorsIteration++;
+				
+				
+			
+			//colorsIteration = colorsIteration;
+			};
+			//colorsIteration = 0;
+		};
+		this.StackGeometry.addAttribute( 'color', new THREE.BufferAttribute( this.VisiableColors, 3 ) );
+		this.StackGeometry.attributes.position.needsUpdate = true;
+
+	};
+	//Changes the postion and colors of the X-Axis Vertices to display 
+	//the Face Four data.
+	this.drawF3 = function(){
+		var end = ((area*3)-1)+(area*3);
+		
+		var moveOneRow = this.width*3;
+		var F3Start = 0;
+		var F4ColorStart = area*239;
+		var it = (area*3);
+		
+		colorsIteration =0;
+		for (var j = 0; j < 240; j++) {
+			var colorsIteration = 0;
+			for (var i = 0; i < 240*3; i+=3) {
+				//this.StackGeometry.attributes.position.array[i] = (0);
+				//this.StackGeometry.attributes.position.array[(area*3)+i] = (-centerY)-2;
+				//this.StackGeometry.attributes.color.array[(area*3)+ i] = 255;
+				//this.StackGeometry.attributes.color.array[(area*3)+i+1] = 0;
+				//this.StackGeometry.attributes.color.array[(area*3)+i+2] = 0;
+				
+				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)] = colors[(F4ColorStart+(i/3)+(240*j))];
+				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+1] = colors[(F4ColorStart+(i/3)+(240*j))];
+				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+2] = colors[(F4ColorStart+(i/3)+(240*j))];
+				this.StackGeometry.attributes.position.array[i+(j*moveOneRow)+2] = -centerY;
 				colorsIteration++;
 				
 				
@@ -207,13 +281,94 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 		this.StackGeometry.attributes.position.needsUpdate = true;
 
 	}
+		//Changes the postion and colors of the X-Axis Vertices to display 
+	//the Face Four data.
+	this.drawF5 = function(){
+		var end = ((area*3)-1)+(area*3);
+		
+		var moveOneRow = this.width*3;
+		var F3Start = (area*3)*2;
+		var F6ColorStart = area-239;
+		var it = (area*3);
+		
+		colorsIteration =0;
+		for (var j = 0; j < 240; j++) {
+			var colorsIteration = 0;
+			for (var i = 0; i < 240*3; i+=3) {
+				//this.StackGeometry.attributes.position.array[i] = (0);
+				//this.StackGeometry.attributes.position.array[(area*3)+i] = (-centerY)-2;
+				//this.StackGeometry.attributes.color.array[(area*3)+ i] = 255;
+				//this.StackGeometry.attributes.color.array[(area*3)+i+1] = 0;
+				//this.StackGeometry.attributes.color.array[(area*3)+i+2] = 0;
+				
+				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)] = colors[(i/3)+(area*j)];
+				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+1] = colors[(i/3)+(area*j)];
+				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+2] = colors[(i/3)+(area*j)];
+				this.StackGeometry.attributes.position.array[F3Start+i+(j*moveOneRow)+1] = centerY;
+				colorsIteration++;
+				
+				
+			
+			//colorsIteration = colorsIteration;
+			};
+			//colorsIteration = 0;
+		};
+		this.StackGeometry.addAttribute( 'color', new THREE.BufferAttribute( this.VisiableColors, 3 ) );
+		this.StackGeometry.attributes.position.needsUpdate = true;
+
+	};
+
+		//Changes the postion and colors of the X-Axis Vertices to display 
+	//the Face Four data.
+	this.drawF6 = function(){
+		var end = ((area*3)-1)+(area*3);
+		
+		var moveOneRow = this.width*3;
+		var F3Start = (area*3)*2;
+		var F6ColorStart = area-239;
+		var it = (area*3);
+		
+		colorsIteration =0;
+		for (var j = 0; j < 240; j++) {
+			var colorsIteration = 0;
+			for (var i = 0; i < 240*3; i+=3) {
+				//this.StackGeometry.attributes.position.array[i] = (0);
+				//this.StackGeometry.attributes.position.array[(area*3)+i] = (-centerY)-2;
+				//this.StackGeometry.attributes.color.array[(area*3)+ i] = 255;
+				//this.StackGeometry.attributes.color.array[(area*3)+i+1] = 0;
+				//this.StackGeometry.attributes.color.array[(area*3)+i+2] = 0;
+				
+				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)] = colors[(area-(240-(i/3)))+(area*j)];
+				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+1] = colors[(area-(240-(i/3)))+(area*j)];
+				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+2] = colors[(area-(240-(i/3)))+(area*j)];
+				this.StackGeometry.attributes.position.array[F3Start+i+(j*moveOneRow)+1] = -centerY;
+				colorsIteration++;
+				
+				
+			
+			//colorsIteration = colorsIteration;
+			};
+			//colorsIteration = 0;
+		};
+		this.StackGeometry.addAttribute( 'color', new THREE.BufferAttribute( this.VisiableColors, 3 ) );
+		this.StackGeometry.attributes.position.needsUpdate = true;
+
+	};
 
 	this.update =function(){
-		console.log("Camera Roatation y", this.camera.rotation.y);
-		if(this.camera.rotation.y<-0.03){
+		console.log("Camera Roatation y", this.camera.rotation.x);
+		if(this.camera.rotation.y<-0.3){
 			this.drawF4();
-		}else if(this.camera.rotation.y> 0.03){
+		}if(this.camera.rotation.y> 0.3){
+			this.drawF2();
+		}if(this.camera.rotation.x<-0.3){
+			this.drawF5();
+		}if(this.camera.rotation.x>0.3){
+			this.drawF6();
+		}if(this.camera.rotation.x<-1.5){
 			this.drawF3();
+		}if(this.camera.rotation.x>-1.5){
+			this.drawF1();
 		}
 	}
 };
