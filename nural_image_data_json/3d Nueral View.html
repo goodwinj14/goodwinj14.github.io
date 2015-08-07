@@ -34,9 +34,9 @@
 		 
 		 var particles = (240*240*240);
 		 var positions = new Float32Array( particles*3 );
-		 var colors = new Float32Array( particles*3);
+		 var colors = new Float32Array( particles);
 		 var particleSystem=null;
-
+		 var ImageStack;
 		 //join two typed arrays
 		 //var c = new Int8Array(a.length + b.length);
 		 var sliceBlockNum =0;
@@ -191,9 +191,10 @@
 				
 				scene.add( particleSystem );*/
 
-				console.log(colors);
-				var ImageStack = new NEURONBLOCK.initImageStackVertices(240,240,colors);
-				var geometr = NEURONBLOCK.StackGeometry;
+				console.log("Colors lenthe: ",colors.length);
+				ImageStack = new NEURONBLOCK.imageStack(240,240,colors,camera);
+				//console.log("geo", ImageStack.StackGeometry);
+				var geometr = ImageStack.StackGeometry;
 
 				
 
@@ -276,6 +277,7 @@
 			}
 			render();
 			controls.update();
+			ImageStack.update();
 		}
 			render();
 			animate();
@@ -291,16 +293,16 @@
           code = event.charCode;
      switch(code) {
           case 37:
-              particleSystem.rotation.y = particleSystem.rotation.y + -Math.PI/180;
-              console.log(particleSystem.rotation.y);
+             // particleSystem.rotation.y = particleSystem.rotation.y + -Math.PI/180;
+              //console.log(particleSystem.rotation.y);
+              ImageStack.drawF4();
               break;
           case 38:
               particleSystem.rotation.x = particleSystem.rotation.x + Math.PI/180;
               console.log(particleSystem.rotation.x);
               break;
           case 39:
-              particleSystem.rotation.y = particleSystem.rotation.y+ Math.PI/180;
-              console.log(particleSystem.rotation.y);
+              ImageStack.drawF3();
               break;
           case 40:
               particleSystem.rotation.x = particleSystem.rotation.x + -Math.PI/180;
