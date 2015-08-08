@@ -219,7 +219,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
 		
 }
 
-SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, charecterID, Scene){
+SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, planetID, Scene){
 
 				if(Planet=="Earth"){
 				var mesh = THREEx.Planets.createEarth();
@@ -229,42 +229,49 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, ch
 				var cloud	= THREEx.Planets.createEarthCloud();
 				mesh.add(cloud);
 				Scene.add( mesh );
+				SHAPES[planetID] = mesh;
 				}else if(Planet=="Sun"){
 				var mesh = THREEx.Planets.createSun();
 				mesh.position.x = LocationX;
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
+				SHAPES[planetID] = mesh;
 				}else if(Planet=="Moon"){
 				var mesh = THREEx.Planets.createMoon();
 				mesh.position.x = LocationX;
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
+				SHAPES[planetID] = mesh;
 				}else if(Planet=="Mercury"){
 				var mesh = THREEx.Planets.createMercury();
 				mesh.position.x = LocationX;
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
+				SHAPES[planetID] = mesh;
 				}else if(Planet=="Venus"){
 				var mesh = THREEx.Planets.createVenus();
 				mesh.position.x = LocationX;
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
+				SHAPES[planetID] = mesh;
 				}else if(Planet=="Mars"){
 				var mesh = THREEx.Planets.createMars();
 				mesh.position.x = LocationX;
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
+				SHAPES[planetID] = mesh;
 				}else if(Planet=="Jupiter"){
 				var mesh = THREEx.Planets.createJupiter();
 				mesh.position.x = LocationX;
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
+				SHAPES[planetID] = mesh;
 				}else if(Planet=="Saturn"){
 				var mesh = THREEx.Planets.createSaturn();
 				mesh.position.x = LocationX;
@@ -277,6 +284,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, ch
 				ring.castShadow		= true;
 				mesh.add(ring);
 				Scene.add( mesh );
+				SHAPES[planetID] = mesh;
 				}else if(Planet=="Uranus"){
 				var mesh = THREEx.Planets.createUranus()
 				mesh.receiveShadow	= true;
@@ -286,22 +294,25 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, ch
 				ring.castShadow		= true;
 				mesh.add(ring);
 				Scene.add( mesh );
+				SHAPES[planetID] = mesh;
 				}else if(Planet=="Neptune"){
 				var mesh = THREEx.Planets.createNeptune();
 				mesh.position.x = LocationX;
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
+				SHAPES[planetID] = mesh;
 				}else if(Planet=="Pluto! #savepluto"){
 				var mesh = THREEx.Planets.createPluto();
 				mesh.position.x = LocationX;
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
+				SHAPES[planetID] = mesh;
 				}
 }
 
-SCENECOMPONENTS.addLight = function(lightType,color,intensity,locX,locY,locZ,scene){
+SCENECOMPONENTS.addLight = function(lightType,color,intensity,locX,locY,locZ,lightID,scene){
 	var color = new THREE.Color(color);
 	if(lightType="Ambient"){
 		var light = new THREE.AmbientLight(color.getHex());
@@ -309,8 +320,15 @@ SCENECOMPONENTS.addLight = function(lightType,color,intensity,locX,locY,locZ,sce
 		light.position.y = locY;
 		light.position.z = locZ;
 		scene.add( light );
+		SHAPES[lightID] = mesh;
 	}else if(lightType="Area"){
-
+	    var light = new THREE.AreaLight( color.getHex(), intensity );
+		light.position.set( 0.0001, 10.0001, -18.5001 );
+		light.rotation.set( -0.74719, 0.0001, 0.0001 );
+		light.width = 10;
+		light.height = 1;
+		scene.add(light);
+		SHAPES[lightID] = mesh;
 	}else if(lightType="Directional"){
 
 	}else if(lightType="Point"){
