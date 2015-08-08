@@ -222,7 +222,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
 }
 
 SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, charecterID, Scene){
-				var mesh = THREEx.Planets.createStarfield();
+				var mesh = THREEx.Planets.createEarth();
 				mesh.scale.set( 10, 10, 10 );
 				Scene.add( mesh );
 }
