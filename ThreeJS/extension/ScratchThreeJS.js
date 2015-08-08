@@ -194,8 +194,13 @@
   }
 
   ext.addLight = function(color, Intensity, locX, locY, locZ, lightType){
-      var message = "ADDLIGHT_"+color+','+Intensity+','+locX+','+locY+','+locZ+','+planetID+','+lightType;
+      var lightID = generatID("LIGHT");
+      shapes.push(lightID);
+
+      var message = "ADDLIGHT_"+lightType+','+color+','+Intensity+','+locX+','+locY+','+locZ+','+planetID;
       win.postMessage(message, liveURL);
+
+      return lightID;
   }
 
 	ext.key_Pressed = function(key) {
