@@ -201,7 +201,7 @@ THREEx.Planets.createSaturnRing	= function(){
 			}
 			// update texture with result
 			contextResult.putImageData(dataResult,0,0)	
-			//material.map.needsUpdate = true;
+			material.map.needsUpdate = true;
 		})
 		imageTrans.src	= THREEx.Planets.baseURL+'images/saturnringpattern.gif';
 	}, false);
