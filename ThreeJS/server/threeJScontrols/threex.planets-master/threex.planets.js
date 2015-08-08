@@ -201,7 +201,7 @@ THREEx.Planets.createSaturnRing	= function(){
 			}
 			// update texture with result
 			contextResult.putImageData(dataResult,0,0)	
-			material.map.needsUpdate = true;
+			//material.map.needsUpdate = true;
 		})
 		imageTrans.src	= THREEx.Planets.baseURL+'images/saturnringpattern.gif';
 	}, false);
@@ -397,7 +397,7 @@ THREEx.Planets._RingGeometry = function ( innerRadius, outerRadius, thetaSegment
 		this.faceVertexUvs[0].push(uvs);
 	}
 
-	this.computeCentroids();
+	//this.computeCentroids();
 	this.computeFaceNormals();
 
 	this.boundingSphere = new THREE.Sphere( new THREE.Vector3(), outerRadius );
