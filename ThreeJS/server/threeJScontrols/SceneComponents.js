@@ -229,6 +229,18 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, ch
 				var cloud	= THREEx.Planets.createEarthCloud();
 				mesh.add(cloud);
 				Scene.add( mesh );
+				}else if(Planet=="Sun"){
+				var mesh = THREEx.Planets.createSun();
+				mesh.position.x = LocationX;
+				mesh.position.y = LocationY;
+				mesh.position.z = LocationZ;
+				Scene.add( mesh );
+				}else if(Planet=="Moon"){
+				var mesh = THREEx.Planets.createMoon();
+				mesh.position.x = LocationX;
+				mesh.position.y = LocationY;
+				mesh.position.z = LocationZ;
+				Scene.add( mesh );
 				}else if(Planet=="Mercury"){
 				var mesh = THREEx.Planets.createMercury();
 				mesh.position.x = LocationX;
@@ -242,7 +254,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, ch
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
 				}else if(Planet=="Mars"){
-				var mesh = THREEx.Planets.createMoon();
+				var mesh = THREEx.Planets.createMars();
 				mesh.position.x = LocationX;
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
