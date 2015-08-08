@@ -220,9 +220,62 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
 }
 
 SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, charecterID, Scene){
+
+				if(Planet=="Earth"){
 				var mesh = THREEx.Planets.createEarth();
-				mesh.scale.set( 10, 10, 10 );
+				mesh.position.x = LocationX;
+				mesh.position.y = LocationY;
+				mesh.position.z = LocationZ;
 				Scene.add( mesh );
+				}else if(Planet=="Mercury"){
+				var mesh = THREEx.Planets.createEarth();
+				mesh.position.x = LocationX;
+				mesh.position.y = LocationY;
+				mesh.position.z = LocationZ;
+				Scene.add( mesh );
+				}else if(Planet=="Venus"){
+				var mesh = THREEx.Planets.createEarth();
+				mesh.position.x = LocationX;
+				mesh.position.y = LocationY;
+				mesh.position.z = LocationZ;
+				Scene.add( mesh );
+				}else if(Planet=="Mars"){
+				var mesh = THREEx.Planets.createEarth();
+				mesh.position.x = LocationX;
+				mesh.position.y = LocationY;
+				mesh.position.z = LocationZ;
+				Scene.add( mesh );
+				}else if(Planet=="Jupiter"){
+				var mesh = THREEx.Planets.createEarth();
+				mesh.position.x = LocationX;
+				mesh.position.y = LocationY;
+				mesh.position.z = LocationZ;
+				Scene.add( mesh );
+				}else if(Planet=="Saturn"){
+				var mesh = THREEx.Planets.createEarth();
+				mesh.position.x = LocationX;
+				mesh.position.y = LocationY;
+				mesh.position.z = LocationZ;
+				Scene.add( mesh );
+				}else if(Planet=="Uranus"){
+				var mesh = THREEx.Planets.createEarth();
+				mesh.position.x = LocationX;
+				mesh.position.y = LocationY;
+				mesh.position.z = LocationZ;
+				Scene.add( mesh );
+				}else if(Planet=="Neptune"){
+				var mesh = THREEx.Planets.createEarth();
+				mesh.position.x = LocationX;
+				mesh.position.y = LocationY;
+				mesh.position.z = LocationZ;
+				Scene.add( mesh );
+				}else if(Planet=="Pluto"){
+				var mesh = THREEx.Planets.createEarth();
+				mesh.position.x = LocationX;
+				mesh.position.y = LocationY;
+				mesh.position.z = LocationZ;
+				Scene.add( mesh );
+				}
 }
 
 SCENECOMPONENTS.newMaterial = function(material, materialID){

@@ -521,7 +521,7 @@
 				CameraRotation: ['Left', 'Right', 'Up', 'Down', 'Roll Left', 'Roll Right'],
 				CameraOrbit: ['Orbit Left', 'Orbit Right', 'Orbit Up', 'Orbit Down'],
 				CameraControls: ["First Person", "Mouse/Trackball"],
-        Sides: ["Front", "Back"],
+        Sides: ["Back", "Front"],
 				Move: ['Left', 'Right', 'Up', 'Down','Forward','Back'],
 				Shapes: ['Cube', 'Sphere', 'Circle','Cylinder', 'Dodecahedron', 'Icosahedron', 'Plane', 'Ring', 'Torus'],
 		    Planets: ['Earth','Mercury','Venus','Mars','Jupiter','Saturn','Uranus','Neptune','Pluto! #savepluto'],	
