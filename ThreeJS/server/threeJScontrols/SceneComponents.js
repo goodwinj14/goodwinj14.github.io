@@ -273,8 +273,8 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, ch
 				mesh.receiveShadow	= true;
 				mesh.castShadow		= true;
 				var ring	= THREEx.Planets.createSaturnRing();
-				ring.receiveShadow	= true;
-				ring.castShadow		= true;
+				//ring.receiveShadow	= true;
+				//ring.castShadow		= true;
 				mesh.add(ring);
 				Scene.add( mesh );
 				}else if(Planet=="Uranus"){
