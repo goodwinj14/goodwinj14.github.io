@@ -117,9 +117,9 @@
 		var actualMoveSpeed = delta * this.moveSpeed;
 		
 		console.log(this.object.position.z);
-		if ( this.moveForward ) {this.object.position.z = this.object.position.z+( -actualMoveSpeed);}
+		if ( this.moveForward ) {this.object.position.z = this.object.translateZ( actualMoveSpeed);}
 		//if ( this.moveForward ) {this.object.translateZ( -actualMoveSpeed);}
-		if ( this.moveBackward ){ this.object.translateZ( actualMoveSpeed);}
+		if ( this.moveBackward ){ this.object.translateZ( -actualMoveSpeed);}
 
 		if ( this.moveUp ) this.object.translateY( actualMoveSpeed );
 		if ( this.moveDown ) this.object.translateY( - actualMoveSpeed );
