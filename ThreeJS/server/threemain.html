@@ -138,16 +138,7 @@
 				SCENECOMPONENTS.addCharecter(paramsArray[0],paramsArray[1],paramsArray[2],paramsArray[3],paramsArray[4],SCENE);
 			}
 			if(commandKey == "ADDLIGHT"){
-				console.log("Added Light Pre if");
-				if(paramsArray[0]=="AmbientLight"){
-					console.log("Added Light");
-				}else if(paramsArray[0]=="AreaLight"){
-					
-				}else if(paramsArray[0]=="DirectionalLight"){
-					
-				}else if(paramsArray[0]=="PointLight"){
-					
-				}
+				SCENECOMPONENTS.addLight(paramsArray[0],paramsArray[1],paramsArray[2],paramsArray[3],paramsArray[4],paramsArray[5],SCENE);
 			}
 			if(commandKey == "ADDPLANET"){
 				SCENECOMPONENTS.addPlanet(paramsArray[0],paramsArray[1],paramsArray[2],paramsArray[3],paramsArray[4],SCENE);

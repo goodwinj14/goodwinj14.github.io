@@ -301,6 +301,19 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, ch
 				}
 }
 
+SCENECOMPONENTS.addLight = function(lightType,color,intensity,locX,locY,locZ,scene){
+	if(lightType="Ambient"){
+		var light = new THREE.AmbientLight( 0x404040 );
+		scene.add( light );
+	}else if(lightType="Area"){
+
+	}else if(lightType="Directional"){
+
+	}else if(lightType="Point"){
+
+	}
+}
+
 SCENECOMPONENTS.newMaterial = function(material, materialID){
 	var materialOBJ;
 	if(material=="MeshBasicMaterial"){

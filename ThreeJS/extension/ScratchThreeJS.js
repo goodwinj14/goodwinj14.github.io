@@ -510,7 +510,7 @@
 			['r', 'New Shape %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'createShape', 'Cube', '1','1','1','0','0','0'],
       ['r', 'New Planet %m.Planets X: %n Y: %n Z: %n','addPlanet','Earth','0','0','0'],
 			//Lights
-      ['r', 'New %m.Lights Light Color: %s Intensity: %n X: %s Y: %s Z: %s','addLight','AmbientLight','white','0.7','0','0','0'],
+      ['r', 'New %m.Lights Light Color: %s Intensity: %n X: %s Y: %s Z: %s','addLight','Ambient','white','0.7','0','0','0'],
       //******//
 
       ['', "Move %s %m.Move %n Steps" , 'moveShape', "Variable", "Left", 1],
