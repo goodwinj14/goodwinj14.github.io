@@ -226,44 +226,53 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, ch
 				mesh.position.x = LocationX;
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
-				var cloud	= THREEx.Planets.createEarthCloud()
-				mesh.add(cloud)
+				var cloud	= THREEx.Planets.createEarthCloud();
+				mesh.add(cloud);
 				Scene.add( mesh );
 				}else if(Planet=="Mercury"){
-				var mesh = THREEx.Planets.createEarth();
+				var mesh = THREEx.Planets.createMercury();
 				mesh.position.x = LocationX;
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
 				}else if(Planet=="Venus"){
-				var mesh = THREEx.Planets.createEarth();
+				var mesh = THREEx.Planets.createVenus();
 				mesh.position.x = LocationX;
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
 				}else if(Planet=="Mars"){
-				var mesh = THREEx.Planets.createEarth();
+				var mesh = THREEx.Planets.createMoon();
 				mesh.position.x = LocationX;
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
 				}else if(Planet=="Jupiter"){
-				var mesh = THREEx.Planets.createEarth();
+				var mesh = THREEx.Planets.createJupiter();
 				mesh.position.x = LocationX;
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
 				}else if(Planet=="Saturn"){
-				var mesh = THREEx.Planets.createEarth();
+				var mesh = THREEx.Planets.createSaturn();
 				mesh.position.x = LocationX;
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
+				mesh.receiveShadow	= true;
+				mesh.castShadow		= true;
+				var ring	= THREEx.Planets.createSaturnRing();
+				ring.receiveShadow	= true;
+				ring.castShadow		= true;
+				mesh.add(ring);
 				Scene.add( mesh );
 				}else if(Planet=="Uranus"){
-				var mesh = THREEx.Planets.createEarth();
-				mesh.position.x = LocationX;
-				mesh.position.y = LocationY;
-				mesh.position.z = LocationZ;
+				var mesh = THREEx.Planets.createUranus()
+				mesh.receiveShadow	= true;
+				mesh.castShadow		= true;
+				var ring	= THREEx.Planets.createUranusRing();
+				ring.receiveShadow	= true;
+				ring.castShadow		= true;
+				mesh.add(ring);
 				Scene.add( mesh );
 				}else if(Planet=="Neptune"){
 				var mesh = THREEx.Planets.createEarth();
