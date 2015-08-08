@@ -314,7 +314,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, pl
 
 SCENECOMPONENTS.addLight = function(lightType,color,intensity,locX,locY,locZ,lightID,scene){
 	var color = new THREE.Color(color);
-	if(lightType="Ambient"){
+	if(lightType=="Ambient"){
 		var light = new THREE.AmbientLight(color.getHex());
 		light.position.x = locX;
 		light.position.y = locY;
@@ -322,7 +322,7 @@ SCENECOMPONENTS.addLight = function(lightType,color,intensity,locX,locY,locZ,lig
 		scene.add( light );
 		SHAPES[lightID] = light;
 		console.log("Ambient Light");
-	}else if(lightType="Area"){
+	}else if(lightType=="Area"){
 	    var light = new THREE.AreaLight( color.getHex(), intensity );
 		light.position.set( locX, locY, locZ );
 		light.width = 10;
@@ -330,13 +330,13 @@ SCENECOMPONENTS.addLight = function(lightType,color,intensity,locX,locY,locZ,lig
 		scene.add(light);
 		SHAPES[lightID] = light;
 		console.log("Area Light");
-	}else if(lightType="Directional"){
+	}else if(lightType=="Directional"){
 		var light = new THREE.DirectionalLight( color.getHex(), intensity );
 		directionalLight.position.set( locX, locY,locZ );
 		scene.add( light );
 		SHAPES[lightID] = light;
 		console.log("Directional Light");
-	}else if(lightType="Point"){
+	}else if(lightType=="Point"){
 		var light = new THREE.PointLight( color.getHex(), intensity, 100 );
 		light.position.set( locX, locY, locZ );
 		scene.add( light );

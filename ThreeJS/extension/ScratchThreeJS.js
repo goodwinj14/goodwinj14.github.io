@@ -196,7 +196,6 @@
   ext.addLight = function(lightType, color, Intensity, locX, locY, locZ){
       var lightID = generatID("LIGHT");
       shapes.push(lightID);
-
       var message = "ADDLIGHT_"+lightType+','+color+','+Intensity+','+locX+','+locY+','+locZ+','+lightID;
       win.postMessage(message, liveURL);
 
