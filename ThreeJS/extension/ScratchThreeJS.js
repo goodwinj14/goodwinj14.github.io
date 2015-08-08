@@ -499,7 +499,14 @@
 
 			['r', 'New Shape %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'createShape', 'Cube', '1','1','1','0','0','0'],
       ['r', 'New Planet %m.Planets X: %n Y: %n Z: %n','addPlanet','Earth','0','0','0'],
-			['', "Move %s %m.Move %n Steps" , 'moveShape', "Variable", "Left", 1],
+			//Lights
+      ['#01FEF0, r', 'New AmbientLight Light %m.Lights Color: %s X: %s Y: %s Z: %s','addLight','white'],
+      ['#01FEF0, r', 'New AreaLight Light %m.Lights Color: %s Intensity: %n X: %s Y: %s Z: %s','addLight','white','0.7'],
+      ['#01FEF0, r', 'New DirectionalLight Light %m.Lights Color: %s Intensity: %n X: %s Y: %s Z: %s','addLight','white','0.7'],
+      ['#01FEF0, r', 'New Point Light %m.Lights Color: %s Intensity: %n X: %s Y: %s Z: %s','addLight','white', '0.7'],
+      //******//
+
+      ['', "Move %s %m.Move %n Steps" , 'moveShape', "Variable", "Left", 1],
 			//Adds a smothe movment control to any given object
 			['', "Appy FPV Controls to Object: %s Move Speed: %n Turn Speed: %n" , 'applyObjControls', "Variable", "20", "20"],
 			
@@ -529,7 +536,8 @@
 		    Images:['Crate', 'Brick', 'Earth', 'Moon'],
 		    Keys: ['space', 'up arrow', 'down arrow', 'right arrow', 'left arrow', 'a',  'b',  'c',  'd',  'e',  'f',  'g',  'h', 'i',  'j',  'k',  'l',  'm',  'n',  'o',  'p',  'q',  'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',], 
 		    Charecters: ['Marine', 'Cat', 'Cat1', 'Lego Vader', 'Pirate Ship'],
-		    }
+		    Lights: ['','','','','',''],
+        }
     };
 
     // Register the extension
