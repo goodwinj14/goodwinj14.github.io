@@ -320,19 +320,24 @@ SCENECOMPONENTS.addLight = function(lightType,color,intensity,locX,locY,locZ,lig
 		light.position.y = locY;
 		light.position.z = locZ;
 		scene.add( light );
-		SHAPES[lightID] = mesh;
+		SHAPES[lightID] = light;
 	}else if(lightType="Area"){
 	    var light = new THREE.AreaLight( color.getHex(), intensity );
-		light.position.set( 0.0001, 10.0001, -18.5001 );
-		light.rotation.set( -0.74719, 0.0001, 0.0001 );
+		light.position.set( locX, locY, locZ );
 		light.width = 10;
 		light.height = 1;
 		scene.add(light);
-		SHAPES[lightID] = mesh;
+		SHAPES[lightID] = light;
 	}else if(lightType="Directional"){
-
+		var light = new THREE.DirectionalLight( color.getHex(), intensity );
+		directionalLight.position.set( locX, locY,locZ );
+		scene.add( light );
+		SHAPES[lightID] = light;
 	}else if(lightType="Point"){
-
+		var light = new THREE.PointLight( color.getHex(), intensity, 100 );
+		light.position.set( locX, locY, locZ );
+		scene.add( light );
+		SHAPES[lightID] = light;
 	}
 }
 
