@@ -321,6 +321,7 @@ SCENECOMPONENTS.addLight = function(lightType,color,intensity,locX,locY,locZ,lig
 		light.position.z = locZ;
 		scene.add( light );
 		SHAPES[lightID] = light;
+		console.log("Ambient Light");
 	}else if(lightType="Area"){
 	    var light = new THREE.AreaLight( color.getHex(), intensity );
 		light.position.set( locX, locY, locZ );
@@ -328,16 +329,19 @@ SCENECOMPONENTS.addLight = function(lightType,color,intensity,locX,locY,locZ,lig
 		light.height = 1;
 		scene.add(light);
 		SHAPES[lightID] = light;
+		console.log("Area Light");
 	}else if(lightType="Directional"){
 		var light = new THREE.DirectionalLight( color.getHex(), intensity );
 		directionalLight.position.set( locX, locY,locZ );
 		scene.add( light );
 		SHAPES[lightID] = light;
+		console.log("Directional Light");
 	}else if(lightType="Point"){
 		var light = new THREE.PointLight( color.getHex(), intensity, 100 );
 		light.position.set( locX, locY, locZ );
 		scene.add( light );
 		SHAPES[lightID] = light;
+		console.log("Point Light");
 	}
 }
 
