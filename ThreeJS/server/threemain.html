@@ -271,6 +271,12 @@
 			console.log("Grid Size", SCENESTYLES.gridSize); 
 			console.log("Grid Size", (parseInt(sceneStyle[1])*parseInt(sceneStyle[2]))); 
 			SCENE.add(plane);
+			}else if(sceneStyle[0]=="Grid"){
+			var light	= new THREE.AmbientLight( 0x020202 );
+			SCENE.add( light );
+			SCENESTYLES.gridSize = parseInt(sceneStyle[1])*parseInt(sceneStyle[2]);
+			var starFeild = THREEx.Planets.createStarfield();
+			SCENE.add(starFeild);
 			}
 
 			////////////////////////////
