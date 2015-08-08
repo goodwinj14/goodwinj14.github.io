@@ -226,6 +226,8 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, ch
 				mesh.position.x = LocationX;
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
+				var cloud	= THREEx.Planets.createEarthCloud()
+				mesh.add(cloud)
 				Scene.add( mesh );
 				}else if(Planet=="Mercury"){
 				var mesh = THREEx.Planets.createEarth();
@@ -269,7 +271,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, ch
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
-				}else if(Planet=="Pluto"){
+				}else if(Planet=="Pluto! #savepluto"){
 				var mesh = THREEx.Planets.createEarth();
 				mesh.position.x = LocationX;
 				mesh.position.y = LocationY;
