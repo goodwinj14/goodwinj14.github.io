@@ -22,6 +22,7 @@
 		<script src="http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/FirstPersonControls.js"></script>
 		<script src="http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/lookAtControls.js"></script>
 		<script src="http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/fpvObjectControles.js"></script>
+		<script src="http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/threex.planets-master/threex.planets.js"></script>
 		<script>
 		var RENDERER = null;
 		var SCENE = null;
@@ -135,6 +136,9 @@
 			//
 			if(commandKey == "ADDCHARECTER"){
 				SCENECOMPONENTS.addCharecter(paramsArray[0],paramsArray[1],paramsArray[2],paramsArray[3],paramsArray[4],SCENE);
+			}
+			if(commandKey == "ADDPLANET"){
+				SCENECOMPONENTS.addPlanet(paramsArray[0],paramsArray[1],paramsArray[2],paramsArray[3],paramsArray[4],SCENE);
 			}
 			//CREATESHAPE command tag is associated with the Move block
 			if(commandKey == "CREATESHAPE"){

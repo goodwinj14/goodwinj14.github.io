@@ -221,6 +221,12 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
 		
 }
 
+SCENECOMPONENTS.addCharecter = function(Planet, LocationX, LocationY, LocationZ, charecterID, Scene){
+				var mesh = THREEx.Planets.createEarth();
+				mesh.scale.set( 10, 10, 10 );
+				Scene.add( mesh );
+}
+
 SCENECOMPONENTS.newMaterial = function(material, materialID){
 	var materialOBJ;
 	if(material=="MeshBasicMaterial"){
