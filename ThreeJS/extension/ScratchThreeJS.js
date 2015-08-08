@@ -185,10 +185,10 @@
 	}
 
 
-  ext.addPlanet = function(PLanet, locX, locY, locZ){
+  ext.addPlanet = function(Planet, locX, locY, locZ){
     var planetID = generatID("PLANET");
     shapes.push(planetID);
-    var message = "ADDCHARECTER_"+PLanet+','+locX+','+locY+','+locZ+','+planetID;
+    var message = "ADDPLANET_"+Planet+','+locX+','+locY+','+locZ+','+planetID;
     win.postMessage(message, liveURL);
     return planetID;
   }
@@ -516,7 +516,7 @@
         ],
 		
 		menus: {
-		        Scenes: ['Grid','Grass','Blank'],
+		        Scenes: ['Grid','Grass','Space','Blank'],
 				Camera: ['Perspective'],
 				CameraRotation: ['Left', 'Right', 'Up', 'Down', 'Roll Left', 'Roll Right'],
 				CameraOrbit: ['Orbit Left', 'Orbit Right', 'Orbit Up', 'Orbit Down'],
