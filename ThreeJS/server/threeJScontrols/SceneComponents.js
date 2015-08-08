@@ -331,7 +331,7 @@ SCENECOMPONENTS.addLight = function(lightType,color,intensity,locX,locY,locZ,lig
 		SHAPES[lightID] = light;
 		console.log("Area Light");
 	}else if(lightType=="Directional"){
-		var light = new THREE.DirectionalLight( color.getHex(), intensity );
+		var light = new THREE.DirectionalLight( 0xcccccc, 1 );
 		light.position.set( locX, locY,locZ );
 		scene.add( light );
 		SHAPES[lightID] = light;
