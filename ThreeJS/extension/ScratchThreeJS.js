@@ -153,10 +153,6 @@
 		}
 	}
 
-  ext.addPlanet = function(){
-    
-  }
-
 	ext.camControls = function(controlType, moveSpeed, lookSpeed){
 		var message = "SETCAMERACONTROLS_"+controlType+','+moveSpeed+','+lookSpeed;
 		win.postMessage(message, liveURL);
@@ -187,6 +183,15 @@
 		win.postMessage(message, liveURL);
 		return charecterID;
 	}
+
+
+  ext.addPlanet = function(PLanet, locX, locY, locZ){
+    var planetID = generatID("PLANET");
+    shapes.push(planetID);
+    var message = "ADDCHARECTER_"+PLanet+','+locX+','+locY+','+locZ+','+planetID;
+    win.postMessage(message, liveURL);
+    return planetID;
+  }
 
 	ext.key_Pressed = function(key) {
        // Reset alarm_went_off if it is true, and return true
@@ -493,7 +498,7 @@
 			['', " Move Camera  %m.Move  %n steeps ","moveCamera", "Direction", "1"],
 
 			['r', 'New Shape %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'createShape', 'Cube', '1','1','1','0','0','0'],
-      ['r', 'New Planet %m.Planets','addPlanet','Earth'],
+      ['r', 'New Planet %m.Planets X: %n Y: %n Z: %n','addPlanet','Earth','0','0','0'],
 			['', "Move %s %m.Move %n Steps" , 'moveShape', "Variable", "Left", 1],
 			//Adds a smothe movment control to any given object
 			['', "Appy FPV Controls to Object: %s Move Speed: %n Turn Speed: %n" , 'applyObjControls', "Variable", "20", "20"],
