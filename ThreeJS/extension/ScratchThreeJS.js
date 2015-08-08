@@ -505,10 +505,10 @@
 			['r', 'New Shape %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'createShape', 'Cube', '1','1','1','0','0','0'],
       ['r', 'New Planet %m.Planets X: %n Y: %n Z: %n','addPlanet','Earth','0','0','0'],
 			//Lights
-      ['r', 'New Ambient Light %m.Lights Color: %s X: %s Y: %s Z: %s','addLight','white','AmbientLight'],
-      ['r', 'New Area Light %m.Lights Color: %s Intensity: %n X: %s Y: %s Z: %s','addLight','white','0.7','AreaLight'],
-      ['r', 'New Directional Light %m.Lights Color: %s Intensity: %n X: %s Y: %s Z: %s','addLight','white','0.7', 'DirectionalLight'],
-      ['r', 'New Point Light %m.Lights Color: %s Intensity: %n X: %s Y: %s Z: %s','addLight','white', '0.7', 'PointLight'],
+      ['r', 'New Ambient Light Color: %s X: %s Y: %s Z: %s','addLight','white','0','0','0','AmbientLight'],
+      ['r', 'New Area Light Color: %s Intensity: %n X: %s Y: %s Z: %s','addLight','white','0.7','0','0','0','AreaLight'],
+      ['r', 'New Directional Light Color: %s Intensity: %n X: %s Y: %s Z: %s','addLight','white','0.7','0','0','0', 'DirectionalLight'],
+      ['r', 'New Point Light Color: %s Intensity: %n X: %s Y: %s Z: %s','addLight','white', '0.7','0','0','0', 'PointLight'],
       //******//
 
       ['', "Move %s %m.Move %n Steps" , 'moveShape', "Variable", "Left", 1],
