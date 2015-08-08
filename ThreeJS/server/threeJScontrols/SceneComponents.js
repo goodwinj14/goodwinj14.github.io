@@ -154,7 +154,6 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
 				blendMesh.load( 'threeJScontrols/sceneCharecters/marine_anims.js', function ( geometry, materials ) {
 
 				blendMesh.rotation.y = Math.PI * -135 / 180;
-				blendMesh.scale.set( .04, .04, .04 );
 				Scene.add( blendMesh );
 				SHAPES[charecterID] = blendMesh;
 				var aspect = window.innerWidth / window.innerHeight;
@@ -213,7 +212,6 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
         		blendMesh = new THREE.Mesh( geometry, materials[0] );
         		blendMesh.rotation.y = Math.PI * 180 / 180;
         		blendMesh.position.y = 1.5;
-        		blendMesh.scale.set( .04, .04, .04 );
 				Scene.add( blendMesh );
 				SHAPES[charecterID] = blendMesh;
 			});
