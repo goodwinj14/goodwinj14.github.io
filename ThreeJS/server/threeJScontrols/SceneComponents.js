@@ -303,7 +303,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, ch
 
 SCENECOMPONENTS.addLight = function(lightType,color,intensity,locX,locY,locZ,scene){
 	if(lightType="Ambient"){
-		var light = new THREE.AmbientLight( 0x404040 );
+		var light = new THREE.AmbientLight(0x0000FF);
 		scene.add( light );
 	}else if(lightType="Area"){
 
