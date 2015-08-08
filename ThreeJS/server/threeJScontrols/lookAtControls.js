@@ -28,9 +28,9 @@ THREE.LookAtControls = function ( camera, lookAtObj ) {
 
 		//sets Look at angle Front, Back, Left, Right
 		if(this.lookAtBack){
-			this.object.position.x = this.lookAtObj.position.x+(Math.sin(this.lookAtObj.rotation.y) * this.distenceFromObj);
+			this.object.position.x = this.lookAtObj.position.x+(Math.sin(this.lookAtObj.rotation.y) * (-this.distenceFromObj));
 			this.object.position.y = this.lookAtObj.position.y + 10;
-			this.object.position.z = this.lookAtObj.position.z+(Math.cos(this.lookAtObj.rotation.y) * this.distenceFromObj);
+			this.object.position.z = this.lookAtObj.position.z+(Math.cos(this.lookAtObj.rotation.y) * (-this.distenceFromObj));
 			this.targetPosition.x = this.lookAtObj.position.x;
 			this.targetPosition.y = this.lookAtObj.position.y+5;
 			this.targetPosition.z = this.lookAtObj.position.z;
@@ -38,9 +38,9 @@ THREE.LookAtControls = function ( camera, lookAtObj ) {
 			this.object.lookAt( this.targetPosition );
 		}
 		else if(this.lookAtFront){
-		this.object.position.x = this.lookAtObj.position.x+(Math.sin(this.lookAtObj.rotation.y) * (-this.distenceFromObj));
+		this.object.position.x = this.lookAtObj.position.x+(Math.sin(this.lookAtObj.rotation.y) * (this.distenceFromObj));
 		this.object.position.y = this.lookAtObj.position.y + 10;
-		this.object.position.z = this.lookAtObj.position.z+(Math.cos(this.lookAtObj.rotation.y) * (-this.distenceFromObj));
+		this.object.position.z = this.lookAtObj.position.z+(Math.cos(this.lookAtObj.rotation.y) * (this.distenceFromObj));
 		this.targetPosition.x = this.lookAtObj.position.x;
 		this.targetPosition.y = this.lookAtObj.position.y+5;
 		this.targetPosition.z = this.lookAtObj.position.z;
