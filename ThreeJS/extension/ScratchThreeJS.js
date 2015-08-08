@@ -193,6 +193,11 @@
     return planetID;
   }
 
+  ext.addLight = function(lightType, color, Intensity, locX, locY, locZ){
+      var message = "ADDLIGHT_"+lightType+','+color+','+Intensity+','+locX+','+locY+','+locZ+','+planetID;
+      win.postMessage(message, liveURL);
+  }
+
 	ext.key_Pressed = function(key) {
        // Reset alarm_went_off if it is true, and return true
        // otherwise, return false.
@@ -500,9 +505,9 @@
 			['r', 'New Shape %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'createShape', 'Cube', '1','1','1','0','0','0'],
       ['r', 'New Planet %m.Planets X: %n Y: %n Z: %n','addPlanet','Earth','0','0','0'],
 			//Lights
-      ['r','#01FEF0', 'New AmbientLight Light %m.Lights Color: %s X: %s Y: %s Z: %s','addLight','white'],
-      ['#01FEF0','r', 'New AreaLight Light %m.Lights Color: %s Intensity: %n X: %s Y: %s Z: %s','addLight','white','0.7'],
-      ['r, #01FEF0', 'New DirectionalLight Light %m.Lights Color: %s Intensity: %n X: %s Y: %s Z: %s','addLight','white','0.7'],
+      ['r', 'New AmbientLight Light %m.Lights Color: %s X: %s Y: %s Z: %s','addLight','white'],
+      ['r', 'New AreaLight Light %m.Lights Color: %s Intensity: %n X: %s Y: %s Z: %s','addLight','white','0.7'],
+      ['r', 'New DirectionalLight Light %m.Lights Color: %s Intensity: %n X: %s Y: %s Z: %s','addLight','white','0.7'],
       ['r', 'New Point Light %m.Lights Color: %s Intensity: %n X: %s Y: %s Z: %s','addLight','white', '0.7'],
       //******//
 
