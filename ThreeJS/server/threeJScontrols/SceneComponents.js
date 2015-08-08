@@ -275,13 +275,13 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, ch
 				mesh.add(ring);
 				Scene.add( mesh );
 				}else if(Planet=="Neptune"){
-				var mesh = THREEx.Planets.createEarth();
+				var mesh = THREEx.Planets.createNeptune();
 				mesh.position.x = LocationX;
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
 				}else if(Planet=="Pluto! #savepluto"){
-				var mesh = THREEx.Planets.createEarth();
+				var mesh = THREEx.Planets.createPluto();
 				mesh.position.x = LocationX;
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
