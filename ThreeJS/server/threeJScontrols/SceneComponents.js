@@ -332,7 +332,7 @@ SCENECOMPONENTS.addLight = function(lightType,color,intensity,locX,locY,locZ,lig
 		console.log("Area Light");
 	}else if(lightType=="Directional"){
 		var light = new THREE.DirectionalLight( 0xcccccc, 1 );
-		light.position.set( locX, locY,locZ );
+		light.position.set( 5, 5, 5 );
 		scene.add( light );
 		SHAPES[lightID] = light;
 	}else if(lightType=="Point"){
