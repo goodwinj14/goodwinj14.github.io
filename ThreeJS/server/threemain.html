@@ -128,7 +128,7 @@
 			//SETCAMERALOOKAT command tag is associated with the Look At Objecet block
 			if(commandKey == "SCALEOBJ"){
 				if(SCENE!=null){
-					var obj =CAMERACONTROLS.getShape(paramsArray[0]); 
+					var obj =SCENECOMPONENTS.getShape(paramsArray[0]); 
 					obj.scale.set(paramsArray[1],paramsArray[2],paramsArray[3]);
 			}
 			}
