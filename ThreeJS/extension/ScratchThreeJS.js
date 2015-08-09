@@ -146,7 +146,6 @@
 	}
 	ext.moveShape = function(shape_id, direction, steps){
 		//Makes sure that the shape we are trying to move has been created
-		console.log("Passed if Statment");
 		if(shapes.indexOf(shape_id)>-1){
 		var message = "MOVESHAPE_"+shape_id+','+direction+','+steps;
 		win.postMessage(message, liveURL);
@@ -172,6 +171,12 @@
 		return objID;
 	}
 
+  ext.scaleObj = function(objectID, X, Y, Z){
+    if(shapes.indexOf(objectID)>-1){
+    var message = "SCALEOBJ_"+objectID+','+X+','+Y+','+Z;
+    win.postMessage(message, liveURL);
+    }
+  }
 	ext.add_Charecter = function(Charecter, locX, locY, locZ){
 		console.log("ext.add_Charecter called ");
 		var charecterID = generatID("CHARECTER");
@@ -520,7 +525,8 @@
 			['r', 'New Material %m.Materials', 'createMaterial','MeshBasicMaterial'],
 			//Sets a given material to a given object
 			['', 'Apply %s to %s', 'setObjectMaterial', 'Material', 'Shape'],
-			
+
+			['', 'Scale %s X: %n Y: %n Z: %n', 'scaleObj',"Variable", "1.0", "1.0", "1.0"],
 			['', 'Set %s Image %m.Images', 'setImage', 'Material', 'url'],
 			['', 'Change Material %s to Color %s', 'materialColor', 'Variable','Random'],
 			['h', "When %m.Keys  Pressed" , 'key_Pressed', "space"],

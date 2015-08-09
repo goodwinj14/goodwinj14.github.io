@@ -126,11 +126,18 @@
 				}
 			}
 			//SETCAMERALOOKAT command tag is associated with the Look At Objecet block
-			if(commandKey == "SETCAMERALOOKAT"){
-				if(CAMERA!=null){
-					console.log("SETCAMERALOOKAT:" ,SCENECOMPONENTS.getCharecter(paramsArray[0]));
-					CAMERACONTROLS.lookAt(paramsArray[0],CAMERA); 
+			if(commandKey == "SCALEOBJ"){
+				if(SCENE!=null){
+					var obj =CAMERACONTROLS.getShape(paramsArray[0]); 
+					obj.scale.set(paramsArray[1],paramsArray[2],paramsArray[3]);
 			}
+			}
+
+			if(commandKey == "MOVESHAPE"){
+				if(SCENE!=null){
+					console.log("Move Charecter", paramsArray[0]);
+					SCENECOMPONENTS.move(paramsArray[0],paramsArray[1], paramsArray[2]);
+				}
 			}
 
 			//
@@ -271,13 +278,10 @@
 			SCENE.add( light );
 			SCENESTYLES.gridSize = parseInt(sceneStyle[1])*parseInt(sceneStyle[2]);
 			var plane = SCENESTYLES.GRID();
-			console.log("Grid Size", SCENESTYLES.gridSize); 
-			console.log("Grid Size", (parseInt(sceneStyle[1])*parseInt(sceneStyle[2]))); 
 			SCENE.add(plane);
 			}
 
 			else if(sceneStyle[0]=="Space"){
-			console.log("Space called");
 			var light	= new THREE.AmbientLight( 0x020202 );
 			SCENE.add( light );
 
@@ -333,7 +337,6 @@
     		repeatX     : sceneStyle[1],    // the number of time the texture is repeated in X, default to 1
     		repeatY     : sceneStyle[2],    // the number of time the texture is repeated in Y, default to 1
 			});
-			console.log("Ground: ",groundMesh);
 			//Scales Mesh resulting in a smother grass look gets the average between width and height (((parseInt(sceneStyle[1])+(parseInt(sceneStyle[1]))/2)
 			groundMesh.scale.multiplyScalar((parseInt(sceneStyle[1])+parseInt(sceneStyle[1]))/2);
 			SCENE.add(groundMesh);
