@@ -180,6 +180,18 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
 				SHAPES[charecterID] = blendMesh;
 			});
 		}
+		if(Charecter=="Car"){
+
+			var loader = new THREE.JSONLoader();
+    			loader.load('threeJScontrols/sceneCharecters/Car.js', function modelLoadedCallback(geometry,materials) {
+ 				//material = new THREE.MeshBasicMaterial({color: 'blue'});
+        		blendMesh = new THREE.Mesh( geometry, materials[0] );
+        		blendMesh.rotation.y = Math.PI * -135 / 180;
+        		blendMesh.position.y = 4.2;
+				Scene.add( blendMesh );
+				SHAPES[charecterID] = blendMesh;
+			});
+		}
 		if(Charecter=="Pirate Ship"){
 
 			var loader = new THREE.JSONLoader();
@@ -198,8 +210,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
     			loader.load('threeJScontrols/sceneCharecters/Cat1.js', function modelLoadedCallback(geometry,materials) {
  				//material = new THREE.MeshBasicMaterial({color: 'blue'});
         		blendMesh = new THREE.Mesh( geometry, materials[0] );
-        		blendMesh.rotation.y = Math.PI * -135 / 180;
-        		blendMesh.position.y = 0;
+        		blendMesh.rotation.y = Math.PI * 180 / 180;
 				Scene.add( blendMesh );
 				SHAPES[charecterID] = blendMesh;
 			});
