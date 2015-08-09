@@ -519,7 +519,7 @@
 
       ['', "Move %s %m.Move %n Steps" , 'moveShape', "Variable", "Left", 1],
 			//Adds a smothe movment control to any given object
-			['', "Appy FPV Controls to Object: %s Move Speed: %n Turn Speed: %n" , 'applyObjControls', "Variable", "20", "20"],
+			['', "Apply FPV Controls to Object: %s Move Speed: %n Turn Speed: %n" , 'applyObjControls', "Variable", "20", "40"],
 			
 			//Creates a new empty matrial and returns its object ID
 			['r', 'New Material %m.Materials', 'createMaterial','MeshBasicMaterial'],
