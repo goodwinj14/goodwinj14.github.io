@@ -1,9 +1,10 @@
+
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-66371835-1', 'auto');
+  ga('create', 'UA-66361143-1', 'auto');
   ga('send', 'pageview');
 
 (function(ext) {
@@ -16,7 +17,7 @@
 	var materials = [];
 	var charecters = [];
 	//var liveURL = "http://033ae09.netsolhost.com//gsd2014team5/Localhost/main.html";
-	var liveURL = "http://goodwinj14.github.io/Scratch3D_Beta/server/scratch3d.html";
+	var liveURL = "http://scratch3d.github.io/Scratch3D_Beta/server/scratch3d.html";
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {};
 
@@ -515,26 +516,31 @@
 	// Block and block menu descriptions
     var descriptor = {
         blocks: [
-            // Block type, block name, function name, param1 default value, param2 default value
-            ['w', 'New 3D World %m.Scenes Width: %n Height: %n %m.Camera', 'initWorld', "Grass", 10, 10 , "Camera Type",ext],
-            //['', 'Set Camera Controls  Up: %m.Keys Down: %m.Keys Left: %m.Keys Right: %m.Keys ', 'camControlsMove', 'w', 's','a','d'],
-            ['', 'Add Camera Controles %m.CameraControls Move Speed: %n Look Speed: %n ', 'camControls','First Person', '200', '50'],
+      // Block type, block name, function name, param1 default value, param2 default value
+      ['w', 'New 3D World %m.Scenes Width: %n Height: %n %m.Camera', 'initWorld', "Grass", 10, 10 , "Camera Type",ext],
+      //['', 'Set Camera Controls  Up: %m.Keys Down: %m.Keys Left: %m.Keys Right: %m.Keys ', 'camControlsMove', 'w', 's','a','d'],
+      ['', 'Add Camera Controls %m.CameraControls Move Speed: %n Look Speed: %n ', 'camControls','First Person', '200', '50'],
 			//The camera orbit block to allow users to orbit the camera around a given point
 			['', " Camera Look At: %s  %m.Sides","cameraFallow", "Variable", "Back"],
-			//The camera rotate block to allow users to rotate the view of the camra "Left", "Right", "Up" and "Down"
+			     //The camera move block allows a user to move the camera in both the positive and negative direction of the X,Y, and Z axis.
+      ['', " Move Camera  %m.Move  %n steeps ","moveCamera", "Direction", "1"],
+      //The camera rotate block to allow users to rotate the view of the camra "Left", "Right", "Up" and "Down"
 			['', "Rotate Camera %m.CameraRotation %n Degrees" , 'rotateCamera', "Direction", "1"],
 			//The camera orbit block to allow users to orbit the camera around a given point
-			['', " Camera Orbit  %m.CameraOrbit ","orbitCamera", "Direction"],
-			//The camera move block allows a user to move the camera in both the positive and negative direction of the X,Y, and Z axis.
-			['', " Move Camera  %m.Move  %n steeps ","moveCamera", "Direction", "1"],
-
+			//NEEDS TO BE FIXED LEAVE OUT FOR NOW!!!!
+      //['', " Camera Orbit  %m.CameraOrbit ","orbitCamera", "Direction"],
+//
 
 
 			['r', 'New Shape %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'createShape', 'Cube', '1','1','1','0','0','0'],
+      ['r', 'New Light %m.Lights  Color: %s Intensity: %n X: %s Y: %s Z: %s','addLight','Ambient','white','0.7','0','0','0'],
+      ['r', "New %m.Charecters Location: X: %n Y: %n Z: %n" , "add_Charecter", "Marine", '1','1','1'],
       ['r', 'New Planet %m.Planets X: %n Y: %n Z: %n Diameter: %n' ,'addPlanet','Earth','0','0','0','1'],
-			//Lights
-      ['r', 'New %m.Lights Light Color: %s Intensity: %n X: %s Y: %s Z: %s','addLight','Ambient','white','0.7','0','0','0'],
-      //******//
+		        //Creates a new empty matrial and returns its object ID
+      ['r', 'New Material %m.Materials', 'createMaterial','MeshBasicMaterial'],
+      ['', 'Change Material %s to Color %s', 'materialColor', 'Variable','Random'],
+      ['', 'Set %s Image %m.Images', 'setImage', 'Material', 'Crate'],
+
       ['', "Move %s %m.Move %n Steps" , 'moveShape', "Variable", "Left", 1],
 
       ['', "Rotate %s %m.Axis Degrees: %n " , 'rotateShape', "Variable", "Y", 1],
@@ -542,16 +548,11 @@
 			//Adds a smothe movment control to any given object
 			['', "Apply FPV Controls to Object: %s Move Speed: %n Turn Speed: %n" , 'applyObjControls', "Variable", "1", "2"],
 			
-			//Creates a new empty matrial and returns its object ID
-			['r', 'New Material %m.Materials', 'createMaterial','MeshBasicMaterial'],
 			//Sets a given material to a given object
 			['', 'Apply %s to %s', 'setObjectMaterial', 'Material', 'Shape'],
 
 			['', 'Scale %s X: %n Y: %n Z: %n', 'scaleObj',"Variable", "1.0", "1.0", "1.0"],
-			['', 'Set %s Image %m.Images', 'setImage', 'Material', 'url'],
-			['', 'Change Material %s to Color %s', 'materialColor', 'Variable','Random'],
 			['h', "When %m.Keys  Pressed" , 'key_Pressed', "space"],
-			['r', "Add %m.Charecters Location: X: %n Y: %n Z: %n" , "add_Charecter", "Marine", '1','1','1'],
 			['r', "Load Object URL: %s", "loadOBJ","http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/shiptriangle.obj"],
         ],
 		
