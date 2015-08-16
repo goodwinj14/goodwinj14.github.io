@@ -420,7 +420,7 @@
 		function render(){
 			var delta = 0.75*clock.getDelta();
 
-			//SCENE.simulate(); // run physics
+			SCENE.simulate(); // run physics
 			if(TrackBallControls){
 				RENDERER.render(SCENE, CAMERA);
 
