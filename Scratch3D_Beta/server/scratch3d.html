@@ -426,10 +426,12 @@
 
 				if(controls!=null){
 				controls.update(delta);
+				SCENE.simulate(); // run physics
 				}
 			}else{
 				if(controls!=null){
 				controls.update(delta);
+				SCENE.simulate(); // run physics
 				}
 				RENDERER.render(SCENE, CAMERA);
 			}
@@ -445,7 +447,7 @@
 			//TWEEN.update();
 		
 			
-			SCENE.simulate(); // run physics
+			
 			if(objControls!=null){
 				objControls.update(clock.getDelta());
 			}
