@@ -391,9 +391,9 @@
       			new THREE.MeshLambertMaterial({ // Three.js material
         		color: 0xeeeeee
       			}),
-      			.0, // friction
-      			.0 // restitution
-    			), 1000);
+      			.4, // friction
+      			.8 // restitution
+    			), 2);
  				 box.position.x = (20);
  				 box.position.z = (5);
  				 box.position.y = (100);
@@ -431,6 +431,7 @@
 				if(controls!=null){
 				controls.update(delta);
 				}
+				SCENE.simulate(); // run physics
 				RENDERER.render(SCENE, CAMERA);
 			}
 			
