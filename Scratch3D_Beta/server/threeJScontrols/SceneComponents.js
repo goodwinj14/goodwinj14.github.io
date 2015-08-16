@@ -470,6 +470,7 @@ SCENECOMPONENTS.move = function(shape_ID, direction, steps){
 				CHARECTERCONTROLS.moveLeft(shape, steps);
 			}else{*/
 			shape.position.x = (shape.position.x - steps);
+			shape.__dirtyPosition = true;
 		//}
 		}
 	}if(direction=="Right"){
