@@ -12,7 +12,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 	if(shape=="Cube"){
 	var cube = null;
 	if(Physics=="On"){
-		cube = new Physijs.BoxMesh(new THREE.CubeGeometry(length, width ,height), Physijs.createMaterial(new THREE.MeshNormalMaterial(),.4,.8),2);
+		cube = new Physijs.BoxMesh(new THREE.CubeGeometry(length, width ,height), Physijs.createMaterial(new THREE.MeshNormalMaterial(),.0,.0),2);
 	}else{
 	cube = new THREE.Mesh(new THREE.CubeGeometry(length, width ,height), new THREE.MeshNormalMaterial());
 	}
