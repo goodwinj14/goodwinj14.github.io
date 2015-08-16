@@ -433,7 +433,7 @@
 				}
 				RENDERER.render(SCENE, CAMERA);
 			}
-			SCENE.simulate(); // run physics
+			
 			//THREE.AnimationHandler.update( delta );
 		} 
 		//Gloabal variables for hadeling camera updates
@@ -445,7 +445,7 @@
 			//TWEEN.update();
 		
 			
-
+			SCENE.simulate(); // run physics
 			if(objControls!=null){
 				objControls.update(clock.getDelta());
 			}
