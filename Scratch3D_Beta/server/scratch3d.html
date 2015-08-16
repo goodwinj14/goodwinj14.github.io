@@ -305,11 +305,12 @@
 		//INITIALIZES THE SCENE OBJECT
 
 		function init_Scene(sceneStyle){
-			console.log("init_Scene called", sceneStyle[0]);
+			
 
 			SCENE = new Physijs.Scene;
 			//Turns the gravity of the scene on to a defualt of -50 along the y axis
 			if(sceneStyle[1]=="On"){
+				console.log("gravity: ", sceneStyle[1]);
 				SCENE.setGravity(new THREE.Vector3( 0, -50, 0 ));
 			}
 			//Creates a basic grid scene
@@ -333,7 +334,6 @@
 			//Creates a Flat grass scene
 			///////////////////////////
 			else if(sceneStyle[0]=="Grass"){
-			console.log("gravity: ", sceneStyle[1]);
 
 			alpha = true;
 			//Straight from https://github.com/jeromeetienne/threex.grassground
