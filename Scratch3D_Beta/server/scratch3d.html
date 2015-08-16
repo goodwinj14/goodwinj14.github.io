@@ -431,10 +431,9 @@
 				if(controls!=null){
 				controls.update(delta);
 				}
-				SCENE.simulate(); // run physics
 				RENDERER.render(SCENE, CAMERA);
 			}
-			
+			SCENE.simulate(); // run physics
 			//THREE.AnimationHandler.update( delta );
 		} 
 		//Gloabal variables for hadeling camera updates
