@@ -100,12 +100,12 @@
 		win.postMessage(message, liveURL);
 	}
 	
-	ext.createShape = function(shape, l,w,h, locX,locY, locZ){
+	ext.createShape = function(shape, l,w,h, locX,locY, locZ, PhysicBool){
 		console.log("desc", descriptor);
 		console.log("ext", ext);
 		var shapeID = generatID(shape);
 		shapes.push(shapeID);
-		var message = "CREATESHAPE_"+shape+','+l+','+w+','+h+','+locX+','+locY+','+locZ+','+shapeID;
+		var message = "CREATESHAPE_"+shape+','+l+','+w+','+h+','+locX+','+locY+','+locZ+','+PhysicBool+','+shapeID;
 		win.postMessage(message, liveURL);
 		return shapeID;
 	}
@@ -533,7 +533,7 @@
 //
 
 
-			['r', 'New Shape %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'createShape', 'Cube', '1','1','1','0','0','0'],
+			['r', 'New Shape %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n Physics %m.Toggle', 'createShape', 'Cube', '1','1','1','0','0','0', 'Off'],
       ['r', 'New Light %m.Lights  Color: %s Intensity: %n X: %s Y: %s Z: %s','addLight','Ambient','white','0.7','0','0','0'],
       ['r', "New %m.Charecters Location: X: %n Y: %n Z: %n" , "add_Charecter", "Marine", '1','1','1'],
       ['r', 'New Planet %m.Planets X: %n Y: %n Z: %n Diameter: %n' ,'addPlanet','Earth','0','0','0','1'],
