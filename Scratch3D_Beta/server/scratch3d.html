@@ -7,8 +7,8 @@
 		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-		  ga('create', 'UA-66361143-1', 'auto');
-		  ga('send', 'pageview');
+		  //ga('create', 'UA-66361143-1', 'auto');
+		  //ga('send', 'pageview');
 
 		</script>
 		<title>Scratch THREE.JS</title>
@@ -305,7 +305,7 @@
 			if(sceneStyle[0]=="Grid"){
 			var light	= new THREE.AmbientLight( 0x020202 );
 			SCENE.add( light );
-			SCENESTYLES.gridSize = parseInt(sceneStyle[1])*parseInt(sceneStyle[2]);
+			SCENESTYLES.gridSize = parseInt(sceneStyle[2])*parseInt(sceneStyle[3]);
 			var plane = SCENESTYLES.GRID();
 			SCENE.add(plane);
 			}
@@ -314,7 +314,7 @@
 			var light	= new THREE.AmbientLight( 0x020202 );
 			SCENE.add( light );
 
-			var starFeild = THREEx.Planets.createStarfield(parseInt(sceneStyle[1]));
+			var starFeild = THREEx.Planets.createStarfield(parseInt(sceneStyle[2]));
 			SCENE.add(starFeild);
 			}
 
@@ -322,6 +322,7 @@
 			//Creates a Flat grass scene
 			///////////////////////////
 			else if(sceneStyle[0]=="Grass"){
+			console.log("gravity: ", sceneStyle[1]);
 			alpha = true;
 			//Straight from https://github.com/jeromeetienne/threex.grassground
 			//Thanks jeromeetienne for all the amazing game extentions!!!
@@ -363,8 +364,8 @@
 			var groundMesh  = new THREEx.GrassGround({
 			width       : 10,    // the width of the mesh, default to 1
     		height      : 10,    // the height of the mesh, default to 1
-    		repeatX     : sceneStyle[1],    // the number of time the texture is repeated in X, default to 1
-    		repeatY     : sceneStyle[2],    // the number of time the texture is repeated in Y, default to 1
+    		repeatX     : sceneStyle[2],    // the number of time the texture is repeated in X, default to 1
+    		repeatY     : sceneStyle[3],    // the number of time the texture is repeated in Y, default to 1
 			});
 			//Scales Mesh resulting in a smother grass look gets the average between width and height (((parseInt(sceneStyle[1])+(parseInt(sceneStyle[1]))/2)
 			groundMesh.scale.multiplyScalar((parseInt(sceneStyle[1])+parseInt(sceneStyle[1]))/2);
