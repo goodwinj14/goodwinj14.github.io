@@ -383,6 +383,22 @@
 			groundMesh.scale.multiplyScalar((parseInt(sceneStyle[2])+parseInt(sceneStyle[2]))/2);
 
 			SCENE.add(groundMesh);
+
+			//Testing REMOVE When DONE IN NO WAY EFFETCS THE CODE!!!
+			box = new Physijs.BoxMesh(
+           		 new THREE.CubeGeometry( 5, 5, 5 ),
+            	Physijs.createMaterial( // Physijs material
+      			new THREE.MeshLambertMaterial({ // Three.js material
+        		color: 0xeeeeee
+      			}),
+      			.0, // friction
+      			.0 // restitution
+    			), 1000);
+ 				 box.position.x = (20);
+ 				 box.position.z = (5);
+ 				 box.position.y = (100);
+        		SCENE.add( box );
+			/////////////////////////////////////////////////////////
 			}
 			
 		}
