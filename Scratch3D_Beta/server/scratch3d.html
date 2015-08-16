@@ -306,8 +306,12 @@
 
 		function init_Scene(sceneStyle){
 			console.log("init_Scene called", sceneStyle[0]);
-			SCENE = new THREE.Scene();
 
+			SCENE = new Physijs.Scene;
+			//Turns the gravity of the scene on to a defualt of -50 along the y axis
+			if(sceneStyle[1]=="On"){
+				SCENE.setGravity(new THREE.Vector3( 0, 0, 0 ));
+			}
 			//Creates a basic grid scene
 			if(sceneStyle[0]=="Grid"){
 			var light	= new THREE.AmbientLight( 0x020202 );
@@ -330,6 +334,7 @@
 			///////////////////////////
 			else if(sceneStyle[0]=="Grass"){
 			console.log("gravity: ", sceneStyle[1]);
+
 			alpha = true;
 			//Straight from https://github.com/jeromeetienne/threex.grassground
 			//Thanks jeromeetienne for all the amazing game extentions!!!
@@ -376,6 +381,7 @@
 			});
 			//Scales Mesh resulting in a smother grass look gets the average between width and height (((parseInt(sceneStyle[1])+(parseInt(sceneStyle[1]))/2)
 			groundMesh.scale.multiplyScalar((parseInt(sceneStyle[2])+parseInt(sceneStyle[2]))/2);
+
 			SCENE.add(groundMesh);
 			}
 			
