@@ -10,8 +10,12 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 	console.log("Called SCENECOMPONENTS.addShape", shape);
 	//Adds a new cube to our scene based off of the user supplied params
 	if(shape=="Cube"){
-	var cube = null;	
+	var cube = null;
+	if(Physics=="On"){
+		cube = new Physijs.BoxMesh(new THREE.CubeGeometry(length, width ,height), Physijs.createMaterial(new THREE.MeshNormalMaterial(),.4,.8),2);
+	}else{
 	cube = new THREE.Mesh(new THREE.CubeGeometry(length, width ,height), new THREE.MeshNormalMaterial());
+	}
 	cube.position.set(LocationX,LocationY,LocationZ);
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(cube!=null){
