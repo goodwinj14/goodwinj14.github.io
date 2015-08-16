@@ -423,7 +423,7 @@
 		function render(){
 			var delta = 0.75*clock.getDelta();
 
-			
+			SCENE.simulate(); // run physics
 			if(TrackBallControls){
 				RENDERER.render(SCENE, CAMERA);
 
@@ -436,7 +436,7 @@
 				}
 				RENDERER.render(SCENE, CAMERA);
 			}
-			SCENE.simulate(); // run physics
+			
 			//THREE.AnimationHandler.update( delta );
 		} 
 		//Gloabal variables for hadeling camera updates
