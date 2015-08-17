@@ -106,7 +106,11 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 //Adds a new Plane to our scene based off of the supplied params
 	if(shape=="Plane"){
 	var plane = null;
+	if(Physics=="On"){
+		plane = new Physijs.ConvexMesh( new THREE.PlaneGeometry( length, width, 32 ), Physijs.createMaterial(new THREE.MeshNormalMaterial(),.4,.8),2);
+	}else{
 	 plane = new THREE.Mesh( new THREE.PlaneGeometry( length, width, 32 ), new THREE.MeshNormalMaterial());
+	 }
 	 plane.position.set(LocationX,LocationY,LocationZ);
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(plane!=null){
@@ -134,7 +138,11 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 //Adds a new Torus to our scene based off of the supplied params
 	if(shape=="Torus"){
 		var torus;
- 		torus = new THREE.Mesh( new THREE.TorusGeometry( parseFloat(width), parseFloat(length), 32, 100 ), new THREE.MeshNormalMaterial() );
+		if(Physics=="On"){
+			torus = new Physijs.ConcaveMesh( new THREE.TorusGeometry( parseFloat(width), parseFloat(length), 32, 100 ), Physijs.createMaterial(new THREE.MeshNormalMaterial(),.4,.8),2);
+	}else{
+ 			torus = new THREE.Mesh( new THREE.TorusGeometry( parseFloat(width), parseFloat(length), 32, 100 ), new THREE.MeshNormalMaterial() );
+	}
 		torus.position.set(LocationX,LocationY,LocationZ);
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(torus!=null){
