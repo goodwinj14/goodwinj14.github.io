@@ -14,7 +14,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 	if(Physics=="On"){
 		cube = new Physijs.BoxMesh(new THREE.CubeGeometry(length, width ,height), Physijs.createMaterial(new THREE.MeshNormalMaterial(),.4,.8),2);
 	}else{
-	cube = new THREE.Mesh(new THREE.CubeGeometry(length, width ,height), new THREE.MeshNormalMaterial());
+	cube = new Physijs.BoxMesh(new THREE.CubeGeometry(length, width ,height), new THREE.MeshNormalMaterial());
 	}
 	cube.position.set(LocationX,LocationY,LocationZ);
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
@@ -26,8 +26,8 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 
 	//Adds a new Shpere to our scene based off of the supplied params
 	if(shape=="Sphere"){
-	var sphere = null;	
 	sphere = new THREE.Mesh(new THREE.SphereGeometry(length, 50,50), new THREE.MeshNormalMaterial());
+	
 	sphere.position.set(LocationX,LocationY,LocationZ);
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(sphere!=null){
