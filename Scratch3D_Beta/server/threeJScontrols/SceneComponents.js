@@ -55,9 +55,12 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 
 	//Adds a new Cylinder to our scene based off of the supplied params
 	if(shape=="Cylinder"){
-	var cylinder = null;
-
-	cylinder = new THREE.Mesh( new THREE.CylinderGeometry( length, width, height, 50 ), new THREE.MeshNormalMaterial() );
+	var cylinder = null; 
+	if(Physics=="On"){
+		cylinder = new Physijs.CylinderMesh( new THREE.CylinderGeometry( length, width, height, 50 ), Physijs.createMaterial(new THREE.MeshNormalMaterial(),.4,.8),2);
+	}else{
+		cylinder = new THREE.Mesh( new THREE.CylinderGeometry( length, width, height, 50 ), new THREE.MeshNormalMaterial() );
+	}
 	cylinder.position.set(LocationX,LocationY,LocationZ);
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(cylinder!=null){
