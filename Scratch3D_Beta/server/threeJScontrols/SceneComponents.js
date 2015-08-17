@@ -89,7 +89,11 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 	//Adds a new Icosahedron to our scene based off of the supplied params
 	if(shape=="Icosahedron"){
 	var icosahedron = null;
+	if(Physics=="On"){
+		icosahedron = new Physijs.ConvexMesh( new THREE.IcosahedronGeometry(length, 0), Physijs.createMaterial(new THREE.MeshNormalMaterial(),.4,.8),2);
+	}else{
 		icosahedron = new THREE.Mesh( new THREE.IcosahedronGeometry(length, 0), new THREE.MeshNormalMaterial());
+		}
 		icosahedron.position.set(LocationX,LocationY,LocationZ);
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(icosahedron!=null){
@@ -114,7 +118,11 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 //Adds a new Ring to our scene based off of the supplied params
 	if(shape=="Ring"){
 		var ring = null;
+		if(Physics=="On"){
+			ring = new Physijs.ConcaveMesh( new THREE.RingGeometry( parseFloat(length), parseFloat(width)+1, 32 ), Physijs.createMaterial(new THREE.MeshNormalMaterial(),.4,.8),2);
+	}else{
 			ring = new THREE.Mesh( new THREE.RingGeometry( parseFloat(length), parseFloat(width)+1, 32 ), new THREE.MeshNormalMaterial());
+		}
 			ring.position.set(LocationX,LocationY,LocationZ);
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(ring!=null){
