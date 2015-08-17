@@ -73,7 +73,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 	if(shape=="Dodecahedron"){
 	var dodecahedron = null;
 	if(Physics=="On"){
-		dodecahedron = new Physijs.ConvexMesh( new THREE.DodecahedronGeometry( length, width, height, 50 ), Physijs.createMaterial(new THREE.MeshNormalMaterial(),.4,.8),2);
+		dodecahedron = new Physijs.ConvexMesh( new THREE.DodecahedronGeometry(length, 0), Physijs.createMaterial(new THREE.MeshNormalMaterial(),.4,.8),2);
 	}else{
 		dodecahedron = new THREE.Mesh( new THREE.DodecahedronGeometry(length, 0), new THREE.MeshNormalMaterial());
 	}
