@@ -72,8 +72,12 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 //Adds a new Dodecahedron to our scene based off of the supplied params
 	if(shape=="Dodecahedron"){
 	var dodecahedron = null;
-
-    dodecahedron = new THREE.Mesh( new THREE.DodecahedronGeometry(length, 0), new THREE.MeshNormalMaterial());
+	if(Physics=="On"){
+		dodecahedron = new Physijs.ConvexMesh( new THREE.DodecahedronGeometry( length, width, height, 50 ), Physijs.createMaterial(new THREE.MeshNormalMaterial(),.4,.8),2);
+	}else{
+		dodecahedron = new THREE.Mesh( new THREE.DodecahedronGeometry(length, 0), new THREE.MeshNormalMaterial());
+	}
+    
 	dodecahedron.position.set(LocationX,LocationY,LocationZ);
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(dodecahedron!=null){
