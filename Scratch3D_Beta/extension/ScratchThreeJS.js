@@ -226,6 +226,11 @@
       return lightID;
   }
 
+  ext.setGravity = function(x, y, z){
+    var message = "SETGRAVITY_"+x+','+y+','+z;
+      win.postMessage(message, liveURL);
+  }
+
 	ext.key_Pressed = function(key) {
        // Reset alarm_went_off if it is true, and return true
        // otherwise, return false.
@@ -555,6 +560,7 @@
 			['', 'Scale %s X: %n Y: %n Z: %n', 'scaleObj',"Variable", "1.0", "1.0", "1.0"],
 			['h', "When %m.Keys  Pressed" , 'key_Pressed', "space"],
 			['r', "Load Object URL: %s", "loadOBJ","http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/shiptriangle.obj"],
+      ['r', "Set Scene Gravity X: %n Y: %n Z: %n", "setGravity","0","-50","0"],
         ],
 		
 		menus: {
