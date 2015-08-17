@@ -253,6 +253,13 @@
 					
 				}
 			}
+			//Physics Controles Begin
+			if(commandKey == "SETGRAVITY"){
+				if(SCENE!=null){
+					SCENE.setGravity(new THREE.Vector3( 0, -50, 0 ));
+					console.log("SCENE Info",SCENE);
+				}
+			}
 		}
 		/*
 		*EVENT HANDELER END
