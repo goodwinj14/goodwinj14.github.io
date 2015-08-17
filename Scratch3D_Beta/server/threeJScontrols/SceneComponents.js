@@ -28,7 +28,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 	if(shape=="Sphere"){
 	var sphere = null;	
 	if(Physics=="On"){
-		sphere = new Physijs.SphereMesh(new THREE.SphereGeometry(length, width ,height), Physijs.createMaterial(new THREE.MeshNormalMaterial(),.4,.8),2);
+		sphere = new Physijs.SphereMesh(new THREE.SphereGeometry(length, 50,50), Physijs.createMaterial(new THREE.MeshNormalMaterial(),.4,.8),2);
 	}else{
 	sphere = new THREE.Mesh(new THREE.SphereGeometry(length, 50,50), new THREE.MeshNormalMaterial());
 	}
