@@ -123,7 +123,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 	if(shape=="Ring"){
 		var ring = null;
 		if(Physics=="On"){
-			ring = new Physijs.ConcaveMesh( new THREE.RingGeometry( parseFloat(length), parseFloat(width)+1, 32 ), Physijs.createMaterial(new THREE.MeshNormalMaterial(),.4,.8),2);
+			ring = new Physijs.ConvexMesh( new THREE.RingGeometry( parseFloat(length), parseFloat(width)+1, 32 ), Physijs.createMaterial(new THREE.MeshNormalMaterial(),.4,.8),2);
 	}else{
 			ring = new THREE.Mesh( new THREE.RingGeometry( parseFloat(length), parseFloat(width)+1, 32 ), new THREE.MeshNormalMaterial());
 		}
@@ -139,7 +139,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 	if(shape=="Torus"){
 		var torus;
 		if(Physics=="On"){
-			torus = new Physijs.ConcaveMesh( new THREE.TorusGeometry( parseFloat(width), parseFloat(length), 32, 100 ), Physijs.createMaterial(new THREE.MeshNormalMaterial(),.4,.8),2);
+			torus = new Physijs.ConvexMesh( new THREE.TorusGeometry( parseFloat(width), parseFloat(length), 32, 100 ), Physijs.createMaterial(new THREE.MeshNormalMaterial(),.4,.8),2);
 	}else{
  			torus = new THREE.Mesh( new THREE.TorusGeometry( parseFloat(width), parseFloat(length), 32, 100 ), new THREE.MeshNormalMaterial() );
 	}
