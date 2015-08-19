@@ -232,7 +232,7 @@
   }
 
   ext.createPhysicsMaterial = function(materialType, friction, restitution){
-    var physmaterialID = generatID(physicsMaterial);
+    var physmaterialID = generatID("Physics"+materialType);
     materials.push(physmaterialID);
     var message = "CREATEPHYSMATERIAL_"+materialType+','+friction+','+restitution+','+physmaterialID;
       win.postMessage(message, liveURL);
