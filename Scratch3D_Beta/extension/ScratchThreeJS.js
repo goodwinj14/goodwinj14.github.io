@@ -561,7 +561,7 @@
 			['h', "When %m.Keys  Pressed" , 'key_Pressed', "space"],
 			['r', "Load Object URL: %s", "loadOBJ","http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/shiptriangle.obj"],
       ['', "Set Scene Gravity X: %n Y: %n Z: %n", "setGravity","0","-50","0"],
-      ['', "New Physics Material %m.Materials Friction: %n Restitution %n', 'createPhysicsMaterial','MeshBasicMaterial','0.8','0.3'],
+      ['', "New Physics Material %m.Materials Friction: %n Restitution %n", 'createPhysicsMaterial','MeshBasicMaterial','0.8','0.3'],
         ],
 		
 		menus: {
