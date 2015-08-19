@@ -420,7 +420,6 @@ SCENECOMPONENTS.newPhysicsMaterial = function(material, friction, restitution, m
 			materialOBJ = new Physijs.createMaterial( new THREE.MeshLambertMaterial(),friction,restitution);
 		}else if(material=="MeshPhongMaterial"){
 			materialOBJ = new Physijs.createMaterial( new THREE.MeshPhongMaterial(),friction,restitution);
-			materialOBJ = new ;
 		}
 	if(materialOBJ!=null && materialID!=null){
 		MATERIALS[materialID] = materialOBJ;
