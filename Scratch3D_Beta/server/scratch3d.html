@@ -199,13 +199,13 @@
 			//CREATEMATERIAL command tag is associated with the New Material
 			if(commandKey == "CREATEMATERIAL"){
 				if(SCENE!=null){
-						SCENECOMPONENTS.newMaterial(paramsArray[0],paramsArray[1],paramsArray[2], paramsArray[3]);
+						SCENECOMPONENTS.newMaterial(paramsArray[0], paramsArray[1]);
 					}
 				}
 			//CREATEPHYSMATERIAL command tag is associated with the New Physics Material block
 			if(commandKey == "CREATEPHYSMATERIAL"){
 				if(SCENE!=null){
-						SCENECOMPONENTS.newPhysicsMaterial(paramsArray[0], paramsArray[1]);
+						SCENECOMPONENTS.newPhysicsMaterial(paramsArray[0],paramsArray[1],paramsArray[2], paramsArray[3]);
 					}
 				}
 			//SETMATERIAL command tag is associated with the set materials block
