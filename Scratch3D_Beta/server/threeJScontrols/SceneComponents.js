@@ -408,6 +408,26 @@ SCENECOMPONENTS.newMaterial = function(material, materialID){
 	}
 }
 
+SCENECOMPONENTS.newPhysicsMaterial = function(material, friction, restitution, materialID){
+	var materialOBJ;
+	if(material=="MeshBasicMaterial"){
+			materialOBJ = new Physijs.createMaterial( new THREE.MeshBasicMaterial(),friction,restitution);
+		}else if(material=="MeshNormalMaterial"){
+			materialOBJ = new Physijs.createMaterial( new THREE.MeshNormalMaterial(),friction,restitution);
+		}else if(material=="MeshDepthMaterial"){
+			materialOBJ = new Physijs.createMaterial( new THREE.MeshDepthMaterial(),friction,restitution);
+		}else if(material=="MeshLambertMaterial"){
+			materialOBJ = new Physijs.createMaterial( new THREE.MeshLambertMaterial(),friction,restitution);
+		}else if(material=="MeshPhongMaterial"){
+			materialOBJ = new Physijs.createMaterial( new THREE.MeshPhongMaterial(),friction,restitution);
+			materialOBJ = new ;
+		}
+	if(materialOBJ!=null && materialID!=null){
+		MATERIALS[materialID] = materialOBJ;
+		console.log("Physics Material: ", materialID);
+	}
+}
+
 SCENECOMPONENTS.setMaterialTo = function(materialID, objectID){
 	var material = MATERIALS[materialID];
 	var object = SHAPES[objectID];

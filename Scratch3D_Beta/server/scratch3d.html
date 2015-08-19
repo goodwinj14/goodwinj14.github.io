@@ -202,6 +202,12 @@
 						SCENECOMPONENTS.newMaterial(paramsArray[0], paramsArray[1]);
 					}
 				}
+			//CREATEPHYSMATERIAL command tag is associated with the New Physics Material block
+			if(commandKey == "CREATEPHYSMATERIAL"){
+				if(SCENE!=null){
+						SCENECOMPONENTS.newPhysicsMaterial(paramsArray[0], paramsArray[1]);
+					}
+				}
 			//SETMATERIAL command tag is associated with the set materials block
 			//paramsArray[0] = materialID, paramsArray[1] = shapeID
 			if(commandKey == "SETMATERIAL"){

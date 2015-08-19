@@ -231,6 +231,13 @@
       win.postMessage(message, liveURL);
   }
 
+  ext.createPhysicsMaterial = function(materialType, friction, restitution){
+    var physmaterialID = generatID(physicsMaterial);
+    materials.push(physmaterialID);
+    var message = "CREATEPHYSMATERIAL_"+materialType+','+friction+','+restitution+','+physmaterialID;
+      win.postMessage(message, liveURL);
+  }
+
 	ext.key_Pressed = function(key) {
        // Reset alarm_went_off if it is true, and return true
        // otherwise, return false.
