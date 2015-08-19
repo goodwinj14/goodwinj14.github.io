@@ -216,7 +216,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
 			var loader = new THREE.JSONLoader();
     			loader.load('threeJScontrols/sceneCharecters/Car.js', function modelLoadedCallback(geometry,materials) {
  				//material = new THREE.MeshBasicMaterial({color: 'blue'});
- 				blendMesh  = new Physijs.ConvexMesh( geometry, Physijs.createMaterial(materials[0],.4,.8),2);
+ 				blendMesh  = new Physijs.ConvexMesh( geometry, Physijs.createMaterial(new THREE.MeshNormalMaterial(),.4,.8),2);
         		//blendMesh = new THREE.Mesh( geometry, materials[0] );
         		blendMesh.rotation.y = Math.PI * -135 / 180;
         		blendMesh.position.y = 1;
