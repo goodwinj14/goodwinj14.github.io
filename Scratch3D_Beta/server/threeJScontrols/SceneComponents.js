@@ -423,7 +423,6 @@ SCENECOMPONENTS.newPhysicsMaterial = function(material, friction, restitution, m
 		}
 	if(materialOBJ!=null && materialID!=null){
 		MATERIALS[materialID] = materialOBJ;
-		console.log("Physics Material: ", materialID);
 	}
 }
 
@@ -432,7 +431,11 @@ SCENECOMPONENTS.setMaterialTo = function(materialID, objectID){
 	var object = SHAPES[objectID];
 
 	if(material!=null && object!=null){
+		if(materialID.indexOf("Physics") > -1){
+			console.log("Physics Material: ", materialID);
+		}else{
 		object.material = material;
+		}
 	}
 	MATERIALS[materialID] = material;
 	SHAPES[objectID] = object;
