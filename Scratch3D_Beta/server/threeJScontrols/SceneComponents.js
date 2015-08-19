@@ -433,7 +433,7 @@ SCENECOMPONENTS.setMaterialTo = function(materialID, objectID){
 	if(material!=null && object!=null){
 		if(materialID.indexOf("Physics") > -1){
 			object = new Physijs.ConvexMesh( SHAPES[objectID].geometry, material,2);
-			console.log("Physics Material: ", materialID);
+			console.log("Physics Material: ", object);
 		}else{
 		object.material = material;
 		}
