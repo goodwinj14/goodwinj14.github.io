@@ -236,6 +236,7 @@
     materials.push(physmaterialID);
     var message = "CREATEPHYSMATERIAL_"+materialType+','+friction+','+restitution+','+physmaterialID;
       win.postMessage(message, liveURL);
+      return physmaterialID;
   }
 
 	ext.key_Pressed = function(key) {
