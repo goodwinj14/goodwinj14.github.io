@@ -433,7 +433,12 @@ SCENECOMPONENTS.setMaterialTo = function(materialID, objectID, scene){
 	if(material!=null && object!=null){
 		if(materialID.indexOf("Physics") > -1){
 			
-			scene.getObjectById(object.id, true) = new Physijs.BoxMesh( object.geometry, material,2);
+			temp = new Physijs.BoxMesh( object.geometry, material,2);
+			temp.position.x = object.position.x;
+			temp.position.y = object.position.y;
+			temp.position.z = object.position.z;
+
+			
 			//scene.add(temp);
 			//scene.getObjectById(object.id) = temp;
 			console.log("Physics Material: ", scene.getObjectById(object.id, true));
