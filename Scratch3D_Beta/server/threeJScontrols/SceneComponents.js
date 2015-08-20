@@ -438,11 +438,21 @@ SCENECOMPONENTS.setMaterialTo = function(materialID, objectID, scene){
 			temp.position.y = object.position.y;
 			temp.position.z = object.position.z;
 
-			
+			temp.rotation.x = object.rotation.x;
+			temp.rotation.y = object.rotation.y;
+			temp.rotation.z = object.rotation.z;
+
+			temp.scale.x = object.scale.x;
+			temp.scale.y = object.scale.y;
+			temp.scale.z = object.scale.z;
+
+			scene.remove(object);
+			scene.add(temp);
 			//scene.add(temp);
 			//scene.getObjectById(object.id) = temp;
 			console.log("Physics Material: ", scene.getObjectById(object.id, true));
 			//object = 
+			SHAPES[objectID] = temp;
 			material = MATERIALS[materialID] = material;
 			
 		}else{
