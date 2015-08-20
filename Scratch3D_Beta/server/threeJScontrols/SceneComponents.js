@@ -426,13 +426,17 @@ SCENECOMPONENTS.newPhysicsMaterial = function(material, friction, restitution, m
 	}
 }
 
-SCENECOMPONENTS.setMaterialTo = function(materialID, objectID){
+SCENECOMPONENTS.setMaterialTo = function(materialID, objectID, scene){
 	var material = MATERIALS[materialID];
 	var object = SHAPES[objectID];
 
 	if(material!=null && object!=null){
 		if(materialID.indexOf("Physics") > -1){
-			SHAPES[objectID] = new Physijs.BoxMesh( object.geometry, material,2);
+			
+			temp = new Physijs.BoxMesh( object.geometry, material,2);
+			scene.add(temp);
+			//scene.getObjectById(object.id) = temp;
+			//object = 
 			material = MATERIALS[materialID] = material;
 			console.log("Physics Material: ", object);
 		}else{
