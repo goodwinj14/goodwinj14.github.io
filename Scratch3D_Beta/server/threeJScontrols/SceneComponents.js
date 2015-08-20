@@ -432,14 +432,15 @@ SCENECOMPONENTS.setMaterialTo = function(materialID, objectID){
 
 	if(material!=null && object!=null){
 		if(materialID.indexOf("Physics") > -1){
-			object = new Physijs.ConvexMesh( SHAPES[objectID].geometry, material,2);
+			SHAPES[objectID] = new Physijs.BoxMesh( object.geometry, material,2);
+			material = MATERIALS[materialID] = material;
 			console.log("Physics Material: ", object);
 		}else{
 		object.material = material;
+		MATERIALS[materialID] = material;
+		SHAPES[objectID] = object;
 		}
 	}
-	MATERIALS[materialID] = material;
-	SHAPES[objectID] = object;
 }
 
 SCENECOMPONENTS.setMaterialColor = function(materialID, color){
