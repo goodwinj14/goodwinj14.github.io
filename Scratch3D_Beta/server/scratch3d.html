@@ -265,6 +265,16 @@
 					SCENE.setGravity(new THREE.Vector3( paramsArray[0], paramsArray[1], paramsArray[2] ));
 				}
 			}
+			if(commandKey == "SETFRICTION"){
+				if(SCENE!=null){
+					SCENECOMPONENTS.setFriction();
+				}
+			}
+			if(commandKey == "SETRESTITUTION"){
+				if(SCENE!=null){
+					SCENECOMPONENTS.setRestitution();
+				}
+			}
 		}
 		/*
 		*EVENT HANDELER END

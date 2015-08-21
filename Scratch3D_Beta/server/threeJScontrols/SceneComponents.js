@@ -426,6 +426,24 @@ SCENECOMPONENTS.newPhysicsMaterial = function(material, friction, restitution, m
 	}
 }
 
+SCENECOMPONENTS.setFriction = function(materialID, friction){
+	if(materialID.indexOf("Physics") > -1){
+	var material = MATERIALS[materialID];
+		if(material!=null){
+			material.friction = friction;
+		}
+	}
+}
+
+SCENECOMPONENTS.setRestitution = function(materialID, restitution){
+	if(materialID.indexOf("Physics") > -1){
+	var material = MATERIALS[materialID];
+		if(material!=null){
+			material.restitution = restitution;
+		}
+	}
+}
+
 SCENECOMPONENTS.setMaterialTo = function(materialID, objectID, scene){
 	var material = MATERIALS[materialID];
 	var object = SHAPES[objectID];
