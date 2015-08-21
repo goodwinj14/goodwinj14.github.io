@@ -267,12 +267,12 @@
 			}
 			if(commandKey == "SETFRICTION"){
 				if(SCENE!=null){
-					SCENECOMPONENTS.setFriction();
+					SCENECOMPONENTS.setFriction(paramsArray[0], paramsArray[1]);
 				}
 			}
 			if(commandKey == "SETRESTITUTION"){
 				if(SCENE!=null){
-					SCENECOMPONENTS.setRestitution();
+					SCENECOMPONENTS.setRestitution(paramsArray[0], paramsArray[1]);
 				}
 			}
 		}
