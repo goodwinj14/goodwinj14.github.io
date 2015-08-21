@@ -431,6 +431,7 @@ SCENECOMPONENTS.setFriction = function(materialID, friction){
 	var material = MATERIALS[materialID];
 		if(material!=null){
 			material.friction = friction;
+			console.log(material.friction);
 		}
 	}
 }
@@ -440,6 +441,7 @@ SCENECOMPONENTS.setRestitution = function(materialID, restitution){
 	var material = MATERIALS[materialID];
 		if(material!=null){
 			material.restitution = restitution;
+			console.log(material.restitution);
 		}
 	}
 }
