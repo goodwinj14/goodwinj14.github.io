@@ -470,7 +470,7 @@ SCENECOMPONENTS.setMaterialTo = function(materialID, objectID, scene){
 			scene.add(temp);
 			//scene.add(temp);
 			//scene.getObjectById(object.id) = temp;
-			console.log("Physics Material: ", scene.getObjectById(object.id, true));
+			console.log("Physics Material: ", temp);
 			//object = 
 			SHAPES[objectID] = temp;
 			MATERIALS[materialID] = material;
