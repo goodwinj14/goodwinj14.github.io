@@ -430,8 +430,8 @@ SCENECOMPONENTS.setFriction = function(materialID, friction){
 	if(materialID.indexOf("Physics") > -1){
 	var material = MATERIALS[materialID];
 		if(material!=null){
-			material.friction = friction;
-			console.log(material.friction);
+			material._physijs.friction = friction;
+			//console.log(material.friction);
 		}
 	}
 }
@@ -440,8 +440,8 @@ SCENECOMPONENTS.setRestitution = function(materialID, restitution){
 	if(materialID.indexOf("Physics") > -1){
 	var material = MATERIALS[materialID];
 		if(material!=null){
-			material.restitution = restitution;
-			console.log(material.restitution);
+			material._physijs.restitution = restitution;
+			//console.log(material.restitution);
 		}
 	}
 }
