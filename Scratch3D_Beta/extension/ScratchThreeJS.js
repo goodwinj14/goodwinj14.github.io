@@ -240,12 +240,12 @@
   }
 
   ext.setFriction = function(variable, friction){
-    var message = "SETFRICTION_"+materialType+','+friction+','+restitution+','+physmaterialID;
+    var message = "SETFRICTION_"+variable+','+friction;
       win.postMessage(message, liveURL);
   }
 
   ext.setRestitution = function(variable, restitution){
-    var message = "SETRESTITUTION_"+materialType+','+friction+','+restitution+','+physmaterialID;
+    var message = "SETRESTITUTION_"+variable+','+restitution;
       win.postMessage(message, liveURL);
   }
 
