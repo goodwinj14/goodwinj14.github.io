@@ -450,7 +450,7 @@ SCENECOMPONENTS.setWeight = function(objectID, weight){
 	var shape = SHAPES[objectID];
 	if(shape._physijs != null){
 			if(shape!=null){
-				shape._physijs.restitution = restitution;
+				shape._physijs.mass = weight;
 				console.log(shape);
 				SHAPES[objectID] = shape;
 		}
