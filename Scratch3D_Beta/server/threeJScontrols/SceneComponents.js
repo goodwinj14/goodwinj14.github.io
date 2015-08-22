@@ -446,6 +446,15 @@ SCENECOMPONENTS.setRestitution = function(materialID, restitution){
 	}
 }
 
+SCENECOMPONENTS.setWeight = function(materialID, weight){
+	var material = MATERIALS[materialID];
+		if(material!=null){
+			material._physijs.weight = weight;
+			console.log("setWeight",material);
+		}
+	}
+}
+
 SCENECOMPONENTS.setMaterialTo = function(materialID, objectID, scene){
 	var material = MATERIALS[materialID];
 	var object = SHAPES[objectID];

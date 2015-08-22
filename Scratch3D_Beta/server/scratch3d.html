@@ -275,6 +275,11 @@
 					SCENECOMPONENTS.setRestitution(paramsArray[0], paramsArray[1]);
 				}
 			}
+			if(commandKey == "SETWEIGHT"){
+				if(SCENE!=null){
+					SCENECOMPONENTS.setWeight(paramsArray[0], paramsArray[1]);
+				}
+			}
 		}
 		/*
 		*EVENT HANDELER END
@@ -403,7 +408,6 @@
 			});
 			//Scales Mesh resulting in a smother grass look gets the average between width and height (((parseInt(sceneStyle[1])+(parseInt(sceneStyle[1]))/2)
 			groundMesh.scale.multiplyScalar((parseInt(sceneStyle[2])+parseInt(sceneStyle[2]))/2);
-
 			SCENE.add(groundMesh);
 			}
 			

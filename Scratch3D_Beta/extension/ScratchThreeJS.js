@@ -249,6 +249,11 @@
       win.postMessage(message, liveURL);
   }
 
+  ext.setWeight = function(materialID, weight){
+    var message = "SETWEIGHT_"+materialID+','+weight;
+      win.postMessage(message, liveURL);
+  }
+
 	ext.key_Pressed = function(key) {
        // Reset alarm_went_off if it is true, and return true
        // otherwise, return false.
@@ -581,7 +586,8 @@
       ['', "Set Scene Gravity X: %n Y: %n Z: %n", "setGravity","0","-50","0"],
       ['r', "New Physics Material %m.Materials Friction: %n Restitution %n", 'createPhysicsMaterial','MeshBasicMaterial','0.8','0.3'],
       ['', "Physics, Set Friction Of: %s To: %n", "setFriction","Variable","0.8"],
-      ['', "Physics, Set Restitution Of: %s To: %n", "setRestitution","Variable","0.8"], 
+      ['', "Physics, Set Restitution Of: %s To: %n", "setRestitution","Variable","0.8"],
+      ['', "Physics, Set Weight Of: %s To: %n", "setWeight","Variable","2"], 
         ],
 		
 		menus: {
