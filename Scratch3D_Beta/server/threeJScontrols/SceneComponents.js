@@ -455,6 +455,7 @@ SCENECOMPONENTS.setWeight = function(objectID, weight){
 				console.log(shape);
 				SHAPES[objectID] = shape;
 		}
+	}
 }
 
 SCENECOMPONENTS.setMaterialTo = function(materialID, objectID, scene){
