@@ -450,7 +450,7 @@ SCENECOMPONENTS.setWeight = function(materialID, weight){
 	if(materialID.indexOf("Physics") > -1){
 	var material = MATERIALS[materialID];
 		if(material!=null){
-			material._physijs.weight = weight;
+			//material._physijs.weight = weight;
 			console.log("setWeight",material);
 		}
 	}
