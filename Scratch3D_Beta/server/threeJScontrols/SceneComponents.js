@@ -447,6 +447,7 @@ SCENECOMPONENTS.setRestitution = function(materialID, restitution){
 }
 
 SCENECOMPONENTS.setWeight = function(materialID, weight){
+	if(materialID.indexOf("Physics") > -1){
 	var material = MATERIALS[materialID];
 		if(material!=null){
 			material._physijs.weight = weight;
