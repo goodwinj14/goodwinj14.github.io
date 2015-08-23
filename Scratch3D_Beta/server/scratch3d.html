@@ -50,11 +50,14 @@
 		<script src="http://goodwinj14.github.io/Scratch3D_Beta/server/threeJScontrols/fpvObjectControles.js"></script>
 		<script src="http://goodwinj14.github.io/Scratch3D_Beta/server/threeJScontrols/threex.planets-master/threex.planets.js"></script>
 		<script type="text/javascript" src="http://goodwinj14.github.io/Scratch3D_Beta/server/Physics/Physijs/physi.js"></script>
+		<script type="text/javascript" src="http://goodwinj14.github.io/Scratch3D_Beta/server/Physics/CollisionRayCaster.js"></script>
 		<script>
 
 		//Physics Add In
 		Physijs.scripts.worker = 'Physics/Physijs/physijs_worker.js';
     	Physijs.scripts.ammo = 'ammo.js';
+    	//Basic raycaster of basic colision detection
+    	var rayCollision = new Collisons();
     	//////////////////
 
 		var RENDERER = null;
@@ -284,8 +287,7 @@
 				if(SCENE!=null){
 					var objOne = SCENECOMPONENTS.getShape(paramsArray[0]); //The object that will have a ray caster attached to it
 					var objTwo = SCENECOMPONENTS.getShape(paramsArray[1]); //The object that will
-					console.log("One", objOne);
-					console.log("Two", objTwo);
+					rayCollision.update();
 				}
 			}
 		}
