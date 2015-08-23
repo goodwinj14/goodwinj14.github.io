@@ -18,7 +18,7 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
 	//The objects we want to test if the mesh is touching
 	this.conntactObjects = [];
 	//The object ID that is associated with the mesh provided
-	this.ID = objectID;
+	this.ID = casterID;
 	//The actual ray caster for this object
 	this.caster = new THREE.Raycaster();
 	//The rays that will be projected from the origin point when we test for colisions
