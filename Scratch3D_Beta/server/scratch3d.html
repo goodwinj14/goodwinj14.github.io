@@ -56,8 +56,7 @@
 		//Physics Add In
 		Physijs.scripts.worker = 'Physics/Physijs/physijs_worker.js';
     	Physijs.scripts.ammo = 'ammo.js';
-    	//Basic raycaster of basic colision detection
-    	var rayCollision = new Collisons();
+
     	//////////////////
 
 		var RENDERER = null;
@@ -287,7 +286,7 @@
 				if(SCENE!=null){
 					var objOne = SCENECOMPONENTS.getShape(paramsArray[0]); //The object that will have a ray caster attached to it
 					var objTwo = SCENECOMPONENTS.getShape(paramsArray[1]); //The object that will
-					
+
 				}
 			}
 		}
@@ -439,7 +438,7 @@
 		} 
 		function render(){
 			var delta = 0.75*clock.getDelta();
-			rayCollision.update();
+			Collisions.update();
 			SCENE.simulate(); // run physics
 			if(TrackBallControls){
 				RENDERER.render(SCENE, CAMERA);
