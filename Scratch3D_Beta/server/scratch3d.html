@@ -438,7 +438,7 @@
 		} 
 		function render(){
 			var delta = 0.75*clock.getDelta();
-			Collisions.update();
+			CollisionDetection.update();
 			SCENE.simulate(); // run physics
 			if(TrackBallControls){
 				RENDERER.render(SCENE, CAMERA);
