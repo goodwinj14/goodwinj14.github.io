@@ -266,11 +266,12 @@
   }
 
   ext.isTouching = function(objectIdOne, ObjectIdTwo){
+      console.log("raycasters");
       if(raycasters.objectIdOne!=null){
 
       }else{
         raycasters.objectIdOne = [ObjectIdTwon];
-        console.log(raycasters);
+        console.log("info",raycasters);
       }
       return false;
   }
