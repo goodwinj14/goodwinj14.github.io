@@ -15,7 +15,7 @@ CollisionDetection.update = function(){
 
 CollisionDetection.RayCaster = function(){
 	
-	this.CollisionCheck = function(){
+	CollisionCheck = function(){
 	console.log(this.object);
 	}
 
