@@ -270,6 +270,7 @@
       if(raycasters.objectIdOne!=null){
 
       }else{
+        console.log("raycasters");
         raycasters.objectIdOne = [ObjectIdTwon];
         console.log("info",raycasters);
       }
