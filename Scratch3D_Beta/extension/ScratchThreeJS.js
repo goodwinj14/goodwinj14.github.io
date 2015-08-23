@@ -271,7 +271,7 @@
 
       }else{
         console.log("raycasters");
-        raycasters.objectIdOne = [ObjectIdTwon];
+        raycasters.objectIdOne = ObjectIdTwo;
         console.log("info",raycasters);
       }
       return false;
