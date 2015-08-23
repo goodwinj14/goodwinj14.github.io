@@ -10,7 +10,7 @@ CollisionDetection.appendCasterTo = function(object){
 CollisionDetection.update = function(){
 	var test = new CollisionDetection.RayCaster();
 	console.log("collisionDetection");
-	test.CollisionCheck;
+	test.CollisionCheck();
 }
 
 CollisionDetection.RayCaster = function(){
