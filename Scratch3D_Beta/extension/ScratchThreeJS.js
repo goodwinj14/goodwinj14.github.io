@@ -269,12 +269,15 @@
       console.log("raycasters");
       if(raycasters[objectIdOne]!=null){
         if(raycasters[objectIdOne][ObjectIdTwo]!=null){
-
+            var message = "APPENDRAYCASTER_"+objectIdOne+','+ObjectIdTwo;
+            win.postMessage(message, liveURL);
         }else{
+          //add ObjectIdTwo to ObjectIdOne's raycaster checking
           raycasters[objectIdOne].push(ObjectIdTwo);
           console.log("info",raycasters);
         }
       }else{
+        //create ObjectIdOne raycaster and add ObjectIdTwo to its checking list
         console.log("raycasters");
         raycasters[objectIdOne] = [ObjectIdTwo];
         console.log("info",raycasters);
