@@ -9,14 +9,14 @@ CollisionDetection.appendCasterTo = function(object){
 //the objects in it list of objects
 CollisionDetection.update = function(){
 	var test = new CollisionDetection.RayCaster();
-
+	console.log("ollisionDetection");
 	test.CollisionCheck;
 }
 
 CollisionDetection.RayCaster = function(){
-	
-	CollisionCheck = function(){
-	console.log(this.object);
+	var object = 'hello';
+	function CollisionCheck(){
+	console.log(object);
 	}
 
 };
