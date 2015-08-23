@@ -12,6 +12,17 @@
 	var canvas = null;
 	var ctx = null;
 	var lastKeyEvent = null;
+
+  //This obect will hold all of the collisons data returned from the raycaster
+  //it holds objects that where previously touch on the last update of the raycaster
+  //Every time the raycaster updates it will send a new object holding the information
+  //of which objects our touching. If the scene elements are not in this object then 
+  //they are not touching.
+  var collisions = null;
+  //A list of all the objects that currently have raycasters connected to them
+  //and all the objects that raycaster is checking
+  var raycasters = {};
+
 	//var liveURL = "http://localhost:8888/main.html";
 	var shapes = [];
 	var materials = [];
@@ -252,6 +263,16 @@
   ext.setWeight = function(materialID, weight){
     var message = "SETWEIGHT_"+materialID+','+weight;
       win.postMessage(message, liveURL);
+  }
+
+  ext.isTouching = function(objectIdOne, ObjectIdTwo){
+      if(raycasters.objectIdOne!=null){
+
+      }else{
+        raycasters.objectIdOne = [ObjectIdTwon];
+        console.log(raycasters);
+      }
+      return false;
   }
 
 	ext.key_Pressed = function(key) {
@@ -587,7 +608,8 @@
       ['r', "New Physics Material %m.Materials Friction: %n Restitution %n", 'createPhysicsMaterial','MeshBasicMaterial','0.8','0.3'],
       ['', "Physics, Set Friction Of: %s To: %n", "setFriction","Variable","0.8"],
       ['', "Physics, Set Restitution Of: %s To: %n", "setRestitution","Variable","0.8"],
-      ['', "Physics, Set Weight Of: %s To: %n", "setWeight","Variable","2"], 
+      ['', "Physics, Set Weight Of: %s To: %n", "setWeight","Variable","2"],
+      ['b', "%s Touching %s", "isTouching","Variable","Variable"], 
         ],
 		
 		menus: {
