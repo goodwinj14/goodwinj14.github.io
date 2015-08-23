@@ -271,7 +271,7 @@
         if(raycasters[objectIdOne][ObjectIdTwo]!=null){
 
         }else{
-          raycasters[objectIdOne] = raycasters[objectIdOne].push(ObjectIdTwo);
+          raycasters[objectIdOne].push(ObjectIdTwo);
           console.log("info",raycasters);
         }
       }else{
