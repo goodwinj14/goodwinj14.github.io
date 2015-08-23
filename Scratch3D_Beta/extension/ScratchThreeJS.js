@@ -268,7 +268,12 @@
   ext.isTouching = function(objectIdOne, ObjectIdTwo){
       console.log("raycasters");
       if(raycasters[objectIdOne]!=null){
+        if(raycasters[objectIdOne][ObjectIdTwo]!=null){
 
+        }else{
+          raycasters[objectIdOne] = raycasters[objectIdOne].add(ObjectIdTwo);
+          console.log("info",raycasters);
+        }
       }else{
         console.log("raycasters");
         raycasters[objectIdOne] = [ObjectIdTwo];
