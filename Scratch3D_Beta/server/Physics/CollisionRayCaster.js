@@ -1,6 +1,6 @@
 Collisons = {
 
-	this.raycasters = [];
+	//this.raycasters = [];
 
 	this.appendRaycasterTo = function(obj){
 
