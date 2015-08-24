@@ -22,23 +22,10 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
 	//The actual ray caster for this object
 	this.caster = new THREE.Raycaster();
 	//The rays that will be projected from the origin point when we test for colisions
-	var vertices = this.mesh.geometry.vertices;
-
-	this.rays = [];
-	var xFarthest = 0;
-	var yFarthest = 0;
-	var zFarthest = 0;
-	for (var i = vertices.length - 1; i >= 0; i--) {
-		console.log("Caster X", vertices[i].x);
-		console.log("Caster Y", vertices[i].y);
-		console.log("Caster Z", vertices[i].z);
-		this.rays.push(new THREE.Vector3(vertices[i]));
-	};
-
-    
+	this.rays = this.mesh.geometry.vertices;
 
     //Sets up the raycaster far 
-    console.log("Caster Object", vertices);
+    console.log("Caster Object", this.rays);
 
 	this.CollisionCheck = function(){
 	
