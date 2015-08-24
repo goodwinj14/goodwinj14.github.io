@@ -32,9 +32,9 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
       new THREE.Vector3(-1, 0, 0),
       new THREE.Vector3(-1, 0, 1)
     ];
-    
+
     //Sets up the raycaster far 
-    console.log("Caster Object", this.caster.geometry.vertices);
+    console.log("Caster Object", this.mesh.geometry.vertices);
 
 	this.CollisionCheck = function(){
 	
