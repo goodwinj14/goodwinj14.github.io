@@ -28,7 +28,7 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
 	var xFarthest = 0;
 	var yFarthest = 0;
 	var zFarthest = 0;
-	for (var i = vertices - 1; i >= 0; i--) {
+	for (var i = vertices.length - 1; i >= 0; i--) {
 		console.log("Caster X", vertices[i][1]);
 		console.log("Caster Y", vertices[i][2]);
 		console.log("Caster Z", vertices[i][3]);
