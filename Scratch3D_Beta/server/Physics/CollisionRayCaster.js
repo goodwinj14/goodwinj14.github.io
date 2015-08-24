@@ -28,7 +28,7 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
 	//Sets the rays to the caster
 	this.caster.set(this.mesh.position, this.rays[0]);
 
-	console.log(this.caster.intersectObjects(this.conntactObjects));
+	console.log("Touch object",touch);
     //Sets up the raycaster far 
     console.log("Caster Object", this.rays);
 
