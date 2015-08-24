@@ -2,7 +2,7 @@ CollisionDetection = {};
 var raycasters = [];
 
 CollisionDetection.appendCasterTo = function(casterObject, touchObject, casterID, touchID){
-	var casterObj = new CollisionDetection.RayCaster(casterObject, touchObject, casterID, touchID);
+	var casterObj = new CollisionDetection.RayCaster(casterObject, casterID, touchObject, touchID);
 	raycasters.push(casterObj);
 }
 
