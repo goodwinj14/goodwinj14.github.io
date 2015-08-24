@@ -24,13 +24,15 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
 	//The rays that will be projected from the origin point when we test for colisions
 	var vertices = this.mesh.geometry.vertices;
 
-	this.rays = [
-    ];
+	this.rays = [];
 	var xFarthest = 0;
 	var yFarthest = 0;
 	var zFarthest = 0;
 	for (var i = vertices - 1; i >= 0; i--) {
-		this.rays.push(new THREE.Vector3(vertices[i][1], vertices[i][2], vertices[i][3]));
+		console.log("Caster X", vertices[i][1]);
+		console.log("Caster Y", vertices[i][2]);
+		console.log("Caster Z", vertices[i][3]);
+		this.rays.push(new THREE.Vector3(vertices[i]);
 	};
 
     
