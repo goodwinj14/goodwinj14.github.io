@@ -38,7 +38,7 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
     
 
     //Sets up the raycaster far 
-    console.log("Caster Object", this.rays);
+    console.log("Caster Object", vertices);
 
 	this.CollisionCheck = function(){
 	
