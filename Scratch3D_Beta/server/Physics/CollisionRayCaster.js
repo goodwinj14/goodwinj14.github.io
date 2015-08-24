@@ -32,7 +32,7 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
 		console.log("Caster X", vertices[i][1]);
 		console.log("Caster Y", vertices[i][2]);
 		console.log("Caster Z", vertices[i][3]);
-		this.rays.push(new THREE.Vector3(vertices[i]);
+		this.rays.push(new THREE.Vector3(vertices[i]));
 	};
 
     
