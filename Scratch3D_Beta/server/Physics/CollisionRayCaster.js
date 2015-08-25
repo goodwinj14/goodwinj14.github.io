@@ -10,7 +10,7 @@ CollisionDetection.appendCasterTo = function(casterObject, touchObject, casterID
 //the objects in it list of objects
 CollisionDetection.update = function(){
 	for (var i = raycasters.length - 1; i >= 0; i--) {
-		raycasters[i].CollisionCheck;
+		raycasters[i].CollisionCheck();
 	};
 }
 
