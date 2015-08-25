@@ -9,8 +9,9 @@ CollisionDetection.appendCasterTo = function(casterObject, touchObject, casterID
 //The update function checks to see if there has been a change in the touch state of any of
 //the objects in it list of objects
 CollisionDetection.update = function(){
-	console.log(raycasters[0]);
+
 	for (var i = raycasters.length - 1; i >= 0; i--) {
+		console.log(raycasters[0]);
 		raycasters[i].CollisionCheck();
 	};
 }
