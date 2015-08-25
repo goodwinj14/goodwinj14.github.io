@@ -16,7 +16,12 @@ CollisionDetection.update = function(){
 	};
 }
 
+CollisionDetection.touchingObject = {};
+
 CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
+	//Boolean value to check if object was touching on last update
+	this.wasTouchingLast = false;
+	this.isTouching = [];
 	//The mesh that the ray caster will be applied to
 	this.mesh = caster;
 	//The objects we want to test if the mesh is touching
