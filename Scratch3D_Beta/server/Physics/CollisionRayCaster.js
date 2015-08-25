@@ -26,7 +26,7 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
 	//The rays that will be projected from the origin point when we test for colisions
 	this.rays = this.mesh.geometry.vertices;
 	//Sets the rays to the caster
-	this.caster.set(this.mesh.position, this.rays[0]);
+	this.caster.set(this.mesh.position, this.rays);
 
 	console.log("Touch object",this.caster.intersectObjects(this.conntactObjects));
     //Sets up the raycaster far 
