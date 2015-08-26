@@ -21,7 +21,7 @@ CollisionDetection.touchingObject = {};
 CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
 	//sets the name of the object to the touchID name 
 	touch.name = touchID;
-
+	caster.name = casterID;
 	//Boolean value to check if object was touching on last update
 	this.wasTouchingLast = false;
 	this.isTouching = [];
@@ -49,12 +49,15 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
 			var touching = this.caster.intersectObjects(this.conntactObjects);
 
 			for (var j = touching.length - 1; j >= 0; j--) {
-				if(!currentTouches.includes(touching[j])){
-					currentTouches.push(touching[j]);
+				//Checks to see if the touch object has already been detected by another array
+				if(currentTouches.indexOf(touching.name)<0){
+					currentTouches.push(touching.name);
 				}
 			};
 		};
+		if(currentTouches.length>0){
 		console.log(currentTouches);
+		}
 	}
 
 }
