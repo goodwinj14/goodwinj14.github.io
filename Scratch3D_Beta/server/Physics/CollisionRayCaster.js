@@ -15,7 +15,7 @@ CollisionDetection.update = function(){
 	for (var i = raycasters.length - 1; i >= 0; i--) {
 		var temp = raycasters[i];
 		temp.CollisionCheck();
-		touchReturn = touchReturn+temp.caster.name +":"+temp.isTouching;
+		touchReturn = touchReturn+this.name +":"+temp.isTouching;
 		if(temp.isTouching.length>0){
 			alert(touchReturn);
 			}
@@ -37,7 +37,7 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
 	this.conntactObjects = [];
 	this.conntactObjects.push(touch);
 	//The object ID that is associated with the mesh provided
-	this.ID = casterID;
+	this.name = casterID;
 	//The actual ray caster for this object
 	this.caster = new THREE.Raycaster();
 	this.caster.far = 32;
