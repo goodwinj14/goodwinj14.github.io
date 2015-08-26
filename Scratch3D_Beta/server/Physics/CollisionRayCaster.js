@@ -10,12 +10,12 @@ CollisionDetection.appendCasterTo = function(casterObject, touchObject, casterID
 //the objects in it list of objects
 CollisionDetection.update = function(){
 
-	var touchReturn;
+	var touchReturn ="";
 
 	for (var i = raycasters.length - 1; i >= 0; i--) {
 		var temp = raycasters[i];
 		temp.CollisionCheck();
-		touchReturn = touchReturn.concat(temp.name +":"+this.isTouching.toString());
+		touchReturn = touchReturn+temp.name +":"+this.isTouching.toString();
 		if(this.isTouching>0){
 			console.log("Return Touches: ", touchReturn);
 		}
