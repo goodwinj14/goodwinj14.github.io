@@ -46,7 +46,7 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
     console.log("Caster Object", this.rays);
 
 	this.CollisionCheck = function(){
-		this.isTouching = [];
+		//this.isTouching = [];
 		for (var i = this.rays.length - 1; i >= 0; i--) {
 			this.caster.set(this.mesh.position, this.rays[i]);
 			var touching = this.caster.intersectObjects(this.conntactObjects);
@@ -58,8 +58,9 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
 				}
 			};
 		};
-		
-			console.log("Return Touches: ", this.isTouching);
+			if(this.isTouching>0){
+			alert();
+			}
 
 
 	}
