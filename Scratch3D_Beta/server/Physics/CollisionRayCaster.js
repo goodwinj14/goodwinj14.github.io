@@ -10,9 +10,15 @@ CollisionDetection.appendCasterTo = function(casterObject, touchObject, casterID
 //the objects in it list of objects
 CollisionDetection.update = function(){
 
+	var touchReturn;
+
 	for (var i = raycasters.length - 1; i >= 0; i--) {
 		var temp = raycasters[i];
 		temp.CollisionCheck();
+		touchReturn = touchReturn.concat(temp.name +":"+this.isTouching.toString());
+		if(this.isTouching>0){
+			console.log("Return Touches: ", touchReturn);
+		}
 	};
 }
 
@@ -43,22 +49,20 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
     console.log("Caster Object", this.rays);
 
 	this.CollisionCheck = function(){
-		var currentTouches = [];
+		this.isTouching = [];
 		for (var i = this.rays.length - 1; i >= 0; i--) {
 			this.caster.set(this.mesh.position, this.rays[i]);
 			var touching = this.caster.intersectObjects(this.conntactObjects);
 
 			for (var j = touching.length - 1; j >= 0; j--) {
-				console.log("OBJ DATA: ",touching[j]);
 				//Checks to see if the touch object has already been detected by another array
-				if(currentTouches.indexOf(touching[j].object.name)<0){
-					currentTouches.push(touching[j].object.name);
+				if(this.isTouching.indexOf(touching[j].object.name)<0){
+					this.isTouching.push(touching[j].object.name);
 				}
 			};
 		};
-		if(currentTouches.length>0){
-		console.log(currentTouches);
-		}
+
+
 	}
 
 }
