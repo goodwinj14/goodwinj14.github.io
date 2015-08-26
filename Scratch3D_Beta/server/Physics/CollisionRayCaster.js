@@ -15,8 +15,7 @@ CollisionDetection.update = function(){
 	for (var i = raycasters.length - 1; i >= 0; i--) {
 		var temp = raycasters[i];
 		temp.CollisionCheck();
-		touchReturn = touchReturn+temp.name +":"+temp.isTouching;
-		
+		//touchReturn = touchReturn+temp.name +":"+temp.isTouching;
 	};
 }
 
