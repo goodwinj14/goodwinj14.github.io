@@ -49,9 +49,10 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
 			var touching = this.caster.intersectObjects(this.conntactObjects);
 
 			for (var j = touching.length - 1; j >= 0; j--) {
+				console.log("OBJ DATA: ",touching[j]);
 				//Checks to see if the touch object has already been detected by another array
-				if(currentTouches.indexOf(touching.name)<0){
-					currentTouches.push(touching.name);
+				if(currentTouches.indexOf(touching[j].object.name)<0){
+					currentTouches.push(touching[j].object.name);
 				}
 			};
 		};
