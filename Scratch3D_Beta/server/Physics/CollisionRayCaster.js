@@ -58,9 +58,9 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
 				}
 			};
 		};
-		if(this.isTouching>0){
+		
 			console.log("Return Touches: ", this.isTouching);
-		}
+
 
 	}
 
