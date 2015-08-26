@@ -16,9 +16,7 @@ CollisionDetection.update = function(){
 		var temp = raycasters[i];
 		temp.CollisionCheck();
 		touchReturn = touchReturn+temp.name +":"+temp.isTouching;
-		if(temp.isTouching>0){
-			console.log("Return Touches: ", touchReturn);
-		}
+		
 	};
 }
 
@@ -61,7 +59,9 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
 				}
 			};
 		};
-
+		if(this.isTouching>0){
+			console.log("Return Touches: ", this.isTouching);
+		}
 
 	}
 
