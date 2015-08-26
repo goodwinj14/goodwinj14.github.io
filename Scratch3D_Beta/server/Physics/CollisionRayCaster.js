@@ -16,7 +16,7 @@ CollisionDetection.update = function(){
 		var temp = raycasters[i];
 		temp.CollisionCheck();
 		touchReturn = touchReturn+temp.name +":"+temp.isTouching;
-		if(this.isTouching.length>0){
+		if(temp.isTouching.length>0){
 			alert(touchReturn);
 			}
 	};
