@@ -1,6 +1,9 @@
 CollisionDetection = {};
 var raycasters = [];
 
+//The last object that was sent to the scratch extension window.
+CollisionDetection.lastTouching = "";
+
 CollisionDetection.appendCasterTo = function(casterObject, touchObject, casterID, touchID){
 	var casterObj = new CollisionDetection.RayCaster(casterObject, casterID, touchObject, touchID);
 	raycasters.push(casterObj);
@@ -16,11 +19,13 @@ CollisionDetection.update = function(){
 		var temp = raycasters[i];
 		temp.CollisionCheck();
 		touchReturn = touchReturn+'\"'+temp.name+'\"'+":"+'\"'+temp.isTouching+'\"';
-		if(temp.isTouching.length>0){
-			alert(touchReturn);
-			}
 	};
 	touchReturn = touchReturn+"}"
+
+	if(CollisionDetection.lastTouching != touchReturn){
+		CollisionDetection.lastTouching = touchReturn;
+		console.log(CollisionDetection.lastTouching);
+	}
 }
 
 CollisionDetection.touchingObject = {};
