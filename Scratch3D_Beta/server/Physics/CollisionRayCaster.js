@@ -11,11 +11,13 @@ CollisionDetection.appendCasterTo = function(casterObject, touchObject, casterID
 CollisionDetection.update = function(){
 
 	var touchReturn ="{";
-
+	var test = [];
+	test.push("attemped");
+	test.push("One");
 	for (var i = raycasters.length - 1; i >= 0; i--) {
 		var temp = raycasters[i];
 		temp.CollisionCheck();
-		touchReturn = touchReturn+'\"'+temp.name+'\"'+":"+'\"'+temp.isTouching+'\"';
+		touchReturn = touchReturn+'\"'+temp.name+'\"'+":"+'\"'+test+'\"';
 		if(temp.isTouching.length>0){
 			alert(touchReturn);
 			}
