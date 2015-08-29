@@ -277,6 +277,7 @@
   }
 
   ext.isTouching = function(objectIdOne, ObjectIdTwo){
+    console.log(raycasters);
       if(raycasters[objectIdOne]!=null){
         if(raycasters[objectIdOne].indexOf(ObjectIdTwo)>=0){
            console.log("Inner if",collisions[objectIdOne]);
