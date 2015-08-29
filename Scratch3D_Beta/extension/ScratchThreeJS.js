@@ -284,6 +284,7 @@
           //add ObjectIdTwo to ObjectIdOne's raycaster checking
           raycasters[objectIdOne].push(ObjectIdTwo);
           console.log("info inner else",raycasters[objectIdOne]);
+          console.log("info inner else Full",raycasters);
         }
       }else{
         //create ObjectIdOne raycaster and add ObjectIdTwo to its checking list
