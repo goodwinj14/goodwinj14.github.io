@@ -58,12 +58,11 @@
 
       //the actual data to be procesed by the extention
       var data = event.data.split("_")[1];
-			console.log(data);
 
         if(commandKey=="KEYSTROKE"){
   			lastKeyEvent = data;
         }else if(commandKey=="RAYCASTTOUCH"){
-
+          collisions = data;
         }
     	}
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
@@ -281,7 +280,7 @@
       console.log("raycasters");
       if(raycasters[objectIdOne]!=null){
         if(raycasters[objectIdOne][ObjectIdTwo]!=null){
-            
+            console.log(collisions[objectIdOne]);
         }else{
           //add ObjectIdTwo to ObjectIdOne's raycaster checking
           raycasters[objectIdOne].push(ObjectIdTwo);
@@ -295,7 +294,6 @@
         raycasters[objectIdOne] = [ObjectIdTwo];
         console.log("info",raycasters);
       }
-      return false;
   }
 
 	ext.key_Pressed = function(key) {
