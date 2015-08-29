@@ -301,7 +301,7 @@
 		*/
 
 		window.addEventListener("keydown", function(e){
-			messageSource.postMessage(e.keyCode,origin);
+			messageSource.postMessage("KEYSTROKE_"+e.keyCode,origin);
 		 });
 		
 		

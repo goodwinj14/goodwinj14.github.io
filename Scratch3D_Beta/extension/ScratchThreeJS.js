@@ -51,8 +51,20 @@
 		
 		function receiveMessage()
 		{
-			console.log(event.data);
-			lastKeyEvent = event.data;
+      //The command key is experes by KEYNAME_ the key name allows use to know what the message 
+      //Type is.
+      //Retrevies the command Key of the message denoting which function to call
+      var commandKey = event.data.split("_")[0];
+
+      //the actual data to be procesed by the extention
+      var data = event.data.split("_")[1];
+			console.log(data);
+
+        if(commandKey=="KEYSTROKE"){
+  			lastKeyEvent = data;
+        }else if(commandKey=="RAYCASTTOUCH"){
+
+        }
     	}
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
 

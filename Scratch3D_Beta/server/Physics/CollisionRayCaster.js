@@ -1,6 +1,12 @@
 CollisionDetection = {};
 var raycasters = [];
 
+//The extention source to post the message two
+CollisionDetection.messageSource = null;
+//The origin of the extention we wish to pase the object 
+//contaning the touch events to.
+CollisionDetection.origin = null;
+
 //The last object that was sent to the scratch extension window.
 CollisionDetection.lastTouching = "";
 
@@ -26,6 +32,9 @@ CollisionDetection.update = function(){
 
 	if(CollisionDetection.lastTouching != touchReturn){
 		CollisionDetection.lastTouching = touchReturn;
+		//If the we have had a change in the current touch state 
+		//A messgae will be passed to the extention with the new touching state data
+		CollisionDetection.messageSource.postMessage("RAYCASTTOUCH_"+CollisionDetection.lastTouching,CollisionDetection.origin);
 		console.log(CollisionDetection.lastTouching);
 	}
 }
