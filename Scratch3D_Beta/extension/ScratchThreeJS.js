@@ -278,12 +278,12 @@
 
   ext.isTouching = function(objectIdOne, ObjectIdTwo){
       if(raycasters[objectIdOne]!=null){
-        if(raycasters[objectIdOne].indexof(ObjectIdTwo)>=0){
+        if(raycasters[objectIdOne][ObjectIdTwo]!=null){
           //  console.log(collisions[objectIdOne]);
         }else{
           //add ObjectIdTwo to ObjectIdOne's raycaster checking
           raycasters[objectIdOne].push(ObjectIdTwo);
-          console.log("info inner else",raycasters);
+          console.log("info inner else",raycasters[objectIdOne]);
         }
       }else{
         //create ObjectIdOne raycaster and add ObjectIdTwo to its checking list
