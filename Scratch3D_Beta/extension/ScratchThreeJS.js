@@ -280,11 +280,11 @@
       console.log("raycasters");
       if(raycasters[objectIdOne]!=null){
         if(raycasters[objectIdOne][ObjectIdTwo]!=null){
-            console.log(collisions[objectIdOne]);
+          //  console.log(collisions[objectIdOne]);
         }else{
           //add ObjectIdTwo to ObjectIdOne's raycaster checking
           raycasters[objectIdOne].push(ObjectIdTwo);
-          console.log("info",raycasters);
+          //console.log("info",raycasters);
         }
       }else{
         //create ObjectIdOne raycaster and add ObjectIdTwo to its checking list
