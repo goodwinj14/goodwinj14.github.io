@@ -290,7 +290,8 @@
         //create ObjectIdOne raycaster and add ObjectIdTwo to its checking list
         var message = "APPENDRAYCASTER_"+objectIdOne+','+ObjectIdTwo;
         win.postMessage(message, liveURL);
-        raycasters[objectIdOne] = [ObjectIdTwo];
+        raycasters[objectIdOne] = [];
+        raycasters[objectIdOne].push(ObjectIdTwo);
       }
   }
 
