@@ -292,6 +292,7 @@
         win.postMessage(message, liveURL);
         raycasters[objectIdOne] = [];
         raycasters[objectIdOne].push(ObjectIdTwo);
+        console.log("info inner else Full",raycasters);
       }
   }
 
