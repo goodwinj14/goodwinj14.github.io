@@ -58,7 +58,7 @@
 
       //the actual data to be procesed by the extention
       var data = event.data.split("_")[1];
-      console.log("Data to be added to data array",data);
+      console.log("Data to be added to data array",commandKey);
         if(commandKey=="KEYSTROKE"){
   			lastKeyEvent = data;
         }else if(commandKey=="RAYCASTTOUCH"){
