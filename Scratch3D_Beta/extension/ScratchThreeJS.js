@@ -62,7 +62,9 @@
         if(commandKey=="KEYSTROKE"){
   			lastKeyEvent = data;
         }else if(commandKey=="RAYCASTTOUCH"){
-          collisions = new Object(data);
+          var collisionData = [];
+          console.log("Data to be added to data array",data);
+          collisions = new Object(data: collisionData);
         }
     	}
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
