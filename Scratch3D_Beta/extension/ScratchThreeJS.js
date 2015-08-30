@@ -294,13 +294,14 @@
           console.log("info inner else Full",raycasters);
         }
       }else{
+        console.log("info inner else Full",raycasters);
         //create ObjectIdOne raycaster and add ObjectIdTwo to its checking list
         var message = "APPENDRAYCASTER_"+objectIdOne+','+ObjectIdTwo;
         win.postMessage(message, liveURL);
         raycasters[objectIdOne] = [];
         raycasters[objectIdOne].push(ObjectIdTwo);
         raycasters[objectIdOne].push(ObjectIdTwo);
-        console.log("info inner else Full",raycasters);
+        
       }
   }
 
