@@ -25,7 +25,7 @@ CollisionDetection.update = function(){
 		var temp = raycasters[i];
 		temp.CollisionCheck();
 		if(temp.isTouching.length>0){
-		touchReturn = touchReturn+temp.name+":"+'\"'+temp.isTouching+'\"'+";";
+		touchReturn = touchReturn+temp.name+":"+temp.isTouching+";";
 		}
 	};
 	touchReturn = touchReturn
