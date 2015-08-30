@@ -278,10 +278,9 @@
 
   ext.isTouching = function(objectIdOne, ObjectIdTwo){
     if(raycasters[objectIdOne] != null){
-    raycasters[objectIdOne].push(objectIdOne);
     var itemsArray = raycasters[objectIdOne];
 
-    console.log(itemsArray);
+    console.log(raycasters[objectIdOne].indexOf(ObjectIdTwo));
   }
       if(raycasters[objectIdOne]!=null){
         if(raycasters[objectIdOne].indexOf(ObjectIdTwo)>=0){
