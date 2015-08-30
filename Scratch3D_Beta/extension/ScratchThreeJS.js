@@ -277,14 +277,13 @@
   }
 
   ext.isTouching = function(objectIdOne, ObjectIdTwo){
-    if(raycasters[objectIdOne] != null){
-    var itemsArray = raycasters[objectIdOne];
-
-    console.log(raycasters[objectIdOne].indexOf(ObjectIdTwo));
+    if(collisions != null){
+    console.log(collisions);
   }
       if(raycasters[objectIdOne]!=null){
         if(raycasters[objectIdOne].indexOf(ObjectIdTwo)>=0){
           if(collisions[objectIdOne].indexOf(ObjectIdTwo)>=0){
+            console.log(collisions);
            return true;
           }
 
