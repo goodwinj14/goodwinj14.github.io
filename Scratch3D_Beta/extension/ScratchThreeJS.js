@@ -58,12 +58,11 @@
 
       //the actual data to be procesed by the extention
       var data = event.data.split("_")[1];
-
+      console.log("Data to be added to data array",data);
         if(commandKey=="KEYSTROKE"){
   			lastKeyEvent = data;
         }else if(commandKey=="RAYCASTTOUCH"){
           var collisionData = [];
-          console.log("Data to be added to data array",data);
           //collisions = new Object({data: collisionData});
           //console.log("collisions",collisions);
         }
