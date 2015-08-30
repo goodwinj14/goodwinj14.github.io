@@ -284,11 +284,7 @@
   }
       if(raycasters[objectIdOne]!=null){
         if(raycasters[objectIdOne].indexOf(ObjectIdTwo)>=0){
-            if(collisions[objectIdOne].indexOf(ObjectIdTwo)>=0){
-              console.log("Touching");
-               return true;
-            }
-          }
+           return true;
         }else{
           //add ObjectIdTwo to ObjectIdOne's raycaster checking
           raycasters[objectIdOne].push(ObjectIdTwo);
