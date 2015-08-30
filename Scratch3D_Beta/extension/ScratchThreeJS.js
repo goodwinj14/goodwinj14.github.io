@@ -291,11 +291,14 @@
           if(collisions.data[objectIdOne].indexOf(ObjectIdTwo)>=0){
             console.log("WE HAVE COLLIDED");
            return true;
+          }else{
+            return false;
           }
 
         }else{
           //add ObjectIdTwo to ObjectIdOne's raycaster checking
           raycasters[objectIdOne].push(ObjectIdTwo);
+          return false;
         }
       }else{
         console.log("info inner else Full");
@@ -305,7 +308,7 @@
         raycasters[objectIdOne] = [];
         raycasters[objectIdOne].push(ObjectIdTwo);
         raycasters[objectIdOne].push(ObjectIdTwo);
-        
+        return false;
       }
   }
 
