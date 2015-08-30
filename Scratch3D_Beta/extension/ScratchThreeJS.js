@@ -65,7 +65,7 @@
           var collisionData = [];
           var objSpilt = data.split(";");
           console.log("objSpilt ;", objSpilt);
-          for (var i = objSpilt.length - 1; i >= 0; i--) {
+          for (var i = objSpilt.length - 2; i >= 0; i--) {
             temp = objSpilt[i].split(":");
             console.log("objSpilt :", temp);
             collisionData[temp[0]] = temp[1].split(",");
