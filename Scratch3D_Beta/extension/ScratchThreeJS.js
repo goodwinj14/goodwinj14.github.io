@@ -63,8 +63,8 @@
   			lastKeyEvent = data;
         }else if(commandKey=="RAYCASTTOUCH"){
           var collisionData = [];
-          //collisions = new Object({data: collisionData});
-          //console.log("collisions",collisions);
+          collisions = new Object(data);
+          console.log("collisions",collisions);
         }
     	}
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
