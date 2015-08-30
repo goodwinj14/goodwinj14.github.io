@@ -19,7 +19,7 @@ CollisionDetection.appendCasterTo = function(casterObject, touchObject, casterID
 //the objects in it list of objects
 CollisionDetection.update = function(){
 
-	var touchReturn ="{";
+	var touchReturn ="";
 
 	for (var i = raycasters.length - 1; i >= 0; i--) {
 		var temp = raycasters[i];
@@ -28,7 +28,7 @@ CollisionDetection.update = function(){
 		touchReturn = touchReturn+temp.name+":"+'\"'+temp.isTouching+'\"';
 		}
 	};
-	touchReturn = touchReturn+"}"
+	touchReturn = touchReturn
 
 	if(CollisionDetection.lastTouching != touchReturn){
 		CollisionDetection.lastTouching = touchReturn;
