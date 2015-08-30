@@ -17,6 +17,7 @@ CollisionDetection.appendCasterTo = function(casterObject, touchObject, casterID
 
 //Add a new object to a existering Ray Caster
 CollisionDetection.addObjectToCaster = function(casterObject, addObject){
+	console.log("Add item to: ", raycasters);
 	if(raycasters[casterObject]!=null){
 		raycasters[casterObject].conntactObjects.push(addObject);
 		console.log("Ray Caster Added new ", raycasters[casterObject].conntactObjects);
