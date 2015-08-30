@@ -284,7 +284,10 @@
   }
       if(raycasters[objectIdOne]!=null){
         if(raycasters[objectIdOne].indexOf(ObjectIdTwo)>=0){
-           console.log("Inner if",collisions[objectIdOne]);
+            if(collisions[objectIdOne].indexOf(ObjectIdTwo)>=0){
+               return true;
+            }
+          }
         }else{
           //add ObjectIdTwo to ObjectIdOne's raycaster checking
           raycasters[objectIdOne].push(ObjectIdTwo);
