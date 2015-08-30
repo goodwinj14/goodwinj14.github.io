@@ -28,7 +28,6 @@ CollisionDetection.update = function(){
 		touchReturn = touchReturn+temp.name+":"+temp.isTouching+";";
 		}
 	};
-	touchReturn = touchReturn
 
 	if(CollisionDetection.lastTouching != touchReturn){
 		CollisionDetection.lastTouching = touchReturn;
@@ -68,7 +67,7 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
     console.log("Caster Object", this.rays);
 
 	this.CollisionCheck = function(){
-		//this.isTouching = [];
+		this.isTouching = [];
 		for (var i = this.rays.length - 1; i >= 0; i--) {
 			this.caster.set(this.mesh.position, this.rays[i]);
 			var touching = this.caster.intersectObjects(this.conntactObjects);
