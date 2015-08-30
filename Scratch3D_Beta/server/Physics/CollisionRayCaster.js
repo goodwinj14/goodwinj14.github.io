@@ -35,7 +35,6 @@ CollisionDetection.update = function(){
 		//A messgae will be passed to the extention with the new touching state data
 		if(CollisionDetection.messageSource!=null || CollisionDetection.origin!=null){
 		CollisionDetection.messageSource.postMessage("RAYCASTTOUCH_"+CollisionDetection.lastTouching,CollisionDetection.origin);
-		console.log(CollisionDetection.lastTouching);
 		}
 	}
 }
@@ -62,9 +61,6 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
 	//The rays that will be projected from the origin point when we test for colisions
 	this.rays = this.mesh.geometry.vertices;
 	//Sets the rays to the caster
-
-    //Sets up the raycaster far 
-    console.log("Caster Object", this.rays);
 
 	this.CollisionCheck = function(){
 		this.isTouching = [];

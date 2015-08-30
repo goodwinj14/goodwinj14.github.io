@@ -85,7 +85,6 @@
 
 		function eventHandeler(){
 			//Gets the address from which the event came
-			console.log(event);
 			if(origin==null || messageSource==null){
 				origin = event.origin;
 				messageSource = event.source;
@@ -95,7 +94,6 @@
 			var commandKey = event.data.split("_")[0];
 			//Retervies the paramiters of the message for the corasponding function call if message contains params
 			var paramsArray = null;
-			console.log("Event Called: ", commandKey);
 			if(event.data.split("_").length>1){
 			paramsArray = event.data.split("_")[1].split(",");
 			}
@@ -250,14 +248,12 @@
 			}	
 			if(commandKey == "MOVESHAPE"){
 				if(SCENE!=null){
-					console.log("Move Charecter", paramsArray[0]);
 					SCENECOMPONENTS.move(paramsArray[0],paramsArray[1], paramsArray[2]);
 				}
 			}
 			if(commandKey == "LOADOBJ"){
 				if(SCENE!=null){
 					SCENECOMPONENTS.addOBJ(paramsArray[0], paramsArray[1], SCENE);
-					console.log("LOADOBJ KEY CALLED", paramsArray);
 					
 				}
 			}
@@ -283,13 +279,10 @@
 				}
 			}
 			if(commandKey == "APPENDRAYCASTER"){
-				console.log("Append Caster Callled");
 				if(SCENE!=null){
 					if(CollisionDetection.messageSource==null || CollisionDetection.origin==null){
 						CollisionDetection.messageSource = messageSource;
 						CollisionDetection.origin = origin;
-						console.log("CollisionDetection.messageSource", CollisionDetection.messageSource);
-						console.log("CollisionDetection.origin",CollisionDetection.origin);
 					}
 					var objOne = SCENECOMPONENTS.getShape(paramsArray[0]); //The object that will have a ray caster attached to it
 					var objTwo = SCENECOMPONENTS.getShape(paramsArray[1]); //The object that will
