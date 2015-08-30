@@ -278,7 +278,7 @@
 
   ext.isTouching = function(objectIdOne, ObjectIdTwo){
     var itemsArray = raycasters[objectIdOne];
-    itemsArray.push("Cubical");
+
     console.log(itemsArray);
       if(raycasters[objectIdOne]!=null){
         if(raycasters[objectIdOne].indexOf(ObjectIdTwo)>=0){
@@ -294,6 +294,7 @@
         var message = "APPENDRAYCASTER_"+objectIdOne+','+ObjectIdTwo;
         win.postMessage(message, liveURL);
         raycasters[objectIdOne] = [];
+        raycasters[objectIdOne].push(ObjectIdTwo);
         raycasters[objectIdOne].push(ObjectIdTwo);
         console.log("info inner else Full",raycasters);
       }
