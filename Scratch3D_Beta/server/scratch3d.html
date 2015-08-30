@@ -287,6 +287,8 @@
 					if(CollisionDetection.messageSource==null || CollisionDetection.origin==null){
 						CollisionDetection.messageSource = messageSource;
 						CollisionDetection.origin = origin;
+						console.log("CollisionDetection.messageSource", CollisionDetection.messageSource);
+						console.log("CollisionDetection.origin",CollisionDetection.origin);
 					}
 					var objOne = SCENECOMPONENTS.getShape(paramsArray[0]); //The object that will have a ray caster attached to it
 					var objTwo = SCENECOMPONENTS.getShape(paramsArray[1]); //The object that will
