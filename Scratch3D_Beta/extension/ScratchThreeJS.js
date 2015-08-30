@@ -55,10 +55,10 @@
       //Type is.
       //Retrevies the command Key of the message denoting which function to call
       var commandKey = event.data.split("_")[0];
-
+      console.log("Changed",commandKey);
       //the actual data to be procesed by the extention
       var data = event.data.split("_")[1];
-      console.log("Data to be added to data array",commandKey);
+
         if(commandKey=="KEYSTROKE"){
   			lastKeyEvent = data;
         }else if(commandKey=="RAYCASTTOUCH"){
