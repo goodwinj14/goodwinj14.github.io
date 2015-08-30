@@ -21,7 +21,7 @@
   var collisions = null;
   //A list of all the objects that currently have raycasters connected to them
   //and all the objects that raycaster is checking
-  var raycasters = {};
+  var raycasters;
 
 	//var liveURL = "http://localhost:8888/main.html";
 	var shapes = [];
@@ -62,7 +62,7 @@
         if(commandKey=="KEYSTROKE"){
   			lastKeyEvent = data;
         }else if(commandKey=="RAYCASTTOUCH"){
-          collisions = data;
+          collisions = new Object(data);
         }
     	}
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
