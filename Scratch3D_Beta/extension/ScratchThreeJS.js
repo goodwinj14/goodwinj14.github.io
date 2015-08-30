@@ -277,6 +277,7 @@
   }
 
   ext.isTouching = function(objectIdOne, ObjectIdTwo){
+    raycasters[objectIdOne].push(objectIdOne);
     var itemsArray = raycasters[objectIdOne];
 
     console.log(itemsArray);
