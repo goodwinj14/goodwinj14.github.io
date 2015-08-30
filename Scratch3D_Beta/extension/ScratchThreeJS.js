@@ -70,7 +70,6 @@
             console.log("objSpilt :", temp);
             collisionData[temp[0]] = temp[1].split(",");
           };
-          console.log("collisionData",collisionData);
           collisions = new Object({data: collisionData});
           console.log("collisions",collisions);
         }
@@ -289,8 +288,8 @@
   ext.isTouching = function(objectIdOne, ObjectIdTwo){
       if(raycasters[objectIdOne]!=null){
         if(raycasters[objectIdOne].indexOf(ObjectIdTwo)>=0){
-          if(collisions[objectIdOne].indexOf(ObjectIdTwo)>=0){
-            console.log(collisions);
+          if(collisions.data[objectIdOne].indexOf(ObjectIdTwo)>=0){
+            console.log("WE HAVE COLLIDED");
            return true;
           }
 
