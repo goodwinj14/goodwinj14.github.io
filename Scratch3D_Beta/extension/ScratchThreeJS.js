@@ -281,6 +281,7 @@
   ext.isTouching = function(objectIdOne, ObjectIdTwo){
     console.log("ext.isTouching");
       if(raycasters[objectIdOne]!=null){
+        console.log("outer if called");
         if(raycasters[objectIdOne].indexOf(ObjectIdTwo)>=0){
           if(collisions[objectIdOne].indexOf(ObjectIdTwo)>=0){
             console.log(collisions);
@@ -294,7 +295,7 @@
           console.log("info inner else Full",raycasters);
         }
       }else{
-        console.log("info inner else Full",raycasters);
+        console.log("info inner else Full");
         //create ObjectIdOne raycaster and add ObjectIdTwo to its checking list
         var message = "APPENDRAYCASTER_"+objectIdOne+','+ObjectIdTwo;
         win.postMessage(message, liveURL);
