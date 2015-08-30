@@ -55,10 +55,10 @@
       //Type is.
       //Retrevies the command Key of the message denoting which function to call
       var commandKey = event.data.split("_")[0];
-      console.log("Changed",commandKey);
+      
       //the actual data to be procesed by the extention
       var data = event.data.split("_")[1];
-
+      console.log("Changed",data);
         if(commandKey=="KEYSTROKE"){
   			lastKeyEvent = data;
         }else if(commandKey=="RAYCASTTOUCH"){
@@ -289,8 +289,6 @@
         }else{
           //add ObjectIdTwo to ObjectIdOne's raycaster checking
           raycasters[objectIdOne].push(ObjectIdTwo);
-          console.log("info inner else",raycasters[objectIdOne]);
-          console.log("info inner else Full",raycasters);
         }
       }else{
         console.log("info inner else Full");
