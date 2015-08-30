@@ -278,7 +278,7 @@
 
   ext.isTouching = function(objectIdOne, ObjectIdTwo){
     if(collisions != null){
-    console.log(collisions[objectIdOne]);
+    console.log(collisions);
   }
       if(raycasters[objectIdOne]!=null){
         if(raycasters[objectIdOne].indexOf(ObjectIdTwo)>=0){
