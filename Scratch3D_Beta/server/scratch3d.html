@@ -289,6 +289,12 @@
 					CollisionDetection.appendCasterTo(objOne, objTwo, paramsArray[0], paramsArray[1]);
 				}
 			}
+			if(commandKey == "ADDOBJECTTOCASTER"){
+				//If the object already has a caster attached to it 
+				//We add the object we wish to check for collisons with to that 
+				//Objects list in its collison object
+				CollisionDetection.addObjectToCaster(paramsArray[0], paramsArray[1]);
+			}
 		}
 		/*
 		*EVENT HANDELER END

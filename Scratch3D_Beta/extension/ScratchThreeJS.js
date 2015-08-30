@@ -298,6 +298,8 @@
         }else{
           //add ObjectIdTwo to ObjectIdOne's raycaster checking
           raycasters[objectIdOne].push(ObjectIdTwo);
+          var message = "ADDOBJECTTOCASTER_"+objectIdOne+','+ObjectIdTwo;
+          win.postMessage(message, liveURL);
           return false;
         }
       }else{
