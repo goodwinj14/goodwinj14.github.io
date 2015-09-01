@@ -12,10 +12,11 @@ CollisionDetection.lastTouching = "";
 
 CollisionDetection.appendCasterTo = function(casterObject, touchObject, casterID, touchID){
 	var casterObj = new CollisionDetection.RayCaster(casterObject, casterID, touchObject, touchID);
-	raycasters.push(casterObj);
+	raycasters[casterID] = casterObj;
 }
 
 //Add a new object to a existering Ray Caster
+//Takes in the id of the caster object and the actual object to be added to it
 CollisionDetection.addObjectToCaster = function(casterObject, addObject){
 	console.log("Add item to: ", raycasters);
 	if(raycasters[casterObject]!=null){
