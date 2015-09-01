@@ -42,6 +42,7 @@ CollisionDetection.update = function(){
 		//If the we have had a change in the current touch state 
 		//A messgae will be passed to the extention with the new touching state data
 		if(CollisionDetection.messageSource!=null || CollisionDetection.origin!=null){
+			console.log("Update Sent");
 		CollisionDetection.messageSource.postMessage("RAYCASTTOUCH_"+CollisionDetection.lastTouching,CollisionDetection.origin);
 		}
 	}
