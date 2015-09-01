@@ -22,7 +22,7 @@ CollisionDetection.addObjectToCaster = function(casterObject, addObject, addObje
 	console.log("Add item to: ", raycasters);
 	if(raycasters[casterObject]!=null){
 		raycasters[casterObject].conntactObjects.push(addObject);
-		console.log("Ray Caster Added new ", addObject);
+		console.log("Ray Caster Added new ", raycasters[casterObject].conntactObjects);
 	}
 }
 //The update function checks to see if there has been a change in the touch state of any of
