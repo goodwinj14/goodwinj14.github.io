@@ -1,6 +1,6 @@
 CollisionDetection = {};
 var raycasters = [];
-
+var raycastersIDS = [];
 //The extention source to post the message two
 CollisionDetection.messageSource = null;
 //The origin of the extention we wish to pase the object 
@@ -13,6 +13,7 @@ CollisionDetection.lastTouching = "";
 CollisionDetection.appendCasterTo = function(casterObject, touchObject, casterID, touchID){
 	var casterObj = new CollisionDetection.RayCaster(casterObject, casterID, touchObject, touchID);
 	raycasters[casterID] = casterObj;
+	raycastersIDS.push(casterID);
 }
 
 //Add a new object to a existering Ray Caster
@@ -31,8 +32,8 @@ CollisionDetection.update = function(){
 
 	var touchReturn ="";
 
-	for (var i = raycasters.length - 1; i >= 0; i--) {
-		var temp = raycasters[i];
+	for (var i = rraycastersIDS.length - 1; i >= 0; i--) {
+		var temp = raycasters[raycastersIDS[i]];
 		temp.CollisionCheck();
 		if(temp.isTouching.length>0){
 		touchReturn = touchReturn+temp.name+":"+temp.isTouching+";";
