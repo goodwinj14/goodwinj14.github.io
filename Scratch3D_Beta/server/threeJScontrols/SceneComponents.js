@@ -644,9 +644,10 @@ SCENECOMPONENTS.rotate = function(shape_ID, direction, degrees){
 	if(shape!=null){
 		var ion = THREE.Math.degToRad(degrees);
 
-		if(direction=="Y"){shape.rotation.y = (shape.rotation.y + ion); shape.__dirtyPosition = true;}
-		else if(direction=="X"){shape.rotation.x = (shape.rotation.x + ion); shape.__dirtyPosition = true;}
-		else if(direction=="Z"){shape.rotation.z = (shape.rotation.z + ion); shape.__dirtyPosition = true;}
+		if(direction=="Y"){shape.rotation.y = (shape.rotation.y + ion);}
+		else if(direction=="X"){shape.rotation.x = (shape.rotation.x + ion);}
+		else if(direction=="Z"){shape.rotation.z = (shape.rotation.z + ion);}
+		shape.__dirtyPosition = true;
 	}
 }
 SCENECOMPONENTS.getCharecter = function(charecterID){
