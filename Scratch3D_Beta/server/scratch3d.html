@@ -446,7 +446,6 @@
 		function render(){
 			var delta = 0.75*clock.getDelta();
 			CollisionDetection.update();
-			SCENE.simulate(); // run physics
 			if(TrackBallControls){
 				RENDERER.render(SCENE, CAMERA);
 
@@ -471,7 +470,7 @@
 			//TWEEN.update();
 		
 			
-			
+			SCENE.simulate(); // run physics
 			if(objControls!=null){
 				objControls.update(clock.getDelta());
 			}
