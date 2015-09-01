@@ -647,7 +647,7 @@ SCENECOMPONENTS.rotate = function(shape_ID, direction, degrees){
 		if(direction=="Y"){shape.rotation.y = (shape.rotation.y + ion);}
 		else if(direction=="X"){shape.rotation.x = (shape.rotation.x + ion);}
 		else if(direction=="Z"){shape.rotation.z = (shape.rotation.z + ion);}
-		shape.__dirtyPosition = true;
+		shape.__dirtyRotation = true;
 	}
 }
 SCENECOMPONENTS.getCharecter = function(charecterID){
