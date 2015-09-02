@@ -464,7 +464,7 @@ SCENECOMPONENTS.setMaterialTo = function(materialID, objectID, scene){
 	if(material!=null && object!=null){
 		if(materialID.indexOf("Physics") > -1){
 			
-			temp = new Physijs.BoxMesh( object.geometry, material,0);
+			temp = new Physijs.BoxMesh( object.geometry, material);
 			temp.position.x = object.position.x;
 			temp.position.y = object.position.y;
 			temp.position.z = object.position.z;
