@@ -278,6 +278,16 @@
 					SCENECOMPONENTS.setWeight(paramsArray[0], paramsArray[1]);
 				}
 			}
+			if(commandKey == "SETLINEARVELOCITY"){
+				if(SCENE!=null){
+					SCENECOMPONENTS.setLinearVelocity(paramsArray[0], paramsArray[1], paramsArray[2], paramsArray[3]);
+				}
+			}
+			if(commandKey == "SETANGULARVELOCITY"){
+				if(SCENE!=null){
+					SCENECOMPONENTS.setAngularVelocity(paramsArray[0], paramsArray[1], paramsArray[2], paramsArray[3]);
+				}
+			}
 			if(commandKey == "APPENDRAYCASTER"){
 				if(SCENE!=null){
 					if(CollisionDetection.messageSource==null || CollisionDetection.origin==null){

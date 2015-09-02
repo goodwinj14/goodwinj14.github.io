@@ -285,6 +285,16 @@
       win.postMessage(message, liveURL);
   }
 
+  ext.setLinearVelocity = function(objID, x, y, z){
+    var message = "SETLINEARVELOCITY_"+objID+','+x+','+y+','+z;
+      win.postMessage(message, liveURL);
+  }
+
+  ext.setAngularVelocity = function(objID, x, y, z){
+    var message = "SETANGULARVELOCITY_"+objID+','+x+','+y+','+z;
+      win.postMessage(message, liveURL);
+  }
+
   ext.isTouching = function(objectIdOne, ObjectIdTwo){
       if(raycasters[objectIdOne]!=null){
         if(raycasters[objectIdOne].indexOf(ObjectIdTwo)>=0){
@@ -313,6 +323,8 @@
         return false;
       }
   }
+
+
 
 	ext.key_Pressed = function(key) {
        // Reset alarm_went_off if it is true, and return true
@@ -648,6 +660,8 @@
       ['', "Physics, Set Friction Of: %s To: %n", "setFriction","Variable","0.8"],
       ['', "Physics, Set Restitution Of: %s To: %n", "setRestitution","Variable","0.8"],
       ['', "Physics, Set Weight Of: %s To: %n", "setWeight","Variable","2"],
+      ['', "Physics, Set Linear Velocity Of: %s To X: %n Y: %n Z: %n", "setLinearVelocity","Variable","0","0","0"],
+      ['', "Physics, Set Angular Velocity Of: %s To: %n", "setAngularVelocity","Variable","0","0","0"],
       ['b', "%s Touching %s", "isTouching","Variable","Variable"], 
         ],
 		

@@ -457,6 +457,25 @@ SCENECOMPONENTS.setWeight = function(objectID, weight){
 	}
 }
 
+//Sets the Linear Velocity of a physics object
+//Object must have a physics material applyed to it for this function to work
+SCENECOMPONENTS.setLinearVelocity = function(objectID, x, y, z){
+	var shape = SHAPES[objectID];
+	if(shape._physijs != null){
+				shape.setLinearVelocity(new THREE.Vector3(x,y,z));
+				SHAPES[objectID] = shape;
+	}
+}
+//Sets the Linear Velocity of a physics object
+//Object must have a physics material applyed to it for this function to work
+SCENECOMPONENTS.setLinearVelocity = function(objectID, x, y, z){
+	var shape = SHAPES[objectID];
+	if(shape._physijs != null){
+				shape.setAngularVelocity(new THREE.Vector3(x,y,z));
+				SHAPES[objectID] = shape;
+	}
+}
+
 SCENECOMPONENTS.setMaterialTo = function(materialID, objectID, scene){
 	var material = MATERIALS[materialID];
 	var object = SHAPES[objectID];
