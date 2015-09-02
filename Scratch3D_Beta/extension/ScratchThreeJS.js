@@ -661,7 +661,7 @@
       ['', "Physics, Set Restitution Of: %s To: %n", "setRestitution","Variable","0.8"],
       ['', "Physics, Set Weight Of: %s To: %n", "setWeight","Variable","2"],
       ['', "Physics, Set Linear Velocity Of: %s To X: %n Y: %n Z: %n", "setLinearVelocity","Variable","0","0","0"],
-      ['', "Physics, Set Angular Velocity Of: %s To: %n", "setAngularVelocity","Variable","0","0","0"],
+      ['', "Physics, Set Angular Velocity Of: %s To X: %n Y: %n Z: %n", "setAngularVelocity","Variable","0","0","0"],
       ['b', "%s Touching %s", "isTouching","Variable","Variable"], 
         ],
 		
