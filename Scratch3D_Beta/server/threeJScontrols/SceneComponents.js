@@ -468,7 +468,7 @@ SCENECOMPONENTS.setLinearVelocity = function(objectID, x, y, z){
 }
 //Sets the Linear Velocity of a physics object
 //Object must have a physics material applyed to it for this function to work
-SCENECOMPONENTS.setLinearVelocity = function(objectID, x, y, z){
+SCENECOMPONENTS.setAngularVelocity = function(objectID, x, y, z){
 	var shape = SHAPES[objectID];
 	if(shape._physijs != null){
 				shape.setAngularVelocity(new THREE.Vector3(x,y,z));
