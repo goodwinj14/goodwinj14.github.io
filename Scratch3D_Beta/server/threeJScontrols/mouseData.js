@@ -1,5 +1,5 @@
 self.addEventListener('message', function(e) {
-  if(e.data=="INIT"){
+  if(e.data=="start"){
     init();
   }
 }, false);

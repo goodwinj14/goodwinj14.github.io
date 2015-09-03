@@ -330,7 +330,7 @@
 			console.log("Init Window");
 			var mouseWorker = new Worker("threeJScontrols/mouseData.js");
 			console.log(mouseWorker);
-			self.postMessage("INIT");
+			self.postMessage("start");
 			mouseWorker.addEventListener('message', function(e) {
 				alert(e.data);
 			}, false);
