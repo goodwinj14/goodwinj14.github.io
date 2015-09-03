@@ -328,13 +328,13 @@
 		
 		function init_window(sceneStyle){
 			console.log("Init Window");
-			var mouseWorker = new Worker("threeJScontrols/mouseData.js");
+			var mouseWorker = new Worker("mouseData.js");
 			
 			mouseWorker.addEventListener('message', function(e) {
   			console.log('Worker said: ', e.data);
 			}, false);
 			console.log(mouseWorker);
-			mouseWorker.postMessage("start");
+			mouseWorker.postMessage('start');
 			
 
 			init_Scene(sceneStyle);

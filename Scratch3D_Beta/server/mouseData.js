@@ -3,5 +3,5 @@ self.addEventListener('message', function(e) {
 }, false);
 
 function init(){
-  self.postMessage("A successfull call to a web worker");
+  self.postMessage('A successfull call to a web worker');
 }
