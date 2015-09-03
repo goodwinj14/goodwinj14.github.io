@@ -331,7 +331,7 @@
 			var mouseWorker = new Worker("threeJScontrols/mouseData.js");
 			
 			mouseWorker.addEventListener('message', function(e) {
-				alert(e.data);
+  			console.log('Worker said: ', e.data);
 			}, false);
 			console.log(mouseWorker);
 			mouseWorker.postMessage("start");
