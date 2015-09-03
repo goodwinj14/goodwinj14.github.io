@@ -336,7 +336,10 @@
 			if(RENDERER==null || SCENE==null || CAMERA==null){
 				return false;
 			}else {firstRender(SCENE, CAMERA); animate(); console.log("RUNN CALLED"); return true;}
-			
+			var mouseWorker = new Worker("threeJScontrols/mouseData.js");
+			worker.addEventListener('message', function(e) {
+				alert(e.data);
+			}, false);
 		}
 		
 		//INITIALIZES THE RENDERER OBJECT

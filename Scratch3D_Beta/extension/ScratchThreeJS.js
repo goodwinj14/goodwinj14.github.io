@@ -23,6 +23,15 @@
   //and all the objects that raycaster is checking
   var raycasters = [];
 
+  /*
+  **Mouse Controles
+  */
+  var mouseX =null;
+  var mouseY =null;
+  var mouseClick = false;
+  var mouseDown = false;
+  var mouseUp = false;
+
 	//var liveURL = "http://localhost:8888/main.html";
 	var shapes = [];
 	var materials = [];
@@ -72,6 +81,8 @@
           };
           collisions = new Object({data: collisionData});
           console.log("collisions",collisions);
+        }else if(commandKey=="MOUSEEVENT"){
+          
         }
     	}
 		win = window.open (liveURL, "", "width=window.width, height=window.height");

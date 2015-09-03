@@ -1,0 +1,9 @@
+self.addEventListener('message', function(e) {
+  if(e.data=="init"){
+    init();
+  }
+}, false);
+
+function init(){
+  self.postMessage("A successfull call to a web worker");
+}
