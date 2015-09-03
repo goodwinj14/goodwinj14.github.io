@@ -328,13 +328,13 @@
 		
 		function init_window(sceneStyle){
 			console.log("Init Window");
-			var worker = new Worker('mouseData.js');
+			var mouseWorker = new Worker('mouseData.js');
 
-worker.addEventListener('message', function(e) {
-  console.log('Worker said: ', e.data);
-}, false);
+			mouseWorker.addEventListener('message', function(e) {
+  			console.log('Worker said: ', e.data);
+			}, false);
 
-worker.postMessage('Hello World'); // Send data to our worker.
+			mouseWorker.postMessage('INIT'); // Send data to our worker.
 			
 
 			init_Scene(sceneStyle);
