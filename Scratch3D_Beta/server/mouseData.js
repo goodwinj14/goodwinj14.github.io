@@ -5,10 +5,8 @@ self.addEventListener('message', function(e) {
 }, false);
 
 function init(){
-	self.addEventListener("click", click(), false);
+	window.addEventListener("click", function(e){
+			console.log("Window click notice");
+		 })
 	self.postMessage("A successfull web worker call");
-}
-
-function click(e) {
-    self.postMessage("Click From Web Worker");
 }
