@@ -26,9 +26,11 @@
   /*
   **Mouse Controles
   */
+  var getMouseData = false;
   var mouseX =null;
   var mouseY =null;
   var mouseClick = false;
+  var mousedbClick = false;
   var mouseDown = false;
   var mouseUp = false;
 
@@ -82,7 +84,7 @@
           collisions = new Object({data: collisionData});
           console.log("collisions",collisions);
         }else if(commandKey=="MOUSEEVENT"){
-          
+
         }
     	}
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
@@ -625,6 +627,13 @@
        return false;
     };
 
+    ext.mouseEvent = function(event){
+      console.log(event);
+    }
+
+    ext.mousePostion = function(axis){
+      console.log(axis);
+    }
 	// Block and block menu descriptions
     var descriptor = {
         blocks: [
@@ -655,7 +664,7 @@
 
       ['', "Move %s %m.Move %n Steps" , 'moveShape', "Variable", "Left", 1],
 
-      ['', "Rotate %s %m.Axis Degrees: %n " , 'rotateShape', "Variable", "Y", 1],
+      ['', "Rotate %s %m.Axis3 Degrees: %n " , 'rotateShape', "Variable", "Y", 1],
       
 			//Adds a smothe movment control to any given object
 			['', "Apply FPV Controls to Object: %s Move Speed: %n Turn Speed: %n" , 'applyObjControls', "Variable", "1", "2"],
@@ -665,6 +674,9 @@
 
 			['', 'Scale %s X: %n Y: %n Z: %n', 'scaleObj',"Variable", "1.0", "1.0", "1.0"],
 			['h', "When %m.Keys  Pressed" , 'key_Pressed', "space"],
+      'h', "When Mouse %m.MouseOptions", 'mouseEvent', 'Click'],
+      ['r', "%s Mouse %m.Axis2", "mousePostion","X"], 
+      
 			['r', "Load Object URL: %s", "loadOBJ","http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/shiptriangle.obj"],
       ['', "Set Scene Gravity X: %n Y: %n Z: %n", "setGravity","0","-50","0"],
       ['r', "New Physics Material %m.Materials Friction: %n Restitution %n", 'createPhysicsMaterial','MeshBasicMaterial','0.8','0.3'],
@@ -673,7 +685,8 @@
       ['', "Physics, Set Weight Of: %s To: %n", "setWeight","Variable","2"],
       ['', "Physics, Set Linear Velocity Of: %s To X: %n Y: %n Z: %n", "setLinearVelocity","Variable","0","0","0"],
       ['', "Physics, Set Angular Velocity Of: %s To X: %n Y: %n Z: %n", "setAngularVelocity","Variable","0","0","0"],
-      ['b', "%s Touching %s", "isTouching","Variable","Variable"], 
+      ['b', "%s Touching %s", "isTouching","Variable","Variable"],
+       
         ],
 		
 		menus: {
@@ -692,7 +705,9 @@
 		    Keys: ['space', 'up arrow', 'down arrow', 'right arrow', 'left arrow', 'a',  'b',  'c',  'd',  'e',  'f',  'g',  'h', 'i',  'j',  'k',  'l',  'm',  'n',  'o',  'p',  'q',  'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',], 
 		    Charecters: ['Marine','Car', 'Cat', 'Cat1', 'Lego Vader', 'Pirate Ship'],
 		    Lights: ['Ambient','Directional','Point'],
-        Axis: ['X','Y','Z'],
+        Axis3: ['X','Y','Z'],
+        Axis2: ['X','Y'],
+        MouseOptions: ['Click', 'Down', 'Up', 'Double Click'],
         }
     };
 
