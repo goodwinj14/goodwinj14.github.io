@@ -64,7 +64,7 @@
 		//win = window.open (liveURL, "", "width=window.width, height=window.height");
 		//Test URLS
 		window.addEventListener("message", receiveMessage, false);
-		
+		console.log("new message", event);
 		function receiveMessage()
 		{
       //The command key is experes by KEYNAME_ the key name allows use to know what the message 

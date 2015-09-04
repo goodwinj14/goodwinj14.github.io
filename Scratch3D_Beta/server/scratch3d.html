@@ -380,7 +380,8 @@
 
 		function updateMouseData(){
 			if(origin!=null){
-			messageSource.postMessage("MOUSEEVENT_"+mouseData,origin);
+				var data = mouseData;
+			messageSource.postMessage(data,origin);
 			}
 		}
 		/*
