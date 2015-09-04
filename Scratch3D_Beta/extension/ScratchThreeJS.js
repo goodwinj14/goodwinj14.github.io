@@ -89,7 +89,7 @@
           collisions = new Object({data: collisionData});
           console.log("collisions",collisions);
         }else if(commandKey=="MOUSEEVENT"){
-
+          console.log(event.data);
         }
     	}
 		win = window.open (liveURL, "", "width=window.width, height=window.height");

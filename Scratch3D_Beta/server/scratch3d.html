@@ -360,23 +360,29 @@
 				mouseData.down = true;
 				mouseData.click = false;
 				mouseData.up = false;
-				console.log("Mouse Date", mouseData);
+				updateMouseData();
 				 });
 		window.addEventListener("mouseup", function(e){
 				mouseData.up = true;
 				mouseData.click = true;
 				mouseData.down = false;
-				console.log("Mouse Date", mouseData);
+				updateMouseData();
 		 		});
 		window.addEventListener("dblclick", function(e){
 				mouseData.dblclick = false;
-				console.log("Mouse Date", mouseData);
+				updateMouseData();
 		 		});
 		window.addEventListener("mousemove", function(e){
 				mouseData.clientX = e.clientX;
 				mouseData.clientY = e.clientY;
-				console.log("Mouse Date", mouseData);
+				updateMouseData();
 		 		});
+
+		function updateMouseData(){
+			if(origin!=null){
+			messageSource.postMessage("MOUSEEVENT_"+mouseData,origin);
+			}
+		}
 		/*
 		*THE MAIN INTI FUNCTIONS FOR PRE-SETUP OF THE RENDERER, SCENE AND CAMERA
 		*/
