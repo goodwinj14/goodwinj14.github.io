@@ -321,22 +321,19 @@
 			messageSource.postMessage("KEYSTROKE_"+e.keyCode,origin);
 		 });
 		
+		/*
+		*Detecs Mouse events in child window and passes them to the parent window to 
+		*Be proccesed by scratch.
+		*/
+
+		window.addEventListener("click", function(e){
+			console.log("Window click notice");
+		 });
+		
 		
 		/*
 		*THE MAIN INTI FUNCTIONS FOR PRE-SETUP OF THE RENDERER, SCENE AND CAMERA
 		*/
-		
-		function init_window(sceneStyle){
-			console.log("Init Window");
-			var mouseWorker = new Worker('mouseData.js');
-
-			mouseWorker.addEventListener('message', function(e) {
-  			console.log('Worker said: ', e.data);
-			}, false);
-
-			mouseWorker.postMessage('INIT'); // Send data to our worker.
-			
-
 			init_Scene(sceneStyle);
 			init_Render();
 			init_Camera(6,8,5.6);
