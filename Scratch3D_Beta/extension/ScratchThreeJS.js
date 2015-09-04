@@ -639,26 +639,34 @@
     ext.mouseEvent = function(event){
       if(event == "Click"){
         if(mouseData!=null){
-       console.log("Click",mouseData.click);
-       mouseData.click = false;
-       return true;
+        if(mouseData.click){
+         console.log("Click",mouseData.click);
+         mouseData.click = false;
+         return true;
+          }
         }
       }else if(event == "Down"){
         if(mouseData!=null){
-        console.log("Down",mouseData.down);
-        return true;
+          if(mouseData.down){
+          console.log("Down",mouseData.down);
+          return true;
+          }
         }
       }else if(event == "Up"){
         if(mouseData!=null){
-        console.log("Up",mouseData.up);
-        mouseData.up = true;
-        return true;
+          if(mouseData.up){
+            console.log("Up",mouseData.up);
+            mouseData.up = true;
+            return true;
+          }
         }
       }else if(event == "Double Click"){
         if(mouseData!=null){
-        console.log("Douple Click",mouseData.dblclick);
-        mouseData.dblclick = false;
-        return true;
+          if(mouseData.dblclick){
+            console.log("Douple Click",mouseData.dblclick);
+            mouseData.dblclick = false;
+            return true;
+          }
         }
       }
     }
