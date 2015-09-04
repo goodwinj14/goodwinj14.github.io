@@ -70,8 +70,14 @@
       //The command key is experes by KEYNAME_ the key name allows use to know what the message 
       //Type is.
       //Retrevies the command Key of the message denoting which function to call
-      var commandKey = event.data.split("_")[0];
-      
+      var commandKey = null;
+
+      if(event.data.eventType!=null){
+     if(event.data.eventType=="MOUSEEVENT"){
+          console.log("Mouse Event",event);
+        }
+      }else{
+      commandKey = event.data.split("_")[0];
       //the actual data to be procesed by the extention
       var data = event.data.split("_")[1];
         if(commandKey=="KEYSTROKE"){
@@ -87,8 +93,7 @@
           };
           collisions = new Object({data: collisionData});
           console.log("collisions",collisions);
-        }else if(event.data.eventType=="MOUSEEVENT"){
-          console.log("Mouse Event",event);
+        }
         }
     	}
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
