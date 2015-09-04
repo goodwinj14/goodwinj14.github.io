@@ -59,7 +59,7 @@
     	//////////////////
 
     	//Mouse Controle Data
-    	var mouseData = {click: false, dblclick: false, mousedown:false, mouseup: false, clientX: 0, clientX: 0};
+    	var mouseData = {eventType: "MOUSEEVENT", click: false, dblclick: false, mousedown:false, mouseup: false, clientX: 0, clientX: 0};
     	/////////////////////
 		var RENDERER = null;
 		var SCENE = null;
@@ -380,8 +380,7 @@
 
 		function updateMouseData(){
 			if(origin!=null){
-				var data = mouseData;
-			messageSource.postMessage("MOUSEEVENT_",origin,data);
+			messageSource.postMessage(mouseData,origin, false);
 			}
 		}
 		/*

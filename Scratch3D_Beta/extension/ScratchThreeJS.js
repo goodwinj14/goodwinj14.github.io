@@ -67,7 +67,6 @@
 		
 		function receiveMessage()
 		{
-      console.log("new message", event);
       //The command key is experes by KEYNAME_ the key name allows use to know what the message 
       //Type is.
       //Retrevies the command Key of the message denoting which function to call
@@ -88,8 +87,8 @@
           };
           collisions = new Object({data: collisionData});
           console.log("collisions",collisions);
-        }else if(commandKey=="MOUSEEVENT"){
-          console.log(event);
+        }else if(event.data.eventType=="MOUSEEVENT"){
+          console.log("Mouse Event",event);
         }
     	}
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
