@@ -76,7 +76,6 @@
       if(event.data.eventType!=null){
      if(event.data.eventType=="MOUSEEVENT"){
          mouseData = event.data;
-         console.log("Mouse Data", mouseData);
         }
       }else{
       commandKey = event.data.split("_")[0];
@@ -90,7 +89,6 @@
           console.log("objSpilt ;", objSpilt);
           for (var i = objSpilt.length - 2; i >= 0; i--) {
             temp = objSpilt[i].split(":");
-            console.log("objSpilt :", temp);
             collisionData[temp[0]] = temp[1].split(",");
           };
           collisions = new Object({data: collisionData});
@@ -640,13 +638,21 @@
 
     ext.mouseEvent = function(event){
       if(event = "Click"){
+        if(mouseData!=null){
        console.log(mouseData.click);
+        }
       }else if(event = "Down"){
+        if(mouseData!=null){
         console.log(mouseData.down);
+        }
       }else if(event = "Up"){
+        if(mouseData!=null){
         console.log(mouseData.up);
+        }
       }else if(event = "Double Click"){
+        if(mouseData!=null){
         console.log(mouseData.dblclick);
+        }
       }
     }
 
