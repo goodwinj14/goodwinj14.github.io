@@ -26,6 +26,7 @@
   /*
   **Mouse Controles
   */
+  var mouseData = null;
   var getMouseData = false;
   var getMousePostion = false;
   var getMouseClicked = false;
@@ -74,7 +75,8 @@
 
       if(event.data.eventType!=null){
      if(event.data.eventType=="MOUSEEVENT"){
-          console.log("Mouse Event",event);
+         mouseData = event.data;
+         console.log("Mouse Data", mouseData);
         }
       }else{
       commandKey = event.data.split("_")[0];
