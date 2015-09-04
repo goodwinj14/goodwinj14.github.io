@@ -640,6 +640,7 @@
       if(event == "Click"){
         if(mouseData!=null){
        console.log("Click",mouseData.click);
+       mouseData.click = false;
         }
       }else if(event == "Down"){
         if(mouseData!=null){
@@ -648,10 +649,12 @@
       }else if(event == "Up"){
         if(mouseData!=null){
         console.log("Up",mouseData.up);
+        mouseData.up = true;
         }
       }else if(event == "Double Click"){
         if(mouseData!=null){
         console.log("Douple Click",mouseData.dblclick);
+        mouseData.dblclick = false;
         }
       }
     }
