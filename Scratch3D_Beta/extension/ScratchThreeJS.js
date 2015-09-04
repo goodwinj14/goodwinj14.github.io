@@ -679,20 +679,12 @@
     }
 
     ext.mousePostion = function(axis){
-      if(!getMousePostion){
-        //There may be a delay on the message being sent from three.js window to scratch window
-        //This could will resualt in data not being returned on first call also if statments will cause this
-        var message = "PullMousePostion_";
-        win.postMessage(message, liveURL);
-        getMousePostion = true;
-      }else{
         if(axis=="X"){
-            //Get x data from object
+            return mouseData.clientX;
         }else{
-            //Get y data from object
+            return mouseData.clientY;
         }
-      }
-      console.log(axis);
+
     }
 	// Block and block menu descriptions
     var descriptor = {
