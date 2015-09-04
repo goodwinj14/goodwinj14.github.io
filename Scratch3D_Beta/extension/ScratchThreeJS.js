@@ -640,41 +640,13 @@
 
     ext.mouseEvent = function(event){
       if(event = "Click"){
-        //Checks to see if event listener has been added
-        if(!getMouseClicked){
-          var message = "PullMouseClicked_";
-          win.postMessage(message, liveURL);
-          getMouseClicked = true;
-        }else{
-          //return current click state
-        }
+       console.log(mouseData.click);
       }else if(event = "Down"){
-        //Checks to see if event listener has been added
-        if(!getMouseDown){
-          var message = "PullMouseDown_";
-          win.postMessage(message, liveURL);
-          getMouseDown = true;
-        }else{
-          //return current click state
-        }
+        console.log(mouseData.down);
       }else if(event = "Up"){
-        //Checks to see if event listener has been added
-        if(!getMouseUp){
-          var message = "PullMouseUp_";
-          win.postMessage(message, liveURL);
-          getMouseUp = true;
-        }else{
-          //return current click state
-        }
+        console.log(mouseData.up);
       }else if(event = "Double Click"){
-        //Checks to see if event listener has been added
-        if(!getMouseDoubleClicked){
-          var message = "PullMouseDoubleClicked_";
-          win.postMessage(message, liveURL);
-          getMouseDoubleClicked = true;
-        }else{
-          //return current click state
-        }
+        console.log(mouseData.dblclick);
       }
     }
 
