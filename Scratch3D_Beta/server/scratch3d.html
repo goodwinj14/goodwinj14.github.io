@@ -359,12 +359,14 @@
 		window.addEventListener("mousedown", function(e){
 				mouseData.down = true;
 				mouseData.click = false;
+				mouseData.dblclick = false;
 				mouseData.up = false;
 				updateMouseData();
 				 });
 		window.addEventListener("mouseup", function(e){
 				mouseData.up = true;
 				mouseData.click = true;
+				mouseData.dblclick = false
 				mouseData.down = false;
 				updateMouseData();
 		 		});
@@ -373,6 +375,10 @@
 				updateMouseData();
 		 		});
 		window.addEventListener("mousemove", function(e){
+				mouseData.up = false;
+				mouseData.click = false;
+				mouseData.dblclick = false
+				mouseData.down = false;
 				mouseData.clientX = e.clientX;
 				mouseData.clientY = e.clientY;
 				updateMouseData();
