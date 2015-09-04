@@ -326,18 +326,29 @@
 		*Be proccesed by scratch.
 		*/
 
-		
-		
-		
+		window.addEventListener("click", function(e){
+			console.log("Window click notice");
+		 });
+		window.addEventListener("dblclick", function(e){
+			console.log("Window dblclick notice");
+		 });
+		window.addEventListener("mousedown", function(e){
+			console.log("Window mousedown notice");
+		 });
+		window.addEventListener("mouseup", function(e){
+			console.log("Window mouseup notice");
+		 });
+		window.addEventListener("mousemove", function(e){
+			console.log("Window mouse x:"+e.clientX + " Y: " e.clientY);
+		 });
+
 		/*
 		*THE MAIN INTI FUNCTIONS FOR PRE-SETUP OF THE RENDERER, SCENE AND CAMERA
 		*/
 
 		function init_window(sceneStyle){
 			console.log("Init Window");
-			window.addEventListener("click", function(e){
-			console.log("Window click notice");
-		 })
+			
   			
 			var mouseWorker = new Worker('mouseData.js');
 
