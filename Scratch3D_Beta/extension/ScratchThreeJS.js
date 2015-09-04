@@ -27,6 +27,11 @@
   **Mouse Controles
   */
   var getMouseData = false;
+  var getMousePostion = false;
+  var getMouseClicked = false;
+  var getMouseUp = false;
+  var getMouseDown = false;
+  var getMouseDoubleClicked = false;
   var mouseX =null;
   var mouseY =null;
   var mouseClick = false;
@@ -628,10 +633,59 @@
     };
 
     ext.mouseEvent = function(event){
-      console.log(event);
+      if(event = "Click"){
+        //Checks to see if event listener has been added
+        if(!getMouseClicked){
+          var message = "PullMouseClicked_";
+          win.postMessage(message, liveURL);
+          getMouseClicked = true;
+        }else{
+          //return current click state
+        }
+      }else if(event = "Down"){
+        //Checks to see if event listener has been added
+        if(!getMouseDown){
+          var message = "PullMouseDown_";
+          win.postMessage(message, liveURL);
+          getMouseDown = true;
+        }else{
+          //return current click state
+        }
+      }else if(event = "Up"){
+        //Checks to see if event listener has been added
+        if(!getMouseUp){
+          var message = "PullMouseUp_";
+          win.postMessage(message, liveURL);
+          getMouseUp = true;
+        }else{
+          //return current click state
+        }
+      }else if(event = "Double Click"){
+        //Checks to see if event listener has been added
+        if(!getMouseDoubleClicked){
+          var message = "PullMouseDoubleClicked_";
+          win.postMessage(message, liveURL);
+          getMouseDoubleClicked = true;
+        }else{
+          //return current click state
+        }
+      }
     }
 
     ext.mousePostion = function(axis){
+      if(!getMousePostion){
+        //There may be a delay on the message being sent from three.js window to scratch window
+        //This could will resualt in data not being returned on first call also if statments will cause this
+        var message = "PullMousePostion_";
+        win.postMessage(message, liveURL);
+        getMousePostion = true;
+      }else{
+        if(axis=="X"){
+            //Get x data from object
+        }else{
+            //Get y data from object
+        }
+      }
       console.log(axis);
     }
 	// Block and block menu descriptions

@@ -101,6 +101,39 @@
 			if(commandKey == "INIT"){
 				init_window(paramsArray);
 			}
+			//Adds event listeners to get x and y coordinets of mouse pointer
+			if(commandKey == "PullMousePostion"){
+				window.addEventListener("mousemove", function(e){
+				console.log("Window mouse x: ",e.clientX);
+				console.log("Window mouse Y: ",e.clientY);
+				
+		 		});
+			}
+
+		
+		
+		
+		
+			if(commandKey == "PullMouseClicked"){
+				window.addEventListener("click", function(e){
+				console.log("Window click notice");
+				 });
+			}
+			if(commandKey == "PullMouseDown"){
+				window.addEventListener("mousedown", function(e){
+				console.log("Window mousedown notice");
+				 });
+			}
+			if(commandKey == "PullMouseUp"){
+				window.addEventListener("mouseup", function(e){
+				console.log("Window mouseup notice");
+		 		});
+			}
+			if(commandKey == "PullMouseDoubleClicked"){
+				window.addEventListener("dblclick", function(e){
+				console.log("Window dblclick notice");
+		 		});
+			}
 			//CAMERAROTATE command tag is associated with Rotate Camera Block
 			if(commandKey == "CAMERAROTATE"){
 				if(CAMERA!=null){
@@ -319,29 +352,6 @@
 
 		window.addEventListener("keydown", function(e){
 			messageSource.postMessage("KEYSTROKE_"+e.keyCode,origin);
-		 });
-		
-		/*
-		*Detecs Mouse events in child window and passes them to the parent window to 
-		*Be proccesed by scratch.
-		*/
-
-		window.addEventListener("click", function(e){
-			console.log("Window click notice");
-		 });
-		window.addEventListener("dblclick", function(e){
-			console.log("Window dblclick notice");
-		 });
-		window.addEventListener("mousedown", function(e){
-			console.log("Window mousedown notice");
-		 });
-		window.addEventListener("mouseup", function(e){
-			console.log("Window mouseup notice");
-		 });
-		window.addEventListener("mousemove", function(e){
-			console.log("Window mouse x: ",e.clientX);
-			console.log("Window mouse Y: ",e.clientY);
-				
 		 });
 
 		/*
