@@ -639,19 +639,19 @@
     ext.mouseEvent = function(event){
       if(event = "Click"){
         if(mouseData!=null){
-       console.log(mouseData.click);
+       console.log("Click",mouseData.click);
         }
       }else if(event = "Down"){
         if(mouseData!=null){
-        console.log(mouseData.down);
+        console.log("Down",mouseData.down);
         }
       }else if(event = "Up"){
         if(mouseData!=null){
-        console.log(mouseData.up);
+        console.log("Up",mouseData.up);
         }
       }else if(event = "Double Click"){
         if(mouseData!=null){
-        console.log(mouseData.dblclick);
+        console.log("Douple Click",mouseData.dblclick);
         }
       }
     }
