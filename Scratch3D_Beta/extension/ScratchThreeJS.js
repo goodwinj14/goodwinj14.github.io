@@ -74,7 +74,6 @@
       
       //the actual data to be procesed by the extention
       var data = event.data.split("_")[1];
-      console.log("Changed",data);
         if(commandKey=="KEYSTROKE"){
   			lastKeyEvent = data;
         }else if(commandKey=="RAYCASTTOUCH"){
@@ -89,7 +88,7 @@
           collisions = new Object({data: collisionData});
           console.log("collisions",collisions);
         }else if(commandKey=="MOUSEEVENT"){
-          console.log(event.data);
+          console.log(event);
         }
     	}
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
