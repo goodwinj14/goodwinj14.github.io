@@ -396,6 +396,7 @@
 				updateMouseData();
 				 });
 		window.addEventListener("mouseup", function(e){
+				mouseData.clickObjectID = null;
 				mouseData.up = true;
 				mouseData.click = true;
 				mouseData.dblclick = false
@@ -403,6 +404,7 @@
 				updateMouseData();
 		 		});
 		window.addEventListener("dblclick", function(e){
+				mouseData.clickObjectID = null;
 				mouseData.dblclick = true;
 				updateMouseData();
 		 		});
