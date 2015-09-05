@@ -356,7 +356,16 @@
 			messageSource.postMessage("KEYSTROKE_"+e.keyCode,origin);
 		 });
 
+		var objects = [];
+		var object = new THREE.Mesh( new THREE.BoxGeometry( 1, 1, 1 ), new THREE.MeshBasicMaterial( { color: Math.random() * 0xffffff, opacity: 0.5 } ) );
+		objects.push[object]
 		window.addEventListener("mousedown", function(e){  
+				var raycaster = new THREE.Raycaster();
+				var mouse = new THREE.Vector2();
+				mouse.x = ( event.clientX / renderer.domElement.width ) * 2 - 1;
+				mouse.y = - ( event.clientY / renderer.domElement.height ) * 2 + 1;
+				raycaster.setFromCamera( mouse, CAMERA );
+
 				mouseData.down = true;
 				mouseData.click = false;
 				mouseData.dblclick = false;
@@ -409,7 +418,6 @@
 		function init_Render(){
 			console.log("init_Render", window.devicePixelRatio );
 			RENDERER = new THREE.WebGLRenderer({ alpha: alpha });
-			RENDERER.setPixelRatio(1);
 			RENDERER.setSize(window.innerWidth, window.innerHeight);
 			document.body.appendChild(RENDERER.domElement);
 		}
