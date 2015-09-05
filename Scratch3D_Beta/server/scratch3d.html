@@ -365,7 +365,7 @@
 		function cast(){
 			mouse.x = ( event.clientX / RENDERER.domElement.width ) * 2 - 1;
 				mouse.y = - ( event.clientY / RENDERER.domElement.height ) * 2 + 1;
-				caster.setFromCamera(mouse, CAMERA);
+				console.log(caster);
 				var intersects = caster.intersectObjects( objects );
 				if ( intersects.length > 0 ) {
 
