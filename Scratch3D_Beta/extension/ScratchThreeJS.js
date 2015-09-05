@@ -689,7 +689,9 @@
         win.postMessage(message, liveURL);
       
       if(mouseData.clickObjectID!=null){
-      return mouseData.clickObjectID;
+      var objID = mouseData.clickObjectID;
+      mouseData.clickObjectID = null;
+      return objID;
       }
     }
 	// Block and block menu descriptions
