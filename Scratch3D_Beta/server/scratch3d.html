@@ -386,7 +386,7 @@
 					mouseData.clickObjectID = intersects[ 0 ].object.name;
 					updateMouseData();
 				}else{
-					ouseData.clickObjectID = null;
+					mouseData.clickObjectID = null;
 				}
 				}
 				mouseData.down = true;
@@ -407,6 +407,7 @@
 				updateMouseData();
 		 		});
 		window.addEventListener("mousemove", function(e){
+				mouseData.clickObjectID = null;
 				mouseData.click = false;
 				mouseData.dblclick = false
 				mouseData.down = false;
