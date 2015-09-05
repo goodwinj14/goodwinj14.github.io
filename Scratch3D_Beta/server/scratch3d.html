@@ -385,6 +385,8 @@
 					intersects[ 0 ].object.material.color.setHex( Math.random() * 0xffffff );
 					mouseData.clickObjectID = intersects[ 0 ].object.name;
 					updateMouseData();
+				}else{
+					ouseData.clickObjectID = null;
 				}
 				}
 				mouseData.down = true;
