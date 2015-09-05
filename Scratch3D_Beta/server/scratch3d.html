@@ -65,6 +65,9 @@
     	var mouseData = {eventType: "MOUSEEVENT", click: false, dblclick: false, mousedown:false, mouseup: false, clientX: 0, clientX: 0};
     	/////////////////////
 		var RENDERER = null;
+		var objects = [];
+		var caster = new THREE.Raycaster();
+		var mouse = new THREE.Vector2();
 		var SCENE = null;
 		var CAMERA = null;
 		var clock = new THREE.Clock();
@@ -359,9 +362,7 @@
 			messageSource.postMessage("KEYSTROKE_"+e.keyCode,origin);
 		 });
 
-		var objects = [];
-		var caster = new THREE.Raycaster();
-		var mouse = new THREE.Vector2();
+		
 		function cast(){
 			mouse.x = ( event.clientX / RENDERER.domElement.width ) * 2 - 1;
 				mouse.y = - ( event.clientY / RENDERER.domElement.height ) * 2 + 1;
