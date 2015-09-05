@@ -62,7 +62,7 @@
     	//////////////////
 
     	//Mouse Controle Data
-    	var mouseData = {eventType: "MOUSEEVENT", click: false, dblclick: false, mousedown:false, mouseup: false, clientX: 0, clientX: 0};
+    	var mouseData = {eventType: "MOUSEEVENT", click: false, dblclick: false, mousedown:false, mouseup: false, clientX: 0, clientX: 0 clickObjectID: null};
 
     		//Gets objects that are clicked
     	var caster = new THREE.Raycaster();
@@ -372,9 +372,9 @@
 			messageSource.postMessage("KEYSTROKE_"+e.keyCode,origin);
 		 });
 
-		
-		function cast(){
-			mouse.x = ( event.clientX / RENDERER.domElement.width ) * 2 - 1;
+		window.addEventListener("mousedown", function(e){  
+				if(beginClickRayCatsing){
+				mouse.x = ( event.clientX / RENDERER.domElement.width ) * 2 - 1;
 				mouse.y = - ( event.clientY / RENDERER.domElement.height ) * 2 + 1;
 				console.log(caster);
 				caster.setFromCamera(mouse, CAMERA);
@@ -383,12 +383,8 @@
 				if ( intersects.length > 0 ) {
 					console.log("in If", intersects);
 					intersects[ 0 ].object.material.color.setHex( Math.random() * 0xffffff );
-
+					mouseData.clickObjectID = intersects[ 0 ].object.name;
 				}
-		}
-		window.addEventListener("mousedown", function(e){  
-				if(beginClickRayCatsing){
-					cast();
 				}
 				mouseData.down = true;
 				mouseData.click = false;
