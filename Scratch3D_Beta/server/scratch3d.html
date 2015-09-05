@@ -358,14 +358,20 @@
 
 		var objects = [];
 		var object = new THREE.Mesh( new THREE.BoxGeometry( 1, 1, 1 ), new THREE.MeshBasicMaterial( { color: Math.random() * 0xffffff, opacity: 0.5 } ) );
-		objects.push[object]
+		objects.push[object];
+		SCENE.add( object );
 		window.addEventListener("mousedown", function(e){  
 				var raycaster = new THREE.Raycaster();
 				var mouse = new THREE.Vector2();
 				mouse.x = ( event.clientX / renderer.domElement.width ) * 2 - 1;
 				mouse.y = - ( event.clientY / renderer.domElement.height ) * 2 + 1;
 				raycaster.setFromCamera( mouse, CAMERA );
+				var intersects = raycaster.intersectObjects( objects );
+				if ( intersects.length > 0 ) {
 
+					intersects[ 0 ].object.material.color.setHex( Math.random() * 0xffffff );
+
+				}
 				mouseData.down = true;
 				mouseData.click = false;
 				mouseData.dblclick = false;
