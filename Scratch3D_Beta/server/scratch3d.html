@@ -360,19 +360,21 @@
 		 });
 
 		var objects = [];
-		
-		window.addEventListener("mousedown", function(e){  
-				var raycaster = new THREE.Raycaster();
-				var mouse = new THREE.Vector2();
-				mouse.x = ( event.clientX / RENDERER.domElement.width ) * 2 - 1;
+		var caster = new THREE.Raycaster();
+		var mouse = new THREE.Vector2();
+		function cast(){
+			mouse.x = ( event.clientX / RENDERER.domElement.width ) * 2 - 1;
 				mouse.y = - ( event.clientY / RENDERER.domElement.height ) * 2 + 1;
-				raycaster.setFromCamera( mouse, CAMERA );
-				var intersects = raycaster.intersectObjects( objects );
+				caster.setFromCamera(mouse, CAMERA);
+				var intersects = caster.intersectObjects( objects );
 				if ( intersects.length > 0 ) {
 
 					intersects[ 0 ].object.material.color.setHex( Math.random() * 0xffffff );
 
 				}
+		}
+		window.addEventListener("mousedown", function(e){  
+				cast();
 				mouseData.down = true;
 				mouseData.click = false;
 				mouseData.dblclick = false;
