@@ -357,9 +357,7 @@
 		 });
 
 		var objects = [];
-		var object = new THREE.Mesh( new THREE.BoxGeometry( 1, 1, 1 ), new THREE.MeshBasicMaterial( { color: Math.random() * 0xffffff, opacity: 0.5 } ) );
-		objects.push[object];
-		SCENE.add( object );
+		
 		window.addEventListener("mousedown", function(e){  
 				var raycaster = new THREE.Raycaster();
 				var mouse = new THREE.Vector2();
@@ -516,6 +514,9 @@
 			//Scales Mesh resulting in a smother grass look gets the average between width and height (((parseInt(sceneStyle[1])+(parseInt(sceneStyle[1]))/2)
 			groundMesh.scale.multiplyScalar((parseInt(sceneStyle[2])+parseInt(sceneStyle[2]))/2);
 			SCENE.add(groundMesh);
+			var object = new THREE.Mesh( new THREE.BoxGeometry( 1, 1, 1 ), new THREE.MeshBasicMaterial( { color: Math.random() * 0xffffff, opacity: 0.5 } ) );
+		objects.push[object];
+		SCENE.add( object );
 			}
 			
 		}
