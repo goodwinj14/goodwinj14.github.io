@@ -382,13 +382,13 @@
 				console.log("out If", SCENECOMPONENTS.OBJECTS);
 				if ( intersects.length > 0 ) {
 					console.log("in If", caster);
-					intersects[ 0 ].object.material.color.setHex( Math.random() * 0xffffff );
 					mouseData.clickObjectID = intersects[ 0 ].object.name;
 					updateMouseData();
 				}else{
 					mouseData.clickObjectID = null;
 				}
 				}
+				console.log("Mouse Down");
 				mouseData.down = true;
 				mouseData.click = false;
 				mouseData.dblclick = false;
