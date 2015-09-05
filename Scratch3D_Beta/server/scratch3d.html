@@ -384,6 +384,7 @@
 					console.log("in If", intersects);
 					intersects[ 0 ].object.material.color.setHex( Math.random() * 0xffffff );
 					mouseData.clickObjectID = intersects[ 0 ].object.name;
+					updateMouseData();
 				}
 				}
 				mouseData.down = true;
