@@ -56,6 +56,7 @@ CollisionDetection.touchingObject = {};
 CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
 	//sets the name of the object to the touchID name 
 	touch.name = touchID;
+	console.log("Caster Name: ", casterID);
 	caster.name = casterID;
 	//Boolean value to check if object was touching on last update
 	this.wasTouchingLast = false;
