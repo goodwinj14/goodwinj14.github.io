@@ -381,7 +381,7 @@
 				var intersects = caster.intersectObjects(SCENECOMPONENTS.OBJECTS);
 				console.log("out If", SCENECOMPONENTS.OBJECTS);
 				if ( intersects.length > 0 ) {
-					console.log("in If", intersects);
+					console.log("in If", caster);
 					intersects[ 0 ].object.material.color.setHex( Math.random() * 0xffffff );
 					mouseData.clickObjectID = intersects[ 0 ].object.name;
 					updateMouseData();
