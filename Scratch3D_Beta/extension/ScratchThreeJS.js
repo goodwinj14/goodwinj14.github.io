@@ -99,7 +99,7 @@
         }
     	}
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
-    newSession = false;
+    //newSession = false;
 		/*
 		**Checks Browser Version in win returns null
 		**
