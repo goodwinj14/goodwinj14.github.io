@@ -208,7 +208,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
 
 				blendMesh.rotation.y = Math.PI * -135 / 180;
 				Scene.add( blendMesh );
-				blendMesh.name = objID;
+				blendMesh.name = charecterID;
 				SHAPES[charecterID] = blendMesh;
 				SCENECOMPONENTS.OBJECTS.push(blendMesh);
 				var aspect = window.innerWidth / window.innerHeight;
@@ -232,7 +232,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
         		blendMesh.rotation.y = Math.PI * -135 / 180;
         		blendMesh.position.y = 4.2;
 				Scene.add( blendMesh );
-				blendMesh.name = objID;
+				blendMesh.name = charecterID;
 				SHAPES[charecterID] = blendMesh;
 				SCENECOMPONENTS.OBJECTS.push(blendMesh);
 			});
@@ -246,7 +246,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
         		blendMesh.rotation.y = Math.PI * -135 / 180;
         		blendMesh.position.y = 1;
 				Scene.add( blendMesh );
-				blendMesh.name = objID;
+				blendMesh.name = charecterID;
 				SHAPES[charecterID] = blendMesh;
 				SCENECOMPONENTS.OBJECTS.push(blendMesh);
 			});
@@ -260,7 +260,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
         		blendMesh.rotation.y = Math.PI * -135 / 180;
         		blendMesh.position.y = 0;
 				Scene.add( blendMesh );
-				blendMesh.name = objID;
+				blendMesh.name = charecterID;
 				SHAPES[charecterID] = blendMesh;
 				SCENECOMPONENTS.OBJECTS.push(blendMesh);
 			});
@@ -273,7 +273,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
         		blendMesh = new THREE.Mesh( geometry, materials[0] );
         		blendMesh.rotation.y = Math.PI * -135 / 180;
         		blendMesh.position.y = 0;
-        		blendMesh.name = objID;
+        		blendMesh.name = charecterID;
 				Scene.add( blendMesh );
 				SHAPES[charecterID] = blendMesh;
 				SCENECOMPONENTS.OBJECTS.push(blendMesh);
@@ -287,7 +287,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
         		blendMesh = new THREE.Mesh( geometry, materials[0] );
         		blendMesh.rotation.y = Math.PI * 180 / 180;
         		blendMesh.position.y = 1.5;
-        		blendMesh.name = objID;
+        		blendMesh.name = charecterID;
 				Scene.add( blendMesh );
 				SHAPES[charecterID] = blendMesh;
 				SCENECOMPONENTS.OBJECTS.push(blendMesh);
