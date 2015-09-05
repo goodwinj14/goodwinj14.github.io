@@ -356,12 +356,7 @@
 			messageSource.postMessage("KEYSTROKE_"+e.keyCode,origin);
 		 });
 
-		window.addEventListener("mousedown", function(e){
-				var mouse3D = new THREE.Vector3( 
-				( event.clientX / window.innerWidth ) * 2 - 1,   //x
-                -( event.clientY / window.innerHeight ) * 2 + 1,  //y
-                0.5 );                                            //z
-        		console.log("Projection",projector.unprojectVector( mouse3D, CAMERA));   
+		window.addEventListener("mousedown", function(e){  
 				mouseData.down = true;
 				mouseData.click = false;
 				mouseData.dblclick = false;
@@ -414,6 +409,7 @@
 		function init_Render(){
 			console.log("init_Render");
 			RENDERER = new THREE.WebGLRenderer({ alpha: alpha });
+			RENDERER.setPixelRatio( window.devicePixelRatio );
 			RENDERER.setSize(window.innerWidth, window.innerHeight);
 			document.body.appendChild(RENDERER.domElement);
 		}
