@@ -368,8 +368,9 @@
 				console.log(caster);
 				caster.setFromCamera(mouse, CAMERA);
 				var intersects = caster.intersectObjects( objects );
+				console.log("out If", intersects);
 				if ( intersects.length > 0 ) {
-
+					console.log("in If", intersects);
 					intersects[ 0 ].object.material.color.setHex( Math.random() * 0xffffff );
 
 				}
