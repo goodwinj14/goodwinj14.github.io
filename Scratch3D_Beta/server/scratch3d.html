@@ -378,8 +378,8 @@
 				mouseData.click = false;
 				mouseData.dblclick = false
 				mouseData.down = false;
-				mouseData.clientX = e.clientX;
-				mouseData.clientY = e.clientY;
+				mouseData.clientX = (e.clientX/window.innerWidth)*2-1;
+				mouseData.clientY = -(e.clientY/window.innerWidth)*2+1;
 				updateMouseData();
 		 		});
 
