@@ -3,6 +3,7 @@ var SHAPES = {};
 var CHARECTERS = {};
 var MATERIALS = {};
 var objControls = null;
+var OBJECTS = [];
 /*
 *Adds a new 
 */
@@ -21,6 +22,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 		if(cube!=null){
 			Scene.add(cube);
 			SHAPES[shapeID] = cube;
+			OBJECTS.push(cube);
 		}
 	}
 
@@ -37,6 +39,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 		if(sphere!=null){
 			Scene.add(sphere);
 			SHAPES[shapeID] = sphere;
+			OBJECTS.push(sphere);
 		}
 	}
 
@@ -50,6 +53,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 		if(circle!=null){
 			Scene.add(circle);
 			SHAPES[shapeID] = circle;
+			OBJECTS.push(circle);
 		}
 	}		
 
@@ -66,6 +70,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 		if(cylinder!=null){
 			Scene.add(cylinder);
 			SHAPES[shapeID] = cylinder;
+			OBJECTS.push(cylinder);
 		}
 	}
 
@@ -83,6 +88,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 		if(dodecahedron!=null){
 			Scene.add(dodecahedron);
 			SHAPES[shapeID] = dodecahedron;
+			OBJECTS.push(dodecahedron);
 		}
 	}
 
@@ -99,6 +105,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 		if(icosahedron!=null){
 			Scene.add(icosahedron);
 			SHAPES[shapeID] = icosahedron;
+			OBJECTS.push(icosahedron);
 		}
 	}
 
@@ -116,6 +123,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 		if(plane!=null){
 			Scene.add(plane);
 			SHAPES[shapeID] = plane;
+			OBJECTS.push(plane);
 		}
 	}
 
@@ -132,6 +140,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 		if(ring!=null){
 			Scene.add(ring);
 			SHAPES[shapeID] = ring;
+			OBJECTS.push(ring);
 		}
 	}
 
@@ -148,6 +157,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 		if(torus!=null){
 			Scene.add(torus);
 			SHAPES[shapeID] = torus;
+			OBJECTS.push(torus);
 		}
 	}
 
@@ -174,6 +184,7 @@ SCENECOMPONENTS.addOBJ = function(url, objID, Scene){
        obj.scale.set(.7,.7,.7);
        Scene.add(obj);
        SHAPES[objID] = obj;
+       OBJECTS.push(obj);
        });
 	   
 }
@@ -187,6 +198,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
 				blendMesh.rotation.y = Math.PI * -135 / 180;
 				Scene.add( blendMesh );
 				SHAPES[charecterID] = blendMesh;
+				OBJECTS.push(blendMesh);
 				var aspect = window.innerWidth / window.innerHeight;
 				var radius = blendMesh.geometry.boundingSphere.radius;
 
@@ -209,6 +221,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
         		blendMesh.position.y = 4.2;
 				Scene.add( blendMesh );
 				SHAPES[charecterID] = blendMesh;
+				OBJECTS.push(blendMesh);
 			});
 		}
 		if(Charecter=="Car"){
@@ -221,6 +234,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
         		blendMesh.position.y = 1;
 				Scene.add( blendMesh );
 				SHAPES[charecterID] = blendMesh;
+				OBJECTS.push(blendMesh);
 			});
 		}
 		if(Charecter=="Pirate Ship"){
@@ -233,6 +247,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
         		blendMesh.position.y = 0;
 				Scene.add( blendMesh );
 				SHAPES[charecterID] = blendMesh;
+				OBJECTS.push(blendMesh);
 			});
 		}
 		if(Charecter=="Cat1"){
@@ -245,6 +260,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
         		blendMesh.position.y = 0;
 				Scene.add( blendMesh );
 				SHAPES[charecterID] = blendMesh;
+				OBJECTS.push(blendMesh);
 			});
 		}
 		if(Charecter=="Lego Vader"){
@@ -257,6 +273,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
         		blendMesh.position.y = 1.5;
 				Scene.add( blendMesh );
 				SHAPES[charecterID] = blendMesh;
+				OBJECTS.push(blendMesh);
 			});
 		}
 		
@@ -273,6 +290,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, di
 				mesh.add(cloud);
 				Scene.add( mesh );
 				SHAPES[planetID] = mesh;
+				OBJECTS.push(mesh);
 				}else if(Planet=="Sun"){
 				var mesh = THREEx.Planets.createSun(diameter);
 				mesh.position.x = LocationX;
@@ -280,6 +298,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, di
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
 				SHAPES[planetID] = mesh;
+				OBJECTS.push(mesh);
 				}else if(Planet=="Moon"){
 				var mesh = THREEx.Planets.createMoon(diameter);
 				mesh.position.x = LocationX;
@@ -287,6 +306,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, di
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
 				SHAPES[planetID] = mesh;
+				OBJECTS.push(mesh);
 				}else if(Planet=="Mercury"){
 				var mesh = THREEx.Planets.createMercury(diameter);
 				mesh.position.x = LocationX;
@@ -294,6 +314,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, di
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
 				SHAPES[planetID] = mesh;
+				OBJECTS.push(mesh);
 				}else if(Planet=="Venus"){
 				var mesh = THREEx.Planets.createVenus(diameter);
 				mesh.position.x = LocationX;
@@ -301,6 +322,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, di
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
 				SHAPES[planetID] = mesh;
+				OBJECTS.push(mesh);
 				}else if(Planet=="Mars"){
 				var mesh = THREEx.Planets.createMars(diameter);
 				mesh.position.x = LocationX;
@@ -308,6 +330,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, di
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
 				SHAPES[planetID] = mesh;
+				OBJECTS.push(mesh);
 				}else if(Planet=="Jupiter"){
 				var mesh = THREEx.Planets.createJupiter(diameter);
 				mesh.position.x = LocationX;
@@ -315,6 +338,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, di
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
 				SHAPES[planetID] = mesh;
+				OBJECTS.push(mesh);
 				}else if(Planet=="Saturn"){
 				var mesh = THREEx.Planets.createSaturn(diameter);
 				mesh.position.x = LocationX;
@@ -328,6 +352,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, di
 				mesh.add(ring);
 				Scene.add( mesh );
 				SHAPES[planetID] = mesh;
+				OBJECTS.push(mesh);
 				}else if(Planet=="Uranus"){
 				var mesh = THREEx.Planets.createUranus(diameter)
 				mesh.position.x = LocationX;
@@ -341,6 +366,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, di
 				mesh.add(ring);
 				Scene.add( mesh );
 				SHAPES[planetID] = mesh;
+				OBJECTS.push(mesh);
 				}else if(Planet=="Neptune"){
 				var mesh = THREEx.Planets.createNeptune(diameter);
 				mesh.position.x = LocationX;
@@ -348,6 +374,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, di
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
 				SHAPES[planetID] = mesh;
+				OBJECTS.push(mesh);
 				}else if(Planet=="Pluto! #savepluto"){
 				var mesh = THREEx.Planets.createPluto(diameter);
 				mesh.position.x = LocationX;
@@ -355,6 +382,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, di
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
 				SHAPES[planetID] = mesh;
+				OBJECTS.push(mesh);
 				}
 }
 

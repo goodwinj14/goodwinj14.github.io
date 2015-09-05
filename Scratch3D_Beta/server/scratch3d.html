@@ -63,11 +63,13 @@
 
     	//Mouse Controle Data
     	var mouseData = {eventType: "MOUSEEVENT", click: false, dblclick: false, mousedown:false, mouseup: false, clientX: 0, clientX: 0};
+
+    		//Gets objects that are clicked
+    	var caster = new THREE.Raycaster();
+		var mouse = new THREE.Vector2();
+		var objects = [];
     	/////////////////////
 		var RENDERER = null;
-		var objects = [];
-		var caster = new THREE.Raycaster();
-		var mouse = new THREE.Vector2();
 		var SCENE = null;
 		var CAMERA = null;
 		var clock = new THREE.Clock();
@@ -368,7 +370,7 @@
 				mouse.y = - ( event.clientY / RENDERER.domElement.height ) * 2 + 1;
 				console.log(caster);
 				caster.setFromCamera(mouse, CAMERA);
-				var intersects = caster.intersectObjects( objects );
+				var intersects = caster.intersectObjects(SCENECOMPONENTS.OBJECTS);
 				console.log("out If", objects);
 				if ( intersects.length > 0 ) {
 					console.log("in If", intersects);
