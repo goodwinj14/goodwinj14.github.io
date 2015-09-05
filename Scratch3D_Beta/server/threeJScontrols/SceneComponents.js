@@ -55,6 +55,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(circle!=null){
 			Scene.add(circle);
+			circle.name = shapeID;
 			SHAPES[shapeID] = circle;
 			SCENECOMPONENTS.OBJECTS.push(circle);
 		}
@@ -72,6 +73,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(cylinder!=null){
 			Scene.add(cylinder);
+			cylinder.name = shapeID;
 			SHAPES[shapeID] = cylinder;
 			SCENECOMPONENTS.OBJECTS.push(cylinder);
 		}
@@ -90,6 +92,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(dodecahedron!=null){
 			Scene.add(dodecahedron);
+			dodecahedron.name = shapeID;
 			SHAPES[shapeID] = dodecahedron;
 			SCENECOMPONENTS.OBJECTS.push(dodecahedron);
 		}
@@ -107,6 +110,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(icosahedron!=null){
 			Scene.add(icosahedron);
+			icosahedron.name = shapeID;
 			SHAPES[shapeID] = icosahedron;
 			SCENECOMPONENTS.OBJECTS.push(icosahedron);
 		}
@@ -125,6 +129,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(plane!=null){
 			Scene.add(plane);
+			plane.name = shapeID;
 			SHAPES[shapeID] = plane;
 			SCENECOMPONENTS.OBJECTS.push(plane);
 		}
@@ -142,6 +147,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(ring!=null){
 			Scene.add(ring);
+			ring.name = shapeID;
 			SHAPES[shapeID] = ring;
 			SCENECOMPONENTS.OBJECTS.push(ring);
 		}
@@ -159,6 +165,7 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(torus!=null){
 			Scene.add(torus);
+			torus.name = shapeID;
 			SHAPES[shapeID] = torus;
 			SCENECOMPONENTS.OBJECTS.push(torus);
 		}
@@ -186,6 +193,7 @@ SCENECOMPONENTS.addOBJ = function(url, objID, Scene){
        	console.log("LOADed Object: ", obj);
        obj.scale.set(.7,.7,.7);
        Scene.add(obj);
+       obj.name = objID;
        SHAPES[objID] = obj;
        SCENECOMPONENTS.OBJECTS.push(obj);
        });
@@ -200,6 +208,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
 
 				blendMesh.rotation.y = Math.PI * -135 / 180;
 				Scene.add( blendMesh );
+				blendMesh.name = objID;
 				SHAPES[charecterID] = blendMesh;
 				SCENECOMPONENTS.OBJECTS.push(blendMesh);
 				var aspect = window.innerWidth / window.innerHeight;
@@ -223,6 +232,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
         		blendMesh.rotation.y = Math.PI * -135 / 180;
         		blendMesh.position.y = 4.2;
 				Scene.add( blendMesh );
+				blendMesh.name = objID;
 				SHAPES[charecterID] = blendMesh;
 				SCENECOMPONENTS.OBJECTS.push(blendMesh);
 			});
@@ -236,6 +246,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
         		blendMesh.rotation.y = Math.PI * -135 / 180;
         		blendMesh.position.y = 1;
 				Scene.add( blendMesh );
+				blendMesh.name = objID;
 				SHAPES[charecterID] = blendMesh;
 				SCENECOMPONENTS.OBJECTS.push(blendMesh);
 			});
@@ -249,6 +260,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
         		blendMesh.rotation.y = Math.PI * -135 / 180;
         		blendMesh.position.y = 0;
 				Scene.add( blendMesh );
+				blendMesh.name = objID;
 				SHAPES[charecterID] = blendMesh;
 				SCENECOMPONENTS.OBJECTS.push(blendMesh);
 			});
@@ -261,6 +273,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
         		blendMesh = new THREE.Mesh( geometry, materials[0] );
         		blendMesh.rotation.y = Math.PI * -135 / 180;
         		blendMesh.position.y = 0;
+        		blendMesh.name = objID;
 				Scene.add( blendMesh );
 				SHAPES[charecterID] = blendMesh;
 				SCENECOMPONENTS.OBJECTS.push(blendMesh);
@@ -274,6 +287,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
         		blendMesh = new THREE.Mesh( geometry, materials[0] );
         		blendMesh.rotation.y = Math.PI * 180 / 180;
         		blendMesh.position.y = 1.5;
+        		blendMesh.name = objID;
 				Scene.add( blendMesh );
 				SHAPES[charecterID] = blendMesh;
 				SCENECOMPONENTS.OBJECTS.push(blendMesh);
@@ -292,6 +306,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, di
 				var cloud	= THREEx.Planets.createEarthCloud();
 				mesh.add(cloud);
 				Scene.add( mesh );
+				mesh.name = planetID;
 				SHAPES[planetID] = mesh;
 				SCENECOMPONENTS.OBJECTS.push(mesh);
 				}else if(Planet=="Sun"){
@@ -300,6 +315,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, di
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
+				mesh.name = planetID;
 				SHAPES[planetID] = mesh;
 				SCENECOMPONENTS.OBJECTS.push(mesh);
 				}else if(Planet=="Moon"){
@@ -308,6 +324,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, di
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
+				mesh.name = planetID;
 				SHAPES[planetID] = mesh;
 				SCENECOMPONENTS.OBJECTS.push(mesh);
 				}else if(Planet=="Mercury"){
@@ -316,6 +333,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, di
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
+				mesh.name = planetID;
 				SHAPES[planetID] = mesh;
 				SCENECOMPONENTS.OBJECTS.push(mesh);
 				}else if(Planet=="Venus"){
@@ -324,6 +342,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, di
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
+				mesh.name = planetID;
 				SHAPES[planetID] = mesh;
 				SCENECOMPONENTS.OBJECTS.push(mesh);
 				}else if(Planet=="Mars"){
@@ -332,6 +351,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, di
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
+				mesh.name = planetID;
 				SHAPES[planetID] = mesh;
 				SCENECOMPONENTS.OBJECTS.push(mesh);
 				}else if(Planet=="Jupiter"){
@@ -340,6 +360,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, di
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
+				mesh.name = planetID;
 				SHAPES[planetID] = mesh;
 				SCENECOMPONENTS.OBJECTS.push(mesh);
 				}else if(Planet=="Saturn"){
@@ -354,6 +375,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, di
 				ring.castShadow		= true;
 				mesh.add(ring);
 				Scene.add( mesh );
+				mesh.name = planetID;
 				SHAPES[planetID] = mesh;
 				SCENECOMPONENTS.OBJECTS.push(mesh);
 				}else if(Planet=="Uranus"){
@@ -368,6 +390,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, di
 				ring.castShadow		= true;
 				mesh.add(ring);
 				Scene.add( mesh );
+				mesh.name = planetID;
 				SHAPES[planetID] = mesh;
 				SCENECOMPONENTS.OBJECTS.push(mesh);
 				}else if(Planet=="Neptune"){
@@ -376,6 +399,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, di
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
+				mesh.name = planetID;
 				SHAPES[planetID] = mesh;
 				SCENECOMPONENTS.OBJECTS.push(mesh);
 				}else if(Planet=="Pluto! #savepluto"){
@@ -384,6 +408,7 @@ SCENECOMPONENTS.addPlanet = function(Planet, LocationX, LocationY, LocationZ, di
 				mesh.position.y = LocationY;
 				mesh.position.z = LocationZ;
 				Scene.add( mesh );
+				mesh.name = planetID;
 				SHAPES[planetID] = mesh;
 				SCENECOMPONENTS.OBJECTS.push(mesh);
 				}
