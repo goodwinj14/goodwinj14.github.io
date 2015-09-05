@@ -12,6 +12,8 @@
 	var canvas = null;
 	var ctx = null;
 	var lastKeyEvent = null;
+  // Lets us know if we are opening a new window and a new sesion has begon
+  var newSession = true;
 
   //This obect will hold all of the collisons data returned from the raycaster
   //it holds objects that where previously touch on the last update of the raycaster
@@ -97,7 +99,7 @@
         }
     	}
 		win = window.open (liveURL, "", "width=window.width, height=window.height");
-
+    newSession = false;
 		/*
 		**Checks Browser Version in win returns null
 		**
@@ -679,6 +681,16 @@
         }
 
     }
+
+    ext.getObjectOnClick = function(){
+      if(newSession){
+        var message = "BEGINCLICKRAYCASTIN_";
+        win.postMessage(message, liveURL);
+      }
+      if(mouseData.clickObjectID!=null){
+      mouseData.clickObjectID;
+      }
+    }
 	// Block and block menu descriptions
     var descriptor = {
         blocks: [
@@ -721,6 +733,7 @@
 			['h', "When %m.Keys  Pressed" , 'key_Pressed', "space"],
       ['h', "When Mouse %m.MouseOptions", 'mouseEvent', 'Click'],
       ['r', "Mouse %m.Axis2", "mousePostion","X"], 
+      ['r', "On Clicked Get Object", "getObjectOnClick"], 
 
 			['r', "Load Object URL: %s", "loadOBJ","http://goodwinj14.github.io/ThreeJS/server/threeJScontrols/shiptriangle.obj"],
       ['', "Set Scene Gravity X: %n Y: %n Z: %n", "setGravity","0","-50","0"],

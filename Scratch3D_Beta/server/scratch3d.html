@@ -67,6 +67,7 @@
     		//Gets objects that are clicked
     	var caster = new THREE.Raycaster();
 		var mouse = new THREE.Vector2();
+		var beginClickRayCatsing = false;
 		var objects = [];
     	/////////////////////
 		var RENDERER = null;
@@ -350,6 +351,11 @@
 				CollisionDetection.addObjectToCaster(paramsArray[0], SCENECOMPONENTS.getShape(paramsArray[1]), paramsArray[1]);
 			}
 		}
+		if(commandKey == "BEGINCLICKRAYCASTIN"){
+				if(SCENE!=null){
+					beginClickRayCatsing = true;
+				}
+			}
 		/*
 		*EVENT HANDELER END
 		*/
@@ -379,7 +385,9 @@
 				}
 		}
 		window.addEventListener("mousedown", function(e){  
-				cast();
+				if(beginClickRayCatsing){
+					cast();
+				}
 				mouseData.down = true;
 				mouseData.click = false;
 				mouseData.dblclick = false;
