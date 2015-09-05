@@ -407,9 +407,9 @@
 		
 		//INITIALIZES THE RENDERER OBJECT
 		function init_Render(){
-			console.log("init_Render");
+			console.log("init_Render", window.devicePixelRatio );
 			RENDERER = new THREE.WebGLRenderer({ alpha: alpha });
-			RENDERER.setPixelRatio( window.devicePixelRatio );
+			//RENDERER.setPixelRatio( window.devicePixelRatio );
 			RENDERER.setSize(window.innerWidth, window.innerHeight);
 			document.body.appendChild(RENDERER.domElement);
 		}
