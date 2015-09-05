@@ -683,10 +683,11 @@
     }
 
     ext.getObjectOnClick = function(){
-      if(newSession){
+      
         var message = "BEGINCLICKRAYCASTIN_";
+        console.log("BEGINCLICKRAYCASTIN_");
         win.postMessage(message, liveURL);
-      }
+      
       if(mouseData.clickObjectID!=null){
       mouseData.clickObjectID;
       }
