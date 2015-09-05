@@ -361,8 +361,8 @@
 		window.addEventListener("mousedown", function(e){  
 				var raycaster = new THREE.Raycaster();
 				var mouse = new THREE.Vector2();
-				mouse.x = ( event.clientX / renderer.domElement.width ) * 2 - 1;
-				mouse.y = - ( event.clientY / renderer.domElement.height ) * 2 + 1;
+				mouse.x = ( event.clientX / RENDERER.domElement.width ) * 2 - 1;
+				mouse.y = - ( event.clientY / RENDERER.domElement.height ) * 2 + 1;
 				raycaster.setFromCamera( mouse, CAMERA );
 				var intersects = raycaster.intersectObjects( objects );
 				if ( intersects.length > 0 ) {
