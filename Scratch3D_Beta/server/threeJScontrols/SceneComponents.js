@@ -225,17 +225,18 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
 		}
 		if(Charecter=="Cat"){
 
-			var loader = new THREE.JSONLoader();
-    			loader.load('threeJScontrols/sceneCharecters/Cat.js', function modelLoadedCallback(geometry,materials) {
- 				//material = new THREE.MeshBasicMaterial({color: 'blue'});
-        		blendMesh = new THREE.Mesh( geometry, materials[0] );
-        		blendMesh.rotation.y = Math.PI * -135 / 180;
-        		blendMesh.position.y = 4.2;
+			 var  blendMesh = new THREE.BlendCharacter();
+				blendMesh.load( 'threeJScontrols/sceneCharecters/cat/cat.js', function ( geometry, materials ) {
+
+				blendMesh.rotation.y = Math.PI * -135 / 180;
 				Scene.add( blendMesh );
 				blendMesh.name = charecterID;
 				SHAPES[charecterID] = blendMesh;
 				SCENECOMPONENTS.OBJECTS.push(blendMesh);
-			});
+				var aspect = window.innerWidth / window.innerHeight;
+				var radius = blendMesh.geometry.boundingSphere.radius;
+
+				} );
 		}
 		if(Charecter=="Car"){
 
