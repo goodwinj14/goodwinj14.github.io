@@ -228,7 +228,9 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
 			 var  blendMesh = new THREE.BlendCharacter();
 				blendMesh.load( 'threeJScontrols/sceneCharecters/cat/Cat.js', function ( geometry, materials ) {
 
-				blendMesh.rotation.y = Math.PI * -135 / 180;
+				blendMesh.position.x = LocationX;
+				blendMesh.position.y = LocationY;
+				blendMesh.position.z = LocationZ;
 				Scene.add( blendMesh );
 				blendMesh.name = charecterID;
 				SHAPES[charecterID] = blendMesh;
