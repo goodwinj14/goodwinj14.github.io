@@ -226,7 +226,7 @@ SCENECOMPONENTS.addCharecter = function(Charecter, LocationX, LocationY, Locatio
 		if(Charecter=="Cat"){
 
 			 var  blendMesh = new THREE.BlendCharacter();
-				blendMesh.load( 'threeJScontrols/sceneCharecters/cat/cat.js', function ( geometry, materials ) {
+				blendMesh.load( 'threeJScontrols/sceneCharecters/cat/Cat.js', function ( geometry, materials ) {
 
 				blendMesh.rotation.y = Math.PI * -135 / 180;
 				Scene.add( blendMesh );
