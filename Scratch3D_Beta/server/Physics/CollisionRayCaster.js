@@ -58,8 +58,12 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
 	touch.name = touchID;
 	console.log("Caster Name: ", caster);
 	caster.name = casterID;
-	caster.computeBoundingBox();
-	console.log("Bounding Box: ",caster);
+
+	//NewlyAdded
+	caster.geometry.computeBoundingSphere();
+	console.log("Bounding Box: ", caster.geometry);
+	//
+
 	//Boolean value to check if object was touching on last update
 	this.wasTouchingLast = false;
 	this.isTouching = [];
