@@ -86,7 +86,12 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
       new THREE.Vector3(0, 0, 1),
       new THREE.Vector3(0, 0, -1)
       ];
-      this.raysPosition = caster.geometry.vertices;
+
+      this.raysPosition = [];
+      for (var i = (caster.geometry.vertices.length/3) - 1; i >= 0; i-=3) {
+      	this.raysPosition.push(caster.geometry.vertices[i]);
+      };
+      
 	//Sets the rays to the caster
 
 	this.CollisionCheck = function(){
