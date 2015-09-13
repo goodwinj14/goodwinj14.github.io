@@ -325,7 +325,7 @@
       if(raycasters[objectIdOne]!=null){
         if(raycasters[objectIdOne].indexOf(ObjectIdTwo)>=0){
           if(collisions.data[objectIdOne].indexOf(ObjectIdTwo)>=0){
-            collisions.data[objectIdOne].indexOf(ObjectIdTwo) = null;
+            //collisions.data[objectIdOne].indexOf(ObjectIdTwo) = null;
            return true;
           }else{
             return false;
