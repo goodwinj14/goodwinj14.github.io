@@ -81,24 +81,18 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
 	this.rays = [
 	  new THREE.Vector3(1, 0, 0),
       new THREE.Vector3(-1, 0, 0),
-      new THREE.Vector3(1, 1, 0),
-      new THREE.Vector3(1, -1, 0),
-      new THREE.Vector3(1, 0, 1),
-      new THREE.Vector3(1, 0, -1),
       new THREE.Vector3(0, 1, 0),
       new THREE.Vector3(0, -1, 0),
-      new THREE.Vector3(0, 1, 1),
-      new THREE.Vector3(0, 1, -1),
       new THREE.Vector3(0, 0, 1),
       new THREE.Vector3(0, 0, -1)
       ];
-      this.rays = caster.geometry.vertices;
+      this.raysPosition = caster.geometry.vertices;
 	//Sets the rays to the caster
 
 	this.CollisionCheck = function(){
 		this.isTouching = [];
 		for (var i = this.rays.length - 1; i >= 0; i--) {
-			this.caster.set(this.mesh.geometry.boundingSphere.center, this.rays[i]);
+			this.caster.set(this.raysPosition[i], this.rays[i]);
 			var touching = this.caster.intersectObjects(this.conntactObjects);
 			//console.log("Ray castre return values",touching);
 			for (var j = touching.length - 1; j >= 0; j--) {
