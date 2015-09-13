@@ -61,7 +61,7 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
 
 	//NewlyAdded
 	caster.geometry.computeBoundingSphere();
-	console.log("Bounding Box: ", caster.geometry.boundingSphere.center);
+	console.log("Bounding Box: ", caster.geometry.boundingSphere);
 	//
 
 	//Boolean value to check if object was touching on last update
@@ -76,7 +76,7 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
 	this.name = casterID;
 	//The actual ray caster for this object
 	this.caster = new THREE.Raycaster();
-	this.caster.far = 32;
+	this.caster.far = (caster.geometry.boundingSphere.radius + .1);
 	//The rays that will be projected from the origin point when we test for colisions
 	this.rays = [
 	  new THREE.Vector3(1, 0, 0),
