@@ -61,7 +61,6 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
 
 	//NewlyAdded
 	caster.geometry.computeBoundingSphere();
-	console.log("Bounding Box: ", caster.geometry.boundingSphere);
 	//
 
 	//Boolean value to check if object was touching on last update
@@ -91,7 +90,7 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
       for (var i = (caster.geometry.vertices.length/3) - 1; i-3 >= 0; i-=3) {
       	this.raysPosition.push(caster.geometry.vertices[i]);
       };
-      
+      console.log("Rays Postion: ", this.raysPosition);
 	//Sets the rays to the caster
 
 	this.CollisionCheck = function(){
