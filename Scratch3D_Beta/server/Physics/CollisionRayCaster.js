@@ -87,7 +87,7 @@ CollisionDetection.RayCaster = function(caster, casterID, touch, touchID){
       ];
 
       this.raysPosition = [];
-      for (var i = (caster.geometry.vertices.length/3) - 1; i-3 >= 0; i-=3) {
+      for (var i = caster.geometry.vertices.length - 1; i-3 >= 0; i-=3) {
       	this.raysPosition.push(caster.geometry.vertices[i]);
       };
       console.log("Rays Postion: ", this.raysPosition);
