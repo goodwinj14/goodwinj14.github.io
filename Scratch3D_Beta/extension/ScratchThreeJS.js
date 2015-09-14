@@ -69,15 +69,11 @@
 
     //Clear data from past runes
     collisions = null;
-    console.log(collisions);
     charecters = new Array();
-    console.log(charecters);
     materials = new Array();
-    console.log(materials);
     shapes = new Array();
-    console.log(shapes);
     raycaster = new Array();
-    console.log(raycaster);
+
 		window.addEventListener("message", receiveMessage, false);
 		
 		function receiveMessage()
@@ -86,7 +82,7 @@
       //Type is.
       //Retrevies the command Key of the message denoting which function to call
       var commandKey = null;
-
+      console.log("Message recieved");
       if(event.data.eventType!=null){
      if(event.data.eventType=="MOUSEEVENT"){
          mouseData = event.data;
