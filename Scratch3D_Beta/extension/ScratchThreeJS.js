@@ -351,7 +351,7 @@
     console.log("forceCollsionUpadteSent",forceCollsionUpdateRecieved);
         if(forceCollsionUpadteSent!=null&&forceCollsionUpdateRecieved!=null){
             if(forceCollsionUpadteSent){
-            for (var i = 100; i >= 0; i--) {
+            for (var i = 10000; i >= 0; i--) {
               console.log("forceCollsionUpadteSent",forceCollsionUpdateRecieved);
             };
           }
