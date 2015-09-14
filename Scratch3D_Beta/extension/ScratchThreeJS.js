@@ -72,6 +72,7 @@
     charecters = new Array();
     materials = new Array();
     shapes = new Array();
+    raycaster = new Array();
 		window.addEventListener("message", receiveMessage, false);
 		
 		function receiveMessage()
