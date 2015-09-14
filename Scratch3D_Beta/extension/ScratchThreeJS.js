@@ -351,9 +351,9 @@
     console.log("forceCollsionUpadteSent",forceCollsionUpdateRecieved);
         if(forceCollsionUpadteSent!=null&&forceCollsionUpdateRecieved!=null){
             if(forceCollsionUpadteSent){
-            while(!forceCollsionUpdateRecieved){
-
-            }
+            for (var i = 100; i >= 0; i--) {
+              console.log("forceCollsionUpadteSent",forceCollsionUpdateRecieved);
+            };
           }
         }
     //Checks to see if the object has been created yet
