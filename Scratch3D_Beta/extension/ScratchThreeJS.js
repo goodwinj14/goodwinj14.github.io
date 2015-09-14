@@ -230,12 +230,11 @@
     //changed by 180 degrees if so the colision detection will 
     //not be exicuted on that motion
     //console.log("ForceColisionsUpdate",raycasters.length());
-    //if(raycasters.length()>0){
-      //forceCollsionUpadteSent = true;
-      //forceCollsionUpdateRecieved = false;
-      //var message = "ForceColisionsUpdate_";
-      //win.postMessage(message, liveURL);
-    //}
+    forceCollsionUpadteSent = true;
+    forceCollsionUpdateRecieved = false;
+    var message = "ForceColisionsUpdate_";
+    win.postMessage(message, liveURL);
+    
 		var message = "MOVESHAPE_"+shape_id+','+direction+','+steps;
 		win.postMessage(message, liveURL);
 		}
@@ -350,7 +349,6 @@
         if(raycasters[objectIdOne].indexOf(ObjectIdTwo)>=0){
           if(collisions.data[objectIdOne].indexOf(ObjectIdTwo)>=0){
             //collisions.data[objectIdOne].indexOf(ObjectIdTwo) = null;
-            console.log("isTouching ",raycasters[0].length);
            return true;
             
           }else{
