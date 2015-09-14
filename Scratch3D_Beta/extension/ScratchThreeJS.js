@@ -24,8 +24,8 @@
   //A list of all the objects that currently have raycasters connected to them
   //and all the objects that raycaster is checking
   var raycasters = [];
-  var priorMotionCall = null;
-  var inverseCallCancelColision = false;
+  var forceCollsionUpadteSent = null;
+  var forceCollsionUpdateRecieved = null;
   /*
   **Mouse Controles
   */
@@ -76,8 +76,6 @@
     materials = new Array();
     shapes = new Array();
     raycaster = new Array();
-    var priorMotionCall = null;
-    var inverseCallCancelColision = false;
     //--------------------------
 
     if(!messageListenerAdded){
@@ -231,28 +229,12 @@
     //Checks to see if the direction of a objects motion has
     //changed by 180 degrees if so the colision detection will 
     //not be exicuted on that motion
-    if(priorMotionCall!=null){
-      if(priorMotionCall == "Left" && direction == "Right"){
-        inverseCallCancelColision = true;
-        console.log("inverseCallCancelColision",inverseCallCancelColision);
-      }else if(priorMotionCall == "Right" && direction == "Left"){
-        inverseCallCancelColision = true;
-        console.log("inverseCallCancelColision",inverseCallCancelColision);
-      }else if(priorMotionCall == "Forward" && direction == "Back"){
-        inverseCallCancelColision = true;
-        console.log("inverseCallCancelColision",inverseCallCancelColision);
-      }else if(priorMotionCall == "Back" && direction == "Forward"){
-        inverseCallCancelColision = true;
-        console.log("inverseCallCancelColision",inverseCallCancelColision);
-      }else if(priorMotionCall == "Up" && direction == "Down"){
-        inverseCallCancelColision = true;
-        console.log("inverseCallCancelColision",inverseCallCancelColision);
-      }else if(priorMotionCall == "Down" && direction == "Up"){
-        inverseCallCancelColision = true;
-        console.log("inverseCallCancelColision",inverseCallCancelColision);
-      }else{
-        inverseCallCancelColision = false;
-      }
+    if(raycasters.length>0){
+      forceCollsionUpadteSent = true;
+      forceCollsionUpdateRecieved = false;
+      var message = "ForceColisionsUpdate_";
+      win.postMessage(message, liveURL);
+      for
     }
     priorMotionCall = direction;
 		var message = "MOVESHAPE_"+shape_id+','+direction+','+steps;
