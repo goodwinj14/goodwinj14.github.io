@@ -24,8 +24,6 @@
   //A list of all the objects that currently have raycasters connected to them
   //and all the objects that raycaster is checking
   var raycasters = new Array();
-  var forceCollsionUpadteSent = null;
-  var forceCollsionUpdateRecieved = null;
   /*
   **Mouse Controles
   */
@@ -101,10 +99,7 @@
         }else if(commandKey=="RAYCASTTOUCH"){
           var collisionData = [];
           var objSpilt = data.split(";");
-          if(event.data.indexOf("FORCEUPDATE")>=0){
-            forceCollsionUpdateRecieved = true;
-            forceCollsionUpadteSent = false;
-          }
+      
           for (var i = objSpilt.length - 2; i >= 0; i--) {
             temp = objSpilt[i].split(":");
             collisionData[temp[0]] = temp[1].split(",");
@@ -237,9 +232,6 @@
 		var message = "MOVESHAPE_"+shape_id+','+direction+','+steps;
 		win.postMessage(message, liveURL);
 
-    forceCollsionUpadteSent = true;
-    forceCollsionUpdateRecieved = false;
-    var message = "ForceColisionsUpdate_";
     win.postMessage(message, liveURL);
 		}
 	}
@@ -347,15 +339,6 @@
 
   ext.isTouching = function(objectIdOne, ObjectIdTwo){
 
-    console.log("forceCollsionUpadteSent",forceCollsionUpadteSent);
-    console.log("forceCollsionUpadteSent",forceCollsionUpdateRecieved);
-        if(forceCollsionUpadteSent!=null&&forceCollsionUpdateRecieved!=null){
-            if(forceCollsionUpadteSent){
-            for (var i = 100000; i >= 0; i--) {
-              console.log("forceCollsionUpadteSent",forceCollsionUpdateRecieved);
-            };
-          }
-        }
     //Checks to see if the object has been created yet
     if((charecters.indexOf(objectIdOne)>=0||shapes.indexOf(objectIdOne)>=0)&&(charecters.indexOf(ObjectIdTwo)>=0||shapes.indexOf(ObjectIdTwo)>=0)){
       if(raycasters[objectIdOne]!=null){

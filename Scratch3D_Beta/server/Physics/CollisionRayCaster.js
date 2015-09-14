@@ -1,7 +1,6 @@
 CollisionDetection = {};
 var raycasters = [];
 var raycastersIDS = [];
-CollisionDetection.FORCEUPDATE = false;
 //The extention source to post the message two
 CollisionDetection.messageSource = null;
 //The origin of the extention we wish to pase the object 
@@ -41,11 +40,6 @@ CollisionDetection.update = function(){
 		touchReturn = touchReturn+temp.name+":"+temp.isTouching+";";
 		}
 	};
-
-	if(CollisionDetection.FORCEUPDATE){
-		touchReturn = touchReturn + "<FORCEUPDATE>"
-		CollisionDetection.FORCEUPDATE = false;
-	}
 
 	if(CollisionDetection.lastTouching != touchReturn){
 		CollisionDetection.lastTouching = touchReturn;
