@@ -229,8 +229,9 @@
     //Checks to see if the direction of a objects motion has
     //changed by 180 degrees if so the colision detection will 
     //not be exicuted on that motion
-    console.log("ForceColisionsUpdate");
+    console.log("ForceColisionsUpdate",raycasters.length);
     if(raycasters.length>0){
+
       forceCollsionUpadteSent = true;
       forceCollsionUpdateRecieved = false;
       var message = "ForceColisionsUpdate_";
