@@ -353,7 +353,7 @@
         if(raycasters[objectIdOne].indexOf(ObjectIdTwo)>=0){
           if(collisions.data[objectIdOne].indexOf(ObjectIdTwo)>=0){
             //collisions.data[objectIdOne].indexOf(ObjectIdTwo) = null;
-            console.log(forceCollsionUpadteSent);
+            console.log("forceCollsionUpadteSent",forceCollsionUpadteSent);
             if(forceCollsionUpadteSent){
             while(!forceCollsionUpdateRecieved){
 
