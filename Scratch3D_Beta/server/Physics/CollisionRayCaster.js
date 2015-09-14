@@ -47,6 +47,7 @@ CollisionDetection.update = function(){
 		//A messgae will be passed to the extention with the new touching state data
 		if(CollisionDetection.messageSource!=null || CollisionDetection.origin!=null){
 		CollisionDetection.messageSource.postMessage("RAYCASTTOUCH_"+CollisionDetection.lastTouching,CollisionDetection.origin);
+		console.log("message posted");
 		}
 	}
 }
