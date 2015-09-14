@@ -103,7 +103,7 @@
           var objSpilt = data.split(";");
           if(event.data.indexOf("FORCEUPDATE")>=0){
             forceCollsionUpdateRecieved = true;
-            console.log("Recived FORCEUPDATE");
+            forceCollsionUpadteSent = false;
           }
           for (var i = objSpilt.length - 2; i >= 0; i--) {
             temp = objSpilt[i].split(":");
@@ -353,6 +353,11 @@
         if(raycasters[objectIdOne].indexOf(ObjectIdTwo)>=0){
           if(collisions.data[objectIdOne].indexOf(ObjectIdTwo)>=0){
             //collisions.data[objectIdOne].indexOf(ObjectIdTwo) = null;
+            //if(forceCollsionUpadteSent){
+            while(!forceCollsionUpdateRecieved){
+
+            }
+          //}
            return true;
             
           }else{
@@ -367,7 +372,6 @@
           return false;
         }
       }else{
-        console.log("info inner else Full");
         //create ObjectIdOne raycaster and add ObjectIdTwo to its checking list
         var message = "APPENDRAYCASTER_"+objectIdOne+','+ObjectIdTwo;
         win.postMessage(message, liveURL);
