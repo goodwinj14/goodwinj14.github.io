@@ -23,7 +23,7 @@
   var collisions = null;
   //A list of all the objects that currently have raycasters connected to them
   //and all the objects that raycaster is checking
-  var raycasters = [];
+  var raycasters = new Array();
   var forceCollsionUpadteSent = null;
   var forceCollsionUpdateRecieved = null;
   /*
