@@ -234,7 +234,6 @@
       forceCollsionUpdateRecieved = false;
       var message = "ForceColisionsUpdate_";
       win.postMessage(message, liveURL);
-      for
     }
     priorMotionCall = direction;
 		var message = "MOVESHAPE_"+shape_id+','+direction+','+steps;
