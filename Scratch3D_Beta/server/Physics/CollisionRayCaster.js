@@ -43,8 +43,8 @@ CollisionDetection.update = function(){
 	};
 
 	if(CollisionDetection.FORCEUPDATE){
-		touchReturn = touchReturn + "<FORCEUPDATE>"
-		console.log("touchReturn: ", touchReturn);
+		//touchReturn = touchReturn + "<FORCEUPDATE>"
+		//console.log("touchReturn: ", touchReturn);
 	}
 
 	if(CollisionDetection.lastTouching != touchReturn){
