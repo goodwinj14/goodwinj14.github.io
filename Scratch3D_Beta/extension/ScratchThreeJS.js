@@ -75,7 +75,7 @@
     raycaster = new Array();
 
 		window.addEventListener("message", receiveMessage, false);
-		console.log(document);
+		console.log(window);
 		function receiveMessage()
 		{
       //The command key is experes by KEYNAME_ the key name allows use to know what the message 
