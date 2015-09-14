@@ -348,6 +348,7 @@
   ext.isTouching = function(objectIdOne, ObjectIdTwo){
 
     console.log("forceCollsionUpadteSent",forceCollsionUpadteSent);
+    console.log("forceCollsionUpadteSent",forceCollsionUpdateRecieved);
             if(forceCollsionUpadteSent){
             //while(!forceCollsionUpdateRecieved){
 
