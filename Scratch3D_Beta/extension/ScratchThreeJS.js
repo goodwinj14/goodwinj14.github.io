@@ -347,11 +347,10 @@
     //Checks to see if the object has been created yet
     if((charecters.indexOf(objectIdOne)>=0||shapes.indexOf(objectIdOne)>=0)&&(charecters.indexOf(ObjectIdTwo)>=0||shapes.indexOf(ObjectIdTwo)>=0)){
       if(raycasters[objectIdOne]!=null){
-        console.log("isTouching ",raycasters);
         if(raycasters[objectIdOne].indexOf(ObjectIdTwo)>=0){
           if(collisions.data[objectIdOne].indexOf(ObjectIdTwo)>=0){
             //collisions.data[objectIdOne].indexOf(ObjectIdTwo) = null;
-            
+            console.log("isTouching ",raycasters.length());
            return true;
             
           }else{
