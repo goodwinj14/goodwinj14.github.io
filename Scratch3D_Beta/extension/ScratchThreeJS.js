@@ -69,10 +69,15 @@
 
     //Clear data from past runes
     collisions = null;
+    console.log(collisions);
     charecters = new Array();
+    console.log(charecters);
     materials = new Array();
+    console.log(materials);
     shapes = new Array();
+    console.log(shapes);
     raycaster = new Array();
+    console.log(raycaster);
 		window.addEventListener("message", receiveMessage, false);
 		
 		function receiveMessage()
