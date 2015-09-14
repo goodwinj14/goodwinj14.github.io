@@ -233,7 +233,7 @@
       forceCollsionUpadteSent = true;
       forceCollsionUpdateRecieved = false;
       var message = "ForceColisionsUpdate_";
-      //win.postMessage(message, liveURL);
+      win.postMessage(message, liveURL);
     }
     priorMotionCall = direction;
 		var message = "MOVESHAPE_"+shape_id+','+direction+','+steps;
