@@ -354,6 +354,7 @@
           if(collisions.data[objectIdOne].indexOf(ObjectIdTwo)>=0){
             //collisions.data[objectIdOne].indexOf(ObjectIdTwo) = null;
             if(forceCollsionUpadteSent){
+              console.log("Wating to update");
             while(!forceCollsionUpdateRecieved){
 
             }
