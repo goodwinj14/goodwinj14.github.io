@@ -350,7 +350,7 @@
         if(raycasters[objectIdOne].indexOf(ObjectIdTwo)>=0){
           if(collisions.data[objectIdOne].indexOf(ObjectIdTwo)>=0){
             //collisions.data[objectIdOne].indexOf(ObjectIdTwo) = null;
-            console.log("isTouching ",raycasters.length;
+            console.log("isTouching ",raycasters.length);
            return true;
             
           }else{
