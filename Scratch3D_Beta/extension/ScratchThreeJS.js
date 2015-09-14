@@ -24,7 +24,8 @@
   //A list of all the objects that currently have raycasters connected to them
   //and all the objects that raycaster is checking
   var raycasters = [];
-
+  var priorMotionCall = null;
+  var inverseCallCancelColision = false;
   /*
   **Mouse Controles
   */
@@ -69,12 +70,16 @@
 		//win = window.open (liveURL, "", "width=window.width, height=window.height");
 		//Test URLS
 
-    //Clear data from past runes
+    //Clear data from past runs
     collisions = null;
     charecters = new Array();
     materials = new Array();
     shapes = new Array();
     raycaster = new Array();
+    var priorMotionCall = null;
+    var inverseCallCancelColision = false;
+    //--------------------------
+
     if(!messageListenerAdded){
       window.addEventListener("message", receiveMessage, false);
       messageListenerAdded = true;
@@ -85,7 +90,6 @@
       //Type is.
       //Retrevies the command Key of the message denoting which function to call
       var commandKey = null;
-      console.log("Message recieved", event);
       if(event.data.eventType!=null){
      if(event.data.eventType=="MOUSEEVENT"){
          mouseData = event.data;
@@ -224,6 +228,33 @@
 	ext.moveShape = function(shape_id, direction, steps){
 		//Makes sure that the shape we are trying to move has been created
 		if(shapes.indexOf(shape_id)>-1){
+    //Checks to see if the direction of a objects motion has
+    //changed by 180 degrees if so the colision detection will 
+    //not be exicuted on that motion
+    if(priorMotionCall!=null){
+      if(priorMotionCall == "Left" && direction == "Right"){
+        inverseCallCancelColision = true;
+        console.log("inverseCallCancelColision",inverseCallCancelColision);
+      }else if(priorMotionCall == "Right" && direction == "Left"){
+        inverseCallCancelColision = true;
+        console.log("inverseCallCancelColision",inverseCallCancelColision);
+      }else if(priorMotionCall == "Forward" && direction == "Back"){
+        inverseCallCancelColision = true;
+        console.log("inverseCallCancelColision",inverseCallCancelColision);
+      }else if(priorMotionCall == "Back" && direction == "Forward"){
+        inverseCallCancelColision = true;
+        console.log("inverseCallCancelColision",inverseCallCancelColision);
+      }else if(priorMotionCall == "Up" && direction == "Down"){
+        inverseCallCancelColision = true;
+        console.log("inverseCallCancelColision",inverseCallCancelColision);
+      }else if(priorMotionCall == "Down" && direction == "Up"){
+        inverseCallCancelColision = true;
+        console.log("inverseCallCancelColision",inverseCallCancelColision);
+      }else{
+        inverseCallCancelColision = false;
+      }
+    }
+    priorMotionCall = direction;
 		var message = "MOVESHAPE_"+shape_id+','+direction+','+steps;
 		win.postMessage(message, liveURL);
 		}
