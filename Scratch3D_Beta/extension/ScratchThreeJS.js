@@ -230,12 +230,12 @@
     //changed by 180 degrees if so the colision detection will 
     //not be exicuted on that motion
     console.log("ForceColisionsUpdate",raycasters);
-    if(raycasters.length()>0){
+    //if(raycasters.length()>0){
       //forceCollsionUpadteSent = true;
       //forceCollsionUpdateRecieved = false;
       //var message = "ForceColisionsUpdate_";
       //win.postMessage(message, liveURL);
-    }
+    //}
 		var message = "MOVESHAPE_"+shape_id+','+direction+','+steps;
 		win.postMessage(message, liveURL);
 		}
