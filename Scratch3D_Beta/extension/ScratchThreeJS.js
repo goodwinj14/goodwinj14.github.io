@@ -349,11 +349,13 @@
 
     console.log("forceCollsionUpadteSent",forceCollsionUpadteSent);
     console.log("forceCollsionUpadteSent",forceCollsionUpdateRecieved);
+        if(forceCollsionUpadteSent!=null&&forceCollsionUpdateRecieved!=null){
             if(forceCollsionUpadteSent){
-            //while(!forceCollsionUpdateRecieved){
+            while(!forceCollsionUpdateRecieved){
 
-            //}
+            }
           }
+        }
     //Checks to see if the object has been created yet
     if((charecters.indexOf(objectIdOne)>=0||shapes.indexOf(objectIdOne)>=0)&&(charecters.indexOf(ObjectIdTwo)>=0||shapes.indexOf(ObjectIdTwo)>=0)){
       if(raycasters[objectIdOne]!=null){
