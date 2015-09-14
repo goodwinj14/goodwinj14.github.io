@@ -230,7 +230,7 @@
     //changed by 180 degrees if so the colision detection will 
     //not be exicuted on that motion
     console.log("ForceColisionsUpdate",raycasters.length);
-    if(raycasters.length>0){
+    if(raycasters.length()>0){
 
       forceCollsionUpadteSent = true;
       forceCollsionUpdateRecieved = false;
