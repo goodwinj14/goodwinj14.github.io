@@ -350,11 +350,9 @@
         if(raycasters[objectIdOne].indexOf(ObjectIdTwo)>=0){
           if(collisions.data[objectIdOne].indexOf(ObjectIdTwo)>=0){
             //collisions.data[objectIdOne].indexOf(ObjectIdTwo) = null;
-            if(!inverseCallCancelColision){
+            
            return true;
-            }else{
-              return false;
-            }
+            
           }else{
             return false;
           }
