@@ -101,6 +101,10 @@
         }else if(commandKey=="RAYCASTTOUCH"){
           var collisionData = [];
           var objSpilt = data.split(";");
+          if(event.data.indexOf("FORCEUPDATE")>=0){
+            forceCollsionUpdateRecieved = true;
+            console.log("Recived FORCEUPDATE");
+          }
           for (var i = objSpilt.length - 2; i >= 0; i--) {
             temp = objSpilt[i].split(":");
             collisionData[temp[0]] = temp[1].split(",");
@@ -234,7 +238,7 @@
     forceCollsionUpdateRecieved = false;
     var message = "ForceColisionsUpdate_";
     win.postMessage(message, liveURL);
-    
+
 		var message = "MOVESHAPE_"+shape_id+','+direction+','+steps;
 		win.postMessage(message, liveURL);
 		}

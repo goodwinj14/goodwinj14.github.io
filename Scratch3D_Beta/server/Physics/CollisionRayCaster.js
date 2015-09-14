@@ -44,7 +44,7 @@ CollisionDetection.update = function(){
 
 	if(CollisionDetection.FORCEUPDATE){
 		touchReturn = touchReturn + "<FORCEUPDATE>"
-		console.log("touchReturn: ", touchReturn);
+		CollisionDetection.FORCEUPDATE = false;
 	}
 
 	if(CollisionDetection.lastTouching != touchReturn){
