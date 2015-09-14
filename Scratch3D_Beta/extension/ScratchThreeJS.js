@@ -229,7 +229,7 @@
     //Checks to see if the direction of a objects motion has
     //changed by 180 degrees if so the colision detection will 
     //not be exicuted on that motion
-    console.log("ForceColisionsUpdate",raycasters.length());
+    //console.log("ForceColisionsUpdate",raycasters.length());
     //if(raycasters.length()>0){
       //forceCollsionUpadteSent = true;
       //forceCollsionUpdateRecieved = false;
@@ -347,6 +347,7 @@
     //Checks to see if the object has been created yet
     if((charecters.indexOf(objectIdOne)>=0||shapes.indexOf(objectIdOne)>=0)&&(charecters.indexOf(ObjectIdTwo)>=0||shapes.indexOf(ObjectIdTwo)>=0)){
       if(raycasters[objectIdOne]!=null){
+        console.log("isTouching ",raycasters);
         if(raycasters[objectIdOne].indexOf(ObjectIdTwo)>=0){
           if(collisions.data[objectIdOne].indexOf(ObjectIdTwo)>=0){
             //collisions.data[objectIdOne].indexOf(ObjectIdTwo) = null;
