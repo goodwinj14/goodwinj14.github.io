@@ -66,6 +66,12 @@
 		//Opens the three.js window
 		//win = window.open (liveURL, "", "width=window.width, height=window.height");
 		//Test URLS
+
+    //Clear data from past runes
+    collisions = null;
+    charecters = [];
+    materials = [];
+    shapes = [];
 		window.addEventListener("message", receiveMessage, false);
 		
 		function receiveMessage()
@@ -112,10 +118,7 @@
 		//**//
 		
         setTimeout(function (){
-      collisions = null;
-      charecters = null;
-      materials = null;
-      shapes = null;
+
 			var message = "INIT_"+scene+","+gravityBool+","+width+","+height;
 			win.postMessage(message,liveURL);
 			callback(); //Calls back to Scaratch proggram to allow exicution flow to reStart once the page has been loaded
