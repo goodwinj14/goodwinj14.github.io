@@ -42,6 +42,8 @@
   var mouseDown = false;
   var mouseUp = false;
 
+  var messageListenerAdded = false;
+
 	//var liveURL = "http://localhost:8888/main.html";
 	var shapes = [];
 	var materials = [];
@@ -73,9 +75,10 @@
     materials = new Array();
     shapes = new Array();
     raycaster = new Array();
-
-		window.addEventListener("message", receiveMessage, false);
-		console.log(getEventListeners(window));
+    if(!messageListenerAdded){
+      window.addEventListener("message", receiveMessage, false);
+      messageListenerAdded = true;
+    }
 		function receiveMessage()
 		{
       //The command key is experes by KEYNAME_ the key name allows use to know what the message 
