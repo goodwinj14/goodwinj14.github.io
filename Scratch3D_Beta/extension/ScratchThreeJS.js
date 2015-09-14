@@ -85,7 +85,7 @@
       //Type is.
       //Retrevies the command Key of the message denoting which function to call
       var commandKey = null;
-      console.log("Message recieved");
+      console.log("Message recieved", event);
       if(event.data.eventType!=null){
      if(event.data.eventType=="MOUSEEVENT"){
          mouseData = event.data;
