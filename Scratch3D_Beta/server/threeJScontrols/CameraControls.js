@@ -51,7 +51,7 @@ CAMERACONTROLS.orbit = 	function(direction,orbitPoint, degrees, camera){
 		//camera.lookAt(orbitPoint);1.501 mm	
 }
 
-/*
+
 
 
 CAMERACONTROLS.lookAt = function(object, camera){
