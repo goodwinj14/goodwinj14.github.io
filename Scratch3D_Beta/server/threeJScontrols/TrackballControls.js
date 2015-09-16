@@ -336,8 +336,8 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 		var mouseChange = new THREE.Vector2(),
 			objectUp = new THREE.Vector3(),
-			this.move_X_Distance = 0.01;
-			pan = new THREE.Vector3(this.move_X_Distance,0,0);
+			_this.move_X_Distance = 0.01;
+			pan = new THREE.Vector3(_this.move_X_Distance,0,0);
 
 		return function () {
 			_this.object.position.add( pan );
