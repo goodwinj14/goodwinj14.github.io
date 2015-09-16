@@ -26,7 +26,6 @@ THREE.TrackballControls = function ( object, domElement ) {
 	this.screen = { left: 0, top: 0, width: 0, height: 0 };
 
 	//CAMERA COMAND BLOCKS CONTROLE
-	this.noMove = false;
 	this.move_X_Distance = 0;
 	this.move_Y_Distance = 0;
 	this.move_Z_Distance = 0;
@@ -35,7 +34,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 	this.zoomSpeed = 1.2;
 	this.panSpeed = 0.3;
 
-	
+	this.noMove = false;
 	this.noRotate = false;
 	this.noZoom = false;
 	this.noRoll = false;
@@ -316,20 +315,10 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 	}());
 
-	this.rotate = (function(){
+	this.rotateCamera = (function(){
 
-		var mouseChange = new THREE.Vector2(),
-			objectUp = new THREE.Vector3(),
-			move = new THREE.Vector3(_this.move_X_Distance,_this.move_Y_Distance,_this.move_Z_Distance);
 		return function () {
-			move.x = _this.move_X_Distance;
-			move.y = _this.move_Y_Distance;
-			move.z = _this.move_Z_Distance;
-			_this.object.position.add( move );
-			_this.target.add( move );
-			_this.move_X_Distance = 0.0;
-			_this.move_Y_Distance = 0.0;
-			_this.move_Z_Distance = 0.0;
+			console.log("Camera Rotate Called");
 		}
 
 	}());
@@ -520,9 +509,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 		_eye.subVectors( _this.object.position, _this.target );
 
 		if ( !_this.noRotate ) {
-
 			_this.rotateCamera();
-
 		}
 
 		if ( !_this.noZoom ) {
@@ -536,6 +523,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 			_this.moveCamera();
 
 		}
+
 
 		_this.object.position.addVectors( _this.target, _eye );
 
