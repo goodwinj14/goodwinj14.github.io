@@ -150,7 +150,9 @@
 				if(CAMERA!=null){
 				console.log("controls.rotateStart", controls.rotateStart);
 				console.log("controls.rotateEnd", controls.rotateEnd);
-				//controls.rotateStart = CAMERA.rotation;
+				controls.rotateStart.x = CAMERA.rotation.x;
+				controls.rotateStart.y = CAMERA.rotation.y;
+				controls.rotateStart.z = CAMERA.rotation.z;
 				controls.rotateEnd.x = 1.14;
 				//CAMERACONTROLS.rotate(paramsArray[0], paramsArray[1], CAMERA);
 			}
