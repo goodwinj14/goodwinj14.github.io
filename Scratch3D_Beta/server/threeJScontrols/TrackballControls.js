@@ -333,10 +333,11 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 		var mouseChange = new THREE.Vector2(),
 			objectUp = new THREE.Vector3(),
-			pan = new THREE.Vector3();
+			pan = new THREE.Vector3(10,0,0);
 
 		return function () {
-			console.log("This.MoveCamera Called");
+			_this.object.position.add( pan );
+			_this.target.add( pan );
 		}
 
 	}());
