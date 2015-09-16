@@ -329,7 +329,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 	};
 
-	this.moveCamera() = (function(){
+	this.moveCamera = (function(){
 
 		var mouseChange = new THREE.Vector2(),
 			objectUp = new THREE.Vector3(),
