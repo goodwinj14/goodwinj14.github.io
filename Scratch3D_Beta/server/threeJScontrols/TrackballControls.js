@@ -276,7 +276,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 		}
 
 	};
-
+/*
 	this.panCamera = (function(){
 
 		var mouseChange = new THREE.Vector2(),
@@ -311,7 +311,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 		}
 
 	}());
-
+*/
 	this.checkDistances = function () {
 
 		if ( !_this.noZoom || !_this.noPan ) {
@@ -332,6 +332,10 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 	};
 
+
+	//**********************************************************************//
+	//********************Scratch Block Camera Controls*********************//
+	//**********************************************************************//
 	this.moveCamera = (function(){
 
 		var mouseChange = new THREE.Vector2(),
@@ -350,8 +354,27 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 	}());
 
-	
+	this.rotateCamera = (function(){
 
+		var mouseChange = new THREE.Vector2(),
+			objectUp = new THREE.Vector3(),
+			move = new THREE.Vector3(_this.move_X_Distance,_this.move_Y_Distance,_this.move_Z_Distance);
+		return function () {
+			move.x = _this.move_X_Distance;
+			move.y = _this.move_Y_Distance;
+			move.z = _this.move_Z_Distance;
+			_this.object.position.add( move );
+			_this.target.add( move );
+			_this.move_X_Distance = 0.0;
+			_this.move_Y_Distance = 0.0;
+			_this.move_Z_Distance = 0.0;
+		}
+
+	}());
+	
+	//**********************************************************************//
+	//********************************END***********************************//
+	//**********************************************************************//
 	
 	function mousedown( event ) {
 

@@ -52,24 +52,7 @@ CAMERACONTROLS.orbit = 	function(direction,orbitPoint, degrees, camera){
 }
 
 /*
-*Moves the camera to a new postion based on a user supplied direction and delta value
-*/
-CAMERACONTROLS.move = function(direction, steps, camera){
-	if(direction=="Left"){
-		THREE.TrackballControls.move_X_Distance = -steps;
-		//camera.position.x = camera.position.x - steps;
-	}if(direction=="Right"){
-		camera.position.x = (camera.position.x + steps);
-	}if(direction=="Up"){
-	camera.position.y = (camera.position.y + steps);
-	}if(direction=="Down"){
-	camera.position.y = (camera.position.y - steps);
-	}if(direction=="Forward"){
-	camera.position.z = (camera.position.z - steps);
-	}if(direction=="Back"){
-	camera.position.z = (camera.position.z + steps);
-	}
-}
+
 
 CAMERACONTROLS.lookAt = function(object, camera){
 	//camera.lookAt(object);
