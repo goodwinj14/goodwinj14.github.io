@@ -69,7 +69,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 	_zoomEnd = new THREE.Vector2(),
 
 	_touchZoomDistanceStart = 0,
-	_touchZoomDistanceEnd = 0,
+	_touchZoomDistanceEnd = 0;
 
 	// for reset
 
