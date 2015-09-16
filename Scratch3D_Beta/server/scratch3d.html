@@ -148,7 +148,8 @@
 			//CAMERAROTATE command tag is associated with Rotate Camera Block
 			if(commandKey == "CAMERAROTATE"){
 				if(CAMERA!=null){
-				console.log("CAMERA ROTATE KEY CALLED", CAMERA.rotation);
+				console.log("controls.rotateStart", controls.rotateStart);
+				console.log("controls.rotateEnd", controls.rotateEnd);
 				controls.rotateStart = CAMERA.rotation;
 				controls.rotateEnd._x = 3.14;
 				//CAMERACONTROLS.rotate(paramsArray[0], paramsArray[1], CAMERA);
