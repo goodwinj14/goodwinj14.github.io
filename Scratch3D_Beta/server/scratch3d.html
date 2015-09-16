@@ -148,8 +148,10 @@
 			//CAMERAROTATE command tag is associated with Rotate Camera Block
 			if(commandKey == "CAMERAROTATE"){
 				if(CAMERA!=null){
-				console.log("CAMERA ROTATE KEY CALLED");
-				CAMERACONTROLS.rotate(paramsArray[0], paramsArray[1], CAMERA);
+				console.log("CAMERA ROTATE KEY CALLED", CAMERA.rotation);
+				controls.rotateStart = CAMERA.rotation;
+				controls.rotateStart.x = 10;
+				//CAMERACONTROLS.rotate(paramsArray[0], paramsArray[1], CAMERA);
 			}
 			}
 			//CAMERAORBIT command tag is associated with Orbit Camera Block
