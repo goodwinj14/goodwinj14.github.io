@@ -645,7 +645,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 	//			Functions to set camera controls from scratch blocks.        	     //
 	//*******************************************************************************//
 
-	//Takes in a keyCode and assigns it to a specific CameraMove event to be exicuted 
+	/*//Takes in a keyCode and assigns it to a specific CameraMove event to be exicuted 
 	//When that key event is trigered.
 	function assignKeyToCamMoveCtrl(MOVEUP, MOVEDOWN, MOVELEFT, MOVERIGHT, MOVEFORWARD, MOVEBACK){
 			if(MOVEUP != null){
@@ -661,23 +661,8 @@ THREE.TrackballControls = function ( object, domElement ) {
 			}if(MOVEBACK != null){
 				camMoveCommandMap.MOVEBACK = MOVEBACK;
 			}
-	}
-	/* //Takes in a keyCode and assigns it to a specific CameraRotate event to be exicuted 
-	   //When that key event is trigered.
-	function assignKeyToCamRotateCtrl(ROTATEUP, ROTATEDOWN, ROTATELEFT, ROTATERIGHT){
-			if(ROTATEUP!=null){
-				camRotateCommandMap.ROTATEUP = ROTATEUP;
-			}if(ROTATEDOWN!=null){
-				camRotateCommandMap.ROTATEDOWN = ROTATEDOWN;
-			}if(ROTATELEFT!=null){
-				camRotateCommandMap.ROTATELEFT = ROTATELEFT;
-			}if(ROTATERIGHT!=null){
-				camRotateCommandMap.ROTATERIGHT = ROTATERIGHT;
-			}
 	}*/
-	//*******************************************************************************//
-	//*******************************************************************************//
-	//*******************************************************************************//
+	
 
 
 	//*******************************************************************************//
