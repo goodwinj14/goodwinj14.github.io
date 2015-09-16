@@ -277,40 +277,6 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 	};
 
-	/*this.panCamera = (function(){
-
-		var mouseChange = new THREE.Vector2(),
-			objectUp = new THREE.Vector3(),
-			pan = new THREE.Vector3();
-
-		return function () {
-
-			mouseChange.copy( _panEnd ).sub( _panStart );
-
-			if ( mouseChange.lengthSq() ) {
-
-				mouseChange.multiplyScalar( _eye.length() * _this.panSpeed );
-
-				pan.copy( _eye ).cross( _this.object.up ).setLength( mouseChange.x );
-				pan.add( objectUp.copy( _this.object.up ).setLength( mouseChange.y ) );
-
-				_this.object.position.add( pan );
-				_this.target.add( pan );
-
-				if ( _this.staticMoving ) {
-
-					_panStart.copy( _panEnd );
-
-				} else {
-
-					_panStart.add( mouseChange.subVectors( _panEnd, _panStart ).multiplyScalar( _this.dynamicDampingFactor ) );
-
-				}
-
-			}
-		}
-
-	}());*/
 
 	this.checkDistances = function () {
 
@@ -399,12 +365,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 			_zoomStart.copy( getMouseOnScreen( event.pageX, event.pageY ) );
 			_zoomEnd.copy(_zoomStart);
 
-		} else if ( _state === STATE.PAN && !_this.noPan ) {
-
-			//_panStart.copy( getMouseOnScreen( event.pageX, event.pageY ) );
-			//_panEnd.copy(_panStart)
-
-		}
+		} 
 
 		document.addEventListener( 'mousemove', mousemove, false );
 		document.addEventListener( 'mouseup', mouseup, false );
