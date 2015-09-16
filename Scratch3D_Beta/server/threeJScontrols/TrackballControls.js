@@ -5,6 +5,7 @@
 
 THREE.TrackballControls = function ( object, domElement ) {
 
+	//**FIRST PERSON VIEW CONTROLS
 	var _this = this;
 	var STATE = { NONE: -1, ROTATE: 0, ZOOM: 1, PAN: 2, TOUCH_ROTATE: 3, TOUCH_ZOOM_PAN: 4 };
 
@@ -640,44 +641,6 @@ THREE.TrackballControls = function ( object, domElement ) {
 	}
 
 
-	//*******************************************************************************//
-	//			Functions to set camera controls from scratch blocks.        	     //
-	//*******************************************************************************//
-
-	//Takes in a keyCode and assigns it to a specific CameraMove event to be exicuted 
-	//When that key event is trigered.
-	function assignKeyToCamMoveCtrl(MOVEUP, MOVEDOWN, MOVELEFT, MOVERIGHT, MOVEFORWARD, MOVEBACK){
-			if(MOVEUP != null){
-				camMoveCommandMap.MOVEUP = MOVEUP;
-			}if(MOVEDOWN != null){
-				camMoveCommandMap.MOVEDOWN = MOVEDOWN;
-			}if(MOVELEFT != null){
-				camMoveCommandMap.MOVELEFT = MOVELEFT;
-			}if(MOVERIGHT != null){
-				camMoveCommandMap.MOVERIGHT = MOVERIGHT;
-			}if(MOVEFORWARD != null){
-				camMoveCommandMap.MOVEFORWARD = MOVEFORWARD;
-			}if(MOVEBACK != null){
-				camMoveCommandMap.MOVEBACK = MOVEBACK;
-			}
-	}
-	//Takes in a keyCode and assigns it to a specific CameraRotate event to be exicuted 
-	//When that key event is trigered.
-	function assignKeyToCamRotateCtrl(ROTATEUP, ROTATEDOWN, ROTATELEFT, ROTATERIGHT){
-			if(ROTATEUP!=null){
-				camRotateCommandMap.ROTATEUP = ROTATEUP;
-			}if(ROTATEDOWN!=null){
-				camRotateCommandMap.ROTATEDOWN = ROTATEDOWN;
-			}if(ROTATELEFT!=null){
-				camRotateCommandMap.ROTATELEFT = ROTATELEFT;
-			}if(ROTATERIGHT!=null){
-				camRotateCommandMap.ROTATERIGHT = ROTATERIGHT;
-			}
-	}
-	//*******************************************************************************//
-	//*******************************************************************************//
-	//*******************************************************************************//
-
 
 	//*******************************************************************************//
 	//			Functions to Move the Camera controls from scratch blocks.        	     //
@@ -706,9 +669,6 @@ THREE.TrackballControls = function ( object, domElement ) {
 	this.domElement.addEventListener( 'touchstart', touchstart, false );
 	this.domElement.addEventListener( 'touchend', touchend, false );
 	this.domElement.addEventListener( 'touchmove', touchmove, false );
-
-	window.addEventListener( 'keydown', keydown, false );
-	window.addEventListener( 'keyup', keyup, false );
 
 	this.handleResize();
 
