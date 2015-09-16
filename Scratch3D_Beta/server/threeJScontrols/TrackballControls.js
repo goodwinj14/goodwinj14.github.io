@@ -38,7 +38,6 @@ THREE.TrackballControls = function ( object, domElement ) {
 	
 	this.noRotate = false;
 	this.noZoom = false;
-	this.noPan = false;
 	this.noRoll = false;
 
 	this.staticMoving = false;
@@ -280,7 +279,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 	this.checkDistances = function () {
 
-		if ( !_this.noZoom || !_this.noPan ) {
+		if ( !_this.noZoom) {
 
 			if ( _eye.lengthSq() > _this.maxDistance * _this.maxDistance ) {
 
