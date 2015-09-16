@@ -333,7 +333,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 	};
 
 	this.moveCamera = (function(){
-		
+		console.log("this.MoveCamerar X Val: ", _this.move_X_Distance);
 		var mouseChange = new THREE.Vector2(),
 			objectUp = new THREE.Vector3(),
 			pan = new THREE.Vector3(_this.move_X_Distance,_this.move_Y_Distance,_this.move_Z_Distance);
