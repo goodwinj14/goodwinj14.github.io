@@ -1,6 +1,7 @@
 /**
  * @author Eberhard Graether / http://egraether.com/
  * @author Mark Lundin 	/ http://mark-lundin.com
+ * @Edited By John Goodwin
  */
 
 THREE.TrackballControls = function ( object, domElement ) {
@@ -326,63 +327,23 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 	};
 
-	//Called When the code is first run
-	this.update = function () {
+	this.move = function(direction, steps, camera){
+	if(direction=="Left"){
+		camera.position.x = camera.position.x - steps;
+	}if(direction=="Right"){
+		camera.position.x = (camera.position.x + steps);
+	}if(direction=="Up"){
+	camera.position.y = (camera.position.y + steps);
+	}if(direction=="Down"){
+	camera.position.y = (camera.position.y - steps);
+	}if(direction=="Forward"){
+	camera.position.z = (camera.position.z - steps);
+	}if(direction=="Back"){
+	camera.position.z = (camera.position.z + steps);
+	}
+}
 
-		_eye.subVectors( _this.object.position, _this.target );
-
-		if ( !_this.noRotate ) {
-
-			_this.rotateCamera();
-
-		}
-
-		if ( !_this.noZoom ) {
-
-			_this.zoomCamera();
-
-		}
-
-		if ( !_this.noPan ) {
-
-			_this.panCamera();
-
-		}
-
-		_this.object.position.addVectors( _this.target, _eye );
-
-		_this.checkDistances();
-
-		_this.object.lookAt( _this.target );
-
-		if ( lastPosition.distanceToSquared( _this.object.position ) > EPS ) {
-
-			_this.dispatchEvent( changeEvent );
-
-			lastPosition.copy( _this.object.position );
-
-		}
-
-	};
-
-	this.reset = function () {
-
-		_state = STATE.NONE;
-		_prevState = STATE.NONE;
-
-		_this.target.copy( _this.target0 );
-		_this.object.position.copy( _this.position0 );
-		_this.object.up.copy( _this.up0 );
-
-		_eye.subVectors( _this.object.position, _this.target );
-
-		_this.object.lookAt( _this.target );
-
-		_this.dispatchEvent( changeEvent );
-
-		lastPosition.copy( _this.object.position );
-
-	};
+	
 
 	
 	function mousedown( event ) {
@@ -575,24 +536,63 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 	}
 
+	//Called When the code is first run
+	this.update = function () {
 
+		_eye.subVectors( _this.object.position, _this.target );
 
-	//*******************************************************************************//
-	//			Functions to Move the Camera controls from scratch blocks.        	     //
-	//*******************************************************************************//
-		function moveCamera(axis_, steps){
-			console.log("moveCamera Called");
-			if(axis_ == 'x'){
-				object.position.x = object.position.x + steps;
-			}if(axis_ == 'y'){
-				object.position.y = object.position.y + steps;
-			}if(axis_ == 'z'){
-				//object.position.z = object.position.z + steps;
-			}
+		if ( !_this.noRotate ) {
+
+			_this.rotateCamera();
+
 		}
-	//*******************************************************************************//
-	//*******************************************************************************//
-	//*******************************************************************************//
+
+		if ( !_this.noZoom ) {
+
+			_this.zoomCamera();
+
+		}
+
+		if ( !_this.noPan ) {
+
+			_this.panCamera();
+
+		}
+
+		_this.object.position.addVectors( _this.target, _eye );
+
+		_this.checkDistances();
+
+		_this.object.lookAt( _this.target );
+
+		if ( lastPosition.distanceToSquared( _this.object.position ) > EPS ) {
+
+			_this.dispatchEvent( changeEvent );
+
+			lastPosition.copy( _this.object.position );
+
+		}
+
+	};
+
+	this.reset = function () {
+
+		_state = STATE.NONE;
+		_prevState = STATE.NONE;
+
+		_this.target.copy( _this.target0 );
+		_this.object.position.copy( _this.position0 );
+		_this.object.up.copy( _this.up0 );
+
+		_eye.subVectors( _this.object.position, _this.target );
+
+		_this.object.lookAt( _this.target );
+
+		_this.dispatchEvent( changeEvent );
+
+		lastPosition.copy( _this.object.position );
+
+	};
 
 	this.domElement.addEventListener( 'contextmenu', function ( event ) { event.preventDefault(); }, false );
 
