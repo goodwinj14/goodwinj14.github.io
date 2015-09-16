@@ -316,13 +316,6 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 	}());
 
-	this.rotateCamera = (function(){
-
-		return function () {
-			console.log("Camera Rotate Called");
-		}
-
-	}());
 	
 	//**********************************************************************//
 	//********************************END*******************************//
@@ -525,10 +518,6 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 			_this.moveCamera();
 
-		}
-
-		if( !_this.noRotate ){
-			_this.rotateCamera();
 		}
 
 		_this.object.position.addVectors( _this.target, _eye );
