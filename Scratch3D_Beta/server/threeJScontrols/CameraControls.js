@@ -56,7 +56,8 @@ CAMERACONTROLS.orbit = 	function(direction,orbitPoint, degrees, camera){
 */
 CAMERACONTROLS.move = function(direction, steps, camera){
 	if(direction=="Left"){
-		camera.position.x = camera.position.x - steps;
+		THREE.TrackballControls.move_X_Distance = -steps;
+		//camera.position.x = camera.position.x - steps;
 	}if(direction=="Right"){
 		camera.position.x = (camera.position.x + steps);
 	}if(direction=="Up"){
