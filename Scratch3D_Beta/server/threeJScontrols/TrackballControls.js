@@ -336,14 +336,13 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 		var mouseChange = new THREE.Vector2(),
 			objectUp = new THREE.Vector3(),
-			pan = new THREE.Vector3(_this.move_X_Distance,_this.move_Y_Distance,_this.move_Z_Distance);
+			move = new THREE.Vector3(_this.move_X_Distance,_this.move_Y_Distance,_this.move_Z_Distance);
 		return function () {
-			pan.x = _this.move_X_Distance;
-			pan.y = _this.move_Y_Distance;
-			pan.z = _this.move_Z_Distance;
-			console.log("this.MoveCamerar X Val: ", pan);
-			_this.object.position.add( pan );
-			_this.target.add( pan );
+			move.x = _this.move_X_Distance;
+			move.y = _this.move_Y_Distance;
+			move.z = _this.move_Z_Distance;
+			_this.object.position.add( move );
+			_this.target.add( move );
 			_this.move_X_Distance = 0.0;
 			_this.move_Y_Distance = 0.0;
 			_this.move_Z_Distance = 0.0;
