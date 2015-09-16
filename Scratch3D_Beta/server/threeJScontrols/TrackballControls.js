@@ -401,8 +401,8 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 		} else if ( _state === STATE.PAN && !_this.noPan ) {
 
-			_panStart.copy( getMouseOnScreen( event.pageX, event.pageY ) );
-			_panEnd.copy(_panStart)
+			//_panStart.copy( getMouseOnScreen( event.pageX, event.pageY ) );
+			//_panEnd.copy(_panStart)
 
 		}
 
