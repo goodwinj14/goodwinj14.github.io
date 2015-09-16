@@ -6,7 +6,6 @@
 
 THREE.TrackballControls = function ( object, domElement ) {
 
-	//FIRST PERSON VIEW
 	var _this = this;
 	var STATE = { NONE: -1, ROTATE: 0, ZOOM: 1, PAN: 2, TOUCH_ROTATE: 3, TOUCH_ZOOM_PAN: 4 };
 
@@ -25,6 +24,9 @@ THREE.TrackballControls = function ( object, domElement ) {
 	this.enabled = true;
 
 	this.screen = { left: 0, top: 0, width: 0, height: 0 };
+
+	//CAMERA COMAND BLOCKS CONTROLE
+	this.noMove = false;
 
 	this.rotateSpeed = 1.0;
 	this.zoomSpeed = 1.2;
@@ -327,21 +329,17 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 	};
 
-	this.move = function(direction, steps, camera){
-	if(direction=="Left"){
-		camera.position.x = camera.position.x - steps;
-	}if(direction=="Right"){
-		camera.position.x = (camera.position.x + steps);
-	}if(direction=="Up"){
-	camera.position.y = (camera.position.y + steps);
-	}if(direction=="Down"){
-	camera.position.y = (camera.position.y - steps);
-	}if(direction=="Forward"){
-	camera.position.z = (camera.position.z - steps);
-	}if(direction=="Back"){
-	camera.position.z = (camera.position.z + steps);
-	}
-}
+	this.moveCamera() = (function(){
+
+		var mouseChange = new THREE.Vector2(),
+			objectUp = new THREE.Vector3(),
+			pan = new THREE.Vector3();
+
+		return function () {
+			console.log("This.MoveCamera Called");
+		}
+
+	}());
 
 	
 
@@ -553,9 +551,9 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 		}
 
-		if ( !_this.noPan ) {
+		if ( !_this.noMove ) {
 
-			_this.panCamera();
+			_this.moveCamera();
 
 		}
 
