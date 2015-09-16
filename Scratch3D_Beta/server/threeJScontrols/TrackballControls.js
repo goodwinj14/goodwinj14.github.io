@@ -65,7 +65,6 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 	_eye = new THREE.Vector3(),
 
-	 = new THREE.Vector3(),
 	_rotateEnd = new THREE.Vector3(),
 
 	_zoomStart = new THREE.Vector2(),
