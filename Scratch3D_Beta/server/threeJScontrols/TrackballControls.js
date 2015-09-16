@@ -27,6 +27,9 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 	//CAMERA COMAND BLOCKS CONTROLE
 	this.noMove = false;
+	this.move_X_Distance = 0;
+	this.move_Y_Distance = 0;
+	this.move_Z_Distance = 0;
 
 	this.rotateSpeed = 1.0;
 	this.zoomSpeed = 1.2;
@@ -333,7 +336,8 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 		var mouseChange = new THREE.Vector2(),
 			objectUp = new THREE.Vector3(),
-			pan = new THREE.Vector3(0.01,0,0);
+			this.move_X_Distance = 0.01;
+			pan = new THREE.Vector3(this.move_X_Distance,0,0);
 
 		return function () {
 			_this.object.position.add( pan );
