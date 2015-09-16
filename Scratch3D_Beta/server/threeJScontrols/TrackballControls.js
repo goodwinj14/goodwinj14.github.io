@@ -57,6 +57,9 @@ THREE.TrackballControls = function ( object, domElement ) {
 	var camMoveSteps = 0.5;
 	var lastPosition = new THREE.Vector3();
 
+	var _rotateStartTest1 = new THREE.Vector3();
+	var rotateStartTest2 = new THREE.Vector3();
+
 	var _state = STATE.NONE,
 	_prevState = STATE.NONE,
 
