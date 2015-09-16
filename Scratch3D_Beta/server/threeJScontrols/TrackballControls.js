@@ -662,7 +662,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 				camMoveCommandMap.MOVEBACK = MOVEBACK;
 			}
 	}
-	//Takes in a keyCode and assigns it to a specific CameraRotate event to be exicuted 
+	/*//Takes in a keyCode and assigns it to a specific CameraRotate event to be exicuted 
 	//When that key event is trigered.
 	function assignKeyToCamRotateCtrl(ROTATEUP, ROTATEDOWN, ROTATELEFT, ROTATERIGHT){
 			if(ROTATEUP!=null){
