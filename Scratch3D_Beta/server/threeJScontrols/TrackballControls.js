@@ -386,7 +386,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 	// listeners
 
-	function keydown( event ) {
+	/*function keydown( event ) {
 
 		
 		console.log("rotate Start vectore: ", _rotateEnd );
@@ -396,36 +396,6 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 		_prevState = _state;
 
-		//Checks to see if the key event matches to any on the 
-		//Key codes in camRotateCommandMap or camMoveCommandMap
-		//Then Calls the corisponding camera control function
-		/*if(event.keyCode === camMoveCommandMap.MOVEUP){
-			moveCamera('y', camMoveSteps);
-		}else if(event.keyCode === camMoveCommandMap.MOVEDOWN){
-			moveCamera('y', ((-1)*camMoveSteps));
-		}else if(event.keyCode === camMoveCommandMap.MOVELEFT){
-			moveCamera('x', ((-1)*camMoveSteps));
-			console.log("MOVELEFT Called");
-		}else if(event.keyCode === camMoveCommandMap.MOVERIGHT){
-			moveCamera('x', camMoveSteps);
-			console.log("MOVERIGHT Called");
-		}else if(event.keyCode === camMoveCommandMap.MOVEFORWARD){
-			console.log("MOVEFORWARD Called");
-		}else if(event.keyCode === camMoveCommandMap.MOVEBACK){
-			console.log("MOVEBACK Called");
-		}else if(event.keyCode === camRotateCommandMap.ROTATEUP){
-			console.log("ROTATEUP Called");
-		}else if(event.keyCode === camRotateCommandMap.ROTATEDOWN){
-			console.log("ROTATEDOWN Called");
-		}else if(event.keyCode === camRotateCommandMap.ROTATELEFT){
-			console.log("ROTATELEFT Called");
-		}else if(event.keyCode === camRotateCommandMap.ROTATERIGHT){
-			console.log("ROTATERIGHT Called");
-		}
-		console.log("rotate Start vectore: ", _rotateStart );*/
-		//*****************************************************//
-		//         											   //
-		//*****************************************************//
 		if ( _state !== STATE.NONE ) {
 
 			return;
@@ -448,7 +418,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 		window.addEventListener( 'keydown', keydown, false );
 
-	}
+	}*/
 
 	function mousedown( event ) {
 
@@ -640,29 +610,6 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 	}
 
-
-	//*******************************************************************************//
-	//			Functions to set camera controls from scratch blocks.        	     //
-	//*******************************************************************************//
-
-	/*//Takes in a keyCode and assigns it to a specific CameraMove event to be exicuted 
-	//When that key event is trigered.
-	function assignKeyToCamMoveCtrl(MOVEUP, MOVEDOWN, MOVELEFT, MOVERIGHT, MOVEFORWARD, MOVEBACK){
-			if(MOVEUP != null){
-				camMoveCommandMap.MOVEUP = MOVEUP;
-			}if(MOVEDOWN != null){
-				camMoveCommandMap.MOVEDOWN = MOVEDOWN;
-			}if(MOVELEFT != null){
-				camMoveCommandMap.MOVELEFT = MOVELEFT;
-			}if(MOVERIGHT != null){
-				camMoveCommandMap.MOVERIGHT = MOVERIGHT;
-			}if(MOVEFORWARD != null){
-				camMoveCommandMap.MOVEFORWARD = MOVEFORWARD;
-			}if(MOVEBACK != null){
-				camMoveCommandMap.MOVEBACK = MOVEBACK;
-			}
-	}*/
-	
 
 
 	//*******************************************************************************//
