@@ -71,9 +71,6 @@ THREE.TrackballControls = function ( object, domElement ) {
 	_touchZoomDistanceStart = 0,
 	_touchZoomDistanceEnd = 0,
 
-	_panStart = new THREE.Vector2(),
-	_panEnd = new THREE.Vector2();
-
 	// for reset
 
 	this.target0 = this.target.clone();
