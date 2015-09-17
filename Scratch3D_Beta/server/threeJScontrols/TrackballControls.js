@@ -425,6 +425,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 	function mousedown( event ) {
 
 	if(_this.TrackballControls){
+		//Track Ball Controls For Mouse Down
 		if ( _this.enabled === false ) return;
 
 		event.preventDefault();
@@ -455,6 +456,29 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 	}else if(_this.FirstPersonControls){
 
+		//First Person On Mouse Down
+		if ( this.domElement !== document ) {
+
+			this.domElement.focus();
+
+		}
+
+		event.preventDefault();
+		event.stopPropagation();
+
+		if ( this.activeLook ) {
+
+			switch ( event.button ) {
+
+				case 0: this.moveForward = true; break;
+				case 2: this.moveBackward = true; break;
+
+			}
+
+		}
+
+		this.mouseDragOn = true;
+
 	}
 
 
@@ -463,6 +487,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 	function mousemove( event ) {
 
+	if(_this.TrackballControls){
 		if ( _this.enabled === false ) return;
 
 		event.preventDefault();
@@ -477,11 +502,26 @@ THREE.TrackballControls = function ( object, domElement ) {
 			_zoomEnd.copy( getMouseOnScreen( event.pageX, event.pageY ) );
 
 		} 
+	}else if(_this.FirstPersonControls){
+
+		if ( this.domElement === document ) {
+
+			this.mouseX = event.pageX - this.viewHalfX;
+			this.mouseY = event.pageY - this.viewHalfY;
+
+		} else {
+
+			this.mouseX = event.pageX - this.domElement.offsetLeft - this.viewHalfX;
+			this.mouseY = event.pageY - this.domElement.offsetTop - this.viewHalfY;
+
+		}
+	}
 
 	}
 
 	function mouseup( event ) {
 
+	if(_this.TrackballControls){
 		if ( _this.enabled === false ) return;
 
 		event.preventDefault();
@@ -492,6 +532,9 @@ THREE.TrackballControls = function ( object, domElement ) {
 		document.removeEventListener( 'mousemove', mousemove );
 		document.removeEventListener( 'mouseup', mouseup );
 		_this.dispatchEvent( endEvent );
+	}else if(_this.FirstPersonControls){
+
+	}
 
 	}
 
