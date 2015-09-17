@@ -457,7 +457,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 		//First Person On Mouse Down
 		if ( this.domElement !== document ) {
 
-			this.domElement.focus();
+			_this.domElement.focus();
 
 		}
 
