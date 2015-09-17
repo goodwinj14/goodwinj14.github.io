@@ -31,6 +31,9 @@ THREE.TrackballControls = function ( object, domElement ) {
 	this.move_Y_Distance = 0;
 	this.move_Z_Distance = 0;
 
+	this.TrackballControls = false;
+	this.FirstPersonControls = false;
+
 	this.rotateSpeed = 1.0;
 	this.zoomSpeed = 1.2;
 	this.panSpeed = 0.3;
@@ -150,7 +153,6 @@ THREE.TrackballControls = function ( object, domElement ) {
 				( _this.screen.height * 0.5 + _this.screen.top - pageY ) / (_this.screen.height*.5),
 				0.0
 			);
-			console.log("Mouse Ball Normalized", mouseOnBall);
 			var length = mouseOnBall.length();
 
 			if ( _this.noRoll ) {
@@ -500,7 +502,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 	//Called When the code is first run
 	this.update = function () {
-
+		if(_this.TrackballControls){
 		_eye.subVectors( _this.object.position, _this.target );
 
 		if ( !_this.noRotate ) {
@@ -534,6 +536,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 			lastPosition.copy( _this.object.position );
 
 		}
+	}
 
 	};
 
