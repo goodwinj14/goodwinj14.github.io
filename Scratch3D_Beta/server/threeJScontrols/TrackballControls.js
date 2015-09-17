@@ -638,7 +638,16 @@ THREE.TrackballControls = function ( object, domElement ) {
 	window.addEventListener( 'keydown', bind( this, this.onKeyDown ), false );
 	window.addEventListener( 'keyup', bind( this, this.onKeyUp ), false );
 
+	function bind( scope, fn ) {
 
+		return function () {
+
+			fn.apply( scope, arguments );
+
+		};
+
+	};
+	
 	this.handleResize();
 
 	// force an update at start
