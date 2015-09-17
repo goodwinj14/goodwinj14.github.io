@@ -25,7 +25,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 	this.screen = { left: 0, top: 0, width: 0, height: 0 };
 
-	//First Person Controles
+	//**First Person Controles**//
 	this.moveForward = false;
 	this.moveBackward = false;
 	this.moveLeft = false;
@@ -35,6 +35,35 @@ THREE.TrackballControls = function ( object, domElement ) {
 	this.rotateUp = false;
 	this.rotateDown = false;
 
+	this.lat = 0;
+	this.lon = 0;
+	this.phi = 0;
+	this.theta = 0;
+
+	this.enabled = true;
+
+	this.movementSpeed = 1.0;
+	this.lookSpeed = 0.005;
+
+	this.lookVertical = false;
+	this.autoForward = false;
+
+	this.activeLook = true;
+
+	this.constrainVertical = false;
+	this.verticalMin = 0;
+	this.verticalMax = Math.PI;
+
+	this.autoSpeedFactor = 0.0;
+
+	this.mouseX = 0;
+	this.mouseY = 0;
+
+	this.mouseDragOn = false;
+
+	this.viewHalfX = 0;
+	this.viewHalfY = 0;
+	//**FPV End**//
 
 	//CAMERA COMAND BLOCKS CONTROLE
 	this.noMove = false;
@@ -110,6 +139,9 @@ THREE.TrackballControls = function ( object, domElement ) {
 			this.screen.width = window.innerWidth;
 			this.screen.height = window.innerHeight;
 
+			this.viewHalfX = window.innerWidth / 2;
+			this.viewHalfY = window.innerHeight / 2;
+
 		} else {
 
 			var box = this.domElement.getBoundingClientRect();
@@ -119,6 +151,9 @@ THREE.TrackballControls = function ( object, domElement ) {
 			this.screen.top = box.top + window.pageYOffset - d.clientTop;
 			this.screen.width = box.width;
 			this.screen.height = box.height;
+
+			this.viewHalfX = this.domElement.offsetWidth / 2;
+			this.viewHalfY = this.domElement.offsetHeight / 2;
 
 		}
 
@@ -389,6 +424,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 	function mousedown( event ) {
 
+	if(_this.TrackballControls){
 		if ( _this.enabled === false ) return;
 
 		event.preventDefault();
@@ -416,6 +452,12 @@ THREE.TrackballControls = function ( object, domElement ) {
 		document.addEventListener( 'mouseup', mouseup, false );
 
 		_this.dispatchEvent( startEvent );
+
+	}else if(_this.FirstPersonControls){
+
+	}
+
+
 
 	}
 
@@ -647,7 +689,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 		};
 
 	};
-	
+
 	this.handleResize();
 
 	// force an update at start
