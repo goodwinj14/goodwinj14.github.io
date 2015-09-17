@@ -650,6 +650,10 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 	//Called When the code is first run
 	this.update = function () {
+
+		//******************************************************//
+		//*************First person controls update*************//
+		//******************************************************//
 		if(_this.TrackballControls){
 		_eye.subVectors( _this.object.position, _this.target );
 
@@ -684,8 +688,71 @@ THREE.TrackballControls = function ( object, domElement ) {
 			lastPosition.copy( _this.object.position );
 
 		}
-	}else if(_this.FirstPersonControls){
-		//First person controls update
+	}
+	//******************************************************//
+	//*************First person controls update*************//
+	//******************************************************//
+	else if(_this.FirstPersonControls){
+	
+		if ( this.enabled === false ) return;
+
+		if ( this.heightSpeed ) {
+
+			var y = THREE.Math.clamp( this.object.position.y, this.heightMin, this.heightMax );
+			var heightDelta = y - this.heightMin;
+
+			this.autoSpeedFactor = delta * ( heightDelta * this.heightCoef );
+
+		} else {
+
+			this.autoSpeedFactor = 0.0;
+
+		}
+
+		var actualMoveSpeed = delta * this.movementSpeed;
+
+		if ( this.moveForward || ( this.autoForward && !this.moveBackward ) ) this.object.translateZ( - ( actualMoveSpeed + this.autoSpeedFactor ) );
+		if ( this.moveBackward ) this.object.translateZ( actualMoveSpeed );
+
+		if ( this.moveLeft ) this.object.translateX( - actualMoveSpeed );
+		if ( this.moveRight ) this.object.translateX( actualMoveSpeed );
+
+		if ( this.moveUp ) this.object.translateY( actualMoveSpeed );
+		if ( this.moveDown ) this.object.translateY( - actualMoveSpeed );
+
+		var actualLookSpeed = delta * this.lookSpeed;
+
+		if ( !this.activeLook ) {
+
+			//actualLookSpeed = 0;
+
+		}
+
+		var verticalLookRatio = 1;
+
+		if ( this.constrainVertical ) {
+
+			verticalLookRatio = Math.PI / ( this.verticalMax - this.verticalMin );
+
+		}
+
+		var targetPosition = this.target,
+			position = this.object.position;
+
+		//Rotate along x axis
+		if (this.rotateLeft) this.lon -= 50 * actualLookSpeed;
+		else if (this.rotateRight) this.lon += 50 * actualLookSpeed;
+		if (this.rotateUp && this.lookVertical) this.lat += 50 * actualLookSpeed * verticalLookRatio;
+		else if (this.rotateDown && this.lookVertical) this.lat -= 50 * actualLookSpeed * verticalLookRatio;
+			console.log(this.lon);
+		this.lat = Math.max( - 85, Math.min( 85, this.lat ) );
+		this.phi = THREE.Math.degToRad( 90 - this.lat );
+
+		this.theta = THREE.Math.degToRad( this.lon );
+
+		if ( this.constrainVertical ) {
+
+			this.phi = THREE.Math.mapLinear( this.phi, 0, Math.PI, this.verticalMin, this.verticalMax );
 	}
 
 	};
