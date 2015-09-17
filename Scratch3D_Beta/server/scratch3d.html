@@ -38,7 +38,7 @@
 		<script src="http://goodwinj14.github.io/Scratch3D_Beta/server/threeJScontrols/three.min.js"></script>
 		<script src="http://goodwinj14.github.io/Scratch3D_Beta/server/threeJScontrols/CameraControls.js"></script>
 		<script src="http://goodwinj14.github.io/Scratch3D_Beta/server/threeJScontrols/SceneComponents.js"></script>
-		<script src="http://goodwinj14.github.io/Scratch3D_Beta/server/threeJScontrols/TrackballControls.js"></script>
+		<script src="http://goodwinj14.github.io/Scratch3D_Beta/server/threeJScontrols/CompletCameraControls.js"></script>
 		<script src="http://goodwinj14.github.io/Scratch3D_Beta/server/threeJScontrols/SceneStyles.js"></script>
 		<script src="http://goodwinj14.github.io/Scratch3D_Beta/server/threeJScontrols/OBJLoader.js"></script>
 		<script src="http://goodwinj14.github.io/Scratch3D_Beta/server/threeJScontrols/threex.grassground.js"></script>
@@ -216,7 +216,7 @@
 				if(controls==null){
 					if(paramsArray[0]=='Mouse/Trackball'){
 						TrackBallControls = true;
-						controls = new THREE.TrackballControls(CAMERA);
+						controls = new THREE.CompleteCameraControls(CAMERA);
 						controls.TrackballControls = true;
 						controls.FirstPersonControls = false;
 						controls.rotateSpeed = 1.0;
@@ -229,7 +229,7 @@
 						controls.keys = [ 65, 83, 68 ];
 						controls.addEventListener( 'change', RENDERER );
 					}else if(paramsArray[0]=='First Person'){
-						controls = new THREE.TrackballControls(CAMERA);
+						controls = new THREE.CompleteCameraControls(CAMERA);
 						controls.FirstPersonControls = true;
 						controls.TrackballControls = false;
 						controls.movementSpeed = paramsArray[1];
