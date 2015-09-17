@@ -375,20 +375,20 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 		switch ( event.keyCode ) {
 
-			case 38: /*up*/this.moveForward = true; break;
-			case 87: /*W*/ this.rotateUp = true; break;
+			case 38: /*up*/_this.moveForward = true; break;
+			case 87: /*W*/ _this.rotateUp = true; break;
 
-			case 37: /*left*/ this.moveLeft = true; break;
-			case 65: /*A*/ this.rotateLeft = true; break;
+			case 37: /*left*/ _this.moveLeft = true; break;
+			case 65: /*A*/ _this.rotateLeft = true; break;
 
-			case 40: /*down*/ this.moveBackward = true; break;
-			case 83: /*S*/ 	this.rotateDown = true; break;
+			case 40: /*down*/ _this.moveBackward = true; break;
+			case 83: /*S*/ 	_this.rotateDown = true; break;
 
-			case 39: /*right*/ this.moveRight = true; break;
-			case 68: /*D*/ 	this.rotateRight = true; break;
+			case 39: /*right*/ _this.moveRight = true; break;
+			case 68: /*D*/ 	_this.rotateRight = true; break;
 
-			case 82: /*R*/ this.moveUp = true; break;
-			case 70: /*F*/ this.moveDown = true; break;
+			case 82: /*R*/ _this.moveUp = true; break;
+			case 70: /*F*/ _this.moveDown = true; break;
 
 		}
 
@@ -399,20 +399,20 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 		switch ( event.keyCode ) {
 
-			case 38: /*up*/ this.moveForward = false; break;
-			case 87: /*W*/ 	this.rotateUp = false; break;
+			case 38: /*up*/ _this.moveForward = false; break;
+			case 87: /*W*/ 	_this.rotateUp = false; break;
 
-			case 37: /*left*/ this.moveLeft = false; break;
-			case 65: /*A*/ 	this.rotateLeft = false; break;
+			case 37: /*left*/ _this.moveLeft = false; break;
+			case 65: /*A*/ 	_this.rotateLeft = false; break;
 
-			case 40: /*down*/ this.moveBackward = false; break;
-			case 83: /*S*/ 	this.rotateDown = false; break;
+			case 40: /*down*/ _this.moveBackward = false; break;
+			case 83: /*S*/ 	_this.rotateDown = false; break;
 
-			case 39: /*right*/ this.moveRight = false; break;
-			case 68: /*D*/ 	this.rotateRight = false; break;
+			case 39: /*right*/ _this.moveRight = false; break;
+			case 68: /*D*/ 	_this.rotateRight = false; break;
 
-			case 82: /*R*/ this.moveUp = false; break;
-			case 70: /*F*/ this.moveDown = false; break;
+			case 82: /*R*/ _this.moveUp = false; break;
+			case 70: /*F*/ _this.moveDown = false; break;
 
 		}
 
@@ -457,25 +457,25 @@ THREE.TrackballControls = function ( object, domElement ) {
 		//First Person On Mouse Down
 		if ( this.domElement !== document ) {
 
-			this.domElement.focus();
+			_this.domElement.focus();
 
 		}
 
 		event.preventDefault();
 		event.stopPropagation();
 
-		if ( this.activeLook ) {
+		if ( _this.activeLook ) {
 
 			switch ( event.button ) {
 
-				case 0: this.moveForward = true; break;
-				case 2: this.moveBackward = true; break;
+				case 0: _this.moveForward = true; break;
+				case 2: _this.moveBackward = true; break;
 
 			}
 
 		}
 
-		this.mouseDragOn = true;
+		_this.mouseDragOn = true;
 
 	}
 
@@ -502,15 +502,15 @@ THREE.TrackballControls = function ( object, domElement ) {
 		} 
 	}else if(_this.FirstPersonControls){
 
-		if ( this.domElement === document ) {
+		if ( _this.domElement === document ) {
 
-			this.mouseX = event.pageX - this.viewHalfX;
-			this.mouseY = event.pageY - this.viewHalfY;
+			_this.mouseX = event.pageX - this.viewHalfX;
+			_this.mouseY = event.pageY - this.viewHalfY;
 
 		} else {
 
-			this.mouseX = event.pageX - this.domElement.offsetLeft - this.viewHalfX;
-			this.mouseY = event.pageY - this.domElement.offsetTop - this.viewHalfY;
+			_this.mouseX = event.pageX - this.domElement.offsetLeft - this.viewHalfX;
+			_this.mouseY = event.pageY - this.domElement.offsetTop - this.viewHalfY;
 
 		}
 	}
@@ -647,7 +647,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 	}
 
 	//Called When the code is first run
-	this.update = function () {
+	this.update = function (delta ) {
 
 		//******************************************************//
 		//*************First person controls update*************//
@@ -692,14 +692,14 @@ THREE.TrackballControls = function ( object, domElement ) {
 	//******************************************************//
 	else if(_this.FirstPersonControls){
 	
-		if ( this.enabled === false ) return;
+		if ( _this.enabled === false ) return;
 
-		if ( this.heightSpeed ) {
+		if ( _this.heightSpeed ) {
 
-			var y = THREE.Math.clamp( this.object.position.y, this.heightMin, this.heightMax );
+			var y = THREE.Math.clamp( _this.object.position.y, _this.heightMin, _this.heightMax );
 			var heightDelta = y - this.heightMin;
 
-			this.autoSpeedFactor = delta * ( heightDelta * this.heightCoef );
+			_this.autoSpeedFactor = delta * ( heightDelta * _this.heightCoef );
 
 		} else {
 
@@ -707,20 +707,20 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 		}
 
-		var actualMoveSpeed = delta * this.movementSpeed;
+		var actualMoveSpeed = delta * _this.movementSpeed;
 
-		if ( this.moveForward || ( this.autoForward && !this.moveBackward ) ) this.object.translateZ( - ( actualMoveSpeed + this.autoSpeedFactor ) );
-		if ( this.moveBackward ) this.object.translateZ( actualMoveSpeed );
+		if ( _this.moveForward || ( _this.autoForward && !_this.moveBackward ) ) _this.object.translateZ( - ( actualMoveSpeed + _this.autoSpeedFactor ) );
+		if ( _this.moveBackward ) _this.object.translateZ( actualMoveSpeed );
 
-		if ( this.moveLeft ) this.object.translateX( - actualMoveSpeed );
-		if ( this.moveRight ) this.object.translateX( actualMoveSpeed );
+		if ( _this.moveLeft ) _this.object.translateX( - actualMoveSpeed );
+		if ( _this.moveRight ) _this.object.translateX( actualMoveSpeed );
 
-		if ( this.moveUp ) this.object.translateY( actualMoveSpeed );
-		if ( this.moveDown ) this.object.translateY( - actualMoveSpeed );
+		if ( _this.moveUp ) _this.object.translateY( actualMoveSpeed );
+		if ( _this.moveDown ) _this.object.translateY( - actualMoveSpeed );
 
 		var actualLookSpeed = delta * this.lookSpeed;
 
-		if ( !this.activeLook ) {
+		if ( !_this.activeLook ) {
 
 			//actualLookSpeed = 0;
 
@@ -728,29 +728,28 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 		var verticalLookRatio = 1;
 
-		if ( this.constrainVertical ) {
+		if ( _this.constrainVertical ) {
 
-			verticalLookRatio = Math.PI / ( this.verticalMax - this.verticalMin );
+			verticalLookRatio = Math.PI / ( _this.verticalMax - _this.verticalMin );
 
 		}
 
-		var targetPosition = this.target,
-			position = this.object.position;
+		var targetPosition = _this.target,
+			position = _this.object.position;
 
 		//Rotate along x axis
-		if (this.rotateLeft) this.lon -= 50 * actualLookSpeed;
-		else if (this.rotateRight) this.lon += 50 * actualLookSpeed;
-		if (this.rotateUp && this.lookVertical) this.lat += 50 * actualLookSpeed * verticalLookRatio;
-		else if (this.rotateDown && this.lookVertical) this.lat -= 50 * actualLookSpeed * verticalLookRatio;
-			console.log(this.lon);
-		this.lat = Math.max( - 85, Math.min( 85, this.lat ) );
-		this.phi = THREE.Math.degToRad( 90 - this.lat );
+		if (_this.rotateLeft) _this.lon -= 50 * actualLookSpeed;
+		else if (_this.rotateRight) _this.lon += 50 * actualLookSpeed;
+		if (_this.rotateUp && this.lookVertical) _this.lat += 50 * actualLookSpeed * verticalLookRatio;
+		else if (_this.rotateDown && _this.lookVertical) this.lat -= 50 * actualLookSpeed * verticalLookRatio;
+		_this.lat = Math.max( - 85, Math.min( 85, _this.lat ) );
+		_this.phi = THREE.Math.degToRad( 90 - _this.lat );
 
-		this.theta = THREE.Math.degToRad( this.lon );
+		_this.theta = THREE.Math.degToRad( _this.lon );
 
 		if ( this.constrainVertical ) {
 
-			this.phi = THREE.Math.mapLinear( this.phi, 0, Math.PI, this.verticalMin, this.verticalMax );
+			_this.phi = THREE.Math.mapLinear( _this.phi, 0, Math.PI, this.verticalMin, _this.verticalMax );
 		}
 	}
 
