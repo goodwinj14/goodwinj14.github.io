@@ -25,6 +25,17 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 	this.screen = { left: 0, top: 0, width: 0, height: 0 };
 
+	//First Person Controles
+	this.moveForward = false;
+	this.moveBackward = false;
+	this.moveLeft = false;
+	this.moveRight = false;
+	this.rotateLeft = false;
+	this.rotateRight = false;
+	this.rotateUp = false;
+	this.rotateDown = false;
+
+
 	//CAMERA COMAND BLOCKS CONTROLE
 	this.noMove = false;
 	this.move_X_Distance = 0;
@@ -324,6 +335,58 @@ THREE.TrackballControls = function ( object, domElement ) {
 	//********************************END*******************************//
 	//**********************************************************************//
 	
+
+	this.onKeyDown = function ( event ) {
+
+		//event.preventDefault();
+
+		switch ( event.keyCode ) {
+
+			case 38: /*up*/this.moveForward = true; break;
+			case 87: /*W*/ this.rotateUp = true; break;
+
+			case 37: /*left*/ this.moveLeft = true; break;
+			case 65: /*A*/ this.rotateLeft = true; break;
+
+			case 40: /*down*/ this.moveBackward = true; break;
+			case 83: /*S*/ 	this.rotateDown = true; break;
+
+			case 39: /*right*/ this.moveRight = true; break;
+			case 68: /*D*/ 	this.rotateRight = true; break;
+
+			case 82: /*R*/ this.moveUp = true; break;
+			case 70: /*F*/ this.moveDown = true; break;
+
+		}
+
+	};
+
+
+	this.onKeyUp = function ( event ) {
+
+		switch ( event.keyCode ) {
+
+			case 38: /*up*/ this.moveForward = false; break;
+			case 87: /*W*/ 	this.rotateUp = false; break;
+
+			case 37: /*left*/ this.moveLeft = false; break;
+			case 65: /*A*/ 	this.rotateLeft = false; break;
+
+			case 40: /*down*/ this.moveBackward = false; break;
+			case 83: /*S*/ 	this.rotateDown = false; break;
+
+			case 39: /*right*/ this.moveRight = false; break;
+			case 68: /*D*/ 	this.rotateRight = false; break;
+
+			case 82: /*R*/ this.moveUp = false; break;
+			case 70: /*F*/ this.moveDown = false; break;
+
+		}
+
+	};
+
+
+
 	function mousedown( event ) {
 
 		if ( _this.enabled === false ) return;
@@ -536,6 +599,8 @@ THREE.TrackballControls = function ( object, domElement ) {
 			lastPosition.copy( _this.object.position );
 
 		}
+	}else if(_this.FirstPersonControls){
+		//First person controls update
 	}
 
 	};
@@ -569,6 +634,10 @@ THREE.TrackballControls = function ( object, domElement ) {
 	this.domElement.addEventListener( 'touchstart', touchstart, false );
 	this.domElement.addEventListener( 'touchend', touchend, false );
 	this.domElement.addEventListener( 'touchmove', touchmove, false );
+
+	window.addEventListener( 'keydown', bind( this, this.onKeyDown ), false );
+	window.addEventListener( 'keyup', bind( this, this.onKeyUp ), false );
+
 
 	this.handleResize();
 

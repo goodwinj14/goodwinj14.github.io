@@ -142,26 +142,26 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 
 	};
 
-	this.onKeyDown = function ( event ) {
+	/*this.onKeyDown = function ( event ) {
 
 		//event.preventDefault();
 
-		switch ( event.keyCode ) {
+		switch ( event.keyCode ) {*/
 
-			case 38: /*up*/this.moveForward = true; break;
-			case 87: /*W*/ this.rotateUp = true; break;
+			//case 38: /*up*/this.moveForward = true; break;
+			//case 87: /*W*/ this.rotateUp = true; break;
 
-			case 37: /*left*/ this.moveLeft = true; break;
-			case 65: /*A*/ this.rotateLeft = true; break;
+			//case 37: /*left*/ this.moveLeft = true; break;
+		//	case 65: /*A*/ this.rotateLeft = true; break;
 
-			case 40: /*down*/ this.moveBackward = true; break;
-			case 83: /*S*/ 	this.rotateDown = true; break;
+			//case 40: /*down*/ this.moveBackward = true; break;
+			//case 83: /*S*/ 	this.rotateDown = true; break;
 
-			case 39: /*right*/ this.moveRight = true; break;
-			case 68: /*D*/ 	this.rotateRight = true; break;
+			//case 39: /*right*/ this.moveRight = true; break;
+			//case 68: /*D*/ 	this.rotateRight = true; break;
 
-			case 82: /*R*/ this.moveUp = true; break;
-			case 70: /*F*/ this.moveDown = true; break;
+			//case 82: /*R*/ this.moveUp = true; break;
+			//case 70: /*F*/ this.moveDown = true; break;
 
 		}
 
