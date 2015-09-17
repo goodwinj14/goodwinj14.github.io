@@ -20,6 +20,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 	this.domElement = ( domElement !== undefined ) ? domElement : document;
 
 	// API
+	fov
 
 	this.enabled = true;
 
