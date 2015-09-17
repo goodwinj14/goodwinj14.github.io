@@ -753,6 +753,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 		if ( this.constrainVertical ) {
 
 			this.phi = THREE.Math.mapLinear( this.phi, 0, Math.PI, this.verticalMin, this.verticalMax );
+		}
 	}
 
 	};
