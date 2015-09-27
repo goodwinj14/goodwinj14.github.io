@@ -9,6 +9,7 @@
 
 (function(ext) {
 	var win = null;
+  var wintwo = null;
 	var canvas = null;
 	var ctx = null;
 	var lastKeyEvent = null;
@@ -75,9 +76,9 @@
     shapes = new Array();
     raycaster = new Array();
     //--------------------------
-    var wintwo = window.open();
+    wintwo = window.open();
     wintwo.document.write("<!DOCTYPE html><html><body><p>Open Window</p><script> alert('Hello World');"+'<'+"/script></body></html>");
-    wintwo.myFunction();
+    
     if(!messageListenerAdded){
       window.addEventListener("message", receiveMessage, false);
       messageListenerAdded = true;
@@ -225,6 +226,7 @@
 		}
 	}
 	ext.moveShape = function(shape_id, direction, steps){
+    wintwo.myFunction();
 		//Makes sure that the shape we are trying to move has been created
 		if(shapes.indexOf(shape_id)>-1){
     //Checks to see if the direction of a objects motion has
