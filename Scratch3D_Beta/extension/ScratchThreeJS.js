@@ -76,7 +76,8 @@
     raycaster = new Array();
     //--------------------------
     var wintwo = window.open();
-    wintwo.document.write("<html>Hello World!<p>Have a nice day!</html>");
+    wintwo.document.write("<!DOCTYPE html><html><body><p>Open Window</p><script> alert('Hello World');"+'<'+"/script></body></html>");
+    wintwo.myFunction();
     if(!messageListenerAdded){
       window.addEventListener("message", receiveMessage, false);
       messageListenerAdded = true;
