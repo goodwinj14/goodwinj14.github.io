@@ -75,7 +75,8 @@
     shapes = new Array();
     raycaster = new Array();
     //--------------------------
-
+    var wintwo = window.open();
+    wintwo.document.write("<html>Hello World!<p>Have a nice day!</html>");
     if(!messageListenerAdded){
       window.addEventListener("message", receiveMessage, false);
       messageListenerAdded = true;

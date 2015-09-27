@@ -21,10 +21,11 @@ SCENECOMPONENTS.addShape = function(shape, length, width, height, LocationX, Loc
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(cube!=null){
 			Scene.add(cube);
-			cube.name = shapeID;
-			console.log("THE NEW NAME OF ", cube.name);
-			SHAPES[shapeID] = cube;
+			//cube.name = shapeID;
+			//console.log("THE NEW NAME OF ", cube.name);
 			SCENECOMPONENTS.OBJECTS.push(cube);
+			SHAPES[shapeID] = cube;
+			
 		}
 	}
 
