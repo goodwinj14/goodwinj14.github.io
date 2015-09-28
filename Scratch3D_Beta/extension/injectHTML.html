@@ -18,7 +18,7 @@
 			document.body.appendChild( renderer.domElement );
 
 			function addShape(){
-			console.log("shapeadded");
+			console.log('shapeadded');
 			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
 			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 			var cube = new THREE.Mesh( geometry, material );
@@ -35,7 +35,7 @@
 				renderer.render(scene, camera);
 			};
 			render();
-
+			addShape();
 		</script>
 	</body>
 </html>
