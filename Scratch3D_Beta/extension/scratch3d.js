@@ -1,6 +1,7 @@
 /***********************************************************/
 /***********************************************************/
 /*****************Html Three Js Code ***********************/
+var 3dWindow;
 var htmlCode = "<html>
     <head>
         <title>My first Three.js app</title>
@@ -53,12 +54,12 @@ var htmlCode = "<html>
     };
 
     ext.my_first_block = function() {
-       window.open();
+       3dWindow = window.open();
 
     };
 
     ext.newShape = function() {
-       window.document.write(htmlCode);
+       3dWindow.document.write(htmlCode);
        return "loaded";
     };
 
