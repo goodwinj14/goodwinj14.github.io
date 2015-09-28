@@ -17,16 +17,11 @@ var htmlCode = "<html><head><title>My first Three.js app</title><style>body{marg
         return {status: 2, msg: 'Ready'};
     };
 
-     = function() {
-       
-
-    };
-
     ext.init = function() {
         sceneWindow = window.open();
         sceneWindow.document.write(htmlCode);
     };
-    
+
     ext.newShape = function() {
        
        return "loaded";
