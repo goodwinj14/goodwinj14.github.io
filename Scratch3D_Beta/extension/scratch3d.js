@@ -27,8 +27,8 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
 
     ext.newShape = function() {
         if(sceneWindow!=null){
-        sceneWindow.addShape();
         console.log("ScratchExtensions", ScratchExtensions);
+        sceneWindow.addShape();
        return "loaded";
    }else{
        return "not loaded";
