@@ -27,9 +27,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
 
     ext.newShape = function() {
         if(sceneWindow!=null){
-       sceneWindow.addShape();
-       //descriptor.blocks.push([' ', 'A new Block', 'init']);
-       console.log("descriptor", descriptor);
+        sceneWindow.addShape();
         console.log("ScratchExtensions", ScratchExtensions);
        return "loaded";
    }else{
