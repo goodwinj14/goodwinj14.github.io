@@ -8,6 +8,20 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
 /*****************Html Three Js Code ***********************/
 /***********************************************************/
 /***********************************************************/
+
+/***********************************************************/
+/***********************************************************/
+/***************Extension Local Data ***********************/
+
+    var descriptor = {
+        blocks: []
+    };
+
+/***************Extension Local Data ***********************/
+/***********************************************************/
+/***********************************************************/
+
+
 (function(ext) {
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {};
@@ -40,15 +54,12 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
     };
 
     // Block and block menu descriptions
-    var descriptor = {
-        blocks: [
-            // Block type, block name, function name
-            [' ', 'my first block', 'init'],
-            ['r', 'New Shape', 'newShape'],
-        ]
-    };
+        descriptor.blocks.push([' ', 'my first block', 'init']);
+        descriptor.blocks.push(['r', 'New Shape', 'newShape']);
+    //
 
     // Register the extension
     ScratchExtensions.register('My first extension', descriptor, ext);
 })({});
+
 
