@@ -30,6 +30,9 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
         console.log("ScratchExtensions", ScratchExtensions);
         sceneWindow.addShape();
         ScratchExtensions.unregister('My first extension');
+        descriptor.blocks.push(['r', 'New Shape', 'newShape']);
+        console.log("descriptor", descriptor);
+        ScratchExtensions.register('My first extension', descriptor, ext);
        return "loaded";
    }else{
        return "not loaded";
