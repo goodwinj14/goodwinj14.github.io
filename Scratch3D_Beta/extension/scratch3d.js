@@ -29,6 +29,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
         if(sceneWindow!=null){
         console.log("ScratchExtensions", ScratchExtensions);
         sceneWindow.addShape();
+        ScratchExtensions.unregister('My first extension');
        return "loaded";
    }else{
        return "not loaded";
