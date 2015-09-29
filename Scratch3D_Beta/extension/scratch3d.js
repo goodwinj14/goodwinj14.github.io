@@ -17,6 +17,10 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
         blocks: []
     };
 
+    var menus = {
+
+    };
+
 /***************Extension Local Data ***********************/
 /***********************************************************/
 /***********************************************************/
@@ -43,10 +47,9 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
         if(sceneWindow!=null){
         console.log("ScratchExtensions", ScratchExtensions);
         sceneWindow.addShape();
-        ScratchExtensions.unregister('My first extension');
-        descriptor.blocks.push(['r', 'New Shape', 'newShape']);
-        console.log("descriptor", descriptor);
-        ScratchExtensions.register('My first extension', descriptor, ext);
+        
+        descriptor.blocks.push(['r', 'New Block', 'newShape']);
+        updateExtension();
        return "loaded";
    }else{
        return "not loaded";
@@ -54,12 +57,15 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
     };
 
     // Block and block menu descriptions
-        descriptor.blocks.push([' ', 'my first block', 'init']);
+        descriptor.blocks.push([' ', 'New 3D World', 'init']);
         descriptor.blocks.push(['r', 'New Shape', 'newShape']);
     //
 
     // Register the extension
-    ScratchExtensions.register('My first extension', descriptor, ext);
+    ScratchExtensions.register('scratch3d', descriptor, ext);
 })({});
 
-
+function updateExtension(){
+    ScratchExtensions.unregister('scratch3d');
+    ScratchExtensions.register('scratch3d', descriptor, ext);
+}
