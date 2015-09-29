@@ -19,6 +19,8 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
     };
 
     ext.init = function() {
+        console.log("descriptor", descriptor);
+        console.log("ext", ext);
         sceneWindow = window.open();
         sceneWindow.document.write(htmlCode);
     };
@@ -26,6 +28,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
     ext.newShape = function() {
         if(sceneWindow!=null){
        sceneWindow.addShape();
+       descriptor.blocks.push([' ', 'A new Block', 'init']);
        return "loaded";
    }else{
        return "not loaded";
