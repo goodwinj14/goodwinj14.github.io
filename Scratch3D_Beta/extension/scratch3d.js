@@ -56,6 +56,11 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
    }
     };
 
+    function updateExtension(){
+    ScratchExtensions.unregister('scratch3d');
+    ScratchExtensions.register('scratch3d', descriptor, ext);
+    }
+
     // Block and block menu descriptions
         descriptor.blocks.push([' ', 'New 3D World', 'init']);
         descriptor.blocks.push(['r', 'New Shape', 'newShape']);
@@ -65,7 +70,4 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
     ScratchExtensions.register('scratch3d', descriptor, ext);
 })({});
 
-function updateExtension(){
-    ScratchExtensions.unregister('scratch3d');
-    ScratchExtensions.register('scratch3d', descriptor, ext);
-}
+
