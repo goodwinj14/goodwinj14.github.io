@@ -61,7 +61,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
         sceneWindow.document.write(htmlCode);
     };
 
-    
+
     ext.uploadFile = function(){
          /*var fileSelector = document.createElement('button');
         fileSelector.setAttribute('id', 'file');
@@ -71,6 +71,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
       fileSelector.dispatchEvent(evt);
       console.log(document.getElementById('file'));*/
       fileSelector = document.createElement('button');
+      fileSelector.setAttribute('type', 'file');
       fileSelector.setAttribute('onclick', 'bClicked()');
       var evt = document.createEvent("MouseEvents");
       evt.initEvent("click", true, false);
