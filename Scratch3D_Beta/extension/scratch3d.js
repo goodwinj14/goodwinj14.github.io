@@ -61,12 +61,14 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
         sceneWindow.document.write(htmlCode);
     };
 
+    ext.uploadFile = function(){
+        console.log("Upload Called");
+    }
+
     ext.newShape = function() {
         if(sceneWindow!=null){
         console.log("ScratchExtensions", ScratchExtensions);
         sceneWindow.addShape();
-        
-        descriptor.menus.Scenes = ['List','Items','Successfully','Changed'],
         updateExtension();
        return "loaded";
    }else{
@@ -83,6 +85,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
     // Block and block menu descriptions
         descriptor.blocks.push([' ', 'New 3D World %m.Scenes', 'init']);
         descriptor.blocks.push(['r', 'New Shape', 'newShape']);
+        descriptor.blocks.push(['b', 'Upload', 'uploadFile']);
     //
 
     // Register the extension
