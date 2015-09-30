@@ -17,7 +17,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
         blocks: []
     };
 
-   var menus: {
+   menus: {
             Scenes: ['Grid','Grass','Space','Blank'],
         Toggle: ['On','Off'],
                 Camera: ['Perspective'],
