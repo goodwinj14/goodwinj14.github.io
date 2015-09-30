@@ -74,8 +74,8 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
       fileSelector.setAttribute('type', 'file');
       fileSelector.setAttribute('id', 'file');
       fileSelector.setAttribute('onclick', 'bClicked()');
-      console.log("Pre Modal4: ");
-      window.$modal[0].innerHTML.appendChild(fileSelector);
+      console.log("Pre Modal4: "window);
+      //window.$modal[0].innerHTML.appendChild(fileSelector);
       console.log("Modal: ", window.$modal[0].innerHTML);
       
       console.log("window", window);
