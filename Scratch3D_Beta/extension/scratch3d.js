@@ -111,5 +111,5 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
 function bClicked(){
         window.params.allowfullscreen = "false";
         console.log("document", Scratch);
-        console.log("window", window);
+        console.log("window", window.modal);
       }
