@@ -62,7 +62,19 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
     };
 
     ext.uploadFile = function(){
-        console.log("Upload Called");
+         var fileSelector = document.createElement('input');
+            fileSelector.setAttribute('type', 'file');
+
+        var selectDialogueLink = document.createElement('a');
+        selectDialogueLink.setAttribute('href', '');
+        selectDialogueLink.innerText = "Select File";
+
+        selectDialogueLink.onclick = function () {
+        fileSelector.click();
+            return false;
+        }
+
+ document.body.appendChild(selectDialogueLink);
     }
 
     ext.newShape = function() {
