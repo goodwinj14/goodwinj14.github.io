@@ -63,19 +63,11 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
 
     ext.uploadFile = function(){
          var fileSelector = document.createElement('input');
-            fileSelector.setAttribute('type', 'file');
-
-        var selectDialogueLink = document.createElement('a');
-        selectDialogueLink.setAttribute('href', '');
-        selectDialogueLink.innerText = "Select File";
-
-        selectDialogueLink.onclick = function () {
-        fileSelector.click();
-            return false;
-        }
-
- document.body.appendChild(selectDialogueLink);
-    selectDialogueLink.click();
+        fileSelector.setAttribute('type', 'file');
+    document.body.appendChild(fileSelector);
+    var evt = document.createEvent("MouseEvents");
+      evt.initEvent("click", true, false);
+      fileSelector.dispatchEvent(evt);
     }
 
     ext.newShape = function() {
