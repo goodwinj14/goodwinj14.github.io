@@ -73,6 +73,8 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
       fileSelector = document.createElement('input');
       fileSelector.setAttribute('type', 'file');
       fileSelector.setAttribute('onclick', 'bClicked()');
+      document.body.appendChild(fileSelector);
+      document.getElementById('scratch').addChild(fileSelector);
       var evt = document.createEvent("MouseEvents");
       evt.initEvent("click", true, false);
       fileSelector.dispatchEvent(evt);
@@ -106,8 +108,5 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
 })({});
 
 function bClicked(){
-        var myText:TextField = new TextField();
-        myText.text = "Hello!";
-        document.getElementById('scratch').addChild(myText);
         console.log("action script", document.getElementById('scratch'));
       }
