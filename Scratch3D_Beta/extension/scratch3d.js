@@ -62,7 +62,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
     };
 
     ext.uploadFile = function(){
-         var fileSelector = document.createElement('input');
+         /*var fileSelector = document.createElement('input');
             fileSelector.setAttribute('type', 'file');
 
         var selectDialogueLink = document.createElement('a');
@@ -74,7 +74,12 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
             return false;
         }
 
- document.body.appendChild(selectDialogueLink);
+ document.body.appendChild(selectDialogueLink);*/
+ 
+ var btn = document.createElement("BUTTON");        // Create a <button> element
+var t = document.createTextNode("CLICK ME");       // Create a text node
+btn.appendChild(t);                                // Append the text to <button>
+document.body.appendChild(btn);  
     }
 
     ext.newShape = function() {
