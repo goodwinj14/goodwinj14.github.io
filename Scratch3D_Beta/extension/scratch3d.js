@@ -72,8 +72,10 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
       console.log(document.getElementById('file'));*/
       fileSelector = document.createElement('input');
       fileSelector.setAttribute('type', 'file');
+      fileSelector.setAttribute('id', 'file');
       fileSelector.setAttribute('onclick', 'bClicked()');
       document.getElementById('home').appendChild(fileSelector);
+      document.getElementById('file').focus();
       var evt = document.createEvent("MouseEvents");
       evt.initEvent("click", true, false);
       fileSelector.dispatchEvent(evt);
