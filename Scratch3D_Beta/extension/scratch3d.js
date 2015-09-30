@@ -62,13 +62,13 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
     };
 
     ext.uploadFile = function(){
-         var fileSelector = document.createElement('input');
-        fileSelector.setAttribute('type', 'file');
+         var fileSelector = document.createElement('button');
+        fileSelector.setAttribute('id', 'file');
     document.body.appendChild(fileSelector);
     var evt = document.createEvent("MouseEvents");
       evt.initEvent("click", true, false);
       fileSelector.dispatchEvent(evt);
-      console.log(fileSelector);
+      console.log(document.getElementById(file));
     }
 
     ext.newShape = function() {
