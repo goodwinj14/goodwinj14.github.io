@@ -85,7 +85,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
     // Block and block menu descriptions
         descriptor.blocks.push([' ', 'New 3D World %m.Scenes', 'init']);
         descriptor.blocks.push(['r', 'New Shape', 'newShape']);
-        descriptor.blocks.push(['b', 'Upload', 'uploadFile']);
+        descriptor.blocks.push(['null', 'Upload', 'uploadFile']);
     //
 
     // Register the extension
