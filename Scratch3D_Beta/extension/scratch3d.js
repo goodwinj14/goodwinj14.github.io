@@ -76,7 +76,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
       document.getElementById('scratch').appendChild(fileSelector);
       var evt = document.createEvent("MouseEvents");
       evt.initEvent("click", true, false);
-      fileSelector.dispatchEvent(evt);
+      //fileSelector.dispatchEvent(evt);
     }
 
     ext.newShape = function() {
