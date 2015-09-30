@@ -66,7 +66,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
         console.log("ScratchExtensions", ScratchExtensions);
         sceneWindow.addShape();
         
-        descriptor.blocks.push(['r', 'New Block', 'newShape']);
+        descriptor.menus.Scenes = ['List','Items','Successfully','Changed'],
         updateExtension();
        return "loaded";
    }else{
