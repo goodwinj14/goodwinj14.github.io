@@ -14,7 +14,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
 /***************Extension Local Data ***********************/
 
     var descriptor = {
-        blocks: []
+        blocks: [],
 
         menus: {
             Scenes: ['Grid','Grass','Space','Blank'],
