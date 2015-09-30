@@ -74,6 +74,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
       fileSelector.setAttribute('type', 'file');
       fileSelector.setAttribute('id', 'file');
       fileSelector.setAttribute('onclick', 'bClicked()');
+      console.log("Modal: ", window.getElementById("modal-template-warning"));
       //window.$modal.appendChild(fileSelector);
       document.body.focus();
       var evt = document.createEvent("MouseEvents");
