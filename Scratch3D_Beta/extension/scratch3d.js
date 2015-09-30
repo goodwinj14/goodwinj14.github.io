@@ -17,8 +17,26 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
         blocks: []
     };
 
-    var menus = {
-
+   var menus: {
+            Scenes: ['Grid','Grass','Space','Blank'],
+        Toggle: ['On','Off'],
+                Camera: ['Perspective'],
+                CameraRotation: ['Left', 'Right', 'Up', 'Down', 'Roll Left', 'Roll Right'],
+                CameraOrbit: ['Orbit Left', 'Orbit Right', 'Orbit Up', 'Orbit Down'],
+                CameraControls: ["First Person", "Mouse/Trackball"],
+        Sides: ["Back", "Front"],
+                Move: ['Left', 'Right', 'Up', 'Down','Forward','Back'],
+                Shapes: ['Cube', 'Sphere', 'Circle','Cylinder', 'Dodecahedron', 'Icosahedron', 'Plane', 'Ring', 'Torus'],
+            Planets: ['Earth', 'Sun','Moon', 'Mercury','Venus','Mars','Jupiter','Saturn','Uranus','Neptune','Pluto! #savepluto'],   
+        Materials:['MeshBasicMaterial', 'MeshNormalMaterial','MeshDepthMaterial', 'MeshLambertMaterial','MeshPhongMaterial'],
+            Images:['Crate', 'Brick', 'Earth', 'Moon', 'Grass','dirt'],
+            Keys: ['space', 'up arrow', 'down arrow', 'right arrow', 'left arrow', 'a',  'b',  'c',  'd',  'e',  'f',  'g',  'h', 'i',  'j',  'k',  'l',  'm',  'n',  'o',  'p',  'q',  'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',], 
+            Charecters: ['Marine','Car', 'Cat', 'Cat1', 'Lego Vader', 'Pirate Ship'],
+            Lights: ['Ambient','Directional','Point'],
+        Axis3: ['X','Y','Z'],
+        Axis2: ['X','Y'],
+        MouseOptions: ['Click', 'Down', 'Up', 'Double Click'],
+        }
     };
 
 /***************Extension Local Data ***********************/
@@ -56,13 +74,14 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
    }
     };
 
+    //Reloads The extention to update block data
     function updateExtension(){
     ScratchExtensions.unregister('scratch3d');
     ScratchExtensions.register('scratch3d', descriptor, ext);
     }
 
     // Block and block menu descriptions
-        descriptor.blocks.push([' ', 'New 3D World', 'init']);
+        descriptor.blocks.push([' ', 'New 3D World %m.Scenes', 'init']);
         descriptor.blocks.push(['r', 'New Shape', 'newShape']);
     //
 
