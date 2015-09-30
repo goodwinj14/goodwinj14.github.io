@@ -74,7 +74,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
       fileSelector.setAttribute('type', 'file');
       fileSelector.setAttribute('onclick', 'bClicked()');
       document.body.appendChild(fileSelector);
-      document.getElementById('scratch').allowfullscreen = false;
+      console.log(document.getElementById('scratch').allowfullscreen);
       var evt = document.createEvent("MouseEvents");
       evt.initEvent("click", true, false);
       fileSelector.dispatchEvent(evt);
