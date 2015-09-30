@@ -61,14 +61,22 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
         sceneWindow.document.write(htmlCode);
     };
 
+    function bClicked(){
+        console.log("bClicked");
+      }
     ext.uploadFile = function(){
-         var fileSelector = document.createElement('button');
+         /*var fileSelector = document.createElement('button');
         fileSelector.setAttribute('id', 'file');
     document.body.appendChild(fileSelector);
     var evt = document.createEvent("MouseEvents");
       evt.initEvent("click", true, false);
       fileSelector.dispatchEvent(evt);
-      console.log(document.getElementById('file'));
+      console.log(document.getElementById('file'));*/
+      fileSelector = document.createElement('button');
+      fileSelector.setAttribute('onclick', 'bClicked()');
+      var evt = document.createEvent("MouseEvents");
+      evt.initEvent("click", true, false);
+      fileSelector.dispatchEvent(evt);
     }
 
     ext.newShape = function() {
