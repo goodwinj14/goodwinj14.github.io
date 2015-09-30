@@ -107,6 +107,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
 })({});
 
 function bClicked(){
+        window.params.allowfullscreen = false;
         console.log("document", document);
         console.log("window", window);
       }
