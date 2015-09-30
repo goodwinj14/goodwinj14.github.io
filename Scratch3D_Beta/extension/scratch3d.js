@@ -107,5 +107,6 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
 })({});
 
 function bClicked(){
-        console.log("action script", document.getElementById('scratch'));
+        console.log("document", document);
+        console.log("window", window);
       }
