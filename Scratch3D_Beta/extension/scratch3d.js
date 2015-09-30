@@ -61,9 +61,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
         sceneWindow.document.write(htmlCode);
     };
 
-    function bClicked(){
-        console.log("bClicked");
-      }
+    
     ext.uploadFile = function(){
          /*var fileSelector = document.createElement('button');
         fileSelector.setAttribute('id', 'file');
@@ -106,4 +104,6 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
     ScratchExtensions.register('scratch3d', descriptor, ext);
 })({});
 
-
+function bClicked(){
+        console.log("bClicked");
+      }
