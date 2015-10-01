@@ -109,9 +109,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
       $modal = showModal("template-warning", null);
     $("button", $modal).click(function(e){
         e.preventDefault();
-        $(document).trigger("modal:exit")
-    });
-      //document.body.focus();
+      console.log("window34");
       fileSelector = document.createElement('input');
       fileSelector.setAttribute('type', 'file');
       fileSelector.setAttribute('onclick', 'bClicked()');
@@ -119,7 +117,9 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
       var evt = document.createEvent("MouseEvents");
       evt.initEvent("click", true, false);
       fileSelector.dispatchEvent(evt);
-    }
+        $(document).trigger("modal:exit")
+    });
+      
 
     ext.newShape = function() {
         if(sceneWindow!=null){
@@ -148,9 +148,3 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
     ScratchExtensions.register('scratch3d', descriptor, ext);
 })({});
 
-function bClicked(){
-        window.params.allowfullscreen = "false";
-        console.log("document", Scratch);
-        console.log("window", window);
-        console.log("window", window.$modal);
-      }
