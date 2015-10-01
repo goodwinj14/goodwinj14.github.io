@@ -88,7 +88,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
     var zIndex = 100;
     var modalId = ("modal-" + "template-warning").replace(",", "-");
     $modalwrapper = $("<div class='modal-fade-screen'><div class='modal-inner'></div></div>");
-    var $modal = getOrCreateFromTemplate(modalId, "template-warning", "dialog", "body", $modalwrapper, data);
+    var $modal = getOrCreateFromTemplate(modalId, "template-warning", "dialog", "body", $modalwrapper);
     console.log("Modual get", $modal);
     $modal.addClass("modal");
 
@@ -112,12 +112,12 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
         $(document).trigger("modal:exit")
     });
       //document.body.focus();
-      fileSelector = document.createElement('input');
+      /*fileSelector = document.createElement('input');
       fileSelector.setAttribute('type', 'file');
       document.body.appendChild(fileSelector);
       var evt = document.createEvent("MouseEvents");
       evt.initEvent("click", true, false);
-      fileSelector.dispatchEvent(evt);
+      fileSelector.dispatchEvent(evt);*/
     }
 
     ext.newShape = function() {
