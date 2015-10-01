@@ -90,9 +90,12 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         if (typeof(templateId) != "string") {
             for (var id in templateId) {
                 templateContent += $(document.getElementById(templateId[id])).html();
+
             }
+            console.log("if: ", templateContent);
         } else {
-            templateContent += $(document.getElementById(templateId)).html()
+            templateContent += $(document.getElementById(templateId)).html();
+            console.log("else: ", templateContent);
         }
         $template = _.template(templateContent);
         $element = $("<"+elementType+"></"+elementType+">")
