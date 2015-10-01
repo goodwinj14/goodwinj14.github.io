@@ -106,7 +106,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
         $modal.remove();
     });
 
-      $modal = showModal("template-warning", null);
+      //$modal = showModal("template-warning", null);
     $("button", $modal).click(function(e){
         e.preventDefault();
       console.log("window34");
