@@ -77,6 +77,38 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
       console.log("window", window);
       //$(document.getElementById("scratch")).css({top: "-9999px"});
       Scratch.FlashApp.ASobj.ASsetModalOverlay(true);
+
+
+    /*
+     * Copies the HTML referenced by data-template into a new element,
+     * with id="modal-[template value]" and creates an overlay on the
+     * page, which when clicked will close the popup.
+     */
+    var data = null;
+    var zIndex = 100;
+    var modalId = ("modal-" + "template-warning").replace(",", "-");
+    $modalwrapper = $("<div class='modal-fade-screen'><div class='modal-inner'></div></div>");
+    var $modal = getOrCreateFromTemplate(modalId, "template-warning", "dialog", "body", $modalwrapper, data);
+
+    $modal.addClass("modal");
+
+    $(".modal-fade-screen", $modal)
+        .addClass("visible")
+        .click(function(e){if ($(e.target).is($(this))) $(this).trigger("modal:exit")});
+
+    $(".modal-close", $modal).click(function(e){
+        e.preventDefault();
+        $(document).trigger("modal:exit")
+    });
+    
+    $("body").addClass("modal-open");
+
+    $(document).one("modal:exit page:show editor:extensionLoaded", function(e){
+        $("body").removeClass("modal-open");
+        Scratch.FlashApp.ASobj.ASsetModalOverlay(false);
+        $modal.remove();
+    });
+
       $modal = showModal("template-warning", null);
     $("button", $modal).click(function(e){
         e.preventDefault();
