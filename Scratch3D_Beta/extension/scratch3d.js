@@ -109,12 +109,6 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
       //$modal = showModal("template-warning", null);
     $("button", $modal).click(function(e){
         e.preventDefault();
-        fileSelector = document.createElement('input');
-      fileSelector.setAttribute('type', 'file');
-      document.body.appendChild(fileSelector);
-      var evt = document.createEvent("MouseEvents");
-      evt.initEvent("click", true, false);
-      fileSelector.dispatchEvent(evt);
         $(document).trigger("modal:exit")
     });
       //document.body.focus();
