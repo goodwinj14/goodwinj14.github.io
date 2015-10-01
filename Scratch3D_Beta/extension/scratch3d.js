@@ -79,20 +79,24 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
       //Scratch.FlashApp.ASobj.ASsetModalOverlay(true);
 
 
+  function sModal(templateId, data) {
     /*
      * Copies the HTML referenced by data-template into a new element,
      * with id="modal-[template value]" and creates an overlay on the
      * page, which when clicked will close the popup.
      */
-    var data = null;
+
     var zIndex = 100;
-    var modalId = ("modal-" + "template-warning").replace(",", "-");
+    var modalId = ("modal-" + templateId).replace(",", "-");
     $modalwrapper = $("<div class='modal-fade-screen'><div class='modal-inner'></div></div>");
-    var $modal = getOrCreateFromTemplate(modalId, "template-warning", "dialog", "body", $modalwrapper);
-    console.log("Modual get", $modal);
+    var $modal = getOrCreateFromTemplate(modalId, templateId, "dialog", "body", $modalwrapper, data);
+
     $modal.addClass("modal");
 
-    
+    $(".modal-fade-screen", $modal)
+        .addClass("visible")
+        .click(function(e){if ($(e.target).is($(this))) $(this).trigger("modal:exit")});
+
     $(".modal-close", $modal).click(function(e){
         e.preventDefault();
         $(document).trigger("modal:exit")
@@ -105,8 +109,11 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
         Scratch.FlashApp.ASobj.ASsetModalOverlay(false);
         $modal.remove();
     });
+    
+    return $modal;
+}
 
-      //$modal = showModal("template-warning", null);
+      $modal = sModal("template-warning", null);
     $("button", $modal).click(function(e){
         e.preventDefault();
         $(document).trigger("modal:exit")
