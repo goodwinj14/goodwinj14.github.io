@@ -78,7 +78,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
       //$(document.getElementById("scratch")).css({top: "-9999px"});
       //Scratch.FlashApp.ASobj.ASsetModalOverlay(true);
 
-
+var inputElement = null;
 function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrapper, data) {
     elementType = elementType || "div";
     appendTo = appendTo || "body";
@@ -147,6 +147,10 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 }
 
       $modal = sModal("template-warning", null);
+      inputElement = document.getElementById("upfile");
+      inputElement.addEventListener("change", function(event){
+        console.log("inputElement Has Been Changed");
+      });
     $("button", $modal).click(function(e){
        // e.preventDefault();
         console.log("modal-button 2");
