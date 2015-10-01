@@ -70,17 +70,15 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
       evt.initEvent("click", true, false);
       fileSelector.dispatchEvent(evt);
       console.log(document.getElementById('file'));*/
-      fileSelector = document.createElement('input');
-      fileSelector.setAttribute('type', 'file');
-      fileSelector.setAttribute('id', 'file');
-      fileSelector.setAttribute('onclick', 'bClicked()');
+
       console.log("Pre Modal5: ",window);
       //window.$modal[0].showModal();
       document.body.appendChild(fileSelector);
       $(document.getElementById("scratch")).css({top: "-9999px"});
-      document.getElementById("file").focus();
-      console.log("window", window);
-      console.log("window", window.$modal);
+      //document.getElementById("file").focus();
+      fileSelector = document.createElement('input');
+      fileSelector.setAttribute('type', 'file');
+      fileSelector.setAttribute('onclick', 'bClicked()');
       var evt = document.createEvent("MouseEvents");
       evt.initEvent("click", true, false);
       fileSelector.dispatchEvent(evt);
