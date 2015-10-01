@@ -109,7 +109,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
         Scratch.FlashApp.ASobj.ASsetModalOverlay(false);
         $modal.remove();
     });
-    
+    console.log("returned");
     return $modal;
 }
 
