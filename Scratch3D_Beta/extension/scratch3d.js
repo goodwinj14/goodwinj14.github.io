@@ -79,6 +79,32 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
       //Scratch.FlashApp.ASobj.ASsetModalOverlay(true);
 
 
+function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrapper, data) {
+    elementType = elementType || "div";
+    appendTo = appendTo || "body";
+    data = data || {};
+
+    var $element = $(document.getElementById(elementId));
+    if (!$element.length) {
+        var templateContent = "";
+        if (typeof(templateId) != "string") {
+            for (var id in templateId) {
+                templateContent += $(document.getElementById(templateId[id])).html();
+            }
+        } else {
+            templateContent += $(document.getElementById(templateId)).html()
+        }
+        $template = _.template(templateContent);
+        $element = $("<"+elementType+"></"+elementType+">")
+            .attr("id", elementId)
+            .html($template(data));
+        if (wrapper) $element.wrapInner(wrapper);
+        $element.appendTo(appendTo)
+    }
+    return $element;
+};
+
+
   function sModal(templateId, data) {
     /*
      * Copies the HTML referenced by data-template into a new element,
@@ -92,7 +118,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
 
 //<input type='file' id='upload'/>
     $modalwrapper = $("<div class='modal-fade-screen'><div class='modal-inner'></div></div>");
-    var $modal = getOrCreateFromTemplate(modalId, templateId, "dialog", "body", $modalwrapper, data);
+    var $modal = CreateFromTemplate(modalId, templateId, "dialog", "body", $modalwrapper, data);
 
     $modal.addClass("modal");
 
