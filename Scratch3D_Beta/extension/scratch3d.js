@@ -76,7 +76,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
       fileSelector.setAttribute('onclick', 'bClicked()');
       console.log("Pre Modal5: ",window);
       //window.$modal[0].showModal();
-      //window.$modal[0].innerHTML.appendChild(fileSelector);
+      document.body.appendChild(fileSelector);
       $(document.getElementById("scratch")).css({top: "-9999px"});
       
       console.log("window", window);
