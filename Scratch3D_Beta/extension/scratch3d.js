@@ -79,7 +79,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
       //Scratch.FlashApp.ASobj.ASsetModalOverlay(true);
 
 
-  function sModal(templateId, data) {
+  function sModal( data) {
     /*
      * Copies the HTML referenced by data-template into a new element,
      * with id="modal-[template value]" and creates an overlay on the
@@ -88,7 +88,23 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
 
     var zIndex = 100;
     var modalId = ("modal-" + templateId).replace(",", "-");
-    $modalwrapper = $("<div class='modal-fade-screen'><div class='modal-inner'><input type='file' id='upload' /></div></div>");
+
+
+templateId = "<dialog class='extension-warning with-icon'>
+    <section>
+        <h2>Warning</h2>
+        <p>The extensions on this site are experimental</p>
+    </section>
+    <section>
+        <p>The Scratch Team is <strong>not</strong> responsible for the extensions and projects on this site. Please use caution when using these extensions. <a href="#faq">Learn More</a></p>
+        <input type='file' id='upload'/>
+        <button data-action='show' data-target='home'>Back to ScratchX home</button>
+        <button class='success'>I understand, continue</button>
+    </section>
+</dialog>"
+
+
+    $modalwrapper = $("<div class='modal-fade-screen'><div class='modal-inner'></div></div>");
     var $modal = getOrCreateFromTemplate(modalId, templateId, "dialog", "body", $modalwrapper, data);
 
     $modal.addClass("modal");
@@ -109,11 +125,11 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
         Scratch.FlashApp.ASobj.ASsetModalOverlay(false);
         $modal.remove();
     });
-    console.log("returned1");
+    console.log("returned2");
     return $modal;
 }
 
-      $modal = sModal("template-warning", null);
+      $modal = sModal(null);
     $("button", $modal).click(function(e){
         e.preventDefault();
         $(document).trigger("modal:exit")
