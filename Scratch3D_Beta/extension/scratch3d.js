@@ -111,7 +111,6 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
         e.preventDefault();
         fileSelector = document.createElement('input');
       fileSelector.setAttribute('type', 'file');
-      fileSelector.setAttribute('onclick', 'bClicked()');
       document.body.appendChild(fileSelector);
       var evt = document.createEvent("MouseEvents");
       evt.initEvent("click", true, false);
@@ -121,7 +120,6 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
       //document.body.focus();
       fileSelector = document.createElement('input');
       fileSelector.setAttribute('type', 'file');
-      fileSelector.setAttribute('onclick', 'bClicked()');
       document.body.appendChild(fileSelector);
       var evt = document.createEvent("MouseEvents");
       evt.initEvent("click", true, false);
