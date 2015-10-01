@@ -77,6 +77,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
       console.log("window", window);
       //$(document.getElementById("scratch")).css({top: "-9999px"});
       Scratch.FlashApp.ASobj.ASsetModalOverlay(true);
+      JSshowWarning(null);
       //document.body.focus();
       fileSelector = document.createElement('input');
       fileSelector.setAttribute('type', 'file');
