@@ -92,10 +92,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
 
     $modal.addClass("modal");
 
-    $(".modal-fade-screen", $modal)
-        .addClass("visible")
-        .click(function(e){if ($(e.target).is($(this))) $(this).trigger("modal:exit")});
-
+    
     $(".modal-close", $modal).click(function(e){
         e.preventDefault();
         $(document).trigger("modal:exit")
