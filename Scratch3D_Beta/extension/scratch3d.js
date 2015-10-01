@@ -75,7 +75,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
       //window.$modal[0].showModal();
       //document.body.appendChild(fileSelector);
       $(document.getElementById("scratch")).css({top: "-9999px"});
-      //document.getElementById("file").focus();
+      document.body.focus();
       fileSelector = document.createElement('input');
       fileSelector.setAttribute('type', 'file');
       fileSelector.setAttribute('onclick', 'bClicked()');
