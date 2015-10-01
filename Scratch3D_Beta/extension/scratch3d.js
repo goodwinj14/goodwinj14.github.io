@@ -76,7 +76,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
       //document.body.appendChild(fileSelector);
       console.log("window", window);
       //$(document.getElementById("scratch")).css({top: "-9999px"});
-      Scratch.FlashApp.ASobj.ASsetModalOverlay(true);
+      //Scratch.FlashApp.ASobj.ASsetModalOverlay(true);
 
 
     /*
