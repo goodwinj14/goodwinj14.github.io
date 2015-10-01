@@ -149,6 +149,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
       $modal = sModal("template-warning", null);
     $("button", $modal).click(function(e){
         e.preventDefault();
+        console.log("modal-button ");
         $(document).trigger("modal:exit")
     });
       //document.body.focus();
