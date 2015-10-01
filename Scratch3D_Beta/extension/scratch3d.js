@@ -149,14 +149,13 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
       $modal = sModal("template-warning", null);
       inputElement = document.getElementById("upfile");
       inputElement.addEventListener("change", function(event){
-        file = inputElement.files,
-        fsize = file.length;
-
-    for (i=0; i < fsize; i++) {
-        console.log("Filename: " + file[i].name);
-        console.log("Type: " + file[i].type);
-        console.log("Size: " + file[i].size + " bytes");
-    }
+    file = inputElement.files,
+    var reader = new FileReader();
+        reader.onload = function(event) {
+            var contents = event.target.result;
+            console.log("File contents: " + contents);
+            };
+        reader.readAsText(file);
       },false);
     $("button", $modal).click(function(e){
        // e.preventDefault();
