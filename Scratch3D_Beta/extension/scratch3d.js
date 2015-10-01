@@ -149,8 +149,8 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
       $modal = sModal("template-warning", null);
       inputElement = document.getElementById("upfile");
       inputElement.addEventListener("change", function(event){
-    file = inputElement.files,
-    var reader = new FileReader();
+        file = inputElement.files;
+     var reader = new FileReader();
         reader.onload = function(event) {
             var contents = event.target.result;
             console.log("File contents: " + contents);
