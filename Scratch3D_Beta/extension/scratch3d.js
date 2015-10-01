@@ -71,12 +71,12 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
       fileSelector.dispatchEvent(evt);
       console.log(document.getElementById('file'));*/
 
-      console.log("Pre Modal5: ",window);
+      console.log("Pre Modal6: ",window);
       //window.$modal[0].showModal();
       //document.body.appendChild(fileSelector);
       console.log("window", window);
       //$(document.getElementById("scratch")).css({top: "-9999px"});
-      Scratch.FlashApp.ASobj.ASsetModalOverlay(false);
+      Scratch.FlashApp.ASobj.ASsetModalOverlay(true);
       //document.body.focus();
       fileSelector = document.createElement('input');
       fileSelector.setAttribute('type', 'file');
