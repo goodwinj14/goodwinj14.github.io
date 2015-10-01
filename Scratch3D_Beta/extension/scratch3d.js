@@ -88,7 +88,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
 
     var zIndex = 100;
     var modalId = ("modal-" + templateId).replace(",", "-");
-    $modalwrapper = $("<div class='modal-fade-screen'><div class='modal-inner'></div></div>");
+    $modalwrapper = $("<div class='modal-fade-screen'><div class='modal-inner'><input type='file' id='upload' /></div></div>");
     var $modal = getOrCreateFromTemplate(modalId, templateId, "dialog", "body", $modalwrapper, data);
 
     $modal.addClass("modal");
@@ -109,7 +109,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
         Scratch.FlashApp.ASobj.ASsetModalOverlay(false);
         $modal.remove();
     });
-    console.log("returned");
+    console.log("returned1");
     return $modal;
 }
 
