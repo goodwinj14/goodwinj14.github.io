@@ -95,7 +95,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             console.log("if: ", templateContent);
         } else {
             templateContent += $(document.getElementById(templateId)).html();
-                templateContent = "<dialog class='extension-warning with-icon'><section><h2>Warning</h2><p>The extensions on this site are experimental</p></section><section><p>The Scratch Team is <strong>not</strong> responsible for the extensions and projects on this site. Please use caution when using these extensions. <a href='#faq'>Learn More</a></p><button data-action='show' data-target='home'>Back to ScratchX home</button><button type='file' id='upload'>Uplaod File</button></section></dialog>"
+                templateContent = "<dialog class='extension-warning with-icon'><section><h2>Warning</h2><p>The extensions on this site are experimental</p></section><section><p>The Scratch Team is <strong>not</strong> responsible for the extensions and projects on this site. Please use caution when using these extensions. <a href='#faq'>Learn More</a></p><input type='file' id='upfile'/><button data-action='show' data-target='home'>Back to ScratchX home</button><button >Uplaod File</button></section></dialog>"
         }
         $template = _.template(templateContent);
         $element = $("<"+elementType+"></"+elementType+">")
@@ -150,6 +150,10 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     $("button", $modal).click(function(e){
        // e.preventDefault();
         console.log("modal-button 2");
+        var evt = document.createEvent("MouseEvents");
+        evt.initEvent("click", true, false);
+        document.getElementById("upfile").dispatchEvent(evt);
+        
         //$(document).trigger("modal:exit")
     });
       //document.body.focus();
