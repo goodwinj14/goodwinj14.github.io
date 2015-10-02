@@ -74,6 +74,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
                 console.log("if: ", templateContent);
             } else {
                 templateContent += $(document.getElementById(templateId)).html();
+                console.log("templateContent: ",templateContent);
                     templateContent = htmlCode;
             }
             $template = _.template(templateContent);
@@ -83,7 +84,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
             if (wrapper) $element.wrapInner(wrapper);
             $element.appendTo(appendTo)
         }
-        $element[0] =  htmlCode;
+        //$element[0] =  htmlCode;
         console.log("element2: ",$element);
         return $element;
     };
