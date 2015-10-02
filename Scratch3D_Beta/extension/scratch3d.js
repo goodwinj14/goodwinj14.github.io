@@ -74,8 +74,9 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
                 console.log("if: ", templateContent);
             } else {
                 templateContent += $(document.getElementById(templateId)).html();
-                console.log("templateContent: ",templateContent);
+
                     templateContent = htmlCode;
+                    console.log("htmlCode: ",templateContent);
             }
             $template = _.template(templateContent);
             $element = $("<"+elementType+"></"+elementType+">")
