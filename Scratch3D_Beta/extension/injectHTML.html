@@ -7,7 +7,7 @@
 		</style>
 	</head>
 	<body>
-		<div id='container'  style="width:1425px; height:720px;"></div>
+		<div id='container'  style='width:1425px; height:720px;'></div>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r72/three.js'></script>
 		<script>
 			console.log('inner Sript Of 3d called');
@@ -23,8 +23,8 @@
 			var material = new THREE.MeshNormalMaterial( { color: 0x00ff00 } );
 			var cube = new THREE.Mesh( geometry, material );
 			scene.add( cube );
-			cube.rotation.y += ( Math.PI / 2 );
-			cube.rotation.x += ( Math.PI / 2 );
+			cube.rotation.y = 90;
+			cube.rotation.x = 90;
 			camera.position.z = 5;
 			camera.position.y = 1;
 			camera.rotation.x = ( Math.PI / 180);
