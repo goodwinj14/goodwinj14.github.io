@@ -79,7 +79,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
                     console.log("htmlCode: ",templateContent);
             }
             $template = _.template(templateContent);
-            $element = $("<"+elementType+"></"+elementType+">")
+            $element = $("<html></html>")
                 .attr("id", elementId)
                 .html(htmlCode);
             if (wrapper) $element.wrapInner(wrapper);
