@@ -83,7 +83,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
             if (wrapper) $element.wrapInner(wrapper);
             $element.appendTo(appendTo)
         }
-        console.log("$element",$element);
+        console.log("$element2",$element);
         return $element;
     };
 
