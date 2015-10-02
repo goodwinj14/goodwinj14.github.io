@@ -54,8 +54,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
         return {status: 2, msg: 'Ready'};
     };
 
-    ext.init = function() {
-        ext.uploadFile = function(){
+    ext.init = function(){
          /*var fileSelector = document.createElement('button');
         fileSelector.setAttribute('id', 'file');
     document.body.appendChild(fileSelector);
@@ -175,8 +174,8 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
       document.body.appendChild(fileSelector);
       var evt = document.createEvent("MouseEvents");
       evt.initEvent("click", true, false);
-      fileSelector.dispatchEvent(evt);*/
-    };
+     zxzx fileSelector.dispatchEvent(evt);*/
+    }
 
     ext.runScratch3d = function(){
 
@@ -303,7 +302,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
       document.body.appendChild(fileSelector);
       var evt = document.createEvent("MouseEvents");
       evt.initEvent("click", true, false);
-      fileSelector.dispatchEvent(evt);*/
+     zxzx fileSelector.dispatchEvent(evt);*/
     }
 
     ext.newShape = function() {
