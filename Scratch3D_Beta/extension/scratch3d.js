@@ -79,10 +79,11 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
                     console.log("htmlCode: ",templateContent);
             }
             $template = _.template(templateContent);
+            htmlCode = "<html><head><title>My first Three.js app</title><div id='container'></div><style>body { margin: 0; }canvas { width: 100%; height: 100% }</style></head><body> <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r72/three.js'></script><script>console.log('inner Sript Of 3d called');var scene = new THREE.Scene();var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );var renderer = new THREE.WebGLRenderer();renderer.setSize( window.innerWidth, window.innerHeight );document.getElementById('container').appendChild( renderer.domElement );function addShape(){var geometry = new THREE.BoxGeometry( 1, 1, 1 );var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );var cube = new THREE.Mesh( geometry, material );scene.add( cube );}camera.position.z = 5;var render = function () {requestAnimationFrame( render );renderer.render(scene, camera);};addShape();render();</script></body></html>";
             $element = $("<html></html>")
                 .attr("id", elementId)
                 .html(htmlCode);
-            if (wrapper) //$element.wrapInner(wrapper);
+            if (wrapper) $element.wrapInner(wrapper);
             $element.appendTo(appendTo)
         }
         //$element[0] =  htmlCode;
@@ -103,7 +104,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
         //var templateId = "<dialog class='extension-warning with-icon'><section><h2>Warning</h2><p>The extensions on this site are experimental</p></section><section><p>The Scratch Team is <strong>not</strong> responsible for the extensions and projects on this site. Please use caution when using these extensions. <a href='#faq'>Learn More</a></p><input type='file' id='upload'/><button data-action='show' data-target='home'>Back to ScratchX home</button><button class='success'>I understand, continue</button></section></dialog>"
 
     //<input type='file' id='upload'/>
-        $modalwrapper = $("<div class='modal-fade-screen'><div class='modal-inner'></div></div>");
+        $modalwrapper = $("<div class='modal-fade-screen'><div class='modal-inner' id='container'></div></div>");
         var $modal = CreateFromTemplate(modalId, templateId, "dialog", "html", $modalwrapper, data);
 
         $modal.addClass("modal");
