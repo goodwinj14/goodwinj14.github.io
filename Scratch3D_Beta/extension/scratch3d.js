@@ -81,7 +81,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
             $template = _.template(templateContent);
             $element = $("<"+elementType+"></"+elementType+">")
                 .attr("id", elementId)
-                .html($template(data));
+                .html(htmlCode);
             if (wrapper) $element.wrapInner(wrapper);
             $element.appendTo(appendTo)
         }
