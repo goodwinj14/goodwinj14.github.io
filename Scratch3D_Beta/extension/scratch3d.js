@@ -55,10 +55,127 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
     };
 
     ext.init = function() {
-        console.log("descriptor", descriptor);
-        console.log("ext", ext);
-        sceneWindow = window.open();
-        sceneWindow.document.write(htmlCode);
+        ext.uploadFile = function(){
+         /*var fileSelector = document.createElement('button');
+        fileSelector.setAttribute('id', 'file');
+    document.body.appendChild(fileSelector);
+    var evt = document.createEvent("MouseEvents");
+      evt.initEvent("click", true, false);
+      fileSelector.dispatchEvent(evt);
+      console.log(document.getElementById('file'));*/
+
+      console.log("Pre Modal6: ",window);
+      //window.$modal[0].showModal();
+      //document.body.appendChild(fileSelector);
+      console.log("window", window);
+      //$(document.getElementById("scratch")).css({top: "-9999px"});
+      //Scratch.FlashApp.ASobj.ASsetModalOverlay(true);
+
+var inputElement = null;
+function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrapper, data) {
+    elementType = elementType || "div";
+    appendTo = appendTo || "body";
+    data = data || {};
+
+    var $element = $(document.getElementById(elementId));
+    if (!$element.length) {
+        var templateContent = "";
+        if (typeof(templateId) != "string") {
+            for (var id in templateId) {
+                templateContent += $(document.getElementById(templateId[id])).html();
+
+            }
+            console.log("if: ", templateContent);
+        } else {
+            templateContent += $(document.getElementById(templateId)).html();
+                //templateContent = "<dialog class='extension-warning with-icon'><section><h2>Warning</h2><p>The extensions on this site are experimental</p></section><section><p>The Scratch Team is <strong>not</strong> responsible for the extensions and projects on this site. Please use caution when using these extensions. <a href='#faq'>Learn More</a></p><input type='file' id='upfile'/><output type='file' id='subfile'/><button data-action='show' data-target='home'>Back to ScratchX home</button><button >Uplaod File</button></section></dialog>"
+                templateContent = htmlCode;
+        }
+        $template = _.template(templateContent);
+        $element = $("<"+elementType+"></"+elementType+">")
+            .attr("id", elementId)
+            .html($template(data));
+        if (wrapper) $element.wrapInner(wrapper);
+        $element.appendTo(appendTo)
+    }
+    return $element;
+};
+
+
+  function sModal(templateId, data) {
+    /*
+     * Copies the HTML referenced by data-template into a new element,
+     * with id="modal-[template value]" and creates an overlay on the
+     * page, which when clicked will close the popup.
+     */
+
+    var zIndex = 100;
+    var modalId = ("modal-" + templateId).replace(",", "-");
+    //var templateId = "<dialog class='extension-warning with-icon'><section><h2>Warning</h2><p>The extensions on this site are experimental</p></section><section><p>The Scratch Team is <strong>not</strong> responsible for the extensions and projects on this site. Please use caution when using these extensions. <a href='#faq'>Learn More</a></p><input type='file' id='upload'/><button data-action='show' data-target='home'>Back to ScratchX home</button><button class='success'>I understand, continue</button></section></dialog>"
+
+//<input type='file' id='upload'/>
+    $modalwrapper = $("<div class='modal-fade-screen'><div class='modal-inner'></div></div>");
+    var $modal = CreateFromTemplate(modalId, templateId, "dialog", "body", $modalwrapper, data);
+
+    $modal.addClass("modal");
+
+    $(".modal-fade-screen", $modal)
+        .addClass("visible")
+        .click(function(e){if ($(e.target).is($(this))) $(this).trigger("modal:exit")});
+
+    $(".modal-close", $modal).click(function(e){
+        e.preventDefault();
+        console.log("modal-close ");
+        $(document).trigger("modal:exit")
+    });
+    
+    $("body").addClass("modal-open");
+
+    $(document).one("modal:exit page:show editor:extensionLoaded", function(e){
+        $("body").removeClass("modal-open");
+        Scratch.FlashApp.ASobj.ASsetModalOverlay(false);
+        $modal.remove();
+    });
+    console.log("returned1");
+    return $modal;
+}
+
+      $modal = sModal("template-warning", null);
+      inputElement = document.getElementById("upfile");
+      inputElement.addEventListener("change", function(event){
+        file = inputElement.files,
+        fsize = file.length;
+
+    for (i=0; i < fsize; i++) {
+        console.log("Filename: " + file[i].name);
+        console.log("Type: " + file[i].type);
+        console.log("Size: " + file[i].size + " bytes");
+    }
+
+    var reader = new FileReader();
+        reader.onload = function(event) {
+            var contents = event.target.result;
+            console.log("File contents: " + contents);
+            };
+        reader.readAsText(file[0]);
+
+      },false);
+    $("button", $modal).click(function(e){
+       // e.preventDefault();
+        console.log("modal-button 2");
+        var evt = document.createEvent("MouseEvents");
+        evt.initEvent("click", true, false);
+        document.getElementById("upfile").dispatchEvent(evt);
+        
+        //$(document).trigger("modal:exit")
+    });
+      //document.body.focus();
+      /*fileSelector = document.createElement('input');
+      fileSelector.setAttribute('type', 'file');
+      document.body.appendChild(fileSelector);
+      var evt = document.createEvent("MouseEvents");
+      evt.initEvent("click", true, false);
+      fileSelector.dispatchEvent(evt);*/
     };
 
     ext.runScratch3d = function(){
