@@ -24,9 +24,11 @@
 			var material = new THREE.MeshNormalMaterial( { color: 0x00ff00 } );
 			var cube = new THREE.Mesh( geometry, material );
 			scene.add( cube );
-			cube.rotation.y += ( Math.PI / 45 );
-			cube.rotation.x += ( Math.PI / 45 );
+			cube.rotation.y += ( Math.PI / 2 );
+			cube.rotation.x += ( Math.PI / 2 );
 			camera.position.z = 5;
+			camera.position.y = 1;
+			camera.rotation.x = ( Math.PI / 180);
 			
 
 			var render = function () {
