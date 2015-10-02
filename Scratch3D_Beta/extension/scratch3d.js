@@ -63,7 +63,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
         data = data || {};
 
         var $element = $(document.getElementById(elementId));
-        console.log("$element",$element);
+
         if (!$element.length) {
             var templateContent = "";
             if (typeof(templateId) != "string") {
@@ -83,6 +83,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
             if (wrapper) $element.wrapInner(wrapper);
             $element.appendTo(appendTo)
         }
+        console.log("$element",$element);
         return $element;
     };
 
