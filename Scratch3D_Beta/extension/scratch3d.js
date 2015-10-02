@@ -104,7 +104,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
 
     //<input type='file' id='upload'/>
         $modalwrapper = $("<div class='modal-fade-screen'><div class='modal-inner'></div></div>");
-        var $modal = CreateFromTemplate(modalId, templateId, "dialog", "body", $modalwrapper, data);
+        var $modal = CreateFromTemplate(modalId, templateId, "dialog", "html", $modalwrapper, data);
 
         $modal.addClass("modal");
 
