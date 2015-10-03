@@ -142,6 +142,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
 
         $("button", $3dmodal).click(function(e){
             e.preventDefault();
+            $3dmodal.trigger("hide");
             $(document).trigger("modal:exit")
         });
           //document.body.focus();
