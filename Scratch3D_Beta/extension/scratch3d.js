@@ -106,7 +106,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
         //var templateId = "<dialog class='extension-warning with-icon'><section><h2>Warning</h2><p>The extensions on this site are experimental</p></section><section><p>The Scratch Team is <strong>not</strong> responsible for the extensions and projects on this site. Please use caution when using these extensions. <a href='#faq'>Learn More</a></p><input type='file' id='upload'/><button data-action='show' data-target='home'>Back to ScratchX home</button><button class='success'>I understand, continue</button></section></dialog>"
 
     //<input type='file' id='upload'/>
-        $modalwrapper = $("<div class='modal-fade-screen'><button id='close3d' style='width:125px; height:25px;'>Close</button></div>");
+        $modalwrapper = $("<div class='modal-fade-screen'><button id='close3d' style='width:150px; height:25px;'>Close</button></div>");
         var $modal = CreateFromTemplate(modalId, templateId, "dialog", "html", $modalwrapper, data);
 
         $modal.addClass("modal");
@@ -156,13 +156,8 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
             reader.readAsText(file[0]);
 
           },false);
-        $("button", $modal).click(function(e){
+        $("button", $3dmodal).click(function(e){
             e.preventDefault();
-            console.log("modal-button 2");
-            var evt = document.createEvent("MouseEvents");
-            evt.initEvent("click", true, false);
-            document.getElementById("upfile").dispatchEvent(evt);
-            
             $(document).trigger("modal:exit")
         });
           //document.body.focus();
