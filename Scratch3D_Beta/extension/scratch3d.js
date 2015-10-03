@@ -135,28 +135,11 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
           $3dmodal = sModal("template-warning", null);
       }else{
             console.log("modal-open5",$3dmodal);
+            console.log("modal-open5",document);
             Scratch.FlashApp.ASobj.ASsetModalOverlay(true);
             $("body").trigger("modal:open");
       }
-          inputElement = document.getElementById("upfile");
-          inputElement.addEventListener("change", function(event){
-            file = inputElement.files,
-            fsize = file.length;
 
-        for (i=0; i < fsize; i++) {
-            console.log("Filename: " + file[i].name);
-            console.log("Type: " + file[i].type);
-            console.log("Size: " + file[i].size + " bytes");
-        }
-
-        var reader = new FileReader();
-            reader.onload = function(event) {
-                var contents = event.target.result;
-                console.log("File contents: " + contents);
-                };
-            reader.readAsText(file[0]);
-
-          },false);
         $("button", $3dmodal).click(function(e){
             e.preventDefault();
             $(document).trigger("modal:exit")
