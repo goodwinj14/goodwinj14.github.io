@@ -137,7 +137,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
             console.log("modal-open5",$3dmodal);
             console.log("modal-open5",document);
             Scratch.FlashApp.ASobj.ASsetModalOverlay(true);
-            $("body").trigger("modal:open");
+            $3dmodal.trigger("show");
       }
 
         $("button", $3dmodal).click(function(e){
