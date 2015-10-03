@@ -133,8 +133,8 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
         if($3dmodal==null){
           $3dmodal = sModal("template-warning", null);
       }else{
-            console.log("modal-open");
-            $("body").trigger("modal-open");
+            console.log("modal-open2");
+            $("body").trigger("modal:open");
       }
           inputElement = document.getElementById("upfile");
           inputElement.addEventListener("change", function(event){
