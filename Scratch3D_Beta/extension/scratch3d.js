@@ -111,9 +111,9 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
 
         $modal.addClass("modal");
 
-        //$(".modal-fade-screen", $modal)
-         //   .addClass("visible")
-         //   .click(function(e){if ($(e.target).is($(this))) $(this).trigger("modal:exit")});
+        $(".modal-fade-screen", $modal)
+            .addClass("visible")
+            .click(function(e){if ($(e.target).is($(this))) $(this).trigger("modal:exit")});
 
         $(".modal-close", $modal).click(function(e){
             e.preventDefault();
@@ -135,6 +135,9 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
       }else{
             console.log("modal-open5",$3dmodal);
             console.log("modal-open5",document);
+             $(".modal-fade-screen", $3dmodal)
+            .addClass("visible")
+            .click(function(e){if ($(e.target).is($(this))) $(this).trigger("modal:exit")});
             Scratch.FlashApp.ASobj.ASsetModalOverlay(true);
             $('#modal').modal('show');
       }
