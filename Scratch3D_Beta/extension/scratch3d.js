@@ -128,11 +128,13 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
             Scratch.FlashApp.ASobj.ASsetModalOverlay(false);
             $modal.remove();
         });
-        console.log("returned1");
         return $modal;
     }
         if($3dmodal==null){
           $3dmodal = sModal("template-warning", null);
+      }else{
+            console.log("modal-open");
+            $("body").trigger("modal-open");
       }
           inputElement = document.getElementById("upfile");
           inputElement.addEventListener("change", function(event){
