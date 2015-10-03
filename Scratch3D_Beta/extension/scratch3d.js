@@ -131,7 +131,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
         console.log("returned1");
         return $modal;
     }
-        if($3dmodal){
+        if($3dmodal==null){
           $3dmodal = sModal("template-warning", null);
       }
           inputElement = document.getElementById("upfile");
