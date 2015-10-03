@@ -134,7 +134,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
         if($3dmodal==null){
           $3dmodal = sModal("template-warning", null);
       }else{
-            console.log("modal-open5");
+            console.log("modal-open5",$3dmodal);
             Scratch.FlashApp.ASobj.ASsetModalOverlay(true);
             $("body").trigger("modal:open");
       }
