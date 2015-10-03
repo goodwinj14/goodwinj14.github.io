@@ -127,7 +127,7 @@ var htmlCode = "<html> <head> <title>My first Three.js app</title> <style> body 
             $("body").removeClass("modal-open");
             //$('#modal').modal('hide');
             Scratch.FlashApp.ASobj.ASsetModalOverlay(false);
-            $modal.remove();
+            //$modal.remove();
         });
         return $modal;
     }
