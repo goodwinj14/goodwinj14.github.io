@@ -49,6 +49,12 @@ var script = document.createElement('script');
  //Loads the needed Libaries
     script.src = 'http://scratch3d.github.io/tierTwo/Scratch3D_Beta/server/threeJScontrols/three.js';
     document.getElementsByTagName('head')[0].appendChild(script);
+
+    htmlCode = document.createElement('script');
+    htmlCode.onload = function() {
+        console.log("Script loaded and ready: ", htmlCode);
+    };
+    htmlCode.src = 'http://goodwinj14.github.io/Scratch3D_Beta/server/scratch3dScript.js';
     // Register the extension
 
 (function(ext) {
