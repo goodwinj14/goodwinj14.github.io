@@ -79,7 +79,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     var $element = $(document.getElementById(elementId));
     if (!$element.length) {
         var templateContent = "";
-        /*if (typeof(templateId) != "string") {
+        if (typeof(templateId) != "string") {
             for (var id in templateId) {
                 templateContent += $(document.getElementById(templateId[id])).html();
 
@@ -88,8 +88,8 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         } else {
             templateContent += $(document.getElementById(templateId)).html();
                 templateContent = "<dialog class='extension-warning with-icon'><section><h2>Warning</h2><p>The extensions on this site are experimental</p></section><section><p>The Scratch Team is <strong>not</strong> responsible for the extensions and projects on this site. Please use caution when using these extensions. <a href='#faq'>Learn More</a></p><input type='file' id='upfile'/><output type='file' id='subfile'/><button data-action='show' data-target='home'>Back to ScratchX home</button><button >Uplaod File</button></section></dialog>"
-        }*/
-        $template = _.template("<dialog class='extension-warning with-icon'><section><h2>Warning</h2><p>The extensions on this site are experimental</p></section><section><p>The Scratch Team is <strong>not</strong> responsible for the extensions and projects on this site. Please use caution when using these extensions. <a href='#faq'>Learn More</a></p><input type='file' id='upfile'/><output type='file' id='subfile'/><button data-action='show' data-target='home'>Back to ScratchX home</button><button >Uplaod File</button></section></dialog>");
+        }
+        $template = _.template(templateContent);
         $element = $("<"+elementType+"></"+elementType+">")
             .attr("id", elementId)
             .html($template(data));
