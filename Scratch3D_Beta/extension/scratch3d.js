@@ -121,11 +121,11 @@ var script = document.createElement('script');
             .addClass("visible")
             .click(function(e){if ($(e.target).is($(this))) $(this).trigger("modal:exit")});
 
-        $(".modal-close", $modal).click(function(e){
+        /*$(".modal-close", $modal).click(function(e){
             e.preventDefault();
             console.log("modal-close ");
             $(document).trigger("modal:exit")
-        });
+        });*/
         
         $("body").addClass("modal-open");
 
@@ -140,8 +140,6 @@ var script = document.createElement('script');
           $3dmodal = sModal("template-warning", null);
 
             console.log("modal-open5",$3dmodal);
-           
-      
 
         $("button", $3dmodal).click(function(e){
             e.preventDefault();
