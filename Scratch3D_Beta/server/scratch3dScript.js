@@ -26,3 +26,4 @@ var scene = new THREE.Scene();
 				}
 				renderer.render(scene, camera);
 			};
+			render();
