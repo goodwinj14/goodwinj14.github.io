@@ -140,13 +140,8 @@ var script = document.createElement('script');
           $3dmodal = sModal("template-warning", null);
 
             console.log("modal-open5",$3dmodal);
-            console.log("modal-open5",document);
-             $(".modal-fade-screen", $3dmodal)
-            .addClass("visible")
-            .click(function(e){if ($(e.target).is($(this))) $(this).trigger("modal:exit")});
-            Scratch.FlashApp.ASobj.ASsetModalOverlay(true);
-            $('#modal').modal('show');
-      }
+           
+      
 
         $("button", $3dmodal).click(function(e){
             e.preventDefault();
