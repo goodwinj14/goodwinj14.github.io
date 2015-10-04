@@ -121,9 +121,10 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 
     $modal.addClass("modal");
     $modal.addClass("visible");
-    $(".modal-fade-screen", $modal)
+    $modal.click(function(e){if ($(e.target).is($(this))) $(this).trigger("modal:exit")});
+    /*$(".modal-fade-screen", $modal)
         .addClass("visible")
-        .click(function(e){if ($(e.target).is($(this))) $(this).trigger("modal:exit")});
+        .click(function(e){if ($(e.target).is($(this))) $(this).trigger("modal:exit")});*/
 
     $(".modal-close", $modal).click(function(e){
         e.preventDefault();
