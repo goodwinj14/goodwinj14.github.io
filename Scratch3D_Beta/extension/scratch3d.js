@@ -112,7 +112,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 
 
     var $modal =  CreateFromTemplate(modalId, templateId, "div", "html", null, data);
-
+    console.log($modal);
     $modal.addClass("modal");
     $modal.addClass("visible");
     $modal.click(function(e){if ($(e.target).is($(this))) $(this).trigger("modal:exit")});
