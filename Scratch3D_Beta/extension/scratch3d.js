@@ -48,7 +48,7 @@ var script = document.createElement('script');
     };
  //Loads the needed Libaries
     script.src = 'http://scratch3d.github.io/tierTwo/Scratch3D_Beta/server/threeJScontrols/three.js';
-    document.getElementsByTagName('head')[0].appendChild(script);
+    document.getElementsByTagName('body')[0].appendChild(script);
 
     htmlCode = document.createElement('script');
     htmlCode.onload = function() {
