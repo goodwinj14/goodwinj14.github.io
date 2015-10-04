@@ -97,9 +97,9 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         $element = $("<"+elementType+"></"+elementType+">")
             .attr("id", elementId)
             .html($template);
-        
+        */
         $element.appendTo(appendTo)
-    }*/
+    }
     //var $element = $(document.getElementById(elementId));
     return $element;
 };
