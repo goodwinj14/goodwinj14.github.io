@@ -86,7 +86,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             }
             console.log("if: ", templateContent);
         } else {
-            templateContent += $(document.getElementById(templateId)).html();
+            templateContent += $htmlCode;
             console.log("$templateContent: ", templateContent);
                 //templateContent = "<dialog class='extension-warning with-icon'><section><h2>Warning</h2><p>The extensions on this site are experimental</p></section><section><p>The Scratch Team is <strong>not</strong> responsible for the extensions and projects on this site. Please use caution when using these extensions. <a href='#faq'>Learn More</a></p><input type='file' id='upfile'/><output type='file' id='subfile'/><button data-action='show' data-target='home'>Back to ScratchX home</button><button >Uplaod File</button></section></dialog>"
                 //templateContent = htmlCode;
