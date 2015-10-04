@@ -77,7 +77,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     data = data || {};
 
     var $element = $(document.getElementById(elementId));
-    if (!$element.length) {
+    /*if (!$element.length) {
         var templateContent = "";
         if (typeof(templateId) != "string") {
             for (var id in templateId) {
@@ -99,8 +99,8 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             .html($template);
         
         $element.appendTo(appendTo)
-    }
-    var $element = $(document.getElementById(elementId));
+    }*/
+    //var $element = $(document.getElementById(elementId));
     return $element;
 };
 
