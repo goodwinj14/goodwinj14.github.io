@@ -82,7 +82,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         
             templateContent += $(document.getElementById(templateId)).html();
             console.log("templateContent2: ", document.getElementById(templateId).html);
-                templateContent = "<div class='extension-warning with-icon'><section> </section><div id='container' style='width:1425px; height:720px;'></div><script>var scene = new THREE.Scene();var cube = null;var camera = new THREE.PerspectiveCamera( 75, document.getElementById('container').offsetWidth/document.getElementById('container').offsetHeight, 0.1, 1000 );var renderer = new THREE.WebGLRenderer();renderer.setSize(document.getElementById('container').offsetWidth,document.getElementById('container').offsetHeight);document.getElementById('container').appendChild( renderer.domElement );var geometry = new THREE.BoxGeometry( 1, 1, 1 );var material = new THREE.MeshbasicMaterial( { color: 0x00ff00 } );cube = new THREE.Mesh( geometry, material );scene.add( cube );cube.rotation.y = 90;cube.rotation.x = 90;camera.position.z = 5;camera.position.y = 1;camera.rotation.x = ( Math.PI / 180);var render = function () {requestAnimationFrame( render );console.log('rendering');if(cube!=null){cube.rotation.x += 0.01;}renderer.render(scene, camera);};//render();</script></div>"
+                templateContent = "<div class='extension-warning with-icon'><section> </section></div>"
                 //templateContent = htmlCode;
 
         $template = _.template(templateContent);
@@ -111,7 +111,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     //var templateId = "<dialog class='extension-warning with-icon'><section><h2>Warning</h2><p>The extensions on this site are experimental</p></section><section><p>The Scratch Team is <strong>not</strong> responsible for the extensions and projects on this site. Please use caution when using these extensions. <a href='#faq'>Learn More</a></p><input type='file' id='upload'/><button data-action='show' data-target='home'>Back to ScratchX home</button><button class='success'>I understand, continue</button></section></dialog>"
 
 
-    var $modal =  CreateFromTemplate(modalId, templateId, "div", "body", null, data);
+    var $modal =  CreateFromTemplate(modalId, templateId, "div", "html", null, data);
 
     $modal.addClass("modal");
     $modal.addClass("visible");
