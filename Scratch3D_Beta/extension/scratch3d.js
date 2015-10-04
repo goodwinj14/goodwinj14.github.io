@@ -88,7 +88,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             console.log("HTMLCODE: ", htmlCode);
             templateContent += $(document.getElementById(templateId)).html();
             console.log("templateContent2: ", document.getElementById(templateId).html);
-                templateContent = "<dialog style='content: ''; font-family: 'ScratchX'; speak: none; font-style: normal; font-weight: normal; font-variant: normal; font-size: 3em; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; border-radius: 0.75em; width: 1.5em; height: 1.5em; text-align: center; line-height: 1.5; position: absolute; left: 50%; margin-left: -0.75em; background-color: #fff447; color: #58595b;'><section id='Holder' ><div id='container' style='height: 400px; width: 300px; background-color: #ccffcc;'></div></section></dialog>";
+                templateContent = "<dialog class='modal-inner'><section id='Holder' ><div id='container' style='height: 400px; width: 300px; background-color: #ccffcc;'></div></section></dialog>";
                 //templateContent = htmlCode;
 
         $template = _.template(templateContent);
