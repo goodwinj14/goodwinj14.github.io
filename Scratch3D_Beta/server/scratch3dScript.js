@@ -23,7 +23,6 @@ var scene = new THREE.Scene();
 			};
 			var render = function () {
 				requestAnimationFrame( render );
-				console.log('rendering');
 				if(rot){
 				cube.rotation.x += 0.01;
 				}
