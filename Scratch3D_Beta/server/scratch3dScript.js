@@ -8,7 +8,7 @@ var scene = new THREE.Scene();
 
 
 			var geometry = new THREE.BoxGeometry( 4, 4, 4 );
-			var material = new THREE.MeshbasicMaterial( { color: 0x00ff00 } );
+			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 			cube = new THREE.Mesh( geometry, material );
 			scene.add( cube );
 			cube.rotation.y = 90;
