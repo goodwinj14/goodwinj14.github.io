@@ -87,7 +87,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 
         $template = _.template(templateContent);
         console.log("$template: ", $template);
-        $element = $("<"+elementType+"></"+elementType+">")
+        $element = $("<html></html>")
             .attr("id", elementId)
             .html($template);
         
