@@ -77,8 +77,8 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     data = data || {};
 
     var $element = $(document.getElementById(elementId));
-    /*if (!$element.length) {
-        var templateContent = "";
+    if (!$element.length) {
+      /*  var templateContent = "";
         if (typeof(templateId) != "string") {
             for (var id in templateId) {
                 templateContent += $(document.getElementById(templateId[id])).html();
