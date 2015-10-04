@@ -300,10 +300,10 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     //Loads the needed Libaries
     var script = document.createElement('script');
     script.onload = function() {
-        alert("Script loaded and ready");
+        console.log("Script loaded and ready");
     };
-script.src = 'http://scratch3d.github.io/tierTwo/Scratch3D_Beta/server/threeJScontrols/three.js';
-document.getElementsByTagName('head')[0].appendChild(script);
+    script.src = 'http://scratch3d.github.io/tierTwo/Scratch3D_Beta/server/threeJScontrols/three.js';
+    //document.getElementsByTagName('head')[0].appendChild(script);
     // Register the extension
     ScratchExtensions.register('scratch3d', descriptor, ext);
 })({});
