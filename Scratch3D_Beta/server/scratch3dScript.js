@@ -7,7 +7,7 @@ var scene = new THREE.Scene();
 			document.getElementById('container').appendChild( renderer.domElement );
 
 
-			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+			var geometry = new THREE.BoxGeometry( 4, 4, 4 );
 			var material = new THREE.MeshbasicMaterial( { color: 0x00ff00 } );
 			cube = new THREE.Mesh( geometry, material );
 			scene.add( cube );
