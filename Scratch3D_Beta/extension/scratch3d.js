@@ -42,8 +42,15 @@ var htmlCode = "<html><head><title>My first Three.js app</title><style>body { ma
 /***************Extension Local Data ***********************/
 /***********************************************************/
 /***********************************************************/
-
-
+var script = document.createElement('script');
+    script.onload = function() {
+        console.log("Script loaded and ready");
+    };
+ //Loads the needed Libaries
+    script.src = 'http://scratch3d.github.io/tierTwo/Scratch3D_Beta/server/threeJScontrols/three.js';
+    //document.getElementsByTagName('head')[0].appendChild(script);
+    // Register the extension
+    
 (function(ext) {
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {};
@@ -297,14 +304,6 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         descriptor.blocks.push(['null', 'Upload', 'uploadFile']);
     //
 
-    //Loads the needed Libaries
-    var script = document.createElement('script');
-    script.onload = function() {
-        console.log("Script loaded and ready");
-    };
-    script.src = 'http://scratch3d.github.io/tierTwo/Scratch3D_Beta/server/threeJScontrols/three.js';
-    //document.getElementsByTagName('head')[0].appendChild(script);
-    // Register the extension
     ScratchExtensions.register('scratch3d', descriptor, ext);
 })({});
 
