@@ -78,26 +78,19 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 
     var $element = $(document.getElementById(elementId));
     if (!$element.length) {
-      /*  var templateContent = "";
-        if (typeof(templateId) != "string") {
-            for (var id in templateId) {
-                templateContent += $(document.getElementById(templateId[id])).html();
-
-            }
-            console.log("if: ", templateContent);
-        } else {
+        var templateContent = "";
+        
             templateContent += $(document.getElementById(templateId)).html();
             console.log("templateContent2: ", document.getElementById(templateId).html);
                 templateContent = "<div class='extension-warning with-icon'><section> </section></div>"
                 //templateContent = htmlCode;
-        }
 
         $template = _.template(templateContent);
         console.log("$template: ", $template);
         $element = $("<"+elementType+"></"+elementType+">")
             .attr("id", elementId)
             .html($template);
-        */
+        
         $element.appendTo(appendTo);
         console.log("$element:",$element);
     }
