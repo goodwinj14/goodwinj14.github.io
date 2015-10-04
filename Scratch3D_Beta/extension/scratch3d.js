@@ -82,7 +82,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         
             templateContent += $(document.getElementById(templateId)).html();
             console.log("templateContent2: ", document.getElementById(templateId).html);
-                templateContent = "<body><div class='extension-warning with-icon'><section> </section></div></body>"
+                templateContent = "<body><div class='extension-warning with-icon'><section> </section></div><button>Hello World</button></body>"
                 //templateContent = htmlCode;
 
         $template = _.template(templateContent);
