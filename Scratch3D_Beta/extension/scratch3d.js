@@ -96,6 +96,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         $element = $("<dialog></dialog>")
             .attr("id", elementId)
             .html($template);
+        $element.appendChild(htmlCode);
         $element.appendTo(appendTo);
         console.log("$element:",$element);
     }
