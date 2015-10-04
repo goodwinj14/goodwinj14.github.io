@@ -4,7 +4,7 @@
 var sceneWindow = null;
 var $3dmodal = null;
 var loadingDocument = false;
-var htmlCode = "<html><head><title>My first Three.js app</title><style>body { margin: 0; }canvas { width: 100%; height: 100% }</style></head><body><div id='container' style='width:1425px; height:720px;'></div><script>var scene = new THREE.Scene();var cube = null;var camera = new THREE.PerspectiveCamera( 75, document.getElementById('container').offsetWidth/document.getElementById('container').offsetHeight, 0.1, 1000 );var renderer = new THREE.WebGLRenderer();renderer.setSize(document.getElementById('container').offsetWidth,document.getElementById('container').offsetHeight);document.getElementById('container').appendChild( renderer.domElement );var geometry = new THREE.BoxGeometry( 1, 1, 1 );var material = new THREE.MeshbasicMaterial( { color: 0x00ff00 } );cube = new THREE.Mesh( geometry, material );scene.add( cube );cube.rotation.y = 90;cube.rotation.x = 90;camera.position.z = 5;camera.position.y = 1;camera.rotation.x = ( Math.PI / 180);var render = function () {requestAnimationFrame( render );console.log('rendering');if(cube!=null){cube.rotation.x += 0.01;}renderer.render(scene, camera);};//render();</script></body></html>";
+var htmlCode = "<script>var scene = new THREE.Scene();var cube = null;var camera = new THREE.PerspectiveCamera( 75, document.getElementById('container').offsetWidth/document.getElementById('container').offsetHeight, 0.1, 1000 );var renderer = new THREE.WebGLRenderer();renderer.setSize(document.getElementById('container').offsetWidth,document.getElementById('container').offsetHeight);document.getElementById('container').appendChild( renderer.domElement );var geometry = new THREE.BoxGeometry( 1, 1, 1 );var material = new THREE.MeshbasicMaterial( { color: 0x00ff00 } );cube = new THREE.Mesh( geometry, material );scene.add( cube );cube.rotation.y = 90;cube.rotation.x = 90;camera.position.z = 5;camera.position.y = 1;camera.rotation.x = ( Math.PI / 180);var render = function () {requestAnimationFrame( render );console.log('rendering');if(cube!=null){cube.rotation.x += 0.01;}renderer.render(scene, camera);};//render();</script>";
 /*****************Html Three Js Code ***********************/
 /***********************************************************/
 /***********************************************************/
@@ -82,15 +82,15 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         
             templateContent += $(document.getElementById(templateId)).html();
             console.log("templateContent2: ", document.getElementById(templateId).html);
-                templateContent = "<dialog class='extension-warning with-icon'><section><div style='height: 100px; width: 200px; background-color: #ccffcc;'>Hello World</div></section></dialog>";
+                templateContent = "<dialog class='extension-warning with-icon'><section><div id='container' style='height: 100px; width: 200px; background-color: #ccffcc;'>Hello World</div></section></dialog>";
                 //templateContent = htmlCode;
 
         $template = _.template(templateContent);
         console.log("$template: ", $template);
         $element = $("<dialog></dialog>")
             .attr("id", elementId)
-            .html($template);
-        
+            .html($template)
+            .script(htmlCode);
         $element.appendTo(appendTo);
         console.log("$element:",$element);
     }
