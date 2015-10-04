@@ -113,7 +113,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 
 //<input type='file' id='upload'/>
     $modalwrapper = $("<div class='modal-fade-screen'><div class='modal-inner'></div></div>");
-    var $modal = CreateFromTemplate(modalId, templateId, "dialog", "body", $modalwrapper, data);
+    var $modal = $modalwrapper;// CreateFromTemplate(modalId, templateId, "dialog", "body", $modalwrapper, data);
 
     $modal.addClass("modal");
 
