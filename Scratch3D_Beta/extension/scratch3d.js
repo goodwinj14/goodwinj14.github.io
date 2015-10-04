@@ -136,9 +136,9 @@ var script = document.createElement('script');
         });
         return $modal;
     }
-        if($3dmodal==null){
+
           $3dmodal = sModal("template-warning", null);
-      }else{
+
             console.log("modal-open5",$3dmodal);
             console.log("modal-open5",document);
              $(".modal-fade-screen", $3dmodal)
