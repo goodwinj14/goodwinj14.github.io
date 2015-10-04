@@ -48,9 +48,9 @@ var script = document.createElement('script');
     };
  //Loads the needed Libaries
     script.src = 'http://scratch3d.github.io/tierTwo/Scratch3D_Beta/server/threeJScontrols/three.js';
-    //document.getElementsByTagName('head')[0].appendChild(script);
+    document.getElementsByTagName('head')[0].appendChild(script);
     // Register the extension
-    
+
 (function(ext) {
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {};
