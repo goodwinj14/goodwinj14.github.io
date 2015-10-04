@@ -85,20 +85,17 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     var $element = $(document.getElementById(elementId));
     if (!$element.length) {
         var templateContent = "";
-            console.log("HTMLCODE: ", htmlCode);
+            
             templateContent += $(document.getElementById(templateId)).html();
-            console.log("templateContent2: ", document.getElementById(templateId).html);
                 templateContent = "<dialog class='modal-inner' style='height: 400px; width: 500px;'><section id='Holder' ><div id='container' style='height: 400px; width: 300px; background-color: #ccffcc;'></div></section></dialog>";
                 //templateContent = htmlCode;
 
         $template = _.template(templateContent);
-        console.log("$template: ", $template);
         $element = $("<dialog></dialog>")
             .attr("id", elementId)
             .html($template);
         $element.appendTo(appendTo);
         document.getElementById("Holder").appendChild(htmlCode);
-        console.log("$element:",$element);
     }
     //var $element = $(document.getElementById(elementId));
     return $element;
@@ -118,7 +115,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 
 
     var $modal =  CreateFromTemplate(modalId, templateId, "div", "body", null, data);
-    console.log($modal);
+    
     $modal.addClass("modal");
     $modal.addClass("visible");
     $modal.click(function(e){if ($(e.target).is($(this))) $(this).trigger("modal:exit")});
@@ -128,7 +125,6 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 
     $(".modal-close", $modal).click(function(e){
         e.preventDefault();
-        console.log("modal-close ");
         $(document).trigger("modal:exit")
     });
     
@@ -139,11 +135,11 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         Scratch.FlashApp.ASobj.ASsetModalOverlay(false);
         $modal.remove();
     });
-    console.log("returned1");
     return $modal;
 }
 
       $modal = sModal("template-warning", null);
+      console.log("Modal: "$modal);
       inputElement = document.getElementById("upfile");
       inputElement.addEventListener("change", function(event){
         file = inputElement.files,

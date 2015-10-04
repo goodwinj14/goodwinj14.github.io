@@ -1,5 +1,6 @@
 var scene = new THREE.Scene();
 			var cube = null;
+			var rot = false;
 			var camera = new THREE.PerspectiveCamera( 75, document.getElementById('container').offsetWidth/document.getElementById('container').offsetHeight, 0.1, 1000 );
 
 			var renderer = new THREE.WebGLRenderer();
@@ -17,11 +18,13 @@ var scene = new THREE.Scene();
 			camera.position.y = 1;
 			camera.rotation.x = ( Math.PI / 180);
 			
-
+			function rotate(){
+				rot = true;
+			};
 			var render = function () {
 				requestAnimationFrame( render );
 				console.log('rendering');
-				if(cube!=null){
+				if(rot){
 				cube.rotation.x += 0.01;
 				}
 				renderer.render(scene, camera);
