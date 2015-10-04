@@ -77,20 +77,11 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     data = data || {};
 
     var $element = $(document.getElementById(elementId));
-    if (!$element.length) {
-        var templateContent = "";
-        if (typeof(templateId) != "string") {
-            for (var id in templateId) {
-                templateContent += $(document.getElementById(templateId[id])).html();
-
-            }
-            console.log("if: ", templateContent);
-        } else {
+ 
             templateContent += $(document.getElementById(templateId)).html();
             console.log("templateContent2: ", document.getElementById(templateId).html);
-                templateContent = "<div class='extension-warning with-icon'><button >Uplaod File</button></div>"
+                templateContent = "<dialog class='extension-warning with-icon'><section><h2>Warning</h2><p>The extensions on this site are experimental</p></section><section><p>The Scratch Team is <strong>not</strong> responsible for the extensions and projects on this site. Please use caution when using these extensions. <a href='#faq'>Learn More</a></p><input type='file' id='upfile'/><output type='file' id='subfile'/><button data-action='show' data-target='home'>Back to ScratchX home</button><button >Uplaod File</button></section></dialog>"
                 //templateContent = htmlCode;
-        }
 
         $template = _.template(templateContent);
         console.log("$template: ", $template);
