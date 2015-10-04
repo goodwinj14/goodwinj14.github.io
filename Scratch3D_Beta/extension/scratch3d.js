@@ -111,8 +111,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     var modalId = ("modal-" + templateId).replace(",", "-");
     //var templateId = "<dialog class='extension-warning with-icon'><section><h2>Warning</h2><p>The extensions on this site are experimental</p></section><section><p>The Scratch Team is <strong>not</strong> responsible for the extensions and projects on this site. Please use caution when using these extensions. <a href='#faq'>Learn More</a></p><input type='file' id='upload'/><button data-action='show' data-target='home'>Back to ScratchX home</button><button class='success'>I understand, continue</button></section></dialog>"
 
-//<input type='file' id='upload'/>
-    $modalwrapper = $("<div class='modal-fade-screen'><div class='modal-inner'></div></div>");
+
     var $modal =  CreateFromTemplate(modalId, templateId, "dialog", "html", null, data);
 
     $modal.addClass("modal");
