@@ -1,4 +1,6 @@
-var scene = new THREE.Scene();
+var Scratch3d = {}
+Scratch3d.init = function(){
+			var scene = new THREE.Scene();
 			var cube = null;
 			var rot = false;
 			var camera = new THREE.PerspectiveCamera( 75, document.getElementById('container').offsetWidth/document.getElementById('container').offsetHeight, 0.1, 1000 );
@@ -29,3 +31,5 @@ var scene = new THREE.Scene();
 				renderer.render(scene, camera);
 			};
 			render();
+			rotate();
+}
