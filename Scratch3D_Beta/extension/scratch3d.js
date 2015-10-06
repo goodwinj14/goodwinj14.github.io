@@ -140,7 +140,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 
       $modal = sModal("template-warning", null);
       console.log("Modal: ",$modal[0]);
-      Scratch3d.init();
+
       inputElement = document.getElementById("upfile");
       inputElement.addEventListener("change", function(event){
         file = inputElement.files,
@@ -298,6 +298,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     }
 
     ext.newShape = function() {
+        Scratch3d.init();
         if(sceneWindow!=null){
         console.log("ScratchExtensions", ScratchExtensions);
         sceneWindow.addShape();
