@@ -87,7 +87,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         var templateContent = "";
             
             templateContent += $(document.getElementById(templateId)).html();
-                templateContent = "<dialog class='modal-inner' style='height: 400px; width: 500px;'><section id='Holder' style='background-color: #cbffcc; padding: 0px; margin: 0px;'><div id='container' style='height: 361px; width: 482px; background-color: #ccffcc; margin-left: -19px; margin-top: 48px;'></div></section></dialog>";
+                templateContent = "<dialog class='modal-inner' style='height: 400px; width: 500px;'><section id='Holder' style='background-color: #cbffcc; padding: 0px; margin: 0px;'><div id='container' style='height: 361px; width: 480px; background-color: #ccffcc; margin-left: -19px; margin-top: 48px;'></div></section></dialog>";
                 //templateContent = htmlCode;
 
         $template = _.template(templateContent);
@@ -175,7 +175,6 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
       var evt = document.createEvent("MouseEvents");
       evt.initEvent("click", true, false);
      zxzx fileSelector.dispatchEvent(evt);*/
-     Scratch3d.init();
     }
 
     ext.runScratch3d = function(){
@@ -299,7 +298,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     }
 
     ext.newShape = function() {
-        
+        Scratch3d.init();
         if(sceneWindow!=null){
         console.log("ScratchExtensions", ScratchExtensions);
         sceneWindow.addShape();
