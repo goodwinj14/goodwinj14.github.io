@@ -88,7 +88,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         var templateContent = "";
             
             templateContent += $(document.getElementById(templateId)).html(); 
-                templateContent = "<dialog class='modal-inner' style='height: 400px; width: 500px;'><section id='Holder' style='background-color: #cbffcc; padding: 0px; margin: 0px;'><div id='container' style='height: 361px; width: 482px; background-color: #ccffcc; margin-left: -19px; margin-top: 48px;'><button>Close</button><button id='expand'>fullScreen</button></div></section></dialog>";
+                templateContent = "<dialog id='main' class='modal-inner' style='height: 400px; width: 500px;'><section id='Holder' style='background-color: #cbffcc; padding: 0px; margin: 0px;'><div id='container' style='height: 361px; width: 482px; background-color: #ccffcc; margin-left: -19px; margin-top: 48px;'><button>Close</button><button id='expand'>fullScreen</button></div></section></dialog>";
                 //templateContent = htmlCode;
 
         $template = _.template(templateContent);
@@ -144,6 +144,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 
     $("button", $modal).click(function(e){
         if(e.delegateTarget.id=="expand"){
+            document.getElementById("main").width = 700;
             console.log("Enter Full Screen",e);
         }else{
         Scratch3d.windowActive = false;
