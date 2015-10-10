@@ -144,6 +144,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 
     $("button", $modal).click(function(e){
         console.log("Button clicked");
+        Scratch3d.windowActive = false;
         e.preventDefault();
         $(document).trigger("modal:exit")
     });
@@ -276,6 +277,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     }
 
     ext.newShape = function() {
+        Scratch3d.windowActive = true;
         Scratch3d.init();
         if(sceneWindow!=null){
         console.log("ScratchExtensions", ScratchExtensions);
