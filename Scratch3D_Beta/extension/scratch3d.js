@@ -87,7 +87,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         var templateContent = "";
             
             templateContent += $(document.getElementById(templateId)).html();
-                templateContent = "<dialog class='modal-inner' style='height: 400px; width: 500px;'><section id='Holder' style='background-color: #cbffcc; padding: 0px; margin: 0px;'><div id='container' style='height: 361px; width: 482px; background-color: #ccffcc; margin-left: -19px; margin-top: 48px;'></div></section></dialog>";
+                templateContent = "<dialog class='modal-inner' style='height: 400px; width: 500px;'><section id='Holder' style='background-color: #cbffcc; padding: 0px; margin: 0px;'><div id='container' style='height: 361px; width: 482px; background-color: #ccffcc; margin-left: -19px; margin-top: 48px;'></div><button >Uplaod File</button></section></dialog>";
                 //templateContent = htmlCode;
 
         $template = _.template(templateContent);
@@ -161,13 +161,8 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 
       },false);
     $("button", $modal).click(function(e){
-       // e.preventDefault();
-        console.log("modal-button 2");
-        var evt = document.createEvent("MouseEvents");
-        evt.initEvent("click", true, false);
-        document.getElementById("upfile").dispatchEvent(evt);
-        
-        //$(document).trigger("modal:exit")
+        e.preventDefault();
+        $(document).trigger("modal:exit")
     });
       /*fileSelector = document.createElement('input');
       fileSelector.setAttribute('type', 'file');
