@@ -145,6 +145,8 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     $("button", $modal).click(function(e){
         if(e.delegateTarget.id=="expand"){
             document.getElementById("main").width = 700;
+            document.getElementById("Holder").width = 700;
+            
             console.log("Enter Full Screen",e);
         }else{
         Scratch3d.windowActive = false;
