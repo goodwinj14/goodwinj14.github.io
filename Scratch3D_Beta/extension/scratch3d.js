@@ -86,8 +86,8 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     if (!$element.length) {
         var templateContent = "";
             
-            templateContent += $(document.getElementById(templateId)).html();
-                templateContent = "<dialog class='modal-inner' style='height: 400px; width: 500px;'><section id='Holder' style='background-color: #cbffcc; padding: 0px; margin: 0px;'><div id='container' style='height: 361px; width: 482px; background-color: #ccffcc; margin-left: -19px; margin-top: 48px;'></div><button >Uplaod File</button></section></dialog>";
+            templateContent += $(document.getElementById(templateId)).html(); 
+                templateContent = "<dialog class='modal-inner' style='height: 400px; width: 500px;'><section id='Holder' style='background-color: #cbffcc; padding: 0px; margin: 0px;'><div id='container' style='height: 361px; width: 482px; background-color: #ccffcc; margin-left: -19px; margin-top: 48px;'></div><button class='glyphicon glyphicon-remove-sign'></button></section></dialog>";
                 //templateContent = htmlCode;
 
         $template = _.template(templateContent);
