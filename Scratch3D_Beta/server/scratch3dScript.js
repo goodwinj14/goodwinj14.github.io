@@ -5,7 +5,7 @@ The Base Global attributes that all projects have.
 var scene;
 var renderer;
 var camera;
-var windowActive = false;
+Scratch3d.windowActive = false;
 Scratch3d.init = function(){
 			
 			scene = new THREE.Scene();
@@ -16,7 +16,7 @@ Scratch3d.init = function(){
 			
 			console.log("Scene", scene);
 			var render = function () {
-				if(windowActive){
+				if(Scratch3d.windowActive){
 				requestAnimationFrame( render );
 				console.log("rendering");
 				renderer.render(scene, camera);
