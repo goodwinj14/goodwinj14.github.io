@@ -144,8 +144,8 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 
     $("button", $modal).click(function(e){
         if(e.delegateTarget.id=="expand"){
-            document.getElementById("main").style.width = "1200px";
-            document.getElementById("Holder").style.width = "1200px";
+            document.getElementById("main").style.width = "1000px";
+            document.getElementById("Holder").style.width = "1000px";
             document.getElementById("main").style.height = "700px";
             document.getElementById("Holder").style.height = "700px";
             console.log("Enter Full Screen",e);
