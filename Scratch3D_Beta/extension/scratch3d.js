@@ -143,10 +143,13 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
       console.log("Modal: ",$modal[0]);
 
     $("button", $modal).click(function(e){
-        console.log("Button clicked",e);
+        if(e.delegateTarget.id=="expand"){
+            console.log("Enter Full Screen",e);
+        }else{
         Scratch3d.windowActive = false;
         e.preventDefault();
         $(document).trigger("modal:exit")
+        }
     });
       /*fileSelector = document.createElement('input');
       fileSelector.setAttribute('type', 'file');
