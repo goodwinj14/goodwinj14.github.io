@@ -161,6 +161,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 
       },false);
     $("button", $modal).click(function(e){
+        console.log("Button clicked");
         e.preventDefault();
         $(document).trigger("modal:exit")
     });
