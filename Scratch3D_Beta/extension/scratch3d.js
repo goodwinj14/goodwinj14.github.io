@@ -143,7 +143,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
       console.log("Modal: ",$modal[0]);
 
     $("button", $modal).click(function(e){
-        console.log("Button clicked");
+        console.log("Button clicked",e);
         Scratch3d.windowActive = false;
         e.preventDefault();
         $(document).trigger("modal:exit")
