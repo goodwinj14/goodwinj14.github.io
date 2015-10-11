@@ -146,9 +146,9 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         if(e.delegateTarget.id=="expand"){
             document.getElementById("main").style.width = "1100px";
             document.getElementById("Holder").style.width = "1100px";
+            document.getElementById("container").style.width = "1100px";
             document.getElementById("main").style.height = "700px";
             document.getElementById("Holder").style.height = "700px";
-            document.getElementById("container").style.width = "1100px";
             document.getElementById("container").style.height = "700px";
             Scratch3d.updateWindow();
             console.log("Enter Full Screen",e);
