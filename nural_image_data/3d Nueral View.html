@@ -1,0 +1,309 @@
+<html>
+	<head>
+		<title>Neuro View</title>
+		<style>
+			body { margin: 0; }
+		</style>
+	</head>
+	<body >
+	<div >
+		<div id="three"  style="float: left;" width="500px" height="500px">
+			
+		</div>
+		<div id="picture"  style="float: left;" >
+			
+		<canvas id="viewport" width="200" height="100">
+		</canvas>
+		</div>
+		<div id="data">
+			
+		</div>
+	</div>
+		<script src="three.js"></script>
+		<script src="download.js"></script>
+		<script src="NeuronBlock.js"></script>
+		<script src="TrackballControls.js"></script>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script>
+		//Json formating
+		var brainBlock = {
+    	postions: [],
+    	colors: []
+		};
+		 var count = 0; 
+		 
+		 var particles = (240*240*240);
+		 var positions = new Float32Array( particles*3 );
+		 var colors = new Float32Array( particles);
+		 var particleSystem=null;
+		 var ImageStack;
+		 //join two typed arrays
+		 //var c = new Int8Array(a.length + b.length);
+		 var sliceBlockNum =0;
+		 base_image = new Image();
+  		 
+		 var canvas = document.getElementById('viewport');
+		 //var y = new Array(base_image.height*base_image.width);
+		 var controls = null;
+		 var context = canvas.getContext('2d');
+		 
+
+		 getImage("jsonSlices/data"+sliceBlockNum+".json");
+
+		 function getImage(image){
+		 $.getJSON(image, loadComplete);
+		}
+
+		var i =0;
+		
+		function loadComplete(json) {
+			//Colors
+			var loading = "Loaded Slice: " + sliceBlockNum;
+			document.getElementById("picture").innerHTML = loading;
+			//color.setRGB(1.0,0.2,0.2);
+			var jsonArrayPosition= 0;
+			var k = (240*240);
+			//for (var x = 0; x<240; x++) {
+				for (var y = 0; y <k; y++) {
+
+				colors[i] = json.color[jsonArrayPosition];
+				i++;
+				jsonArrayPosition++;
+				};
+			//}
+		 	
+		 
+    	
+			if(sliceBlockNum<239){
+				sliceBlockNum++;
+				getImage("jsonSlices/data"+sliceBlockNum+".json");
+				
+				
+			}else{
+				finish();
+				
+			}
+			
+		}
+		/* loadImg(count);
+		 function loadImg(slideNum){
+		 	var src = "jpgImages/batch10_image-p19q1927c110s41jko1fvbe1ukrg-"+ slideNum +".jpg";
+		 		base_image.src = src; 
+
+		 }
+		 var i =0.0;
+  		 base_image.onload = function(){
+  		 	//console.log(count, "onload");
+    	 	canvas.width = base_image.width;
+  		 	canvas.height = base_image.height;
+    	 	
+				
+    	 		context.drawImage(base_image, 0, 0);
+
+
+				var color = new THREE.Color();
+				
+				
+				for ( var y = 0; y < 240; y++ ) {
+				for ( var x = 0; x < 240; x++ ) {
+
+					// positions
+					
+					var x = x;
+					var y = y;
+					var z = count;
+
+					
+
+					var r = context.getImageData(x, y, 1, 1).data[0]/255;
+					var g = context.getImageData(x, y, 1, 1).data[1]/255;
+					var b = context.getImageData(x, y, 1, 1).data[2]/255;
+					//var r = 0.4;
+					color.setRGB(r,b,g);
+ 					
+ 					var threshHold = (r+g+b)/3
+ 					//console.log("thresh: ", threshHold);
+ 					
+					if(threshHold>0.57){
+					//colors[ i ]     = color.r;
+					//jsonColors[i] = color.r;
+					//colors[ i + 1 ] = color.g;
+					//jsonColors[i + 1] = color.g;
+					//colors[ i + 2 ] = color.b;
+					//jsonColors[i + 2] = color.b;
+					}else{
+						positions[ i ]     = x;
+					//jsonPostions[ i ]     = x;
+					positions[ i + 1 ] = -y;
+					//jsonPostions[ i + 1 ] = -y;
+					positions[ i + 2 ] = z;
+					//jsonPostions[ i + 2 ] = z;
+					colors[ i ]     = 1.0-(z/255.0);
+					colors[ i + 1 ] = 1.0-(z/255.0);
+					colors[ i + 2 ] = 1.0-(z/255.0);
+
+					jsonColors[i] = colors[ i ];
+ 					jsonColors[i + 1] = colors[ i + 1 ];
+ 					jsonColors[i + 2] = colors[ i + 2 ];
+					}
+					i+=3;
+					}
+					//console.log("Value",(1.0-(z/255.0)));
+				}
+			count++;
+			if(count<240){
+				//context.clearRect(0, 0, canvas.width, canvas.height);
+				//base_image.onload();
+				loadImg(count);
+			}else{
+				finish();
+				brainBlock.colors = JSON.stringify(jsonColors);
+				//console.log(brainBlock.colors);
+				//var blob = new Blob([document.getElementById("worker").textContent]);
+				var worker = new Worker("download.js");
+				worker.postMessage({'imagedata': brainBlock.colors});
+				worker.onmessage = function(event) {
+           		window.open("data:application/octet-stream;base64,"+event.data); 
+        		};
+				//Base64.executeDownload(JSON.stringify(jsonColors));
+				//colors = window.open("data:text/json," + encodeURIComponent(brainBlock.colors), "_blank");	
+		}
+}*/
+
+				var z =0;
+				function finish(){
+				 
+				 
+				/*This code adds the brain block to thr scene
+				var geometry = new THREE.BufferGeometry();
+
+				geometry.addAttribute( 'position', new THREE.BufferAttribute( positions, 3 ) );
+				geometry.addAttribute( 'color', new THREE.BufferAttribute( colors, 3 ) );
+
+				geometry.computeBoundingSphere();
+
+				//
+
+				
+				var material = new THREE.PointCloudMaterial( { size: 3, vertexColors: THREE.VertexColors } );
+
+				particleSystem = new THREE.PointCloud( geometry, material );
+				
+				scene.add( particleSystem );*/
+
+				console.log("Colors lenthe: ",colors.length);
+				ImageStack = new NEURONBLOCK.imageStack(240,240,colors,camera);
+				//console.log("geo", ImageStack.StackGeometry);
+				var geometr = ImageStack.StackGeometry;
+
+				
+
+				//
+
+				var material = new THREE.PointCloudMaterial( { size: 3, vertexColors: THREE.VertexColors } );
+
+				particleSystem = new THREE.PointCloud( geometr, material );
+	
+		
+				scene.add( particleSystem );
+
+				camera.position.z = 500;
+				
+
+
+			//var cube = new THREE.Mesh( geometry, material );
+			/*for (var i = 10; i >= 0; i--) {
+				for (var j = base_image.width - 1; j >= 0; j--) {
+					var geometry = new THREE.BoxGeometry( .01, .01, .01);
+					var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+					var cube = new THREE.Mesh( geometry, material );
+					cube.position.x = j*.01;
+					cube.position.y = i*(-.01);
+					cube.position.z = .01;
+
+					cube.material.color.r =canvas.getContext('2d').getImageData(j, i, 1, 1).data[0]/255;
+					cube.material.color.g =canvas.getContext('2d').getImageData(j, i, 1, 1).data[1]/255;
+					cube.material.color.b =canvas.getContext('2d').getImageData(j, i, 1, 1).data[2]/255;
+					cube.material.color.a =canvas.getContext('2d').getImageData(j, i, 1, 1).data[3]/255;
+					scene.add( cube );
+					//renderer.render(scene, camera);
+					
+				};
+			};*/
+			
+
+    			
+ 		 }
+
+			var scene = new THREE.Scene();
+			var camera = new THREE.PerspectiveCamera( 45, window.innerWidth/window.innerHeight/1.333, 1, 2500 );
+
+			var renderer = new THREE.WebGLRenderer({ alpha: true });
+			renderer.setClearColor( 0xffffff, 1);
+
+			renderer.setSize( window.innerWidth/1.333, window.innerHeight );
+			document.getElementById("three").appendChild( renderer.domElement );
+			//var pixelData = canvas.getContext('2d').getImageData(event.offsetX, event.offsetY, 1, 1).data;
+
+
+			
+			
+			controls = new THREE.TrackballControls(camera);
+				controls.rotateSpeed = 1.0;
+				controls.zoomSpeed = 1.2;
+				controls.panSpeed = 0.8;
+
+				controls.noZoom = false;
+				controls.noPan = false;
+
+				controls.staticMoving = true;
+				controls.dynamicDampingFactor = 0.3;
+
+
+
+
+			function render(){
+			renderer.render(scene, camera);
+		} 
+		function animate(){
+			requestAnimationFrame(animate);
+			//var time = Date.now() * 0.001;
+				if(particleSystem!=null){
+				//particleSystem.rotation.x = time * 0.02;
+				
+			}
+			render();
+			controls.update();
+			if(ImageStack!=null){
+			ImageStack.update();
+			}
+		}
+			render();
+			animate();
+
+
+			document.onkeydown = function(e) {
+    switch (e.keyCode) {
+        case 37:
+        //if(ImageStack.FaceOneLayer<239){
+        	ImageStack.removeSlice("F1", 1);
+            //ImageStack.FaceOneLayer = ImageStack.FaceOneLayer+1;
+       // }
+            break;
+        case 38:
+            console.log(camera);
+            break;
+        case 39:
+             ImageStack.removeSlice("F1", -1);
+            break;
+        case 40:
+            alert('down');
+            break;
+    }
+};
+
+			
+		</script>
+
+	</body>
+</html>
