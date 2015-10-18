@@ -143,7 +143,7 @@ www.typeandgrids.com
 		function loadComplete(json) {
 			//Colors
 			var loading = "Loaded Slice: " + sliceBlockNum;
-			document.getElementById("progress-bar").innerHTML = "Loading Json File " + sliceBlockNum.toString() + " of 255";
+			document.getElementById("progress-bar").innerHTML = "Loading Json File " + sliceBlockNum.toString() + " of 239";
 			//document.getElementById("picture").innerHTML = loading;
 			//color.setRGB(1.0,0.2,0.2);
 			var jsonArrayPosition= 0;
@@ -174,8 +174,8 @@ www.typeandgrids.com
 
 		var z =0;
 				function finish(){
-				 
-				 
+				 //Clears progress bar
+				 document.getElementById("progress-bar").innerHTML ="";
 				/*This code adds the brain block to thr scene
 				var geometry = new THREE.BufferGeometry();
 
