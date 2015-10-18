@@ -233,7 +233,8 @@ www.typeandgrids.com
  		 }
 			
 			var scene = new THREE.Scene();
-			var camera = new THREE.PerspectiveCamera( 45, document.getElementById("renderWindow").offsetWidth/document.getElementById("renderWindow").offsetHeight/1.333, 1, 2500 );
+			var camera = new THREE.PerspectiveCamera( 45, window.innerWidth/window.innerHeight/1.333, 1, 2500 );
+			/*var camera = new THREE.PerspectiveCamera( 45, document.getElementById("renderWindow").offsetWidth/document.getElementById("renderWindow").offsetHeight/1.333, 1, 2500 );*/
 
 			var renderer = new THREE.WebGLRenderer({ alpha: true });
 			renderer.setClearColor( 0xffffff, 1);
