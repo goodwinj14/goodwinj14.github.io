@@ -233,13 +233,13 @@ www.typeandgrids.com
  		 }
 			
 			var scene = new THREE.Scene();
-			var camera = new THREE.PerspectiveCamera( 45, window.innerWidth/window.innerHeight/1.333, 1, 2500 );
+			var camera = new THREE.PerspectiveCamera( 45, window.innerWidth/window.innerHeight/4, 1, 2500 );
 			/*var camera = new THREE.PerspectiveCamera( 45, document.getElementById("renderWindow").offsetWidth/document.getElementById("renderWindow").offsetHeight/1.333, 1, 2500 );*/
 
 			var renderer = new THREE.WebGLRenderer({ alpha: true });
 			renderer.setClearColor( 0xffffff, 1);
 
-			renderer.setSize( window.innerWidth/1.333, window.innerHeight );
+			renderer.setSize( window.innerWidth/4, window.innerHeight );
 			document.getElementById("renderWindow").appendChild( renderer.domElement );
 			//var pixelData = canvas.getContext('2d').getImageData(event.offsetX, event.offsetY, 1, 1).data;
 
