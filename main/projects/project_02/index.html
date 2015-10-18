@@ -78,7 +78,7 @@ www.typeandgrids.com
 	<!-- Header ends ============================================================================ -->
 	
 	<div id="detailView" class="sixteen columns" style="width: 945px;">
-		<h3><Click here to try Neuro View</h3>
+		<h3>Click here to try Neuro View</h3>
 		<div id="renderWindow" style="width: 500px; height: 500px; background-color: red;">
 		</div>
 				
@@ -239,7 +239,7 @@ www.typeandgrids.com
 			var renderer = new THREE.WebGLRenderer({ alpha: true });
 			renderer.setClearColor( 0xffffff, 1);
 
-			renderer.setSize( document.getElementById("renderWindow").offsetWidth, document.getElementById("renderWindow").offsetHeight );
+			renderer.setSize( document.getElementById("renderWindow").offsetWidth/1.333, document.getElementById("renderWindow").offsetHeight );
 			document.getElementById("renderWindow").appendChild( renderer.domElement );
 			//var pixelData = canvas.getContext('2d').getImageData(event.offsetX, event.offsetY, 1, 1).data;
 
