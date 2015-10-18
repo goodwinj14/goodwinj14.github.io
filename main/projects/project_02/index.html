@@ -274,6 +274,26 @@ www.typeandgrids.com
 		}
 			render();
 			animate();
+
+			document.onkeydown = function(e) {
+    switch (e.keyCode) {
+        case 37:
+        //if(ImageStack.FaceOneLayer<239){
+        	ImageStack.removeSlice("F1", 1);
+            //ImageStack.FaceOneLayer = ImageStack.FaceOneLayer+1;
+       // }
+            break;
+        case 38:
+            console.log(camera);
+            break;
+        case 39:
+             ImageStack.removeSlice("F1", -1);
+            break;
+        case 40:
+            alert('down');
+            break;
+    }
+};
 		</script>
 </body>
 </html>
