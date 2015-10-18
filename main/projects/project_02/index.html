@@ -167,13 +167,90 @@ www.typeandgrids.com
 		}
 
 
+		var z =0;
+				function finish(){
+				 
+				 
+				/*This code adds the brain block to thr scene
+				var geometry = new THREE.BufferGeometry();
+
+				geometry.addAttribute( 'position', new THREE.BufferAttribute( positions, 3 ) );
+				geometry.addAttribute( 'color', new THREE.BufferAttribute( colors, 3 ) );
+
+				geometry.computeBoundingSphere();
+
+				//
+
+				
+				var material = new THREE.PointCloudMaterial( { size: 3, vertexColors: THREE.VertexColors } );
+
+				particleSystem = new THREE.PointCloud( geometry, material );
+				
+				scene.add( particleSystem );*/
+
+				console.log("Colors lenthe: ",colors.length);
+				ImageStack = new NEURONBLOCK.imageStack(240,240,colors,camera);
+				//console.log("geo", ImageStack.StackGeometry);
+				var geometr = ImageStack.StackGeometry;
+
+				
+
+				//
+
+				var material = new THREE.PointCloudMaterial( { size: 3, vertexColors: THREE.VertexColors } );
+
+				particleSystem = new THREE.PointCloud( geometr, material );
+	
+		
+				scene.add( particleSystem );
+
+				camera.position.z = 500;
+				
+
+
+			//var cube = new THREE.Mesh( geometry, material );
+			/*for (var i = 10; i >= 0; i--) {
+				for (var j = base_image.width - 1; j >= 0; j--) {
+					var geometry = new THREE.BoxGeometry( .01, .01, .01);
+					var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+					var cube = new THREE.Mesh( geometry, material );
+					cube.position.x = j*.01;
+					cube.position.y = i*(-.01);
+					cube.position.z = .01;
+
+					cube.material.color.r =canvas.getContext('2d').getImageData(j, i, 1, 1).data[0]/255;
+					cube.material.color.g =canvas.getContext('2d').getImageData(j, i, 1, 1).data[1]/255;
+					cube.material.color.b =canvas.getContext('2d').getImageData(j, i, 1, 1).data[2]/255;
+					cube.material.color.a =canvas.getContext('2d').getImageData(j, i, 1, 1).data[3]/255;
+					scene.add( cube );
+					//renderer.render(scene, camera);
+					
+				};
+			};*/
+			
+
+    			
+ 		 }
+
+
 
 			var scene = new THREE.Scene();
 			var camera = new THREE.PerspectiveCamera( 75, document.getElementById("renderWindow").offsetWidth/document.getElementById("renderWindow").offsetHeight, 0.1, 1000 );
 
 			var renderer = new THREE.WebGLRenderer();
-			renderer.setSize( document.getElementById("renderWindow").offsetWidth, document.getElementById("renderWindow").offsetHeight);
+			renderer.setSize( , );
+			
+
+
+			var scene = new THREE.Scene();
+			var camera = new THREE.PerspectiveCamera( 45, document.getElementById("renderWindow").offsetWidth/document.getElementById("renderWindow").offsetHeight,1.333, 1, 2500 );
+
+			var renderer = new THREE.WebGLRenderer({ alpha: true });
+			renderer.setClearColor( 0xffffff, 1);
+
+			renderer.setSize( document.getElementById("renderWindow").offsetWidth/1.333, document.getElementById("renderWindow").offsetHeight );
 			document.getElementById("renderWindow").appendChild( renderer.domElement );
+			//var pixelData = canvas.getContext('2d').getImageData(event.offsetX, event.offsetY, 1, 1).data;
 
 			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
 			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
