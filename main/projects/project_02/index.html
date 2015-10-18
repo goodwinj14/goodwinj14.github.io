@@ -81,7 +81,7 @@ www.typeandgrids.com
 		<div>
 		Loading...
 		</div>
-		 <div id="progress-bar" style="width:255px; height:45px; background-color: black;">
+		 <div id="progress-bar" style="width:0px; height:45px; background-color: black;">
   			
   		</div>
 
@@ -137,6 +137,8 @@ www.typeandgrids.com
 		 getImage("../../../nural_image_data/jsonSlices/data"+sliceBlockNum+".json");
 
 		 function getImage(image){
+		 	//Updates Progess bar 
+		 	document.getElementById("progress-bar").offsetWidth = sliceBlockNum;
 		 $.getJSON(image, loadComplete);
 		}
 
