@@ -238,27 +238,41 @@ www.typeandgrids.com
 			var renderer = new THREE.WebGLRenderer({ alpha: true });
 			renderer.setClearColor( 0xffffff, 1);
 
-			renderer.setSize( document.getElementById("renderWindow").offsetWidth/1.333, document.getElementById("renderWindow").offsetHeight );
+			renderer.setSize( document.getElementById("renderWindow").offsetWidth, document.getElementById("renderWindow").offsetHeight );
 			document.getElementById("renderWindow").appendChild( renderer.domElement );
 			//var pixelData = canvas.getContext('2d').getImageData(event.offsetX, event.offsetY, 1, 1).data;
 
-			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-			var cube = new THREE.Mesh( geometry, material );
-			scene.add( cube );
 
-			camera.position.z = 5;
+			controls = new THREE.TrackballControls(camera);
+				controls.rotateSpeed = 1.0;
+				controls.zoomSpeed = 1.2;
+				controls.panSpeed = 0.8;
 
-			var render = function () {
-				requestAnimationFrame( render );
+				controls.noZoom = false;
+				controls.noPan = false;
 
-				cube.rotation.x += 0.1;
-				cube.rotation.y += 0.1;
+				controls.staticMoving = true;
+				controls.dynamicDampingFactor = 0.3;
 
-				renderer.render(scene, camera);
-			};
 
+			function render(){
+			renderer.render(scene, camera);
+		} 
+		function animate(){
+			requestAnimationFrame(animate);
+			//var time = Date.now() * 0.001;
+				if(particleSystem!=null){
+				//particleSystem.rotation.x = time * 0.02;
+				
+			}
 			render();
+			controls.update();
+			if(ImageStack!=null){
+			ImageStack.update();
+			}
+		}
+			render();
+			animate();
 		</script>
 </body>
 </html>
