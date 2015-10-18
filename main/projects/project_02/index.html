@@ -138,7 +138,6 @@ www.typeandgrids.com
 
 		 function getImage(image){
 		 	//Updates Progess bar 
-		 	document.getElementById("progress-bar").offsetWidth = sliceBlockNum;
 		 $.getJSON(image, loadComplete);
 		}
 
@@ -147,6 +146,7 @@ www.typeandgrids.com
 		function loadComplete(json) {
 			//Colors
 			var loading = "Loaded Slice: " + sliceBlockNum;
+			document.getElementById("progress-bar").style.width = sliceBlockNum;
 			//document.getElementById("picture").innerHTML = loading;
 			//color.setRGB(1.0,0.2,0.2);
 			var jsonArrayPosition= 0;
