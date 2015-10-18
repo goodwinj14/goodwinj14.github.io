@@ -81,7 +81,7 @@ www.typeandgrids.com
 		<div>
 		Loading...
 		</div>
-		 <div id="progress-bar" style="width:0px; height:45px; background-color: black;">
+		 <div id="progress-bar" style="width:0px; height:45px; ">
   			
   		</div>
 
@@ -146,7 +146,7 @@ www.typeandgrids.com
 		function loadComplete(json) {
 			//Colors
 			var loading = "Loaded Slice: " + sliceBlockNum;
-			document.getElementById("progress-bar").style.width = sliceBlockNum;
+			document.getElementById("progress-bar").innerHTML = sliceBlockNum;
 			//document.getElementById("picture").innerHTML = loading;
 			//color.setRGB(1.0,0.2,0.2);
 			var jsonArrayPosition= 0;
