@@ -61,6 +61,14 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 		this.height = Height;
 		this.width = Width;		
 
+		//Camera View References 
+		this.phi = 0.0;
+		this.theta = 0.0;
+		//Math Constants
+		this.PI_4 = Math.PI/4;
+		this.PI_2 = Math.PI/2;
+		this.Five_PI_4 = (Math.PI*5)/4;
+		this.THREExPI_2 = (Math.PI*3)/2;
 		var area = Height*Width;
 		var points = area*3;
 		var centerY = Height/2;
@@ -453,18 +461,44 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 	}
 
 	this.update =function(){
-		if(this.camera.rotation.y<-0.3){
+		var x = camera.position.x;
+		var y = camera.position.y;
+		var z = camera.position.z;
+		//Uses spherical cordinets to determ angle of the camera with respect to the origin point(0,0,0)
+		//them determins which face is the main focus based off of theta and phi 
+
+		//Finds the current Sphirical Cordinets of the camera
+		var rho = Math.sqrt(Math.pow(x, 2)+Math.pow(y, 2)+Math.pow(z, 2));
+		var h = Math.sqrt(Math.pow(x, 2)+Math.pow(z, 2));
+		this.theta = Math.acos(x/h);
+		this.phi = (Math.asin(y/rho));
+
+
+		var X_normalized = Math.sin(this.theta)*rho;
+		var Z_normalized = Math.cos(this.theta)*rho;
+
+		this.theta = (Math.atan((Z_normalized/X_normalized)));
+
+		if(z<0&&x>=0){
+			this.theta = Math.PI - this.theta;
+		}else if(z<0&&x<0){
+			this.theta = Math.PI - this.theta;
+		}else if(z>=0&&x<0){
+			this.theta = (2*Math.PI) + this.theta;
+		}
+
+
+		if(this.theta>Math.PI){
 			this.drawF4();
-		}if(this.camera.rotation.y> 0.3){
-			//this.updateGeometryArray();
+		}if(this.theta>0&&this.theta<Math.PI){
 			this.drawF2();
-		}if(this.camera.rotation.x<-0.3){
+		}if(this.phi>0){
 			this.drawF5();
-		}if(this.camera.rotation.x>0.3){
+		}if(this.phi<0){
 			this.drawF6();
-		}if(this.camera.rotation.x<-1.5){
+		}if(this.theta>this.PI_2&&this.theta<this.THREExPI_2){
 			this.drawF3();
-		}if(this.camera.rotation.x>-1.5){
+		}if(this.theta>this.THREExPI_2||this.theta<this.PI_2){
 			this.drawF1();
 		}
 	}
@@ -473,119 +507,42 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 		var x = camera.position.x;
 		var y = camera.position.y;
 		var z = camera.position.z;
-		//Uses spherical cordinets to determ angle of the camera with respect to the origin point(0,0,0)
-		//them determins which face is the main focus based off of theta and phi 
-		var R_xz = Math.sqrt((Math.abs(Math.pow(x, 2))+Math.abs(Math.pow(z, 2))));
-		var R_zy = Math.sqrt(Math.pow(z, 2)+Math.pow(y, 2));
 		
 
-		F1_X_Range = 0.70710666564;    //Math.sin(45 degrees)
-		console.log("Camera Roatiaion Y:", y);
-		console.log("Camera Roatiaion X:", x);
-		console.log("Camera Roatiaion Z:", z);
-		console.log("R_zy:", R_zy);
-		console.log("R_xz:", R_xz);
-		var X_normalized = x/R_xz
-		var Y_normalized = y/R_zy
-		console.log("Y_normalized:", Y_normalized);
-		console.log("X_normalized:", X_normalized);
-		//Checks to see if we are looking at front or back
-		if(z>0){
-			//Looking at Faces F1, F2, F4, F5, or F6 half
-			if(x>=0){
-				//Looking at Faces F1, F2, F5, or F6 half
-					if(y>=0){
-						//Looking at Faces F1, F2, or F5,
-						if(X_normalized<F1_X_Range){
-							//Looking at Faces F1, or F5,
-							if(Y_normalized<F1_X_Range){
-							//Looking at Faces F1
-							console.log("Face One Visable");
-							}else{
-							//Looking at Faces F5
-							console.log("Face Five Visable");
-							}
-						}else{
-							if(Y_normalized<F1_X_Range){
-							//Looking at Faces F2
-							console.log("Face two Visable");
-							}else{
-							//Looking at Faces F5
-							console.log("Face Five Visable");
-							}
-						}
-					}else{
-						//Looking at Faces F1, F2, or F6,
-						if(X_normalized<F1_X_Range){
-							//Looking at Faces F1, or F5,
-							if(Y_normalized>-F1_X_Range){
-							//Looking at Faces F1
-							console.log("Face One is so not Visable");
-							}else{
-							//Looking at Faces F5
-							console.log("Face six Visable");
-							}
-						}else{
-							if(Y_normalized<F1_X_Range){
-							//Looking at Faces F2
-							console.log("Face two Visable");
-							}else{
-							//Looking at Faces F6
-							console.log("Face six Visable");
-							}
-						}
-					}
-			}else{
-				//Looking at Faces F1, F2, F5, or F6 half
-					if(y>=0){
-						//Looking at Faces F1, F2, or F5,
-						if(X_normalized>-F1_X_Range){
-							//Looking at Faces F1, or F5,
-							if(Y_normalized<F1_X_Range){
-							//Looking at Faces F1
-							console.log("2^Face One Visable");
-							}else{
-							//Looking at Faces F5
-							console.log("2^Face Five Visable");
-							}
-						}else{
-							if(Y_normalized<F1_X_Range){
-							//Looking at Faces F3
-							console.log("2^Face three Visable");
-							}else{
-							//Looking at Faces F5
-							console.log("2^Face Five Visable");
-							}
-						}
-					}else{
-						//Looking at Faces F1, F2, or F6,
-						if(X_normalized<F1_X_Range){
-							console.log("A 1 two");
-							//Looking at Faces F1, or F5,
-							if(Y_normalized<-F1_X_Range){
-							//Looking at Faces F1
-							console.log("2^Face One is so not Visable");
-							}else{
-							//Looking at Faces F5
-							console.log("2^Face six Visable");
-							}
-						}else{
-							console.log("A 2 two");
-							if(Y_normalized<-F1_X_Range){
-							//Looking at Faces F3
-							console.log("2^Face three Visable");
-							}else{
-							//Looking at Faces F6
-							console.log("2^Face six Visable");
-							}
-						}
-					}
+		/*ADD IN CHECKS FOR PHI*/
+		if(this.theta<(Math.PI/4)||this.theta>((Math.PI*7)/4)){
+			if(this.phi<(Math.PI/4)&&this.phi>((-Math.PI)/4)){
+			console.log("Face One Visable");
+			}else if(this.phi>(Math.PI/4)){
+				console.log("Face Five Visable");
+			}else if(this.phi<((-Math.PI)/4)){
+				console.log("Face six Visable");
 			}
-			
-		}else{
-			//Looking at Faces F2, F3, F4, F5, or F6 half
-			console.log("Z negative");
+
+		}else if(this.theta<((Math.PI*3)/4)){
+			if(this.phi<(Math.PI/4)&&this.phi>((-Math.PI)/4)){
+			console.log("Face Two Visable");
+			}else if(this.phi>(Math.PI/4)){
+				console.log("Face Five Visable");
+			}else if(this.phi<((-Math.PI)/4)){
+				console.log("Face six Visable");
+			}
+		}else if(this.theta<((Math.PI*5)/4)){
+			if(this.phi<(Math.PI/4)&&this.phi>((-Math.PI)/4)){
+			console.log("Face Three Visable");
+			}else if(this.phi>(Math.PI/4)){
+				console.log("Face Five Visable");
+			}else if(this.phi<((-Math.PI)/4)){
+				console.log("Face six Visable");
+			}
+		}else if(this.theta<((Math.PI*7)/4)){
+			if(this.phi<(Math.PI/4)&&this.phi>((-Math.PI)/4)){
+			console.log("Face Four Visable");
+			}else if(this.phi>(Math.PI/4)){
+				console.log("Face Five Visable");
+			}else if(this.phi<((-Math.PI)/4)){
+				console.log("Face six Visable");
+			}
 		}
 	}
-
 };
