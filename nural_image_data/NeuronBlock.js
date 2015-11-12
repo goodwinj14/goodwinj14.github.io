@@ -47,12 +47,12 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 		this.FaceFiveLayer = 0;
 		this.FaceSixLayer = 0; 
 
-		this.xUpperLimit = 0;
-		this.xLowerLimit = 0;
-		this.yUpperLimit = 0;
-		this.yLowerLimit = 0;
-		this.zUpperLimit = 0;
-		this.zLowerLimit = 0;
+		this.xUpperLimit = 120;
+		this.xLowerLimit = -120;
+		this.yUpperLimit = 120;
+		this.yLowerLimit = -120;
+		this.zUpperLimit = 120;
+		this.zLowerLimit = -120;
 		
 		this.xSizeNeedsUpdating = false;
 		this.ySizeNeedsUpdating = false;
@@ -209,30 +209,36 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 		var F4ColorStart = (120-this.zUpperLimit)*area;
 		var it = (area*3);
 		colorsIteration =0;
-		
+		var x_Start = (120+this.xLowerLimit)*3;
+		var x_end = (120+this.xUpperLimit)*3;
+		var y_start = (120+this.yLowerLimit);
+		var y_end = (120+this.yUpperLimit);
 		for (var j = 0; j < 240; j++) {
 			var rowR = j*rowLength;
 			var rowG = rowR+1;
 			var rowB = rowG+1;
 			var z = 240*j;
-			for (var i = 0; i < 240*3; i+=3) {
-				//this.StackGeometry.attributes.position.array[i] = (0);
-				//this.StackGeometry.attributes.position.array[(area*3)+i] = (-centerY)-2;
-				//this.StackGeometry.attributes.color.array[(area*3)+ i] = 255;
-				//this.StackGeometry.attributes.color.array[(area*3)+i+1] = 0;
-				//this.StackGeometry.attributes.color.array[(area*3)+i+2] = 0;
-				
-				this.StackGeometry.attributes.color.array[F3Start+i+rowR] = colors[(F4ColorStart+(i/3)+(z))];
-				this.StackGeometry.attributes.color.array[F3Start+i+rowG] = colors[(F4ColorStart+(i/3)+(z))];
-				this.StackGeometry.attributes.color.array[F3Start+i+rowB] = colors[(F4ColorStart+(i/3)+(z))];
-				this.StackGeometry.attributes.position.array[i+rowB] = this.zUpperLimit;
-				colorsIteration++;
-				
-				
 			
-			//colorsIteration = colorsIteration;
-			};
-			//colorsIteration = 0;
+				for (var i = 0; i < 240*3; i+=3) {
+						//variable i contolrs the placment of vertivies along the x axis
+				if(j>=120-this.yUpperLimit&&j<=120-this.yLowerLimit){
+						//draws the vertices to the screen that lie within the start and end position
+						if(i>=x_Start&&i<=x_end){
+						this.StackGeometry.attributes.color.array[F3Start+i+rowR] = colors[(F4ColorStart+(i/3)+(z))];
+						this.StackGeometry.attributes.color.array[F3Start+i+rowG] = colors[(F4ColorStart+(i/3)+(z))];
+						this.StackGeometry.attributes.color.array[F3Start+i+rowB] = colors[(F4ColorStart+(i/3)+(z))];
+						this.StackGeometry.attributes.position.array[i+rowB] = this.zUpperLimit;
+						colorsIteration++;
+						}else{
+							this.StackGeometry.attributes.position.array[i+rowB] = 999999;
+							}
+				}else{
+					this.StackGeometry.attributes.position.array[i+rowB] = 999999;
+					}
+
+				//colorsIteration = colorsIteration;
+				};
+
 		};
 		//this.StackGeometry.addAttribute( 'color', new THREE.BufferAttribute( this.VisiableColors, 3 ) );
 		this.StackGeometry.attributes.color.needsUpdate = true;
@@ -245,7 +251,7 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 	this.drawF2 = function(){
 		var end = ((area*3)-1)+(area*3);
 		
-		var moveOneRow = this.width*3;
+		var moveOneRow =(this.width)*3;
 		var F3Start = ((area)*3);
 		var zRange = (Math.abs(this.zLowerLimit)+this.zUpperLimit)*3;
 		arrayOffSet = 240*3;
@@ -257,20 +263,20 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 			for (var j = 0; j < 240; j++) {
 				var colorsIteration = 0;
 				for (var i = 0; i <240*3; i+=3) {
-					
-					if(arrayOffSet-i<=zRange){
-					this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)] = colors[(239)+(area*(i/3))+(240*j)];
-					this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+1] = colors[(239)+(area*(i/3))+(240*j)];
-					this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+2] = colors[(239)+(area*(i/3))+(240*j)];
-					this.StackGeometry.attributes.position.array[F3Start+i+(j*moveOneRow)] = this.xUpperLimit;
+				if(j>=120-this.yUpperLimit&&j<=120-this.yLowerLimit){
+					if((120-(i/3)>(this.zLowerLimit))&&120-(i/3)<=this.zUpperLimit){
+					this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)] = colors[(this.width-(120-this.xUpperLimit)-1)+(area*(i/3))+(240*j)];
+					this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+1] = colors[(this.width-(120-this.xUpperLimit)-1)+(area*(i/3))+(240*j)];
+					this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+2] = colors[(this.width-(120-this.xUpperLimit)-1)+(area*(i/3))+(240*j)];
+					this.StackGeometry.attributes.position.array[(area*3)+i+(j*moveOneRow)] = this.xUpperLimit;
 					colorsIteration++;
 					}else{
 					this.StackGeometry.attributes.position.array[F3Start+i+(j*moveOneRow)] = 999999;
 					}
-				
-				//colorsIteration = colorsIteration;
+				}else{
+					this.StackGeometry.attributes.position.array[F3Start+i+(j*moveOneRow)] = 999999;
+					}
 				};
-				//colorsIteration = 0;
 			};
 		this.StackGeometry.attributes.color.needsUpdate = true;
 		this.StackGeometry.attributes.position.needsUpdate = true;
@@ -283,27 +289,28 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 		
 		var moveOneRow = this.width*3;
 		var F3Start = 0;
-		var F4ColorStart = area*239;
-		
+		var F4ColorStart = (119-(this.zLowerLimit))*area; 
+		var x_Start = (120+this.xLowerLimit)*3;
+		var x_end = (120+this.xUpperLimit)*3;
 		var it = (area*3);
 		
 		colorsIteration =0;
 		for (var j = 0; j < 240; j++) {
 			var colorsIteration = 0;
 			for (var i = 0; i < 240*3; i+=3) {
-				//this.StackGeometry.attributes.position.array[i] = (0);
-				//this.StackGeometry.attributes.position.array[(area*3)+i] = (-centerY)-2;
-				//this.StackGeometry.attributes.color.array[(area*3)+ i] = 255;
-				//this.StackGeometry.attributes.color.array[(area*3)+i+1] = 0;
-				//this.StackGeometry.attributes.color.array[(area*3)+i+2] = 0;
-				
+			if(j>=120-this.yUpperLimit&&j<=120-this.yLowerLimit){
+				if(i>=x_Start&&i<=x_end){
 				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)] = colors[(F4ColorStart+(i/3)+(240*j))];
 				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+1] = colors[(F4ColorStart+(i/3)+(240*j))];
 				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+2] = colors[(F4ColorStart+(i/3)+(240*j))];
-				this.StackGeometry.attributes.position.array[i+(j*moveOneRow)+2] = -centerY;
+				this.StackGeometry.attributes.position.array[i+(j*moveOneRow)+2] = this.zLowerLimit;
 				colorsIteration++;
-					
-				
+				}else{
+					this.StackGeometry.attributes.position.array[i+(j*moveOneRow)] = 999999;
+					}
+				}else{
+					this.StackGeometry.attributes.position.array[F3Start+i+(j*moveOneRow)] = 999999;
+				}
 			
 			//colorsIteration = colorsIteration;
 			};
@@ -324,24 +331,27 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 		arrayOffSet = 240*3;
 		var it = (area*3);
 		
-		colorsIteration =0;
+		colorsIteration =(0+(120+this.xLowerLimit));
 		for (var j = 0; j < 240; j++) {
-			var colorsIteration = 0;
+			var colorsIteration = (0+(120+this.xLowerLimit));
 			for (var i = 0; i < 240*3; i+=3) {
 				//this.StackGeometry.attributes.position.array[i] = (0);
 				//this.StackGeometry.attributes.position.array[(area*3)+i] = (-centerY)-2;
 				//this.StackGeometry.attributes.color.array[(area*3)+ i] = 255;
 				//this.StackGeometry.attributes.color.array[(area*3)+i+1] = 0;
 				//this.StackGeometry.attributes.color.array[(area*3)+i+2] = 0;
-				if(arrayOffSet-i<=zRange){
-				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)] = colors[(colorsIteration*area)+(j*240)];
-				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+1] = colors[(colorsIteration*area)+(j*240)];
-				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+2] = colors[(colorsIteration*area)+(j*240)];
-				this.StackGeometry.attributes.position.array[F3Start+i+(j*moveOneRow)] = -centerY;
+			if(j>=120-this.yUpperLimit&&j<=120-this.yLowerLimit){
+				if((120-(i/3)>(this.zLowerLimit))&&120-(i/3)<=this.zUpperLimit){
+				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)] = colors[(120+this.xLowerLimit)+(area*(i/3))+(240*j)];
+				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+1] = colors[(120+this.xLowerLimit)+(area*(i/3))+(240*j)];
+				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+2] = colors[(120+this.xLowerLimit)+(area*(i/3))+(240*j)];
+				this.StackGeometry.attributes.position.array[F3Start+i+(j*moveOneRow)] = this.xLowerLimit;
 				}else{
 					this.StackGeometry.attributes.position.array[F3Start+i+(j*moveOneRow)] = 999999;
 				}
-
+			}else{
+					this.StackGeometry.attributes.position.array[F3Start+i+(j*moveOneRow)] = 999999;
+				}
 				colorsIteration++;
 				
 				
@@ -360,13 +370,15 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 		var end = ((area*3)-1)+(area*3);
 		
 		var moveOneRow = this.width*3;
-		var F3Start = (area*3)*2;
+		var F3Start = (((this.width*this.height)*3)*2);
+		var F3ColorStart = area-240;
+		//var F3ColorStart = (((this.width*(this.width))*3)*2);
 		var F6ColorStart = area-239;
 		var it = (area*3);
 
 		var F4ColorStart = area;
 		var zRange = (Math.abs(this.zLowerLimit)+this.zUpperLimit);
-		
+		var xRange = (Math.abs(this.xLowerLimit)+this.xUpperLimit);
 		colorsIteration =0;
 		for (var j = 0; j < 240; j++) {
 			var colorsIteration = 0;
@@ -376,13 +388,14 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 				//this.StackGeometry.attributes.color.array[(area*3)+ i] = 255;
 				//this.StackGeometry.attributes.color.array[(area*3)+i+1] = 0;
 				//this.StackGeometry.attributes.color.array[(area*3)+i+2] = 0;
-				if(240-j<=zRange){
-				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)] = colors[(i/3)+(area*j)];
-				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+1] = colors[(i/3)+(area*j)];
-				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+2] = colors[(i/3)+(area*j)];
-				this.StackGeometry.attributes.position.array[F3Start+i+(j*moveOneRow)+1] = centerY;
+				if((120-(j)<=(this.zUpperLimit))&&(120-j>=(this.zLowerLimit))&&((i/3)>=this.xLowerLimit+120)&&((i/3)<=this.xUpperLimit+120)){
+				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)] = colors[(i/3)+((area*(j))+(240*(120-this.yUpperLimit)))];
+				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+1] = colors[(i/3)+((area*(j))+(240*(120-this.yUpperLimit)))];
+				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+2] = colors[(i/3)+((area*(j))+(240*(120-this.yUpperLimit)))];
+				this.StackGeometry.attributes.position.array[F3Start+i+(j*moveOneRow)+1] = this.yUpperLimit;
 				colorsIteration++;
 				}else{
+					//console
 					this.StackGeometry.attributes.position.array[F3Start+i+(j*moveOneRow)+1] = 999999;
 				}
 
@@ -416,15 +429,15 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 				//this.StackGeometry.attributes.color.array[(area*3)+ i] = 255;
 				//this.StackGeometry.attributes.color.array[(area*3)+i+1] = 0;
 				//this.StackGeometry.attributes.color.array[(area*3)+i+2] = 0;
-				if(240-j<=zRange){
-				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)] = colors[(area-(240-(i/3)))+(area*j)];
-				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+1] = colors[(area-(240-(i/3)))+(area*j)];
-				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+2] = colors[(area-(240-(i/3)))+(area*j)];
-				this.StackGeometry.attributes.position.array[F3Start+i+(j*moveOneRow)+1] = -centerY;
+				if((120-(j)<=(this.zUpperLimit))&&(120-j>=(this.zLowerLimit))&&((i/3)>=this.xLowerLimit+120)&&((i/3)<=this.xUpperLimit+120)){
+				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)] = colors[(area-(240-(i/3)))+(area*j)+(240*(120-this.yLowerLimit))];
+				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+1] = colors[(area-(240-(i/3)))+(area*j)+(240*(120-this.yLowerLimit))];
+				this.StackGeometry.attributes.color.array[F3Start+i+(j*moveOneRow)+2] = colors[(area-(240-(i/3)))+(area*j)+(240*(120-this.yLowerLimit))];
+				this.StackGeometry.attributes.position.array[F3Start+i+(j*moveOneRow)+1] = this.yLowerLimit;
 				colorsIteration++;
-				}//else{
-					//this.StackGeometry.attributes.position.array[F3Start+i+(j*moveOneRow)+1] = 1000;
-				//}
+				}else{
+					this.StackGeometry.attributes.position.array[F3Start+i+(j*moveOneRow)+1] = 999999;
+				}
 				
 			
 			//colorsIteration = colorsIteration;
@@ -437,25 +450,74 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 	};
 
 	//Removes one slice from the specifed face and then updates block
-	this.removeSlice = function(face, steps){
+	this.removeSlice = function(direction, steps){
+		var face = this.focalFace();
+		console.log("face",face);
+		console.log("direction",direction);
 		if(face == "F1"){
-			this.focalFace();
-			this.zUpperLimit = this.zUpperLimit-steps;
-			//this.xSizeNeedsUpdating = true;
-			//this.updateGeometryArray();
-			this.drawF1();
-			this.drawF2();
-			this.drawF5();
+			if(direction=="Up"){
+				if(this.zUpperLimit>(-119)){
+				this.zUpperLimit = this.zUpperLimit-steps;
+				}
+			}else if(direction=="Down"){
+				if(this.zUpperLimit<120){
+				this.zUpperLimit = this.zUpperLimit+steps;
+				}
+			}else if(direction=="Left"){
+				if(this.xUpperLimit>-119&&(this.xUpperLimit>this.xLowerLimit)){
+				this.xUpperLimit = this.xUpperLimit-steps;
+				}
+			}else if(direction=="Right"){
+				if(this.xLowerLimit<119){
+				this.xLowerLimit = this.xLowerLimit+steps;
+				}
+			}
 		}else if(face == "F2"){
-			this.xUpperLimit = this.xUpperLimit--;
+			if(direction == "Up"){
+			this.xUpperLimit = this.xUpperLimit-steps;
+			}else if(direction == "Down"){
+			this.xUpperLimit = this.xUpperLimit+steps;
+			}else if(direction == "Left"){
+			this.zUpperLimit = this.zUpperLimit-steps;
+			}else if(direction == "Left"){
+			this.zLowerLimit = this.zLowerLimit+steps;
+			}
 		}else if(face == "F3"){
-			this.zLowerLimit = this.zLowerLimit++;
+			if(direction == "Up"){
+			this.zLowerLimit = this.zLowerLimit+steps;
+			console.log(this.zLowerLimit);
+			}else if(direction=="Down"){
+			this.zLowerLimit = this.zLowerLimit-steps;
+			}else if(direction=="Left"){
+			this.xUpperLimit = this.xUpperLimit-steps;
+			}else if(direction=="Right"){
+			this.xLowerLimit = this.xLowerLimit+steps;
+			}
+			console.log("zLowerLimit", this.zLowerLimit);
 		}else if(face == "F4"){
-			this.xLowerLimit = this.xLowerLimit++;
+			if(direction == "Up"){
+			this.xLowerLimit = this.xLowerLimit+steps;
+			}else if(direction == "Down"){
+			this.xLowerLimit = this.xLowerLimit-steps;
+			console.log("xLowerLimit",this.xLowerLimit);
+			}else if(direction == "Left"){
+			this.zUpperLimit = this.zUpperLimit-steps;
+			}else if(direction == "Right"){
+			this.zLowerLimit = this.zLowerLimit+steps;
+			}
 		}else if(face == "F5"){
-			this.yUpperLimit = this.yUpperLimit--;
+			if(direction == "Up"){
+				this.yUpperLimit = this.yUpperLimit - steps;
+			}if(direction == "Down"){
+			this.yUpperLimit = this.yUpperLimit+steps;
+			}
+			console.log("y_end", 120+this.yUpperLimit);
 		}else if(face == "F6"){
-			this.yLowerLimit = this.yLowerLimit++;
+			if(direction == "Up"){
+				this.yLowerLimit = this.yLowerLimit + steps;
+			}if(direction == "Down"){
+			this.yLowerLimit = this.yLowerLimit-steps;
+			}
 		}
 		
 	}
@@ -479,27 +541,30 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 
 		this.theta = (Math.atan((Z_normalized/X_normalized)));
 
-		if(z<0&&x>=0){
+		if(z<=0&&x>=0){
 			this.theta = Math.PI - this.theta;
-		}else if(z<0&&x<0){
+		}else if(z<=0&&x<=0){
 			this.theta = Math.PI - this.theta;
-		}else if(z>=0&&x<0){
+		}else if(z>=0&&x<=0){
 			this.theta = (2*Math.PI) + this.theta;
 		}
 
 
-		if(this.theta>Math.PI){
+		if(this.theta>=Math.PI){
 			this.drawF4();
-		}if(this.theta>0&&this.theta<Math.PI){
+		}if(this.theta>=0&&this.theta<Math.PI){
 			this.drawF2();
-		}if(this.phi>0){
+		}if(this.phi>=0){
 			this.drawF5();
-		}if(this.phi<0){
+		}if(this.phi<=0){
 			this.drawF6();
-		}if(this.theta>this.PI_2&&this.theta<this.THREExPI_2){
+		}if(this.theta>=this.PI_2&&this.theta<=this.THREExPI_2){
 			this.drawF3();
-		}if(this.theta>this.THREExPI_2||this.theta<this.PI_2){
+		}if(this.theta>=this.THREExPI_2||this.theta<=this.PI_2){
 			this.drawF1();
+			if(this.phi<=0){
+				this.drawF6();
+			}
 		}
 	}
 
@@ -512,36 +577,39 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 		/*ADD IN CHECKS FOR PHI*/
 		if(this.theta<(Math.PI/4)||this.theta>((Math.PI*7)/4)){
 			if(this.phi<(Math.PI/4)&&this.phi>((-Math.PI)/4)){
+				return "F1";
 			console.log("Face One Visable");
 			}else if(this.phi>(Math.PI/4)){
+				return "F5";
 				console.log("Face Five Visable");
 			}else if(this.phi<((-Math.PI)/4)){
+				return "F6";
 				console.log("Face six Visable");
 			}
 
 		}else if(this.theta<((Math.PI*3)/4)){
 			if(this.phi<(Math.PI/4)&&this.phi>((-Math.PI)/4)){
-			console.log("Face Two Visable");
+				return "F2";
 			}else if(this.phi>(Math.PI/4)){
-				console.log("Face Five Visable");
+				return "F5";
 			}else if(this.phi<((-Math.PI)/4)){
-				console.log("Face six Visable");
+				return "F6";
 			}
 		}else if(this.theta<((Math.PI*5)/4)){
 			if(this.phi<(Math.PI/4)&&this.phi>((-Math.PI)/4)){
-			console.log("Face Three Visable");
+				return "F3";
 			}else if(this.phi>(Math.PI/4)){
-				console.log("Face Five Visable");
+				return "F5";
 			}else if(this.phi<((-Math.PI)/4)){
-				console.log("Face six Visable");
+				return "F6";
 			}
 		}else if(this.theta<((Math.PI*7)/4)){
 			if(this.phi<(Math.PI/4)&&this.phi>((-Math.PI)/4)){
-			console.log("Face Four Visable");
+				return "F4";
 			}else if(this.phi>(Math.PI/4)){
-				console.log("Face Five Visable");
+				return "F5";
 			}else if(this.phi<((-Math.PI)/4)){
-				console.log("Face six Visable");
+				return "F6";
 			}
 		}
 	}

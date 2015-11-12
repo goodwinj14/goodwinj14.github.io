@@ -258,7 +258,8 @@
 
 				controls.staticMoving = true;
 				controls.dynamicDampingFactor = 0.3;
-			
+
+
 
 
 			function render(){
@@ -285,18 +286,18 @@
     switch (e.keyCode) {
         case 37:
         //if(ImageStack.FaceOneLayer<239){
-        	ImageStack.removeSlice("F1", 1);
+        	ImageStack.removeSlice("Left", 1);
             //ImageStack.FaceOneLayer = ImageStack.FaceOneLayer+1;
        // }
             break;
         case 38:
-            console.log(camera);
+            ImageStack.removeSlice("Up", 1);
             break;
         case 39:
-             ImageStack.removeSlice("F1", -1);
+             ImageStack.removeSlice("Right", 1);
             break;
         case 40:
-            alert('down');
+            ImageStack.removeSlice("Down", 1);
             break;
     }
 };
