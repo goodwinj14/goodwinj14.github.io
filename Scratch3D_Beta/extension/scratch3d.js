@@ -15,7 +15,9 @@ var htmlCode;
 /***************Extension Local Data ***********************/
 
     var descriptor = {
-        blocks: [],
+        blocks: [
+                [" ", "%m.costume", "Costumes"]
+            ],
 
         menus: {
             Scenes: ['Grid','Grass','Space','Blank'],
