@@ -314,5 +314,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     //
 
     ScratchExtensions.register('scratch3d', descriptor, ext);
+    console.log("disc", descriptor);
+    console.log("ext", ext);
 })({});
   
