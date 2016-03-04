@@ -253,7 +253,7 @@ www.typeandgrids.com
 			//var pixelData = canvas.getContext('2d').getImageData(event.offsetX, event.offsetY, 1, 1).data;
 
 
-			controls = new THREE.TrackballControls(camera);
+			controls = new THREE.TrackballControls(camera,document.getElementById("renderWindow"));
 				controls.rotateSpeed = 1.0;
 				controls.zoomSpeed = 1.2;
 				controls.panSpeed = 0.8;
