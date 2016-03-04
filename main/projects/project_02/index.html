@@ -287,10 +287,8 @@ www.typeandgrids.com
 		document.onkeydown = function(e) {
     switch (e.keyCode) {
         case 37:
-        if(ImageStack.FaceOneLayer<239){
+        	e.preventDefault();
         	ImageStack.removeSlice("Left", 1);
-            ImageStack.FaceOneLayer = ImageStack.FaceOneLayer+1;
-        }
             break;
         case 38:
             ImageStack.removeSlice("Up", 1);
