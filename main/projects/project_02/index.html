@@ -245,7 +245,7 @@ www.typeandgrids.com
 			var camera = new THREE.PerspectiveCamera( 45, document.getElementById("renderWindow").offsetWidth/document.getElementById("renderWindow").offsetHeight, 1, 2500 );
 			/*var camera = new THREE.PerspectiveCamera( 45, document.getElementById("renderWindow").offsetWidth/document.getElementById("renderWindow").offsetHeight/1.333, 1, 2500 );*/
 
-			var renderer = new THREE.WebGLRenderer({ alpha: true });
+			var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 			renderer.setClearColor( 0xffffff, 1);
 
 			renderer.setSize( document.getElementById("renderWindow").offsetWidth, document.getElementById("renderWindow").offsetHeight);
