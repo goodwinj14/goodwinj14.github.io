@@ -483,11 +483,11 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 				}
 			}else if(direction == "Left"){
 				if(this.zUpperLimit<119){
-				this.zUpperLimit = this.zUpperLimit-steps;
+				this.zLowerLimit = this.zLowerLimit+steps;
 				}
 			}else if(direction == "Right"){
 				if(this.zUpperLimit>-119){
-				this.zLowerLimit = this.zLowerLimit+steps;
+				this.zUpperLimit = this.zUpperLimit-steps;
 				}
 			}
 		}else if(face == "F3"){
