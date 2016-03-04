@@ -517,7 +517,7 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 				this.xLowerLimit = this.xLowerLimit+steps;
 				}
 			}else if(direction == "Down"){
-				if(this.xLowerLimit>119){
+				if(this.xLowerLimit>-119){
 				this.xLowerLimit = this.xLowerLimit-steps;
 				}
 			}else if(direction == "Left"){
