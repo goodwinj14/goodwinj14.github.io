@@ -482,10 +482,12 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 				this.xUpperLimit = this.xUpperLimit+steps;
 				}
 			}else if(direction == "Left"){
+				console.log("Left called");
 				if(this.zUpperLimit<119){
 				this.zLowerLimit = this.zLowerLimit+steps;
 				}
 			}else if(direction == "Right"){
+				console.log("Left called");
 				if(this.zUpperLimit>-119){
 				this.zUpperLimit = this.zUpperLimit-steps;
 				}
