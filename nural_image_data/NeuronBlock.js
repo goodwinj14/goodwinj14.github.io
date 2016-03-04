@@ -474,13 +474,21 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 			}
 		}else if(face == "F2"){
 			if(direction == "Up"){
-			this.xUpperLimit = this.xUpperLimit-steps;
+				if(this.xUpperLimit>-119&&(this.xUpperLimit>this.xLowerLimit)){
+				this.xUpperLimit = this.xUpperLimit-steps;
+				}
 			}else if(direction == "Down"){
-			this.xUpperLimit = this.xUpperLimit+steps;
+				if(this.xUpperLimit<119&&(this.xUpperLimit>this.xLowerLimit)){
+				this.xUpperLimit = this.xUpperLimit+steps;
+				}
 			}else if(direction == "Left"){
-			this.zUpperLimit = this.zUpperLimit-steps;
+				if(this.zUpperLimit>-119&&(this.zUpperLimit>this.zUpperLimit)){
+				this.zUpperLimit = this.zUpperLimit-steps;
+				}
 			}else if(direction == "Left"){
-			this.zLowerLimit = this.zLowerLimit+steps;
+				if(this.zUpperLimit<119&&(this.zUpperLimit>this.zUpperLimit)){
+				this.zLowerLimit = this.zLowerLimit+steps;
+				}
 			}
 		}else if(face == "F3"){
 			if(direction == "Up"){
