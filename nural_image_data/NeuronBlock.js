@@ -456,7 +456,7 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 		console.log("direction",direction);
 		if(face == "F1"){
 			if(direction=="Up"){
-				if(this.zUpperLimit>(-119)){
+				if(this.zUpperLimit>(-119)&&this.zUpperLimit>this.zUpperLimit){
 				this.zUpperLimit = this.zUpperLimit-steps;
 				}
 			}else if(direction=="Down"){
