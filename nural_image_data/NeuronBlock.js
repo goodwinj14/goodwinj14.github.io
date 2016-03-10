@@ -531,9 +531,13 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 			}
 		}else if(face == "F5"){
 			if(direction == "Up"){
+				if(this.yUpperLimit>-119){
 				this.yUpperLimit = this.yUpperLimit - steps;
+				}
 			}if(direction == "Down"){
-			this.yUpperLimit = this.yUpperLimit+steps;
+				if(this.yUpperLimit<119){
+				this.yUpperLimit = this.yUpperLimit+steps;
+				}
 			}
 			console.log("y_end", 120+this.yUpperLimit);
 		}else if(face == "F6"){
