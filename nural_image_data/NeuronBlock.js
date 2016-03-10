@@ -542,7 +542,7 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 			console.log("y_end", 120+this.yUpperLimit);
 		}else if(face == "F6"){
 			if(direction == "Up"){
-				if(this.yLowerLimit<119this.yLowerLimit<this.yUpperLimit){
+				if(this.yLowerLimit<119&&this.yLowerLimit<this.yUpperLimit){
 				this.yLowerLimit = this.yLowerLimit + steps;
 				}
 			}if(direction == "Down"){
