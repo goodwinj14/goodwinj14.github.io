@@ -531,7 +531,7 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 			}
 		}else if(face == "F5"){
 			if(direction == "Up"){
-				if(this.yUpperLimit>-119){
+				if(this.yUpperLimit>-119&&this.yUpperLimit>this.yLowerLimit){
 				this.yUpperLimit = this.yUpperLimit - steps;
 				}
 			}if(direction == "Down"){
@@ -542,7 +542,7 @@ NEURONBLOCK.imageStack = function (Height, Width, colors, camera) {
 			console.log("y_end", 120+this.yUpperLimit);
 		}else if(face == "F6"){
 			if(direction == "Up"){
-				if(this.yLowerLimit<119){
+				if(this.yLowerLimit<119this.yLowerLimit<this.yUpperLimit){
 				this.yLowerLimit = this.yLowerLimit + steps;
 				}
 			}if(direction == "Down"){
