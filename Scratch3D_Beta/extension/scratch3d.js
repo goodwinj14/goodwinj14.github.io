@@ -90,7 +90,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         var templateContent = "";
             
             templateContent += $(document.getElementById(templateId)).html(); 
-                templateContent = "<dialog id='main' class='modal-inner' style=' position: absolute; top: 70px; height: 400px; width: 500px;'><section id='Holder' style='background-color: #cbffcc; padding: 0px; margin: -20px;'><div id='container' style='height: 361px; width: 482px; background-color: #ccffcc; margin-left: -19px; '><button style=' width: 100px;'>Close</button><button id='expand'>fullScreen</button></div></section></dialog>";
+                templateContent = "<dialog id='main' class='modal-inner' style=' position: absolute; top: 70px; height: 400px; width: 500px;'><section id='Holder' style='background-color: #cbffcc; padding: 0px; margin-top: -20px;'><div id='container' style='height: 361px; width: 482px; background-color: #ccffcc; margin-left: -19px; '><button style=' width: 100px;'>Close</button><button id='expand'>fullScreen</button></div></section></dialog>";
                 //templateContent = htmlCode;
 
         $template = _.template(templateContent);
