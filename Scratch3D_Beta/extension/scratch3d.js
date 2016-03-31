@@ -90,7 +90,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         var templateContent = "";
             
             templateContent += $(document.getElementById(templateId)).html(); 
-                templateContent = "<dialog id='main' class='modal-inner' style=' position: absolute; top: 70px; height: 400px; width: 500px;'><section id='Holder' style='background-color: #cbffcc; padding: 0px; margin-top: -22px;'><div id='container' style='height: 361px; width: 482px; background-color: #ccffcc; margin-left: -19px; '><img src='http://goodwinj14.github.io/Scratch3D_Beta/images/close-icon.png'><button id='expand'>fullScreen</button></div></section></dialog>";
+                templateContent = "<dialog id='main' class='modal-inner' style=' position: absolute; top: 70px; height: 400px; width: 500px;'><section id='Holder' style='background-color: #cbffcc; padding: 0px; margin-top: -22px;'><div id='container' style='height: 361px; width: 482px; background-color: #ccffcc; margin-left: -19px; '><img src='http://goodwinj14.github.io/Scratch3D_Beta/images/close-icon.png' style='float:right'><button id='expand'>fullScreen</button></div></section></dialog>";
                 //templateContent = htmlCode;
 
         $template = _.template(templateContent);
