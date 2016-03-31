@@ -48,6 +48,11 @@ var htmlCode;
 var script = document.createElement('script');
     script.onload = function() {
         console.log("Script loaded and ready");
+            function printMousePos(event) {
+                 document.body.textContent =
+                 console.log(event);
+            }
+            document.addEventListener("click", printMousePos);
     };
  //Loads the needed Libaries
     script.src = 'http://scratch3d.github.io/tierTwo/Scratch3D_Beta/server/threeJScontrols/three.js';
