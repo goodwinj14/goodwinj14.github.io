@@ -45,7 +45,7 @@ var htmlCode;
             function printMousePos(event) {
                  console.log(event);
             }
-            document.addEventListener("click", printMousePos);
+            window.addEventListener("click", printMousePos);
    
 /***************Extension Local Data ***********************/
 /***********************************************************/
