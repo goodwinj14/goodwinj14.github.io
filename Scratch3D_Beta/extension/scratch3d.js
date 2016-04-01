@@ -43,7 +43,7 @@ var htmlCode;
 
     console.log("Script loaded and ready");
             function printMousePos(event) {
-                 console.log(document.getElementById("scratch"));
+                 console.log(window.getElementById("scratch"));
             }
             window.addEventListener("click", printMousePos);
    
