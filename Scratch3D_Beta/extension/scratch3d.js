@@ -75,6 +75,11 @@ var script = document.createElement('script');
         return {status: 2, msg: 'Ready'};
     };
 
+      //Changes the stage from small to full screen
+  function fullScreen(){
+      console.log("called");
+  }
+
     ext.init = function(){
          /*var fileSelector = document.createElement('button');
         fileSelector.setAttribute('id', 'file');
@@ -108,10 +113,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     //var $element = $(document.getElementById(elementId));
     return $element;
 };
-    //Changes the stage from small to full screen
-  function fullScreen(){
-      console.log("called");
-  }
+  
   function sModal(templateId, data) {
     /*
      * Copies the HTML referenced by data-template into a new element,
