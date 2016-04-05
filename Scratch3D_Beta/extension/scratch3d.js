@@ -165,6 +165,8 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             console.log("Enter Full Screen",e);
             }else{
                 //Code to min window goes here
+                console.log(mini);
+                fullScreenOn= false;
             }
             
         }else{
