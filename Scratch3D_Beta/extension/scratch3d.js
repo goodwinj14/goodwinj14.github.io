@@ -170,6 +170,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             console.log("Enter Full Screen",e);
             }else{
             fullScreenOn= false;
+            document.getElementById("main").style.top = "70px";
             document.getElementById("main").style.width = "500px";
             document.getElementById("Holder").style.width = "463px";
             document.getElementById("container").style.width = "463px";
