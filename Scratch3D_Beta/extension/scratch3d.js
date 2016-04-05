@@ -153,8 +153,8 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     $("img", $modal).click(function(e){
         if(e.delegateTarget.id=="expand"){
             
-            var w = window.innerWidth;
-            var h = window.innerHeight;
+            var w = window.innerWidth.toString() + "px";
+            var h = window.innerHeight.toString() + "px";
             
             if(!fullScreenOn){
             fullScreenOn= true;
