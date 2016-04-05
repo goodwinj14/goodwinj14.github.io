@@ -165,6 +165,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             document.getElementById("container").style.width = w;
             document.getElementById("main").style.height = h;
             document.getElementById("Holder").style.height = h;
+            console.log(document.getElementById("Holder").style);
             document.getElementById("container").style.height = h;
             Scratch3d.updateWindow();
             console.log("Enter Full Screen",e);
