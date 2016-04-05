@@ -153,14 +153,17 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     $("img", $modal).click(function(e){
         if(e.delegateTarget.id=="expand"){
             
+            var w = window.innerWidth;
+            var h = window.innerHeight;
+            
             if(!fullScreenOn){
             fullScreenOn= true;
-            document.getElementById("main").style.width = "1100px";
-            document.getElementById("Holder").style.width = "1100px";
-            document.getElementById("container").style.width = "1100px";
-            document.getElementById("main").style.height = "700px";
-            document.getElementById("Holder").style.height = "700px";
-            document.getElementById("container").style.height = "700px";
+            document.getElementById("main").style.width = w;
+            document.getElementById("Holder").style.width = w;
+            document.getElementById("container").style.width = w;
+            document.getElementById("main").style.height = h;
+            document.getElementById("Holder").style.height = h;
+            document.getElementById("container").style.height = h;
             Scratch3d.updateWindow();
             console.log("Enter Full Screen",e);
             }else{
