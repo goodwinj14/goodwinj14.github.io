@@ -164,9 +164,14 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             Scratch3d.updateWindow();
             console.log("Enter Full Screen",e);
             }else{
-                //Code to min window goes here
-                console.log("mini");
-                fullScreenOn= false;
+            fullScreenOn= false;
+            document.getElementById("main").style.width = "400px";
+            document.getElementById("Holder").style.width = "400px";
+            document.getElementById("container").style.width = "400px";
+            document.getElementById("main").style.height = "500px";
+            document.getElementById("Holder").style.height = "500px";
+            document.getElementById("container").style.height = "500px";
+            Scratch3d.updateWindow();
             }
             
         }else{
