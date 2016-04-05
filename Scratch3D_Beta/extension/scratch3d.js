@@ -168,7 +168,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             console.log(document.getElementById("Holder").style);
             document.getElementById("container").style.height = h;
             Scratch3d.updateWindow();
-            console.log("Enter Full Screen",e);
+            console.log(document.getElementById("Holder").style);
             }else{
             fullScreenOn= false;
             document.getElementById("main").style.top = "70px";
