@@ -166,10 +166,10 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             }else{
             fullScreenOn= false;
             document.getElementById("main").style.width = "500px";
-            document.getElementById("Holder").style.width = "500px";
+            document.getElementById("Holder").style.width = "482px";
             document.getElementById("container").style.width = "482px";
             document.getElementById("main").style.height = "400px";
-            document.getElementById("Holder").style.height = "400px";
+            document.getElementById("Holder").style.height = "361px";
             document.getElementById("container").style.height = "361px";
             Scratch3d.updateWindow();
             }
