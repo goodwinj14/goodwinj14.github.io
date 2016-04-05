@@ -165,12 +165,12 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             console.log("Enter Full Screen",e);
             }else{
             fullScreenOn= false;
-            document.getElementById("main").style.width = "400px";
-            document.getElementById("Holder").style.width = "400px";
-            document.getElementById("container").style.width = "400px";
-            document.getElementById("main").style.height = "500px";
-            document.getElementById("Holder").style.height = "500px";
-            document.getElementById("container").style.height = "500px";
+            document.getElementById("main").style.width = "500px";
+            document.getElementById("Holder").style.width = "500px";
+            document.getElementById("container").style.width = "482px";
+            document.getElementById("main").style.height = "400px";
+            document.getElementById("Holder").style.height = "400px";
+            document.getElementById("container").style.height = "361px";
             Scratch3d.updateWindow();
             }
             
