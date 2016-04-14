@@ -153,10 +153,11 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     $("img", $modal).click(function(e){
         if(e.delegateTarget.id=="expand"){
             
-            var w = (window.innerWidth - 205).toString() + "px";
-            var h = (window.innerHeight-5).toString() + "px";
+            
             
             if(!fullScreenOn){
+            var w = (window.innerWidth - 25).toString() + "px";
+            var h = (window.innerHeight-5).toString() + "px";
             fullScreenOn= true;
             document.getElementById("main").style.width = w;
             document.getElementById("main").style.top = "0px";
@@ -172,9 +173,9 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             }else{
             fullScreenOn= false;
             document.getElementById("main").style.top = "70px";
-            document.getElementById("main").style.width = "482px";
-            document.getElementById("Holder").style.width = "482px";
-            document.getElementById("container").style.width = "482px";
+            document.getElementById("main").style.width = "462px";
+            document.getElementById("Holder").style.width = "462px";
+            document.getElementById("container").style.width = "462px";
             document.getElementById("main").style.height = "400px";
             document.getElementById("Holder").style.height = "";
             document.getElementById("container").style.height = "361px";
