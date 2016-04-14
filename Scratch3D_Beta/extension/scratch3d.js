@@ -156,7 +156,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             
             
             if(!fullScreenOn){
-            var w = (window.innerWidth - 25).toString() + "px";
+            var w = (window.innerWidth).toString() + "px";
             var h = (window.innerHeight-5).toString() + "px";
             fullScreenOn= true;
             document.getElementById("main").style.width = w;
