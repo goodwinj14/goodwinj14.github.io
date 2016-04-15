@@ -174,7 +174,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             document.getElementById("Holder").style.width = "462px";
             document.getElementById("container").style.margin.left = "19px";
             console.log(document.getElementById("container").style);
-            document.getElementById("container").style.width = "462px";
+            document.getElementById("container").style.width = "482px";
             document.getElementById("main").style.height = "400px";
             document.getElementById("Holder").style.height = "";
             document.getElementById("container").style.height = "361px";
