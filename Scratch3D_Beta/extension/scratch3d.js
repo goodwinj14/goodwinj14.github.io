@@ -156,7 +156,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             
             
             if(!fullScreenOn){
-            var w = (window.innerWidth-7).toString() + "px";
+            var w = (window.innerWidth-6).toString() + "px";
             var h = (window.innerHeight-7).toString() + "px";
             var bPosition = (window.innerWidth-30).toString() + "px";
             fullScreenOn= true;
@@ -168,7 +168,6 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             document.getElementById("Holder").style.height = h;
             document.getElementById("container").style.height = h;
             document.getElementById("closeButton").style.left = bPosition;
-            
             Scratch3d.updateWindow();
             }else{
             fullScreenOn= false;
