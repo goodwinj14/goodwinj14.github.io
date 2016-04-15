@@ -156,7 +156,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             
             
             if(!fullScreenOn){
-            var w = (window.innerWidth).toString() + "px";
+            var w = (window.innerWidth-3).toString() + "px";
             var h = (window.innerHeight-7).toString() + "px";
             var bPosition = (window.innerWidth-30).toString() + "px";
             fullScreenOn= true;
