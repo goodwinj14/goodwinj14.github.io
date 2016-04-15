@@ -169,13 +169,14 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             Scratch3d.updateWindow();
             }else{
             fullScreenOn= false;
-            document.getElementById("main").style.top = "70px";
+            /*document.getElementById("main").style.top = "70px";
             document.getElementById("main").style.width = "500px";
             document.getElementById("Holder").style.width = "462px";
             document.getElementById("container").style.width = "462px";
             document.getElementById("main").style.height = "400px";
             document.getElementById("Holder").style.height = "";
-            document.getElementById("container").style.height = "361px";
+            document.getElementById("container").style.height = "361px";*/
+            CreateFromTemplate();
             Scratch3d.updateWindow();
             }
             
