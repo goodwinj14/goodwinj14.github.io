@@ -178,7 +178,6 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             document.getElementById("main").style.height = "400px";
             document.getElementById("Holder").style.height = "";
             document.getElementById("container").style.height = "361px";
-            CreateFromTemplate();
             Scratch3d.updateWindow();
             }
             
