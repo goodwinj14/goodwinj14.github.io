@@ -156,8 +156,8 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             
             
             if(!fullScreenOn){
-            var w = (window.innerWidth-15).toString() + "px";
-            var h = (window.innerHeight-5).toString() + "px";
+            var w = (window.innerWidth-7).toString() + "px";
+            var h = (window.innerHeight-7).toString() + "px";
             var bPosition = (window.innerWidth-45).toString() + "px";
             fullScreenOn= true;
             document.getElementById("main").style.width = w;
@@ -168,6 +168,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             document.getElementById("Holder").style.height = h;
             document.getElementById("container").style.height = h;
             document.getElementById("closeButton").style.left = bPosition;
+            
             Scratch3d.updateWindow();
             }else{
             fullScreenOn= false;
@@ -180,6 +181,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             document.getElementById("main").style.height = "400px";
             document.getElementById("Holder").style.height = "";
             document.getElementById("container").style.height = "361px";
+            document.getElementById("closeButton").style.left = "458px";
             Scratch3d.updateWindow();
             }
             
