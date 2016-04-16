@@ -34,6 +34,7 @@ Scratch3d.init = function(){
 
 //UPDATE THE SCREEN SIZE WHEN FULLSCREEN IS ENTERED
 Scratch3d.updateWindow = function(){
-	camera = new THREE.PerspectiveCamera( 75, document.getElementById('container').offsetWidth/document.getElementById('container').offsetHeight, 0.1, 1000 );
-	renderer.setSize(document.getElementById('container').offsetWidth,document.getElementById('container').offsetHeight);
+  	renderer.setViewport(0, 0, document.getElementById('container').offsetWidth, document.getElementById('container').offsetHeight);
+  	camera.aspect = document.getElementById('container').offsetWidth / document.getElementById('container').offsetHeight;
+  	camera.updateProjectionMatrix();
 }
