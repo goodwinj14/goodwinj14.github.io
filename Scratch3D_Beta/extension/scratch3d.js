@@ -61,9 +61,11 @@ var script = document.createElement('script');
 
     htmlCode = document.createElement('script');
     htmlCode.onload = function() {
+         htmlCode.src = 'http://goodwinj14.github.io/Scratch3D_Beta/server/scratch3dScript.js';
         console.log("Script loaded and ready: ", htmlCode);
+       
     };
-    htmlCode.src = 'http://goodwinj14.github.io/Scratch3D_Beta/server/scratch3dScript.js';
+    
     // Register the extension
 
 (function(ext) {
