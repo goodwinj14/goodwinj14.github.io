@@ -105,7 +105,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             sceneWindow.addShape();
             updateExtension();
         }
-    return $element;
+    //return $element;
 };
   
   function sModal(templateId, data) {
