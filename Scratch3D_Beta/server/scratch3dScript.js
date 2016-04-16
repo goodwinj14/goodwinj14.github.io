@@ -29,7 +29,7 @@ Scratch3d.init = function(){
 				renderer.render(scene, camera);
 				}
 			};
-			//render();
+			render();
 }
 
 //UPDATE THE SCREEN SIZE WHEN FULLSCREEN IS ENTERED
