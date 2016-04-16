@@ -191,10 +191,12 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         Scratch3d.windowActive = true;
         Scratch3d.init();
         if(sceneWindow!=null){
+            console.log("not null");
             sceneWindow.addShape();
             updateExtension();
             return "loaded";
         }else{
+            console.log("null");
             return "not loaded";
         }
     }
