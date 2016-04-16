@@ -14,7 +14,25 @@ var fullScreenOn = false;
 /***********************************************************/
 /***********************************************************/
 /***************Extension Local Data ***********************/
+/***************Extension Local Data ***********************/
+/***********************************************************/
+/***********************************************************/
+var script = document.createElement('script');
+    script.onload = function() {
+        
+    };
+ //Loads the needed Libaries
+    script.src = 'http://scratch3d.github.io/tierTwo/Scratch3D_Beta/server/threeJScontrols/three.js';
+    document.getElementsByTagName('body')[0].appendChild(script);
 
+    htmlCode = document.createElement('script');
+    htmlCode.src = 'http://goodwinj14.github.io/Scratch3D_Beta/server/scratch3dScript.js';
+    htmlCode.onload = function() {
+        console.log("Script loaded nnfne ready: ", htmlCode);
+       
+    };
+    
+    
     var descriptor = {
         blocks: [
                 [" ", "%m.costume", "Costumes"]
@@ -48,23 +66,7 @@ var fullScreenOn = false;
             }
             window.addEventListener("click", printMousePos);
    
-/***************Extension Local Data ***********************/
-/***********************************************************/
-/***********************************************************/
-var script = document.createElement('script');
-    script.onload = function() {
-        
-    };
- //Loads the needed Libaries
-    script.src = 'http://scratch3d.github.io/tierTwo/Scratch3D_Beta/server/threeJScontrols/three.js';
-    document.getElementsByTagName('body')[0].appendChild(script);
 
-    htmlCode = document.createElement('script');
-    htmlCode.src = 'http://goodwinj14.github.io/Scratch3D_Beta/server/scratch3dScript.js';
-    htmlCode.onload = function() {
-        console.log("Script loaded nnfne ready: ", htmlCode);
-       
-    };
     
     // Register the extension
 
