@@ -62,7 +62,7 @@ var script = document.createElement('script');
     htmlCode = document.createElement('script');
     htmlCode.src = 'http://goodwinj14.github.io/Scratch3D_Beta/server/scratch3dScript.js';
     htmlCode.onload = function() {
-        console.log("Script loaded and ready: ", htmlCode);
+        console.log("Script loaded nnfne ready: ", htmlCode);
        
     };
     
