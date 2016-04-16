@@ -187,6 +187,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
       evt.initEvent("click", true, false);
      zxzx fileSelector.dispatchEvent(evt);*/
      
+        console.log("Called");
         Scratch3d.windowActive = true;
         Scratch3d.init();
         console.log("not in null");
