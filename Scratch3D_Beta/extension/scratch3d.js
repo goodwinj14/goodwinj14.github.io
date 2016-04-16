@@ -137,10 +137,8 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     });
     return $modal;
 }
-    console.log("Called");
-      $modal = sModal("template-warning", null);
-      console.log("Modal: ",$modal[0]);
 
+      $modal = sModal("template-warning", null);
     $("img", $modal).click(function(e){
         if(e.delegateTarget.id=="expand"){
             
@@ -181,6 +179,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         $(document).trigger("modal:exit")
         }
     });
+        console.log("Called");
       /*fileSelector = document.createElement('input');
       fileSelector.setAttribute('type', 'file');
       document.body.appendChild(fileSelector);
