@@ -101,7 +101,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     }
     return $element;
 };
-  console.log("Called");
+  
   function sModal(templateId, data) {
     /*
      * Copies the HTML referenced by data-template into a new element,
@@ -137,7 +137,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     });
     return $modal;
 }
-
+    console.log("Called");
       $modal = sModal("template-warning", null);
       console.log("Modal: ",$modal[0]);
 
