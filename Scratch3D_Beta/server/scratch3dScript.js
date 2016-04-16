@@ -14,9 +14,16 @@ Scratch3d.init = function(){
 			renderer.setSize(document.getElementById('container').offsetWidth,document.getElementById('container').offsetHeight);
 			document.getElementById('container').appendChild( renderer.domElement );
 			
+			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+			var cube = new THREE.Mesh( geometry, material );
+			scene.add( cube );
+			
 			console.log("Scene", scene);
 			var render = function () {
 				if(Scratch3d.windowActive){
+				cube.rotation.x += 0.1;
+				cube.rotation.y += 0.1;
 				requestAnimationFrame( render );
 				console.log("rendering");
 				renderer.render(scene, camera);
