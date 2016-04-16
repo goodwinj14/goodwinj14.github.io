@@ -99,7 +99,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         $element.appendTo(appendTo);
         document.getElementById("Holder").appendChild(htmlCode);
     }
-    //return $element;
+    return $element;
 };
   
   function sModal(templateId, data) {
