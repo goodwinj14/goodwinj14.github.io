@@ -60,8 +60,8 @@ var script = document.createElement('script');
     document.getElementsByTagName('body')[0].appendChild(script);
 
     htmlCode = document.createElement('script');
+    htmlCode.src = 'http://goodwinj14.github.io/Scratch3D_Beta/server/scratch3dScript.js';
     htmlCode.onload = function() {
-         htmlCode.src = 'http://goodwinj14.github.io/Scratch3D_Beta/server/scratch3dScript.js';
         console.log("Script loaded and ready: ", htmlCode);
        
     };
