@@ -99,12 +99,6 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         $element.appendTo(appendTo);
         document.getElementById("Holder").appendChild(htmlCode);
     }
-        Scratch3d.windowActive = true;
-        Scratch3d.init();
-        if(sceneWindow!=null){
-            sceneWindow.addShape();
-            updateExtension();
-        }
     //return $element;
 };
   
