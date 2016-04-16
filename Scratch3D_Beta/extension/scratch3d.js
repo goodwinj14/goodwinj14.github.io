@@ -77,15 +77,7 @@ var script = document.createElement('script');
     };
   
 
-    ext.init = function(){
-         /*var fileSelector = document.createElement('button');
-        fileSelector.setAttribute('id', 'file');
-    document.body.appendChild(fileSelector);
-    var evt = document.createEvent("MouseEvents");
-      evt.initEvent("click", true, false);
-      fileSelector.dispatchEvent(evt);
-      console.log(document.getElementById('file'));*/
-
+ext.init = function(){
 var inputElement = null;
 function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrapper, data) {
     elementType = elementType || "div";
@@ -107,7 +99,12 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         $element.appendTo(appendTo);
         document.getElementById("Holder").appendChild(htmlCode);
     }
-    //var $element = $(document.getElementById(elementId));
+        Scratch3d.windowActive = true;
+        Scratch3d.init();
+        if(sceneWindow!=null){
+        console.log("ScratchExtensions", ScratchExtensions);
+        sceneWindow.addShape();
+        updateExtension();
     return $element;
 };
   
