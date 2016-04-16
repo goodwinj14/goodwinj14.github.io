@@ -187,6 +187,16 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
       var evt = document.createEvent("MouseEvents");
       evt.initEvent("click", true, false);
      zxzx fileSelector.dispatchEvent(evt);*/
+     
+        Scratch3d.windowActive = true;
+        Scratch3d.init();
+        if(sceneWindow!=null){
+            sceneWindow.addShape();
+            updateExtension();
+            return "loaded";
+        }else{
+            return "not loaded";
+        }
     }
 
     ext.runScratch3d = function(){
