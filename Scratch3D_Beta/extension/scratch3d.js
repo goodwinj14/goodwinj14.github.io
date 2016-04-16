@@ -102,9 +102,9 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         Scratch3d.windowActive = true;
         Scratch3d.init();
         if(sceneWindow!=null){
-        console.log("ScratchExtensions", ScratchExtensions);
-        sceneWindow.addShape();
-        updateExtension();
+            sceneWindow.addShape();
+            updateExtension();
+        }
     return $element;
 };
   
@@ -319,13 +319,12 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         Scratch3d.windowActive = true;
         Scratch3d.init();
         if(sceneWindow!=null){
-        console.log("ScratchExtensions", ScratchExtensions);
-        sceneWindow.addShape();
-        updateExtension();
-       return "loaded";
-   }else{
-       return "not loaded";
-   }
+            sceneWindow.addShape();
+            updateExtension();
+            return "loaded";
+        }else{
+            return "not loaded";
+        }
     };
 
     //Reloads The extention to update block data
