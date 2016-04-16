@@ -19,7 +19,7 @@ Scratch3d.init = function(){
 			var cube = new THREE.Mesh( geometry, material );
 			scene.add( cube );
 			camera.position.z = 5;
-			console.log("Scene", scene);
+			console.log("Scene", renderer);
 			var render = function () {
 				if(Scratch3d.windowActive){
 				cube.rotation.x += 0.1;
@@ -29,7 +29,7 @@ Scratch3d.init = function(){
 				renderer.render(scene, camera);
 				}
 			};
-			render();
+			//render();
 }
 
 //UPDATE THE SCREEN SIZE WHEN FULLSCREEN IS ENTERED
