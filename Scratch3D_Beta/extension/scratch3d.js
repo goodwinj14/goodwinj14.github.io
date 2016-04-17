@@ -335,8 +335,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
      zxzx fileSelector.dispatchEvent(evt);*/
     }
 
-    ext.newShape = function() {
-    };
+    ext.newShape = Scratch3d.test;
 
     //Reloads The extention to update block data
     function updateExtension(){
@@ -346,7 +345,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 
     // Block and block menu descriptions
         descriptor.blocks.push([' ', 'New 3D World %m.costume', 'init']);
-        descriptor.blocks.push([' ', 'New Shape %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'test', 'Cube', '1','1','1','0','0','0']);
+        descriptor.blocks.push([' ', 'New Shape %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'newShape', 'Cube', '1','1','1','0','0','0']);
         descriptor.blocks.push(['null', 'Upload', 'uploadFile']);
     //
 
