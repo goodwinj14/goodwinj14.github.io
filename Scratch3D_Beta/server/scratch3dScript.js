@@ -74,7 +74,7 @@ Scratch3d.addShape = function(shape, length, width, height, LocationX, LocationY
 	circle.position.set(LocationX,LocationY,LocationZ);
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(circle!=null){
-			Scene.add(circle);
+			scene.add(circle);
 		}
 	}		
 
@@ -85,7 +85,7 @@ Scratch3d.addShape = function(shape, length, width, height, LocationX, LocationY
 	cylinder.position.set(LocationX,LocationY,LocationZ);
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(cylinder!=null){
-			Scene.add(cylinder);
+			scene.add(cylinder);
 		}
 	}
 
@@ -97,7 +97,7 @@ Scratch3d.addShape = function(shape, length, width, height, LocationX, LocationY
 	
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(dodecahedron!=null){
-			Scene.add(dodecahedron);
+			scene.add(dodecahedron);
 		}
 	}
 
@@ -108,7 +108,7 @@ Scratch3d.addShape = function(shape, length, width, height, LocationX, LocationY
 		icosahedron.position.set(LocationX,LocationY,LocationZ);
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(icosahedron!=null){
-			Scene.add(icosahedron);
+			scene.add(icosahedron);
 		}
 	}
 
@@ -120,7 +120,7 @@ Scratch3d.addShape = function(shape, length, width, height, LocationX, LocationY
 	 plane.position.set(LocationX,LocationY,LocationZ);
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(plane!=null){
-			Scene.add(plane);
+			scene.add(plane);
 		}
 	}
 
@@ -131,7 +131,7 @@ Scratch3d.addShape = function(shape, length, width, height, LocationX, LocationY
 		ring.position.set(LocationX,LocationY,LocationZ);
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(ring!=null){
-			Scene.add(ring);
+			scene.add(ring);
 		}
 	}
 
@@ -142,7 +142,7 @@ Scratch3d.addShape = function(shape, length, width, height, LocationX, LocationY
 		torus.position.set(LocationX,LocationY,LocationZ);
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(torus!=null){
-			Scene.add(torus);
+			scene.add(torus);
 		}
 	}
 
