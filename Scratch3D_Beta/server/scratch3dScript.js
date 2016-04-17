@@ -22,7 +22,7 @@ Scratch3d.init = function(_ext){
 			camera.position.z = 5;
 			console.log("Scene", renderer);
 			
-			ext.text = function(){
+			ext.test = function(){
 			console.log("worked");
 			};
 			
