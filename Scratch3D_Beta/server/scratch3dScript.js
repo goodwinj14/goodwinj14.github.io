@@ -24,7 +24,7 @@ Scratch3d.init = function(_ext){
 			
 			ext.test = fuction(){
 				console.log("worked");
-			}
+			};
 			
 			var render = function () {
 				if(Scratch3d.windowActive){
