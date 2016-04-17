@@ -13,6 +13,7 @@ Scratch3d.init = function(ext){
 			scene = new THREE.Scene();
 			renderer = new THREE.WebGLRenderer();
 			camera = new THREE.PerspectiveCamera( 75, document.getElementById('container').offsetWidth/document.getElementById('container').offsetHeight, 0.1, 1000 );
+			camera.position.z = 5;
 			renderer.setSize(document.getElementById('container').offsetWidth,document.getElementById('container').offsetHeight);
 			document.getElementById('container').appendChild( renderer.domElement );
 			
