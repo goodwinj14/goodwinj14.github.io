@@ -7,7 +7,9 @@ var renderer;
 var camera;
 Scratch3d.windowActive = false;
 Scratch3d.init = function(ext){
-			ext.newShape = Scratch3d.test();
+			ext.newShape = function(){
+ 				console.log("worked");
+			};
 			scene = new THREE.Scene();
 			renderer = new THREE.WebGLRenderer();
 			camera = new THREE.PerspectiveCamera( 75, document.getElementById('container').offsetWidth/document.getElementById('container').offsetHeight, 0.1, 1000 );
