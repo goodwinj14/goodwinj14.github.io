@@ -5,10 +5,9 @@ The Base Global attributes that all projects have.
 var scene;
 var renderer;
 var camera;
-var ext;
 Scratch3d.windowActive = false;
-Scratch3d.init = function(_ext){
-			ext = _ext;
+Scratch3d.init = function(ext){
+			ext.newShape = Scratch3d.test();
 			scene = new THREE.Scene();
 			renderer = new THREE.WebGLRenderer();
 			camera = new THREE.PerspectiveCamera( 75, document.getElementById('container').offsetWidth/document.getElementById('container').offsetHeight, 0.1, 1000 );
