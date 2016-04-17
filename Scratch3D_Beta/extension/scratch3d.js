@@ -202,7 +202,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
      
         console.log("Called");
         Scratch3d.windowActive = true;
-        Scratch3d.init();
+        Scratch3d.init(ext);
         console.log("not in null");
         if(sceneWindow!=null){
             console.log("not null");
