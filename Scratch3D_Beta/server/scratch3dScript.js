@@ -22,9 +22,9 @@ Scratch3d.init = function(_ext){
 			camera.position.z = 5;
 			console.log("Scene", renderer);
 			
-			ext.test = fuction(){
+			/*ext.test = fuction(){
 				console.log("worked");
-			};
+			};*/
 			
 			var render = function () {
 				if(Scratch3d.windowActive){
