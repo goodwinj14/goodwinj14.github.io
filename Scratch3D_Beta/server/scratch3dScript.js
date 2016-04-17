@@ -5,9 +5,10 @@ The Base Global attributes that all projects have.
 var scene;
 var renderer;
 var camera;
+var ext;
 Scratch3d.windowActive = false;
-Scratch3d.init = function(){
-			
+Scratch3d.init = function(_ext){
+			ext = _ext;
 			scene = new THREE.Scene();
 			renderer = new THREE.WebGLRenderer();
 			camera = new THREE.PerspectiveCamera( 75, document.getElementById('container').offsetWidth/document.getElementById('container').offsetHeight, 0.1, 1000 );
@@ -20,6 +21,11 @@ Scratch3d.init = function(){
 			scene.add( cube );
 			camera.position.z = 5;
 			console.log("Scene", renderer);
+			
+			ext.test = fuction(){
+				console.log("worked");
+			}
+			
 			var render = function () {
 				if(Scratch3d.windowActive){
 				cube.rotation.x += 0.1;
@@ -38,6 +44,8 @@ Scratch3d.updateWindow = function(){
   	camera.aspect = document.getElementById('container').offsetWidth / document.getElementById('container').offsetHeight;
   	camera.updateProjectionMatrix();
 }
+
+
 
 Scratch3d.addShape = function(shape, length, width, height, LocationX, LocationY, LocationZ, Physics, shapeID, Scene){
 	console.log("Called SCENECOMPONENTS.addShape", shape);
