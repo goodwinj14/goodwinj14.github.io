@@ -36,7 +36,7 @@ Scratch3d.init = function(_ext){
 			render();
 }
 
-ext.test = function(){
+Scratch3d.test = function(){
  console.log("worked");
 };
 
