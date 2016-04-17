@@ -335,7 +335,6 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
      zxzx fileSelector.dispatchEvent(evt);*/
     }
 
-    ext.newShape = Scratch3d.test;
 
     //Reloads The extention to update block data
     function updateExtension(){
