@@ -22,9 +22,7 @@ Scratch3d.init = function(_ext){
 			camera.position.z = 5;
 			console.log("Scene", renderer);
 			
-			ext.test = function(){
-			console.log("worked");
-			};
+			
 			
 			var render = function () {
 				if(Scratch3d.windowActive){
@@ -37,6 +35,10 @@ Scratch3d.init = function(_ext){
 			};
 			render();
 }
+
+ext.test = function(){
+ console.log("worked");
+};
 
 //UPDATE THE SCREEN SIZE WHEN FULLSCREEN IS ENTERED
 Scratch3d.updateWindow = function(){
