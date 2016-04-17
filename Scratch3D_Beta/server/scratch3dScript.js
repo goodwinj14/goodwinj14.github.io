@@ -16,19 +16,9 @@ Scratch3d.init = function(ext){
 			renderer.setSize(document.getElementById('container').offsetWidth,document.getElementById('container').offsetHeight);
 			document.getElementById('container').appendChild( renderer.domElement );
 			
-			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-			var cube = new THREE.Mesh( geometry, material );
-			scene.add( cube );
-			camera.position.z = 5;
-			console.log("Scene", renderer);
-			
-			
 			
 			var render = function () {
 				if(Scratch3d.windowActive){
-				cube.rotation.x += 0.1;
-				cube.rotation.y += 0.1;
 				requestAnimationFrame( render );
 				console.log("rendering");
 				renderer.render(scene, camera);
@@ -55,19 +45,11 @@ Scratch3d.addShape = function(shape, length, width, height, LocationX, LocationY
 	//Adds a new cube to our scene based off of the user supplied params
 	if(shape=="Cube"){
 	var cube = null;
-	if(Physics=="On"){
-		cube = new Physijs.BoxMesh(new THREE.CubeGeometry(length, width ,height), Physijs.createMaterial(new THREE.MeshNormalMaterial(),.4,.8),2);
-	}else{
 	cube = new THREE.Mesh(new THREE.CubeGeometry(length, width ,height), new THREE.MeshNormalMaterial());
-	}
 	cube.position.set(LocationX,LocationY,LocationZ);
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(cube!=null){
-			Scene.add(cube);
-			cube.name = shapeID;
-			console.log("THE NEW NAME OF ", cube.name);
-			SHAPES[shapeID] = cube;
-			SCENECOMPONENTS.OBJECTS.push(cube);
+			scene.add(cube);
 		}
 	}
 
