@@ -45,24 +45,37 @@ var fullScreenOn = false;
         }
     };
 
-    console.log("Script loaded and ready");
-    var script = document.createElement('script');
-    script.onload = function() {
-        
-    };
+
+    
+    
+    
+    
+    
+    
  //Loads the needed Libaries
+    var script = document.createElement('script');
+    script.onload = function() {};
+    
     script.src = 'http://scratch3d.github.io/tierTwo/Scratch3D_Beta/server/threeJScontrols/three.js';
     document.getElementsByTagName('body')[0].appendChild(script);
 
+    //Loads the acctuall scratch3D code
     htmlCode = document.createElement('script');
     htmlCode.onload = function() {
-        console.log("Script loaded nnfne ready: ", htmlCode);
-       
     };
+    
     htmlCode.src = 'http://goodwinj14.github.io/Scratch3D_Beta/server/scratch3dScript.js';
     document.getElementsByTagName('body')[0].appendChild(htmlCode);
-   
+ //************************  
 
+    
+    
+    
+    
+    
+    
+    
+    
     
     // Register the extension
 
@@ -323,15 +336,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     }
 
     ext.newShape = function() {
-        Scratch3d.windowActive = true;
-        Scratch3d.init();
-        if(sceneWindow!=null){
-            sceneWindow.addShape();
-            updateExtension();
-            return "loaded";
-        }else{
-            return "not loaded";
-        }
+        Scratch3d.
     };
 
     //Reloads The extention to update block data
@@ -342,7 +347,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 
     // Block and block menu descriptions
         descriptor.blocks.push([' ', 'New 3D World %m.costume', 'init']);
-        descriptor.blocks.push(['r', 'New Shape', 'newShape']);
+        descriptor.blocks.push([' ', 'New Shape %m.Shapes Size: %n %n %n Location: X: %n Y: %n Z: %n', 'test', 'Cube', '1','1','1','0','0','0']);
         descriptor.blocks.push(['null', 'Upload', 'uploadFile']);
     //
 
