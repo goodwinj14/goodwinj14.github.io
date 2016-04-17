@@ -336,7 +336,6 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     }
 
     ext.newShape = function() {
-        Scratch3d.
     };
 
     //Reloads The extention to update block data
