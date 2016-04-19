@@ -355,6 +355,6 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     console.log("disc", descriptor);
     console.log("ext", ext);
     //Initializes the blank scene 
-    init();
+    console.log(document.getElementsByClassName("success"));
 })({});
   
