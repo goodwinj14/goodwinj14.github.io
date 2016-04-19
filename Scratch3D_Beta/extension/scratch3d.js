@@ -344,7 +344,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 
     // Block and block menu descriptions
         descriptor.blocks.push([' ', 'New 3D World %m.costume', 'init']);
-        descriptor.blocks.push([' ', 'New Shape %m.Shapes ID: %s Size: %n %n %n Location: X: %n Y: %n Z: %n', 'newShape', 'Cube', ' ID Name', '1','1','1','0','0','0']);
+        descriptor.blocks.push([' ', 'New Shape %m.Shapes ID: %s Size: %n %n %n Location: X: %n Y: %n Z: %n', 'newShape', 'Cube', 'ID Name', '1','1','1','0','0','0']);
         descriptor.blocks.push(['null', 'Upload', 'uploadFile']);
     //
 
