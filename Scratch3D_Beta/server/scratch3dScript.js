@@ -49,9 +49,11 @@ Scratch3d.addShape = function(id, shape, length, width, height, LocationX, Locat
 	console.log("Scratch3d.addShape");
 	cube = new THREE.Mesh(new THREE.CubeGeometry(length, width ,height), new THREE.MeshNormalMaterial());
 	cube.position.set(LocationX,LocationY,LocationZ);
+	cube.name = id;
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(cube!=null){
 			scene.add(cube);
+			console.log(cube.name);
 		}
 	}
 
