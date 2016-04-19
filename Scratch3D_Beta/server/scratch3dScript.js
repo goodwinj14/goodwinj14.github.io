@@ -8,7 +8,7 @@ var camera;
 Scratch3d.windowActive = false;
 Scratch3d.init = function(ext){
 			ext.newShape = function(shape, length, width, height, LocationX, LocationY, LocationZ){
- 				Scratch3d.addShape(id, shape, length, width, height, LocationX, LocationY, LocationZ);
+ 				Scratch3d.addShape( shape, id, length, width, height, LocationX, LocationY, LocationZ);
 			};
 			scene = new THREE.Scene();
 			renderer = new THREE.WebGLRenderer({antialias: true});
@@ -41,7 +41,7 @@ Scratch3d.updateWindow = function(){
 
 
 
-Scratch3d.addShape = function(id, shape, length, width, height, LocationX, LocationY, LocationZ){
+Scratch3d.addShape = function(shape, id, length, width, height, LocationX, LocationY, LocationZ){
 	console.log("Called SCENECOMPONENTS.addShape", shape);
 	//Adds a new cube to our scene based off of the user supplied params
 	if(shape=="Cube"){
