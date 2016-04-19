@@ -20,9 +20,6 @@ var fullScreenOn = false;
 /***********************************************************/
 
     var descriptor = {
-        blocks: [
-                [" ", "%m.costume", "Costumes"]
-            ],
 
         menus: {
             Scenes: ['Grid','Grass','Space','Blank'],
