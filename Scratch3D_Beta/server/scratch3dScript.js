@@ -6,6 +6,9 @@ var scene;
 var renderer;
 var camera;
 Scratch3d.windowActive = false;
+
+//Array to hold all of the shape specific 
+Scratch3d.shapeID = [];
 Scratch3d.init = function(ext){
 			ext.newShape = function(shape, id, length, width, height, LocationX, LocationY, LocationZ){
  				Scratch3d.addShape( shape, id, length, width, height, LocationX, LocationY, LocationZ);
@@ -51,7 +54,9 @@ Scratch3d.addShape = function(shape, id, length, width, height, LocationX, Locat
 	cube.name = id;
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(cube!=null){
+			Scratch3d.shapeID[Scratch3d.shapeID.length]= id;
 			scene.add(cube);
+			
 		}
 	}
 
