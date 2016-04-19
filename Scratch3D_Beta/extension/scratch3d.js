@@ -91,8 +91,7 @@ var fullScreenOn = false;
     };
   
 
-//Initializes the blank scene 
-init();
+
 
 function init(){
 var inputElement = null;
@@ -355,5 +354,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     ScratchExtensions.register('scratch3d', descriptor, ext);
     console.log("disc", descriptor);
     console.log("ext", ext);
+    //Initializes the blank scene 
+    init();
 })({});
   
