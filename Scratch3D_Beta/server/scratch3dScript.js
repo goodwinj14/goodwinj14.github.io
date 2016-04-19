@@ -52,7 +52,6 @@ Scratch3d.addShape = function(shape, id, length, width, height, LocationX, Locat
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(cube!=null){
 			scene.add(cube);
-			console.log(cube.name);
 		}
 	}
 
@@ -61,6 +60,7 @@ Scratch3d.addShape = function(shape, id, length, width, height, LocationX, Locat
 	var sphere = null;	
 	sphere = new THREE.Mesh(new THREE.SphereGeometry(length, 50,50), new THREE.MeshNormalMaterial());
 	sphere.position.set(LocationX,LocationY,LocationZ);
+	sphere.name = id;
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(sphere!=null){
 			scene.add(sphere);
@@ -73,6 +73,7 @@ Scratch3d.addShape = function(shape, id, length, width, height, LocationX, Locat
 
 	circle = new THREE.Mesh( new THREE.CircleGeometry( length, 32), new THREE.MeshNormalMaterial());	
 	circle.position.set(LocationX,LocationY,LocationZ);
+	circle.name = id;
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(circle!=null){
 			scene.add(circle);
@@ -84,6 +85,7 @@ Scratch3d.addShape = function(shape, id, length, width, height, LocationX, Locat
 	var cylinder = null; 
 	cylinder = new THREE.Mesh( new THREE.CylinderGeometry( length, width, height, 50 ), new THREE.MeshNormalMaterial() );
 	cylinder.position.set(LocationX,LocationY,LocationZ);
+	cylinder.name = id;
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(cylinder!=null){
 			scene.add(cylinder);
@@ -95,7 +97,7 @@ Scratch3d.addShape = function(shape, id, length, width, height, LocationX, Locat
 	var dodecahedron = null;
 	dodecahedron = new THREE.Mesh( new THREE.DodecahedronGeometry(length, 0), new THREE.MeshNormalMaterial());
 	dodecahedron.position.set(LocationX,LocationY,LocationZ);
-	
+	dodecahedron.name = id;
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(dodecahedron!=null){
 			scene.add(dodecahedron);
@@ -105,8 +107,9 @@ Scratch3d.addShape = function(shape, id, length, width, height, LocationX, Locat
 	//Adds a new Icosahedron to our scene based off of the supplied params
 	if(shape=="Icosahedron"){
 	var icosahedron = null;
-		icosahedron = new THREE.Mesh( new THREE.IcosahedronGeometry(length, 0), new THREE.MeshNormalMaterial());
-		icosahedron.position.set(LocationX,LocationY,LocationZ);
+	icosahedron = new THREE.Mesh( new THREE.IcosahedronGeometry(length, 0), new THREE.MeshNormalMaterial());
+	icosahedron.position.set(LocationX,LocationY,LocationZ);
+	icosahedron.name = id;
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(icosahedron!=null){
 			scene.add(icosahedron);
@@ -119,6 +122,7 @@ Scratch3d.addShape = function(shape, id, length, width, height, LocationX, Locat
 	var plane = null;
 	 plane = new THREE.Mesh( new THREE.PlaneGeometry( length, width, 32 ), new THREE.MeshNormalMaterial());
 	 plane.position.set(LocationX,LocationY,LocationZ);
+	 plane.name = id;
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(plane!=null){
 			scene.add(plane);
@@ -130,6 +134,7 @@ Scratch3d.addShape = function(shape, id, length, width, height, LocationX, Locat
 		var ring = null;
 		ring = new THREE.Mesh( new THREE.RingGeometry( parseFloat(length), parseFloat(width)+1, 32 ), new THREE.MeshNormalMaterial());
 		ring.position.set(LocationX,LocationY,LocationZ);
+		ring.name = id;
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(ring!=null){
 			scene.add(ring);
@@ -141,6 +146,7 @@ Scratch3d.addShape = function(shape, id, length, width, height, LocationX, Locat
 		var torus;
  		torus = new THREE.Mesh( new THREE.TorusGeometry( parseFloat(width), parseFloat(length), 32, 100 ), new THREE.MeshNormalMaterial() );
 		torus.position.set(LocationX,LocationY,LocationZ);
+		torus.name = id;
 	//If the shape is created succesfully then it is added to the scene and to to the hash table with its key pointing to that specific object.
 		if(torus!=null){
 			scene.add(torus);
