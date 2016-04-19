@@ -12,6 +12,7 @@ Scratch3d.shapeID = [];
 Scratch3d.init = function(ext){
 			ext.newShape = function(shape, id, length, width, height, LocationX, LocationY, LocationZ){
  				Scratch3d.addShape( shape, id, length, width, height, LocationX, LocationY, LocationZ);
+ 				console.log(Scratch3d.shapeID[Scratch3d.shapeID.length-1]);
 			};
 			scene = new THREE.Scene();
 			renderer = new THREE.WebGLRenderer({antialias: true});
