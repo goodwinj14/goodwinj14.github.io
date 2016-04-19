@@ -91,7 +91,10 @@ var fullScreenOn = false;
     };
   
 
-ext.init = function(){
+//Initializes the blank scene 
+init();
+
+function init(){
 var inputElement = null;
 function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrapper, data) {
     elementType = elementType || "div";
