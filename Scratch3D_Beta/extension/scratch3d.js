@@ -130,7 +130,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 
     var $modal =  CreateFromTemplate(modalId, templateId, "div", "body", null, data);
     
-    $modal.addClass("modal");
+    $modal.addClass("modal"); 
     $modal.addClass("visible");
     $modal.click(function(e){if ($(e.target).is($(this))) $(this).trigger("modal:exit")});
     /*$(".modal-fade-screen", $modal)
