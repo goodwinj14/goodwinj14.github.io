@@ -93,7 +93,7 @@ var fullScreenOn = false;
 
 
 
-function init(){
+ext.init = function(){
 var inputElement = null;
 function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrapper, data) {
     elementType = elementType || "div";
