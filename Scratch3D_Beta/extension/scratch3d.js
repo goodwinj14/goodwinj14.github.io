@@ -20,7 +20,9 @@ var fullScreenOn = false;
 /***********************************************************/
 
     var descriptor = {
-
+        blocks: [
+            ],
+            
         menus: {
             Scenes: ['Grid','Grass','Space','Blank'],
             Toggle: ['On','Off'],
