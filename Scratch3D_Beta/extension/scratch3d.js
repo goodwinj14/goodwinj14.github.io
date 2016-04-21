@@ -172,7 +172,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             Scratch3d.updateWindow();
         }
         
-        if(buttonID=="run_mode"){
+        if(buttonID=='run_mode'){
             fullScreenOn= false;
             document.getElementById("main").style.top = "70px";
             document.getElementById("main").style.width = "500px";
@@ -187,7 +187,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             Scratch3d.updateWindow();
         }
         
-        if(buttonID=="expand"){
+        if(buttonID=='expand'){
             if(!fullScreenOn){
             var w = (window.innerWidth-7).toString() + "px";
             var h = (window.innerHeight-7).toString() + "px";
