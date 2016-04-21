@@ -155,8 +155,8 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 
       $modal = sModal("template-warning", null);
     $("img", $modal).click(function(e){
-        
-        if(e.delegateTarget.id=="edit_mode"){
+        console.log(e.delegateTarget.id);
+        if(e.delegateTarget.id=='edit_mode'){
             var w = (window.innerWidth-7).toString() + "px";
             var h = (window.innerHeight-7).toString() + "px";
             var bPosition = (window.innerWidth-30).toString() + "px";
