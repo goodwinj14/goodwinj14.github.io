@@ -155,8 +155,8 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 
       $modal = sModal("template-warning", null);
     $("img", $modal).click(function(e){
-        console.log(e.delegateTarget.id);
-        if(e.delegateTarget.id=='edit_mode'){
+        buttonID = e.delegateTarget.id;
+        if(buttonID=='edit_mode'){
             var w = (window.innerWidth-7).toString() + "px";
             var h = (window.innerHeight-7).toString() + "px";
             var bPosition = (window.innerWidth-30).toString() + "px";
@@ -172,7 +172,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             Scratch3d.updateWindow();
         }
         
-        if(e.degegateTarget.id=="run_mode"){
+        ifbuttonID=="run_mode"){
             fullScreenOn= false;
             document.getElementById("main").style.top = "70px";
             document.getElementById("main").style.width = "500px";
@@ -187,7 +187,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             Scratch3d.updateWindow();
         }
         
-        if(e.delegateTarget.id=="expand"){
+        if(buttonID=="expand"){
             if(!fullScreenOn){
             var w = (window.innerWidth-7).toString() + "px";
             var h = (window.innerHeight-7).toString() + "px";
