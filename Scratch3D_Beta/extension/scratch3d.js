@@ -104,7 +104,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         var templateContent = "";
             
             templateContent += $(document.getElementById(templateId)).html(); 
-                templateContent = "<dialog id='main' class='modal-inner' style=' position: absolute; top: 70px; height: 400px; width: 500px;'><section id='Holder' style=' padding: 0px; margin-top: -22px;'><div id='container' style='height: 361px; width: 482px; margin-left: -19px; position: relative; top: 0; left: 0; '></div><img id='expand' src='https://raw.githubusercontent.com/goodwinj14/goodwinj14.github.io/master/Scratch3D_Beta/images/icon-expand-blue.png' style='position: absolute; top: 5px; left: 7px;' onclick='fullScreen()'/><img src='http://goodwinj14.github.io/Scratch3D_Beta/images/editMode.png' style='position: absolute; top: 5px; margin-left: -90px;'/><img src='http://goodwinj14.github.io/Scratch3D_Beta/images/runmode.png' style='position: absolute; top: 5px; margin-right: -90px;'/><img id='closeButton' src='http://goodwinj14.github.io/Scratch3D_Beta/images/close-icon.png' style='position: absolute; top: 5px; left: 458px;'/></section></dialog>";
+                templateContent = "<dialog id='main' class='modal-inner' style=' position: absolute; top: 70px; height: 400px; width: 500px;'><section id='Holder' style=' padding: 0px; margin-top: -22px;'><div id='container' style='height: 361px; width: 482px; margin-left: -19px; position: relative; top: 0; left: 0; '></div><img id='expand' src='https://raw.githubusercontent.com/goodwinj14/goodwinj14.github.io/master/Scratch3D_Beta/images/icon-expand-blue.png' style='position: absolute; top: 5px; left: 7px;' onclick='fullScreen()'/><img id='edit_mode' src='http://goodwinj14.github.io/Scratch3D_Beta/images/editMode.png' style='position: absolute; top: 5px; margin-left: -90px;'/><img id='run_mode' src='http://goodwinj14.github.io/Scratch3D_Beta/images/runmode.png' style='position: absolute; top: 5px; margin-right: -90px;'/><img id='closeButton' src='http://goodwinj14.github.io/Scratch3D_Beta/images/close-icon.png' style='position: absolute; top: 5px; left: 458px;'/></section></dialog>";
                 //templateContent = htmlCode;
 
         $template = _.template(templateContent);
@@ -155,10 +155,39 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 
       $modal = sModal("template-warning", null);
     $("img", $modal).click(function(e){
+        
+        if(e.delegateTarget.id=="edit_mode"){
+            var w = (window.innerWidth-7).toString() + "px";
+            var h = (window.innerHeight-7).toString() + "px";
+            var bPosition = (window.innerWidth-30).toString() + "px";
+            fullScreenOn= true;
+            document.getElementById("main").style.width = w;
+            document.getElementById("main").style.top = "0px";
+            document.getElementById("Holder").style.width = w;
+            document.getElementById("container").style.width = w;
+            document.getElementById("main").style.height = h;
+            document.getElementById("Holder").style.height = h;
+            document.getElementById("container").style.height = h;
+            document.getElementById("closeButton").style.left = bPosition;
+            Scratch3d.updateWindow();
+        }
+        
+        if(e.degegateTarget.id=="run_mode"){
+            fullScreenOn= false;
+            document.getElementById("main").style.top = "70px";
+            document.getElementById("main").style.width = "500px";
+            document.getElementById("Holder").style.width = "462px";
+            document.getElementById("container").style.margin.left = "19px";
+            console.log(document.getElementById("container").style);
+            document.getElementById("container").style.width = "482px";
+            document.getElementById("main").style.height = "400px";
+            document.getElementById("Holder").style.height = "";
+            document.getElementById("container").style.height = "361px";
+            document.getElementById("closeButton").style.left = "458px";
+            Scratch3d.updateWindow();
+        }
+        
         if(e.delegateTarget.id=="expand"){
-            
-            
-            
             if(!fullScreenOn){
             var w = (window.innerWidth-7).toString() + "px";
             var h = (window.innerHeight-7).toString() + "px";
