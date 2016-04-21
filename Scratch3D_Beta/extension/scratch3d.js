@@ -172,7 +172,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             Scratch3d.updateWindow();
         }
         
-        ifbuttonID=="run_mode"){
+        if(buttonID=="run_mode"){
             fullScreenOn= false;
             document.getElementById("main").style.top = "70px";
             document.getElementById("main").style.width = "500px";
