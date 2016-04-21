@@ -217,7 +217,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             Scratch3d.updateWindow();
             }
             
-        }else{
+        }if(buttonID=='closeButton'){
         Scratch3d.windowActive = false;
         e.preventDefault();
         $(document).trigger("modal:exit")
