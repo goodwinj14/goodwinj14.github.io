@@ -26,10 +26,10 @@
 	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-	THE SOFTWARE.
+	THE SOFTWARE.ejnjbj
 */
 if (!class_exists('Spyc')) {
-	require("Spyc.class.php");
+	require("Spyc.class.php");    
 }
 if (!function_exists('curl_init')) {
   die('Mad Mimi for PHP requires the PHP cURL extension.');
