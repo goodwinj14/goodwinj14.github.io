@@ -191,7 +191,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         
         if(buttonID=='run_mode'){
             fullScreenOn= false;
-            document.getElementById("sidebar").parentNode.removeChild(element);
+            document.getElementById("sidebar").parentNode.removeChild(document.getElementById("sidebar"));
             document.getElementById("main").style.top = "70px";
             document.getElementById("main").style.width = "500px";
             document.getElementById("Holder").style.width = "462px";
