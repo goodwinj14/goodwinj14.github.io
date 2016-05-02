@@ -61,11 +61,17 @@ var fullScreenOn = false;
 
     //Loads the acctuall scratch3D code
     htmlCode = document.createElement('script');
-    htmlCode.onload = function() {
-    };
+    htmlCode.onload = function() {};
     
     htmlCode.src = 'http://goodwinj14.github.io/Scratch3D_Beta/server/scratch3dScript.js';
     document.getElementsByTagName('body')[0].appendChild(htmlCode);
+
+
+    var fileref=document.createElement("link")
+    fileref.setAttribute("rel", "stylesheet")
+    fileref.setAttribute("type", "text/css")
+    fileref.setAttribute("href", "http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/sidebar/css/editStyle.css");
+    document.getElementsByTagName("head")[0].appendChild(fileref);
  //************************  
 
     
@@ -104,7 +110,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         var templateContent = "";
             
             templateContent += $(document.getElementById(templateId)).html(); 
-                templateContent = "<dialog id='main' class='modal-inner' style=' position: absolute; top: 70px; height: 400px; width: 500px;'><section id='Holder' style=' padding: 0px; margin-top: -22px;'><div id='sidebar'></div><div id='container' style='height: 361px; width: 482px; margin-left: -19px; position: relative; top: 0; left: 0; '></div><img id='expand' src='https://raw.githubusercontent.com/goodwinj14/goodwinj14.github.io/master/Scratch3D_Beta/images/icon-expand-blue.png' style='position: absolute; top: 5px; left: 7px;' onclick='fullScreen()'/><img id='edit_mode' src='http://goodwinj14.github.io/Scratch3D_Beta/images/editMode.png' style='position: absolute; top: 5px; margin-left: -90px;'/><img id='run_mode' src='http://goodwinj14.github.io/Scratch3D_Beta/images/runmode.png' style='position: absolute; top: 5px; margin-right: -90px;'/><img id='closeButton' src='http://goodwinj14.github.io/Scratch3D_Beta/images/close-icon.png' style='position: absolute; top: 5px; left: 458px;'/></section></dialog>";
+                templateContent = "<dialog id='main' class='modal-inner' ><section id='Holder' style=' padding: 0px; margin-top: -22px; background-color: blue;'><div id='sidebar'></div><div id='container' style='height: 361px; width: 482px; margin-left: -19px; position: relative; top: 0; left: 0; '></div><img id='expand' src='https://raw.githubusercontent.com/goodwinj14/goodwinj14.github.io/master/Scratch3D_Beta/images/icon-expand-blue.png' style='position: absolute; top: 5px; left: 7px;' onclick='fullScreen()'/><img id='edit_mode' src='http://goodwinj14.github.io/Scratch3D_Beta/images/editMode.png' style='position: absolute; top: 5px; margin-left: -90px;'/><img id='run_mode' src='http://goodwinj14.github.io/Scratch3D_Beta/images/runmode.png' style='position: absolute; top: 5px; margin-right: -90px;'/><img id='closeButton' src='http://goodwinj14.github.io/Scratch3D_Beta/images/close-icon.png' style='position: absolute; top: 5px; left: 458px;'/></section></dialog>";
                 //templateContent = htmlCode;
 
         $template = _.template(templateContent);
@@ -158,18 +164,10 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         buttonID = e.delegateTarget.id;
         if(buttonID=='edit_mode'){
 
-            //ADDS THE EDITOR SIDE BAR TO THE EXSTENTION
-                //Loads Side Bar Code From File
-            jQuery.ajax({ 
-                url: "http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/sidebar/sideMenu.html", dataType: "html" 
-            }).done(function( responseHtml ) {
-                document.getElementById("sidebar").innerHTML = responseHtml;
-            });
-
             var w = (window.innerWidth-7).toString() + "px";
-            var containerWidth = (window.innerWidth-407).toString() + "px";
+            var containerWidth = (window.innerWidth).toString() + "px";
             var h = (window.innerHeight-7).toString() + "px";
-            var bPosition = (window.innerWidth-430).toString() + "px";
+            var bPosition = (window.innerWidth).toString() + "px";
             fullScreenOn= true;
             document.getElementById("main").style.width = w;
             document.getElementById("main").style.top = "0px";
@@ -179,6 +177,15 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             document.getElementById("Holder").style.height = h;
             document.getElementById("container").style.height = h;
             document.getElementById("closeButton").style.left = bPosition;
+            //ADDS THE EDITOR SIDE BAR TO THE EXSTENTION
+                //Loads Side Bar Code From File
+            jQuery.ajax({ 
+                url: "http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/sidebar/sideMenu.html", dataType: "html" 
+            }).done(function( responseHtml ) {
+                document.getElementById("sidebar").innerHTML = responseHtml;
+            });
+
+
             Scratch3d.updateWindow();
         }
         
