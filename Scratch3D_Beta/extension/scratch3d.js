@@ -161,7 +161,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             //ADDS THE EDITOR SIDE BAR TO THE EXSTENTION
                 //Loads Side Bar Code From File
             jQuery.ajax({ 
-                url: "../EditModeWindo/sidebar/sideMenu.html", dataType: "html" 
+                url: "http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/sidebar/sideMenu.html", dataType: "html" 
             }).done(function( responseHtml ) {
                 document.getElementById("sidebar").innerHTML = responseHtml;
             });
