@@ -1,0 +1,159 @@
+
+html{
+	height: 100%;
+}
+body {
+    background-color: lightblue;
+    height: 100%;
+}
+
+#editContainer{
+	background-color: #fff;
+    float: left;
+    height: 98%;
+    width: 100%;
+}
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+#sidebar{
+    float: right;
+    width: 30%;
+    height: 100%;
+}
+/* Float the list items side by side */
+#tabs li {float:left;}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    float: left;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {background-color: #ddd;}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {background-color: #ccc;}
+
+/* Style the tab content */
+.tabcontent {
+	background-color: #fff;
+    display: none;
+    float: left;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+/*SCENE WINDOW STYLING*/
+#Scenes{
+	background-color: #fff;
+}
+
+
+#sceneList{height:550px;
+	overflow:hidden; 
+	overflow-y:scroll;
+}
+
+
+#sceneList li{ 
+    float:center;
+	list-style-type: none;
+	background-color: #ccc;
+	margin: 5px;
+}
+/*SCENE WINDOW STYLING*/
+
+
+/*GEO WINDOW STYLING*/
+#Scenes{
+	background-color: #fff;
+}
+
+
+ul.dropDown_tab{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+
+ul.dropDown_tab li{
+    width: 100%;
+}
+
+
+
+ul.dropDown_tab li a{
+    color: black;
+    text-align: left;
+    width: 100%;
+    padding: 14px 16px;
+    float: left;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+
+#shape_properties{
+    margin: 2px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+#Geometries{
+    height: 90%;
+    width: 100%;
+    float: left;
+}
+
+
+#geoList {
+    height: 90%;
+    width: 100%;
+    float: left;
+    overflow:hidden; 
+    overflow-y:scroll;
+    margin-left: -30px;
+}
+
+
+#geoList li { 
+    width: 100%;
+	list-style-type: none;
+}
+
+
+#geoList li a:hover {background-color: #ddd;}
+/*GEO WINDOW STYLING*/
+
+/*Editor WINDOW STYLING*/
+#Editor {
+    background-color: lightblue;
+    
+}
+/*Editor WINDOW STYLING*/
+.select{
+    opacity: 0.8;
+}

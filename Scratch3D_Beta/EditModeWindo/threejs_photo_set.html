@@ -1,0 +1,134 @@
+<html>
+	<head>
+		<title>My first Three.js app</title>
+		<style>
+			body { margin: 0; }
+			canvas { width: 100%; height: 100% }
+		</style>
+	</head>
+	<body>
+		<script src="three.js"></script>
+		
+		<script>
+
+			function onDocumentMouseMove( event ) {
+				event.preventDefault();
+				mouse.x = ( event.clientX / 600 ) * 2 - 1;
+				mouse.y = - ( event.clientY / 600 ) * 2 + 1;
+			}
+
+			var scene = new THREE.Scene();
+			var camera = new THREE.PerspectiveCamera( 35, 600/600, 0.1, 1000 );
+
+			var renderer = new THREE.WebGLRenderer({antialias: true});
+			renderer.setSize( 600, 600 );
+			document.body.appendChild( renderer.domElement );
+
+
+			var light = new THREE.AmbientLight( 0x404040 ); // soft white light
+			scene.add( light );
+
+			/*var geometry = new THREE.SphereGeometry( .5, 12, 12)
+			var material = new THREE.MeshNormalMaterial();
+			var cube = new THREE.Mesh( geometry, material );
+			scene.add( cube );
+
+			var hex  = 0xff0000;
+			var bbox = new THREE.BoundingBoxHelper( cube, hex );
+			bbox.update();
+			scene.add( bbox );*/
+
+			/*var axisHelper = new THREE.AxisHelper( 1 );
+//scene.add( axisHelper );
+
+var sphere = new THREE.SphereGeometry(.5, 12, 12);
+
+
+var dir = new THREE.Vector3( 1, 0, 0 );
+var origin = new THREE.Vector3( 0, 0, 0 );
+var length = 1;
+
+
+var arrowHelper = new THREE.ArrowHelper( dir, origin, length, hex );
+scene.add( arrowHelper );*/
+var hex = 0xffff00;
+var sphere = new THREE.BoxGeometry(.5, .5, .5);
+material = new THREE.MeshNormalMaterial();
+object = new THREE.Mesh( sphere, material );
+scene.add( object );
+
+//Caster
+var raycaster, intersects;
+var mouse;
+
+raycaster = new THREE.Raycaster();
+mouse = new THREE.Vector2();
+
+object.geometry.computeBoundingBox();
+	boundingBox = object.geometry.boundingBox;
+
+	object.material.opacity = 0.5;
+	group = new THREE.Object3D();
+	size = 0.04;
+	right_fwd_coner = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial() );
+	right_fwd_coner.position.set(boundingBox.max.x,boundingBox.min.y,boundingBox.max.z);
+
+	Left_fwd_coner = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial() );
+	Left_fwd_coner.position.set(boundingBox.min.x,boundingBox.min.y,boundingBox.max.z);
+
+	Left_back_coner = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial() );
+	Left_back_coner.position.set(boundingBox.min.x,boundingBox.min.y,boundingBox.min.z);
+
+	right_back_coner = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial() );
+	right_back_coner.position.set(boundingBox.max.x,boundingBox.min.y,boundingBox.min.z);
+
+	top_center_coner = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial() );
+	top_center_coner.position.set(boundingBox.max.x-Math.abs(boundingBox.min.x),boundingBox.max.y+size/2,boundingBox.max.z-Math.abs(boundingBox.min.z));
+
+	group.add(right_fwd_coner);
+	group.add(Left_fwd_coner);
+	group.add(right_back_coner);
+	group.add(Left_back_coner);
+	group.add(top_center_coner);
+	scene.add( group );
+
+
+
+					console.log(scene);
+
+			camera.position.z = 5;
+			camera.position.y = 3;
+			//cube.rotation.x = Math.PI/4;
+			//cube.rotation.y = Math.PI/4;
+			camera.lookAt(object.position);
+			var CORNER_SELECTED = null;
+			var render = function () {
+				//Caster
+				raycaster.setFromCamera( mouse, camera );
+
+				intersects = raycaster.intersectObjects( group.children, true);
+				if ( intersects.length > 0 ) {
+
+					intersects[0].object.material.color.g=0;
+					intersects[0].object.material.color.b=0;
+					CORNER_SELECTED = intersects[0].object.material.color;
+					//intersects[0].point;
+					//object.position.x = intersects[0].point.x;
+					//object.position.y = intersects[0].point.y;
+					//object.position.z = intersects[0].point.z;
+				}else if(CORNER_SELECTED!=null){
+					CORNER_SELECTED.g=1;
+					CORNER_SELECTED.b=1;
+					CORNER_SELECTED = null;
+				}
+				requestAnimationFrame( render );
+
+				renderer.render(scene, camera);
+
+			};
+			console.log(scene.toJSON());
+			document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+			render();
+		</script>
+	</body>
+</html>

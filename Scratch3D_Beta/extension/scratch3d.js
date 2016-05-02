@@ -157,6 +157,15 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     $("img", $modal).click(function(e){
         buttonID = e.delegateTarget.id;
         if(buttonID=='edit_mode'){
+
+            //ADDS THE EDITOR SIDE BAR TO THE EXSTENTION
+                //Loads Side Bar Code From File
+            jQuery.ajax({ 
+                url: "../EditModeWindo/sidebar/sideMenu.html", dataType: "html" 
+            }).done(function( responseHtml ) {
+                document.getElementById("Holder").innerHTML = responseHtml;
+            });
+
             var w = (window.innerWidth-7).toString() + "px";
             var containerWidth = (window.innerWidth-407).toString() + "px";
             var h = (window.innerHeight-7).toString() + "px";

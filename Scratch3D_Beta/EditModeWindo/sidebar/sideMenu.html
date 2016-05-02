@@ -1,0 +1,104 @@
+<div id="editContainer" >
+	<ul class="tab" id="tabs">
+  <li><a href="#" class="tablinks" onclick="openTab(event, 'Scenes')">Scenes </a></li>
+  <li><a href="#" class="tablinks" onclick="openTab(event, 'Geometries')">Geometries </a></li>
+  <li><a href="#" class="tablinks" onclick="openTab(event, 'Objects')">Objects</a></li>
+  <li><a href="#" class="tablinks" onclick="openTab(event, 'Editor active')">Editor</a></li>
+</ul>
+
+<div id="Scenes" class="tabcontent">
+  <h3> Scenes</h3> 
+  <ul id="sceneList">
+      <li><img src='render2.jpg'/></li>
+      <li><img src='render2.jpg'/></li>
+      <li><img src='render2.jpg'/></li>
+      <li><img src='render2.jpg'/></li>
+      <li><img src='render2.jpg'/></li>
+      <li><img src='render2.jpg'/></li> 
+      <li><img src='render2.jpg'/></li> 
+      <li><img src='render2.jpg'/></li>
+      <li><img src='render2.jpg'/></li>
+      <li><img src='render2.jpg'/></li>
+      <li><img src='render2.jpg'/></li>
+      <li><img src='render2.jpg'/></li>
+      <li><img src='render2.jpg'/></li>
+      <li><img src='render2.jpg'/></li> 
+      <li><img src='render2.jpg'/></li> 
+      <li><img src='render2.jpg'/></li>
+  </ul>
+  <button>Load Scene</button>
+</div>
+<div id="Geometries" class="tabcontent">
+
+
+
+  <ul class="dropDown_tab" id="tabs">
+    <li><a href="#" class="dropDown_tablinks" onclick="openTab(event, 'Objects')">Edit Shape</a></li>
+  </ul>
+  <div id="shape_properties">
+    <span class="" style="cursor: default; display: inline-block; vertical-align: middle;">Name: </span>
+    <input class="Number" value="100" id="ACT_OBJ_NAME" style="cursor: col-resize; width: 60px; background-color: transparent;">
+    <br>
+    
+    <span class="" style="cursor: default; display: inline-block; vertical-align: middle;">Location: </span>
+    X:
+    <input class="Number" value="100" id="ACT_OBJ_LOC_X" style="cursor: col-resize; width: 60px; background-color: transparent;">
+    Y:
+    <input class="Number" value="100" id="ACT_OBJ_LOC_Y" style="cursor: col-resize; width: 60px; background-color: transparent;">
+    Z:
+    <input class="Number" value="100" id="ACT_OBJ_LOC_Z" style="cursor: col-resize; width: 60px; background-color: transparent;">
+    <br>
+    Width:
+    <input class="Number" value="100" id="ACT_OBJ_WIDTH" style="cursor: col-resize; width: 60px; background-color: transparent;">
+    Height:
+    <input class="Number" value="100" id="ACT_OBJ_HEIGHT" style="cursor: col-resize; width: 60px; background-color: transparent;">
+    Depth:
+    <input class="Number" value="100" id="ACT_OBJ_DEPTH" style="cursor: col-resize; width: 60px; background-color: transparent;">
+    <br>
+    Color:
+    <input class="Number" value="100" id="ACT_OBJ_LOC_Z" style="cursor: col-resize;  width: 60px; background-color: transparent;">
+  
+    <button style="float: right; margin:5px;" id="upd" onclick="update_grid()">Update Shape</button>
+    
+  </div>
+
+  <h3 > Geometries</h3>
+   <ul id="geoList">
+      <li><img id='add_cube' class="image" src='cube.png' onclick="imageSelected(event)"/> 
+      <img id='add_sphere' class="image" src='sphere.png' onclick="imageSelected(event)"/></li>
+
+      <li><img id='add_cylinder' class="image" src='cylinder.png' onclick="imageSelected(event)"/> 
+      <img id='add_tube' class="image" src='tube.png' onclick="imageSelected(event)"/></li>
+
+      <li><img id='add_pyramid' class="image" src='pyrimad.png' onclick="imageSelected(event)"/>
+      <img id='add_plane' class="image" src='plane.png' onclick="imageSelected(event)"/></li>
+
+      <li><img id='add_circle' class="image" src='circle.png' onclick="imageSelected(event)"/>
+      <img id='add_ring' class="image" src='ring.png' onclick="imageSelected(event)"/></li>
+
+      <li><img id='cubeIMG' src='cylinder.png'/> <img src='cube.png'/></li>
+
+  </ul>
+</div>
+
+<div id="Objects" class="tabcontent">
+  <h3> Objects</h3>
+</div>
+
+<div id="Editor active" class="tabcontent" style="display: block; height: 90%; border: none;">
+  <h3> Editor</h3>
+    <h4> Grid Properties</h4>
+    <div id = "grid_settings">
+      <span class="" style="cursor: default; display: inline-block; vertical-align: middle;">Grid size </span>
+      Size:
+      <input class="Number" value="100" id="grid_size" style="cursor: col-resize; width: 60px; background-color: transparent;">
+      Steps:
+      <input class="Number" value="1" id="grid_steps" style="cursor: col-resize; width: 60px; background-color: transparent;">
+      <br>
+      <span class="Number" style="cursor: default; display: inline-block; vertical-align: middle;">Snap </span>
+      <input class"Number" value="1" id="grid_snap" style="cursor: col-resize; width: 60px; background-color: transparent;">
+      <br>
+      <button style="float: right;" id="update_grid" onclick="update_grid()">Update Grid</button>
+    </div>
+</div>
+</div>

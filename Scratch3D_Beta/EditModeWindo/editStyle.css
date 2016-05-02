@@ -1,0 +1,92 @@
+
+html{
+	height: 100%;
+}
+
+#editContainer{
+	background-color: #fff;
+    float: right;
+}
+ul.tab {
+	width: 30%; 
+	height: 100%;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Float the list items side by side */
+#tabs li {float:left;}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {background-color: #ddd;}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {background-color: #ccc;}
+
+/* Style the tab content */
+.tabcontent {
+	background-color: #fff;
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+/*SCENE WINDOW STYLING*/
+#Scenes{
+	background-color: #fff;
+}
+#sceneList{height:550px;
+		   overflow:hidden; 
+		   overflow-y:scroll;
+		}
+#sceneList li{ 
+		float:center;
+		list-style-type: none;
+		background-color: #ccc;
+		margin: 5px;
+		}
+/*SCENE WINDOW STYLING*/
+
+/*GEO WINDOW STYLING*/
+#Scenes{
+	background-color: #fff;
+}
+#geoList  {height:100%;
+		   overflow:hidden; 
+		   overflow-y:scroll;
+		}
+#geoList li{ 
+		margin-left:-25px;	
+		list-style-type: none;
+		}
+#geoList li a:hover {background-color: #ddd;}
+/*GEO WINDOW STYLING*/
+
+
+/*Editor WINDOW STYLING*/
+#Editor{
+	height:100%;
+}
+#Editor li{
+		   height:100%;
+		   overflow:hidden; 
+		   overflow-y:scroll;
+}
+/*Editor WINDOW STYLING*/

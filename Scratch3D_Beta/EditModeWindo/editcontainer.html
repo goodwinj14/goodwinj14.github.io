@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="sidebar/css/editStyle.css"/>
+	<script type="text/javascript" src="sidebar/js/sidebar.js"></script>
+	<script src="three.js"></script>
+	<script src="js/controls/TrackballControls.js"></script>
+	<script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+	<script type="text/javascript" src="editor/js/editerMain.js"></script>
+	<script type="text/javascript" src="editor/js/Shapes.js"></script>
+	<script type="text/javascript" src="editor/js/SelectedElement.js"></script>
+	<script type="text/javascript" src="editor/js/Event.js"></script>
+	<script type="text/javascript" src="editor/js/GameObjects.js"></script>
+</head>
+	<div id = "main" style=" float: right; width: 100%; height: 100%">
+		<div id = "viewport" style="float: left; width: 70%; height: 98%; background-color: #e6ffff;"></div>
+		<div id = "sidebar" ></div>
+	</div>
+		
+<body>
+
+</body>
+<script type="text/javascript">
+
+	//Loads Side Bar Code From File
+	jQuery.ajax({ 
+     	url: "sidebar/sideMenu.html", dataType: "html" 
+	}).done(function( responseHtml ) {
+		document.getElementById("sidebar").innerHTML = responseHtml;
+	});
+
+	EDITOR.intiEditor(document.getElementById("viewport"));
+	EVENT.init();
+	function update_grid(){
+		EDITOR.update_grid();
+	}
+</script>
+</html>
