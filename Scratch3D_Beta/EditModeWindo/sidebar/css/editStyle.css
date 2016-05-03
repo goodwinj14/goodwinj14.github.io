@@ -1,5 +1,10 @@
 
 
+body {
+    background-color: lightblue;
+    height: 100%;
+}
+
 #editContainer{
 	background-color: #fff;
     float: left;
