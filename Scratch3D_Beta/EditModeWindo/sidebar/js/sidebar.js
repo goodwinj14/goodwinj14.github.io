@@ -2,7 +2,7 @@
     function openTab(evt, editTab) {
     // Declare all variables
     var i, tabcontent, tablinks;
-
+    console.log("openTab Called");
     // Get all elements with class="tabcontent" and hide them
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
