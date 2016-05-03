@@ -125,19 +125,6 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             .html($template);
         $element.appendTo(appendTo);
         document.getElementById("Holder").appendChild(htmlCode);
-                        fullScreenOn= false;
-            document.getElementById("sidebar").innerHTML = "";
-            document.getElementById("main").style.top = "70px";
-            document.getElementById("main").style.width = "500px";
-            document.getElementById("Holder").style.width = "462px";
-            document.getElementById("container").style.margin.left = "19px";
-            console.log(document.getElementById("container").style);
-            document.getElementById("container").style.width = "482px";
-            document.getElementById("main").style.height = "400px";
-            document.getElementById("Holder").style.height = "";
-            document.getElementById("container").style.height = "361px";
-            document.getElementById("closeButton").style.left = "458px";
-            Scratch3d.updateWindow();
     }
     return $element;
 };
