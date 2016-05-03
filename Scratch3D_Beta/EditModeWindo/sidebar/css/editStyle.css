@@ -21,6 +21,7 @@ ul.tab {
     background-color: #f1f1f1;
 }
 #sidebar{
+    background-color: red;
     float: right;
     width: 100%;
     height: 100%;
