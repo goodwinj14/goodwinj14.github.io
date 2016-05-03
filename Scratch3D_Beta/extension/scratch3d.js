@@ -66,6 +66,12 @@ var fullScreenOn = false;
     htmlCode.src = 'http://goodwinj14.github.io/Scratch3D_Beta/server/scratch3dScript.js';
     document.getElementsByTagName('body')[0].appendChild(htmlCode);
 
+    //Loads the acctuall scratch3D code
+    sideBarScript = document.createElement('script');
+    sideBarScript.onload = function() {};
+    
+    sideBarScript.src = 'http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/sidebar/js/sidebar.js';
+    document.getElementsByTagName('body')[0].appendChild(sideBarScript);
 
     var fileref=document.createElement("link")
     fileref.setAttribute("rel", "stylesheet")
