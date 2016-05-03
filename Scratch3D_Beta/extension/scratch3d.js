@@ -64,7 +64,7 @@ var fullScreenOn = false;
     htmlCode.onload = function() {};
     
     htmlCode.src = 'http://goodwinj14.github.io/Scratch3D_Beta/server/scratch3dScript.js';
-    document.getElementsByTagName('body')[1].appendChild(htmlCode);
+    document.getElementsByTagName('body')[0].appendChild(htmlCode);
 
     //Loads the acctuall scratch3D code
     sideBarScript = document.createElement('script');
