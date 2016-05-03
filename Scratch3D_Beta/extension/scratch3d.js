@@ -233,7 +233,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             if(!fullScreenOn){
             var w = (window.innerWidth-7).toString() + "px";
             var h = (window.innerHeight-7).toString() + "px";
-            var bPosition = (window.innerWidth-30).toString() + "px";
+            var bPosition = (window.innerWidth-20).toString() + "px";
             fullScreenOn= true;
             document.getElementById("main").style.width = w;
             document.getElementById("main").style.top = "0px";
