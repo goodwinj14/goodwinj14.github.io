@@ -1,6 +1,7 @@
 	console.log("SideBar.js");
     function openTab(evt, editTab) {
     // Declare all variables
+    evt.preventDefault();
     var i, tabcontent, tablinks;
     console.log("openTab Called");
     // Get all elements with class="tabcontent" and hide them
