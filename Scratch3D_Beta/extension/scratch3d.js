@@ -166,9 +166,18 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 }
 
       $modal = sModal("template-warning", null);
+      $("a", $modal).click(function(e){
+        console.log("called a");
+      }$("li", $modal).click(function(e){
+        console.log("called li");
+      }$("ul", $modal).click(function(e){
+        console.log("called ul");
+      }$("tabs", $modal).click(function(e){
+        console.log("called tabs");
+      }
     $("img", $modal).click(function(e){
         buttonID = e.delegateTarget.id;
-        console.log("modal on click called");
+
         if(buttonID=='edit_mode'){
 
             var w = (window.innerWidth-7).toString() + "px";
