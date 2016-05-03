@@ -5,7 +5,7 @@ body {
     height: 100%;
 }
 
-.button {
+.customButton {
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
