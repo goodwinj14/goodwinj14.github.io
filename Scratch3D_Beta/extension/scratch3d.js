@@ -175,9 +175,9 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             var h = (window.innerHeight-7).toString() + "px";
             var bPosition = (window.innerWidth-437).toString() + "px";
             fullScreenOn= true;
-            document.getElementById("main").style.width = w;
+            document.getElementById("main").style.width = "100%";
             document.getElementById("main").style.top = "0px";
-            document.getElementById("Holder").style.width = w;
+            document.getElementById("Holder").style.width = "100%";
             document.getElementById("container").style.width = "69%";
             document.getElementById("main").style.height = h;
             document.getElementById("Holder").style.height = h;
