@@ -1,4 +1,5 @@
-	function openTab(evt, editTab) {
+	console.log("SideBar.js");
+    function openTab(evt, editTab) {
     // Declare all variables
     var i, tabcontent, tablinks;
 
