@@ -127,20 +127,6 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         document.getElementById("Holder").appendChild(htmlCode);
     }
     return $element;
-
-                fullScreenOn= false;
-            document.getElementById("sidebar").innerHTML = "";
-            document.getElementById("main").style.top = "70px";
-            document.getElementById("main").style.width = "500px";
-            document.getElementById("Holder").style.width = "462px";
-            document.getElementById("container").style.margin.left = "19px";
-            console.log(document.getElementById("container").style);
-            document.getElementById("container").style.width = "482px";
-            document.getElementById("main").style.height = "400px";
-            document.getElementById("Holder").style.height = "";
-            document.getElementById("container").style.height = "361px";
-            document.getElementById("closeButton").style.left = "458px";
-            Scratch3d.updateWindow();
 };
   
   function sModal(templateId, data) {
@@ -179,22 +165,21 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
     return $modal;
 }
 
-      $modal = sModal("template-warning", null);
-      $("a", $modal).click(function(e){
-        console.log("called a");
-      });
-      $("li", $modal).click(function(e){
-        console.log("called li");
-      });
-      $("ul", $modal).click(function(e){
-        console.log("called ul");
-      });
-      $("tabs", $modal).click(function(e){
-        console.log("called tabs");
-      });
-      $("tablinks", $modal).click(function(e){
-        console.log("called tablinks");
-      });
+                fullScreenOn= false;
+            document.getElementById("sidebar").innerHTML = "";
+            document.getElementById("main").style.top = "70px";
+            document.getElementById("main").style.width = "500px";
+            document.getElementById("Holder").style.width = "462px";
+            document.getElementById("container").style.margin.left = "19px";
+            console.log(document.getElementById("container").style);
+            document.getElementById("container").style.width = "482px";
+            document.getElementById("main").style.height = "400px";
+            document.getElementById("Holder").style.height = "";
+            document.getElementById("container").style.height = "361px";
+            document.getElementById("closeButton").style.left = "458px";
+            Scratch3d.updateWindow();
+
+      
     $("img", $modal).click(function(e){
         buttonID = e.delegateTarget.id;
 
