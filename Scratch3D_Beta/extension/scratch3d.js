@@ -171,9 +171,9 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         if(buttonID=='edit_mode'){
 
             var w = (window.innerWidth-7).toString() + "px";
-            var containerWidth = (window.innerWidth).toString() + "px";
+            var containerWidth = (window.innerWidth-407).toString() + "px";
             var h = (window.innerHeight-7).toString() + "px";
-            var bPosition = (window.innerWidth).toString() + "px";
+            var bPosition = (window.innerWidth-400).toString() + "px";
             fullScreenOn= true;
             document.getElementById("main").style.width = w;
             document.getElementById("main").style.top = "0px";
