@@ -168,13 +168,19 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
       $modal = sModal("template-warning", null);
       $("a", $modal).click(function(e){
         console.log("called a");
-      }$("li", $modal).click(function(e){
+      });
+      $("li", $modal).click(function(e){
         console.log("called li");
-      }$("ul", $modal).click(function(e){
+      });
+      $("ul", $modal).click(function(e){
         console.log("called ul");
-      }$("tabs", $modal).click(function(e){
+      });
+      $("tabs", $modal).click(function(e){
         console.log("called tabs");
-      }
+      });
+      $("tablinks", $modal).click(function(e){
+        console.log("called tablinks");
+      });
     $("img", $modal).click(function(e){
         buttonID = e.delegateTarget.id;
 
