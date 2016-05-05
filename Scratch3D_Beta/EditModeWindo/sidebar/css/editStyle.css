@@ -147,7 +147,7 @@ ul.dropDown_tab li a{
     float: left;
     overflow:hidden; 
     overflow-y:scroll;
-    margin-left: -30px;
+    margin-left: 0px;
 }
 
 
