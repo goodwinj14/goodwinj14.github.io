@@ -105,7 +105,7 @@ var fullScreenOn = false;
     Events = document.createElement('script');
     Events.onload = function() {};
     
-    Events.src = 'goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/editor/js/Event.js';
+    Events.src = 'http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/editor/js/Event.js';
     document.getElementsByTagName('body')[0].appendChild(Events);
 
     var fileref=document.createElement("link")

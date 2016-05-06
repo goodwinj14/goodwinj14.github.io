@@ -14,34 +14,15 @@ Scratch3d.init = function(ext){
  				Scratch3d.addShape( shape, id, length, width, height, LocationX, LocationY, LocationZ);
  				console.log(Scratch3d.shapeID[Scratch3d.shapeID.length-1]);
 			};
-			scene = new THREE.Scene();
-			renderer = new THREE.WebGLRenderer({antialias: true});
-			camera = new THREE.PerspectiveCamera( 75, document.getElementById('container').offsetWidth/document.getElementById('container').offsetHeight, 0.1, 1000 );
-			camera.position.z = 5;
-			renderer.setSize(document.getElementById('container').offsetWidth,document.getElementById('container').offsetHeight);
-			document.getElementById('container').appendChild( renderer.domElement );
-			
-			
-			var render = function () {
-				if(Scratch3d.windowActive){
-				requestAnimationFrame( render );
-				console.log("rendering");
-				renderer.render(scene, camera);
-				}
-			};
-			render();
+
+			EDITOR.intiEditor(document.getElementById('container'));
+			EVENT.init();
 }
 
 Scratch3d.test = function(){
  console.log("worked");
 };
 
-//UPDATE THE SCREEN SIZE WHEN FULLSCREEN IS ENTERED
-Scratch3d.updateWindow = function(){
-  	renderer.setSize( document.getElementById('container').offsetWidth, document.getElementById('container').offsetHeight);
-  	camera.aspect = document.getElementById('container').offsetWidth / document.getElementById('container').offsetHeight;
-  	camera.updateProjectionMatrix();
-}
 
 
 
