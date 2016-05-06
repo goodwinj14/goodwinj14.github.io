@@ -14,8 +14,9 @@ GAME_OBJECTS.RemoveObject = function(objectID){
 		//In the futur we will also have to remove it from our arrays that store the objects 
 		//It may be in the array but not in the scene
 	}
+	console.log("befor");
 	removeObject.mesh.dispose(); // new
-	console.log("new");
+	console.log("after");
 	console.log("new", removeObject);
 	removeObject.geometry.dispose();
 	removeObject.material.dispose();
