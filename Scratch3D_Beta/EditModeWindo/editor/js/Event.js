@@ -61,6 +61,7 @@ function grid_clicked(event){
 	event.preventDefault();
 	mouse.x = ( event.clientX / renderer.domElement.width ) * 2 - 1;
 	mouse.y = - ( event.clientY / renderer.domElement.height ) * 2 + 1;
+	console.log(raycaster);
 	raycaster.setFromCamera( mouse, camera);
 	if (MOVE_OBJ_ACTIVE) {
 		MOVE_OBJ_ACTIVE=false;
