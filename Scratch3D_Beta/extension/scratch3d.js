@@ -108,6 +108,13 @@ var fullScreenOn = false;
     Events.src = 'http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/editor/js/Event.js';
     document.getElementsByTagName('body')[0].appendChild(Events);
 
+               //Loads the acctuall scratch3D code
+    TrackballControls = document.createElement('script');
+    TrackballControls.onload = function() {};
+    
+    TrackballControls.src = 'http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/js/controls/TrackballControls.js';
+    document.getElementsByTagName('body')[0].appendChild(TrackballControls);
+
     var fileref=document.createElement("link")
     fileref.setAttribute("rel", "stylesheet")
     fileref.setAttribute("type", "text/css")
