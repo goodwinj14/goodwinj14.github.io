@@ -204,6 +204,8 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         Scratch.FlashApp.ASobj.ASsetModalOverlay(false);
         $modal.remove();
     });
+            Scratch3d.windowActive = true;
+        Scratch3d.init(ext);
     return $modal;
 }
 
@@ -322,8 +324,6 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             console.log("null");
             return "not loaded";
         }
-        Scratch3d.windowActive = true;
-        Scratch3d.init(ext);
     }
 
     ext.runScratch3d = function(){
