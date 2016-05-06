@@ -73,6 +73,41 @@ var fullScreenOn = false;
     sideBarScript.src = 'http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/sidebar/js/sidebar.js';
     document.getElementsByTagName('body')[0].appendChild(sideBarScript);
 
+        //Loads the acctuall scratch3D code
+    editorScript = document.createElement('script');
+    editorScript.onload = function() {};
+    
+    editorScript.src = 'http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/editor/js/editerMain.js';
+    document.getElementsByTagName('body')[0].appendChild(editorScript);
+
+       //Loads the acctuall scratch3D code
+    Shapes = document.createElement('script');
+    Shapes.onload = function() {};
+    
+    Shapes.src = 'http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/editor/js/Shapes.js';
+    document.getElementsByTagName('body')[0].appendChild(Shapes);
+
+       //Loads the acctuall scratch3D code
+    SelectedElement = document.createElement('script');
+    SelectedElement.onload = function() {};
+    
+    SelectedElement.src = 'http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/editor/js/SelectedElement.js';
+    document.getElementsByTagName('body')[0].appendChild(SelectedElement);
+
+       //Loads the acctuall scratch3D code
+    GameObjects = document.createElement('script');
+    GameObjects.onload = function() {};
+    
+    GameObjects.src = 'http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/editor/js/GameObjects.js';
+    document.getElementsByTagName('body')[0].appendChild(GameObjects);
+
+           //Loads the acctuall scratch3D code
+    Events = document.createElement('script');
+    Events.onload = function() {};
+    
+    Events.src = 'goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/editor/js/Event.js';
+    document.getElementsByTagName('body')[0].appendChild(Events);
+
     var fileref=document.createElement("link")
     fileref.setAttribute("rel", "stylesheet")
     fileref.setAttribute("type", "text/css")
