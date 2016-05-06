@@ -15,7 +15,7 @@ GAME_OBJECTS.RemoveObject = function(objectID){
 		//It may be in the array but not in the scene
 	}
 	removeObject.mesh.dispose(); // new
-	console.log(removeObject);
+	console.log("new",removeObject);
 	removeObject.geometry.dispose();
 	removeObject.material.dispose();
 	removeObject.texture.dispose();
