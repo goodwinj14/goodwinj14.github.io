@@ -24,7 +24,7 @@ Scratch3d.test = function(){
  console.log("worked");
 };
 Scratch3d.updateWindow = function(){
-	
+	console.log(scene);
 }
 
 
