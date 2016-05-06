@@ -10,6 +10,7 @@ Scratch3d.windowActive = false;
 //Array to hold all of the shape specific 
 Scratch3d.shapeID = [];
 Scratch3d.init = function(ext){
+		console.log("Scratch3d.init  called");
 			ext.newShape = function(shape, id, length, width, height, LocationX, LocationY, LocationZ){
  				Scratch3d.addShape( shape, id, length, width, height, LocationX, LocationY, LocationZ);
  				console.log(Scratch3d.shapeID[Scratch3d.shapeID.length-1]);
