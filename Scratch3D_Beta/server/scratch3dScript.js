@@ -25,6 +25,10 @@ Scratch3d.test = function(){
 };
 Scratch3d.updateWindow = function(){
 	console.log(scene);
+	camera.aspect = document.getElementById('container').width / document.getElementById('container').height;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize( document.getElementById('container').width, wdocument.getElementById('container').height );
 }
 
 
