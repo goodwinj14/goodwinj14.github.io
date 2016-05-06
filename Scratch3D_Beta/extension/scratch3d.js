@@ -158,7 +158,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         var templateContent = "";
             
             templateContent += $(document.getElementById(templateId)).html(); 
-                templateContent = "<dialog id='main' class='modal-inner' style='border-radius: 0px; padding: 0px; position: absolute; top: 71px; left: 5px; width: 482px; height: 363px;' ><section id='Holder' style=' padding: 0px; width: 482px; height: 363px;'><div id='sidebar' style='float: right; background-color: green; width: 0px; height: 0px;'></div><div id='container' style=' position: relative; background-color: #e6ffff; width: 482px; height: 363px; top: 0; left: 0; '></div><img id='expand' src='https://raw.githubusercontent.com/goodwinj14/goodwinj14.github.io/master/Scratch3D_Beta/images/icon-expand-blue.png' style='position: absolute; top: 5px; left: 7px;' onclick='fullScreen()'/><img id='edit_mode' src='http://goodwinj14.github.io/Scratch3D_Beta/images/editMode.png' style='position: absolute; top: 5px; margin-left: -90px;'/><img id='run_mode' src='http://goodwinj14.github.io/Scratch3D_Beta/images/runmode.png' style='position: absolute; top: 5px; margin-right: -90px;'/><img id='closeButton' src='http://goodwinj14.github.io/Scratch3D_Beta/images/close-icon.png' style='position: absolute; top: 5px; left: 458px;'/></section></dialog>";
+                templateContent = "<dialog id='main' class='modal-inner' style='border-radius: 0px; padding: 0px; position: absolute; top: 71px; left: 5px; width: 482px; height: 363px;' ><section id='Holder' style=' padding: 0px; width: 482px; height: 363px;'><div id='sidebar' style='float: right; background-color: green; width: 0px;'></div><div id='container' style=' position: relative; background-color: #e6ffff; width: 482px; height: 363px; top: 0; left: 0; '></div><img id='expand' src='https://raw.githubusercontent.com/goodwinj14/goodwinj14.github.io/master/Scratch3D_Beta/images/icon-expand-blue.png' style='position: absolute; top: 5px; left: 7px;' onclick='fullScreen()'/><img id='edit_mode' src='http://goodwinj14.github.io/Scratch3D_Beta/images/editMode.png' style='position: absolute; top: 5px; margin-left: -90px;'/><img id='run_mode' src='http://goodwinj14.github.io/Scratch3D_Beta/images/runmode.png' style='position: absolute; top: 5px; margin-right: -90px;'/><img id='closeButton' src='http://goodwinj14.github.io/Scratch3D_Beta/images/close-icon.png' style='position: absolute; top: 5px; left: 458px;'/></section></dialog>";
                 
 
         $template = _.template(templateContent);
@@ -258,13 +258,13 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             fullScreenOn= false;
             document.getElementById("sidebar").innerHTML = "";
             document.getElementById("main").style.top = "70px";
-            document.getElementById("main").style.width = "500px";
-            document.getElementById("Holder").style.width = "462px";
-            document.getElementById("container").style.margin.left = "19px";
+            document.getElementById("main").style.width = "482px";
+            document.getElementById("Holder").style.width = "482px";
+            document.getElementById("container").style.margin.left = "";
             document.getElementById("container").style.width = "482px";
-            document.getElementById("main").style.height = "400px";
-            document.getElementById("Holder").style.height = "";
-            document.getElementById("container").style.height = "361px";
+            document.getElementById("main").style.height = "363px";
+            document.getElementById("Holder").style.height = "363px;";
+            document.getElementById("container").style.height = "363px;";
             document.getElementById("closeButton").style.left = "458px";
             Scratch3d.updateWindow();
         }
