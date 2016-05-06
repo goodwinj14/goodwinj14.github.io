@@ -168,16 +168,19 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             url: "http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/contentHolder.html", dataType: "html" 
             }).done(function( responseHtml ) {
                 templateContent = responseHtml;
-            });
-
-        $template = _.template(templateContent);
+                console.log("templateContent changed", templateContent);
+                $template = _.template(templateContent);
         $element = $("<dialog></dialog>")
             .attr("id", elementId)
             .html($template);
         $element.appendTo(appendTo);
         document.getElementById("Holder").appendChild(htmlCode);
+        return $element;
+            });
+
+        
     }
-    return $element;
+    
 };
   
   function sModal(templateId, data) {
