@@ -58,10 +58,10 @@ EDITOR.intiEditor = function(viewport){
 				
 			var render = function () {
 				requestAnimationFrame( render );
-
+				console.log("running");
 				renderer.render(scene, camera);
 			};
-			console.log(scene.toJSON());
+			
 			render();
 			animate();
 		}
