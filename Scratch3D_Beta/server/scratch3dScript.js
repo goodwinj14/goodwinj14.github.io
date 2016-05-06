@@ -24,12 +24,11 @@ Scratch3d.test = function(){
  console.log("worked");
 };
 Scratch3d.updateWindow = function(){
+	 renderer.setSize(document.getElementById('container').width, document.getElementById('container').height);
+  	camera.aspect = document.getElementById('container').width / document.getElementById('container').height;
+  	camera.updateProjectionMatrix();
+	console.log(document.getElementById('container').width);
 	console.log(renderer);
-	console.log(camera);
-	camera.aspect = document.getElementById('container').width / document.getElementById('container').height;
-    camera.updateProjectionMatrix();
-
-    renderer.setSize( document.getElementById('container').width, document.getElementById('container').height );
 }
 
 
