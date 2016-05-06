@@ -29,6 +29,11 @@ function imageSelected(evt){
     evt.currentTarget.className += " select";
     EDITOR.add_shape(evt.currentTarget.id);
 }
+
+function updateShape(){
+    GAME_OBJECTS.RemoveObject(document.getElementById("ACT_OBJ_NAME").value);
+}
+
 document.addEventListener('Editor_Obj_Selected', updateEditorWindoVals);
 
 function updateEditorWindoVals(event){
