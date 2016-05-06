@@ -54,7 +54,16 @@ var fullScreenOn = false;
     
  //Loads the needed Libaries
     var script = document.createElement('script');
-    script.onload = function() {};
+    script.onload = function() {
+
+                       //Loads the acctuall scratch3D code
+    TrackballControls = document.createElement('script');
+    TrackballControls.onload = function() {};
+    
+    TrackballControls.src = 'http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/js/controls/TrackballControls.js';
+    document.getElementsByTagName('body')[0].appendChild(TrackballControls);
+
+    };
     
     script.src = 'http://scratch3d.github.io/tierTwo/Scratch3D_Beta/server/threeJScontrols/three.js';
     document.getElementsByTagName('body')[0].appendChild(script);
@@ -108,12 +117,7 @@ var fullScreenOn = false;
     Events.src = 'http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/editor/js/Event.js';
     document.getElementsByTagName('body')[0].appendChild(Events);
 
-               //Loads the acctuall scratch3D code
-    TrackballControls = document.createElement('script');
-    TrackballControls.onload = function() {};
-    
-    TrackballControls.src = 'http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/js/controls/TrackballControls.js';
-    document.getElementsByTagName('body')[0].appendChild(TrackballControls);
+
 
     var fileref=document.createElement("link")
     fileref.setAttribute("rel", "stylesheet")
