@@ -65,7 +65,7 @@ var fullScreenOn = false;
 
     };
     
-    script.src = 'https://github.com/goodwinj14/goodwinj14.github.io/blob/master/Scratch3D_Beta/server/three.js';
+    script.src = 'http://goodwinj14.github.io/Scratch3D_Beta/server/three.js';
     document.getElementsByTagName('body')[0].appendChild(script);
 
     //Loads the acctuall scratch3D code
