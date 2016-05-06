@@ -255,8 +255,8 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
                 document.getElementById("sidebar").innerHTML = responseHtml;
             });
 
-
-            Scratch3d.updateWindow();
+        Scratch3d.windowActive = true;
+        Scratch3d.init(ext);
         }
         
         if(buttonID=='run_mode'){
@@ -319,9 +319,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
       evt.initEvent("click", true, false);
      zxzx fileSelector.dispatchEvent(evt);*/
      
-        console.log("Called");
-        Scratch3d.windowActive = true;
-        Scratch3d.init(ext);
+
         console.log("not in null");
         if(sceneWindow!=null){
             console.log("not null");
