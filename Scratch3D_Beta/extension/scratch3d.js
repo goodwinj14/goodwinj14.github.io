@@ -252,6 +252,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             }).done(function( responseHtml ) {
                 document.getElementById("sidebar").innerHTML = responseHtml;
             });
+            Scratch3d.updateWindow();
         }
         
         if(buttonID=='run_mode'){
