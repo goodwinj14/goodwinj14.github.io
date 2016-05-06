@@ -264,8 +264,8 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             document.getElementById("container").style.margin.left = "";
             document.getElementById("container").style.width = "482px";
             document.getElementById("main").style.height = "363px";
-            document.getElementById("Holder").style.height = "363px;";
-            document.getElementById("container").style.height = "363px;";
+            document.getElementById("Holder").style.height = "363px";
+            document.getElementById("container").style.height = "363px";
             document.getElementById("closeButton").style.left = "458px";
             Scratch3d.updateWindow();
         }
