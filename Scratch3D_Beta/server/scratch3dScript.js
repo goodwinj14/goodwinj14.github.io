@@ -22,7 +22,9 @@ Scratch3d.init = function(ext){
 Scratch3d.test = function(){
  console.log("worked");
 };
-
+Scratch3d.updateWindow = function(){
+	
+}
 
 
 
