@@ -31,6 +31,7 @@ function imageSelected(evt){
 }
 
 function updateShape(){
+    console.log("Update called");
     GAME_OBJECTS.RemoveObject(document.getElementById("ACT_OBJ_NAME").value);
 }
 
