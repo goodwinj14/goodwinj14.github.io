@@ -59,7 +59,7 @@ function obj_position_change(event){
 function grid_clicked(event){
 	
 	event.preventDefault();
-
+	console.log(renderer);
 	mouse.x = ( event.clientX / renderer.getSize().width ) * 2 - 1;
 	mouse.y = - ( event.clientY / renderer.getSize().height ) * 2 + 1;
 	raycaster.setFromCamera( mouse, camera);
