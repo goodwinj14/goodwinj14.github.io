@@ -9,6 +9,7 @@ var MOVE_OBJ_ACTIVE = false;
 var MOVE_OBJ;
 EDITOR.intiEditor = function(viewport){
 			viewWindow = viewport;
+			console.log("viewport", viewport);
 			scene = new THREE.Scene();
 			camera = new THREE.PerspectiveCamera( 5, viewport.offsetWidth/viewport.offsetHeight, 0.1, 1000 );
 			renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
@@ -58,7 +59,6 @@ EDITOR.intiEditor = function(viewport){
 				
 			var render = function () {
 				requestAnimationFrame( render );
-				console.log("running");
 				renderer.render(scene, camera);
 			};
 			
