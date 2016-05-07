@@ -4,7 +4,7 @@ SHAPES.add = function(shape_name){
 	var shape;
 	
 	if(shape_name=="add_cube"){
-		shape =  newCube();
+		shape =  newCube(1,1,1);
 		shape.name="cube_"+shape.id;
 		shape.id=shape_name;
 	}else if(shape_name=="add_sphere"){
@@ -36,7 +36,7 @@ SHAPES.add = function(shape_name){
 }
 
 function newCube(){
-	var geometry = new THREE.BoxGeometry( 1,1,1);
+	var geometry = new THREE.BoxGeometry( width, height, depth);
 	var material = new THREE.MeshNormalMaterial();
 	var shape = new THREE.Mesh( geometry, material );
 	shape.position.y=.5;
@@ -99,12 +99,12 @@ function newRing(){
 	return shape;
 }
 
-SHAPES.createFromExisting = function(shape_name){
+SHAPES.createFromExisting = function(shape_name, width, height, depth){
 	var shape;
 	
 	if(shape_name.indexOf("add_cube") > -1){
 		console.log("new Cube");
-		shape =  newCube();
+		shape =  newCube(width, width, depth);
 		shape.name="cube_"+shape.id;
 		shape.id=shape_name;
 	}else if(shape_name=="add_sphere"){
