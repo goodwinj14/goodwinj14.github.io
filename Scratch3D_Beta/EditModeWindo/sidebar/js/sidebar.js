@@ -33,7 +33,7 @@ function imageSelected(evt){
 function updateShape(){
     console.log("Update called");
     var remove =  GAME_OBJECTS.GetObject(document.getElementById("ACT_OBJ_NAME").value);
-    GAME_OBJECTS.RemoveObject();
+    GAME_OBJECTS.RemoveObject(remove);
 }
 
 document.addEventListener('Editor_Obj_Selected', updateEditorWindoVals);
