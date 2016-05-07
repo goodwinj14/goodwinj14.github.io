@@ -39,7 +39,7 @@ function updateShape(){
     var remove =  GAME_OBJECTS.GetObject(document.getElementById("ACT_OBJ_NAME").value);
     id = remove.id;
     GAME_OBJECTS.RemoveObject(remove);
-    scene.add(id,SHAPES.createFromExisting(document.getElementById("ACT_OBJ_NAME").value, w, h, d));
+    scene.add(id,SHAPES.createFromExisting(id,document.getElementById("ACT_OBJ_NAME").value, w, h, d));
     console.log("remove");
 }
 
