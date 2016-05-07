@@ -99,10 +99,10 @@ function newRing(){
 	return shape;
 }
 
-SHAPES.createFromExisting = function(shape){
+SHAPES.createFromExisting = function(shape_name){
 	var shape;
-	console.log("createFromExisting ");
-	if(shape.indexOf("add_cube") > -1){
+	
+	if(shape_name.indexOf("add_cube") > -1){
 		console.log("new Cube");
 		shape =  newCube();
 		shape.name="cube_"+shape.id;
