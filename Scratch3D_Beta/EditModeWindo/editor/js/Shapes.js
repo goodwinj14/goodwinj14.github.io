@@ -35,7 +35,8 @@ SHAPES.add = function(shape_name){
 	return shape;
 }
 
-function newCube(){
+function newCube(width,height,depth){
+	console.log("depth", depth);
 	var geometry = new THREE.BoxGeometry( width, height, depth);
 	var material = new THREE.MeshNormalMaterial();
 	var shape = new THREE.Mesh( geometry, material );
