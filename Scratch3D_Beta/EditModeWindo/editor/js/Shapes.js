@@ -1,11 +1,12 @@
 var SHAPES = {}
 
-SHAPES.add = function(shape_name){
+SHAPES.add = function(shape_name,width,height,depth){
 	var shape;
 	
 	if(shape_name=="add_cube"){
 		shape =  newCube();
 		shape.name="cube_"+shape.id;
+		shape.id=shape_name;
 	}else if(shape_name=="add_sphere"){
 		shape =  newSphere();
 		shape.name="sphere_"+shape.id;
@@ -35,7 +36,7 @@ SHAPES.add = function(shape_name){
 }
 
 function newCube(){
-	var geometry = new THREE.BoxGeometry( 1,1,1);
+	var geometry = new THREE.BoxGeometry( width,height,depth);
 	var material = new THREE.MeshNormalMaterial();
 	var shape = new THREE.Mesh( geometry, material );
 	shape.position.y=.5;
