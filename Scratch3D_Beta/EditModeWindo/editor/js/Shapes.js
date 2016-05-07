@@ -102,10 +102,10 @@ function newRing(){
 
 SHAPES.createFromExisting = function(shape_name, width, height, depth){
 	var shape;
-	
+	console.log("shape_name");
 	if(shape_name.indexOf("add_cube") > -1){
 		console.log("new Cube");
-		shape =  newCube(width, width, depth);
+		shape =  newCube(width, height, depth);
 		shape.name="cube_"+shape.id;
 		shape.id=shape_name;
 	}else if(shape_name=="add_sphere"){
