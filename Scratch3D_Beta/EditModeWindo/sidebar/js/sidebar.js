@@ -33,6 +33,7 @@ function imageSelected(evt){
 function updateShape(){
     console.log("Update called");
     w = document.getElementById("ACT_OBJ_WIDTH").value;
+    console.log("w", w);
     h = document.getElementById("ACT_OBJ_HEIGHT").value;
     d = document.getElementById("ACT_OBJ_DEPTH").value;
     SHAPES.createFromExisting(document.getElementById("ACT_OBJ_NAME").value, w, h, d);
