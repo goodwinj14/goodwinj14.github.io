@@ -99,12 +99,13 @@ function newRing(){
 	return shape;
 }
 
-SHAPES.createFromExisting = function(shape_name, width, height, depth){
+SHAPES.createFromExisting = function(shapeid, shape_name, width, height, depth){
 	var shape;
 	console.log("shape_name",shape_name);
 	if(shape_name.indexOf("cube") > -1){
 		console.log("new Cube");
 		shape =  newCube(width, height, depth);
+		shape.id = shapeid;
 		shape.name="cube_"+shape.id;
 	}else if(shape_name=="sphere"){
 		shape =  newSphere();
