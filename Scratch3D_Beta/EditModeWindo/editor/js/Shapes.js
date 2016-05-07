@@ -103,30 +103,30 @@ function newRing(){
 SHAPES.createFromExisting = function(shape_name, width, height, depth){
 	var shape;
 	console.log("shape_name",shape_name);
-	if(shape_name.indexOf("add_cube") > -1){
+	if(shape_name.indexOf("cube") > -1){
 		console.log("new Cube");
 		shape =  newCube(width, height, depth);
 		shape.name="cube_"+shape.id;
 		shape.id=shape_name;
-	}else if(shape_name=="add_sphere"){
+	}else if(shape_name=="sphere"){
 		shape =  newSphere();
 		shape.name="sphere_"+shape.id;
-	}else if(shape_name=="add_cylinder"){
+	}else if(shape_name=="cylinder"){
 		shape =  newCylinder();
 		shape.name="cylinder_"+shape.id;
-	}else if(shape_name=="add_tube"){
+	}else if(shape_name=="tube"){
 		shape =  newTube();
 		shape.name="tube_"+shape.id;
-	}else if(shape_name=="add_pyramid"){
+	}else if(shape_name=="pyramid"){
 		shape =  newPyramid();
 		shape.name="pyramid_"+shape.id;
-	}else if(shape_name=="add_circle"){
+	}else if(shape_name=="circle"){
 		shape =  newCicrle();
 		shape.name="circle_"+shape.id;
-	}else if(shape_name=="add_plane"){
+	}else if(shape_name=="plane"){
 		shape =  newPlane();
 		shape.name="plane_"+shape.id;
-	}else if(shape_name=="add_ring"){
+	}else if(shape_name=="ring"){
 		shape =  newRing();
 		shape.name="ring_"+shape.id;
 	}
