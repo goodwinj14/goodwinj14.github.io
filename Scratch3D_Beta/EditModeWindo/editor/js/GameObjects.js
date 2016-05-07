@@ -19,10 +19,17 @@ GAME_OBJECTS.RemoveObject = function(object){
 		//In the futur we will also have to remove it from our arrays that store the objects 
 		//It may be in the array but not in the scene
 	}
+	if(object.mesh!=undefined){
 	object.mesh.dispose(); 
+	}
+	if(object.geometry!=undefined){
 	object.geometry.dispose();
+	}
+	if(object.material!=undefined){
 	object.material.dispose();
+	}
+	if(object.texture!=undefined){
 	object.texture.dispose();
-	
+	}
 	
 }
