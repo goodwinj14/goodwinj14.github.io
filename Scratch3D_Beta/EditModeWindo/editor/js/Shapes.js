@@ -105,7 +105,7 @@ SHAPES.createFromExisting = function(shape_name, width, height, depth){
 	if(shape_name.indexOf("cube") > -1){
 		console.log("new Cube");
 		shape =  newCube(width, height, depth);
-		shape.name="cube_"+shape.id+"hello";
+		shape.name="cube_"+shape.id;
 	}else if(shape_name=="sphere"){
 		shape =  newSphere();
 		shape.name="sphere_"+shape.id;
