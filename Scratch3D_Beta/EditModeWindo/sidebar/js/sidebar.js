@@ -37,6 +37,7 @@ function updateShape(){
     h = parseFloat(document.getElementById("ACT_OBJ_HEIGHT").value);
     d = parseFloat(document.getElementById("ACT_OBJ_DEPTH").value);
     var remove =  GAME_OBJECTS.GetObject(document.getElementById("ACT_OBJ_NAME").value);
+    console.log(remove);
     id = remove.id;
     GAME_OBJECTS.RemoveObject(remove);
     scene.add(id,SHAPES.createFromExisting(id,document.getElementById("ACT_OBJ_NAME").value, w, h, d));
