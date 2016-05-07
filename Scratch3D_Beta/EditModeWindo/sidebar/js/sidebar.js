@@ -32,7 +32,10 @@ function imageSelected(evt){
 
 function updateShape(){
     console.log("Update called");
-    SHAPES.createFromExisting(document.getElementById("ACT_OBJ_NAME").value);
+    w = document.getElementById("ACT_OBJ_WIDTH");
+    h = document.getElementById("ACT_OBJ_HEIGHT");
+    d = document.getElementById("ACT_OBJ_DEPTH");
+    SHAPES.createFromExisting(document.getElementById("ACT_OBJ_NAME").value, w, h, d);
     var remove =  GAME_OBJECTS.GetObject(document.getElementById("ACT_OBJ_NAME").value);
     GAME_OBJECTS.RemoveObject(remove);
     console.log("remove");
