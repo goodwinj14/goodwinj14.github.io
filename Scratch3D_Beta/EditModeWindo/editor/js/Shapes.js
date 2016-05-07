@@ -7,7 +7,7 @@ SHAPES.add = function(shape_name){
 		shape =  newCube(1,1,1);
 		shape.name="cube_"+shape.id;
 	}else if(shape_name=="add_sphere"){
-		shape =  newSphere();
+		shape =  newSphere(.5,32,32);
 		shape.name="sphere_"+shape.id;
 	}else if(shape_name=="add_cylinder"){
 		shape =  newCylinder(.5,32,32);
