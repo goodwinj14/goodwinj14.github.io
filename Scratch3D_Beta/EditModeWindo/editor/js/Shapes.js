@@ -107,7 +107,7 @@ SHAPES.createFromExisting = function(shapeid, shape_name, width, height, depth){
 		shape =  newCube(width, height, depth);
 		shape.id = shapeid;
 		shape.name="cube_"+shape.id;
-	}else if(shape_name.indexOf("cube") > -1){
+	}else if(shape_name.indexOf("sphere") > -1){
 		shape =  newSphere(width, height, depth);
 		shape.name="sphere_"+shape.id;
 	}else if(shape_name=="cylinder"){
