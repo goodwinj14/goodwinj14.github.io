@@ -33,9 +33,11 @@ function imageSelected(evt){
 function updateShape(){
     console.log("Update called");
     w = parseFloat(document.getElementById("ACT_OBJ_WIDTH").value);
-    console.log("w", w);
     h = parseFloat(document.getElementById("ACT_OBJ_HEIGHT").value);
     d = parseFloat(document.getElementById("ACT_OBJ_DEPTH").value);
+    console.log("w", w);
+    console.log("h", h);
+    console.log("d", d);
     var remove =  GAME_OBJECTS.GetObject(document.getElementById("ACT_OBJ_NAME").value);
     console.log(remove);
     id = remove.id;
