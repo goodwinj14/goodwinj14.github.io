@@ -10,7 +10,7 @@ SHAPES.add = function(shape_name){
 		shape =  newSphere();
 		shape.name="sphere_"+shape.id;
 	}else if(shape_name=="add_cylinder"){
-		shape =  newCylinder();
+		shape =  newCylinder(.5,32,32);
 		shape.name="cylinder_"+shape.id;
 	}else if(shape_name=="add_tube"){
 		shape =  newTube();
@@ -43,8 +43,8 @@ function newCube(width,height,depth){
 	return shape;
 }
 
-function newSphere(){
-	var geometry = new THREE.SphereGeometry( .5,32,32);
+function newSphere(width,height,depth){
+	var geometry = new THREE.SphereGeometry( width,height,depth);
 	var material = new THREE.MeshNormalMaterial();
 	var shape = new THREE.Mesh( geometry, material );
 	return shape;
@@ -107,8 +107,8 @@ SHAPES.createFromExisting = function(shapeid, shape_name, width, height, depth){
 		shape =  newCube(width, height, depth);
 		shape.id = shapeid;
 		shape.name="cube_"+shape.id;
-	}else if(shape_name=="sphere"){
-		shape =  newSphere();
+	}else if(shape_name.indexOf("cube") > -1){
+		shape =  newSphere(width, height, depth);
 		shape.name="sphere_"+shape.id;
 	}else if(shape_name=="cylinder"){
 		shape =  newCylinder();
