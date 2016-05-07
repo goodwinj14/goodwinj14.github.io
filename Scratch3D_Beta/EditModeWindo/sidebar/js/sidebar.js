@@ -36,9 +36,9 @@ function updateShape(){
     console.log("w", w);
     h = parseFloat(document.getElementById("ACT_OBJ_HEIGHT").value);
     d = parseFloat(document.getElementById("ACT_OBJ_DEPTH").value);
-    SHAPES.createFromExisting(document.getElementById("ACT_OBJ_NAME").value, w, h, d);
     var remove =  GAME_OBJECTS.GetObject(document.getElementById("ACT_OBJ_NAME").value);
     GAME_OBJECTS.RemoveObject(remove);
+    SHAPES.createFromExisting(document.getElementById("ACT_OBJ_NAME").value, w, h, d);
     console.log("remove");
 }
 
