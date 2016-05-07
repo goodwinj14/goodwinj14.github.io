@@ -99,4 +99,40 @@ function newRing(){
 	return shape;
 }
 
+SHAPES.createFromExisting = function(shape){
+	var shape;
+	
+	if(shape.indexOf("add_cube") > -1){
+		console.log("new Cube");
+		shape =  newCube();
+		shape.name="cube_"+shape.id;
+		shape.id=shape_name;
+	}else if(shape_name=="add_sphere"){
+		shape =  newSphere();
+		shape.name="sphere_"+shape.id;
+	}else if(shape_name=="add_cylinder"){
+		shape =  newCylinder();
+		shape.name="cylinder_"+shape.id;
+	}else if(shape_name=="add_tube"){
+		shape =  newTube();
+		shape.name="tube_"+shape.id;
+	}else if(shape_name=="add_pyramid"){
+		shape =  newPyramid();
+		shape.name="pyramid_"+shape.id;
+	}else if(shape_name=="add_circle"){
+		shape =  newCicrle();
+		shape.name="circle_"+shape.id;
+	}else if(shape_name=="add_plane"){
+		shape =  newPlane();
+		shape.name="plane_"+shape.id;
+	}else if(shape_name=="add_ring"){
+		shape =  newRing();
+		shape.name="ring_"+shape.id;
+	}
+	GAME_OBJECTS.Shapes.push(shape);
+	SELECTED.init(shape);
+	
+	return shape;
+}
+
 
