@@ -57,7 +57,7 @@ EDITOR.intiEditor = function(viewport){
 				}
 
 				if(EDITOR.TEST_OBJ!=null){
-					console.log("needs upDating again  ", edit.geometry.verticesNeedUpdate); 
+					console.log("needs upDating again  ", EDITOR.TEST_OBJ.geometry.verticesNeedUpdate); 
 				}
 			}
 				
