@@ -63,7 +63,7 @@ SELECTED.init = function(object){
 
 SELECTED.select = function(event){
 	avtive_Object = event.detail;
-	/*avtive_Object.geometry.computeBoundingBox();
+	avtive_Object.geometry.computeBoundingBox();
 	boundingBox = avtive_Object.geometry.boundingBox;
 	//boundingBox.setFromObject( avtive_Object );
 
@@ -84,7 +84,7 @@ SELECTED.select = function(event){
 	avtive_Object.scale.y = 3.65;
 	avtive_Object.scale.z = 2.45;
 
-	scene.add( shapeHelpers );*/
+	scene.add( shapeHelpers );
 	avtive_Object.material.opacity = .7;
 }
 
