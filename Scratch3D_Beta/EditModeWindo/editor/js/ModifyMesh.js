@@ -14,7 +14,7 @@ ModifyMesh.updateDimensions = function(geometry,sideID, dist){
 					console.log("Post ", vertices[i]);
 				}
 			}
-			console.log("dist ", dist);
+			console.log("dist ", vertices.length);
 		}
 		//Alters the min x width of the object
 		if(sideID==1){
