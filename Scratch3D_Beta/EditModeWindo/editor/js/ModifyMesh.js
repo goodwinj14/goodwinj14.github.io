@@ -2,7 +2,7 @@ ModifyMesh = {}
 var called = 0;
 ModifyMesh.updateDimensions = function(geometry,sideID, dist){
 		called++;
-		console.log("ModifyMesh Called: "called);
+		console.log("ModifyMesh Called: ", called);
 		vertices = geometry.attributes.position.array;
 		geometry.computeBoundingBox();
 		//Alters the max x width of the object
