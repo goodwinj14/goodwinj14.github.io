@@ -59,6 +59,5 @@ ModifyMesh.updateDimensions = function(geometry,sideID, dist){
 				}
 			}
 		}
-		geometry.verticesNeedUpdate = true;
 		console.log("needs upDating", geometry.verticesNeedUpdate);
 	}	
