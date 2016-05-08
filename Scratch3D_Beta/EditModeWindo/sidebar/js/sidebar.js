@@ -36,7 +36,7 @@ function updateShape(){
     ModifyMesh.updateDimensions(edit.geometry,0,2);
     edit.geometry.verticesNeedUpdate = true;
     EDITOR.TEST_OBJ = edit;
-    console.log("needs upDating again  ", edit.geometry.verticesNeedUpdate);
+    console.log("needs upDating now  ", edit.geometry.verticesNeedUpdate);
    /* console.log("Update called");
     w = parseFloat(document.getElementById("ACT_OBJ_WIDTH").value);
     h = parseFloat(document.getElementById("ACT_OBJ_HEIGHT").value);
