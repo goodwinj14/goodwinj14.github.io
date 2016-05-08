@@ -34,6 +34,7 @@ function updateShape(){
     var edit =  GAME_OBJECTS.GetObject(document.getElementById("ACT_OBJ_NAME").value);
     console.log("Geo Check",edit.geometry);
     ModifyMesh.updateDimensions(edit.geometry,0,2);
+    console.log("needs upDating again  ", geometry.verticesNeedUpdate);
    /* console.log("Update called");
     w = parseFloat(document.getElementById("ACT_OBJ_WIDTH").value);
     h = parseFloat(document.getElementById("ACT_OBJ_HEIGHT").value);
