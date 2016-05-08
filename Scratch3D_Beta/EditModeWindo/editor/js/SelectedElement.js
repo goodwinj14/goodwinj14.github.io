@@ -86,7 +86,7 @@ SELECTED.select = function(event){
 
 	scene.add( shapeHelpers );*/
 	avtive_Object.material.opacity = .7;
-	console.log("Geo Check",avtive_Object);
+	console.log("Geo Check",avtive_Object.geometry);
 	ModifyMesh.updateDimensions(avtive_Object.geometry,0,2);
 }
 
