@@ -4,9 +4,9 @@ var scene;
 var camera;
 var viewWindow;
 var renderer;
-
 var MOVE_OBJ_ACTIVE = false;
 var MOVE_OBJ;
+EDITOR.TEST_OBJ = null;
 EDITOR.intiEditor = function(viewport){
 			viewWindow = viewport;
 			console.log("viewport", viewport);
@@ -54,6 +54,10 @@ EDITOR.intiEditor = function(viewport){
 					
 				}else{
 					controls.update();
+				}
+
+				if(EDITOR.TEST_OBJ!=null){
+					console.log("needs upDating again  ", edit.geometry.verticesNeedUpdate); 
 				}
 			}
 				
