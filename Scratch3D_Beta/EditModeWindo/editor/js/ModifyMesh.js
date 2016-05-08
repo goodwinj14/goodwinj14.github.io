@@ -9,10 +9,10 @@ ModifyMesh.updateDimensions = function(geometry,sideID, dist){
 			minPoint = geometry.boundingBox.min.x;
 			for (var i = 0; i < vertices.length; i+=3) {
 				if(dist>0){
-					console.log("vertices altering");
 					vertices[i] = minPoint-((minPoint-vertices[i])*dist);
 				}
 			}
+			console.log(geometry.attributes.position.array);
 		}
 		//Alters the min x width of the object
 		if(sideID==1){
