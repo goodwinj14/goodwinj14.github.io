@@ -1,9 +1,10 @@
 ModifyMesh = {}
 
 ModifyMesh.updateDimensions = function(geometry,sideID, dist){
-	console.log("0 called", geometry);
+	
 		vertices = geometry.attributes.position.array;
 		geometry.computeBoundingBox();
+		console.log("vertices", vertices);
 		//Alters the max x width of the object
 		if(sideID==0){
 			minPoint = geometry.boundingBox.min.x;
