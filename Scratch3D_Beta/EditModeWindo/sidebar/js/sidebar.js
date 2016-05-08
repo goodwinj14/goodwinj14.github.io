@@ -31,7 +31,10 @@ function imageSelected(evt){
 }
 
 function updateShape(){
-    console.log("Update called");
+    var edit =  GAME_OBJECTS.GetObject(document.getElementById("ACT_OBJ_NAME").value);
+    console.log("Geo Check",edit.geometry);
+    ModifyMesh.updateDimensions(edit.geometry,0,2);
+   /* console.log("Update called");
     w = parseFloat(document.getElementById("ACT_OBJ_WIDTH").value);
     h = parseFloat(document.getElementById("ACT_OBJ_HEIGHT").value);
     d = parseFloat(document.getElementById("ACT_OBJ_DEPTH").value);
@@ -44,7 +47,7 @@ function updateShape(){
     GAME_OBJECTS.RemoveObject(remove);
     var temp = SHAPES.createFromExisting(id,document.getElementById("ACT_OBJ_NAME").value, w, h, d);
     scene.add(temp);
-    GAME_OBJECTS.Shapes.push(temp);
+    GAME_OBJECTS.Shapes.push(temp);*/
 }
 
 document.addEventListener('Editor_Obj_Selected', updateEditorWindoVals);
