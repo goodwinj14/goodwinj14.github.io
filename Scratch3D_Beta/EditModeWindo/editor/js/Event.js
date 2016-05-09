@@ -24,6 +24,8 @@ EVENT.init = function(){
     	//obj_position_change(event);
     }
     if(MOUSE_IS_DOWN && OBJECT_IS_SELECTED && CORNER_SELECTED==null){
+    	console.log("Drag called");
+    }else if(MOUSE_IS_DOWN && OBJECT_IS_SELECTED && CORNER_SELECTED==null){
     	obj_position_change(event);
     }else if(OBJECT_IS_SELECTED){
     	pos_change_Event = new CustomEvent('Editor_Obj_hover_check', { 'detail': event});
