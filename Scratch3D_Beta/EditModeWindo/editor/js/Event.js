@@ -59,7 +59,7 @@ function obj_position_change(event){
 
 function editMeshDimensions(event){
 	console.log(.1*event.movementX);
-	ModifyMesh.updateDimensions(edit.geometry,0,1+(.1*event.movementX));
+	ModifyMesh.updateDimensions(SELECTED_OBJECT.geometry,0,1+(.1*event.movementX));
 }
 
 function grid_clicked(event){

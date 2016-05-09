@@ -33,7 +33,7 @@ function imageSelected(evt){
 function updateShape(){
     var edit =  GAME_OBJECTS.GetObject(document.getElementById("ACT_OBJ_NAME").value);
     console.log("Geo Check",edit);
-    ModifyMesh.updateDimensions(edit.geometry,0,2);
+    
     //edit.geometry.verticesNeedUpdate = true;
     //edit.
     EDITOR.TEST_OBJ = edit;
