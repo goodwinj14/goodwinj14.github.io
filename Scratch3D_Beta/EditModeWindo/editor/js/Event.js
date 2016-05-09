@@ -24,7 +24,7 @@ EVENT.init = function(){
     	//obj_position_change(event);
     }
     if(MOUSE_IS_DOWN && OBJECT_IS_SELECTED && CORNER_SELECTED!=null){
-    	console.log("Drag called");
+    	editMeshDimensions(event);
     }else if(MOUSE_IS_DOWN && OBJECT_IS_SELECTED && CORNER_SELECTED==null){
     	obj_position_change(event);
     }else if(OBJECT_IS_SELECTED){
@@ -57,6 +57,9 @@ function obj_position_change(event){
 	document.dispatchEvent(pos_change_Event);
 }
 
+function editMeshDimensions(event){
+	console.log(event);
+}
 
 function grid_clicked(event){
 	
