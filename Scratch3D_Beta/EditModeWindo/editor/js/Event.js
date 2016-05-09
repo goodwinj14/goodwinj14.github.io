@@ -19,6 +19,7 @@ EVENT.init = function(){
 	}, false);
 
 	document.getElementById("canvas").addEventListener("mousemove", function(event){
+		console.log(event);
     MOUSE_LOC_CHANGED = true;
     if(MOVE_OBJ_ACTIVE){
     	//obj_position_change(event);
