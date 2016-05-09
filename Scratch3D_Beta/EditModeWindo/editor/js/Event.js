@@ -23,7 +23,7 @@ EVENT.init = function(){
     if(MOVE_OBJ_ACTIVE){
     	//obj_position_change(event);
     }
-    if(MOUSE_IS_DOWN && OBJECT_IS_SELECTED && CORNER_SELECTED==null){
+    if(MOUSE_IS_DOWN && OBJECT_IS_SELECTED && CORNER_SELECTED!=null){
     	console.log("Drag called");
     }else if(MOUSE_IS_DOWN && OBJECT_IS_SELECTED && CORNER_SELECTED==null){
     	obj_position_change(event);
