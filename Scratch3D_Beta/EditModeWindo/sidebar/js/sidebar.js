@@ -35,7 +35,7 @@ function updateShape(){
     console.log("Geo Check",edit);
     ModifyMesh.updateDimensions(edit.geometry,0,2);
     //edit.geometry.verticesNeedUpdate = true;
-    edit.geometry.attributes.position.needsUpdate = true;
+    //edit.
     EDITOR.TEST_OBJ = edit;
     console.log("needs upDating now  ", edit.geometry.attributes.position.needsUpdate);
    /* console.log("Update called");

@@ -21,7 +21,7 @@ EVENT.init = function(){
 	document.getElementById("canvas").addEventListener("mousemove", function(event){
     MOUSE_LOC_CHANGED = true;
     if(MOVE_OBJ_ACTIVE){
-    	obj_position_change(event);
+    	//obj_position_change(event);
     }
     if(MOUSE_IS_DOWN && OBJECT_IS_SELECTED && CORNER_SELECTED==null){
     	obj_position_change(event);
