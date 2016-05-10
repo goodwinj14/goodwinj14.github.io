@@ -18,16 +18,16 @@ ModifyMesh.updateDimensions = function(geometry,sideID, dist){
 			var dd = dist;
 			minPoint = geometry.boundingBox.min.x;
 			//dist = ;
-			xStepDist = (dist-geometry.boundingBox.max.x)/xStepCount.length;
+			xStepDist = (dist-);
 			for (var i = 0; i < vertices.length; i+=3) {
 				//if(dist>0){
 				//	geometry.attributes.position.array[i] = minPoint-((minPoint-geometry.attributes.position.array[i])*dist);
 				//}
 				if(minPoint!=vertices[i]&&vertices[i]!=geometry.boundingBox.max.x){
-					vertices[i] = vertices[i] + dist;
+					vertices[i] = (geometry.boundingBox.max.x/(geometry.boundingBox.max.x-vertices[i])) * dist;
 				}
 				else if(vertices[i]==geometry.boundingBox.max.x){
-					vertices[i] = vertices[i] + dist;
+					vertices[i] = dist;
 				}
 			}
 		}
