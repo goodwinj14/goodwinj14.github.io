@@ -6,6 +6,14 @@ ModifyMesh.updateDimensions = function(geometry,sideID, dist){
 		vertices = geometry.attributes.position.array;
 		geometry.computeBoundingBox();
 		//Alters the max x width of the object
+		var xStepCount = [];
+
+		for(int i = 0; i < vertices.length; i+=3){
+			if(xStepCount.indexOf(vertices[i]) < 0){
+				xStepCount.push(vertices[i]);
+			}
+		}
+		console.log("dist: ",xStepCount);
 		if(sideID==0){
 			minPoint = geometry.boundingBox.min.x;
 			dist = 1+(dist-minPoint);
@@ -14,7 +22,6 @@ ModifyMesh.updateDimensions = function(geometry,sideID, dist){
 					geometry.attributes.position.array[i] = minPoint-((minPoint-geometry.attributes.position.array[i])*dist);
 				}
 			}
-			console.log("dist: ",dist);
 		}
 		//Alters the min x width of the object
 		if(sideID==1){
