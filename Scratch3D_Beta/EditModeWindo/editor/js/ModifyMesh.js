@@ -14,7 +14,7 @@ ModifyMesh.updateDimensions = function(geometry,sideID, dist){
 					geometry.attributes.position.array[i] = minPoint-((minPoint-geometry.attributes.position.array[i])*dist);
 				}
 			}
-			console.log("dist ",dist);
+			console.log("dist: ",dist);
 		}
 		//Alters the min x width of the object
 		if(sideID==1){
