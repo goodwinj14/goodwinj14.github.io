@@ -16,7 +16,6 @@ ModifyMesh.updateDimensions = function(geometry,sideID, dist){
 		console.log("dist: ",xStepCount);
 		if(sideID==0){
 			minPoint = geometry.boundingBox.min.x;
-			dist = 1+(dist-minPoint);
 			xStepDist = dist/xStepCount.length;
 			for (var i = 0; i < vertices.length; i+=3) {
 				//if(dist>0){
