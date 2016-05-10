@@ -101,7 +101,7 @@ SELECTED.update = function(event){
 
 SELECTED.helperHoverCheck = function(event){
 				
-				mouse.x = ( (event.detail.clientX-50) / renderer.getSize().width ) * 2 - 1;
+				mouse.x = ( (event.detail.clientX) / renderer.getSize().width ) * 2 - 1;
 				mouse.y = - ( (event.detail.clientY) / renderer.getSize().height ) * 2 + 1;
 				raycaster.setFromCamera( mouse, camera );
 

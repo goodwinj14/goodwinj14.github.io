@@ -35,6 +35,7 @@ EVENT.init = function(){
 
 	document.getElementById("canvas").addEventListener("mouseup", function(){
     MOUSE_IS_DOWN = false;
+    editMeshDimensions(event);
 	}, false);
 }
 
@@ -70,7 +71,7 @@ function editMeshDimensions(event){
 	distance = - camera.position.y / dir.y;
 	pos = camera.position.clone().add( dir.multiplyScalar( distance ) );
 	console.log(pos);
-	ModifyMesh.updateDimensions(SELECTED_OBJECT.geometry,0,pos.x);
+	//ModifyMesh.updateDimensions(SELECTED_OBJECT.geometry,0,pos.x);
 }
 
 function grid_clicked(event){
