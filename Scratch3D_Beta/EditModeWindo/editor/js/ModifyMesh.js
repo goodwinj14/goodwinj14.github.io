@@ -20,10 +20,10 @@ ModifyMesh.updateDimensions = function(geometry,sideID, dist){
 			maxPoint = geometry.boundingBox.max.x;
 			length = maxPoint-minPoint;
 			console.log("minPoint ", geometry.boundingBox.min.x);
-			console.log("maxPoint Updated4 ", maxPoint);
+			console.log("maxPoint Updated5 ", maxPoint);
 			//dist = ;
 			xStepDist = (dist-geometry.boundingBox.max.x)/xStepCount.length;
-			dist = dist - maxPoint;
+			dist = dist - minPoint;
 			for (var i = 0; i < vertices.length; i+=3) {
 				//if(dist>0){
 				//	geometry.attributes.position.array[i] = minPoint-((minPoint-geometry.attributes.position.array[i])*dist);
