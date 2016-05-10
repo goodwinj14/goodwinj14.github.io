@@ -17,15 +17,15 @@ ModifyMesh.updateDimensions = function(geometry,sideID, dist){
 		if(sideID==0){
 			var dd = dist;
 			minPoint = geometry.boundingBox.min.x;
-			//dist = dist-geometry.boundingBox.max.x;
-			//xStepDist = dist/xStepCount.length;
+			//dist = ;
+			xStepDist = (dist-geometry.boundingBox.max.x)/xStepCount.length;
 			console.log("dist_: ",dist);
 			for (var i = 0; i < vertices.length; i+=3) {
 				//if(dist>0){
 				//	geometry.attributes.position.array[i] = minPoint-((minPoint-geometry.attributes.position.array[i])*dist);
 				//}
 				if(minPoint!=vertices[i]&&vertices[i]!=geometry.boundingBox.max.x){
-					//vertices[i] = vertices[i] + xStepDist;
+					vertices[i] = vertices[i] + xStepDist;
 					console.log("Should not be called ");
 				}
 				else if(vertices[i]==geometry.boundingBox.max.x){
