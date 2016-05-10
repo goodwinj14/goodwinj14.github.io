@@ -17,8 +17,8 @@ ModifyMesh.updateDimensions = function(geometry,sideID, dist){
 		if(sideID==0){
 			var dd = dist;
 			minPoint = geometry.boundingBox.min.x;
-			dist = dist-geometry.boundingBox.max.x;
-			xStepDist = dist/xStepCount.length;
+			//dist = dist-geometry.boundingBox.max.x;
+			//xStepDist = dist/xStepCount.length;
 			console.log("dist_: ",dist);
 			for (var i = 0; i < vertices.length; i+=3) {
 				//if(dist>0){
@@ -30,7 +30,7 @@ ModifyMesh.updateDimensions = function(geometry,sideID, dist){
 				}
 				else if(vertices[i]==geometry.boundingBox.max.x){
 					console.log("VP Pre_ ", vertices[i]);
-					vertices[i] = dd;
+					vertices[i] = dist;
 					console.log("VP Post ", vertices[i]);
 					if(vertices[i]>dd){
 						console.log("WTF ");
