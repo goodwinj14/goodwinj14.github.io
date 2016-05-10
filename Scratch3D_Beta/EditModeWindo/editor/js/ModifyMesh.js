@@ -28,7 +28,8 @@ ModifyMesh.updateDimensions = function(geometry,sideID, dist){
 					if(xStepDist>vertices[i]){
 						vertices[i]=xStepDist;
 					}else{
-						vertices[i]= vertices[i] + (xStepDist-vertices[i]);
+						vertices[i]= vertices[i] + (vertices[i]-xStepDist);
+						console.log("called");
 					}
 				}
 				else if(vertices[i]==geometry.boundingBox.max.x){
