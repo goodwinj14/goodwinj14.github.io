@@ -26,6 +26,8 @@ ModifyMesh.updateDimensions = function(geometry,sideID, dist){
 				//}
 				if(minPoint!=vertices[i]&&vertices[i]!=geometry.boundingBox.max.x){
 					vertices[i] = vertices[i] + xStepDist;
+
+					xStepDist = xStepDist + xStepDist;
 					console.log("Should not be called ");
 				}
 				else if(vertices[i]==geometry.boundingBox.max.x){
