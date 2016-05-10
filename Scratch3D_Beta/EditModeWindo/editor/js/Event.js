@@ -59,7 +59,18 @@ function obj_position_change(event){
 
 function editMeshDimensions(event){
 	console.log(.1*event.movementX);
-	ModifyMesh.updateDimensions(SELECTED_OBJECT.geometry,0,1+(.1*event.movementX));
+		vector = new THREE.Vector3();
+	vector.set(
+   		 ( event.clientX / renderer.domElement.width ) * 2 - 1,
+   		 - ( event.clientY / renderer.domElement.height ) * 2 + 1,
+   		 0.5 );
+	vector.unproject( camera );
+
+	dir = vector.sub( camera.position ).normalize();
+	distance = - camera.position.y / dir.y;
+	pos = camera.position.clone().add( dir.multiplyScalar( distance ) );
+	console.log(pos);
+	//ModifyMesh.updateDimensions(SELECTED_OBJECT.geometry,0,1+(.1*event.movementX));
 }
 
 function grid_clicked(event){
