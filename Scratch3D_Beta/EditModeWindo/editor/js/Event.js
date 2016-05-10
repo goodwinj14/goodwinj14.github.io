@@ -35,7 +35,6 @@ EVENT.init = function(){
 
 	document.getElementById("canvas").addEventListener("mouseup", function(){
     MOUSE_IS_DOWN = false;
-    editMeshDimensions(event);
 	}, false);
 }
 
