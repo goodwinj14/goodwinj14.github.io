@@ -45,6 +45,7 @@ function newCube(width,height,depth){
 
 function newSphere(width,height,depth){
 	var geometry = new THREE.SphereBufferGeometry( width,height,depth);
+	console.log(geometry);
 	var material = new THREE.MeshNormalMaterial();
 	var shape = new THREE.Mesh( geometry, material );
 	return shape;
