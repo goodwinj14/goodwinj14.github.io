@@ -101,8 +101,8 @@ SELECTED.update = function(event){
 
 SELECTED.helperHoverCheck = function(event){
 				
-				mouse.x = ( (event.detail.clientX) / renderer.getSize().width ) * 2 - 1;
-				mouse.y = - ( (event.detail.clientY) / renderer.getSize().height ) * 2 + 1;
+				mouse.x = ( (event.detail.clientX+15) / renderer.getSize().width ) * 2 - 1;
+				mouse.y = - ( (event.detail.clientY+15) / renderer.getSize().height ) * 2 + 1;
 				raycaster.setFromCamera( mouse, camera );
 
 				intersects = raycaster.intersectObjects( shapeHelpers.children, true);
