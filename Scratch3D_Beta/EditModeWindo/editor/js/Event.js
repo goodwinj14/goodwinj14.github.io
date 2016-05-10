@@ -70,7 +70,7 @@ function editMeshDimensions(event){
 	distance = - camera.position.y / dir.y;
 	pos = camera.position.clone().add( dir.multiplyScalar( distance ) );
 	console.log(pos);
-	//ModifyMesh.updateDimensions(SELECTED_OBJECT.geometry,0,1+(.1*event.movementX));
+	ModifyMesh.updateDimensions(SELECTED_OBJECT.geometry,0,pos);
 }
 
 function grid_clicked(event){

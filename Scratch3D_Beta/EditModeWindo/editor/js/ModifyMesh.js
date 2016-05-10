@@ -8,14 +8,13 @@ ModifyMesh.updateDimensions = function(geometry,sideID, dist){
 		//Alters the max x width of the object
 		if(sideID==0){
 			minPoint = geometry.boundingBox.min.x;
+			dist = 1+(dist-minPoint);
 			for (var i = 0; i < vertices.length; i+=3) {
 				if(dist>0){
-					console.log("Pre ", geometry.attributes.position.array[i]);
 					geometry.attributes.position.array[i] = minPoint-((minPoint-geometry.attributes.position.array[i])*dist);
-					console.log("Post ", geometry.attributes.position.array[i]);
 				}
 			}
-			console.log("dist ", vertices.length);
+			console.log("dist ",dist);
 		}
 		//Alters the min x width of the object
 		if(sideID==1){
