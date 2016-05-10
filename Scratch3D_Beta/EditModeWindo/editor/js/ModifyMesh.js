@@ -28,7 +28,9 @@ ModifyMesh.updateDimensions = function(geometry,sideID, dist){
 					console.log("Should not be called ");
 				}
 				else if(vertices[i]==geometry.boundingBox.max.x){
+					console.log("VP Pre ", vertices[i]);
 					vertices[i] = vertices[i] + dist;
+					console.log("VP Post ", vertices[i]);
 				}
 			}
 		}
