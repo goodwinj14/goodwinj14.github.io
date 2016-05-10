@@ -17,6 +17,7 @@ ModifyMesh.updateDimensions = function(geometry,sideID, dist){
 		if(sideID==0){
 			var dd = dist;
 			minPoint = geometry.boundingBox.min.x;
+			length = geometry.boundingBox.max.x-geometry.boundingBox.min.x;
 			console.log("minPoint ", geometry.boundingBox.min.x);
 			console.log("maxPoint ", geometry.boundingBox.max.x);
 			//dist = ;
@@ -26,7 +27,7 @@ ModifyMesh.updateDimensions = function(geometry,sideID, dist){
 				//	geometry.attributes.position.array[i] = minPoint-((minPoint-geometry.attributes.position.array[i])*dist);
 				//}
 				if(minPoint!=vertices[i]&&vertices[i]!=geometry.boundingBox.max.x){
-					xStepDist = dist*(vertices[i]/geometry.boundingBox.max.x);
+					xStepDist = minPoint + (dist*((vertices[i]-min)/length));
 					if(xStepDist>vertices[i]){
 						vertices[i]=xStepDist;
 					}else{
