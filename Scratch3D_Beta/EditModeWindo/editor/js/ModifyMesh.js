@@ -27,12 +27,8 @@ ModifyMesh.updateDimensions = function(geometry,sideID, dist){
 				//	geometry.attributes.position.array[i] = minPoint-((minPoint-geometry.attributes.position.array[i])*dist);
 				//}
 				if(minPoint!=vertices[i]&&vertices[i]!=geometry.boundingBox.max.x){
-					xStepDist = (length*((vertices[i]-minPoint)/length));
-					if(xStepDist>vertices[i]){
-						vertices[i]=xStepDist;
-					}else{
-						vertices[i]= vertices[i] + (vertices[i]-xStepDist);
-					}
+					vertices[i] = (length*((vertices[i]-minPoint)/length));
+					
 				}
 				else if(vertices[i]==geometry.boundingBox.max.x){
 					vertices[i] = dist;
