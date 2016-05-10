@@ -8,7 +8,7 @@ ModifyMesh.updateDimensions = function(geometry,sideID, dist){
 		//Alters the max x width of the object
 		var xStepCount = [];
 
-		for(i = 0; i < vertices.length; i+=3){
+		for(var i = 0; i < vertices.length; i+=3){
 			if(xStepCount.indexOf(vertices[i]) < 0){
 				xStepCount.push(vertices[i]);
 			}
