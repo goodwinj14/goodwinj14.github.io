@@ -24,7 +24,7 @@ EVENT.init = function(){
     	//obj_position_change(event);
     }
     if(MOUSE_IS_DOWN && OBJECT_IS_SELECTED && CORNER_SELECTED!=null){
-    	
+    	editMeshDimensions(event);
     }else if(MOUSE_IS_DOWN && OBJECT_IS_SELECTED && CORNER_SELECTED==null){
     	obj_position_change(event);
     }else if(OBJECT_IS_SELECTED){
