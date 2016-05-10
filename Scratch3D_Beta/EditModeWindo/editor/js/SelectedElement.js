@@ -80,9 +80,6 @@ SELECTED.select = function(event){
 	shapeHelpers.position.y = avtive_Object.position.y;
 	shapeHelpers.position.z = avtive_Object.position.z;
 	avtive_Object.material.opacity = .7;
-	avtive_Object.scale.x = 2;
-	avtive_Object.scale.y = 3.65;
-	avtive_Object.scale.z = 2.45;
 
 	scene.add( shapeHelpers );
 	avtive_Object.material.opacity = .7;
