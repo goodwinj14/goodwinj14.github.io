@@ -85,6 +85,6 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 					vertices[i] = maxPoint-((maxPoint-vertices[i])*dist);
 				}
 			}
-		}
+		}*/
 		geometry.attributes.position.needsUpdate = true;
-	}	*/
+	}	
