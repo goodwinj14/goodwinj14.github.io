@@ -20,13 +20,16 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 			length = maxPoint-minPoint;
 			distNormalized = maxPoint+(dist-(mesh.position.x+maxPoint));
 			xStepDist = distNormalized- minPoint;
-
+			console.log("Updated");
 			for (var i = 0; i < vertices.length; i+=3) {
-					if(minPoint!=vertices[i]&&vertices[i]!=maxPoint){
+					/*if(minPoint!=vertices[i]&&vertices[i]!=maxPoint){
 						vertices[i] = minPoint+(xStepDist*(Math.abs(vertices[i]-minPoint)/length));
 					}
 					else if(vertices[i]== maxPoint){
 						vertices[i] = distNormalized;
+					}*/
+					if(minPoint!=vertices[i]){
+						vertices[i] = minPoint+(xStepDist*(Math.abs(vertices[i]-minPoint)/length));
 					}
 			}
 		}
