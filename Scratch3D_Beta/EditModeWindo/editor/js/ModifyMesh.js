@@ -39,16 +39,20 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 				}
 			}
 		}
-		/*//Alters the max y width of the object
+		//Alters the max y width of the object
 		if(sideID==2){
-			minPoint = geometry.boundingBox.min.y;
+			minPoint = mesh.geometry.boundingBox.min.x;
+			maxPoint = mesh.geometry.boundingBox.max.x;
+			length = maxPoint-minPoint;
+			distNormalized = maxPoint+(dist-(mesh.position.x+maxPoint));
+			xStepDist = distNormalized- minPoint;
 			for (var i = 1; i < vertices.length; i+=3) {
-				if(dist>0){
-					vertices[i] = minPoint-((minPoint-vertices[i])*dist);
+				if(minPoint!=vertices[i]){
+					vertices[i] = minPoint+(xStepDist*(Math.abs(vertices[i]-minPoint)/length));
 				}
 			}
 		}
-		if(sideID==3){
+		/*if(sideID==3){
 			maxPoint = geometry.boundingBox.max.y;
 			for (var i = 1; i < vertices.length; i+=3) {
 				if(dist>0){
