@@ -44,7 +44,7 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 				}
 			}
 		}
-		//Alters the min x width of the object
+		/*//Alters the min x width of the object
 		if(sideID==1){
 			maxPoint = geometry.boundingBox.max.x;
 			for (var i = 0; i < vertices.length; i+=3) {
@@ -87,4 +87,4 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 			}
 		}
 		geometry.attributes.position.needsUpdate = true;
-	}	
+	}	*/
