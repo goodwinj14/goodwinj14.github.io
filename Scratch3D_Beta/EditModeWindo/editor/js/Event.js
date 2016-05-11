@@ -71,7 +71,7 @@ function editMeshDimensions(event){
 	pos = camera.position.clone().add( dir.multiplyScalar( distance ) );
 	console.log(pos.x);
 	console.log("dist", SELECTED_OBJECT);
-	ModifyMesh.updateDimensions(SELECTED_OBJECT,0,pos.x);
+	ModifyMesh.updateDimensions(SELECTED_OBJECT,1,pos.x);
 }
 
 function grid_clicked(event){
