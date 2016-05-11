@@ -1,7 +1,6 @@
 ModifyMesh = {}
 
 ModifyMesh.updateDimensions = function(mesh,sideID, dist){
-		console.log("Modify Updated 2 ");
 		vertices = mesh.geometry.attributes.position.array;
 		mesh.geometry.computeBoundingBox();
 		
@@ -32,7 +31,7 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 						
 					}
 					else if(vertices[i]== mesh.geometry.boundingBox.max.x){
-						vertices[i] = dist;
+						vertices[i] = dist+mesh.position.x;
 					}
 				}else{
 					if(minPoint!=vertices[i]&&vertices[i]!=mesh.geometry.boundingBox.max.x){
@@ -40,7 +39,7 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 						
 					}
 					else if(vertices[i]==mesh.geometry.boundingBox.max.x){
-						vertices[i] = -1*dist;
+						//vertices[i] = -1*(dist+mesh.position.x);
 					}
 				}
 			}
