@@ -67,7 +67,8 @@ function editMeshDimensions(event){
 	vector.unproject( camera );
 
 	dir = vector.sub( camera.position ).normalize();
-	distance = - camera.position.y / dir.y;
+	//distance = - camera.position.y / dir.y;
+	distance = - camera.position.x / dir.x;
 	pos = camera.position.clone().add( dir.multiplyScalar( distance ) );
 	console.log(pos.y);
 	ModifyMesh.updateDimensions(SELECTED_OBJECT,2,pos.y);
