@@ -69,7 +69,7 @@ function editMeshDimensions(event){
 	dir = vector.sub( camera.position ).normalize();
 	distance = - camera.position.y / dir.y;
 	pos = camera.position.clone().add( dir.multiplyScalar( distance ) );
-	ModifyMesh.updateDimensions(SELECTED_OBJECT,1,pos.x);
+	ModifyMesh.updateDimensions(SELECTED_OBJECT,2,pos.x);
 }
 
 function grid_clicked(event){
