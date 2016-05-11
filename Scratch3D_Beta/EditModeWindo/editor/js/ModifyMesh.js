@@ -1,9 +1,9 @@
 ModifyMesh = {}
 
 ModifyMesh.updateDimensions = function(mesh,sideID, dist){
+		console.log("Modify Updated 2 ");
 		vertices = mesh.geometry.attributes.position.array;
 		mesh.geometry.computeBoundingBox();
-		console.log("Modify Updated");
 		
 		//Alters the max x width of the object
 		var xStepCount = [];
