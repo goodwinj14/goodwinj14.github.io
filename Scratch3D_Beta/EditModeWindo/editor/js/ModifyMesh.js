@@ -1,7 +1,6 @@
 ModifyMesh = {}
-var called = 0;
+
 ModifyMesh.updateDimensions = function(geometry,sideID, dist){
-		called++;
 		vertices = geometry.attributes.position.array;
 		geometry.computeBoundingBox();
 		//Alters the max x width of the object
@@ -14,7 +13,9 @@ ModifyMesh.updateDimensions = function(geometry,sideID, dist){
 		}
 		
 		if(sideID==0){
+			var dd = dist;
 			minPoint = geometry.boundingBox.min.x;
+			maxPoint = geometry.boundingBox.max.x;
 			length = maxPoint-minPoint;
 			xStepDist = dist - minPoint;
 
