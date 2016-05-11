@@ -1,8 +1,9 @@
 ModifyMesh = {}
 
-ModifyMesh.updateDimensions = function(geometry,sideID, dist){
-		vertices = geometry.attributes.position.array;
-		geometry.computeBoundingBox();
+ModifyMesh.updateDimensions = function(mesh,sideID, dist){
+		vertices = mesh.geometry.attributes.position.array;
+		mesh.geometry.computeBoundingBox();
+		console.log("Modify Updated");
 		
 		//Alters the max x width of the object
 		var xStepCount = [];
@@ -15,8 +16,8 @@ ModifyMesh.updateDimensions = function(geometry,sideID, dist){
 		
 		if(sideID==0){
 			var dd = dist;
-			minPoint = geometry.boundingBox.min.x;
-			maxPoint = geometry.boundingBox.max.x;
+			minPoint = mesh.geometry.boundingBox.min.x;
+			maxPoint = mesh.geometry.boundingBox.max.x;
 			length = maxPoint-minPoint;
 			xStepDist = dist - minPoint;
 			
@@ -25,19 +26,19 @@ ModifyMesh.updateDimensions = function(geometry,sideID, dist){
 				//	geometry.attributes.position.array[i] = minPoint-((minPoint-geometry.attributes.position.array[i])*dist);
 				//}
 				if(dist>0){
-					if(minPoint!=vertices[i]&&vertices[i]!=geometry.boundingBox.max.x){
+					if(minPoint!=vertices[i]&&vertices[i]!=mesh.geometry.boundingBox.max.x){
 						vertices[i] = minPoint+(xStepDist*(Math.abs(vertices[i]-minPoint)/length));
 						
 					}
-					else if(vertices[i]==geometry.boundingBox.max.x){
+					else if(vertices[i]== mesh.geometry.boundingBox.max.x){
 						vertices[i] = dist;
 					}
 				}else{
-					if(minPoint!=vertices[i]&&vertices[i]!=geometry.boundingBox.max.x){
+					if(minPoint!=vertices[i]&&vertices[i]!=mesh.geometry.boundingBox.max.x){
 					//vertices[i] = minPoint+(xStepDist*(Math.abs(vertices[i]-minPoint)/length));
 						
 					}
-					else if(vertices[i]==geometry.boundingBox.max.x){
+					else if(vertices[i]==mesh.geometry.boundingBox.max.x){
 						vertices[i] = -1*dist;
 					}
 				}

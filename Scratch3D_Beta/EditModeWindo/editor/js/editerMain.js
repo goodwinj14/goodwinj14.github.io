@@ -84,7 +84,6 @@ EDITOR.update_grid = function(){
 EDITOR.add_shape = function(shape){
 			obj = SHAPES.add(shape);
 			scene.add(obj);
-			console.log("Check Obj",obj);
 			MOVE_OBJ = obj;
 			SELECTED_OBJECT = obj;
 			MOVE_OBJ_ACTIVE=true;

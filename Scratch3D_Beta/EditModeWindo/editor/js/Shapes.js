@@ -48,7 +48,6 @@ function newSphere(width,height,depth){
 	console.log(geometry);
 	var material = new THREE.MeshNormalMaterial();
 	var shape = new THREE.Mesh( geometry, material );
-	shape.position.x = 1;
 	return shape;
 }
 
