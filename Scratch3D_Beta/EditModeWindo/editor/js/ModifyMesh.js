@@ -86,5 +86,5 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 				}
 			}
 		}*/
-		geometry.attributes.position.needsUpdate = true;
+		mesh.geometry.attributes.position.needsUpdate = true;
 	}	
