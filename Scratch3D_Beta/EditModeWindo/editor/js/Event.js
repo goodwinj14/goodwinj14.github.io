@@ -70,7 +70,7 @@ function editMeshDimensions(event){
 	//distance = - camera.position.y / dir.y;
 	distance = - camera.position.x / dir.x;
 	pos = camera.position.clone().add( dir.multiplyScalar( distance ) );
-	console.log("y", pos.y);
+	console.log("pos.y",pos.y);
 	ModifyMesh.updateDimensions(SELECTED_OBJECT,2,pos.y);
 }
 
