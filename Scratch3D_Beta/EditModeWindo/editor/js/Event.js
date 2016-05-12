@@ -73,6 +73,7 @@ function editMeshDimensions(event){
 	SELECTED_OBJECT.matrixWorldNeedsUpdate = true;
 	SELECTED_OBJECT.updateMatrixWorld ();
 	SELECTED.updateHelperPosition(SELECTED_OBJECT);
+	console.log(SELECTED_OBJECT);
 
 }
 

@@ -294,7 +294,6 @@ THREE.TrackballControls = function ( object, domElement ) {
 	};
 
 	this.update = function () {
-		console.log("Check 3");
 		_eye.subVectors( _this.object.position, _this.target );
 
 		if ( ! _this.noRotate ) {
