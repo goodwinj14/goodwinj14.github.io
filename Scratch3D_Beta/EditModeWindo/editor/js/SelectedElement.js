@@ -21,7 +21,7 @@ SELECTED.init = function(object){
 	shapeHelpers.name="Points";
 	size = 0.04;
 	right_fwd_coner = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial() );
-	right_fwd_coner.position.set(boundingBox.max.x,boundingBox.min.y,boundingBox.max.z);
+	right_fwd_coner.position.set(right_fwd_coner.position.set(boundingBox.max.x,boundingBox.min.y,object.position.z);
 	right_fwd_coner.material.color = new THREE.Color("rgb(0, 255, 30)");
 
 	Left_fwd_coner = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial() );
@@ -67,7 +67,7 @@ SELECTED.select = function(event){
 	boundingBox = avtive_Object.geometry.boundingBox;
 	//boundingBox.setFromObject( avtive_Object );
 
-	//right_fwd_coner.position.set(boundingBox.max.x,boundingBox.min.y,avtive_Object.position.z);
+	right_fwd_coner.position.set(boundingBox.max.x,boundingBox.min.y,avtive_Object.position.z);
 	Left_fwd_coner.position.set(boundingBox.min.x*avtive_Object.scale.x,boundingBox.min.y*avtive_Object.scale.y,boundingBox.max.z*avtive_Object.scale.z);
 	Left_back_coner.position.set(boundingBox.min.x*avtive_Object.scale.x,boundingBox.min.y*avtive_Object.scale.y,boundingBox.min.z*avtive_Object.scale.z);
 	right_back_coner.position.set(boundingBox.max.x*avtive_Object.scale.x,boundingBox.min.y*avtive_Object.scale.y,boundingBox.min.z*avtive_Object.scale.z);
