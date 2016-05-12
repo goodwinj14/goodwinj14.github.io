@@ -73,10 +73,14 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 			}
 		}
 		if(sideID==5){
-			maxPoint = geometry.boundingBox.max.z;
+			minPoint = mesh.geometry.boundingBox.min.z;
+			maxPoint = mesh.geometry.boundingBox.max.z;
+			length = maxPoint-minPoint;
+			distNormalized = minPoint+(dist-(mesh.position.z+minPoint));
+			zStepDist = distNormalized- maxPoint;
 			for (var i = 2; i < vertices.length; i+=3) {
-				if(dist>0){
-					vertices[i] = maxPoint-((maxPoint-vertices[i])*dist);
+				if(minPoint!=vertices[i]){
+					vertices[i] = minPoint+(zStepDist*(Math.abs(vertices[i]-minPoint)/length));
 				}
 			}
 		}
