@@ -36,8 +36,8 @@ SELECTED.init = function(object){
 	face_2.name = "face_1";
 
 	face_3 = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial() );
-	face_3.position.set(boundingBox.max.x,boundingBox.min.y,boundingBox.min.z);
-	right_back_coner.material.color = new THREE.Color("rgb(0, 255, 30)");
+	face_3.position.set(0,boundingBox.min.y,boundingBox.max.z);
+	face_3.material.color = new THREE.Color("rgb(0, 255, 30)");
 
 	top_center_coner = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial() );
 	top_center_coner.position.set(((boundingBox.max.x-Math.abs(boundingBox.min.x)))/2,boundingBox.max.y+size,(boundingBox.max.z-Math.abs(boundingBox.min.z))/2);
