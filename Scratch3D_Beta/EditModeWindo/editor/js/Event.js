@@ -71,6 +71,8 @@ function editMeshDimensions(event){
 	distance = - camera.position.y / dir.y;
 	pos = camera.position.clone().add( dir.multiplyScalar( distance ) );
 	ModifyMesh.updateDimensions(SELECTED_OBJECT,CORNER_SELECTED.name,pos);
+	SELECTED_OBJECT.matrix.setPosition(1,1,1);
+	SELECTED_OBJECT.matrixAutoUpdate = false;
 	SELECTED_OBJECT.matrixWorldNeedsUpdate = true;
 	SELECTED.updateHelperPosition(SELECTED_OBJECT);
 
