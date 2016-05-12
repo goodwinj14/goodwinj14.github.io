@@ -25,6 +25,7 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 					vertices[i] = minPoint+(xStepDist*(Math.abs(vertices[i]-minPoint)/length));
 				}
 			}
+			mesh.position.x = mesh.position.x + (dist.x - length);
 		}
 		//Alters the min x width of the object
 		if(sideID=="face_1"){
@@ -84,5 +85,6 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 				}
 			}
 		}
+		mesh.geometry.center();
 		mesh.geometry.attributes.position.needsUpdate = true;
 	}	
