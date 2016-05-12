@@ -13,11 +13,11 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 			}
 		}
 		
-		if(sideID==0){
+		if(sideID=="face_0"){
 			minPoint = mesh.geometry.boundingBox.min.x;
 			maxPoint = mesh.geometry.boundingBox.max.x;
 			length = maxPoint-minPoint;
-			distNormalized = maxPoint+(dist-(mesh.position.x+maxPoint));
+			distNormalized = maxPoint+(dist.x-(mesh.position.x+maxPoint));
 			xStepDist = distNormalized- minPoint;
 
 			for (var i = 0; i < vertices.length; i+=3) {
