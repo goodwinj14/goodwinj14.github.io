@@ -58,7 +58,7 @@ function obj_position_change(event){
 }
 
 function editMeshDimensions(event){
-	console.log(CORNER_SELECTED.name);
+	console.log(CORNER_SELECTED);
 		vector = new THREE.Vector3();
 	vector.set(
    		 ( event.clientX / renderer.domElement.width ) * 2 - 1,
@@ -71,6 +71,7 @@ function editMeshDimensions(event){
 	distance = - camera.position.y / dir.y;
 	pos = camera.position.clone().add( dir.multiplyScalar( distance ) );
 	ModifyMesh.updateDimensions(SELECTED_OBJECT,CORNER_SELECTED.name,pos);
+	SELECTED_OBJECT.updateMatrix();
 	SELECTED.updateHelperPosition(SELECTED_OBJECT);
 
 }
