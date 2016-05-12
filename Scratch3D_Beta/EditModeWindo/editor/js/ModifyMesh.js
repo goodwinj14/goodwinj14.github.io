@@ -64,8 +64,8 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 			minPoint = mesh.geometry.boundingBox.min.z;
 			maxPoint = mesh.geometry.boundingBox.max.z;
 			length = maxPoint-minPoint;
-			zStepDist = distNormalized- minPoint;
 			distNormalized = maxPoint+(dist-(mesh.position.z+maxPoint));
+			zStepDist = distNormalized- minPoint;
 			for (var i = 2; i < vertices.length; i+=3) {
 				if(minPoint!=vertices[i]){
 					vertices[i] = minPoint+(zStepDist*(Math.abs(vertices[i]-minPoint)/length));
