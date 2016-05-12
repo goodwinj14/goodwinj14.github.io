@@ -25,9 +25,9 @@ SELECTED.init = function(object){
 	face_0.material.color = new THREE.Color("rgb(0, 255, 30)");
 	face_0.name = "face_0";
 
-	Left_fwd_coner = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial() );
-	Left_fwd_coner.position.set(boundingBox.min.x,boundingBox.min.y,boundingBox.max.z);
-	Left_fwd_coner.material.color = new THREE.Color("rgb(0, 255, 30)");
+	face_1 = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial() );
+	face_1.position.set(boundingBox.min.x,boundingBox.min.y,0);
+	face_1.material.color = new THREE.Color("rgb(0, 255, 30)");
 
 	Left_back_coner = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial() );
 	Left_back_coner.position.set(boundingBox.min.x,boundingBox.min.y,boundingBox.min.z);
@@ -42,7 +42,7 @@ SELECTED.init = function(object){
 	top_center_coner.material.color = new THREE.Color("rgb(0, 255, 30)");
 
 	shapeHelpers.add(face_0);
-	shapeHelpers.add(Left_fwd_coner);
+	shapeHelpers.add(face_1);
 	shapeHelpers.add(right_back_coner);
 	shapeHelpers.add(Left_back_coner);
 	shapeHelpers.add(top_center_coner);
@@ -69,10 +69,10 @@ SELECTED.select = function(event){
 	//boundingBox.setFromObject( avtive_Object );
 
 	face_0.position.set(boundingBox.max.x,boundingBox.min.y,0);
-	Left_fwd_coner.position.set(boundingBox.min.x*avtive_Object.scale.x,boundingBox.min.y*avtive_Object.scale.y,boundingBox.max.z*avtive_Object.scale.z);
+	face_1.position.set(boundingBox.min.x*avtive_Object.scale.x,boundingBox.min.y*avtive_Object.scale.y,boundingBox.max.z*avtive_Object.scale.z);
 	Left_back_coner.position.set(boundingBox.min.x*avtive_Object.scale.x,boundingBox.min.y*avtive_Object.scale.y,boundingBox.min.z*avtive_Object.scale.z);
 	right_back_coner.position.set(boundingBox.max.x*avtive_Object.scale.x,boundingBox.min.y*avtive_Object.scale.y,boundingBox.min.z*avtive_Object.scale.z);
-	top_center_coner.position.set(Left_fwd_coner.position.x+((face_0.position.x-Left_fwd_coner.position.x)/2),boundingBox.max.y*avtive_Object.scale.y+size,Left_fwd_coner.position.z+((right_back_coner.position.z-right_fwd_coner.position.z)/2));
+	top_center_coner.position.set(face_1.position.x+((face_0.position.x-face_1.position.x)/2),boundingBox.max.y*avtive_Object.scale.y+size,face_1.position.z+((right_back_coner.position.z-right_fwd_coner.position.z)/2));
 	avtive_Object.position.x = avtive_Object.position.x+((avtive_Object.scale.x-(boundingBox.max.x-boundingBox.min.x))/2);
 	avtive_Object.position.y = avtive_Object.position.y+((avtive_Object.scale.y-(boundingBox.max.y-boundingBox.min.y))/2);
 	avtive_Object.position.z = avtive_Object.position.z+((avtive_Object.scale.z-(boundingBox.max.z-boundingBox.min.z))/2);
