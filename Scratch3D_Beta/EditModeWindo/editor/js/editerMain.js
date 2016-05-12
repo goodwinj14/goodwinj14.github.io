@@ -31,7 +31,7 @@ EDITOR.intiEditor = function(viewport){
 			camera.lookAt(vector);
 
 
-			controls = new THREE.TrackballControls( camera);
+			controls = new THREE.TrackballControls( camera, viewWindow);
 
 				controls.rotateSpeed = 1.0;
 				controls.zoomSpeed = 1.2;
