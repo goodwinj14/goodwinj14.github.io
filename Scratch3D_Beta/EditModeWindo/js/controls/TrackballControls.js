@@ -294,7 +294,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 	};
 
 	this.update = function () {
-
+		console.log("Check 2");
 		_eye.subVectors( _this.object.position, _this.target );
 
 		if ( ! _this.noRotate ) {
@@ -303,13 +303,13 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 		}
 
-		/*if ( ! _this.noZoom ) {
+		if ( ! _this.noZoom ) {
 
 			_this.zoomCamera();
 
 		}
 
-		if ( ! _this.noPan ) {
+		/*if ( ! _this.noPan ) {
 
 			_this.panCamera();
 
