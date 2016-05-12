@@ -295,7 +295,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 	this.update = function () {
 
-		/*_eye.subVectors( _this.object.position, _this.target );
+		_eye.subVectors( _this.object.position, _this.target );
 
 		if ( ! _this.noRotate ) {
 
@@ -327,7 +327,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 			lastPosition.copy( _this.object.position );
 
-		}*/
+		}
 
 	};
 
