@@ -73,7 +73,7 @@ function editMeshDimensions(event){
 	console.log("pos.y",pos.z);
 	console.log("dir",dir);
 	console.log("distance",distance);
-	ModifyMesh.updateDimensions(SELECTED_OBJECT,2,pos.y);
+	ModifyMesh.updateDimensions(SELECTED_OBJECT,4,pos.z);
 }
 
 function grid_clicked(event){
