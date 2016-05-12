@@ -33,21 +33,23 @@ SELECTED.init = function(object){
 	face_2 = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial() );
 	face_2.position.set(0,boundingBox.min.y,boundingBox.max.z);
 	face_2.material.color = new THREE.Color("rgb(0, 255, 30)");
-	face_2.name = "face_1";
+	face_2.name = "face_2";
 
 	face_3 = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial() );
 	face_3.position.set(0,boundingBox.min.y,boundingBox.max.z);
 	face_3.material.color = new THREE.Color("rgb(0, 255, 30)");
+	face_3.name = "face_3"
 
-	top_center_coner = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial() );
-	top_center_coner.position.set(((boundingBox.max.x-Math.abs(boundingBox.min.x)))/2,boundingBox.max.y+size,(boundingBox.max.z-Math.abs(boundingBox.min.z))/2);
-	top_center_coner.material.color = new THREE.Color("rgb(0, 255, 30)");
-
+	face_4 = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial() );
+	face_4.position.set(0,boundingBox.max.y,0);
+	face_4.material.color = new THREE.Color("rgb(0, 255, 30)");
+	face_4.name = "face_4";
+	
 	shapeHelpers.add(face_0);
 	shapeHelpers.add(face_1);
 	shapeHelpers.add(face_3);
 	shapeHelpers.add(face_2);
-	shapeHelpers.add(top_center_coner);
+	shapeHelpers.add(face_4);
 	scene.add( shapeHelpers );
 
 	//shapeHelpers.position.x = object.position.x;
@@ -63,7 +65,7 @@ SELECTED.init = function(object){
 	shapeHelpers.position.z = object.position.z;
 	}
 }
-
+ 
 SELECTED.select = function(event){
 	avtive_Object = event.detail;
 	avtive_Object.geometry.computeBoundingBox();
@@ -74,7 +76,7 @@ SELECTED.select = function(event){
 	face_1.position.set(boundingBox.min.x,boundingBox.min.y,0);
 	face_2.position.set(0,boundingBox.min.y,boundingBox.min.z);
 	face_3.position.set(0,boundingBox.min.y,boundingBox.max.z);
-	top_center_coner.position.set(face_1.position.x+((face_0.position.x-face_1.position.x)/2),boundingBox.max.y*avtive_Object.scale.y+size,face_1.position.z+((face_3.position.z-face_0.position.z)/2));
+	face_4.position.set(0,boundingBox.max.y,0);
 	avtive_Object.position.x = avtive_Object.position.x+((avtive_Object.scale.x-(boundingBox.max.x-boundingBox.min.x))/2);
 	avtive_Object.position.y = avtive_Object.position.y+((avtive_Object.scale.y-(boundingBox.max.y-boundingBox.min.y))/2);
 	avtive_Object.position.z = avtive_Object.position.z+((avtive_Object.scale.z-(boundingBox.max.z-boundingBox.min.z))/2);
