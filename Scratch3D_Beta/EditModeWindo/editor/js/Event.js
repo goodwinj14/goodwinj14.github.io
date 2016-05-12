@@ -58,7 +58,7 @@ function obj_position_change(event){
 }
 
 function editMeshDimensions(event){
-	console.log(.1*event.movementX);
+	console.log(CORNER_SELECTED.name);
 		vector = new THREE.Vector3();
 	vector.set(
    		 ( event.clientX / renderer.domElement.width ) * 2 - 1,

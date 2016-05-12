@@ -111,10 +111,10 @@ SELECTED.helperHoverCheck = function(event){
 					
 					intersects[0].object.material.color.g=0;
 					intersects[0].object.material.color.b=0;
-					CORNER_SELECTED = intersects[0].object.material.color;
+					CORNER_SELECTED = intersects[0].object;
 				}else if(CORNER_SELECTED!=null && !MOUSE_IS_DOWN){
-					CORNER_SELECTED.g=1;
-					CORNER_SELECTED.b=1;
+					CORNER_SELECTED.material.color.g=1;
+					CORNER_SELECTED.material.color.b=1;
 					CORNER_SELECTED = null;
 				}
 }
