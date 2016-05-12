@@ -69,7 +69,7 @@ SELECTED.select = function(event){
 	//boundingBox.setFromObject( avtive_Object );
 
 	face_0.position.set(boundingBox.max.x,boundingBox.min.y,0);
-	face_1.position.set(boundingBox.min.x*avtive_Object.scale.x,boundingBox.min.y*avtive_Object.scale.y,boundingBox.max.z*avtive_Object.scale.z);
+	face_1.position.set(boundingBox.min.x,boundingBox.min.y,0);
 	Left_back_coner.position.set(boundingBox.min.x*avtive_Object.scale.x,boundingBox.min.y*avtive_Object.scale.y,boundingBox.min.z*avtive_Object.scale.z);
 	right_back_coner.position.set(boundingBox.max.x*avtive_Object.scale.x,boundingBox.min.y*avtive_Object.scale.y,boundingBox.min.z*avtive_Object.scale.z);
 	top_center_coner.position.set(face_1.position.x+((face_0.position.x-face_1.position.x)/2),boundingBox.max.y*avtive_Object.scale.y+size,face_1.position.z+((right_back_coner.position.z-face_0.position.z)/2));
