@@ -56,10 +56,6 @@ EDITOR.intiEditor = function(viewport){
 				}else{
 					//controls.update();
 				}
-
-				if(EDITOR.TEST_OBJ!=null){
-					//console.log("needs upDating again  ", EDITOR.TEST_OBJ.geometry.verticesNeedUpdate); 
-				}
 			}
 				
 			var render = function () {
