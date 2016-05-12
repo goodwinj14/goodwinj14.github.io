@@ -73,7 +73,7 @@ SELECTED.select = function(event){
 	face_0.position.set(boundingBox.max.x,boundingBox.min.y,0);
 	face_1.position.set(boundingBox.min.x,boundingBox.min.y,0);
 	face_2.position.set(0,boundingBox.min.y,boundingBox.min.z);
-	face_3.position.set(0,boundingBox.min.y,boundingBox.min.z);
+	face_3.position.set(0,boundingBox.min.y,boundingBox.max.z);
 	top_center_coner.position.set(face_1.position.x+((face_0.position.x-face_1.position.x)/2),boundingBox.max.y*avtive_Object.scale.y+size,face_1.position.z+((face_3.position.z-face_0.position.z)/2));
 	avtive_Object.position.x = avtive_Object.position.x+((avtive_Object.scale.x-(boundingBox.max.x-boundingBox.min.x))/2);
 	avtive_Object.position.y = avtive_Object.position.y+((avtive_Object.scale.y-(boundingBox.max.y-boundingBox.min.y))/2);
