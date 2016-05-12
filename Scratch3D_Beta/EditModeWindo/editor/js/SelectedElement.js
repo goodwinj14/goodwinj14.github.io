@@ -20,9 +20,9 @@ SELECTED.init = function(object){
 	shapeHelpers = new THREE.Object3D();
 	shapeHelpers.name="Points";
 	size = 0.04;
-	right_fwd_coner = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial() );
-	right_fwd_coner.position.set(boundingBox.max.x,boundingBox.min.y,0);
-	right_fwd_coner.material.color = new THREE.Color("rgb(0, 255, 30)");
+	face_0 = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial() );
+	face_0.position.set(boundingBox.max.x,boundingBox.min.y,0);
+	face_0.material.color = new THREE.Color("rgb(0, 255, 30)");
 
 	Left_fwd_coner = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial() );
 	Left_fwd_coner.position.set(boundingBox.min.x,boundingBox.min.y,boundingBox.max.z);
@@ -40,7 +40,7 @@ SELECTED.init = function(object){
 	top_center_coner.position.set(((boundingBox.max.x-Math.abs(boundingBox.min.x)))/2,boundingBox.max.y+size,(boundingBox.max.z-Math.abs(boundingBox.min.z))/2);
 	top_center_coner.material.color = new THREE.Color("rgb(0, 255, 30)");
 
-	shapeHelpers.add(right_fwd_coner);
+	shapeHelpers.add(face_0);
 	shapeHelpers.add(Left_fwd_coner);
 	shapeHelpers.add(right_back_coner);
 	shapeHelpers.add(Left_back_coner);
@@ -67,11 +67,11 @@ SELECTED.select = function(event){
 	boundingBox = avtive_Object.geometry.boundingBox;
 	//boundingBox.setFromObject( avtive_Object );
 
-	right_fwd_coner.position.set(boundingBox.max.x,boundingBox.min.y,0);
+	face_0.position.set(boundingBox.max.x,boundingBox.min.y,0);
 	Left_fwd_coner.position.set(boundingBox.min.x*avtive_Object.scale.x,boundingBox.min.y*avtive_Object.scale.y,boundingBox.max.z*avtive_Object.scale.z);
 	Left_back_coner.position.set(boundingBox.min.x*avtive_Object.scale.x,boundingBox.min.y*avtive_Object.scale.y,boundingBox.min.z*avtive_Object.scale.z);
 	right_back_coner.position.set(boundingBox.max.x*avtive_Object.scale.x,boundingBox.min.y*avtive_Object.scale.y,boundingBox.min.z*avtive_Object.scale.z);
-	top_center_coner.position.set(Left_fwd_coner.position.x+((right_fwd_coner.position.x-Left_fwd_coner.position.x)/2),boundingBox.max.y*avtive_Object.scale.y+size,Left_fwd_coner.position.z+((right_back_coner.position.z-right_fwd_coner.position.z)/2));
+	top_center_coner.position.set(Left_fwd_coner.position.x+((face_0.position.x-Left_fwd_coner.position.x)/2),boundingBox.max.y*avtive_Object.scale.y+size,Left_fwd_coner.position.z+((right_back_coner.position.z-right_fwd_coner.position.z)/2));
 	avtive_Object.position.x = avtive_Object.position.x+((avtive_Object.scale.x-(boundingBox.max.x-boundingBox.min.x))/2);
 	avtive_Object.position.y = avtive_Object.position.y+((avtive_Object.scale.y-(boundingBox.max.y-boundingBox.min.y))/2);
 	avtive_Object.position.z = avtive_Object.position.z+((avtive_Object.scale.z-(boundingBox.max.z-boundingBox.min.z))/2);
