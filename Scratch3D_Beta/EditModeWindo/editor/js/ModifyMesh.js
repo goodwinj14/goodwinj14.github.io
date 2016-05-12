@@ -60,7 +60,7 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 				}
 			}
 		}
-		if(sideID=="face_2"){
+		if(sideID=="face_3"){
 			minPoint = mesh.geometry.boundingBox.min.z;
 			maxPoint = mesh.geometry.boundingBox.max.z;
 			length = maxPoint-minPoint;
@@ -72,7 +72,7 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 				}
 			}
 		}
-		if(sideID=="face_3"){
+		if(sideID=="face_2"){
 			minPoint = mesh.geometry.boundingBox.min.z;
 			maxPoint = mesh.geometry.boundingBox.max.z;
 			length = maxPoint-minPoint;
