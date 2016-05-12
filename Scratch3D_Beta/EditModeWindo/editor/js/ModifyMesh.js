@@ -73,6 +73,7 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 					vertices[i] = minPoint+(zStepDist*(Math.abs(vertices[i]-minPoint)/length));
 				}
 			}
+			mesh.position.z = mesh.position.z + ((dist.z-(mesh.position.z+maxPoint))/2);
 		}
 		if(sideID=="face_2"){
 			minPoint = mesh.geometry.boundingBox.min.z;
@@ -85,6 +86,7 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 					vertices[i] = maxPoint+(xStepDist*(Math.abs(vertices[i]-maxPoint)/length));
 				}
 			}
+			mesh.position.z = mesh.position.z + ((dist.z-(mesh.position.z+minPoint))/2);
 		}
 		mesh.geometry.center();
 		mesh.geometry.attributes.position.needsUpdate = true;
