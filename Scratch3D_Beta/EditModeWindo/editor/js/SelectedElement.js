@@ -44,7 +44,7 @@ SELECTED.init = function(object){
 	face_4.position.set(0,boundingBox.max.y,0);
 	face_4.material.color = new THREE.Color("rgb(0, 255, 30)");
 	face_4.name = "face_4";
-	
+
 	shapeHelpers.add(face_0);
 	shapeHelpers.add(face_1);
 	shapeHelpers.add(face_3);
@@ -86,6 +86,24 @@ SELECTED.select = function(event){
 	shapeHelpers.position.z = avtive_Object.position.z;
 	avtive_Object.material.opacity = .7;
 	scene.add( shapeHelpers );
+	avtive_Object.material.opacity = .7;
+}
+
+SELECTED.updateHelperPosition = function(obj){
+	avtive_Object = obj;
+	avtive_Object.geometry.computeBoundingBox();
+	boundingBox = avtive_Object.geometry.boundingBox;
+	//boundingBox.setFromObject( avtive_Object );
+
+	face_0.position.set(boundingBox.max.x,boundingBox.min.y,0);
+	face_1.position.set(boundingBox.min.x,boundingBox.min.y,0);
+	face_2.position.set(0,boundingBox.min.y,boundingBox.min.z);
+	face_3.position.set(0,boundingBox.min.y,boundingBox.max.z);
+	face_4.position.set(0,boundingBox.max.y,0);
+
+	shapeHelpers.position.x = avtive_Object.position.x;
+	shapeHelpers.position.y = avtive_Object.position.y;
+	shapeHelpers.position.z = avtive_Object.position.z;
 	avtive_Object.material.opacity = .7;
 }
 
