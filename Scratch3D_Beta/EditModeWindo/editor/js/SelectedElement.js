@@ -23,6 +23,7 @@ SELECTED.init = function(object){
 	face_0 = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial() );
 	face_0.position.set(boundingBox.max.x,boundingBox.min.y,0);
 	face_0.material.color = new THREE.Color("rgb(0, 255, 30)");
+	face_0.name = "face_0";
 
 	Left_fwd_coner = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial() );
 	Left_fwd_coner.position.set(boundingBox.min.x,boundingBox.min.y,boundingBox.max.z);
