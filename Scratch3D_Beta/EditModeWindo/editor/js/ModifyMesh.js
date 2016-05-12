@@ -25,7 +25,7 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 					vertices[i] = minPoint+(xStepDist*(Math.abs(vertices[i]-minPoint)/length));
 				}
 			}
-			mesh.position.x = mesh.position.x + ((dist.x - length)/2);
+			mesh.position.x = mesh.position.x + ((dist.x-(mesh.position.x+maxPoint))/2);
 		}
 		//Alters the min x width of the object
 		if(sideID=="face_1"){
