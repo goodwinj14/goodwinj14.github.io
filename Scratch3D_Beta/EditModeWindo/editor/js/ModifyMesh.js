@@ -39,6 +39,7 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 					vertices[i] = maxPoint+(xStepDist*(Math.abs(vertices[i]-maxPoint)/length));
 				}
 			}
+			mesh.position.x = mesh.position.x - ((dist.x-(mesh.position.x+minPoint))/2);
 		}
 		//Alters the max y width of the object
 		if(sideID=="face_4"){
