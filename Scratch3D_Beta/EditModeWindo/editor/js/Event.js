@@ -70,11 +70,10 @@ function editMeshDimensions(event){
 	distance = - camera.position.y / dir.y;
 	pos = camera.position.clone().add( dir.multiplyScalar( distance ) );
 	ModifyMesh.updateDimensions(SELECTED_OBJECT,CORNER_SELECTED.name,pos);
-	SELECTED_OBJECT.updateMatrix();
-	SELECTED_OBJECT.matrixWorldNeedsUpdate = true;
-	SELECTED_OBJECT.updateMatrixWorld ();
+	THREE.GeometryUtils.center( SELECTED_OBJECT.geometry );
+	
 	SELECTED.updateHelperPosition(SELECTED_OBJECT);
-	console.log(SELECTED_OBJECT);
+	console.log("Update1: ", SELECTED_OBJECT);
 
 }
 
