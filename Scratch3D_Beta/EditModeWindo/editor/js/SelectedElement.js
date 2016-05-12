@@ -21,7 +21,7 @@ SELECTED.init = function(object){
 	shapeHelpers.name="Points";
 	size = 0.04;
 	right_fwd_coner = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial() );
-	right_fwd_coner.position.set(right_fwd_coner.position.set(boundingBox.max.x,boundingBox.min.y,object.position.z);
+	right_fwd_coner.position.set(boundingBox.max.x,boundingBox.min.y,object.position.z);
 	right_fwd_coner.material.color = new THREE.Color("rgb(0, 255, 30)");
 
 	Left_fwd_coner = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial() );
