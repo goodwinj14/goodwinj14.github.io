@@ -54,7 +54,7 @@ EDITOR.intiEditor = function(viewport){
 				if(OBJECT_IS_SELECTED && MOUSE_IS_DOWN){
 					
 				}else{
-					//controls.update();
+					controls.update();
 				}
 			}
 				
