@@ -36,7 +36,7 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 			length = maxPoint-minPoint;
 			distNormalized = minPoint+(dist.x-(mesh.position.x+minPoint));
 			xStepDist = distNormalized- maxPoint;
-			if(distNormalized>mesh.position.x+maxPoint){
+			if(distNormalized<mesh.position.x+maxPoint){
 				for (var i = 0; i < vertices.length; i+=3) {
 					if(maxPoint!=vertices[i]){
 						vertices[i] = maxPoint+(xStepDist*(Math.abs(vertices[i]-maxPoint)/length));
