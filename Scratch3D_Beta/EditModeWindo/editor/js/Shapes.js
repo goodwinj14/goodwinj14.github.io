@@ -66,33 +66,6 @@ function newTube(){
 }
 
 function newPyramid(){
-/*	var geometry = new THREE.BufferGeometry();
-
-var vertices = new Float32Array( [
-    new THREE.Vector3( -0.5, 0, -0.5),
-    new THREE.Vector3( 0.5, 0, -0.5),
-    new THREE.Vector3( -0.5, 0, 0.5 ),
-    new THREE.Vector3( 0.5, 0, 0.5 ),
-    new THREE.Vector3( 0, 1, 0)
-]);
-
-geometry.attributes.faces = [
-    new THREE.Face3( 0, 1, 2 ),
-    new THREE.Face3( 2, 1, 3 ),
-    new THREE.Face3( 0, 2, 4 ),
-    new THREE.Face3( 1, 0, 4 ),
-    new THREE.Face3( 3, 1, 4 ),
-    new THREE.Face3( 2, 3, 4 )
-]; 
-	geometry.addAttribute( 'position', new THREE.BufferAttribute( vertices, 3 ) );
-
-	var material = new THREE.MeshNormalMaterial();
-	var shape = new THREE.Mesh( geometry, material );
-	shape.rotation.x = 0;
-	shape.rotation.y = 0;
-	shape.rotation.z = 0;
-	shape.position = new THREE.Vector3(0, 0, 0);
-	console.log(shape);*/
 	var geometry = new THREE.BufferGeometry();
 // create a simple square shape. We duplicate the top left and bottom right
 // vertices because each vertex needs to appear once per triangle.
@@ -124,6 +97,7 @@ var vertices = new Float32Array( [
 
 // itemSize = 3 because there are 3 values (components) per vertex
 geometry.addAttribute( 'position', new THREE.BufferAttribute( vertices, 3 ) );
+geometry.computeVertexNormals();
 var material = new THREE.MeshBasicMaterial( { color: 0xff0000 } );
 var shape = new THREE.Mesh( geometry, material );
 	return shape;
