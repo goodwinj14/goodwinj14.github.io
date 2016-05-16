@@ -78,11 +78,11 @@ geometry.vertices = [
 
 geometry.faces = [
     new THREE.Face3( 0, 1, 2 ),
-    new THREE.Face3( 0, 2, 3 ),
-    new THREE.Face3( 1, 0, 4 ),
-    new THREE.Face3( 2, 1, 4 ),
-    new THREE.Face3( 3, 2, 4 ),
-    new THREE.Face3( 0, 3, 4 )
+    new THREE.Face3( 1, 2, 3 ),
+    new THREE.Face3( 0, 2, 4 ),
+    new THREE.Face3( 0, 1, 4 ),
+    new THREE.Face3( 1, 3, 4 ),
+    new THREE.Face3( 2, 3, 4 )
 ]; 
 	geometry.computeFaceNormals();
 	var material = new THREE.MeshNormalMaterial();
