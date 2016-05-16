@@ -52,7 +52,7 @@ function newSphere(width,height,depth){
 }
 
 function newCylinder(){
-	var geometry = new THREE.CylinderGeometry( .5, .5, 1, 32 );;
+	var geometry = new THREE.CylinderBufferGeometry( .5, .5, 1, 32 );;
 	var material = new THREE.MeshNormalMaterial();
 	var shape = new THREE.Mesh( geometry, material );
 	return shape;
@@ -69,7 +69,7 @@ function newTube(){
 }
 
 function newPyramid(){
-	var geometry = new THREE.CylinderGeometry( 0, .71, 1, 4 );
+	var geometry = new THREE.CylinderBufferGeometry( 0, .71, 1, 4 );
 	var material = new THREE.MeshNormalMaterial();
 	var shape = new THREE.Mesh( geometry, material );
 	shape.rotation.y=Math.PI/4;
@@ -77,7 +77,7 @@ function newPyramid(){
 }
 
 function newCicrle(){
-	var geometry = new THREE.CircleGeometry( .5, 32 );
+	var geometry = new THREE.CircleBufferGeometry( .5, 32 );
 	var material = new THREE.MeshNormalMaterial();
 	var shape = new THREE.Mesh( geometry, material );
 	shape.rotation.x= -Math.PI/2;
@@ -85,7 +85,7 @@ function newCicrle(){
 }
 
 function newPlane(){
-	var geometry = new THREE.PlaneGeometry( 1, 1, 2 );
+	var geometry = new THREE.PlaneBufferGeometry( 1, 1, 2 );
 	var material = new THREE.MeshNormalMaterial();
 	var shape = new THREE.Mesh( geometry, material );
 	shape.rotation.x= -Math.PI/2;
@@ -93,7 +93,7 @@ function newPlane(){
 }
 
 function newRing(){
-	var geometry = new THREE.RingGeometry( .25, .5, 32 );
+	var geometry = new THREE.RingBufferGeometry( .25, .5, 32 );
 	var material = new THREE.MeshNormalMaterial();
 	var shape = new THREE.Mesh( geometry, material );
 	shape.rotation.x= -Math.PI/2;
