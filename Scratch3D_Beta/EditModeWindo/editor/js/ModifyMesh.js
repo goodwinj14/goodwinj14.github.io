@@ -12,7 +12,7 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 				xStepCount.push(vertices[i]);
 			}
 		}
-		
+		console.log(mesh);
 		if(sideID=="face_0"){
 			minPoint = mesh.geometry.boundingBox.min.x;
 			maxPoint = mesh.geometry.boundingBox.max.x;
