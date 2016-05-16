@@ -64,14 +64,14 @@ function editMeshDimensions(event){
    		 - ( event.clientY / renderer.domElement.height ) * 2 + 1,
    		 0.5 );
 	vector.unproject( camera );
-
+	console.log("SELECTED_OBJECT: ",SELECTED_OBJECT);
 	dir = vector.sub( camera.position ).normalize();
 	//distance = - camera.position.y / dir.y;
 	distance = - camera.position.y / dir.y;
 	pos = camera.position.clone().add( dir.multiplyScalar( distance ) );
 	ModifyMesh.updateDimensions(SELECTED_OBJECT,CORNER_SELECTED.name,pos);
 	SELECTED.updateHelperPosition(SELECTED_OBJECT);
-	console.log("Update7: ");
+	
 
 }
 
