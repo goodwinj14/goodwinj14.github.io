@@ -97,7 +97,7 @@ geometry.attributes.faces = [
 // create a simple square shape. We duplicate the top left and bottom right
 // vertices because each vertex needs to appear once per triangle.
 var vertices = new Float32Array( [
-	-0.5, 0, -0.5
+	-0.5, 0, -0.5,
 	 0.5, 0, -0.5,
 	 -0.5, 0, 0.5,
 
@@ -119,7 +119,7 @@ var vertices = new Float32Array( [
 
 	 -0.5, 0, 0.5,
 	 0.5, 0, 0.5,
-	 2, 3, 4
+	 0, 1, 0
 ] );
 
 // itemSize = 3 because there are 3 values (components) per vertex
