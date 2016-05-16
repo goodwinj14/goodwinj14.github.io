@@ -90,6 +90,7 @@ geometry.faces = [
 	shape.rotation.x = 0;
 	shape.rotation.y = 0;
 	shape.rotation.z = 0;
+	console.log(shape);
 	return shape;
 }
 
