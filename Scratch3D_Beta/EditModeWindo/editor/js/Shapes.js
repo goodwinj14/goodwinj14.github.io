@@ -78,7 +78,7 @@ geometry.vertices = [
 
 geometry.faces = [
     new THREE.Face3( 0, 1, 2 ),
-    new THREE.Face3( 1, 2, 3 ),
+    new THREE.Face3( 2, 1, 3 ),
     new THREE.Face3( 0, 2, 4 ),
     new THREE.Face3( 0, 1, 4 ),
     new THREE.Face3( 1, 3, 4 ),
