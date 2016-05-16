@@ -98,7 +98,7 @@ var vertices = new Float32Array( [
 // itemSize = 3 because there are 3 values (components) per vertex
 geometry.addAttribute( 'position', new THREE.BufferAttribute( vertices, 3 ) );
 geometry.computeVertexNormals();
-var material = new THREE.MeshBasicMaterial( { color: 0xff0000 } );
+var material = new THREE.MeshNormalMaterial();
 var shape = new THREE.Mesh( geometry, material );
 	return shape;
 }
