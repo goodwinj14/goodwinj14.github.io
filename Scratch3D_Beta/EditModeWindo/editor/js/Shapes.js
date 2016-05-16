@@ -66,9 +66,9 @@ function newTube(){
 }
 
 function newPyramid(){
-	var geometry = new THREE.Geometry();
+	var geometry = new THREE.BufferGeometry();
 
-geometry.vertices = [
+geometry.attributes.vertices = [
     new THREE.Vector3( -0.5, 0, -0.5),
     new THREE.Vector3( 0.5, 0, -0.5),
     new THREE.Vector3( -0.5, 0, 0.5 ),
@@ -76,7 +76,7 @@ geometry.vertices = [
     new THREE.Vector3( 0, 1, 0)
 ];
 
-geometry.faces = [
+geometry.attributes.faces = [
     new THREE.Face3( 0, 1, 2 ),
     new THREE.Face3( 2, 1, 3 ),
     new THREE.Face3( 0, 2, 4 ),
