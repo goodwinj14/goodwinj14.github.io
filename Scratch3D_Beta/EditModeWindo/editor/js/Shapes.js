@@ -87,6 +87,7 @@ geometry.faces = [
 	geometry.computeFaceNormals();
 	var material = new THREE.MeshNormalMaterial();
 	var shape = new THREE.Mesh( geometry, material );
+	shape.rotation.y = -Math.PI * .5;
 	return shape;
 }
 
