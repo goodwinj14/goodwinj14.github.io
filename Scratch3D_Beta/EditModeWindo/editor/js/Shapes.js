@@ -62,9 +62,6 @@ function newTube(){
 	var geometry = new THREE.TorusBufferGeometry( .5, .25, 16, 100 );
 	var material = new THREE.MeshNormalMaterial();
 	var shape = new THREE.Mesh( geometry, material );
-	shape.position.z=-10;
-	shape.rotation.x=Math.PI/2;
-	
 	return shape;
 }
 
