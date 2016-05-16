@@ -66,7 +66,24 @@ function newTube(){
 }
 
 function newPyramid(){
-	var geometry = new THREE.CylinderBufferGeometry( 0, .71, 1, 4 );
+	var geometry = new THREE.Geometry();
+
+geometry.vertices = [
+    new THREE.Vector3( 0, 0, 0 ),
+    new THREE.Vector3( 0, 1, 0 ),
+    new THREE.Vector3( 1, 1, 0 ),
+    new THREE.Vector3( 1, 0, 0 ),
+    new THREE.Vector3( 0.5, 0.5, 1 )
+];
+
+geometry.faces = [
+    new THREE.Face3( 0, 1, 2 ),
+    new THREE.Face3( 0, 2, 3 ),
+    new THREE.Face3( 1, 0, 4 ),
+    new THREE.Face3( 2, 1, 4 ),
+    new THREE.Face3( 3, 2, 4 ),
+    new THREE.Face3( 0, 3, 4 )
+]; 
 	var material = new THREE.MeshNormalMaterial();
 	var shape = new THREE.Mesh( geometry, material );
 	shape.rotation.y=Math.PI/4;
