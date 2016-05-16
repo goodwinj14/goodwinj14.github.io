@@ -74,7 +74,7 @@ var vertices = new Float32Array( [
     new THREE.Vector3( -0.5, 0, 0.5 ),
     new THREE.Vector3( 0.5, 0, 0.5 ),
     new THREE.Vector3( 0, 1, 0)
-];
+]);
 
 /*geometry.attributes.faces = [
     new THREE.Face3( 0, 1, 2 ),
