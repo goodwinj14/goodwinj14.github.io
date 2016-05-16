@@ -69,11 +69,11 @@ function newPyramid(){
 	var geometry = new THREE.Geometry();
 
 geometry.vertices = [
-    new THREE.Vector3( 0, 0, 0 ),
-    new THREE.Vector3( 0, 1, 0 ),
-    new THREE.Vector3( 1, 1, 0 ),
-    new THREE.Vector3( 1, 0, 0 ),
-    new THREE.Vector3( 0.5, 0.5, 1 )
+    new THREE.Vector3( -0.5, 0, -0.5),
+    new THREE.Vector3( 0.5, 0, -0.5),
+    new THREE.Vector3( -0.5, 0, 0.5 ),
+    new THREE.Vector3( 0.5, 0, 0.5 ),
+    new THREE.Vector3( 0, 0, 1 )
 ];
 
 geometry.faces = [
@@ -87,7 +87,9 @@ geometry.faces = [
 	geometry.computeFaceNormals();
 	var material = new THREE.MeshNormalMaterial();
 	var shape = new THREE.Mesh( geometry, material );
-	shape.rotation.y = -Math.PI * .5;
+	shape.rotation.x = 0;
+	shape.rotation.y = 0;
+	shape.rotation.z = 0;
 	return shape;
 }
 
