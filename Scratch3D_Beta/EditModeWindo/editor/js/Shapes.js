@@ -27,6 +27,9 @@ SHAPES.add = function(shape_name){
 	}else if(shape_name=="add_ring"){
 		shape =  newRing();
 		shape.name="ring_"+shape.id;
+	}else if(shape_name=="add_ramp"){
+		shape =  newRamp();
+		shape.name="ramp_"+shape.id;
 	}
 	GAME_OBJECTS.Shapes.push(shape);
 	SELECTED.init(shape);
