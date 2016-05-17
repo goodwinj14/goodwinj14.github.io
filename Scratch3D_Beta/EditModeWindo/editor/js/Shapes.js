@@ -103,6 +103,40 @@ var shape = new THREE.Mesh( geometry, material );
 	return shape;
 }
 
+
+function newRamp(){
+	var geometry = new THREE.BufferGeometry();
+// create a simple square shape. We duplicate the top left and bottom right
+// vertices because each vertex needs to appear once per triangle.
+var vertices = new Float32Array( [
+	 -0.5, 0, -0.5,
+	 -0.5, 0, 0.5,
+	 -0.5, 1, -0.5,
+
+	 -0.5, 0, 0.5,
+	 -0.5, 1, -0.5,
+	 -0.5, 1, 0.5,
+
+	 -0.5, 0, 0.5,
+	 -0.5, 1, 0.5,
+	  0.5, 0, 0.5,
+
+	 -0.5, 1, 0.5,
+	 -0.5, 1, -0.5,
+	  0.5, 0, 0.5,
+
+	 -0.5, 1, -0.5,
+	 0.5, 0, -0.5,
+	 0.5, 0, -.5
+] );
+
+// itemSize = 3 because there are 3 values (components) per vertex
+geometry.addAttribute( 'position', new THREE.BufferAttribute( vertices, 3 ) );
+geometry.computeVertexNormals();
+var material = new THREE.MeshNormalMaterial();
+var shape = new THREE.Mesh( geometry, material );
+	return shape;
+}
 function newCicrle(){
 	var geometry = new THREE.CircleBufferGeometry( .5, 32 );
 	var material = new THREE.MeshNormalMaterial();
