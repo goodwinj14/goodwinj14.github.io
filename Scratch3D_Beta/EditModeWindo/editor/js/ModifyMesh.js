@@ -47,6 +47,24 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 				mesh.position.x = mesh.position.x + ((dist.x-(mesh.position.x+minPoint))/2);
 			}
 		}
+
+		if(sideID=="face_2"){
+			minPoint = mesh.geometry.boundingBox.min.z;
+			maxPoint = mesh.geometry.boundingBox.max.z;
+			length = maxPoint-minPoint;
+			distNormalized = minPoint+(dist.z-(mesh.position.z+minPoint));
+			xStepDist = distNormalized- maxPoint;
+
+			if(maxPoint>((dist.z-(mesh.position.z+minPoint)))){
+				for (var i = 2; i < vertices.length; i+=3) {
+					if(maxPoint!=vertices[i]){
+						vertices[i] = maxPoint+(xStepDist*(Math.abs(vertices[i]-maxPoint)/length));
+					}
+				}
+				mesh.position.z = mesh.position.z + ((dist.z-(mesh.position.z+minPoint))/2);
+			}
+		}
+
 		//Alters the max y width of the object
 		if(sideID=="face_4"){
 			minPoint = mesh.geometry.boundingBox.min.y;
@@ -81,19 +99,7 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 			}
 			mesh.position.z = mesh.position.z + ((dist.z-(mesh.position.z+maxPoint))/2);
 		}
-		if(sideID=="face_2"){
-			minPoint = mesh.geometry.boundingBox.min.z;
-			maxPoint = mesh.geometry.boundingBox.max.z;
-			length = maxPoint-minPoint;
-			distNormalized = minPoint+(dist.z-(mesh.position.z+minPoint));
-			xStepDist = distNormalized- maxPoint;
-			for (var i = 2; i < vertices.length; i+=3) {
-				if(maxPoint!=vertices[i]){
-					vertices[i] = maxPoint+(xStepDist*(Math.abs(vertices[i]-maxPoint)/length));
-				}
-			}
-			mesh.position.z = mesh.position.z + ((dist.z-(mesh.position.z+minPoint))/2);
-		}
+
 		mesh.geometry.center();
 		mesh.geometry.attributes.position.needsUpdate = true;
 	}	
