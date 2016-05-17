@@ -94,7 +94,7 @@ SELECTED.updateHelperPosition = function(obj){
 	avtive_Object.geometry.computeBoundingBox();
 	boundingBox = avtive_Object.geometry.boundingBox;
 	//boundingBox.setFromObject( avtive_Object );
-
+	console.log("SELECTED Update");
 	face_0.position.set(boundingBox.max.x+1,boundingBox.min.y,0);
 	face_1.position.set(boundingBox.min.x-1,boundingBox.min.y,0);
 	face_2.position.set(0,boundingBox.min.y,boundingBox.min.z);
