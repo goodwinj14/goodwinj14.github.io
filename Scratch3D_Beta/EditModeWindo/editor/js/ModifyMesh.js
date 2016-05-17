@@ -21,12 +21,14 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 			xStepDist = distNormalized- minPoint;
 			console.log("distNormalized", distNormalized);
 
+			if(minPoint> ((dist.x-(mesh.position.x+maxPoint))/2)-.1){
 				for (var i = 0; i < vertices.length; i+=3) {
 					if(minPoint!=vertices[i]){
 						vertices[i] = minPoint+(xStepDist*(Math.abs(vertices[i]-minPoint)/length));
 					}
 				}
 				mesh.position.x = mesh.position.x + ((dist.x-(mesh.position.x+maxPoint))/2);
+			}
 		}
 		//Alters the min x width of the object
 		if(sideID=="face_1"){
