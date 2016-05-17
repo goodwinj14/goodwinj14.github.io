@@ -16,7 +16,7 @@ SHAPES.add = function(shape_name){
 		shape =  newTube();
 		shape.name="tube_"+shape.id;
 	}else if(shape_name=="add_pyramid"){
-		shape =  newRamp();
+		shape =  newCone();
 		shape.name="pyramid_"+shape.id;
 	}else if(shape_name=="add_circle"){
 		shape =  newCicrle();
