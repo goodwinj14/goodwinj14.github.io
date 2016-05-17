@@ -58,6 +58,13 @@ function newCylinder(){
 	return shape;
 }
 
+function newCone(){
+	var geometry = new THREE.CylinderBufferGeometry( 0, .5, 1, 32 );;
+	var material = new THREE.MeshNormalMaterial();
+	var shape = new THREE.Mesh( geometry, material );
+	return shape;
+}
+
 function newTube(){
 	var geometry = new THREE.TorusBufferGeometry( .5, .25, 16, 100 );
 	var material = new THREE.MeshNormalMaterial();
