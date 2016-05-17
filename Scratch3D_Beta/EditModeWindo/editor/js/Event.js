@@ -80,7 +80,7 @@ function editMeshDimensions(event){
 	distance = - camera.position.x / dir.x;
 	
 	pos = camera.position.clone().add( dir.multiplyScalar( distance ) );
-	console.log("P Y",pos.y);
+	console.log("P Y",CORNER_SELECTED.name);
 	ModifyMesh.updateDimensions(SELECTED_OBJECT,CORNER_SELECTED.name,pos);
 	SELECTED.updateHelperPosition(SELECTED_OBJECT);
 	
