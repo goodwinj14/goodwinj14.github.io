@@ -77,14 +77,12 @@ function editMeshDimensions(event){
 	console.log("SELECTED_OBJECT: ",SELECTED_OBJECT);
 	dir = vector.sub( camera.position ).normalize();
 
-	distance = - camera.position.x / dir.x;
+	distance = - camera.position.y / dir.y;
 	
 	pos = camera.position.clone().add( dir.multiplyScalar( distance ) );
 	console.log("P Y",CORNER_SELECTED.name);
 	ModifyMesh.updateDimensions(SELECTED_OBJECT,CORNER_SELECTED.name,pos);
 	SELECTED.updateHelperPosition(SELECTED_OBJECT);
-	
-
 }
 
 function grid_clicked(event){
