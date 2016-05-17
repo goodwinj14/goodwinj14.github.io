@@ -12,14 +12,12 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 				xStepCount.push(vertices[i]);
 			}
 		}
-		console.log(mesh);
 		if(sideID=="face_0"){
 			minPoint = mesh.geometry.boundingBox.min.x;
 			maxPoint = mesh.geometry.boundingBox.max.x;
 			length = maxPoint-minPoint;
 			distNormalized = maxPoint+(dist.x-(mesh.position.x+maxPoint));
 			xStepDist = distNormalized- minPoint;
-			console.log("Checke 2");
 
 			if(minPoint<((dist.x-(mesh.position.x+maxPoint)))){
 				for (var i = 0; i < vertices.length; i+=3) {
