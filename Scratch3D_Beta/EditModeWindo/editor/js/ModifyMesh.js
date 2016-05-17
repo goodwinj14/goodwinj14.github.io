@@ -19,9 +19,9 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 			length = maxPoint-minPoint;
 			distNormalized = maxPoint+(dist.x-(mesh.position.x+maxPoint));
 			xStepDist = distNormalized- minPoint;
-			console.log("distNormalized", distNormalized);
+			console.log("Checke 2");
 
-			if(minPoint<((dist.x-(mesh.position.x+maxPoint)))-.01){
+			if(minPoint<((dist.x-(mesh.position.x+maxPoint)))){
 				for (var i = 0; i < vertices.length; i+=3) {
 					if(minPoint!=vertices[i]){
 						vertices[i] = minPoint+(xStepDist*(Math.abs(vertices[i]-minPoint)/length));
