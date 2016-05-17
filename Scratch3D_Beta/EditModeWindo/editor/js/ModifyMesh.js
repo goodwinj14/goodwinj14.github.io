@@ -93,6 +93,7 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 						vertices[i] = minPoint+(yStepDist*(Math.abs(vertices[i]-minPoint)/length));
 					}
 				}
+				mesh.position.y = mesh.position.y + ((dist.y-(mesh.position.y+maxPoint))/2);
 			}
 		}
 		if(sideID=="face_5"){

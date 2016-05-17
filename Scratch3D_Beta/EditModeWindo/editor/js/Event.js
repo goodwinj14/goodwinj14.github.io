@@ -63,7 +63,7 @@ function editMeshDimensions(event){
    		 ( event.clientX / renderer.domElement.width ) * 2 - 1,
    		 - ( event.clientY / renderer.domElement.height ) * 2 + 1,
    		 0.5 );
-   		 	distance = - camera.position.y / dir.y;
+   		 	
 	vector.unproject( camera );
 	console.log("SELECTED_OBJECT: ",SELECTED_OBJECT);
 	dir = vector.sub( camera.position ).normalize();*/
@@ -77,8 +77,13 @@ function editMeshDimensions(event){
 	console.log("SELECTED_OBJECT: ",SELECTED_OBJECT);
 	dir = vector.sub( camera.position ).normalize();
 
-	distance = - camera.position.z / dir.z;
-	
+	//Checks to see if we are trying to change the Y dimensions of the geometry
+	if(CORNER_SELECTED.name=="face_4"||CORNER_SELECTED.name=="face_5"){
+		distance = - camera.position.z / dir.z;
+	}
+	else{
+		distance = - camera.position.y / dir.y;
+	}
 	pos = camera.position.clone().add( dir.multiplyScalar( distance ) );
 	console.log("P Y",pos.y);
 	ModifyMesh.updateDimensions(SELECTED_OBJECT,CORNER_SELECTED.name,pos);
