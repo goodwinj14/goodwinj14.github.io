@@ -63,6 +63,7 @@ function editMeshDimensions(event){
    		 ( event.clientX / renderer.domElement.width ) * 2 - 1,
    		 - ( event.clientY / renderer.domElement.height ) * 2 + 1,
    		 0.5 );
+   		 	distance = - camera.position.y / dir.y;
 	vector.unproject( camera );
 	console.log("SELECTED_OBJECT: ",SELECTED_OBJECT);
 	dir = vector.sub( camera.position ).normalize();*/
@@ -76,8 +77,7 @@ function editMeshDimensions(event){
 	console.log("SELECTED_OBJECT: ",SELECTED_OBJECT);
 	dir = vector.sub( camera.position ).normalize();
 
-	distance = - camera.position.y / dir.y;
-	distance = - camera.position.y / dir.y;
+	distance = - camera.position.x / dir.x;
 	console.log(pos.y);
 	pos = camera.position.clone().add( dir.multiplyScalar( distance ) );
 	ModifyMesh.updateDimensions(SELECTED_OBJECT,CORNER_SELECTED.name,pos);
