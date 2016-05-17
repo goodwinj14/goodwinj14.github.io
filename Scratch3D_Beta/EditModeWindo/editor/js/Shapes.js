@@ -127,7 +127,11 @@ var vertices = new Float32Array( [
 
 	 0.5, 0, -0.5,
 	 -0.5, 1, -0.5,
-	 0.5, 0, 0.5
+	 0.5, 0, 0.5,
+
+	 -0.5, 0, -0.5,
+	 -0.5, 1, -0.5,
+	 0.5, 0, -0.5
 ] );
 
 // itemSize = 3 because there are 3 values (components) per vertex
