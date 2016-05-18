@@ -106,6 +106,7 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 		}
 
 
-		mesh.geometry.centerX();
+		mesh.geometry.center();
+		console.log("mesh", mesh);
 		mesh.geometry.attributes.position.needsUpdate = true;
 	}	
