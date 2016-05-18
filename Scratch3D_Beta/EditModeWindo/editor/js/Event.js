@@ -39,7 +39,6 @@ EVENT.init = function(){
 }
 
 function obj_position_change(event){
-	console.log("Position Changed Called");
 	vector = new THREE.Vector3();
 	vector.set(
    		 ( event.clientX / renderer.domElement.width ) * 2 - 1,
