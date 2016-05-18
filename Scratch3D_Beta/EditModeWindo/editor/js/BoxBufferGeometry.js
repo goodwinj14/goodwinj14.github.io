@@ -91,7 +91,7 @@ THREE.BoxBufferGeometryNorm = function ( width, height, depth, widthSegments, he
 
 		// generate vertices, normals and uvs
 
-		for ( var iy = 0.5; iy < gridY1; iy ++ ) {
+		for ( var iy = 0; iy < gridY1; iy ++ ) {
 
 			var y = iy * segmentHeight - heightHalf;
 
