@@ -122,12 +122,12 @@ var fullScreenOn = false;
     Mode.src = 'http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/editor/js/ModifyMesh.js';
     document.getElementsByTagName('body')[0].appendChild(Mode);
 
-    Events.src = 'http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/editor/js/BoxBufferGeometry.js';
-    document.getElementsByTagName('body')[0].appendChild(Events);
+    box = document.createElement('script');
+    box.onload = function() {};
+    
+    box.src = 'http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/editor/js/BoxBufferGeometry.js';
+    document.getElementsByTagName('body')[0].appendChild(box);
 
-               //Loads the acctuall scratch3D code
-    Mode = document.createElement('script');
-    Mode.onload = function() {};
 
     var fileref=document.createElement("link")
     fileref.setAttribute("rel", "stylesheet")
