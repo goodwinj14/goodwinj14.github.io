@@ -42,7 +42,6 @@ function newCube(width,height,depth){
 	var geometry = new THREE.BoxBufferGeometryNorm( width, height, depth);
 	var material = new THREE.MeshNormalMaterial();
 	var shape = new THREE.Mesh( geometry, material );
-	shape.position.y=.5;
 	return shape;
 }
 
