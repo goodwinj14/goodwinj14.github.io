@@ -61,6 +61,12 @@ var fullScreenOn = false;
     
     TrackballControls.src = 'http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/js/controls/TrackballControls.js';
     document.getElementsByTagName('body')[0].appendChild(TrackballControls);
+
+    box = document.createElement('script');
+    box.onload = function() {};
+    
+    box.src = 'http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/editor/js/BoxBufferGeometry.js';
+    document.getElementsByTagName('body')[0].appendChild(box);
     };
     
     script.src = 'http://goodwinj14.github.io/Scratch3D_Beta/server/three.js';
@@ -121,13 +127,6 @@ var fullScreenOn = false;
     
     Mode.src = 'http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/editor/js/ModifyMesh.js';
     document.getElementsByTagName('body')[0].appendChild(Mode);
-
-    box = document.createElement('script');
-    box.onload = function() {};
-    
-    box.src = 'http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/editor/js/BoxBufferGeometry.js';
-    document.getElementsByTagName('body')[0].appendChild(box);
-
 
     var fileref=document.createElement("link")
     fileref.setAttribute("rel", "stylesheet")
