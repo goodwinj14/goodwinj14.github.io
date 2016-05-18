@@ -2,7 +2,7 @@ ModifyMesh = {}
 
 ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 		vertices = mesh.geometry.attributes.position.array;
-		mesh.geometry.computeBoundingBox();
+		//mesh.geometry.computeBoundingBox();
 		
 		//Alters the max x width of the object
 		var xStepCount = [];
