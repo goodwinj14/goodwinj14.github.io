@@ -13,7 +13,7 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 			}
 		}
 		if(sideID=="face_0"){
-			minPoint = mesh.geometry.boundingBox.min.x;
+			/*minPoint = mesh.geometry.boundingBox.min.x;
 			maxPoint = mesh.geometry.boundingBox.max.x;
 			length = maxPoint-minPoint;
 			distNormalized = maxPoint+(dist.x-(mesh.position.x+maxPoint));
@@ -26,7 +26,7 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 					}
 				}
 				mesh.position.x = mesh.position.x + ((dist.x-(mesh.position.x+maxPoint))/2);
-			}
+			}*/
 		}
 		//Alters the min x width of the object
 		if(sideID=="face_1"){
