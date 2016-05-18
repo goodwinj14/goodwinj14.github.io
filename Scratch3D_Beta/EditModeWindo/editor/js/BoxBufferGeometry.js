@@ -95,7 +95,7 @@ THREE.BoxBufferGeometryNorm = function ( width, height, depth, widthSegments, he
 
 			var y = iy * segmentHeight - heightHalf;
 
-			for ( var ix = 0.5; ix < gridX1; ix ++ ) {
+			for ( var ix = 0; ix < gridX1; ix ++ ) {
 
 				var x = ix * segmentWidth - widthHalf;
 
