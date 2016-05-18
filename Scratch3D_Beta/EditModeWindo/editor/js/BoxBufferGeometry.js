@@ -116,12 +116,12 @@ THREE.BoxBufferGeometryNorm = function ( width, height, depth, widthSegments, he
 
 				// now apply vector to normal buffer
 				normals[ vertexBufferOffset ] = vector.x;
-				normals[ vertexBufferOffset + 1 ] = vector.y;
+				normals[ vertexBufferOffset + 1 ] = vector.y+.5;
 				normals[ vertexBufferOffset + 2 ] = vector.z;
 
 				// uvs
 				uvs[ uvBufferOffset ] = ix / gridX;
-				uvs[ uvBufferOffset + 1 ] = 1 - ( iy / gridY );
+				uvs[ uvBufferOffset + 1 ] = 1 - ( iy / gridY )+.5;
 
 				// update offsets and counters
 				vertexBufferOffset += 3;
