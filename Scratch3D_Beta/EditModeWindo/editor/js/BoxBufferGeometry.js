@@ -2,7 +2,7 @@
  * @author Mugen87 / https://github.com/Mugen87
  */
 
-THREE.BoxBufferGeometry = function ( width, height, depth, widthSegments, heightSegments, depthSegments ) {
+THREE.BoxBufferGeometryNorm = function ( width, height, depth, widthSegments, heightSegments, depthSegments ) {
 
 	THREE.BufferGeometry.call( this );
 
@@ -177,5 +177,5 @@ THREE.BoxBufferGeometry = function ( width, height, depth, widthSegments, height
 
 };
 
-THREE.BoxBufferGeometry.prototype = Object.create( THREE.BufferGeometry.prototype );
-THREE.BoxBufferGeometry.prototype.constructor = THREE.BoxBufferGeometry;
+THREE.BoxBufferGeometryNorm.prototype = Object.create( THREE.BufferGeometry.prototype );
+THREE.BoxBufferGeometryNorm.prototype.constructor = THREE.BoxBufferGeometryNorm;
