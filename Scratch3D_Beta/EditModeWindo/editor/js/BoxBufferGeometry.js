@@ -101,12 +101,12 @@ THREE.BoxBufferGeometryNorm = function ( width, height, depth, widthSegments, he
 
 				// set values to correct vector component
 				vector[ u ] = x * udir;
-				vector[ v ] = y * vdir+.05;
+				vector[ v ] = y * vdir;
 				vector[ w ] = depthHalf;
 
 				// now apply vector to vertex buffer
 				vertices[ vertexBufferOffset ] = vector.x;
-				vertices[ vertexBufferOffset + 1 ] = vector.y;
+				vertices[ vertexBufferOffset + 1 ] = vector.y+.5;
 				vertices[ vertexBufferOffset + 2 ] = vector.z;
 
 				// set values to correct vector component
