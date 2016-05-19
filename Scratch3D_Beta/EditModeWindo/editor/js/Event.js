@@ -85,7 +85,7 @@ function editMeshDimensions(event){
 	}
 	pos = camera.position.clone().add( dir.multiplyScalar( distance ) );
 	ModifyMesh.updateDimensions(SELECTED_OBJECT,CORNER_SELECTED.name,pos);
-	SELECTED.updateHelperPosition(SELECTED_OBJECT);
+	//SELECTED.updateHelperPosition(SELECTED_OBJECT);
 }
 
 function grid_clicked(event){
