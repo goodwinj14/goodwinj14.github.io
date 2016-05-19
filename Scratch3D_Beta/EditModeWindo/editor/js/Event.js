@@ -50,8 +50,8 @@ function obj_position_change(event){
 	distance = - camera.position.y / dir.y;
 	pos = camera.position.clone().add( dir.multiplyScalar( distance ) );
 	SELECTED_OBJECT.position.x = Math.round(pos.x * 100) / 100;
-	SELECTED_OBJECT.position.y = Math.round(pos.y * 100) / 100;
-	//SELECTED_OBJECT.position.z = Math.round(pos.z * 100) / 100;
+	//SELECTED_OBJECT.position.y = Math.round(pos.y * 100) / 100;
+	SELECTED_OBJECT.position.z = Math.round(pos.z * 100) / 100;
 	pos_change_Event = new CustomEvent('Editor_Obj_position_change', { 'detail': SELECTED_OBJECT});
 	document.dispatchEvent(pos_change_Event);
 }
