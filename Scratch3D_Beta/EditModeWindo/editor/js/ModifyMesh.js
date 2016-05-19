@@ -89,7 +89,7 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 			if(minPoint<((dist.y-(mesh.position.y+maxPoint)))){
 				for (var i = 1; i < vertices.length; i+=3) {
 					if(minPoint!=vertices[i]){
-						vertices[i] = minPoint+(yStepDist*(Math.abs(vertices[i]-minPoint)/length));
+						//vertices[i] = minPoint+(yStepDist*(Math.abs(vertices[i]-minPoint)/length));
 					}
 				}
 				//mesh.position.y = mesh.position.y + ((dist.y-(mesh.position.y+maxPoint))/2);
