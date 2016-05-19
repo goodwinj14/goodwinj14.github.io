@@ -83,6 +83,10 @@ EDITOR.update_grid = function(){
 
 EDITOR.add_shape = function(shape){
 			obj = SHAPES.add(shape);
+			obj.geometry.computeBoundingBox();
+			obj.geometry.boundingBox.min.y;
+			//Lifts the shape up to lay flat on build plane
+			obj.position.y = obj.geometry.boundingBox.min.y*-1;
 			scene.add(obj);
 			MOVE_OBJ = obj;
 			SELECTED_OBJECT = obj;
