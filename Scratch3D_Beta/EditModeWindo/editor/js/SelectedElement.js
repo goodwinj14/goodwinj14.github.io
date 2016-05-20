@@ -49,12 +49,16 @@ SELECTED.init = function(object){
 	mat_ring.side = THREE.DoubleSide;
 	rotate_x = new THREE.Mesh(new THREE.RingGeometry( 1, 1.1, 32 ), mat_ring);
 	rotate_x.rotation.y = Math.PI/2;
+	rotate_y = new THREE.Mesh(new THREE.RingGeometry( 1, 1.1, 32 ), mat_ring);
+	rotate_y.rotation.z = Math.PI/2;
+	rotate_y.position.y = -.55;
 	shapeHelpers.add(face_0);
 	shapeHelpers.add(face_1);
 	shapeHelpers.add(face_3);
 	shapeHelpers.add(face_2);
 	shapeHelpers.add(face_4);
 	shapeHelpers.add(rotate_x);
+	shapeHelpers.add(rotate_y);
 	scene.add( shapeHelpers );
 
 	//shapeHelpers.position.x = object.position.x;
