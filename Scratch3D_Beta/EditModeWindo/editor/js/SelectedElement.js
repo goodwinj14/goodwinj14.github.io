@@ -160,6 +160,18 @@ SELECTED.helperHoverCheck = function(event){
 				if ( intersects.length > 0 ) {
 					
 					intersects[0].object.material.color = rotation_Select_Color;
+					if(CORNER_SELECTED!=null&&intersects[0].object.name!=CORNER_SELECTED.name){
+						if(CORNER_SELECTED.name.indexOf("face")>-1){
+						CORNER_SELECTED.material.color = conner_select_color;
+					}else {
+						if(CORNER_SELECTED.name === "rotate_x"){
+							CORNER_SELECTED.material.color = rotationX_Color
+						}else if(CORNER_SELECTED.name === "rotate_y"){
+							CORNER_SELECTED.material.color = rotationY_Color
+						}else if(CORNER_SELECTED.name === "rotate_z"){
+							CORNER_SELECTED.material.color = rotationZ_Color
+					
+					}
 					CORNER_SELECTED = intersects[0].object;
 				}else if(CORNER_SELECTED!=null && !MOUSE_IS_DOWN){
 					if(CORNER_SELECTED.name.indexOf("face")>-1){
