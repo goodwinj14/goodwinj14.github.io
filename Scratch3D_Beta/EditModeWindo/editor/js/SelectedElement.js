@@ -57,7 +57,7 @@ SELECTED.init = function(object){
 	rotate_y.rotation.x = Math.PI/2;
 	mat_ring_z = new THREE.MeshBasicMaterial();
 	mat_ring_z.side = THREE.DoubleSide;
-	mat_ring_z.color = new THREE.Color("rgb(0, 255, 64)");
+	mat_ring_z.color = new THREE.Color("rgb(255, 0, 255)");
 	rotate_z = new THREE.Mesh(new THREE.RingGeometry( 1, 1.05, 64 ), mat_ring_z);
 	shapeHelpers.add(face_0);
 	shapeHelpers.add(face_1);
