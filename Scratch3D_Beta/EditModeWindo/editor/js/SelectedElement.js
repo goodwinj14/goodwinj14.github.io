@@ -51,7 +51,7 @@ SELECTED.init = function(object){
 	rotate_x.rotation.y = Math.PI/2;
 	rotate_y = new THREE.Mesh(new THREE.RingGeometry( 1, 1.1, 32 ), mat_ring);
 	rotate_y.rotation.x = Math.PI/2;
-	rotate_y.position.y = -.55;
+	rotate_z = new THREE.Mesh(new THREE.RingGeometry( 1, 1.1, 32 ), mat_ring);
 	shapeHelpers.add(face_0);
 	shapeHelpers.add(face_1);
 	shapeHelpers.add(face_3);
@@ -59,6 +59,7 @@ SELECTED.init = function(object){
 	shapeHelpers.add(face_4);
 	shapeHelpers.add(rotate_x);
 	shapeHelpers.add(rotate_y);
+	shapeHelpers.add(rotate_z);
 	scene.add( shapeHelpers );
 
 	//shapeHelpers.position.x = object.position.x;
