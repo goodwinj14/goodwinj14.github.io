@@ -47,11 +47,11 @@ SELECTED.init = function(object){
 
 	mat_ring = new THREE.MeshBasicMaterial();
 	mat_ring.side = THREE.DoubleSide;
-	rotate_x = new THREE.Mesh(new THREE.RingGeometry( 1, 1.1, 32 ), mat_ring);
+	rotate_x = new THREE.Mesh(new THREE.RingGeometry( 1, 1.05, 64 ), mat_ring);
 	rotate_x.rotation.y = Math.PI/2;
-	rotate_y = new THREE.Mesh(new THREE.RingGeometry( 1, 1.1, 32 ), mat_ring);
+	rotate_y = new THREE.Mesh(new THREE.RingGeometry( 1, 1.05, 64 ), mat_ring);
 	rotate_y.rotation.x = Math.PI/2;
-	rotate_z = new THREE.Mesh(new THREE.RingGeometry( 1, 1.1, 32 ), mat_ring);
+	rotate_z = new THREE.Mesh(new THREE.RingGeometry( 1, 1.05, 64 ), mat_ring);
 	shapeHelpers.add(face_0);
 	shapeHelpers.add(face_1);
 	shapeHelpers.add(face_3);
