@@ -10,6 +10,7 @@ var rotationX_Color;
 var rotationY_Color;
 var rotationZ_Color;
 var rotation_Select_Color;
+var conner_select_color;
 
 SELECTED.init = function(object){
 	if(shapeHelpers == null){
@@ -17,6 +18,7 @@ SELECTED.init = function(object){
     rotationY_Color = new THREE.Color("rgb(255, 255, 0)");
     rotationZ_Color = new THREE.Color("rgb(255, 0, 255)");
     rotation_Select_Color = new THREE.Color("rgb(255, 0, 0)");
+    conner_select_color = new THREE.Color("rgb(0, 255, 30)");
 	console.log(object);
 	raycaster = new THREE.Raycaster();
 	mouse = new THREE.Vector2();
@@ -154,8 +156,7 @@ SELECTED.helperHoverCheck = function(event){
 					intersects[0].object.material.color = rotation_Select_Color;
 					CORNER_SELECTED = intersects[0].object;
 				}else if(CORNER_SELECTED!=null && !MOUSE_IS_DOWN){
-					CORNER_SELECTED.material.color.g=1;
-					CORNER_SELECTED.material.color.b=1;
+					CORNER_SELECTED.material.color = conner_select_color;
 					CORNER_SELECTED = null;
 				}
 }
