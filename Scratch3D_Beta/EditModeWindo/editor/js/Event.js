@@ -35,6 +35,7 @@ EVENT.init = function(){
 
 	document.getElementById("canvas").addEventListener("mouseup", function(){
     MOUSE_IS_DOWN = false;
+    CORNER_SELECTED=null;
 	}, false);
 }
 

@@ -62,11 +62,11 @@ var fullScreenOn = false;
     TrackballControls.src = 'http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/js/controls/TrackballControls.js';
     document.getElementsByTagName('body')[0].appendChild(TrackballControls);
 
-    //box = document.createElement('script');
-    //box.onload = function() {};
+    editoControls = document.createElement('script');
+    editoControls.onload = function() {};
     
-    //box.src = 'http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/editor/js/BoxBufferGeometry.js';
-    //document.getElementsByTagName('body')[0].appendChild(box);
+    editoControls.src = 'http://goodwinj14.github.io/Scratch3D_Beta/EditModeWindo/js/controls/EditorControls.js';
+    document.getElementsByTagName('body')[0].appendChild(editoControls);
     };
     
     script.src = 'http://goodwinj14.github.io/Scratch3D_Beta/server/three.js';

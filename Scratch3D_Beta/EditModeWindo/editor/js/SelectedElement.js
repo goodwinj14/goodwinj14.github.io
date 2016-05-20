@@ -45,11 +45,15 @@ SELECTED.init = function(object){
 	face_4.material.color = new THREE.Color("rgb(0, 255, 30)");
 	face_4.name = "face_4";
 
+	mat_ring = new THREE.MeshBasicMaterial();
+	mat_ring.side = THREE.DoubleSide;
+	rotate_x = new THREE.Mesh(new THREE.RingGeometry( 1, 5, 32 ), mat_ring);
 	shapeHelpers.add(face_0);
 	shapeHelpers.add(face_1);
 	shapeHelpers.add(face_3);
 	shapeHelpers.add(face_2);
 	shapeHelpers.add(face_4);
+	shapeHelpers.add(rotate_x);
 	scene.add( shapeHelpers );
 
 	//shapeHelpers.position.x = object.position.x;
