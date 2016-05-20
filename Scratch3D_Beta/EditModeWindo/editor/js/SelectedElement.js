@@ -6,6 +6,10 @@ var obj_Is_Selected;
 var avtive_Object;
 var shapeHelpers = null;
 var CORNER_SELECTED = null;
+var rotationX_Color = new THREE.Color("rgb(0, 255, 255)");
+var rotationY_Color = new THREE.Color("rgb(255, 255, 0)");
+var rotationZ_Color = new THREE.Color("rgb(255, 0, 255)");
+var rotation_Select_Color = new THREE.Color("rgb(255, 0, 0)");
 
 SELECTED.init = function(object){
 	if(shapeHelpers == null){
@@ -47,17 +51,17 @@ SELECTED.init = function(object){
 
 	mat_ring_x = new THREE.MeshBasicMaterial();
 	mat_ring_x.side = THREE.DoubleSide;
-	mat_ring_x.color = new THREE.Color("rgb(0, 255, 64)");
+	mat_ring_x.color = rotationX_Color;
 	rotate_x = new THREE.Mesh(new THREE.RingGeometry( 1, 1.05, 64 ), mat_ring_x);
 	rotate_x.rotation.y = Math.PI/2;
 	mat_ring_y = new THREE.MeshBasicMaterial();
 	mat_ring_y.side = THREE.DoubleSide;
-	mat_ring_y.color = new THREE.Color("rgb(255, 255, 0)");
+	mat_ring_y.color = rotationX_Color;
 	rotate_y = new THREE.Mesh(new THREE.RingGeometry( 1, 1.05, 64 ), mat_ring_y);
 	rotate_y.rotation.x = Math.PI/2;
 	mat_ring_z = new THREE.MeshBasicMaterial();
 	mat_ring_z.side = THREE.DoubleSide;
-	mat_ring_z.color = new THREE.Color("rgb(255, 0, 255)");
+	mat_ring_z.color = rotationX_Color;
 	rotate_z = new THREE.Mesh(new THREE.RingGeometry( 1, 1.05, 64 ), mat_ring_z);
 	shapeHelpers.add(face_0);
 	shapeHelpers.add(face_1);
@@ -143,8 +147,7 @@ SELECTED.helperHoverCheck = function(event){
 				intersects = raycaster.intersectObjects( shapeHelpers.children, true);
 				if ( intersects.length > 0 ) {
 					
-					intersects[0].object.material.color.g=0;
-					intersects[0].object.material.color.b=0;
+					intersects[0].object.material.color = rotation_Select_Color;
 					CORNER_SELECTED = intersects[0].object;
 				}else if(CORNER_SELECTED!=null && !MOUSE_IS_DOWN){
 					CORNER_SELECTED.material.color.g=1;
