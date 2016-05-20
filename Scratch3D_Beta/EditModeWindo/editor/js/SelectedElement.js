@@ -6,13 +6,17 @@ var obj_Is_Selected;
 var avtive_Object;
 var shapeHelpers = null;
 var CORNER_SELECTED = null;
-var rotationX_Color = new THREE.Color("rgb(0, 255, 255)");
-var rotationY_Color = new THREE.Color("rgb(255, 255, 0)");
-var rotationZ_Color = new THREE.Color("rgb(255, 0, 255)");
-var rotation_Select_Color = new THREE.Color("rgb(255, 0, 0)");
+var rotationX_Color;
+var rotationY_Color;
+var rotationZ_Color;
+var rotation_Select_Color;
 
 SELECTED.init = function(object){
 	if(shapeHelpers == null){
+    rotationX_Color = new THREE.Color("rgb(0, 255, 255)");
+    rotationY_Color = new THREE.Color("rgb(255, 255, 0)");
+    rotationZ_Color = new THREE.Color("rgb(255, 0, 255)");
+    rotation_Select_Color = new THREE.Color("rgb(255, 0, 0)");
 	console.log(object);
 	raycaster = new THREE.Raycaster();
 	mouse = new THREE.Vector2();
