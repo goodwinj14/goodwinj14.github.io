@@ -60,15 +60,21 @@ SELECTED.init = function(object){
 	mat_ring_x.color = rotationX_Color;
 	rotate_x = new THREE.Mesh(new THREE.RingGeometry( 1, 1.05, 64 ), mat_ring_x);
 	rotate_x.rotation.y = Math.PI/2;
+	rotate_x.name = "rotate_x";
+
 	mat_ring_y = new THREE.MeshBasicMaterial();
 	mat_ring_y.side = THREE.DoubleSide;
 	mat_ring_y.color = rotationY_Color;
 	rotate_y = new THREE.Mesh(new THREE.RingGeometry( 1, 1.05, 64 ), mat_ring_y);
 	rotate_y.rotation.x = Math.PI/2;
+	rotate_y.name = "rotate_y";
+
 	mat_ring_z = new THREE.MeshBasicMaterial();
 	mat_ring_z.side = THREE.DoubleSide;
 	mat_ring_z.color = rotationZ_Color;
 	rotate_z = new THREE.Mesh(new THREE.RingGeometry( 1, 1.05, 64 ), mat_ring_z);
+	rotate_z.name = "rotate_z";
+
 	shapeHelpers.add(face_0);
 	shapeHelpers.add(face_1);
 	shapeHelpers.add(face_3);
@@ -159,7 +165,13 @@ SELECTED.helperHoverCheck = function(event){
 					if(CORNER_SELECTED.name.indexOf("face")>-1){
 						CORNER_SELECTED.material.color = conner_select_color;
 					}else {
-						CORNER_SELECTED.material.color = rotationX_Color
+						if(CORNER_SELECTED.name === "rotate_x"){
+							CORNER_SELECTED.material.color = rotationX_Color
+						}else if(CORNER_SELECTED.name === "rotate_y"){
+							CORNER_SELECTED.material.color = rotationY_Color
+						}else if(CORNER_SELECTED.name === "rotate_z"){
+							CORNER_SELECTED.material.color = rotationZ_Color
+						}
 					}
 					
 					CORNER_SELECTED = null;
