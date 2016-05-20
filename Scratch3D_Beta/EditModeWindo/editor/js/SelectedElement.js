@@ -156,7 +156,12 @@ SELECTED.helperHoverCheck = function(event){
 					intersects[0].object.material.color = rotation_Select_Color;
 					CORNER_SELECTED = intersects[0].object;
 				}else if(CORNER_SELECTED!=null && !MOUSE_IS_DOWN){
-					CORNER_SELECTED.material.color = conner_select_color;
+					if(CORNER_SELECTED.name.indexOf("face")>-1){
+						CORNER_SELECTED.material.color = conner_select_color;
+					}else {
+						CORNER_SELECTED.material.color = rotationX_Color
+					}
+					
 					CORNER_SELECTED = null;
 				}
 }
