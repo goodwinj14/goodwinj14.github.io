@@ -20,7 +20,7 @@ SELECTED.init = function(object){
     rotationZ_Color = new THREE.Color("rgb(255, 0, 255)");
     rotation_Select_Color = new THREE.Color("rgb(255, 0, 0)");
     conner_select_color = new THREE.Color("rgb(0, 255, 30)");
-	console.log(object);
+
 	raycaster = new THREE.Raycaster();
 	mouse = new THREE.Vector2();
 
@@ -105,7 +105,7 @@ SELECTED.select = function(event){
 	avtive_Object.geometry.computeBoundingBox();
 	boundingBox = avtive_Object.geometry.boundingBox;
 	//boundingBox.setFromObject( avtive_Object );
-		console.log("SELECTED Update");
+
 	face_0.position.set(boundingBox.max.x+0.02,boundingBox.min.y,0);
 	face_1.position.set(boundingBox.min.x-0.02,boundingBox.min.y,0);
 	face_2.position.set(0,boundingBox.min.y,boundingBox.min.z-0.02);
