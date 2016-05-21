@@ -12,6 +12,8 @@ var rotationY_Color;
 var rotationZ_Color;
 var rotation_Select_Color;
 var conner_select_color;
+var rotate_x;
+var rotate_y;
 var rotate_z;
 
 SELECTED.init = function(object){
@@ -176,7 +178,12 @@ SELECTED.helperHoverCheck = function(event){
 				intersects = raycaster.intersectObjects( shapeHelpers.children, true);
 				if ( intersects.length > 0 ) {
 					
-					
+					if(intersects[0].object.name.indexOf("face")>-1){
+						CORNER_SELECTED = intersects[0].object;
+					}else if(intersects[0].object.name.indexOf("rotate")>-1){
+						ROTAION_SELECTED = intersects[0].object;
+					}
+					console.log("ROTAION_SELECTED", ROTAION_SELECTED);
 					if(CORNER_SELECTED!=null){
 						if(CORNER_SELECTED.name.indexOf("face")>-1){
 						CORNER_SELECTED.material.color = conner_select_color;
@@ -193,12 +200,8 @@ SELECTED.helperHoverCheck = function(event){
 						}
 					}
 
-					intersects[0].object.material.color = rotation_Select_Color;
-					if(intersects[0].object.name.indexOf("face")>-1){
-						CORNER_SELECTED = intersects[0].object;
-					}else if(intersects[0].object.name.indexOf("rotate")>-1){
-						ROTAION_SELECTED = intersects[0].object;
-					}
+					//intersects[0].object.material.color = rotation_Select_Color;
+					
 				}else if(!MOUSE_IS_DOWN){
 					
 					if(CORNER_SELECTED!=null){
