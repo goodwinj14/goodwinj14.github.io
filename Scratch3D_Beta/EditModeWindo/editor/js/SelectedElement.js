@@ -118,6 +118,8 @@ SELECTED.select = function(event){
 	}if((boundingBox.max.z-boundingBox.min.z)>maxHeight){
 		maxHeight = boundingBox.max.z-boundingBox.min.z;
 	}
+	rotate_x.scale.set(maxHeight,maxHeight,maxHeight);
+	rotate_y.scale.set(maxHeight,maxHeight,maxHeight);
 	rotate_z.scale.set(maxHeight,maxHeight,maxHeight);
 	//avtive_Object.position.x = avtive_Object.position.x+((avtive_Object.scale.x-(boundingBox.max.x-boundingBox.min.x))/2);
 	//avtive_Object.position.y = avtive_Object.position.y+((avtive_Object.scale.y-(boundingBox.max.y-boundingBox.min.y))/2);
