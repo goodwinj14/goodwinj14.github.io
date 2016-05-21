@@ -6,6 +6,7 @@ var obj_Is_Selected;
 var avtive_Object;
 var shapeHelpers = null;
 var CORNER_SELECTED = null;
+var ROTAION_SELECTED = null;
 var rotationX_Color;
 var rotationY_Color;
 var rotationZ_Color;
@@ -190,7 +191,11 @@ SELECTED.helperHoverCheck = function(event){
 					}
 				}
 					intersects[0].object.material.color = rotation_Select_Color;
-					CORNER_SELECTED = intersects[0].object;
+					if(CORNER_SELECTED.name.indexOf("face")>-1){
+						CORNER_SELECTED = intersects[0].object;
+					}else if(CORNER_SELECTED.name.indexOf("rotate")>-1){
+						ROTAION_SELECTED = intersects[0].object;
+					}
 				}else if(CORNER_SELECTED!=null && !MOUSE_IS_DOWN){
 					if(CORNER_SELECTED.name.indexOf("face")>-1){
 						CORNER_SELECTED.material.color = conner_select_color;

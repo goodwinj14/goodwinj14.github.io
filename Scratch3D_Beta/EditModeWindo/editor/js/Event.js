@@ -27,6 +27,8 @@ EVENT.init = function(){
     	editMeshDimensions(event);
     }else if(MOUSE_IS_DOWN && OBJECT_IS_SELECTED && CORNER_SELECTED==null){
     	obj_position_change(event);
+    }else if(MOUSE_IS_DOWN && OBJECT_IS_SELECTED && ROTAION_SELECTED!=null)){
+    	objectRotation(event);
     }else if(OBJECT_IS_SELECTED){
     	pos_change_Event = new CustomEvent('Editor_Obj_hover_check', { 'detail': event});
 		document.dispatchEvent(pos_change_Event);
@@ -55,6 +57,33 @@ function obj_position_change(event){
 	SELECTED_OBJECT.position.z = Math.round(pos.z * 100) / 100;
 	pos_change_Event = new CustomEvent('Editor_Obj_position_change', { 'detail': SELECTED_OBJECT});
 	document.dispatchEvent(pos_change_Event);
+}
+
+function objectRotation(event){
+
+	console.log("Rotation Called");
+	 /*   var deltaMove = {
+        x: e.offsetX-previousMousePosition.x,
+        y: e.offsetY-previousMousePosition.y
+    };
+
+    if(isDragging) {
+            
+        var deltaRotationQuaternion = new three.Quaternion()
+            .setFromEuler(new three.Euler(
+                toRadians(deltaMove.y * 1),
+                toRadians(deltaMove.x * 1),
+                0,
+                'XYZ'
+            ));
+        
+        cube.quaternion.multiplyQuaternions(deltaRotationQuaternion, cube.quaternion);
+    }
+    
+    previousMousePosition = {
+        x: e.offsetX,
+        y: e.offsetY
+    };*/
 }
 
 function editMeshDimensions(event){
