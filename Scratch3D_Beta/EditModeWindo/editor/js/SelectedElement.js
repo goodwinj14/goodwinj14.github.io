@@ -204,12 +204,12 @@ SELECTED.helperHoverCheck = function(event){
 						CORNER_SELECTED.material.color = conner_select_color;
 					}
 					 if(ROTAION_SELECTED!=null){
-						if(ROTAION_SELECTED.name === "rotate_x"){
-							ROTAION_SELECTED.material.color = rotationX_Color
-						}else if(ROTAION_SELECTED.name === "rotate_y"){
-							ROTAION_SELECTED.material.color = rotationY_Color
-						}else if(ROTAION_SELECTED.name === "rotate_z"){
-							ROTAION_SELECTED.material.color = rotationZ_Color
+						if(ROTAION_SELECTED.name == "rotate_x"){
+							ROTAION_SELECTED.material.color = rotationX_Color;
+						}else if(ROTAION_SELECTED.name == "rotate_y"){
+							ROTAION_SELECTED.material.color = rotationY_Color;
+						}else if(ROTAION_SELECTED.name == "rotate_z"){
+							ROTAION_SELECTED.material.color = rotationZ_Color;
 						}
 					}
 					ROTAION_SELECTED = null;
