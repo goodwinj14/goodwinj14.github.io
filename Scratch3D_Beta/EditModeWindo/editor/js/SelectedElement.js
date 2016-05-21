@@ -112,15 +112,15 @@ SELECTED.select = function(event){
 	face_3.position.set(0,boundingBox.min.y,boundingBox.max.z+0.02);
 	face_4.position.set(0,boundingBox.max.y+0.02,0);
 
-	maxHeight = (boundingBox.max.x-boundingBox.min.x);
+	maxHeight = (((boundingBox.max.x-boundingBox.min.x)-1)/2)+1;
 	if((boundingBox.max.y-boundingBox.min.y)>maxHeight){
-		maxHeight = boundingBox.max.y-boundingBox.min.y;
+		maxHeight = (((boundingBox.max.y-boundingBox.min.y)-1)/2)+1;
 	}if((boundingBox.max.z-boundingBox.min.z)>maxHeight){
-		maxHeight = boundingBox.max.z-boundingBox.min.z;
+		maxHeight = (((boundingBox.max.y-boundingBox.min.y)-1)/2)+1;
 	}
 	rotate_x.geometry.computeBoundingBox();
 
-	maxHeight = (((boundingBox.max.x-boundingBox.min.x)-1)/2)+1;
+	
 	console.log("(boundingBox.max.x-boundingBox.min.x)", maxHeight);
 	//console.log("(rotate_x.geometry.boundingBox.max.x+rotate_x.geometry.boundingBox.min.x)", Math.floor(((rotate_x.geometry.boundingBox.max.x-rotate_x.geometry.boundingBox.min.x)/2));
 	rotate_x.scale.set(maxHeight,maxHeight,maxHeight);
