@@ -177,7 +177,7 @@ SELECTED.helperHoverCheck = function(event){
 				if ( intersects.length > 0 ) {
 					
 					
-					if(CORNER_SELECTED!=null&&intersects[0].object.name!=CORNER_SELECTED.name){
+					if((CORNER_SELECTED!=null||ROTAION_SELECTED!=null)){
 						if(CORNER_SELECTED.name.indexOf("face")>-1){
 						CORNER_SELECTED.material.color = conner_select_color;
 					}else {
