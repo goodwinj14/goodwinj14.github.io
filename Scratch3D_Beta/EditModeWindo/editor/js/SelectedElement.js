@@ -184,7 +184,7 @@ SELECTED.helperHoverCheck = function(event){
 						if(ROTAION_SELECTED.name === "rotate_x"){
 							ROTAION_SELECTED.material.color = rotationX_Color
 						}else if(ROTAION_SELECTED.name === "rotate_y"){
-							CORNER_SELECTED.material.color = rotationY_Color
+							ROTAION_SELECTED.material.color = rotationY_Color
 						}else if(ROTAION_SELECTED.name === "rotate_z"){
 							ROTAION_SELECTED.material.color = rotationZ_Color
 						}
