@@ -121,15 +121,15 @@ function editMeshDimensions(event){
 function grid_clicked(event){
 	
 	event.preventDefault();
-	mouse.x = ( event.clientX / renderer.domElement.width ) * 2 - 1;
-	mouse.y = - ( event.clientY / renderer.domElement.height ) * 2 + 1;
+	mouse.x = ( event.clientX / renderer.getSize().width ) * 2 - 1;
+	mouse.y = - ( event.clientY / renderer.getSize().height ) * 2 + 1;
 	console.log("CORNER_SELECTED",CORNER_SELECTED);
 	raycaster.setFromCamera( mouse, camera);
 	if (MOVE_OBJ_ACTIVE) {
 		MOVE_OBJ_ACTIVE=false;
 	}
 	//Checks to see if we are hovering over a coner edit shape helper
-	if(CORNER_SELECTED==null){
+	if(CORNER_SELECTED==null && ROTAION_SELECTED==null){
 		intersects = raycaster.intersectObjects( GAME_OBJECTS.Shapes, false);	
 		if ( intersects.length > 0 ) {
 			console.log("called");
