@@ -111,7 +111,7 @@ SELECTED.select = function(event){
 	face_2.position.set(0,boundingBox.min.y,boundingBox.min.z-0.02);
 	face_3.position.set(0,boundingBox.min.y,boundingBox.max.z+0.02);
 	face_4.position.set(0,boundingBox.max.y+0.02,0);
-	console.log("rotate_z",rotate_z);
+	rotate_z.scale.set(boundingBox.max.x+boundingBox.min.x,1,1);
 	//avtive_Object.position.x = avtive_Object.position.x+((avtive_Object.scale.x-(boundingBox.max.x-boundingBox.min.x))/2);
 	//avtive_Object.position.y = avtive_Object.position.y+((avtive_Object.scale.y-(boundingBox.max.y-boundingBox.min.y))/2);
 	//avtive_Object.position.z = avtive_Object.position.z+((avtive_Object.scale.z-(boundingBox.max.z-boundingBox.min.z))/2);
