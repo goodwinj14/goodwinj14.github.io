@@ -208,7 +208,7 @@ SELECTED.helperHoverCheck = function(event){
 							CORNER_SELECTED.material.color = rotationZ_Color
 						}
 					}
-					
+					ROTAION_SELECTED = null;
 					CORNER_SELECTED = null;
 				}
 }
