@@ -59,21 +59,21 @@ SELECTED.init = function(object){
 	mat_ring_x = new THREE.MeshBasicMaterial();
 	mat_ring_x.side = THREE.DoubleSide;
 	mat_ring_x.color = rotationX_Color;
-	rotate_x = new THREE.Mesh(new THREE.RingGeometry( 1, 1.05, 64 ), mat_ring_x);
+	rotate_x = new THREE.Mesh(new THREE.RingBufferGeometry( 1, 1.05, 64 ), mat_ring_x);
 	rotate_x.rotation.y = Math.PI/2;
 	rotate_x.name = "rotate_x";
 
 	mat_ring_y = new THREE.MeshBasicMaterial();
 	mat_ring_y.side = THREE.DoubleSide;
 	mat_ring_y.color = rotationY_Color;
-	rotate_y = new THREE.Mesh(new THREE.RingGeometry( 1, 1.05, 64 ), mat_ring_y);
+	rotate_y = new THREE.Mesh(new THREE.RingBufferGeometry( 1, 1.05, 64 ), mat_ring_y);
 	rotate_y.rotation.x = Math.PI/2;
 	rotate_y.name = "rotate_y";
 
 	mat_ring_z = new THREE.MeshBasicMaterial();
 	mat_ring_z.side = THREE.DoubleSide;
 	mat_ring_z.color = rotationZ_Color;
-	rotate_z = new THREE.Mesh(new THREE.RingGeometry( 1, 1.05, 64 ), mat_ring_z);
+	rotate_z = new THREE.Mesh(new THREE.RingBufferGeometry( 1, 1.05, 64 ), mat_ring_z);
 	rotate_z.name = "rotate_z";
 
 	shapeHelpers.add(face_0);
