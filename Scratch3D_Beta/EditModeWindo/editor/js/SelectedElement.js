@@ -191,9 +191,9 @@ SELECTED.helperHoverCheck = function(event){
 					}
 				}
 					intersects[0].object.material.color = rotation_Select_Color;
-					if(CORNER_SELECTED.name.indexOf("face")>-1){
+					if(intersects[0].object.name.indexOf("face")>-1){
 						CORNER_SELECTED = intersects[0].object;
-					}else if(CORNER_SELECTED.name.indexOf("rotate")>-1){
+					}else if(intersects[0].object.name.indexOf("rotate")>-1){
 						ROTAION_SELECTED = intersects[0].object;
 					}
 				}else if(CORNER_SELECTED!=null && !MOUSE_IS_DOWN){

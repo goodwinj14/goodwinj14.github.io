@@ -27,7 +27,7 @@ EVENT.init = function(){
     	editMeshDimensions(event);
     }else if(MOUSE_IS_DOWN && OBJECT_IS_SELECTED && CORNER_SELECTED==null){
     	obj_position_change(event);
-    }else if(MOUSE_IS_DOWN && OBJECT_IS_SELECTED && ROTAION_SELECTED!=null)){
+    }else if(MOUSE_IS_DOWN && OBJECT_IS_SELECTED && ROTAION_SELECTED!=null){
     	objectRotation(event);
     }else if(OBJECT_IS_SELECTED){
     	pos_change_Event = new CustomEvent('Editor_Obj_hover_check', { 'detail': event});
