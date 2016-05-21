@@ -183,7 +183,7 @@ SELECTED.helperHoverCheck = function(event){
 					}else if(intersects[0].object.name.indexOf("rotate")>-1){
 						ROTAION_SELECTED = intersects[0].object;
 					}
-					console.log("ROTAION_SELECTED", ROTAION_SELECTED);
+
 					if(CORNER_SELECTED!=null){
 						if(CORNER_SELECTED.name.indexOf("face")>-1){
 						CORNER_SELECTED.material.color = conner_select_color;
