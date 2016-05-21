@@ -112,7 +112,7 @@ SELECTED.select = function(event){
 	face_3.position.set(0,boundingBox.min.y,boundingBox.max.z+0.02);
 	face_4.position.set(0,boundingBox.max.y+0.02,0);
 
-	maxHeight = boundingBox.max.x-boundingBox.min.x;
+	maxHeight = (boundingBox.max.x+boundingBox.min.x)+1;
 	if((boundingBox.max.y-boundingBox.min.y)>maxHeight){
 		maxHeight = boundingBox.max.y-boundingBox.min.y;
 	}if((boundingBox.max.z-boundingBox.min.z)>maxHeight){
