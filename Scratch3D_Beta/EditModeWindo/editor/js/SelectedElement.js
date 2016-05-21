@@ -121,6 +121,7 @@ SELECTED.select = function(event){
 	rotate_x.geometry.computeBoundingBox();
 
 	maxHeight = (boundingBox.max.x-boundingBox.min.x)/(rotate_x.geometry.boundingBox.max+rotate_x.geometry.boundingBox.mint);
+	console.log("maxHeight", maxHeight);
 	rotate_x.scale.set(maxHeight,maxHeight,maxHeight);
 	rotate_y.scale.set(maxHeight,maxHeight,maxHeight);
 	rotate_z.scale.set(maxHeight,maxHeight,maxHeight);
