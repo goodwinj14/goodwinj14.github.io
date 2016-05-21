@@ -177,10 +177,13 @@ SELECTED.helperHoverCheck = function(event){
 				if ( intersects.length > 0 ) {
 					
 					
-					if((CORNER_SELECTED!=null||ROTAION_SELECTED!=null)){
+					if(CORNER_SELECTED!=null){
 						if(CORNER_SELECTED.name.indexOf("face")>-1){
 						CORNER_SELECTED.material.color = conner_select_color;
-					}else {
+						}
+					}
+
+					if(ROTAION_SELECTED!=null) {
 						if(ROTAION_SELECTED.name == "rotate_x"){
 							ROTAION_SELECTED.material.color = rotationX_Color;
 						}else if(ROTAION_SELECTED.name == "rotate_y"){
@@ -189,7 +192,7 @@ SELECTED.helperHoverCheck = function(event){
 							ROTAION_SELECTED.material.color = rotationZ_Color;
 						}
 					}
-				}
+
 					intersects[0].object.material.color = rotation_Select_Color;
 					if(intersects[0].object.name.indexOf("face")>-1){
 						CORNER_SELECTED = intersects[0].object;
