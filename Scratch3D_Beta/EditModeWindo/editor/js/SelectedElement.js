@@ -181,12 +181,12 @@ SELECTED.helperHoverCheck = function(event){
 						if(CORNER_SELECTED.name.indexOf("face")>-1){
 						CORNER_SELECTED.material.color = conner_select_color;
 					}else {
-						if(CORNER_SELECTED.name === "rotate_x"){
-							CORNER_SELECTED.material.color = rotationX_Color
-						}else if(CORNER_SELECTED.name === "rotate_y"){
+						if(ROTAION_SELECTED.name === "rotate_x"){
+							ROTAION_SELECTED.material.color = rotationX_Color
+						}else if(ROTAION_SELECTED.name === "rotate_y"){
 							CORNER_SELECTED.material.color = rotationY_Color
-						}else if(CORNER_SELECTED.name === "rotate_z"){
-							CORNER_SELECTED.material.color = rotationZ_Color
+						}else if(ROTAION_SELECTED.name === "rotate_z"){
+							ROTAION_SELECTED.material.color = rotationZ_Color
 						}
 					}
 				}
