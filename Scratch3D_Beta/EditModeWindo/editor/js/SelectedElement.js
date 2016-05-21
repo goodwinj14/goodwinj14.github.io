@@ -116,7 +116,7 @@ SELECTED.select = function(event){
 	if((boundingBox.max.y-boundingBox.min.y)>maxHeight){
 		maxHeight = (((boundingBox.max.y-boundingBox.min.y)-1)/2)+1;
 	}if((boundingBox.max.z-boundingBox.min.z)>maxHeight){
-		maxHeight = (((boundingBox.max.y-boundingBox.min.y)-1)/2)+1;
+		maxHeight = (((boundingBox.max.z-boundingBox.min.z)-1)/2)+1;
 	}
 	rotate_x.geometry.computeBoundingBox();
 
