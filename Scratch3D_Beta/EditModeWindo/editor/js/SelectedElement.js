@@ -120,8 +120,9 @@ SELECTED.select = function(event){
 	}
 	rotate_x.geometry.computeBoundingBox();
 
-	maxHeight = (boundingBox.max.x-boundingBox.min.x)/(rotate_x.geometry.boundingBox.max.x+rotate_x.geometry.boundingBox.min.x);
-	console.log("maxHeight", maxHeight);
+	maxHeight = (boundingBox.max.x-boundingBox.min.x)/(rotate_x.geometry.boundingBox.max.x-rotate_x.geometry.boundingBox.min.x);
+	console.log("(boundingBox.max.x-boundingBox.min.x)", (boundingBox.max.x-boundingBox.min.x));
+	console.log("(rotate_x.geometry.boundingBox.max.x+rotate_x.geometry.boundingBox.min.x)", (rotate_x.geometry.boundingBox.max.x-rotate_x.geometry.boundingBox.min.x));
 	rotate_x.scale.set(maxHeight,maxHeight,maxHeight);
 	rotate_y.scale.set(maxHeight,maxHeight,maxHeight);
 	rotate_z.scale.set(maxHeight,maxHeight,maxHeight);
