@@ -59,15 +59,15 @@ function obj_position_change(event){
 	document.dispatchEvent(pos_change_Event);
 }
 
-function objectRotation(event){
+function objectRotation(e){
 
 	console.log("Rotation Called");
-	 /*   var deltaMove = {
+	    var deltaMove = {
         x: e.offsetX-previousMousePosition.x,
         y: e.offsetY-previousMousePosition.y
     };
 
-    if(isDragging) {
+    //if(isDragging) {
             
         var deltaRotationQuaternion = new three.Quaternion()
             .setFromEuler(new three.Euler(
@@ -77,13 +77,13 @@ function objectRotation(event){
                 'XYZ'
             ));
         
-        cube.quaternion.multiplyQuaternions(deltaRotationQuaternion, cube.quaternion);
-    }
+        SELECTED_OBJECT.quaternion.multiplyQuaternions(deltaRotationQuaternion, SELECTED_OBJECT.quaternion);
+    //}
     
     previousMousePosition = {
         x: e.offsetX,
         y: e.offsetY
-    };*/
+    };
 }
 
 function editMeshDimensions(event){
@@ -103,7 +103,6 @@ function editMeshDimensions(event){
    		 - ( event.clientY / renderer.domElement.height ) * 2 + 1,
    		 0.5 );
 	vector.unproject( camera );
-	console.log("SELECTED_OBJECT: ",SELECTED_OBJECT);
 	dir = vector.sub( camera.position ).normalize();
 
 	//Checks to see if we are trying to change the Y dimensions of the geometry
@@ -123,7 +122,6 @@ function grid_clicked(event){
 	event.preventDefault();
 	mouse.x = ( event.clientX / renderer.getSize().width ) * 2 - 1;
 	mouse.y = - ( event.clientY / renderer.getSize().height ) * 2 + 1;
-	console.log("CORNER_SELECTED",CORNER_SELECTED);
 	raycaster.setFromCamera( mouse, camera);
 	if (MOVE_OBJ_ACTIVE) {
 		MOVE_OBJ_ACTIVE=false;
@@ -132,7 +130,6 @@ function grid_clicked(event){
 	if(CORNER_SELECTED==null && ROTAION_SELECTED==null){
 		intersects = raycaster.intersectObjects( GAME_OBJECTS.Shapes, false);	
 		if ( intersects.length > 0 ) {
-			console.log("called");
 			if(SELECTED_OBJECT!=null){
 				deselectEvent = new CustomEvent('Editor_Obj_Deselected', { 'detail': SELECTED_OBJECT});
 				document.dispatchEvent(deselectEvent);
