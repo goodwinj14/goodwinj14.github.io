@@ -146,6 +146,14 @@ SELECTED.updateHelperPosition = function(obj){
 	avtive_Object.geometry.computeBoundingBox();
 	boundingBox = avtive_Object.geometry.boundingBox;
 	//boundingBox.setFromObject( avtive_Object );
+	//rotate_x.geometry.computeBoundingBox();
+		maxHeight = (((boundingBox.max.x-boundingBox.min.x)-1)/2)+1;
+	if((boundingBox.max.y-boundingBox.min.y)>maxHeight){
+		maxHeight = (((boundingBox.max.y-boundingBox.min.y)-1)/2)+1;
+	}if((boundingBox.max.z-boundingBox.min.z)>maxHeight){
+		maxHeight = (((boundingBox.max.z-boundingBox.min.z)-1)/2)+1;
+	}
+	
 	rotate_x.scale.set(maxHeight,maxHeight,maxHeight);
 	rotate_y.scale.set(maxHeight,maxHeight,maxHeight);
 	rotate_z.scale.set(maxHeight,maxHeight,maxHeight);
