@@ -73,7 +73,7 @@ function objectRotation(e){
 
     //if(isDragging) {
          var deltaRotationQuaternion;
-         var angle = ((deltaMove.x + deltaMove.y)/2)* (Math.PI / 180)*-1;
+         var angle = Math.abs(((deltaMove.x + deltaMove.y)/2)* (Math.PI / 180));
          console.log("deltaMove: ", deltaMove.x);
          console.log("deltaMove: ", deltaMove.y);
          console.log("deltaMove: ", angle);
