@@ -89,6 +89,8 @@ function objectRotation(e){
             	0,0, angle,'XYZ'));
 	       }
 	       SELECTED_OBJECT.quaternion.multiplyQuaternions(deltaRotationQuaternion, SELECTED_OBJECT.quaternion);
+	       mesh.updateMatrix();
+	       mesh.geometry.verticesNeedUpdate = true;
     //}
     
     previousMousePosition = {
