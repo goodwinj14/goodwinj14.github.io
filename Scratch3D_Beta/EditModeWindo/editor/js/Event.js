@@ -94,7 +94,7 @@ function objectRotation(e){
 	      // SELECTED_OBJECT.
 	       SELECTED_OBJECT.quaternion.multiplyQuaternions(deltaRotationQuaternion, SELECTED_OBJECT.quaternion);
 	       SELECTED_OBJECT.updateMatrix();
-		   SELECTED_OBJECT.geometry.applyMatrix( object.matrix );
+		   SELECTED_OBJECT.geometry.applyMatrix( SELECTED_OBJECT.matrix );
 		   SELECTED_OBJECT.position.set( 0, 0, 0 );
 		   SELECTED_OBJECT.rotation.set( 0, 0, 0 );
 		   SELECTED_OBJECT.scale.set( 1, 1, 1 );
