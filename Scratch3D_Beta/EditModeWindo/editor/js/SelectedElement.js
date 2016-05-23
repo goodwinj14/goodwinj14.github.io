@@ -124,7 +124,7 @@ SELECTED.select = function(event){
 	rotate_x.geometry.computeBoundingBox();
 
 	
-	console.log("(boundingBox.max.x-boundingBox.min.x)", maxHeight);
+
 	//console.log("(rotate_x.geometry.boundingBox.max.x+rotate_x.geometry.boundingBox.min.x)", Math.floor(((rotate_x.geometry.boundingBox.max.x-rotate_x.geometry.boundingBox.min.x)/2));
 	rotate_x.scale.set(maxHeight,maxHeight,maxHeight);
 	rotate_y.scale.set(maxHeight,maxHeight,maxHeight);
@@ -146,6 +146,10 @@ SELECTED.updateHelperPosition = function(obj){
 	avtive_Object.geometry.computeBoundingBox();
 	boundingBox = avtive_Object.geometry.boundingBox;
 	//boundingBox.setFromObject( avtive_Object );
+	rotate_x.scale.set(maxHeight,maxHeight,maxHeight);
+	rotate_y.scale.set(maxHeight,maxHeight,maxHeight);
+	rotate_z.scale.set(maxHeight,maxHeight,maxHeight);
+
 	face_0.position.set(boundingBox.max.x+0.02,boundingBox.min.y,0);
 	face_1.position.set(boundingBox.min.x-0.02,boundingBox.min.y,0);
 	face_2.position.set(0,boundingBox.min.y,boundingBox.min.z-0.02);
