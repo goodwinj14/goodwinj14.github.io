@@ -73,7 +73,7 @@ function objectRotation(e){
 
     //if(isDragging) {
             
-        var deltaRotationQuaternion = new three.Quaternion()
+        var deltaRotationQuaternion = new THREE.Quaternion()
             .setFromEuler(new three.Euler(
                 toRadians(deltaMove.y * 1),
                 toRadians(deltaMove.x * 1),
