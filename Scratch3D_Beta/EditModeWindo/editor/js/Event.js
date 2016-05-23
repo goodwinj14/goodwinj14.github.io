@@ -78,7 +78,7 @@ function objectRotation(e){
          console.log("deltaMove: ", deltaMove.y);
          console.log("deltaMove: ", angle);
          console.log("deltaMove: ", SELECTED_OBJECT);
-         if(ROTAION_SELECTED.name == "rotate_x"){
+        /* if(ROTAION_SELECTED.name == "rotate_x"){
          		deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(new THREE.Euler(
             	angle,0, 0,'XYZ'));
 	       }else if(ROTAION_SELECTED.name == "rotate_y"){
@@ -87,10 +87,14 @@ function objectRotation(e){
 	       }else if(ROTAION_SELECTED.name == "rotate_z"){
 	       		deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(new THREE.Euler(
             	0,0, angle,'XYZ'));
-	       }
+	       }*/
+	       var beta = Math.PI/2;
+	       var m2 = new THREE.Matrix4();
+	       m2.makeRotationY( beta );
+	      // SELECTED_OBJECT.
 	       SELECTED_OBJECT.quaternion.multiplyQuaternions(deltaRotationQuaternion, SELECTED_OBJECT.quaternion);
-	       mesh.updateMatrix();
-	       mesh.geometry.verticesNeedUpdate = true;
+	       SELECTED_OBJECT.updateMatrix();
+	       SELECTED_OBJECT.geometry.verticesNeedUpdate = true;
     //}
     
     previousMousePosition = {
