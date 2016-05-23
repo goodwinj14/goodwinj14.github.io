@@ -73,7 +73,7 @@ function objectRotation(e){
 
     //if(isDragging) {
          var deltaRotationQuaternion;
-         var angle = ((deltaMove.x*1 + deltaMove.y*1)/2)* (Math.PI / 180);
+         var angle = ((deltaMove.x*1 + deltaMove.y*1)/2)* (Math.PI / 180)*-1;
          console.log("angle: ", angle);
          if(ROTAION_SELECTED.name == "rotate_x"){
          		deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(new THREE.Euler(
