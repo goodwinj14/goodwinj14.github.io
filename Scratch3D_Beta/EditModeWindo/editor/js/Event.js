@@ -72,16 +72,19 @@ function objectRotation(e){
     };
 
     //if(isDragging) {
-            
-        var deltaRotationQuaternion = new THREE.Quaternion()
-            .setFromEuler(new THREE.Euler(
-                (deltaMove.y * 1) * (Math.PI / 180),
-                0,
-                0,
-                'XYZ'
-            ));
-        
-        SELECTED_OBJECT.quaternion.multiplyQuaternions(deltaRotationQuaternion, SELECTED_OBJECT.quaternion);
+         var deltaRotationQuaternion;
+
+         if(ROTAION_SELECTED.name == "rotate_x"){
+         		deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(new THREE.Euler(
+            	(deltaMove.y * 1) * (Math.PI / 180),0, 0,'XYZ'));
+	       }else if(ROTAION_SELECTED.name == "rotate_y"){
+	       		deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(new THREE.Euler(
+            	0,(deltaMove.x * 1) * (Math.PI / 180), 0,'XYZ'));
+	       }else if(ROTAION_SELECTED.name == "rotate_z"){
+	       		deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(new THREE.Euler(
+            	0,0, (deltaMove.x * 1) * (Math.PI / 180),'XYZ'));
+	       }
+	       SELECTED_OBJECT.quaternion.multiplyQuaternions(deltaRotationQuaternion, SELECTED_OBJECT.quaternion);
     //}
     
     previousMousePosition = {
