@@ -73,16 +73,17 @@ function objectRotation(e){
 
     //if(isDragging) {
          var deltaRotationQuaternion;
-
+         var angle = Math.sqrt(Math.pow(deltaMove.x,2) + Math.pow(deltaMove.y,2));
+         console.log(angle);
          if(ROTAION_SELECTED.name == "rotate_x"){
          		deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(new THREE.Euler(
-            	(deltaMove.y * 1) * (Math.PI / 180),0, 0,'XYZ'));
+            	angle,0, 0,'XYZ'));
 	       }else if(ROTAION_SELECTED.name == "rotate_y"){
 	       		deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(new THREE.Euler(
-            	0,(deltaMove.x * 1) * (Math.PI / 180), 0,'XYZ'));
+            	0,angle, 0,'XYZ'));
 	       }else if(ROTAION_SELECTED.name == "rotate_z"){
 	       		deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(new THREE.Euler(
-            	0,0, (deltaMove.x * 1) * (Math.PI / 180),'XYZ'));
+            	0,0, angle,'XYZ'));
 	       }
 	       SELECTED_OBJECT.quaternion.multiplyQuaternions(deltaRotationQuaternion, SELECTED_OBJECT.quaternion);
     //}
