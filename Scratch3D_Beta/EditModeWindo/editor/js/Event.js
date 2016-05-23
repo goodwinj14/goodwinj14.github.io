@@ -76,7 +76,7 @@ function objectRotation(e){
         var deltaRotationQuaternion = new THREE.Quaternion()
             .setFromEuler(new THREE.Euler(
                 (deltaMove.y * 1) * (Math.PI / 180),
-                (deltaMove.x * 1) * (Math.PI / 180),
+                0,
                 0,
                 'XYZ'
             ));
