@@ -145,6 +145,7 @@ SELECTED.updateHelperPosition = function(obj){
 	avtive_Object = obj;
 	avtive_Object.geometry.computeBoundingBox();
 	boundingBox = avtive_Object.geometry.boundingBox;
+	console.log("called updateHelperPosition");
 	//boundingBox.setFromObject( avtive_Object );
 	//rotate_x.geometry.computeBoundingBox();
 		maxHeight = (((boundingBox.max.x-boundingBox.min.x)-1)/2)+1;
