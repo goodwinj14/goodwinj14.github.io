@@ -6,6 +6,10 @@ var raycaster, intersects;
 var MOUSE_IS_DOWN = false;
 var MOUSE_LOC_CHANGED = false;
 var mouse;
+var   previousMousePosition = {
+        x: 0,
+        y: 0
+    };
 
 
 
