@@ -77,6 +77,7 @@ function objectRotation(e){
          console.log("deltaMove: ", deltaMove.x);
          console.log("deltaMove: ", deltaMove.y);
          console.log("deltaMove: ", angle);
+         console.log("deltaMove: ", SELECTED_OBJECT);
          if(ROTAION_SELECTED.name == "rotate_x"){
          		deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(new THREE.Euler(
             	angle,0, 0,'XYZ'));
