@@ -73,9 +73,8 @@ function objectRotation(e){
 
     //if(isDragging) {
          var deltaRotationQuaternion;
-         var angle = Math.abs(((deltaMove.x + deltaMove.y)/2)* (Math.PI / 180));
-         var meshBottomPosition = SELECTED_OBJECT.position.y;
-         var meshBoundingBoxMin = SELECTED_OBJECT.geometry.boundingBox.min.y;
+         var angle = ((deltaMove.x + deltaMove.y)/2)* (Math.PI / 180);
+
          if(ROTAION_SELECTED.name == "rotate_x"){
          		deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(new THREE.Euler(
             	angle,0, 0,'XYZ'));
@@ -95,10 +94,7 @@ function objectRotation(e){
 		   SELECTED_OBJECT.geometry.applyMatrix( SELECTED_OBJECT.matrix );
 		   SELECTED_OBJECT.geometry.center();
 		   SELECTED_OBJECT.geometry.computeBoundingBox();
-		   y_location = meshBottomPosition - (meshBoundingBoxMin - SELECTED_OBJECT.geometry.boundingBox.min.y) 
-		   //SELECTED_OBJECT.position.set( 0, y_location, 0 );
 		   SELECTED_OBJECT.rotation.set( 0, 0, 0 );
-		   SELECTED_OBJECT.scale.set( 1, 1, 1 );
 
 		   SELECTED_OBJECT.updateMatrix();
 	       SELECTED_OBJECT.geometry.verticesNeedUpdate = true;
