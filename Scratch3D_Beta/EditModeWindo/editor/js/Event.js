@@ -95,11 +95,11 @@ function objectRotation(e){
 	       SELECTED_OBJECT.quaternion.multiplyQuaternions(deltaRotationQuaternion, SELECTED_OBJECT.quaternion);
 	       SELECTED_OBJECT.updateMatrix();
 		   SELECTED_OBJECT.geometry.applyMatrix( SELECTED_OBJECT.matrix );
-		   
+		   mesh.geometry.center();
 		   SELECTED_OBJECT.position.set( 0, 0, 0 );
 		   SELECTED_OBJECT.rotation.set( 0, 0, 0 );
 		   SELECTED_OBJECT.scale.set( 1, 1, 1 );
-		   mesh.geometry.center();
+		   
 		   SELECTED_OBJECT.updateMatrix();
 	       SELECTED_OBJECT.geometry.verticesNeedUpdate = true;
     //}
