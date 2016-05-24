@@ -96,7 +96,7 @@ function objectRotation(e){
 		   SELECTED_OBJECT.geometry.center();
 		   SELECTED_OBJECT.geometry.computeBoundingBox();
 		   y_location = meshBottomPosition - (meshBoundingBoxMin - SELECTED_OBJECT.geometry.boundingBox.min.y) 
-		   SELECTED_OBJECT.position.set( 0, y_location, 0 );
+		   //SELECTED_OBJECT.position.set( 0, y_location, 0 );
 		   SELECTED_OBJECT.rotation.set( 0, 0, 0 );
 		   SELECTED_OBJECT.scale.set( 1, 1, 1 );
 
