@@ -92,11 +92,11 @@ function objectRotation(e){
 	       //var m2 = new THREE.Matrix4();
 	       //m2.makeRotationY( beta );
 	      // SELECTED_OBJECT.
-	      mesh.geometry.center();
+	       SELECTED_OBJECT.geometry.center();
 	       SELECTED_OBJECT.quaternion.multiplyQuaternions(deltaRotationQuaternion, SELECTED_OBJECT.quaternion);
 	       SELECTED_OBJECT.updateMatrix();
 		   SELECTED_OBJECT.geometry.applyMatrix( SELECTED_OBJECT.matrix );
-		   
+		   SELECTED_OBJECT.geometry.center();
 		   SELECTED_OBJECT.position.set( 0, 0, 0 );
 		   SELECTED_OBJECT.rotation.set( 0, 0, 0 );
 		   SELECTED_OBJECT.scale.set( 1, 1, 1 );
