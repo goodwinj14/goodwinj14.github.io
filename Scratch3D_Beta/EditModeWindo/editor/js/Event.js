@@ -113,7 +113,7 @@ function objectRotation(e){
 		   SELECTED_OBJECT.updateMatrix();
 	       SELECTED_OBJECT.geometry.verticesNeedUpdate = true;
     //}
-    	   var SELECTED_OBJECT.rotationalOffset = angle*(Math.PI / 180);
+    	   SELECTED_OBJECT.rotationalOffset = angle*(Math.PI / 180);
     	   console.log("rotation ", SELECTED_OBJECT);
     previousMousePosition = {
         x: e.offsetX,
