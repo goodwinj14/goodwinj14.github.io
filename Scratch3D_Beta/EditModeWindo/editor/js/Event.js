@@ -85,14 +85,14 @@ function objectRotation(e){
 
          var angle = Math.acos(b.dot(c)/(b.length()*c.length() ) );
          angle = ((Math.ceil(angle*(Math.PI / 180)))*Math.PI)/180;
-
+         console.log("angle: ", angle);
          if((((b.x-a.x)*(c.y-a.y))- ((b.y-a.y)*(c.x-a.x)))>0){
          	angle = angle*-1;
          }
          if(ROTAION_SELECTED.name == "rotate_x"){
          		deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(new THREE.Euler(
             	angle,0, 0,'XYZ'));
-            	SELECTED_OBJECT.rotationalOffset.x += angle*(180/Math.PI);
+            	SELECTED_OBJECT.rotationalOffset.setX() angle*(180/Math.PI);
 	       }else if(ROTAION_SELECTED.name == "rotate_y"){
 	       		deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(new THREE.Euler(
             	0,angle, 0,'XYZ'));
