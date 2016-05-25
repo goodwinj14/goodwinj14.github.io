@@ -81,10 +81,10 @@ function objectRotation(e){
     vector_a.y = - ( vector_a.y * heightHalf ) + heightHalf;
     console.log("vector.x", vector_a.x );
     console.log("vector.y", vector_a.y );
-    var a = new THREE.Vector2( vector_a.x, vector_a.y );
+    var a = new THREE.Vector2( 0, 0 );
     var b = new THREE.Vector2( previousMousePosition.x-vector_a.x, previousMousePosition.y-vector_a.y );
     var c = new THREE.Vector2( e.offsetX-vector_a.x, e.offsetY-vector_a.y );
-    console.log("direction",  (((b.x-a.x)*(c.y-a.y))- ((b.y-a.y)*(c.x-a.x)))  );
+    console.log("direction_2",  (((b.x-a.x)*(c.y-a.y))- ((b.y-a.y)*(c.x-a.x)))  );
 
 
 
