@@ -82,15 +82,10 @@ function objectRotation(e){
 
     //if(isDragging) {
          var deltaRotationQuaternion;
-         console.log("vector_a: ", vector_a);
-         console.log("a: ", a);
-         console.log("b: ", b);
-         console.log("c: ", c);
 
          var angle = Math.acos(b.dot(c)/(b.length()*c.length() ) );
-         console.log("acos: ",Math.acos(b.dot(c)/(b.length()*c.length() ) )   );
+    if(angle!=NaN){
          angle = ((Math.ceil(angle*(Math.PI / 180)))*Math.PI)/180;
-         console.log("angle: ", angle);
          if((((b.x-a.x)*(c.y-a.y))- ((b.y-a.y)*(c.x-a.x)))>0){
          	angle = angle*-1;
          }
@@ -105,7 +100,6 @@ function objectRotation(e){
 	       }else if(ROTAION_SELECTED.name == "rotate_z"){
 	       		deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(new THREE.Euler(
             	0,0, angle,'XYZ'));
-            	console.log(angle*(180/Math.PI));
             	SELECTED_OBJECT.rotationalOffset.z += angle*(180/Math.PI);
 	       }
 	       //var beta = Math.PI/2;
@@ -121,7 +115,7 @@ function objectRotation(e){
 
 		   SELECTED_OBJECT.updateMatrix();
 	       SELECTED_OBJECT.geometry.verticesNeedUpdate = true;
-    //}
+    }
     	   
     	   console.log("rotation ", SELECTED_OBJECT.rotationalOffset);
     previousMousePosition = {
