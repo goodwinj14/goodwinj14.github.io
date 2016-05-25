@@ -67,6 +67,20 @@ function objectRotation(e){
 
 	console.log("Rotation Called");
 		dist = (Math.sqrt(Math.pow(e.offsetX-previousMousePosition.x,2) + Math.pow(e.offsetY-previousMousePosition.y,2))/2)*(Math.PI / 180);
+	    var vector = new THREE.Vector3();
+
+    var widthHalf = 0.5*renderer.context.canvas.width;
+    var heightHalf = 0.5*renderer.context.canvas.height;
+
+    SELECTED_OBJECT.updateMatrixWorld();
+    vector.setFromMatrixPosition(SELECTED_OBJECT.matrixWorld);
+    vector.project(camera);
+
+    vector.x = ( vector.x * widthHalf ) + widthHalf;
+    vector.y = - ( vector.y * heightHalf ) + heightHalf;
+    console.log("vector.x", vector.x );
+    console.log("vector.y", vector.y );
+
 	    var deltaMove = {
         dist: dist,
         dir: ((e.offsetX-previousMousePosition.x)+(e.offsetY-previousMousePosition.y))/Math.abs(((e.offsetX-previousMousePosition.x)+(e.offsetY-previousMousePosition.y)))
