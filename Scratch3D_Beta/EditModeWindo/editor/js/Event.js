@@ -65,11 +65,7 @@ function obj_position_change(event){
 
 function objectRotation(e){
 
-	console.log("Rotation Called");
-		dist = (Math.sqrt(Math.pow(e.offsetX-previousMousePosition.x,2) + Math.pow(e.offsetY-previousMousePosition.y,2))/2)*(Math.PI / 180);
-	 
 	var vector_a = new THREE.Vector3();
-
     var widthHalf = 0.5*renderer.context.canvas.width;
     var heightHalf = 0.5*renderer.context.canvas.height;
 
@@ -79,20 +75,16 @@ function objectRotation(e){
 
     vector_a.x = ( vector_a.x * widthHalf ) + widthHalf;
     vector_a.y = - ( vector_a.y * heightHalf ) + heightHalf;
-    console.log("vector.x", vector_a.x );
-    console.log("vector.y", vector_a.y );
+
     var a = new THREE.Vector2( 0, 0 );
     var b = new THREE.Vector2( previousMousePosition.x-vector_a.x, previousMousePosition.y-vector_a.y );
     var c = new THREE.Vector2( e.offsetX-vector_a.x, e.offsetY-vector_a.y );
-    console.log("direction_2",  (((b.x-a.x)*(c.y-a.y))- ((b.y-a.y)*(c.x-a.x)))  );
-
 
     //if(isDragging) {
          var deltaRotationQuaternion;
 
          var angle = Math.acos(b.dot(c)/(b.length()*c.length() ) );
          angle = ((Math.ceil(angle*(Math.PI / 180)))*Math.PI)/180;
-         console.log("Degrees", Math.ceil(angle*(Math.PI / 180)));
 
          if((((b.x-a.x)*(c.y-a.y))- ((b.y-a.y)*(c.x-a.x)))>0){
          	angle = angle*-1;
@@ -121,7 +113,9 @@ function objectRotation(e){
 		   SELECTED_OBJECT.updateMatrix();
 	       SELECTED_OBJECT.geometry.verticesNeedUpdate = true;
     //}
-    
+    	   var rotationOffSet = SELECTED_OBJECT.quaternion.clone.invere();
+    	   var rotationToWorld = SELECTED_OBJECT.getWorldQuaternion();
+    	   console.log(rotationToWorld);
     previousMousePosition = {
         x: e.offsetX,
         y: e.offsetY
