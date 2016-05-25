@@ -2,7 +2,7 @@ var SHAPES = {}
 
 SHAPES.add = function(shape_name){
 	var shape;
-	
+	console.log("shape Called");
 	if(shape_name=="add_cube"){
 		shape =  newCube(1,1,1);
 		shape.name="cube_"+shape.id;
