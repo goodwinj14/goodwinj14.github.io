@@ -69,7 +69,7 @@ function objectRotation(e){
 		dist = (Math.sqrt(Math.pow(e.offsetX-previousMousePosition.x,2) + Math.pow(e.offsetY-previousMousePosition.y,2))/2)*(Math.PI / 180);
 	    var deltaMove = {
         dist: dist,
-        dir: ((e.offsetX-previousMousePosition.x)+(e.offsetY-previousMousePosition.y))/Math.abs(((e.offsetX-previousMousePosition.x)+(e.offsetY-previousMousePosition.y)));
+        dir: ((e.offsetX-previousMousePosition.x)+(e.offsetY-previousMousePosition.y))/Math.abs(((e.offsetX-previousMousePosition.x)+(e.offsetY-previousMousePosition.y)))
     };
 
     //if(isDragging) {
