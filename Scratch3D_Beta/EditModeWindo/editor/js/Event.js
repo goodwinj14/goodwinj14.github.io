@@ -100,6 +100,7 @@ function objectRotation(e){
 	       }else if(ROTAION_SELECTED.name == "rotate_z"){
 	       		deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(new THREE.Euler(
             	0,0, angle,'XYZ'));
+            	console.log(angle*(180/Math.PI));
             	SELECTED_OBJECT.rotationalOffset.z += angle*(180/Math.PI);
 	       }
 	       //var beta = Math.PI/2;
@@ -117,7 +118,7 @@ function objectRotation(e){
 	       SELECTED_OBJECT.geometry.verticesNeedUpdate = true;
     //}
     	   
-    	   console.log("rotation ", SELECTED_OBJECT);
+    	   console.log("rotation ", SELECTED_OBJECT.rotationalOffset);
     previousMousePosition = {
         x: e.offsetX,
         y: e.offsetY
