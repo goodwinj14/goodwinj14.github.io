@@ -82,6 +82,10 @@ function objectRotation(e){
 
     //if(isDragging) {
          var deltaRotationQuaternion;
+         console.log("vector_a: ", vector_a);
+         console.log("a: ", a);
+         console.log("b: ", b);
+         console.log("c: ", c);
 
          var angle = Math.acos(b.dot(c)/(b.length()*c.length() ) );
          angle = ((Math.ceil(angle*(Math.PI / 180)))*Math.PI)/180;
