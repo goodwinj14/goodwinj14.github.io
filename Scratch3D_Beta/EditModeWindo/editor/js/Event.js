@@ -87,17 +87,13 @@ function objectRotation(e){
     console.log("direction_2",  (((b.x-a.x)*(c.y-a.y))- ((b.y-a.y)*(c.x-a.x)))  );
 
 
-
-	    var deltaMove = {
-        dist: dist,
-        dir: ((e.offsetX-previousMousePosition.x)+(e.offsetY-previousMousePosition.y))/Math.abs(((e.offsetX-previousMousePosition.x)+(e.offsetY-previousMousePosition.y)))
-    };
-
     //if(isDragging) {
          var deltaRotationQuaternion;
-         console.log("deltaMove", deltaMove);
-         var angle = Math.acos(b.dot(c)/(b.length()*c.length() ) );
 
+         var angle = Math.acos(b.dot(c)/(b.length()*c.length() ) );
+         if((((b.x-a.x)*(c.y-a.y))- ((b.y-a.y)*(c.x-a.x)))>0){
+         	angle = angle*-1;
+         }
          if(ROTAION_SELECTED.name == "rotate_x"){
          		deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(new THREE.Euler(
             	angle,0, 0,'XYZ'));
