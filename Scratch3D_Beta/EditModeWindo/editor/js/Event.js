@@ -79,13 +79,13 @@ function objectRotation(e){
 
          if(ROTAION_SELECTED.name == "rotate_x"){
          		deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(new THREE.Euler(
-            	deltaMove.dist,0, 0,'XYZ'));
+            	angle,0, 0,'XYZ'));
 	       }else if(ROTAION_SELECTED.name == "rotate_y"){
 	       		deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(new THREE.Euler(
-            	0,deltaMove.dist, 0,'XYZ'));
+            	0,angle, 0,'XYZ'));
 	       }else if(ROTAION_SELECTED.name == "rotate_z"){
 	       		deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(new THREE.Euler(
-            	0,0, deltaMove.dist,'XYZ'));
+            	0,0, angle,'XYZ'));
 	       }
 	       //var beta = Math.PI/2;
 	       //var m2 = new THREE.Matrix4();
