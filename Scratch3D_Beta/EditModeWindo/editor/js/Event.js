@@ -67,19 +67,26 @@ function objectRotation(e){
 
 	console.log("Rotation Called");
 		dist = (Math.sqrt(Math.pow(e.offsetX-previousMousePosition.x,2) + Math.pow(e.offsetY-previousMousePosition.y,2))/2)*(Math.PI / 180);
-	    var vector = new THREE.Vector3();
+	 
+	var vector_a = new THREE.Vector3();
 
     var widthHalf = 0.5*renderer.context.canvas.width;
     var heightHalf = 0.5*renderer.context.canvas.height;
 
     SELECTED_OBJECT.updateMatrixWorld();
-    vector.setFromMatrixPosition(SELECTED_OBJECT.matrixWorld);
-    vector.project(camera);
+    vector_a.setFromMatrixPosition(SELECTED_OBJECT.matrixWorld);
+    vector_a.project(camera);
 
-    vector.x = ( vector.x * widthHalf ) + widthHalf;
-    vector.y = - ( vector.y * heightHalf ) + heightHalf;
-    console.log("vector.x", vector.x );
-    console.log("vector.y", vector.y );
+    vector_a.x = ( vector_a.x * widthHalf ) + widthHalf;
+    vector_a.y = - ( vector_a.y * heightHalf ) + heightHalf;
+    console.log("vector.x", vector_a.x );
+    console.log("vector.y", vector_a.y );
+    var a = new THREE.Vector2( vector_a.x, vector_a.y );
+    var b = new THREE.Vector2( previousMousePosition.x-vector_a.x, previousMousePosition.y-vector_a.y );
+    var c = new THREE.Vector2( e.offsetX-vector_a.x, e.offsetY-vector_a.y );
+    console.log("dot", b.dot(c) );
+
+
 
 	    var deltaMove = {
         dist: dist,
