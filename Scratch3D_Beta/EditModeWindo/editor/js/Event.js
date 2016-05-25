@@ -84,7 +84,7 @@ function objectRotation(e){
     var a = new THREE.Vector2( vector_a.x, vector_a.y );
     var b = new THREE.Vector2( previousMousePosition.x-vector_a.x, previousMousePosition.y-vector_a.y );
     var c = new THREE.Vector2( e.offsetX-vector_a.x, e.offsetY-vector_a.y );
-    console.log("acos", Math.acos(b.dot(c)/(b.length()*c.length() ) ));
+    console.log("direction",  (((b.x-a.x)*(c.y-a.y))- ((b.y-a.y)*(c.x-a.x)))  );
 
 
 
