@@ -198,6 +198,7 @@ SHAPES.createFromExisting = function(shapeid, shape_name, width, height, depth){
 	}else if(shape_name=="cylinder"){
 		shape =  newCylinder();
 		shape.name="cylinder_"+shape.id;
+		shape.rotationalOffset = new THREE.Vector3(0.0, 0.0, 0.0);
 	}else if(shape_name=="tube"){
 		shape =  newTube();
 		shape.name="tube_"+shape.id;
