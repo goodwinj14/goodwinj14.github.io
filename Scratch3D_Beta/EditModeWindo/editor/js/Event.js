@@ -88,7 +88,7 @@ function objectRotation(e){
     	console.log("NaN Called");
     }     
     if(!isNaN(angle)){
-    	console.log(angle);
+    	console.log("angle: ", angle);
          angle = ((Math.ceil(angle*(Math.PI / 180)))*Math.PI)/180;
          if((((b.x-a.x)*(c.y-a.y))- ((b.y-a.y)*(c.x-a.x)))>0){
          	angle = angle*-1;
