@@ -12,6 +12,8 @@ SHAPES.add = function(shape_name){
 	}else if(shape_name=="add_cylinder"){
 		shape =  newCylinder(.5,32,32);
 		shape.name="cylinder_"+shape.id;
+		shape.rotationalOffset = new THREE.Vector3(0.0, 0.0, 0.0);
+		console.log("shape", shape);
 	}else if(shape_name=="add_tube"){
 		shape =  newTube();
 		shape.name="tube_"+shape.id;
