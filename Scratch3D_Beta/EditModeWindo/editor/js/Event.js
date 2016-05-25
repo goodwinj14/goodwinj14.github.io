@@ -66,25 +66,26 @@ function obj_position_change(event){
 function objectRotation(e){
 
 	console.log("Rotation Called");
+		dist = (Math.sqrt(Math.pow(e.offsetX-previousMousePosition.x,2) + Math.pow(e.offsetY-previousMousePosition.y,2))/2)*(Math.PI / 180);
 	    var deltaMove = {
-        x: Math.pow(e.offsetX-previousMousePosition.x,2),
-        y: Math.pow(e.offsetY-previousMousePosition.y,2)
+        dist: dist,
+        dir: ((e.offsetX-previousMousePosition.x)+(e.offsetY-previousMousePosition.y))/Math.abs(((e.offsetX-previousMousePosition.x)+(e.offsetY-previousMousePosition.y)));
     };
 
     //if(isDragging) {
          var deltaRotationQuaternion;
-
-         var angle = (Math.sqrt(deltaMove.x + deltaMove.y)/2)*(Math.PI / 180);
+         console.log("deltaMove", deltaMove);
+         var angle = deltaMove.dist*deltaMove.dir;
 
          if(ROTAION_SELECTED.name == "rotate_x"){
          		deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(new THREE.Euler(
-            	angle,0, 0,'XYZ'));
+            	deltaMove.dist,0, 0,'XYZ'));
 	       }else if(ROTAION_SELECTED.name == "rotate_y"){
 	       		deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(new THREE.Euler(
-            	0,angle, 0,'XYZ'));
+            	0,deltaMove.dist, 0,'XYZ'));
 	       }else if(ROTAION_SELECTED.name == "rotate_z"){
 	       		deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(new THREE.Euler(
-            	0,0, angle,'XYZ'));
+            	0,0, deltaMove.dist,'XYZ'));
 	       }
 	       //var beta = Math.PI/2;
 	       //var m2 = new THREE.Matrix4();
