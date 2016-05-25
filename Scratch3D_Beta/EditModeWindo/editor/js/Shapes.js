@@ -2,7 +2,6 @@ var SHAPES = {}
 
 SHAPES.add = function(shape_name){
 	var shape;
-	console.log("shape Called");
 	if(shape_name=="add_cube"){
 		shape =  newCube(1,1,1);
 		shape.name="cube_"+shape.id;
@@ -13,7 +12,6 @@ SHAPES.add = function(shape_name){
 		shape =  newCylinder(.5,32,32);
 		shape.name="cylinder_"+shape.id;
 		shape.rotationalOffset = new THREE.Vector3(0.0, 0.0, 0.0);
-		console.log("shape", shape);
 	}else if(shape_name=="add_tube"){
 		shape =  newTube();
 		shape.name="tube_"+shape.id;
