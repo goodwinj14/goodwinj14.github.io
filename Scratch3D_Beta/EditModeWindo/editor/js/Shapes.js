@@ -5,9 +5,11 @@ SHAPES.add = function(shape_name){
 	if(shape_name=="add_cube"){
 		shape =  newCube(1,1,1);
 		shape.name="cube_"+shape.id;
+		shape.rotationalOffset = new THREE.Vector3(0.0, 0.0, 0.0);
 	}else if(shape_name=="add_sphere"){
 		shape =  newSphere(.5,32,32);
 		shape.name="sphere_"+shape.id;
+		shape.rotationalOffset = new THREE.Vector3(0.0, 0.0, 0.0);
 	}else if(shape_name=="add_cylinder"){
 		shape =  newCylinder(.5,32,32);
 		shape.name="cylinder_"+shape.id;
@@ -15,21 +17,27 @@ SHAPES.add = function(shape_name){
 	}else if(shape_name=="add_tube"){
 		shape =  newTube();
 		shape.name="tube_"+shape.id;
+		shape.rotationalOffset = new THREE.Vector3(0.0, 0.0, 0.0);
 	}else if(shape_name=="add_pyramid"){
 		shape =  newCone();
 		shape.name="pyramid_"+shape.id;
+		shape.rotationalOffset = new THREE.Vector3(0.0, 0.0, 0.0);
 	}else if(shape_name=="add_circle"){
 		shape =  newCicrle();
 		shape.name="circle_"+shape.id;
+		shape.rotationalOffset = new THREE.Vector3(0.0, 0.0, 0.0);
 	}else if(shape_name=="add_plane"){
 		shape =  newPlane();
 		shape.name="plane_"+shape.id;
+		shape.rotationalOffset = new THREE.Vector3(0.0, 0.0, 0.0);
 	}else if(shape_name=="add_ring"){
 		shape =  newRing();
 		shape.name="ring_"+shape.id;
+		shape.rotationalOffset = new THREE.Vector3(0.0, 0.0, 0.0);
 	}else if(shape_name=="add_ramp"){
 		shape =  newRamp();
 		shape.name="ramp_"+shape.id;
+		shape.rotationalOffset = new THREE.Vector3(0.0, 0.0, 0.0);
 	}
 	GAME_OBJECTS.Shapes.push(shape);
 	SELECTED.init(shape);
