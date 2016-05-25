@@ -91,6 +91,9 @@ function objectRotation(e){
          var deltaRotationQuaternion;
 
          var angle = Math.acos(b.dot(c)/(b.length()*c.length() ) );
+         angle = ((Math.round(angle*(Math.PI / 180)))*Math.Pi)/180;
+         console.log("Degrees", Math.round(angle*(Math.PI / 180)));
+
          if((((b.x-a.x)*(c.y-a.y))- ((b.y-a.y)*(c.x-a.x)))>0){
          	angle = angle*-1;
          }
