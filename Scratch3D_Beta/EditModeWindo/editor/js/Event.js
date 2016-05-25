@@ -113,7 +113,7 @@ function objectRotation(e){
 		   SELECTED_OBJECT.updateMatrix();
 	       SELECTED_OBJECT.geometry.verticesNeedUpdate = true;
     //}
-    	   var rotationOffSet = SELECTED_OBJECT.quaternion.clone().invere();
+    	   var rotationOffSet = SELECTED_OBJECT.quaternion.clone().inverse();
     	   var rotationToWorld = SELECTED_OBJECT.getWorldQuaternion().clone().multiply(rotationToWorld);
     	   console.log("angle",rotationToWorld);
     previousMousePosition = {
