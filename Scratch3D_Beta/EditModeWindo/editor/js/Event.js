@@ -88,6 +88,7 @@ function objectRotation(e){
          console.log("c: ", c);
 
          var angle = Math.acos(b.dot(c)/(b.length()*c.length() ) );
+         console.log("acos: ",Math.acos(b.dot(c)/(b.length()*c.length() ) )   );
          angle = ((Math.ceil(angle*(Math.PI / 180)))*Math.PI)/180;
          console.log("angle: ", angle);
          if((((b.x-a.x)*(c.y-a.y))- ((b.y-a.y)*(c.x-a.x)))>0){
