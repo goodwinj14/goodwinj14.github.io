@@ -108,3 +108,25 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 		mesh.geometry.center();
 		mesh.geometry.attributes.position.needsUpdate = true;
 	}	
+}
+
+ModifyMesh.updateRotation = function(mesh, EulerVector){
+
+           deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(EulerVector);
+           mesh.rotationalOffset.x += EulerVector.x*(180/Math.PI);
+           mesh.rotationalOffset.y += EulerVector.y*(180/Math.PI);
+           mesh.rotationalOffset.z += EulerVector.z*(180/Math.PI);
+
+
+	       mesh.quaternion.multiplyQuaternions(deltaRotationQuaternion, mesh.quaternion);
+	       mesh.updateMatrix();
+		   mesh.geometry.applyMatrix( mesh.matrix );
+		   mesh.geometry.center();
+		   mesh.geometry.computeBoundingBox();
+		   mesh.rotation.set( 0, 0, 0 );
+
+		   mesh.updateMatrix();
+	       mesh.geometry.verticesNeedUpdate = true;
+	       rot_change_Event = new CustomEvent('Editor_Obj_rotation_change', { 'detail': mesh});
+		   document.dispatchEvent(rot_change_Event);
+    }
