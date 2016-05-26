@@ -71,7 +71,7 @@ function updateShape(){
     console.log("w", w);
     console.log("h", h);
     console.log("d", d);
-    var remove =  GAME_OBJECTS.GetObject(document.getElementById("ACT_OBJ_NAME").value);
+    /*var remove =  GAME_OBJECTS.GetObject(document.getElementById("ACT_OBJ_NAME").value);
     console.log(remove);
     id = remove.id;
     GAME_OBJECTS.RemoveObject(remove);
