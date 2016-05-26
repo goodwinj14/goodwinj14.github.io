@@ -56,6 +56,7 @@ function updateShape(){
 
 document.addEventListener('Editor_Obj_Selected', updateEditorWindoVals);
 document.addEventListener('Editor_Obj_rotation_change', updateEditorWindoVals);
+document.addEventListener('Editor_Obj_position_change', updateEditorWindoVals);
 
 function updateEditorWindoVals(event){
     document.getElementById("ACT_OBJ_NAME").value = event.detail.name;
