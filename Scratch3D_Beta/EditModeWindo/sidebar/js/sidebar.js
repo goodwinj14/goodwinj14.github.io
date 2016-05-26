@@ -39,22 +39,24 @@ function updateShape(){
     d = parseFloat(document.getElementById("ACT_OBJ_DEPTH").value);
         var tempSize = edit_Obj.geometry.boundingBox.max.x-edit_Obj.geometry.boundingBox.min.x;
     if(w!= tempSize){
-        //Update Width
+        var dist = tempSize-w;
+        ModifyMesh.updateDimensions(edit_Obj,"face_0",dist);
     }
         var tempSize = edit_Obj.geometry.boundingBox.max.y-edit_Obj.geometry.boundingBox.min.y;
     if(h!= tempSize){
-        //Update Height
+        var dist = tempSize-h;
+        ModifyMesh.updateDimensions(edit_Obj,"face_4",dist);
     }
         var tempSize = edit_Obj.geometry.boundingBox.max.z-edit_Obj.geometry.boundingBox.min.z;
     if(d!= tempSize){
-        //Update Depth
+        var dist = tempSize-d;
+        ModifyMesh.updateDimensions(edit_Obj,"face_2",dist);
     }
 
 
     locX = parseFloat(document.getElementById("ACT_OBJ_LOC_X").value);
     locY = parseFloat(document.getElementById("ACT_OBJ_LOC_Y").value);
     locZ = parseFloat(document.getElementById("ACT_OBJ_LOC_Z").value);
-
     if(locX!=edit_Obj.position.x){
         edit_Obj.position.x = locX;
     }if(locY!=edit_Obj.position.y){
@@ -67,9 +69,15 @@ function updateShape(){
     rotX = parseFloat(document.getElementById("ACT_OBJ_ROT_X").value);
     rotY = parseFloat(document.getElementById("ACT_OBJ_ROT_Y").value);
     rotZ = parseFloat(document.getElementById("ACT_OBJ_ROT_Z").value);
-    console.log("w", w);
-    console.log("h", h);
-    console.log("d", d);
+    if(rotX!=edit_Obj.rotationalOffset.x){
+        //Rotate X
+    }if(rotY!=edit_Obj.rotationalOffset.y){
+        //Rotate X
+    }if(rotZ!=edit_Obj.rotationalOffset.z){
+        //Rotate X
+    }
+
+
     /*var remove =  GAME_OBJECTS.GetObject(document.getElementById("ACT_OBJ_NAME").value);
     console.log(remove);
     id = remove.id;
