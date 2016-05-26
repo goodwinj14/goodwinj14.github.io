@@ -31,17 +31,43 @@ function imageSelected(evt){
 }
 
 function updateShape(){
-    var edit =  GAME_OBJECTS.GetObject(document.getElementById("ACT_OBJ_NAME").value);
+    var edit_Obj =  GAME_OBJECTS.GetObject(document.getElementById("ACT_OBJ_NAME").value);
     console.log("Geo Check",edit);
     
-    //edit.geometry.verticesNeedUpdate = true;
-    //edit.
-    EDITOR.TEST_OBJ = edit;
-    console.log("needs upDating now  ", edit.geometry.attributes.position.needsUpdate);
-   /* console.log("Update called");
+
     w = parseFloat(document.getElementById("ACT_OBJ_WIDTH").value);
     h = parseFloat(document.getElementById("ACT_OBJ_HEIGHT").value);
     d = parseFloat(document.getElementById("ACT_OBJ_DEPTH").value);
+        var tempSize = edit_Obj.geometry.boundingBox.max.x-edit_Obj.geometry.boundingBox.min.x;
+    if(w!= tempSize){
+        //Update Width
+    }
+        var tempSize = edit_Obj.geometry.boundingBox.max.y-edit_Obj.geometry.boundingBox.min.y;
+    if(h!= tempSize){
+        //Update Height
+    }
+        var tempSize = edit_Obj.geometry.boundingBox.max.z-edit_Obj.geometry.boundingBox.min.z;
+    if(d!= tempSize){
+        //Update Depth
+    }
+
+
+    locX = parseFloat(document.getElementById("ACT_OBJ_LOC_X").value);
+    locY = parseFloat(document.getElementById("ACT_OBJ_LOC_Y").value);
+    locZ = parseFloat(document.getElementById("ACT_OBJ_LOC_Z").value);
+
+    if(locX!=edit_Obj.position.x){
+        edit_Obj.position.x = locX;
+    }if(locY!=edit_Obj.position.y){
+        edit_Obj.position.y = locY;
+    }if(locZ!=edit_Obj.position.z){
+        edit_Obj.position.z = locZ;
+    }
+
+
+    rotX = parseFloat(document.getElementById("ACT_OBJ_ROT_X").value);
+    rotY = parseFloat(document.getElementById("ACT_OBJ_ROT_Y").value);
+    rotZ = parseFloat(document.getElementById("ACT_OBJ_ROT_Z").value);
     console.log("w", w);
     console.log("h", h);
     console.log("d", d);
