@@ -40,20 +40,21 @@ function updateShape(){
         var tempSize = edit_Obj.geometry.boundingBox.max.x-edit_Obj.geometry.boundingBox.min.x;
         console.log("tempSize", tempSize);
     if(w!= tempSize){
-        console.log("w", w);
         dist = new THREE.Vector3(edit_Obj.geometry.boundingBox.max.x+(w-tempSize),0,0);
         ModifyMesh.updateDimensions(edit_Obj,"face_0",dist);
         SELECTED.updateHelperPosition(SELECTED_OBJECT);
     }
         var tempSize = edit_Obj.geometry.boundingBox.max.y-edit_Obj.geometry.boundingBox.min.y;
     if(h!= tempSize){
-        var dist = tempSize-h;
+        dist = new THREE.Vector3(0,edit_Obj.geometry.boundingBox.max.y+(h-tempSize),0);
         ModifyMesh.updateDimensions(edit_Obj,"face_4",dist);
+        SELECTED.updateHelperPosition(SELECTED_OBJECT);
     }
         var tempSize = edit_Obj.geometry.boundingBox.max.z-edit_Obj.geometry.boundingBox.min.z;
     if(d!= tempSize){
-        var dist = tempSize-d;
+        dist = new THREE.Vector3(0,0,edit_Obj.geometry.boundingBox.max.z+(d-tempSize));
         ModifyMesh.updateDimensions(edit_Obj,"face_2",dist);
+        SELECTED.updateHelperPosition(SELECTED_OBJECT);
     }
 
 
