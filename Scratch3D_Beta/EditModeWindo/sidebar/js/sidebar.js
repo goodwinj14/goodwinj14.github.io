@@ -38,7 +38,6 @@ function updateShape(){
     h = parseFloat(document.getElementById("ACT_OBJ_HEIGHT").value);
     d = parseFloat(document.getElementById("ACT_OBJ_DEPTH").value);
         var tempSize = edit_Obj.geometry.boundingBox.max.x-edit_Obj.geometry.boundingBox.min.x;
-        console.log("tempSize", tempSize);
     if(w!= tempSize){
         dist = new THREE.Vector3(edit_Obj.geometry.boundingBox.max.x+(w-tempSize),0,0);
         ModifyMesh.updateDimensions(edit_Obj,"face_0",dist);
@@ -52,8 +51,9 @@ function updateShape(){
     }
         var tempSize = edit_Obj.geometry.boundingBox.max.z-edit_Obj.geometry.boundingBox.min.z;
     if(d!= tempSize){
+        console.log(tempSize);
         dist = new THREE.Vector3(0,0,edit_Obj.geometry.boundingBox.max.z+(d-tempSize));
-        ModifyMesh.updateDimensions(edit_Obj,"face_2",dist);
+        ModifyMesh.updateDimensions(edit_Obj,"face_3",dist);
         SELECTED.updateHelperPosition(SELECTED_OBJECT);
     }
 
