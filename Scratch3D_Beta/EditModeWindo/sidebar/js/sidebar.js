@@ -32,8 +32,7 @@ function imageSelected(evt){
 
 function updateShape(){
     var edit_Obj =  GAME_OBJECTS.GetObject(document.getElementById("ACT_OBJ_NAME").value);
-    console.log("Geo Check",edit);
-    
+   
 
     w = parseFloat(document.getElementById("ACT_OBJ_WIDTH").value);
     h = parseFloat(document.getElementById("ACT_OBJ_HEIGHT").value);
