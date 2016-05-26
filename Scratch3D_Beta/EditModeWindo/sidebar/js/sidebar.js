@@ -67,8 +67,8 @@ function updateEditorWindoVals(event){
     document.getElementById("ACT_OBJ_ROT_X").value = event.detail.rotationalOffset.x;
     document.getElementById("ACT_OBJ_ROT_Y").value = event.detail.rotationalOffset.y;
     document.getElementById("ACT_OBJ_ROT_Z").value = event.detail.rotationalOffset.z;
-    document.getElementById("ACT_OBJ_WIDTH").value = event.detail.scale.x;
-    document.getElementById("ACT_OBJ_HEIGHT").value = event.detail.scale.y;
-    document.getElementById("ACT_OBJ_DEPTH").value = event.detail.scale.z;
+    document.getElementById("ACT_OBJ_WIDTH").value = event.detail.geometry.boundingBox.max.x-event.detail.geometry.boundingBox.min.x;
+    document.getElementById("ACT_OBJ_HEIGHT").value = event.detail.geometry.boundingBox.max.y-event.detail.geometry.boundingBox.min.y;
+    document.getElementById("ACT_OBJ_DEPTH").value = event.detail.geometry.boundingBox.max.z-event.detail.geometry.boundingBox.min.z;
 
 }
