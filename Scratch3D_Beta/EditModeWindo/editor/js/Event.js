@@ -155,6 +155,8 @@ function editMeshDimensions(event){
 	pos = camera.position.clone().add( dir.multiplyScalar( distance ) );
 	ModifyMesh.updateDimensions(SELECTED_OBJECT,CORNER_SELECTED.name,pos);
 	SELECTED.updateHelperPosition(SELECTED_OBJECT);
+	size_change_Event = new CustomEvent('Editor_Obj_size_change', { 'detail': SELECTED_OBJECT});
+	document.dispatchEvent(size_change_Event);
 }
 
 function grid_clicked(event){
