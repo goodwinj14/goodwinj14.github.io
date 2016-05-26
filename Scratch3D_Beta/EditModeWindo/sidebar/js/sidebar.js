@@ -45,7 +45,7 @@ function updateShape(){
     }
         var tempSize = edit_Obj.geometry.boundingBox.max.y-edit_Obj.geometry.boundingBox.min.y;
     if(h!= tempSize){
-        dist = new THREE.Vector3(0,edit_Obj.geometry.boundingBox.max.y+(h-tempSize),0);
+        dist = new THREE.Vector3(0,edit_Obj.geometry.boundingBox.max.y+(h-tempSize)-edit_Obj.position.y,0);
         ModifyMesh.updateDimensions(edit_Obj,"face_4",dist);
         SELECTED.updateHelperPosition(SELECTED_OBJECT);
     }
