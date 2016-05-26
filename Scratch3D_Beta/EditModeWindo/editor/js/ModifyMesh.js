@@ -129,3 +129,23 @@ ModifyMesh.updateRotation = function(mesh, EulerVector){
 	       rot_change_Event = new CustomEvent('Editor_Obj_rotation_change', { 'detail': mesh});
 		   document.dispatchEvent(rot_change_Event);
     }
+
+ModifyMesh.setHeight = function(mesh, dist){
+			vertices = mesh.geometry.attributes.position.array;
+			mesh.geometry.computeBoundingBox();
+
+			minPoint = mesh.geometry.boundingBox.min.x;
+			maxPoint = mesh.geometry.boundingBox.max.x;
+			length = maxPoint-minPoint;
+
+			if(minPoint<((dist-(mesh.position.x+maxPoint)))){
+				for (var i = 0; i < vertices.length; i+=3) {
+					if(minPoint!=vertices[i]){
+						vertices[i] = dist*(vertices[i]/length);
+					}
+				}
+
+		mesh.geometry.center();
+		mesh.geometry.attributes.position.needsUpdate = true;
+				
+}
