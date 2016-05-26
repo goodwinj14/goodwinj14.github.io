@@ -38,7 +38,9 @@ function updateShape(){
     h = parseFloat(document.getElementById("ACT_OBJ_HEIGHT").value);
     d = parseFloat(document.getElementById("ACT_OBJ_DEPTH").value);
         var tempSize = edit_Obj.geometry.boundingBox.max.x-edit_Obj.geometry.boundingBox.min.x;
+        console.log("tempSize", tempSize);
     if(w!= tempSize){
+        console.log("w", w);
         var dist = tempSize-w;
         ModifyMesh.updateDimensions(edit_Obj,"face_0",dist);
     }
