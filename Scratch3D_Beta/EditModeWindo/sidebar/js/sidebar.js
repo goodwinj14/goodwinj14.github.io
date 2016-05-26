@@ -40,9 +40,11 @@ function updateShape(){
         var tempSize = edit_Obj.geometry.boundingBox.max.x-edit_Obj.geometry.boundingBox.min.x;
         console.log("tempSize", tempSize);
     if(w!= tempSize){
-        console.log("w", w);
-        var dist = tempSize-w;
+        console.log("w2", w);
+         dist = THREE.Vector3(0,w-tempSize,0);
+
         ModifyMesh.updateDimensions(edit_Obj,"face_0",dist);
+        SELECTED.updateHelperPosition(SELECTED_OBJECT);
     }
         var tempSize = edit_Obj.geometry.boundingBox.max.y-edit_Obj.geometry.boundingBox.min.y;
     if(h!= tempSize){
