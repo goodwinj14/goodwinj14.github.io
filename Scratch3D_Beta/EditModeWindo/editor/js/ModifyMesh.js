@@ -140,9 +140,9 @@ ModifyMesh.setHeight = function(mesh, dist){
 
 
 				for (var i = 1; i < vertices.length; i+=3) {
-					if(minPoint!=vertices[i]){
+					//if(minPoint!=vertices[i]){
 						vertices[i] = dist*(vertices[i]/length);
-					}
+					//}
 				}
 
 		mesh.geometry.center();
