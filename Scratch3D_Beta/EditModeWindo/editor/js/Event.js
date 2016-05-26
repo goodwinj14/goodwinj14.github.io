@@ -116,6 +116,8 @@ function objectRotation(e){
 
 		   SELECTED_OBJECT.updateMatrix();
 	       SELECTED_OBJECT.geometry.verticesNeedUpdate = true;
+	       rot_change_Event = new CustomEvent('Editor_Obj_rotation_change', { 'detail': SELECTED_OBJECT});
+		   document.dispatchEvent(rot_change_Event);
     }
     	   
     previousMousePosition = {
