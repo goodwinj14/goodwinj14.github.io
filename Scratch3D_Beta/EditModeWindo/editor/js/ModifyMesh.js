@@ -93,8 +93,6 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 					}
 				}
 				mesh.position.y = mesh.position.y + ((dist.y-(mesh.position.y+maxPoint))/2);
-				pos_change_Event = new CustomEvent('Editor_Obj_position_change', { 'detail': mesh});
-				document.dispatchEvent(pos_change_Event);
 			}
 		}
 		if(sideID=="face_5"){
@@ -140,11 +138,11 @@ ModifyMesh.setHeight = function(mesh, dist){
 			maxPoint = mesh.geometry.boundingBox.max.x;
 			length = maxPoint-minPoint;
 				for (var i = 1; i < vertices.length; i+=3) {
-						vertices[i] = dist*(vertices[i]/length);
+						vertices[i] = vertices[i]+((dist-length)*(vertices[i]/length));
 				}
 
 		mesh.geometry.center();
-		mesh.position.y=dist/2;
+		//mesh.position.y=dist/2;
 
 		mesh.geometry.attributes.position.needsUpdate = true;
 		console.log("mesh", mesh);
