@@ -139,7 +139,7 @@ ModifyMesh.setHeight = function(mesh, dist){
 			length = maxPoint-minPoint;
 
 
-				for (var i = 0; i < vertices.length; i+=3) {
+				for (var i = 1; i < vertices.length; i+=3) {
 					if(minPoint!=vertices[i]){
 						vertices[i] = dist*(vertices[i]/length);
 					}
