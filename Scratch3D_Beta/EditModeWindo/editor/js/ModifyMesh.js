@@ -138,7 +138,7 @@ ModifyMesh.setHeight = function(mesh, dist){
 			maxPoint = mesh.geometry.boundingBox.max.x;
 			length = maxPoint-minPoint;
 
-			if(minPoint<((dist-(mesh.position.x+maxPoint)))){
+
 				for (var i = 0; i < vertices.length; i+=3) {
 					if(minPoint!=vertices[i]){
 						vertices[i] = dist*(vertices[i]/length);
