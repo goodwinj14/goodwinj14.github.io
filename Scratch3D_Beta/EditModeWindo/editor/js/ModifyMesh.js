@@ -145,6 +145,6 @@ ModifyMesh.setHeight = function(mesh, dist){
 
 		mesh.geometry.center();
 		mesh.geometry.attributes.position.needsUpdate = true;
-		mesh.position.y = (mesh.position.y+(dist/2));
+		mesh.position.y = 2;
 				
 }
