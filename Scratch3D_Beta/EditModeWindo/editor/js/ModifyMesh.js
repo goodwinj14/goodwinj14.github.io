@@ -142,10 +142,10 @@ ModifyMesh.setHeight = function(mesh, dist){
 				}
 
 		mesh.geometry.center();
-		//mesh.position.y=dist/2;
+		console.log("check");
 
 		mesh.geometry.attributes.position.needsUpdate = true;
-		console.log("mesh", mesh);
+		
 
 				
 }
