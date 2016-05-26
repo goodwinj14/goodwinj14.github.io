@@ -76,9 +76,9 @@ function updateShape(){
     if(rotX!=edit_Obj.rotationalOffset.x){
         ModifyMesh.updateRotation(edit_Obj, new THREE.Euler((rotX*Math.PI)/180,0, 0,'XYZ'));
     }if(rotY!=edit_Obj.rotationalOffset.y){
-        ModifyMesh.updateRotation(edit_Obj, new THREE.Euler((0,rotY*Math.PI)/180, 0,'XYZ'));
+        ModifyMesh.updateRotation(edit_Obj, new THREE.Euler(0,(rotY*Math.PI)/180, 0,'XYZ'));
     }if(rotZ!=edit_Obj.rotationalOffset.z){
-        ModifyMesh.updateRotation(edit_Obj, new THREE.Euler((0,0,rotZ*Math.PI)/180,'XYZ'));
+        ModifyMesh.updateRotation(edit_Obj, new THREE.Euler(0,0,(rotZ*Math.PI)/180,'XYZ'));
     }
 
 
