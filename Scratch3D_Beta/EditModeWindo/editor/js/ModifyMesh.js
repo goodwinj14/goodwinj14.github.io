@@ -142,8 +142,9 @@ ModifyMesh.setHeight = function(mesh, dist){
 				}
 
 		mesh.geometry.center();
-		console.log("check");
-
+		mesh.position.y = dist/2;
+		pos_change_Event = new CustomEvent('Editor_Obj_position_change', { 'detail': SELECTED_OBJECT});
+		document.dispatchEvent(pos_change_Event);
 		mesh.geometry.attributes.position.needsUpdate = true;
 		
 
