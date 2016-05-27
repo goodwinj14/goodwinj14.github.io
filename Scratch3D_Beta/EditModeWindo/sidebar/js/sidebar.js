@@ -42,9 +42,9 @@ function updateShape(){
     colorR = parseInt(document.getElementById("ACT_OBJ_COLOR_R").value);
     colorG = parseInt(document.getElementById("ACT_OBJ_COLOR_G").value);
     colorB = parseInt(document.getElementById("ACT_OBJ_COLOR_B").value);
-    console.log("edit_Obj", edit_Obj.material);
-    if(name!==edit_Obj.name){
-        edit_Obj.name = name;
+    console.log("edit_Obj", edit_Obj.material.color.r );
+    if(edit_Obj.material.color.r !== (colorR/255)){
+        edit_Obj.material.color.r = (colorR/255);
     }
 
     edit_Obj.geometry.computeBoundingBox();
