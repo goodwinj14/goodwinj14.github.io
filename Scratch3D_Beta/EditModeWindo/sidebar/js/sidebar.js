@@ -39,6 +39,14 @@ function updateShape(){
         console.log("Name", edit_Obj.name);
     }
 
+    colorR = parseInt(document.getElementById("ACT_OBJ_COLOR_R").value);
+    colorG = parseInt(document.getElementById("ACT_OBJ_COLOR_G").value);
+    colorB = parseInt(document.getElementById("ACT_OBJ_COLOR_B").value);
+    console.log("edit_Obj", edit_Obj);
+    if(name!==edit_Obj.name){
+        edit_Obj.name = name;
+    }
+
     edit_Obj.geometry.computeBoundingBox();
     w = parseFloat(document.getElementById("ACT_OBJ_WIDTH").value);
     h = parseFloat(document.getElementById("ACT_OBJ_HEIGHT").value);
