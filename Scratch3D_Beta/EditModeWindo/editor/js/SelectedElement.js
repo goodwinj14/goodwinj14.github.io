@@ -87,6 +87,9 @@ SELECTED.init = function(object){
 	shapeHelpers.add(rotate_x);
 	shapeHelpers.add(rotate_y);
 	shapeHelpers.add(rotate_z);
+
+	shapeHelpers.position.set(object.position.x, object.position.y, object.position.z);
+
 	scene.add( shapeHelpers );
 
 	//shapeHelpers.position.x = object.position.x;
