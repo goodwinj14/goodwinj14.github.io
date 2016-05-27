@@ -114,7 +114,7 @@ var vertices = new Float32Array( [
 // itemSize = 3 because there are 3 values (components) per vertex
 geometry.addAttribute( 'position', new THREE.BufferAttribute( vertices, 3 ) );
 geometry.computeVertexNormals();
-var material = new THREE.MeshPhongMaterial( { color: 0xdddddd, specular: 0x009900, shininess: 30, shading: THREE.FlatShading } );
+var material = new THREE.MeshPhongMaterial( { color: 0xcc6699, shininess: 3, shading: THREE.FlatShading } );
 var shape = new THREE.Mesh( geometry, material );
 	return shape;
 }
@@ -163,13 +163,13 @@ var vertices = new Float32Array( [
 // itemSize = 3 because there are 3 values (components) per vertex
 geometry.addAttribute( 'position', new THREE.BufferAttribute( vertices, 3 ) );
 geometry.computeVertexNormals();
-var material = new THREE.MeshPhongMaterial( { color: 0xdddddd, specular: 0x009900, shininess: 30, shading: THREE.FlatShading } );
+var material = new THREE.MeshPhongMaterial( { color: 0xdddddd, shininess: 3, shading: THREE.FlatShading } );
 var shape = new THREE.Mesh( geometry, material );
 	return shape;
 }
 function newCicrle(){
 	var geometry = new THREE.CircleBufferGeometry( .5, 32 );
-	var material = new THREE.MeshPhongMaterial( { color: 0xdddddd, specular: 0x009900, shininess: 30, shading: THREE.FlatShading } );
+	var material = new THREE.MeshPhongMaterial( { color: 0xdddddd,  shininess: 3, shading: THREE.FlatShading } );
 	var shape = new THREE.Mesh( geometry, material );
 	shape.rotation.x= -Math.PI/2;
 	return shape;
@@ -177,7 +177,7 @@ function newCicrle(){
 
 function newPlane(){
 	var geometry = new THREE.PlaneBufferGeometry( 1, 1, 2 );
-	var material = new THREE.MeshPhongMaterial( { color: 0xdddddd, specular: 0x009900, shininess: 30, shading: THREE.FlatShading } );
+	var material = new THREE.MeshPhongMaterial( { color: 0xdddddd, shininess: 3, shading: THREE.FlatShading } );
 	var shape = new THREE.Mesh( geometry, material );
 	shape.rotation.x= -Math.PI/2;
 	return shape;
@@ -185,7 +185,7 @@ function newPlane(){
 
 function newRing(){
 	var geometry = new THREE.RingBufferGeometry( .25, .5, 32 );
-	var material = new THREE.MeshPhongMaterial( { color: 0xdddddd, specular: 0x009900, shininess: 30, shading: THREE.FlatShading } );
+	var material = new THREE.MeshPhongMaterial( { color: 0xdddddd, shininess: 3, shading: THREE.FlatShading } );
 	var shape = new THREE.Mesh( geometry, material );
 	shape.rotation.x= -Math.PI/2;
 	return shape;
