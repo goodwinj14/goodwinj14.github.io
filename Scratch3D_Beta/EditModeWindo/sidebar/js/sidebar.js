@@ -39,21 +39,17 @@ function updateShape(){
     d = parseFloat(document.getElementById("ACT_OBJ_DEPTH").value);
         var tempSize = edit_Obj.geometry.boundingBox.max.x-edit_Obj.geometry.boundingBox.min.x;
     if(w!= tempSize){
-        dist = new THREE.Vector3(edit_Obj.geometry.boundingBox.max.x+(w-tempSize),0,0);
-        ModifyMesh.updateDimensions(edit_Obj,"face_0",dist);
+        ModifyMesh.setWidth(edit_Obj,w);
         SELECTED.updateHelperPosition(SELECTED_OBJECT);
     }
         var tempSize = edit_Obj.geometry.boundingBox.max.y-edit_Obj.geometry.boundingBox.min.y;
     if(h!= tempSize){
-        console.log("h", h);
         ModifyMesh.setHeight(edit_Obj,h);
         SELECTED.updateHelperPosition(SELECTED_OBJECT);
     }
         var tempSize = edit_Obj.geometry.boundingBox.max.z-edit_Obj.geometry.boundingBox.min.z;
     if(d!= tempSize){
-        console.log(tempSize);
-        dist = new THREE.Vector3(0,0,edit_Obj.geometry.boundingBox.max.z+(d-tempSize));
-        ModifyMesh.updateDimensions(edit_Obj,"face_3",dist);
+        ModifyMesh.setDepth(edit_Obj,d);
         SELECTED.updateHelperPosition(SELECTED_OBJECT);
     }
 
