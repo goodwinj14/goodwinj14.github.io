@@ -17,6 +17,10 @@ EDITOR.intiEditor = function(viewport){
 			viewport.appendChild( renderer.domElement );
 			renderer.domElement.id = "canvas";
 
+			var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
+			directionalLight.position.set( 0, 10, 0 );
+			scene.add( directionalLight );
+
 			var size = 100;
 			var step = 1;
 
