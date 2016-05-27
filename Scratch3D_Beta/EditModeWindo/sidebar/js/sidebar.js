@@ -31,7 +31,7 @@ function imageSelected(evt){
 }
 
 function updateShape(){
-    var edit_Obj =  GAME_OBJECTS.GetObject(document.getElementById("ACT_OBJ_NAME").value);
+    var edit_Obj =  SELECTED_OBJECT;
     
     name = document.getElementById("ACT_OBJ_NAME").value;
     if(name!==edit_Obj.name){
