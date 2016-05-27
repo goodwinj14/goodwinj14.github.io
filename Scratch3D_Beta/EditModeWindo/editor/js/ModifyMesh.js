@@ -142,9 +142,6 @@ ModifyMesh.setHeight = function(mesh, dist){
 				}
 
 		mesh.geometry.center();
-		mesh.position.y = mesh.position.y+(dist/2);
-		pos_change_Event = new CustomEvent('Editor_Obj_position_change', { 'detail': SELECTED_OBJECT});
-		document.dispatchEvent(pos_change_Event);
 		mesh.geometry.attributes.position.needsUpdate = true;			
 }
 
@@ -160,9 +157,6 @@ ModifyMesh.setWidth = function(mesh, dist){
 				}
 
 		mesh.geometry.center();
-		mesh.position.x = mesh.position.x+(dist/2);
-		pos_change_Event = new CustomEvent('Editor_Obj_position_change', { 'detail': SELECTED_OBJECT});
-		document.dispatchEvent(pos_change_Event);
 		mesh.geometry.attributes.position.needsUpdate = true;			
 }
 
@@ -178,8 +172,5 @@ ModifyMesh.setDepth = function(mesh, dist){
 				}
 
 		mesh.geometry.center();
-		mesh.position.x = mesh.position.z+(dist/2);
-		pos_change_Event = new CustomEvent('Editor_Obj_position_change', { 'detail': SELECTED_OBJECT});
-		document.dispatchEvent(pos_change_Event);
 		mesh.geometry.attributes.position.needsUpdate = true;			
 }
