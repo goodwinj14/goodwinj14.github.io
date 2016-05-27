@@ -47,7 +47,7 @@ SHAPES.add = function(shape_name){
 function newCube(width,height,depth){
 	console.log("depth", depth);
 	var geometry = new THREE.BoxBufferGeometry( width, height, depth);
-	var material = new THREE.MeshPhongMaterial( { color: 0xFF0000,  shininess: 30, shading: THREE.FlatShading } );
+	var material = new THREE.MeshPhongMaterial( { color: 0xFF0000,  shininess: 3, shading: THREE.FlatShading } );
 	var shape = new THREE.Mesh( geometry, material );
 	return shape;
 }
@@ -55,28 +55,28 @@ function newCube(width,height,depth){
 function newSphere(width,height,depth){
 	var geometry = new THREE.SphereBufferGeometry( width,height,depth);
 	console.log(geometry);
-	var material = new THREE.MeshPhongMaterial( { color: 0xFFA500, shininess: 30, shading: THREE.FlatShading } );
+	var material = new THREE.MeshPhongMaterial( { color: 0xFFA500, shininess: 3, shading: THREE.FlatShading } );
 	var shape = new THREE.Mesh( geometry, material );
 	return shape;
 }
 
 function newCylinder(){
 	var geometry = new THREE.CylinderBufferGeometry( .5, .5, 1, 32 );;
-	var material = new THREE.MeshPhongMaterial( { color: 0x0000ff, shininess: 30, shading: THREE.FlatShading } );
+	var material = new THREE.MeshPhongMaterial( { color: 0x0000ff, shininess: 3, shading: THREE.FlatShading } );
 	var shape = new THREE.Mesh( geometry, material );
 	return shape;
 }
 
 function newCone(){
 	var geometry = new THREE.CylinderBufferGeometry( 0, .5, 1, 32 );;
-	var material = new THREE.MeshPhongMaterial( { color: 0xFFFF00, shininess: 30, shading: THREE.FlatShading } );
+	var material = new THREE.MeshPhongMaterial( { color: 0xFFFF00, shininess: 3, shading: THREE.FlatShading } );
 	var shape = new THREE.Mesh( geometry, material );
 	return shape;
 }
 
 function newTube(){
 	var geometry = new THREE.TorusBufferGeometry( .5, .25, 16, 100 );
-	var material = new THREE.MeshPhongMaterial( { color: 0x99ccff, shininess: 30, shading: THREE.FlatShading } );
+	var material = new THREE.MeshPhongMaterial( { color: 0x99ccff, shininess: 3, shading: THREE.FlatShading } );
 	var shape = new THREE.Mesh( geometry, material );
 	return shape;
 }
