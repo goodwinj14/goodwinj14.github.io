@@ -46,8 +46,8 @@ SHAPES.add = function(shape_name){
 
 function newCube(width,height,depth){
 	console.log("depth", depth);
-	var geometry = new THREE.BoxBufferGeometryNorm( width, height, depth);
-	var material = new THREE.MeshNormalMaterial();
+	var geometry = new THREE.BoxBufferGeometry( width, height, depth);
+	var material = new THREE.MeshPhongMaterial( { color: 0xdddddd, specular: 0x009900, shininess: 30, shading: THREE.FlatShading } );
 	var shape = new THREE.Mesh( geometry, material );
 	return shape;
 }
@@ -55,7 +55,7 @@ function newCube(width,height,depth){
 function newSphere(width,height,depth){
 	var geometry = new THREE.SphereBufferGeometry( width,height,depth);
 	console.log(geometry);
-	var material = new THREE.MeshNormalMaterial();
+	var material = new THREE.MeshPhongMaterial( { color: 0xdddddd, specular: 0x009900, shininess: 30, shading: THREE.FlatShading } );
 	var shape = new THREE.Mesh( geometry, material );
 	return shape;
 }
@@ -69,14 +69,14 @@ function newCylinder(){
 
 function newCone(){
 	var geometry = new THREE.CylinderBufferGeometry( 0, .5, 1, 32 );;
-	var material = new THREE.MeshNormalMaterial();
+	var material = new THREE.MeshPhongMaterial( { color: 0xdddddd, specular: 0x009900, shininess: 30, shading: THREE.FlatShading } );
 	var shape = new THREE.Mesh( geometry, material );
 	return shape;
 }
 
 function newTube(){
 	var geometry = new THREE.TorusBufferGeometry( .5, .25, 16, 100 );
-	var material = new THREE.MeshNormalMaterial();
+	var material = new THREE.MeshPhongMaterial( { color: 0xdddddd, specular: 0x009900, shininess: 30, shading: THREE.FlatShading } );
 	var shape = new THREE.Mesh( geometry, material );
 	return shape;
 }
@@ -114,7 +114,7 @@ var vertices = new Float32Array( [
 // itemSize = 3 because there are 3 values (components) per vertex
 geometry.addAttribute( 'position', new THREE.BufferAttribute( vertices, 3 ) );
 geometry.computeVertexNormals();
-var material = new THREE.MeshNormalMaterial();
+var material = new THREE.MeshPhongMaterial( { color: 0xdddddd, specular: 0x009900, shininess: 30, shading: THREE.FlatShading } );
 var shape = new THREE.Mesh( geometry, material );
 	return shape;
 }
@@ -163,13 +163,13 @@ var vertices = new Float32Array( [
 // itemSize = 3 because there are 3 values (components) per vertex
 geometry.addAttribute( 'position', new THREE.BufferAttribute( vertices, 3 ) );
 geometry.computeVertexNormals();
-var material = new THREE.MeshNormalMaterial();
+var material = new THREE.MeshPhongMaterial( { color: 0xdddddd, specular: 0x009900, shininess: 30, shading: THREE.FlatShading } );
 var shape = new THREE.Mesh( geometry, material );
 	return shape;
 }
 function newCicrle(){
 	var geometry = new THREE.CircleBufferGeometry( .5, 32 );
-	var material = new THREE.MeshNormalMaterial();
+	var material = new THREE.MeshPhongMaterial( { color: 0xdddddd, specular: 0x009900, shininess: 30, shading: THREE.FlatShading } );
 	var shape = new THREE.Mesh( geometry, material );
 	shape.rotation.x= -Math.PI/2;
 	return shape;
@@ -177,7 +177,7 @@ function newCicrle(){
 
 function newPlane(){
 	var geometry = new THREE.PlaneBufferGeometry( 1, 1, 2 );
-	var material = new THREE.MeshNormalMaterial();
+	var material = new THREE.MeshPhongMaterial( { color: 0xdddddd, specular: 0x009900, shininess: 30, shading: THREE.FlatShading } );
 	var shape = new THREE.Mesh( geometry, material );
 	shape.rotation.x= -Math.PI/2;
 	return shape;
@@ -185,7 +185,7 @@ function newPlane(){
 
 function newRing(){
 	var geometry = new THREE.RingBufferGeometry( .25, .5, 32 );
-	var material = new THREE.MeshNormalMaterial();
+	var material = new THREE.MeshPhongMaterial( { color: 0xdddddd, specular: 0x009900, shininess: 30, shading: THREE.FlatShading } );
 	var shape = new THREE.Mesh( geometry, material );
 	shape.rotation.x= -Math.PI/2;
 	return shape;
