@@ -55,7 +55,7 @@ function newCube(width,height,depth){
 function newSphere(width,height,depth){
 	var geometry = new THREE.SphereBufferGeometry( width,height,depth);
 	console.log(geometry);
-	var material = new THREE.MeshPhongMaterial( { color: 0xdddddd, specular: 0x009900, shininess: 30, shading: THREE.FlatShading } );
+	var material = new THREE.MeshPhongMaterial( { color: 0xFFA500, specular: 0x009900, shininess: 30, shading: THREE.FlatShading } );
 	var shape = new THREE.Mesh( geometry, material );
 	return shape;
 }
