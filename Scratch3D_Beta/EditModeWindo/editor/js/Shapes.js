@@ -47,7 +47,7 @@ SHAPES.add = function(shape_name){
 function newCube(width,height,depth){
 	console.log("depth", depth);
 	var geometry = new THREE.BoxBufferGeometry( width, height, depth);
-	var material = new THREE.MeshPhongMaterial( { color: 0xdddddd, specular: 0x009900, shininess: 30, shading: THREE.FlatShading } );
+	var material = new THREE.MeshPhongMaterial( { color: 0xFF0000, specular: 0x009900, shininess: 30, shading: THREE.FlatShading } );
 	var shape = new THREE.Mesh( geometry, material );
 	return shape;
 }
