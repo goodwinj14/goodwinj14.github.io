@@ -142,11 +142,44 @@ ModifyMesh.setHeight = function(mesh, dist){
 				}
 
 		mesh.geometry.center();
-		mesh.position.y = dist/2;
+		mesh.position.y = mesh.position.y+(dist/2);
 		pos_change_Event = new CustomEvent('Editor_Obj_position_change', { 'detail': SELECTED_OBJECT});
 		document.dispatchEvent(pos_change_Event);
-		mesh.geometry.attributes.position.needsUpdate = true;
-		
+		mesh.geometry.attributes.position.needsUpdate = true;			
+}
 
-				
+ModifyMesh.setWidth = function(mesh, dist){
+			vertices = mesh.geometry.attributes.position.array;
+			mesh.geometry.computeBoundingBox();
+
+			minPoint = mesh.geometry.boundingBox.min.x;
+			maxPoint = mesh.geometry.boundingBox.max.x;
+			length = maxPoint-minPoint;
+				for (var i = 0; i < vertices.length; i+=3) {
+						vertices[i] = vertices[i]+((dist-length)*(vertices[i]/length));
+				}
+
+		mesh.geometry.center();
+		mesh.position.x = mesh.position.x+(dist/2);
+		pos_change_Event = new CustomEvent('Editor_Obj_position_change', { 'detail': SELECTED_OBJECT});
+		document.dispatchEvent(pos_change_Event);
+		mesh.geometry.attributes.position.needsUpdate = true;			
+}
+
+ModifyMesh.setDepth = function(mesh, dist){
+			vertices = mesh.geometry.attributes.position.array;
+			mesh.geometry.computeBoundingBox();
+
+			minPoint = mesh.geometry.boundingBox.min.z;
+			maxPoint = mesh.geometry.boundingBox.max.z;
+			length = maxPoint-minPoint;
+				for (var i = 2; i < vertices.length; i+=3) {
+						vertices[i] = vertices[i]+((dist-length)*(vertices[i]/length));
+				}
+
+		mesh.geometry.center();
+		mesh.position.x = mesh.position.z+(dist/2);
+		pos_change_Event = new CustomEvent('Editor_Obj_position_change', { 'detail': SELECTED_OBJECT});
+		document.dispatchEvent(pos_change_Event);
+		mesh.geometry.attributes.position.needsUpdate = true;			
 }
