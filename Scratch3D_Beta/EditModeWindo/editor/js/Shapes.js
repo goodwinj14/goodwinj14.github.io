@@ -40,7 +40,6 @@ SHAPES.add = function(shape_name){
 		shape.rotationalOffset = new THREE.Vector3(0.0, 0.0, 0.0);
 	}
 	GAME_OBJECTS.Shapes.push(shape);
-	SELECTED.init(shape);
 	
 	return shape;
 }
