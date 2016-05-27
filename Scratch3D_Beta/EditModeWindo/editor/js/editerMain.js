@@ -18,7 +18,7 @@ EDITOR.intiEditor = function(viewport){
 			renderer.domElement.id = "canvas";
 
 			var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.8 );
-			directionalLight.position.set( 0, 10, 0 );
+			directionalLight.position.set( 0, 1000, 0 );
 			var light = new THREE.AmbientLight( 0xffffff, 0.4  ); // soft white light
 			scene.add( light );
 			scene.add( directionalLight );
