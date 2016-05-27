@@ -62,7 +62,7 @@ function newSphere(width,height,depth){
 
 function newCylinder(){
 	var geometry = new THREE.CylinderBufferGeometry( .5, .5, 1, 32 );;
-	var material = new THREE.MeshStandardMaterial( { color: 0x550000, roughness: 0.1, metalness: 1.0 } ) 
+	var material = new THREE.MeshPhongMaterial( { color: 0xdddddd, specular: 0x009900, shininess: 30, shading: THREE.FlatShading } );
 	var shape = new THREE.Mesh( geometry, material );
 	return shape;
 }
