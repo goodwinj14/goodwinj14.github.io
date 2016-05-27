@@ -32,7 +32,13 @@ function imageSelected(evt){
 
 function updateShape(){
     var edit_Obj =  GAME_OBJECTS.GetObject(document.getElementById("ACT_OBJ_NAME").value);
-   
+    
+    name = document.getElementById("ACT_OBJ_NAME").value;
+    if(name!==edit_Obj.name){
+        edit_Obj.name = name;
+        console.log("Name", edit_Obj.name);
+    }
+
     edit_Obj.geometry.computeBoundingBox();
     w = parseFloat(document.getElementById("ACT_OBJ_WIDTH").value);
     h = parseFloat(document.getElementById("ACT_OBJ_HEIGHT").value);
