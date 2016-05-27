@@ -76,7 +76,7 @@ function newCone(){
 
 function newTube(){
 	var geometry = new THREE.TorusBufferGeometry( .5, .25, 16, 100 );
-	var material = new THREE.MeshPhongMaterial( { color: 0xdddddd, specular: 0x009900, shininess: 30, shading: THREE.FlatShading } );
+	var material = new THREE.MeshPhongMaterial( { color: 0x99ccff, shininess: 30, shading: THREE.FlatShading } );
 	var shape = new THREE.Mesh( geometry, material );
 	return shape;
 }
