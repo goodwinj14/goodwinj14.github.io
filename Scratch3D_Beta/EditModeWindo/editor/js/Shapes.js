@@ -114,7 +114,7 @@ var vertices = new Float32Array( [
 // itemSize = 3 because there are 3 values (components) per vertex
 geometry.addAttribute( 'position', new THREE.BufferAttribute( vertices, 3 ) );
 geometry.computeVertexNormals();
-var material = new THREE.MeshPhongMaterial( { color: 0xcc6699, shininess: 3, shading: THREE.FlatShading } );
+var material = new THREE.MeshPhongMaterial( { color: 0xfff00, shininess: 3, shading: THREE.FlatShading } );
 var shape = new THREE.Mesh( geometry, material );
 	return shape;
 }
@@ -163,7 +163,7 @@ var vertices = new Float32Array( [
 // itemSize = 3 because there are 3 values (components) per vertex
 geometry.addAttribute( 'position', new THREE.BufferAttribute( vertices, 3 ) );
 geometry.computeVertexNormals();
-var material = new THREE.MeshPhongMaterial( { color: 0xdddddd, shininess: 3, shading: THREE.FlatShading } );
+var material = new THREE.MeshPhongMaterial( { color: 0xcc6699, shininess: 3, shading: THREE.FlatShading } );
 var shape = new THREE.Mesh( geometry, material );
 	return shape;
 }
