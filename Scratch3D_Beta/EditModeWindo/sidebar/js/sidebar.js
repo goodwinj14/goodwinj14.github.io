@@ -122,5 +122,8 @@ function updateEditorWindoVals(event){
     document.getElementById("ACT_OBJ_WIDTH").value = event.detail.geometry.boundingBox.max.x-event.detail.geometry.boundingBox.min.x;
     document.getElementById("ACT_OBJ_HEIGHT").value = event.detail.geometry.boundingBox.max.y-event.detail.geometry.boundingBox.min.y;
     document.getElementById("ACT_OBJ_DEPTH").value = event.detail.geometry.boundingBox.max.z-event.detail.geometry.boundingBox.min.z;
+    document.getElementById("ACT_OBJ_COLOR_R").value = event.detail.material.color.r;
+    document.getElementById("ACT_OBJ_COLOR_G").value = event.detail.material.color.g;
+    document.getElementById("ACT_OBJ_COLOR_B").value = event.detail.material.color.b;
 
 }
