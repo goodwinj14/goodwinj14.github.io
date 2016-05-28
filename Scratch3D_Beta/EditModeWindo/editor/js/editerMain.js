@@ -95,6 +95,8 @@ EDITOR.add_shape = function(shape){
 			obj.position.y = obj.geometry.boundingBox.min.y*-1;
 			scene.add(obj);
 			SELECTED.init(obj);
+			selectEvent = new CustomEvent('Editor_Obj_Selected',{ 'detail': obj});
+			document.dispatchEvent(selectEvent);
 			MOVE_OBJ = obj;
 			SELECTED_OBJECT = obj;
 			MOVE_OBJ_ACTIVE=true;
