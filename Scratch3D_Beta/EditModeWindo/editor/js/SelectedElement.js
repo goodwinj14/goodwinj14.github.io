@@ -30,7 +30,6 @@ SELECTED.init = function(object){
 	object.geometry.computeBoundingBox();
 	boundingBox = object.geometry.boundingBox;
 
-	object.material.opacity = 0.7;
 	shapeHelpers = new THREE.Object3D();
 	shapeHelpers.name="Points";
 	size = 0.04;
@@ -139,7 +138,6 @@ SELECTED.select = function(event){
 	shapeHelpers.position.x = avtive_Object.position.x;
 	shapeHelpers.position.y = avtive_Object.position.y;
 	shapeHelpers.position.z = avtive_Object.position.z;
-	avtive_Object.material.opacity = .7;
 	scene.add( shapeHelpers );
 
 }
@@ -171,12 +169,10 @@ SELECTED.updateHelperPosition = function(obj){
 	shapeHelpers.position.x = avtive_Object.position.x;
 	shapeHelpers.position.y = avtive_Object.position.y;
 	shapeHelpers.position.z = avtive_Object.position.z;
-	avtive_Object.material.opacity = .7;
 }
 
 SELECTED.deselect = function(event){
 	scene.remove( scene.getObjectByName("Points") );
-	avtive_Object.material.opacity = 1;
 }
 
 
