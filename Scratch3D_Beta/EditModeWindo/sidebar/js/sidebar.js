@@ -45,6 +45,10 @@ function updateShape(){
     console.log("edit_Obj", edit_Obj.material.color.r );
     if(edit_Obj.material.color.r !== (colorR/255)){
         edit_Obj.material.color.r = (colorR/255);
+    }if(edit_Obj.material.color.g !== (colorG/255)){
+        edit_Obj.material.color.g = (colorG/255);
+    }if(edit_Obj.material.color.b !== (colorB/255)){
+        edit_Obj.material.color.b = (colorB/255);
     }
 
     edit_Obj.geometry.computeBoundingBox();
