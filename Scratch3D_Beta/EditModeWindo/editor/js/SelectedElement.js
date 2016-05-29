@@ -79,7 +79,7 @@ SELECTED.init = function(object){
 	rotate_z.name = "rotate_z";
 
 	var dir = new THREE.Vector3( 0, 1, 0 );
-	var origin = new THREE.Vector3( 0, boundingBox.max.y+(boundingBox.max.y/5), 0 );
+	var origin = new THREE.Vector3( 0, 1, 0 );
 	var length = boundingBox.max.y;
 	var hex = 0xffff00;
 
