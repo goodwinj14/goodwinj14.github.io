@@ -78,6 +78,14 @@ SELECTED.init = function(object){
 	rotate_z = new THREE.Mesh(new THREE.RingBufferGeometry( 1, 1.05, 64 ), mat_ring_z);
 	rotate_z.name = "rotate_z";
 
+	var dir = new THREE.Vector3( 0, 1, 0 );
+	var origin = new THREE.Vector3( 0, boundingBox.max.y+(boundingBox.max.y/5), 0 );
+	var length = 1;
+	var hex = 0xffff00;
+
+	var arrowHelper = new THREE.ArrowHelper( dir, origin, length, hex );
+	scene.add( arrowHelper );
+
 	shapeHelpers.add(face_0);
 	shapeHelpers.add(face_1);
 	shapeHelpers.add(face_3);
