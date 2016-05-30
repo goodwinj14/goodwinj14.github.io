@@ -88,6 +88,7 @@ function updateShape(){
     rotY = parseFloat(document.getElementById("ACT_OBJ_ROT_Y").value);
     rotZ = parseFloat(document.getElementById("ACT_OBJ_ROT_Z").value);
     if(rotX!=edit_Obj.rotationalOffset.x){
+        rotX = rotX-edit_Obj.rotationalOffset.x;
         ModifyMesh.updateRotation(edit_Obj, new THREE.Euler((rotX*Math.PI)/180,0, 0,'XYZ'));
     }if(rotY!=edit_Obj.rotationalOffset.y){
         ModifyMesh.updateRotation(edit_Obj, new THREE.Euler(0,(rotY*Math.PI)/180, 0,'XYZ'));
