@@ -87,8 +87,9 @@ SELECTED.init = function(object){
 
     arrowHelper = new THREE.ArrowHelper( dir, origin, length, hex );
     //arrowHelper.name = "position_y";
-
-    scene.add(createAlignGUI());
+    align = createAlignGUI();
+    align.scale.x = 2;
+    scene.add();
 
 	shapeHelpers.add(face_0);
 	shapeHelpers.add(face_1);
@@ -273,7 +274,7 @@ function createAlignGUI(){
 
 	var material = new THREE.LineBasicMaterial({
 	color: 0x292929,
-	linewidth: 3
+	linewidth: 2
 	});
 
 	var geometry = new THREE.Geometry();
