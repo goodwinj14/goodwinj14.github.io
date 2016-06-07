@@ -8,7 +8,7 @@ var shapeHelpers = null;
 var CORNER_SELECTED = null;
 var ROTAION_SELECTED = null;
 var POSTION_SELECTED = null;
-var MULI_SELECTION_GROUP;
+SELECTED.MULI_SELECTION_GROUP = null;
 var rotationX_Color;
 var rotationY_Color;
 var rotationZ_Color;
@@ -35,7 +35,7 @@ SELECTED.init = function(object){
 
 	shapeHelpers = new THREE.Object3D();
 
-	SELECTED.MULI_SELECTION_GROUP = THREE.Object3D();
+	SELECTED.MULI_SELECTION_GROUP = new THREE.Object3D();
 
 	shapeHelpers.name="Points";
 	size = 0.04;
