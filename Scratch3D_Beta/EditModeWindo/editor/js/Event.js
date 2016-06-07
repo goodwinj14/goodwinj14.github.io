@@ -206,11 +206,12 @@ function grid_clicked(event){
 				OBJECT_IS_SELECTED = true;
 			}else if(SELECTED_OBJECT!=null&&IS_SHIFT_DOWN&&(SELECTED_OBJECT.name!=intersects[0].object.name)){ //Allows for multiple objects to be slected at one time
 				console.log("Multi object Selection", SELECTED.MULI_SELECTION_GROUP);
-				if(SELECTED.MULI_SELECTION_GROUP.children.length<1){
+				groupArray = SELECTED.MULI_SELECTION_GROUP.children;
+				if(groupArray.length<1){
 					SELECTED.MULI_SELECTION_GROUP.add(intersects[0]);
 				}
 				var containsOBJalready = false;
-				console.log(SELECTED.MULI_SELECTION_GROUP..getObjectByName(intersects[0].object.name));
+				console.log(SELECTED.MULI_SELECTION_GROUP.getObjectByName(intersects[0].object.name));
 				if(!containsOBJalready){
 					SELECTED.MULI_SELECTION_GROUP.add(SELECTED_OBJECT);
 				}
