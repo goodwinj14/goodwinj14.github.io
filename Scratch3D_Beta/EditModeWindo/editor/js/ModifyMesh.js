@@ -118,7 +118,7 @@ ModifyMesh.updateRotation = function(mesh, EulerVector){
            mesh.rotationalOffset.z += EulerVector.z*(180/Math.PI);
 
 
-	       mesh.quaternion.multiplyQuaternions(deltaRotationQuaternion, mesh.quaternion);
+	       mesh.quaternion = deltaRotationQuaternion;
 	       console.log(deltaRotationQuaternion);
 	       mesh.updateMatrix();
 		   mesh.geometry.applyMatrix( mesh.matrix );
