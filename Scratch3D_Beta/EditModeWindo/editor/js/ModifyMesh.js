@@ -112,7 +112,7 @@ ModifyMesh.updateDimensions = function(mesh,sideID, dist){
 
 ModifyMesh.updateRotation = function(mesh, EulerVector){
 
-           deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(EulerVector);
+           deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(new THREE.Euler(0, mesh.rotationalOffset.y*(Math.PI/-180), 0,'XYZ'));
            mesh.rotationalOffset.x += EulerVector.x*(180/Math.PI);
            mesh.rotationalOffset.y += EulerVector.y*(180/Math.PI);
            mesh.rotationalOffset.z += EulerVector.z*(180/Math.PI);
