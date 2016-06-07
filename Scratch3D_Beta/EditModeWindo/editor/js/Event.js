@@ -23,9 +23,11 @@ EVENT.init = function(){
 		if(EDIT_MODE){
 
     		if(event.shiftKey){
-    			IS_SHIFT_DOWN = true;
+    			if(!IS_SHIFT_DOWN){
+    				IS_SHIFT_DOWN = true;
+    			}
     		}
-    		console.log("IS_SHIFT_DOWN", IS_SHIFT_DOWN);
+    		console.log("IS_SHIFT_DOWN1", IS_SHIFT_DOWN);
 		}
 	}, false);
 
@@ -33,9 +35,11 @@ EVENT.init = function(){
 		if(EDIT_MODE){
 
     		if(event.shiftKey){
-    			IS_SHIFT_DOWN = false;
+    			if(IS_SHIFT_DOWN){
+    				IS_SHIFT_DOWN = false;
+    			}
     		}
-    		console.log("IS_SHIFT_DOWN", IS_SHIFT_DOWN);
+    		console.log("IS_SHIFT_DOWN1", IS_SHIFT_DOWN);
 		}
 	}, false);
 //Updates current Key State 
