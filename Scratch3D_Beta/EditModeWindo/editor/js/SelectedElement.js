@@ -34,8 +34,8 @@ SELECTED.init = function(object){
 	boundingBox = object.geometry.boundingBox;
 
 	shapeHelpers = new THREE.Object3D();
-	
-	MULI_SELECTION_GROUP = THREE.Object3D();
+
+	SELECTED.MULI_SELECTION_GROUP = THREE.Object3D();
 
 	shapeHelpers.name="Points";
 	size = 0.04;
