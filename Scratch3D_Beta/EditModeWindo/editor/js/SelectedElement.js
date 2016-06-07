@@ -210,6 +210,7 @@ SELECTED.helperHoverCheck = function(event){
 						CORNER_SELECTED = intersects[0].object;
 					}else if(intersects[0].object.name.indexOf("rotate")>-1){
 						ROTAION_SELECTED = intersects[0].object;
+						console.log("POSTION_SELECTED", POSTION_SELECTED);
 					}else if(intersects[0].object.name.indexOf("position")>-1){
 						POSTION_SELECTED = intersects[0].object;
 						console.log("POSTION_SELECTED", POSTION_SELECTED);
