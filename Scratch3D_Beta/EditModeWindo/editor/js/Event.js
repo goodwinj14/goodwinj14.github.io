@@ -6,6 +6,7 @@ var raycaster, intersects;
 var MOUSE_IS_DOWN = false;
 var MOUSE_LOC_CHANGED = false;
 var mouse;
+var IS_SHIFT_DOWN = false;
 var   previousMousePosition = {
         x: 0,
         y: 0
@@ -16,6 +17,8 @@ var   previousMousePosition = {
 EVENT.init = function(){
 	raycaster = new THREE.Raycaster();
 	mouse = new THREE.Vector2();
+
+	document.getElementById("canvas").addEventListener("keydown", handleKeyEvents);
 
 	document.getElementById("canvas").addEventListener("mousedown", function(event){
     MOUSE_IS_DOWN = true;
@@ -172,19 +175,23 @@ function grid_clicked(event){
 	if(CORNER_SELECTED==null && ROTAION_SELECTED==null){
 		intersects = raycaster.intersectObjects( GAME_OBJECTS.Shapes, false);	
 		if ( intersects.length > 0 ) {
-			if(SELECTED_OBJECT!=null){
+
+			if(SELECTED_OBJECT!=null&&!IS_SHIFT_DOWN){
 				deselectEvent = new CustomEvent('Editor_Obj_Deselected', { 'detail': SELECTED_OBJECT});
 				document.dispatchEvent(deselectEvent);
 				SELECTED_OBJECT = intersects[0].object;
 		    	selectEvent = new CustomEvent('Editor_Obj_Selected',{ 'detail': intersects[0].object});
 				document.dispatchEvent(selectEvent);
 				OBJECT_IS_SELECTED = true;
+			}else if(SELECTED_OBJECT!=null&&IS_SHIFT_DOWN&&(SELECTED_OBJECT.name!=intersects[0].object.name)){ //Allows for multiple objects to be slected at one time
+				console.log("Multi object Selection");
 			}else{
 				SELECTED_OBJECT = intersects[0].object;
 		    	selectEvent = new CustomEvent('Editor_Obj_Selected',{ 'detail': intersects[0].object});
 				document.dispatchEvent(selectEvent);
 				OBJECT_IS_SELECTED = true;
 			}
+
 		}else if(SELECTED_OBJECT!=null){
 				deselectEvent = new CustomEvent('Editor_Obj_Deselected', { 'detail': SELECTED_OBJECT});
 				document.dispatchEvent(deselectEvent);
@@ -192,4 +199,10 @@ function grid_clicked(event){
 				OBJECT_IS_SELECTED = false;
 			}
 	}
+}
+
+//Key Events
+
+function handleKeyEvents(event){
+	console.log(event);
 }

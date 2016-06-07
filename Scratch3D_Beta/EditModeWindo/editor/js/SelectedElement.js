@@ -8,6 +8,7 @@ var shapeHelpers = null;
 var CORNER_SELECTED = null;
 var ROTAION_SELECTED = null;
 var POSTION_SELECTED = null;
+var SHIFT_DOWN = false;
 var rotationX_Color;
 var rotationY_Color;
 var rotationZ_Color;
