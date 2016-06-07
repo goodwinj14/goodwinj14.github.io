@@ -208,14 +208,14 @@ function grid_clicked(event){
 				console.log("Multi object Selection", SELECTED.MULI_SELECTION_GROUP);
 				groupArray = SELECTED.MULI_SELECTION_GROUP.children;
 				if(groupArray.length<1){
-					SELECTED.MULI_SELECTION_GROUP.add(intersects[0]);
+					SELECTED.MULI_SELECTION_GROUP.add(SELECTED_OBJECT);
 				}
 				var containsOBJalready = false;
 				if(SELECTED.MULI_SELECTION_GROUP.getObjectByName(intersects[0].object.name)==undefined){
 					console.log("add called");
-					SELECTED.MULI_SELECTION_GROUP.add(SELECTED_OBJECT);
+					SELECTED.MULI_SELECTION_GROUP.add(intersects[0]);
 				}
-				console.log("MULI_SELECTION_GROUP.children 2",SELECTED.MULI_SELECTION_GROUP.children.length);
+				console.log("MULI_SELECTION_GROUP.children 3",SELECTED.MULI_SELECTION_GROUP.children.length);
 				/*
 					Multi object selection for align and grouping function
 				*/
