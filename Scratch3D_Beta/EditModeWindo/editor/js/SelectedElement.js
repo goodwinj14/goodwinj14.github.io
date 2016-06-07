@@ -271,7 +271,8 @@ function createAlignGUI(){
 	circleTwo.position.x = -0.5;
 
 	var material = new THREE.LineBasicMaterial({
-	color: 0x0000ff
+	color: 0xdddddd,
+	linewidth: 5
 	});
 
 	var geometry = new THREE.Geometry();
