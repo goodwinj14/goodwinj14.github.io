@@ -211,11 +211,11 @@ function grid_clicked(event){
 					SELECTED.MULI_SELECTION_GROUP.add(intersects[0]);
 				}
 				var containsOBJalready = false;
-				console.log(SELECTED.MULI_SELECTION_GROUP.getObjectByName(intersects[0].object.name));
-				if(!containsOBJalready){
+				if(SELECTED.MULI_SELECTION_GROUP.getObjectByName(intersects[0].object.name)==undefined){
+					console.log("add called");
 					SELECTED.MULI_SELECTION_GROUP.add(SELECTED_OBJECT);
 				}
-				console.log("MULI_SELECTION_GROUP.children",SELECTED.MULI_SELECTION_GROUP.children);
+				console.log("MULI_SELECTION_GROUP.children 2",SELECTED.MULI_SELECTION_GROUP.children);
 				/*
 					Multi object selection for align and grouping function
 				*/
