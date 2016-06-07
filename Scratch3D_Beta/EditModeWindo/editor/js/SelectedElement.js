@@ -88,6 +88,8 @@ SELECTED.init = function(object){
     arrowHelper = new THREE.ArrowHelper( dir, origin, length, hex );
     //arrowHelper.name = "position_y";
 
+    scene.add(createAlignGUI());
+
 	shapeHelpers.add(face_0);
 	shapeHelpers.add(face_1);
 	shapeHelpers.add(face_3);
@@ -251,3 +253,16 @@ SELECTED.helperHoverCheck = function(event){
 					CORNER_SELECTED = null;
 				}
 }
+
+function createAlignGUI(){
+
+	var group = new THREE.Object3D();
+	var geometry = new THREE.CircleBufferGeometry( 1, 32 );
+	var material = new THREE.MeshPhongMaterial( { color: 0xdddddd,  shininess: 3, shading: THREE.FlatShading } );
+	var shape = new THREE.Mesh( geometry, material );
+	shape.material.side = THREE.DoubleSide;
+	group.add(shape);
+	return group;
+}
+
+
