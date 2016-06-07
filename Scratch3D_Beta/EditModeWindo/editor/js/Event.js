@@ -18,11 +18,27 @@ EVENT.init = function(){
 	raycaster = new THREE.Raycaster();
 	mouse = new THREE.Vector2();
 
+//Updates current Key State 
 	document.addEventListener("keydown", function(event){
 		if(EDIT_MODE){
-    		console.log("key is down3", event.shiftKey);
+
+    		if(event.shiftKey){
+    			IS_SHIFT_DOWN = true;
+    		}
+    		console.log("IS_SHIFT_DOWN", IS_SHIFT_DOWN);
 		}
 	}, false);
+
+	document.addEventListener("keyup", function(event){
+		if(EDIT_MODE){
+
+    		if(event.shiftKey){
+    			IS_SHIFT_DOWN = false;
+    		}
+    		console.log("IS_SHIFT_DOWN", IS_SHIFT_DOWN);
+		}
+	}, false);
+//Updates current Key State 
 
 	document.getElementById("canvas").addEventListener("mousedown", function(event){
     MOUSE_IS_DOWN = true;
