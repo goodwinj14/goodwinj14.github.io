@@ -8,7 +8,7 @@ var shapeHelpers = null;
 var CORNER_SELECTED = null;
 var ROTAION_SELECTED = null;
 var POSTION_SELECTED = null;
-var SHIFT_DOWN = false;
+var MULI_SELECTION_GROUP;
 var rotationX_Color;
 var rotationY_Color;
 var rotationZ_Color;
@@ -34,6 +34,9 @@ SELECTED.init = function(object){
 	boundingBox = object.geometry.boundingBox;
 
 	shapeHelpers = new THREE.Object3D();
+	
+	MULI_SELECTION_GROUP = THREE.Object3D();
+
 	shapeHelpers.name="Points";
 	size = 0.04;
 	face_0 = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial() );

@@ -27,7 +27,6 @@ EVENT.init = function(){
     				IS_SHIFT_DOWN = true;
     			}
     		}
-    		console.log("IS_SHIFT_DOWN1", IS_SHIFT_DOWN);
 		}
 	}, false);
 
@@ -38,7 +37,6 @@ EVENT.init = function(){
     				IS_SHIFT_DOWN = false;
     			}
     		}
-    		 console.log("IS_SHIFT_DOWN1", IS_SHIFT_DOWN);
 		}
 	}, false);
 //Updates current Key State 
@@ -208,6 +206,22 @@ function grid_clicked(event){
 				OBJECT_IS_SELECTED = true;
 			}else if(SELECTED_OBJECT!=null&&IS_SHIFT_DOWN&&(SELECTED_OBJECT.name!=intersects[0].object.name)){ //Allows for multiple objects to be slected at one time
 				console.log("Multi object Selection");
+				if(MULI_SELECTION_GROUP.children.length()<1){
+					MULI_SELECTION_GROUP.add(intersects[0]);
+				}
+				var containsOBJalready = false;
+				for (var i = 0; i <MULI_SELECTION_GROUP.children.length(); i++) {
+					if(MULI_SELECTION_GROUP.children[i].name == intersects[0].object.name){
+						containsOBJalready = true;
+					}
+				}
+				if(!containsOBJalready){
+					MULI_SELECTION_GROUP.add(SELECTED_OBJECT);
+				}
+				console.log("MULI_SELECTION_GROUP.children",MULI_SELECTION_GROUP.children);
+				/*
+					Multi object selection for align and grouping function
+				*/
 			}else{
 				SELECTED_OBJECT = intersects[0].object;
 		    	selectEvent = new CustomEvent('Editor_Obj_Selected',{ 'detail': intersects[0].object});
