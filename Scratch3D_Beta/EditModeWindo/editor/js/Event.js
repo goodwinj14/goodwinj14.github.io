@@ -213,7 +213,7 @@ function grid_clicked(event){
 				var containsOBJalready = false;
 				if(SELECTED.MULI_SELECTION_GROUP.getObjectByName(intersects[0].object.name)==undefined){
 					console.log("add called");
-					SELECTED.MULI_SELECTION_GROUP.add(intersects[0]);
+					SELECTED.MULI_SELECTION_GROUP.add(intersects[0].object);
 				}
 				console.log("MULI_SELECTION_GROUP.children 3",SELECTED.MULI_SELECTION_GROUP.children.length);
 				/*
