@@ -15,6 +15,7 @@ var conner_select_color;
 var rotate_x;
 var rotate_y;
 var rotate_z;
+var arrowHelper;
 
 SELECTED.init = function(object){
 	if(shapeHelpers == null){
@@ -83,7 +84,7 @@ SELECTED.init = function(object){
 	var length = 0.5;
 	var hex = 0xffff00;
 
-	var arrowHelper = new THREE.ArrowHelper( dir, origin, length, hex );
+    arrowHelper = new THREE.ArrowHelper( dir, origin, length, hex );
 
 
 	shapeHelpers.add(face_0);
@@ -149,7 +150,7 @@ SELECTED.select = function(event){
 	shapeHelpers.position.z = avtive_Object.position.z;
 
 	arrowHelper.position.y = avtive_Object.position.y;
-		
+
 	scene.add( shapeHelpers );
 
 }
