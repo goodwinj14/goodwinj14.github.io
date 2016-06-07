@@ -89,15 +89,15 @@ function updateShape(){
     rotZ = parseFloat(document.getElementById("ACT_OBJ_ROT_Z").value);
     if(rotX!=edit_Obj.rotationalOffset.x){
         rotX = rotX-edit_Obj.rotationalOffset.x;
-        ModifyMesh.updateRotation(edit_Obj, new THREE.Euler(((edit_Obj.rotationalOffset.x*-1)*Math.PI)/180,0, 0,'XYZ'));
     }if(rotY!=edit_Obj.rotationalOffset.y){
         rotY = rotY-edit_Obj.rotationalOffset.y;
-        ModifyMesh.updateRotation(edit_Obj, new THREE.Euler(0,((edit_Obj.rotationalOffset.y*-1)*Math.PI)/180, 0,'XYZ'));
+        //ModifyMesh.updateRotation(edit_Obj, new THREE.Euler(0,((edit_Obj.rotationalOffset.y*-1)*Math.PI)/180, 0,'XYZ'));
     }if(rotZ!=edit_Obj.rotationalOffset.z){
         rotZ = rotZ-edit_Obj.rotationalOffset.z;
-        ModifyMesh.updateRotation(edit_Obj, new THREE.Euler(0,0,((edit_Obj.rotationalOffset.z*-1)*Math.PI)/180,'XYZ'));
+       // ModifyMesh.updateRotation(edit_Obj, new THREE.Euler(0,0,((edit_Obj.rotationalOffset.z*-1)*Math.PI)/180,'XYZ'));
     }
-
+    console.log("Rotate Update0");
+    ModifyMesh.updateRotation(edit_Obj, new THREE.Euler(((edit_Obj.rotationalOffset.x*-1)*Math.PI)/180, ((edit_Obj.rotationalOffset.x*-1)*Math.PI)/180 , ((edit_Obj.rotationalOffset.x*-1)*Math.PI)/180 ,'XYZ'));
 
     /*var remove =  GAME_OBJECTS.GetObject(document.getElementById("ACT_OBJ_NAME").value);
     console.log(remove);
