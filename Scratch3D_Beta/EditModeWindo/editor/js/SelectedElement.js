@@ -84,7 +84,7 @@ SELECTED.init = function(object){
 	var hex = 0xffff00;
 
 	var arrowHelper = new THREE.ArrowHelper( dir, origin, length, hex );
-	scene.add( arrowHelper );
+
 
 	shapeHelpers.add(face_0);
 	shapeHelpers.add(face_1);
@@ -94,6 +94,7 @@ SELECTED.init = function(object){
 	shapeHelpers.add(rotate_x);
 	shapeHelpers.add(rotate_y);
 	shapeHelpers.add(rotate_z);
+	shapeHelpers.add(arrowHelper);
 
 	shapeHelpers.position.set(object.position.x, object.position.y, object.position.z);
 
