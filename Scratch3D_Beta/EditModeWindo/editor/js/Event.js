@@ -18,7 +18,9 @@ EVENT.init = function(){
 	raycaster = new THREE.Raycaster();
 	mouse = new THREE.Vector2();
 
-	document.getElementById("canvas").addEventListener("keydown", handleKeyEvents);
+	document.getElementById("canvas").addEventListener("keydown", function(event){
+    console.log("key is down");
+	}, false);
 
 	document.getElementById("canvas").addEventListener("mousedown", function(event){
     MOUSE_IS_DOWN = true;
@@ -204,5 +206,5 @@ function grid_clicked(event){
 //Key Events
 
 function handleKeyEvents(event){
-	console.log(event);
+	
 }
