@@ -80,7 +80,7 @@ SELECTED.init = function(object){
 
 	var dir = new THREE.Vector3( 0, 1, 0 );
 	var origin = new THREE.Vector3( 0, boundingBox.max.y, 0 );
-	var length = 1.4;
+	var length = 0.5;
 	var hex = 0xffff00;
 
 	var arrowHelper = new THREE.ArrowHelper( dir, origin, length, hex );
@@ -147,6 +147,9 @@ SELECTED.select = function(event){
 	shapeHelpers.position.x = avtive_Object.position.x;
 	shapeHelpers.position.y = avtive_Object.position.y;
 	shapeHelpers.position.z = avtive_Object.position.z;
+
+	arrowHelper.position.y = avtive_Object.position.y;
+		
 	scene.add( shapeHelpers );
 
 }
@@ -178,6 +181,8 @@ SELECTED.updateHelperPosition = function(obj){
 	shapeHelpers.position.x = avtive_Object.position.x;
 	shapeHelpers.position.y = avtive_Object.position.y;
 	shapeHelpers.position.z = avtive_Object.position.z;
+
+	arrowHelper.position.y = avtive_Object.position.y;
 }
 
 SELECTED.deselect = function(event){
