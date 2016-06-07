@@ -257,12 +257,13 @@ SELECTED.helperHoverCheck = function(event){
 function createAlignGUI(){
 
 	var group = new THREE.Object3D();
-	var geometry = new THREE.CircleBufferGeometry( .1, 32 );
+	var geometry = new THREE.CircleBufferGeometry( 0.1, 32 );
 	var material = new THREE.MeshPhongMaterial( { color: 0xdddddd,  shininess: 3, shading: THREE.FlatShading } );
+
 	var circleOne = new THREE.Mesh( geometry, material );
 	circleOne.material.side = THREE.DoubleSide;
 	circleOne.rotation.x=Math.PI/2;
-	circleOne.position.x = -0.5;
+	circleOne.position.x = 0.5;
 
 	var circleTwo = new THREE.Mesh( geometry, material );
 	circleTwo.material.side = THREE.DoubleSide;
