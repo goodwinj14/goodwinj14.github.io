@@ -27,19 +27,20 @@ EVENT.init = function(){
     				IS_SHIFT_DOWN = true;
     			}
     		}
-    		console.log("IS_SHIFT_DOWN1", IS_SHIFT_DOWN);
+    		//console.log("IS_SHIFT_DOWN1", IS_SHIFT_DOWN);
 		}
 	}, false);
 
 	document.addEventListener("keyup", function(event){
 		if(EDIT_MODE){
-
+			console.log("key up", event);
     		if(event.shiftKey){
     			if(IS_SHIFT_DOWN){
     				IS_SHIFT_DOWN = false;
+    				console.log("IS_SHIFT_DOWN Turn false called");
     			}
     		}
-    		console.log("IS_SHIFT_DOWN1", IS_SHIFT_DOWN);
+    		
 		}
 	}, false);
 //Updates current Key State 
