@@ -205,15 +205,14 @@ SELECTED.helperHoverCheck = function(event){
 
 				intersects = raycaster.intersectObjects( shapeHelpers.children, true);
 				if ( intersects.length > 0 ) {
-					
+					console.log("POSTION_SELECTED", intersects[0].object);
 					if(intersects[0].object.name.indexOf("face")>-1){
 						CORNER_SELECTED = intersects[0].object;
 					}else if(intersects[0].object.name.indexOf("rotate")>-1){
 						ROTAION_SELECTED = intersects[0].object;
-						console.log("POSTION_SELECTED", POSTION_SELECTED);
 					}else if(intersects[0].object.name.indexOf("position")>-1){
 						POSTION_SELECTED = intersects[0].object;
-						console.log("POSTION_SELECTED", POSTION_SELECTED);
+						
 					}
 
 					if(CORNER_SELECTED!=null){
