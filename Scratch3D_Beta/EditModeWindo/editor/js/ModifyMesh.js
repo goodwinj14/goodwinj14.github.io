@@ -1,6 +1,7 @@
 ModifyMesh = {}
 
 ModifyMesh.updateDimensions = function(mesh,sideID, dist){
+
 		vertices = mesh.geometry.attributes.position.array;
 		mesh.geometry.computeBoundingBox();
 		//Alters the max x width of the object
@@ -118,6 +119,7 @@ ModifyMesh.updateRotation = function(mesh, EulerVector){
 
 
 	       mesh.quaternion.multiplyQuaternions(deltaRotationQuaternion, mesh.quaternion);
+	       console.log(deltaRotationQuaternion);
 	       mesh.updateMatrix();
 		   mesh.geometry.applyMatrix( mesh.matrix );
 		   mesh.geometry.center();
