@@ -20,7 +20,7 @@ EVENT.init = function(){
 
 	document.addEventListener("keydown", function(event){
 		if(EDIT_MODE){
-    		console.log("key is down2");
+    		console.log("key is down3", event.shiftKey);
 		}
 	}, false);
 
