@@ -36,6 +36,7 @@ SELECTED.init = function(object){
 	shapeHelpers = new THREE.Object3D();
 
 	SELECTED.MULI_SELECTION_GROUP = new THREE.Object3D();
+	scene.add(SELECTED.MULI_SELECTION_GROUP);
 
 	shapeHelpers.name="Points";
 	size = 0.04;
