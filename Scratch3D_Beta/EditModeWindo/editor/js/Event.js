@@ -18,7 +18,7 @@ EVENT.init = function(){
 	raycaster = new THREE.Raycaster();
 	mouse = new THREE.Vector2();
 
-	document.getElementById("canvas").addEventListener("keydown", function(event){
+	window.addEventListener("keydown", function(event){
     console.log("key is down");
 	}, false);
 
