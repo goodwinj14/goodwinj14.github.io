@@ -98,8 +98,8 @@ function updateShape(){
     }
     console.log("x", (edit_Obj.rotationalOffset.x*Math.PI)/-180);
     console.log("y", (edit_Obj.rotationalOffset.y*Math.PI)/-180);
-    console.log("z", (edit_Obj.rotationalOffset.y*Math.PI)/-180);
-    ModifyMesh.updateRotation(edit_Obj, new THREE.Euler(0, 45*(Math.PI/-180), 0,'XYZ'));
+    console.log("z", (edit_Obj.rotationalOffset.z*Math.PI)/-180);
+    ModifyMesh.updateRotation(edit_Obj, new THREE.Euler(0, edit_Obj.rotationalOffset.y*(Math.PI/-180), 0,'XYZ'));
 
     /*var remove =  GAME_OBJECTS.GetObject(document.getElementById("ACT_OBJ_NAME").value);
     console.log(remove);
