@@ -7,6 +7,7 @@ var avtive_Object;
 var shapeHelpers = null;
 var CORNER_SELECTED = null;
 var ROTAION_SELECTED = null;
+var POSTION_SELECTED = null;
 var rotationX_Color;
 var rotationY_Color;
 var rotationZ_Color;
@@ -85,7 +86,7 @@ SELECTED.init = function(object){
 	var hex = 0xffff00;
 
     arrowHelper = new THREE.ArrowHelper( dir, origin, length, hex );
-
+    arrowHelper.name = "position_y";
 
 	shapeHelpers.add(face_0);
 	shapeHelpers.add(face_1);
@@ -209,6 +210,8 @@ SELECTED.helperHoverCheck = function(event){
 						CORNER_SELECTED = intersects[0].object;
 					}else if(intersects[0].object.name.indexOf("rotate")>-1){
 						ROTAION_SELECTED = intersects[0].object;
+					}else if(intersects[0].object.name.indexOf("position")>-1){
+						POSTION_SELECTED = intersects[0].object;
 					}
 
 					if(CORNER_SELECTED!=null){
@@ -229,7 +232,11 @@ SELECTED.helperHoverCheck = function(event){
 						}
 					}
 
-					 if(ROTAION_SELECTED!=null){
+					if(POSTION_SELECTED!=null){
+						POSTION_SELECTED.material.color = rotationX_Color;
+					}
+
+					if(ROTAION_SELECTED!=null){
 						if(ROTAION_SELECTED.name == "rotate_x"){
 							ROTAION_SELECTED.material.color = rotationX_Color;
 						}else if(ROTAION_SELECTED.name == "rotate_y"){
@@ -238,6 +245,7 @@ SELECTED.helperHoverCheck = function(event){
 							ROTAION_SELECTED.material.color = rotationZ_Color;
 						}
 					}
+					POSTION_SELECTED = null
 					ROTAION_SELECTED = null;
 					CORNER_SELECTED = null;
 				}
