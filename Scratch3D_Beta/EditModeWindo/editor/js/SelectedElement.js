@@ -284,9 +284,12 @@ function createAlignGUI(){
 
 var line = new THREE.Line( geometry, material );
 	line.rotation.x = Math.Pi/2;
+	line.material.side = THREE.DoubleSide;
 	group.add(circleOne);
 	group.add(circleTwo);
 	group.add(line);
+
+	group.position.z = .4;
 	return group;
 }
 
