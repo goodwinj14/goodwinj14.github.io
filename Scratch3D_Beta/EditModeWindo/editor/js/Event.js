@@ -22,7 +22,7 @@ EVENT.init = function(){
 	document.addEventListener("keydown", function(event){
 		if(EDIT_MODE){
 
-    		if(event.shiftKey){
+    		if(event.keyCode == 16){
     			if(!IS_SHIFT_DOWN){
     				IS_SHIFT_DOWN = true;
     			}
@@ -34,7 +34,7 @@ EVENT.init = function(){
 	document.addEventListener("keyup", function(event){
 		if(EDIT_MODE){
 			console.log("key up", event);
-    		if(event.shiftKey){
+    		if(event.keyCode == 16){
     			if(IS_SHIFT_DOWN){
     				IS_SHIFT_DOWN = false;
     				console.log("IS_SHIFT_DOWN Turn false called");
