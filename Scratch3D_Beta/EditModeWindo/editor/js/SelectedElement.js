@@ -269,6 +269,7 @@ function createAlignGUI(){
 	circleTwo.material.side = THREE.DoubleSide;
 	circleTwo.rotation.x=Math.PI/2;
 	circleTwo.position.x = -0.5;
+	circleTwo.position.z = .4;
 
 	var material = new THREE.LineBasicMaterial({
 	color: 0x292929,
