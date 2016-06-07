@@ -19,7 +19,9 @@ EVENT.init = function(){
 	mouse = new THREE.Vector2();
 
 	document.addEventListener("keydown", function(event){
-    console.log("key is down1");
+		if(EDIT_MODE){
+    		console.log("key is down2");
+		}
 	}, false);
 
 	document.getElementById("canvas").addEventListener("mousedown", function(event){
