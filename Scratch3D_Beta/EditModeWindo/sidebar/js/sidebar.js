@@ -96,7 +96,7 @@ function updateShape(){
         rotZ = rotZ-edit_Obj.rotationalOffset.z;
        // ModifyMesh.updateRotation(edit_Obj, new THREE.Euler(0,0,((edit_Obj.rotationalOffset.z*-1)*Math.PI)/180,'XYZ'));
     }
-    console.log("Rotate Update0");
+    console.log("Rotate Update1");
     ModifyMesh.updateRotation(edit_Obj, new THREE.Euler(0, 0 , 0 ,'XYZ'));
 
     /*var remove =  GAME_OBJECTS.GetObject(document.getElementById("ACT_OBJ_NAME").value);
