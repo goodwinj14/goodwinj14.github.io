@@ -257,7 +257,7 @@ SELECTED.helperHoverCheck = function(event){
 function createAlignGUI(){
 
 	var group = new THREE.Object3D();
-	var geometry = new THREE.CircleBufferGeometry( 0.1, 32 );
+	var geometry = new THREE.CircleBufferGeometry( 0.05, 32 );
 	var material = new THREE.MeshPhongMaterial( { color: 0xdddddd,  shininess: 3, shading: THREE.FlatShading } );
 
 	var circleOne = new THREE.Mesh( geometry, material );
@@ -270,8 +270,22 @@ function createAlignGUI(){
 	circleTwo.rotation.x=Math.PI/2;
 	circleTwo.position.x = -0.5;
 
+	var material = new THREE.LineBasicMaterial({
+	color: 0x0000ff
+	});
+
+	var geometry = new THREE.Geometry();
+	geometry.vertices.push(
+	new THREE.Vector3( -0.5, 0, 0 ),
+	new THREE.Vector3( 0, 0, 0 ),
+	new THREE.Vector3( 0.5, 0, 0 )
+);
+
+var line = new THREE.Line( geometry, material );
+
 	group.add(circleOne);
 	group.add(circleTwo);
+	group.add(line);
 	return group;
 }
 
