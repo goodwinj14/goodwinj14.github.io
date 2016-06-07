@@ -258,7 +258,7 @@ function createAlignGUI(){
 
 	var group = new THREE.Object3D();
 	var geometry = new THREE.CircleBufferGeometry( 0.05, 32 );
-	var material = new THREE.MeshPhongMaterial( { color: 0xdddddd,  shininess: 3, shading: THREE.FlatShading } );
+	var material = new THREE.MeshPhongMaterial( { color: 0x575757,  shininess: 3, shading: THREE.FlatShading } );
 
 	var circleOne = new THREE.Mesh( geometry, material );
 	circleOne.material.side = THREE.DoubleSide;
@@ -271,15 +271,15 @@ function createAlignGUI(){
 	circleTwo.position.x = -0.5;
 
 	var material = new THREE.LineBasicMaterial({
-	color: 0xdddddd,
-	linewidth: 5
+	color: 0x575757,
+	linewidth: 3
 	});
 
 	var geometry = new THREE.Geometry();
 	geometry.vertices.push(
-	new THREE.Vector3( -0.5, 0, 0 ),
+	new THREE.Vector3( -0.25, 0, 0 ),
 	new THREE.Vector3( 0, 0, 0 ),
-	new THREE.Vector3( 0.5, 0, 0 )
+	new THREE.Vector3( 0.25, 0, 0 )
 );
 
 var line = new THREE.Line( geometry, material );
