@@ -218,9 +218,6 @@ function grid_clicked(event){
 					var bbox = new THREE.Box3().setFromObject(SELECTED.MULI_SELECTION_GROUP);
 					console.log("bbox", bbox);
 					SELECTED.MULI_SELECTION_GROUP.rotation.z = Math.PI/2;
-					SELECTED.MULI_SELECTION_GROUP.updateMatrix();
-					intersects[0].object.geometry.applyMatrix(SELECTED.MULI_SELECTION_GROUP.matrix);
-					intersects[0].object.geometry.verticesNeedUpdate = true;
 				}
 				console.log("MULI_SELECTION_GROUP.children 3",SELECTED.MULI_SELECTION_GROUP.children.length);
 				/*
@@ -245,6 +242,11 @@ function grid_clicked(event){
 					console.log("Update remove4", scene);
 
 					for (var i = Things.length - 1; i >= 0; i--) {
+						Things[i].updateMatrix();
+		   				Things[i].geometry.applyMatrix( Things[i].matrix );
+		   				Things[i].updateMatrix();
+	       				Things[i].geometry.verticesNeedUpdate = true;
+	       				
 						scene.add(Things[i]);
 						SELECTED.MULI_SELECTION_GROUP.remove(Things[i]);
 					}
