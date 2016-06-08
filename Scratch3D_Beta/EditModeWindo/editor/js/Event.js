@@ -215,7 +215,8 @@ function grid_clicked(event){
 					console.log("add called2");
 					scene.remove(intersects[0].object);
 					SELECTED.MULI_SELECTION_GROUP.add(intersects[0].object);
-					//scene.matrixWorldNeedsUpdate=true;
+					selectEvent = new CustomEvent('Editor_Obj_Selected',{ 'detail': SELECTED.MULI_SELECTION_GROUP});
+					document.dispatchEvent(selectEvent);
 				}
 				console.log("MULI_SELECTION_GROUP.children 3",SELECTED.MULI_SELECTION_GROUP.children.length);
 				/*
