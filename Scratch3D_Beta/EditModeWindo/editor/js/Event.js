@@ -234,14 +234,14 @@ function grid_clicked(event){
 				OBJECT_IS_SELECTED = false;
 				}
 
-				if(SELECTED.MULI_SELECTION_GROUP.children.length>0){
+				
 					Things = SELECTED_OBJECT.children;
 
 					for (var i = Things.length - 1; i >= 0; i--) {
 						THREE.SceneUtils.detach(Things[i], SELECTED_OBJECT, scene);
 						//SELECTED.MULI_SELECTION_GROUP.remove(Things[i]);
 					}
-				}
+				
 		}
 	}
 }
