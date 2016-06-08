@@ -214,7 +214,7 @@ function grid_clicked(event){
 				if(SELECTED.MULI_SELECTION_GROUP.getObjectByName(intersects[0].object.name)==undefined){
 					console.log("add called2");
 					scene.remove(intersects[0].object);
-					//SELECTED.MULI_SELECTION_GROUP.add(intersects[0].object);
+					SELECTED.MULI_SELECTION_GROUP.add(intersects[0].object);
 					//scene.matrixWorldNeedsUpdate=true;
 				}
 				console.log("MULI_SELECTION_GROUP.children 3",SELECTED.MULI_SELECTION_GROUP.children.length);
@@ -237,15 +237,12 @@ function grid_clicked(event){
 
 				if(SELECTED.MULI_SELECTION_GROUP.children.length>0){
 					Things = SELECTED.MULI_SELECTION_GROUP.children;
-					scene.remove(SELECTED.MULI_SELECTION_GROUP);
-					scene.matrixWorldNeedsUpdate=true;
 					console.log("Update remove4", scene);
 
 					for (var i = Things.length - 1; i >= 0; i--) {
 						SELECTED.MULI_SELECTION_GROUP.remove(Things[i]);
 						scene.add(Things[i]);
 					}
-					scene.add(SELECTED.MULI_SELECTION_GROUP);
 					scene.matrixWorldNeedsUpdate=true;
 				}
 		}
