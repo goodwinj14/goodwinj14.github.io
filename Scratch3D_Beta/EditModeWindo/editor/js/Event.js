@@ -244,9 +244,12 @@ function grid_clicked(event){
 					for (var i = Things.length - 1; i >= 0; i--) {
 						Things[i].updateMatrix();
 		   				Things[i].geometry.applyMatrix( Things[i].matrix );
+		   				Things[i].geometry.center();
+		   				Things[i].geometry.computeBoundingBox();
+		   				Things[i].rotation.set( 0, 0, 0 );
 		   				Things[i].updateMatrix();
 	       				Things[i].geometry.verticesNeedUpdate = true;
-	       				
+
 						scene.add(Things[i]);
 						SELECTED.MULI_SELECTION_GROUP.remove(Things[i]);
 					}
