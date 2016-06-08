@@ -235,10 +235,11 @@ function grid_clicked(event){
 				}
 
 				if(SELECTED.MULI_SELECTION_GROUP.children.length>0){
-					Things = SELECTED.MULI_SELECTION_GROUP.children;
+					Things = SELECTED_OBJECT.children;
 
 					for (var i = Things.length - 1; i >= 0; i--) {
-						SELECTED.MULI_SELECTION_GROUP.remove(Things[i]);
+						THREE.SceneUtils.detach(Things[i], SELECTED_OBJECT, scene);
+						//SELECTED.MULI_SELECTION_GROUP.remove(Things[i]);
 					}
 				}
 		}
