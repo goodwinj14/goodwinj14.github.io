@@ -205,8 +205,7 @@ function grid_clicked(event){
 				document.dispatchEvent(selectEvent);
 				OBJECT_IS_SELECTED = true;
 			}else if(SELECTED_OBJECT!=null&&IS_SHIFT_DOWN&&(SELECTED_OBJECT.name!=intersects[0].object.name)){ //Allows for multiple objects to be slected at one time
-				THREE.SceneUtils.attach(intersects[0].object, scene, SELECTED_OBJECT);
-				/*console.log("Multi object Selection", SELECTED.MULI_SELECTION_GROUP);
+				console.log("Multi object Selection", SELECTED.MULI_SELECTION_GROUP);
 				groupArray = SELECTED.MULI_SELECTION_GROUP.children;
 				if(groupArray.length<1){
 					SELECTED.MULI_SELECTION_GROUP.add(SELECTED_OBJECT);
@@ -234,12 +233,11 @@ function grid_clicked(event){
 				OBJECT_IS_SELECTED = false;
 				}
 
-				if(SELECTED_OBJECT.children.length>0){
-					Things = SELECTED_OBJECT.children;
+				if(SELECTED.MULI_SELECTION_GROUP.children.length>0){
+					Things = SELECTED.MULI_SELECTION_GROUP.children;
 
 					for (var i = Things.length - 1; i >= 0; i--) {
-						THREE.SceneUtils.detach(Things[i], SELECTED_OBJECT, scene);
-						//SELECTED.MULI_SELECTION_GROUP.remove(Things[i]);
+						SELECTED.MULI_SELECTION_GROUP.remove(Things[i]);
 					}
 				}
 		}
