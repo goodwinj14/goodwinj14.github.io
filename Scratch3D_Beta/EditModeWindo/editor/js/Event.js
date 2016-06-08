@@ -218,6 +218,7 @@ function grid_clicked(event){
 					var bbox = new THREE.Box3().setFromObject(SELECTED.MULI_SELECTION_GROUP);
 					console.log("bbox", bbox);
 					SELECTED.MULI_SELECTION_GROUP.rotation.z = Math.PI/2;
+					intersects[0].object.geometry.applyMatrix(SELECTED.MULI_SELECTION_GROUP.matrix);
 				}
 				console.log("MULI_SELECTION_GROUP.children 3",SELECTED.MULI_SELECTION_GROUP.children.length);
 				/*
