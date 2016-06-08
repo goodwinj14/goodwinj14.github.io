@@ -212,10 +212,12 @@ function grid_clicked(event){
 				}
 				var containsOBJalready = false;
 				if(SELECTED.MULI_SELECTION_GROUP.getObjectByName(intersects[0].object.name)==undefined){
-					scene.remove(intersects[0].object);
-					SELECTED.MULI_SELECTION_GROUP.add(intersects[0].object);
+					//scene.remove(intersects[0].object);
+					//SELECTED.MULI_SELECTION_GROUP.add(intersects[0].object);
 					intersects[0].object.updateMatrix();
 					SELECTED_OBJECT.geometry.merge(intersects[0].object.geometry, intersects[0].object.matrix);
+					SELECTED_OBJECT.updateMatrix();
+	       			SELECTED_OBJECT.geometry.verticesNeedUpdate = true;
 				}
 				console.log("Merging Vertices1");
 				/*
