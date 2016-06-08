@@ -238,7 +238,9 @@ function grid_clicked(event){
 				if(SELECTED.MULI_SELECTION_GROUP.children.length>0){
 					Things = SELECTED.MULI_SELECTION_GROUP.children;
 					scene.remove(SELECTED.MULI_SELECTION_GROUP);
-					console.log("Update remove3", scene);
+					scene.matrixWorldNeedsUpdate=true;
+					console.log("Update remove4", scene);
+
 					/*for (var i = Things.length - 1; i >= 0; i--) {
 						SELECTED.MULI_SELECTION_GROUP.remove(Things[i]);
 					}*/
