@@ -214,12 +214,10 @@ function grid_clicked(event){
 				if(SELECTED.MULI_SELECTION_GROUP.getObjectByName(intersects[0].object.name)==undefined){
 					scene.remove(intersects[0].object);
 					SELECTED.MULI_SELECTION_GROUP.add(intersects[0].object);
-					console.log("SELECTED.MULI_SELECTION_GROUP 5", SELECTED.MULI_SELECTION_GROUP);
-					var bbox = new THREE.Box3().setFromObject(SELECTED.MULI_SELECTION_GROUP);
-					console.log("bbox", bbox);
-					SELECTED.MULI_SELECTION_GROUP.rotation.z = Math.PI/2;
+					intersects[0].object.updateMatrix();
+					SELECTED_OBJECT.merge(intersects[0].object.geometry, intersects[0].object.matrix);
 				}
-				console.log("MULI_SELECTION_GROUP.children 3",SELECTED.MULI_SELECTION_GROUP.children.length);
+				console.log("Merging Vertices");
 				/*
 					Multi object selection for align and grouping function
 				*/
