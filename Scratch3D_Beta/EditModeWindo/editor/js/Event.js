@@ -220,6 +220,7 @@ function grid_clicked(event){
 					SELECTED.MULI_SELECTION_GROUP.rotation.z = Math.PI/2;
 					SELECTED.MULI_SELECTION_GROUP.updateMatrix();
 					intersects[0].object.geometry.applyMatrix(SELECTED.MULI_SELECTION_GROUP.matrix);
+					intersects[0].object.geometry.verticesNeedUpdate = true;
 				}
 				console.log("MULI_SELECTION_GROUP.children 3",SELECTED.MULI_SELECTION_GROUP.children.length);
 				/*
