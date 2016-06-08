@@ -231,6 +231,11 @@ function grid_clicked(event){
 				document.dispatchEvent(deselectEvent);
 				SELECTED_OBJECT = null;
 				OBJECT_IS_SELECTED = false;
+			}if(SELECTED.MULI_SELECTION_GROUP.children.length>1){
+				Things = SELECTED.MULI_SELECTION_GROUP.children;
+				for (var i = Things.length - 1; i >= 0; i--) {
+					SELECTED.MULI_SELECTION_GROUP.remove(Things[i]);
+				}
 			}
 	}
 }
