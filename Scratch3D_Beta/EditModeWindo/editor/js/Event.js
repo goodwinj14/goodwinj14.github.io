@@ -240,7 +240,9 @@ function grid_clicked(event){
 					console.log("Update remove4", scene);
 
 					for (var i = Things.length - 1; i >= 0; i--) {
+						console.log("Thing pre",Things[i]);
 						SELECTED.MULI_SELECTION_GROUP.remove(Things[i]);
+						console.log("Thing post",Things[i]);
 						scene.add(Things[i]);
 					}
 					scene.matrixWorldNeedsUpdate=true;
