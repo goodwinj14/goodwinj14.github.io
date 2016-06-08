@@ -226,12 +226,21 @@ function grid_clicked(event){
 				OBJECT_IS_SELECTED = true;
 			}
 
-		}else if(SELECTED_OBJECT!=null){
+		}else{ if(SELECTED_OBJECT!=null){
 				deselectEvent = new CustomEvent('Editor_Obj_Deselected', { 'detail': SELECTED_OBJECT});
 				document.dispatchEvent(deselectEvent);
 				SELECTED_OBJECT = null;
 				OBJECT_IS_SELECTED = false;
-			}
+				}
+
+				if(SELECTED.MULI_SELECTION_GROUP.children.length>0){
+					Things = SELECTED.MULI_SELECTION_GROUP.children;
+
+					for (var i = Things.length - 1; i >= 0; i--) {
+						SELECTED.MULI_SELECTION_GROUP.remove(Things[i]);
+					}
+				}
+		}
 	}
 }
 
