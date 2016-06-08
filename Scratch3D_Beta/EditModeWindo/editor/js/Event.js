@@ -205,7 +205,8 @@ function grid_clicked(event){
 				document.dispatchEvent(selectEvent);
 				OBJECT_IS_SELECTED = true;
 			}else if(SELECTED_OBJECT!=null&&IS_SHIFT_DOWN&&(SELECTED_OBJECT.name!=intersects[0].object.name)){ //Allows for multiple objects to be slected at one time
-				console.log("Multi object Selection", SELECTED.MULI_SELECTION_GROUP);
+				THREE.SceneUtils.attach(intersects[0].object, scene, SELECTED_OBJECT);
+				/*console.log("Multi object Selection", SELECTED.MULI_SELECTION_GROUP);
 				groupArray = SELECTED.MULI_SELECTION_GROUP.children;
 				if(groupArray.length<1){
 					SELECTED.MULI_SELECTION_GROUP.add(SELECTED_OBJECT);
