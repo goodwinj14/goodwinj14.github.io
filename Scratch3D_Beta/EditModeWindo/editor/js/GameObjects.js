@@ -36,7 +36,7 @@ GAME_OBJECTS.RemoveObject = function(object){
 		console.log("GAME_OBJECTS.Shapes[i].name", GAME_OBJECTS.Shapes[i].name);
 		console.log("object.name", object.name);
 		if(GAME_OBJECTS.Shapes[i].name == object.name){
-			GAME_OBJECTS.Shapes[i].splice(i, 1);
+			GAME_OBJECTS.Shapes.splice(i, 1);
 		}
 	}
 	
