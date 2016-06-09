@@ -42,6 +42,7 @@ EVENT.init = function(){
     		//Delet
     		else if(event.keyCode == 8 || event.keyCode == 4g){
     			if(IS_SHIFT_DOWN){
+    				event.preventDefault();
     				console.log("Delet Called");
     			}
     		}
