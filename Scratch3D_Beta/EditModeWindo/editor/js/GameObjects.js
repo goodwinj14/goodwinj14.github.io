@@ -13,6 +13,11 @@ GAME_OBJECTS.RemoveObject = function(object){
 	//Removes object from scene
 	
 	//Checks if the object was in the scene and if so it is removed
+	for (var i = 0; i GAME_OBJECTS.Shapes.length; i++) {
+		if(GAME_OBJECTS.Shapes[i].name == object.name){
+			GAME_OBJECTS.Shapes[i].splice(i, 1);
+		}
+	}
 	if(object!=undefined){
 		scene.remove( object );
 	}else{
