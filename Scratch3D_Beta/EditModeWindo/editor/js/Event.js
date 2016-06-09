@@ -41,9 +41,11 @@ EVENT.init = function(){
     			}
     		}
     		//Delet
-    		else if(event.keyCode == 8 || event.keyCode == 46){
+    		else if(event.keyCode == 68){
     				event.preventDefault();
+    				if(IS_SHIFT_DOWN){
     				console.log("Delet Called");
+    				}
     		}
     		///////////////////////////////////////
 		}
