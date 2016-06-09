@@ -33,6 +33,7 @@ EVENT.init = function(){
 	document.addEventListener("keyup", function(event){
 		if(EDIT_MODE){
 
+			////////////////////////////////////////
 			//SHIFT 
     		if(event.keyCode == 16){
     			if(IS_SHIFT_DOWN){
@@ -40,13 +41,11 @@ EVENT.init = function(){
     			}
     		}
     		//Delet
-    		else if(event.keyCode == 8 || event.keyCode == 4g){
-    			if(IS_SHIFT_DOWN){
+    		else if(event.keyCode == 8 || event.keyCode == 46){
     				event.preventDefault();
     				console.log("Delet Called");
-    			}
     		}
-
+    		///////////////////////////////////////
 		}
 	}, false);
 //Updates current Key State 
