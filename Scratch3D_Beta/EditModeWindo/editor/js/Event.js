@@ -45,7 +45,7 @@ EVENT.init = function(){
     				event.preventDefault();
     				if(IS_SHIFT_DOWN){
     					if(SELECTED_OBJECT!=null){
-    						console.log("Delet Called");
+    						GAME_OBJECTS.RemoveObject(SELECTED_OBJECT);
     					}
     				}
     		}
