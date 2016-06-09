@@ -44,7 +44,9 @@ EVENT.init = function(){
     		else if(event.keyCode == 68){
     				event.preventDefault();
     				if(IS_SHIFT_DOWN){
-    				console.log("Delet Called");
+    					if(SELECTED_OBJECT!=null){
+    						console.log("Delet Called");
+    					}
     				}
     		}
     		///////////////////////////////////////
