@@ -256,7 +256,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             var merge = document.createElement("BUTTON");        
             merge.appendChild(document.createTextNode("Merge"));
             Holder.appendChild(merge);
-            console.log("Items Appended", group);
+            console.log("Items Appended", group.style);
             //---------------------------------//
             var w = (window.innerWidth-7).toString() + "px";
             var containerWidth = (window.innerWidth-407).toString() + "px";
