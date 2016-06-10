@@ -245,7 +245,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         if(buttonID=='edit_mode'){
 
             //Creates Editor Specific elements//
-            var group = document.createElement("img");        
+            var group = document.createElement("div");        
             group.appendChild(document.createTextNode("Group"));
             group.style.postion = "absolute";
             group.style.top = "150px";
