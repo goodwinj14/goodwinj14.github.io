@@ -247,6 +247,9 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             //Creates Editor Specific elements//
             var group = document.createElement("BUTTON");        
             group.appendChild(document.createTextNode("Group"));
+            group.style.position = "absolute";
+            group.style.top = "50px";
+            group.style.left = "50px";
             Holder.appendChild(group);
 
             var unGroup = document.createElement("BUTTON");        
@@ -256,7 +259,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             var merge = document.createElement("BUTTON");        
             merge.appendChild(document.createTextNode("Merge"));
             Holder.appendChild(merge);
-            console.log("Items Appended", group.style);
+            console.log("Items Appended1", group.style);
             //---------------------------------//
             var w = (window.innerWidth-7).toString() + "px";
             var containerWidth = (window.innerWidth-407).toString() + "px";
