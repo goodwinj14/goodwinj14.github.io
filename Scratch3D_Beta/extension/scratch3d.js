@@ -248,8 +248,8 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             var group = document.createElement("img");        
             group.appendChild(document.createTextNode("Group"));
             group.style.postion = "absolute";
-            group.style.top = "50px";
-            group.style.left = "50px";
+            group.style.top = "150px";
+            group.style.left = "150px";
             group.src="https://raw.githubusercontent.com/goodwinj14/goodwinj14.github.io/master/Scratch3D_Beta/images/icon-expand-blue.png";
             Holder.appendChild(group);
 
