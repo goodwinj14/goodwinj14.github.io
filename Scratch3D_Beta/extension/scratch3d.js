@@ -245,19 +245,19 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
         if(buttonID=='edit_mode'){
 
             //Creates Editor Specific elements//
-            var group = document.createElement("BUTTON");        
+            var group = document.createElement("img");        
             group.appendChild(document.createTextNode("Group"));
-            group.style.position = "absolute";
-            group.style.top = "50px";
-            group.style.left = "50px";
+            group.src="https://raw.githubusercontent.com/goodwinj14/goodwinj14.github.io/master/Scratch3D_Beta/images/icon-expand-blue.png";
             Holder.appendChild(group);
 
-            var unGroup = document.createElement("BUTTON");        
-            unGroup.appendChild(document.createTextNode("Ungroup"));       
+            var unGroup = document.createElement("img");        
+            unGroup.appendChild(document.createTextNode("Ungroup"));  
+            unGroup.src="https://raw.githubusercontent.com/goodwinj14/goodwinj14.github.io/master/Scratch3D_Beta/images/icon-expand-blue.png";     
             Holder.appendChild(unGroup);
 
-            var merge = document.createElement("BUTTON");        
+            var merge = document.createElement("img");        
             merge.appendChild(document.createTextNode("Merge"));
+            merge.src="https://raw.githubusercontent.com/goodwinj14/goodwinj14.github.io/master/Scratch3D_Beta/images/icon-expand-blue.png";
             Holder.appendChild(merge);
             console.log("Items Appended1", group.style);
             //---------------------------------//
