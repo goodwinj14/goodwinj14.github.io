@@ -244,6 +244,20 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 
         if(buttonID=='edit_mode'){
 
+            //Creates Editor Specific elements//
+            var group = document.createElement("BUTTON");        
+            group.appendChild(document.createTextNode("Group"));
+            Holder.appendChild(group);
+
+            var unGroup = document.createElement("BUTTON");        
+            unGroup.appendChild(document.createTextNode("Ungroup"));       
+            Holder.appendChild(unGroup);
+
+            var merge = document.createElement("BUTTON");        
+            merge.appendChild(document.createTextNode("Merge"));
+            Holder.appendChild(merge);
+            console.log("Items Appended");
+            //---------------------------------//
             var w = (window.innerWidth-7).toString() + "px";
             var containerWidth = (window.innerWidth-407).toString() + "px";
             var h = (window.innerHeight-7).toString() + "px";
