@@ -256,7 +256,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             merge.appendChild(document.createTextNode("Merge"));
             merge.src="https://raw.githubusercontent.com/goodwinj14/goodwinj14.github.io/master/Scratch3D_Beta/images/icon-expand-blue.png";
             Holder.appendChild(merge);
-            console.log("Items Appended1", group.style);
+            
             //---------------------------------//
             var w = (window.innerWidth-7).toString() + "px";
             var containerWidth = (window.innerWidth-407).toString() + "px";
