@@ -244,20 +244,6 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 
         if(buttonID=='edit_mode'){
 
-
-            //group.src="https://raw.githubusercontent.com/goodwinj14/goodwinj14.github.io/master/Scratch3D_Beta/images/icon-expand-blue.png";
-            
-            var unGroup = document.createElement("img");        
-            unGroup.appendChild(document.createTextNode("Ungroup"));  
-            unGroup.src="https://raw.githubusercontent.com/goodwinj14/goodwinj14.github.io/master/Scratch3D_Beta/images/icon-expand-blue.png";     
-            Holder.appendChild(unGroup);
-
-            var merge = document.createElement("img");        
-            merge.appendChild(document.createTextNode("Merge"));
-            merge.src="https://raw.githubusercontent.com/goodwinj14/goodwinj14.github.io/master/Scratch3D_Beta/images/icon-expand-blue.png";
-            Holder.appendChild(merge);
-            
-            //---------------------------------//
             var w = (window.innerWidth-7).toString() + "px";
             var containerWidth = (window.innerWidth-407).toString() + "px";
             var h = (window.innerHeight-7).toString() + "px";
@@ -273,8 +259,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             document.getElementById("Holder").style.height = h;
             document.getElementById("container").style.height = h;
             document.getElementById("closeButton").style.left = bPosition; 
-            document.getElementById("group").style.left = "900px";
-            document.getElementById("group").style.visibility = "visible";
+
 
 
             //ADDS THE EDITOR SIDE BAR TO THE EXSTENTION
