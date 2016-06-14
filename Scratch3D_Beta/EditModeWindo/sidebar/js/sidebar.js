@@ -84,7 +84,7 @@ function updateShape(){
     }
 
 
-    rotX = parseFloat(document.getElementById("ACT_OBJ_ROT_X").value);
+    /*rotX = parseFloat(document.getElementById("ACT_OBJ_ROT_X").value);
     rotY = parseFloat(document.getElementById("ACT_OBJ_ROT_Y").value);
     rotZ = parseFloat(document.getElementById("ACT_OBJ_ROT_Z").value);
     if(rotX!=edit_Obj.rotationalOffset.x){
@@ -100,7 +100,7 @@ function updateShape(){
     console.log("y", (edit_Obj.rotationalOffset.y*Math.PI)/-180);
     console.log("z", (edit_Obj.rotationalOffset.z*Math.PI)/-180);
     ModifyMesh.updateRotation(edit_Obj, new THREE.Euler(0, edit_Obj.rotationalOffset.y*(Math.PI/-180), 0,'XYZ'));
-
+    */
     /*var remove =  GAME_OBJECTS.GetObject(document.getElementById("ACT_OBJ_NAME").value);
     console.log(remove);
     id = remove.id;
@@ -121,9 +121,9 @@ function updateEditorWindoVals(event){
     document.getElementById("ACT_OBJ_LOC_X").value = event.detail.position.x;
     document.getElementById("ACT_OBJ_LOC_Y").value = event.detail.position.y;
     document.getElementById("ACT_OBJ_LOC_Z").value = event.detail.position.z;
-    document.getElementById("ACT_OBJ_ROT_X").value = event.detail.rotationalOffset.x;
-    document.getElementById("ACT_OBJ_ROT_Y").value = event.detail.rotationalOffset.y;
-    document.getElementById("ACT_OBJ_ROT_Z").value = event.detail.rotationalOffset.z;
+    //document.getElementById("ACT_OBJ_ROT_X").value = event.detail.rotationalOffset.x;
+    //document.getElementById("ACT_OBJ_ROT_Y").value = event.detail.rotationalOffset.y;
+    //document.getElementById("ACT_OBJ_ROT_Z").value = event.detail.rotationalOffset.z;
     document.getElementById("ACT_OBJ_WIDTH").value = event.detail.geometry.boundingBox.max.x-event.detail.geometry.boundingBox.min.x;
     document.getElementById("ACT_OBJ_HEIGHT").value = event.detail.geometry.boundingBox.max.y-event.detail.geometry.boundingBox.min.y;
     document.getElementById("ACT_OBJ_DEPTH").value = event.detail.geometry.boundingBox.max.z-event.detail.geometry.boundingBox.min.z;
