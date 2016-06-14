@@ -476,8 +476,6 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 
     // Block and block menu descriptions
         descriptor.blocks.push(['null', 'Run Scratch 3D!', 'init']);
-        descriptor.blocks.push([' ', 'New Shape %m.Shapes ID: %s Size: %n %n %n Location: X: %n Y: %n Z: %n', 'newShape', 'Cube', 'ID Name', '1','1','1','0','0','0']);
-        descriptor.blocks.push(['null', 'Upload', 'uploadFile']);
     //
 
     ScratchExtensions.register('scratch3d', descriptor, ext);
