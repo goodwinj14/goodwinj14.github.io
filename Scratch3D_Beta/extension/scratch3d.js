@@ -244,17 +244,7 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 
         if(buttonID=='edit_mode'){
 
-            //Creates Editor Specific elements//
-            var group = document.createElement("div");        
-            group.appendChild(document.createTextNode("Group"));
-            
-            group.style.postion = "absolute";
-            group.style.top = "150px";
-            group.style.left = "150px";
-            group.style.width = "100px";
-            group.style.height = "100px";
-            group.style.backgroundColor = "blue";
-            document.getElementById("Holder").appendChild(group);
+
             //group.src="https://raw.githubusercontent.com/goodwinj14/goodwinj14.github.io/master/Scratch3D_Beta/images/icon-expand-blue.png";
             
             var unGroup = document.createElement("img");        
@@ -283,6 +273,23 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
             document.getElementById("Holder").style.height = h;
             document.getElementById("container").style.height = h;
             document.getElementById("closeButton").style.left = bPosition;
+
+
+
+            //Creates Editor Specific elements//
+            var group = document.createElement("div");        
+            group.appendChild(document.createTextNode("Group"));
+            
+            group.style.postion = "absolute";
+            group.style.top = "150px";
+            group.style.left = "150px";
+            group.style.width = "100px";
+            group.style.height = "100px";
+            group.style.backgroundColor = "blue";
+            document.getElementById("Holder").appendChild(group);
+
+
+
             //ADDS THE EDITOR SIDE BAR TO THE EXSTENTION
                 //Loads Side Bar Code From File
             jQuery.ajax({ 
