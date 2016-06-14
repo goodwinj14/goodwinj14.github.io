@@ -277,15 +277,15 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 
 
             //Creates Editor Specific elements//
-            var group = document.createElement('div');        
+            var group = document.createElement('img');        
             //group.appendChild(document.createTextNode("Group"));
-            
+            group.src = "https://raw.githubusercontent.com/goodwinj14/goodwinj14.github.io/master/Scratch3D_Beta/images/icon-expand-blue.png"
+            group.id="temp";
             group.style.postion = "absolute";
-            group.style.top = "0px";
-            group.style.left = "0px";
+            group.style.top = "100px";
+            group.style.left = "100px";
             group.style.width = "100px";
             group.style.height = "100px";
-            group.style.backgroundColor = "blue";
             document.getElementById("Holder").appendChild(group);
 
 
