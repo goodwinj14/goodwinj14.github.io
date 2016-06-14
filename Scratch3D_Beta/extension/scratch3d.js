@@ -277,12 +277,12 @@ function CreateFromTemplate(elementId, templateId, elementType, appendTo, wrappe
 
 
             //Creates Editor Specific elements//
-            var group = document.createElement("div");        
-            group.appendChild(document.createTextNode("Group"));
+            var group = document.createElement('div');        
+            //group.appendChild(document.createTextNode("Group"));
             
             group.style.postion = "absolute";
-            group.style.top = "150px";
-            group.style.left = "150px";
+            group.style.top = "0px";
+            group.style.left = "0px";
             group.style.width = "100px";
             group.style.height = "100px";
             group.style.backgroundColor = "blue";
