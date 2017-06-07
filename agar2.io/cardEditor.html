@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<body>
+<body id ="b">
 
 
 
@@ -23,25 +23,29 @@
                 var svgDoc = a.contentDocument;
 
                 svgDoc.addEventListener("mousedown",function(event){
-                        console.log(window.width);
+  
                         var newText = document.createElementNS("http://www.w3.org/2000/svg", "text");
 						newText.setAttributeNS(null,"x",event.clientX/4);     
 						newText.setAttributeNS(null,"y",event.clientY/4); 
 						newText.setAttributeNS(null,"font-size","20");
 						var textNode = document.createTextNode("Skill Mill NYC");
 						newText.appendChild(textNode);
-saveTextAsFile();
+                        var svg = document.querySelector("svg");
+                        var serializer = new XMLSerializer();
+                        var string = serializer.serializeToString(svgDoc.getElementById("Layer_1"));
+                        console.log();
+                        saveTextAsFile(string);
 						svgDoc.getElementById("XMLID_22371_").appendChild(newText);
 						
                 }, false);
             }, false);
 
            
-          function saveTextAsFile()
+          function saveTextAsFile(a)
 {
-    var textToWrite = "test";
+    var textToWrite = a;
     var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
-    var fileNameToSaveAs = "test.txt"
+    var fileNameToSaveAs = "test.svg"
 
     var downloadLink = document.createElement("a");
     downloadLink.download = fileNameToSaveAs;
@@ -65,6 +69,22 @@ saveTextAsFile();
     downloadLink.click();
 }
 
+
+
+
+
+document.getHTML= function(who, deep){
+    if(!who || !who.tagName) return '';
+    var txt, ax, el= document.createElement("div");
+    el.appendChild(who.cloneNode(false));
+    txt= el.innerHTML;
+    if(deep){
+        ax= txt.indexOf('>')+1;
+        txt= txt.substring(0, ax)+who.innerHTML+ txt.substring(ax);
+    }
+    el= null;
+    return txt;
+}
  </script>
 
 
