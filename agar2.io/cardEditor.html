@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+
+
+        <object data="qrcodePhoneStand.svg" type="image/svg+xml"
+         id="alphasvg" width ="576px" height="1008px">
+         	
+
+         </object>
+<a href="data:application/octet-stream,field1%2Cfield2%0Afoo%2Cbar%0Agoo%2Cgai%0A">CSV Octet</a>
+
+ <script>
+            var a = document.getElementById("alphasvg");
+
+            // It's important to add an load event listener to the object,
+            // as it will load the svg doc asynchronously
+            a.addEventListener("load",function(){
+            	console.log(a);
+                // get the inner DOM of alpha.svg
+                var svgDoc = a.contentDocument;
+
+                svgDoc.addEventListener("mousedown",function(event){
+                        console.log(window.width);
+                        var newText = document.createElementNS("http://www.w3.org/2000/svg", "text");
+						newText.setAttributeNS(null,"x",event.clientX/4);     
+						newText.setAttributeNS(null,"y",event.clientY/4); 
+						newText.setAttributeNS(null,"font-size","20");
+						var textNode = document.createTextNode("Skill Mill NYC");
+						newText.appendChild(textNode);
+saveTextAsFile();
+						svgDoc.getElementById("XMLID_22371_").appendChild(newText);
+						
+                }, false);
+            }, false);
+
+           
+          function saveTextAsFile()
+{
+    var textToWrite = "test";
+    var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
+    var fileNameToSaveAs = "test.txt"
+
+    var downloadLink = document.createElement("a");
+    downloadLink.download = fileNameToSaveAs;
+    downloadLink.innerHTML = "Download File";
+    if (window.webkitURL != null)
+    {
+        // Chrome allows the link to be clicked
+        // without actually adding it to the DOM.
+        downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+    }
+    else
+    {
+        // Firefox requires the link to be added to the DOM
+        // before it can be clicked.
+        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+        downloadLink.onclick = destroyClickedElement;
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+    }
+
+    downloadLink.click();
+}
+
+ </script>
+
+
+
+</body>
+</html>
