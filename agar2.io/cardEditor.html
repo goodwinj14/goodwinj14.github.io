@@ -30,11 +30,6 @@
 						newText.setAttributeNS(null,"font-size","20");
 						var textNode = document.createTextNode("Skill Mill NYC");
 						newText.appendChild(textNode);
-                        var svg = document.querySelector("svg");
-                        var serializer = new XMLSerializer();
-                        var string = serializer.serializeToString(svgDoc.getElementById("Layer_1"));
-                        console.log();
-                        saveTextAsFile(string);
                         svgDoc.getElementById("XMLID_22371_").appendChild(newText);
 						
                 }, false);
