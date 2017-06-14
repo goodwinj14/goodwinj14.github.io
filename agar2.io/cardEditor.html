@@ -10,7 +10,7 @@
          	
 
          </object>
-<a href="data:application/octet-stream,field1%2Cfield2%0Afoo%2Cbar%0Agoo%2Cgai%0A">CSV Octet</a>
+<button onclick="downloadSVG()">Download</button>
 
  <script>
             var a = document.getElementById("alphasvg");
@@ -35,17 +35,26 @@
                         var string = serializer.serializeToString(svgDoc.getElementById("Layer_1"));
                         console.log();
                         saveTextAsFile(string);
-						svgDoc.getElementById("XMLID_22371_").appendChild(newText);
+                        svgDoc.getElementById("XMLID_22371_").appendChild(newText);
 						
                 }, false);
             }, false);
 
            
+           function downloadSVG(){
+             var svg = document.querySelector("svg");
+                        var serializer = new XMLSerializer();
+                        var string = serializer.serializeToString(svgDoc.getElementById("Layer_1"));
+                        console.log();
+                        saveTextAsFile(string);
+            
+           }
+
           function saveTextAsFile(a)
 {
     var textToWrite = a;
     var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
-    var fileNameToSaveAs = "test.svg"
+    var fileNameToSaveAs = "test."
 
     var downloadLink = document.createElement("a");
     downloadLink.download = fileNameToSaveAs;
