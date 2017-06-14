@@ -42,6 +42,7 @@
 
            
            function downloadSVG(){
+		   var svgDoc = a.contentDocument;
              var svg = document.querySelector("svg");
                         var serializer = new XMLSerializer();
                         var string = serializer.serializeToString(svgDoc.getElementById("Layer_1"));
